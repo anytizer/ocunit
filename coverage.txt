@@ -1,0 +1,4 @@
+file permissions
+storage out of upload/
+storage contains composer
+url in https	

@@ -1,7 +1,7 @@
 <?php
 namespace cases;
 
-use PHPUnit\Framework\TestCase;
+use \PHPUnit\Framework\TestCase;
 
 class IncludeTest extends TestCase
 {

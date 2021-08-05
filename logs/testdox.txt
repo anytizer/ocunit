@@ -1,3 +1,17 @@
+Catalog (cases\Catalog)
+ [ ] Session
+
+Database (cases\Database)
+ [ ] Can connect to the database
+ [ ] At least one language is active
+ [ ] At least one store is active
+
 Include (cases\Include)
  [x] All paths exist
+
+Index (cases\Index)
+ [x] Index contains unique category name
+
+Session (cases\Session)
+ [ ] Session
 

@@ -1,0 +1,45 @@
+{
+    "packages": [
+        {
+            "name": "anytizer/relay.php",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anytizer/relay.php.git",
+                "reference": "0d9d3f622054457c9ba201095efd114ff25d50d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anytizer/relay.php/zipball/0d9d3f622054457c9ba201095efd114ff25d50d3",
+                "reference": "0d9d3f622054457c9ba201095efd114ff25d50d3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*"
+            },
+            "time": "2020-05-05T16:17:11+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "anytizer\\": "src/anytizer"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "cURL based HTTP(s) Client",
+            "support": {
+                "issues": "https://github.com/anytizer/relay.php/issues",
+                "source": "https://github.com/anytizer/relay.php/tree/master"
+            },
+            "install-path": "../anytizer/relay.php"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

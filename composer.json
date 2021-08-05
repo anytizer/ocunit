@@ -1,0 +1,5 @@
+{
+    "require": {
+        "anytizer/relay.php": "dev-master"
+    }
+}

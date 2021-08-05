@@ -1,0 +1,57 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "1fc1753721545291e4ef55e121af1f12",
+    "packages": [
+        {
+            "name": "anytizer/relay.php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anytizer/relay.php.git",
+                "reference": "0d9d3f622054457c9ba201095efd114ff25d50d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anytizer/relay.php/zipball/0d9d3f622054457c9ba201095efd114ff25d50d3",
+                "reference": "0d9d3f622054457c9ba201095efd114ff25d50d3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "anytizer\\": "src/anytizer"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "cURL based HTTP(s) Client",
+            "support": {
+                "issues": "https://github.com/anytizer/relay.php/issues",
+                "source": "https://github.com/anytizer/relay.php/tree/master"
+            },
+            "time": "2020-05-05T16:17:11+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "anytizer/relay.php": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
+}

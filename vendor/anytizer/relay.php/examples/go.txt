@@ -1,0 +1,14 @@
+jsonStr := []byte(`{"name": "John"}`)
+
+req, err := http.NewRequest("POST", "https://hookb.in/xxxxxxxxxxxxxx", bytes.NewBuffer(jsonStr))
+req.Header.Set("Content-Type", "application/json")
+
+client := &http.Client{}
+
+resp, err := client.Do(req)
+
+if err != nil {
+    panic(err)
+}
+
+defer resp.Body.Close()

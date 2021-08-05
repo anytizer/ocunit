@@ -1,4 +1,8 @@
 file permissions
-storage out of upload/
-storage contains composer
-url in https	
+storage/ is completely out of upload/
+storage/ contains composer
+url in https
+user can fail login for 5 times
+user login history is kept
+home page can browse a list of categories, subcategories and product count
+information, gdpr, terms and conditions pages are complete

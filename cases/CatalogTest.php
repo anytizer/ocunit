@@ -3,6 +3,7 @@ namespace cases;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
+use \MySQLPDO;
 
 class CatalogTest extends TestCase
 {
@@ -23,10 +24,10 @@ class CatalogTest extends TestCase
 		# http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=66_63
 	}
 
-	public function testProducts()
+	public function testProductsListedUnderAPage()
 	{
 		/**
-		 * Some list of products in a specific category
+		 * Some list of products in a specific category defined in setup page
 		 */
 		$products = [
 			"Raspberry Pi",

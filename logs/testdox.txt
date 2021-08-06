@@ -1,6 +1,7 @@
 Catalog (cases\Catalog)
  [ ] Products
  [x] Tax tag present
+ [ ] Category images exist
 
 Database (cases\Database)
  [x] Database constants defined

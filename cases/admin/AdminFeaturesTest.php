@@ -1,5 +1,5 @@
 <?php
-namespace cases;
+namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
 use \MySQLPDO;
@@ -37,6 +37,7 @@ class AdminFeaturesTest extends TestCase
         // download product is masked
         // download product is actively linked
         // customer who purchased a download can download
+        // download links are protected with login
         $this->markTestIncomplete("Downloadables check not implemented.");
     }
 

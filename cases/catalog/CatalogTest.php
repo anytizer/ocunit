@@ -1,5 +1,5 @@
 <?php
-namespace cases;
+namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
@@ -44,6 +44,6 @@ class CatalogTest extends TestCase
 	
 	public function testTaxTagPresent()
 	{
-		$this->assertTrue(str_contains($this->html, "<span class=\"price-tax\">Ex Tax: $10.00</span>"), "Failed loading tax tag.");
+		$this->assertTrue(str_contains($this->html, "<span class=\"price-tax\">Ex Tax: $10.00</span>"), "Failed loading exclusive of tax tag.");
 	}
 }

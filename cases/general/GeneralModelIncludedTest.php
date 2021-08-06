@@ -1,11 +1,11 @@
 <?php
-namespace cases;
+namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
 use \MySQLPDO;
 
-class ModelIncludedTest extends TestCase
+class GeneralModelIncludedTest extends TestCase
 {
 	public function testModelIsIncludedOnDemand()
 	{

@@ -1,5 +1,5 @@
 <?php
-namespace cases;
+namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
 

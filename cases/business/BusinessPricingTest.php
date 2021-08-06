@@ -1,11 +1,11 @@
 <?php
-namespace cases;
+namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
 use \MySQLPDO;
 
-class PricingTest extends TestCase
+class BusinessPricingTest extends TestCase
 {
 	public function testVendorPriceExists()
 	{

@@ -1,9 +1,9 @@
 <?php
-namespace cases;
+namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
 
-class IncludeTest extends TestCase
+class GeneralIncludeTest extends TestCase
 {
 	public function testAllIncludedPathsExist()
 	{

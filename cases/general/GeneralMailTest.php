@@ -1,10 +1,10 @@
 <?php
-namespace cases;
+namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
 use \MySQLPDO as MySQLPDO;
 
-class MailTest extends TestCase
+class GeneralMailTest extends TestCase
 {
 	public function testEmailSentFromWindows()
     {

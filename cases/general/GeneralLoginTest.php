@@ -1,11 +1,11 @@
 <?php
-namespace cases;
+namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
 use \MySQLPDO;
 
-class LoginTest extends TestCase
+class GeneralLoginTest extends TestCase
 {
 	public function testSimpleLoginWorks()
 	{

@@ -1,5 +1,5 @@
 <?php
-namespace cases;
+namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
 use \MySQLPDO as MySQLPDO;

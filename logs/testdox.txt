@@ -1,7 +1,7 @@
-Admin Extensions (cases\AdminExtensions)
+Admin Extensions (cases\admin\AdminExtensions)
  [x] Database constants defined
 
-Admin Features (cases\AdminFeatures)
+Admin Features (cases\admin\AdminFeatures)
  [ ] Admin brute force login discouraged
  [ ] Login fails
  [ ] Login succeeds
@@ -13,47 +13,54 @@ Admin Features (cases\AdminFeatures)
  [ ] Low tax in alberta
  [ ] Free shipping in edmonton
 
-Admin Settings (cases\AdminSettings)
+Admin Settings (cases\admin\AdminSettings)
  [x] Database constants defined
  [x] Other settings defined in backend
 
-Catalog Image (cases\CatalogImage)
- [ ] Category images exist
-
-Catalog (cases\Catalog)
- [x] Products listed under a page
- [x] Tax tag present
-
-Database (cases\Database)
- [x] Can connect to the database
- [x] Settings
- [x] At least one language is active
- [x] At least one store is active
-
-Include (cases\Include)
- [x] All included paths exist
-
-Index (cases\Index)
+Business Index (cases\business\BusinessIndex)
  [x] Index contains unique category names
 
-Login (cases\Login)
- [ ] Simple login works
- [ ] Protected login works
-
-Model Included (cases\ModelIncluded)
- [ ] Model is included on demand
-
-Pricing (cases\Pricing)
+Business Pricing (cases\business\BusinessPricing)
  [ ] Vendor price exists
  [ ] Product price is greater than vendor price
  [ ] Product price is greater than vendor price even after discounts
  [ ] Price change history maintained
 
-Session (cases\Session)
+Catalog Image (cases\catalog\CatalogImage)
+ [ ] Category images exist
+ [ ] Image files do not contain scripts
+ [ ] Product images are valid images
+ [ ] Category images are valid images
+
+Catalog (cases\catalog\Catalog)
+ [x] Products listed under a page
+ [x] Tax tag present
+
+General Database (cases\general\GeneralDatabase)
+ [x] Can connect to the database
+ [x] Settings
+ [x] At least one language is active
+ [x] At least one store is active
+
+General Include (cases\general\GeneralInclude)
+ [x] All included paths exist
+
+General Login (cases\general\GeneralLogin)
+ [ ] Simple login works
+ [ ] Protected login works
+
+General Mail (cases\general\GeneralMail)
+ [ ] Email sent from windows
+ [ ] Sendgrid implemented
+
+General Model Included (cases\general\GeneralModelIncluded)
+ [ ] Model is included on demand
+
+General Session (cases\general\GeneralSession)
  [ ] Sessions cleared
  [ ] Sessions are active
 
-Settings (cases\Settings)
+Settings (cases\general\Settings)
  [x] Database constants defined
  [x] Other settings defined in frontend
  [ ] Storage area is out of upload

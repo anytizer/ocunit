@@ -1,11 +1,11 @@
 <?php
-namespace cases;
+namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
 use \MySQLPDO;
 
-class SessionTest extends TestCase
+class GeneralSessionTest extends TestCase
 {
 	public function testSessionsCleared()
 	{

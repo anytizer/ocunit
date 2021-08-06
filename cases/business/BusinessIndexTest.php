@@ -1,10 +1,10 @@
 <?php
-namespace cases;
+namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
 
-class IndexTest extends TestCase
+class BusinessIndexTest extends TestCase
 {
 	public function testIndexContainsUniqueCategoryNames()
 	{

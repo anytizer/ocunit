@@ -20,3 +20,10 @@ Edit bootstrap.php file for ponting the location of your opencart.
 ## log
 
 `logs/testdox.log`
+
+
+## Inspirations
+
+* https://github.com/beyondit/opencart-test-suite
+* [Selenium : OpenCart User Creation Automation Test With CSS Locators](https://www.youtube.com/watch?v=DEwzzZfMYwM)
+* [Unit testing, Jenkins, code sniffing, github etc](https://forum.opencart.com/viewtopic.php?t=124532)

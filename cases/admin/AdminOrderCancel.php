@@ -11,7 +11,8 @@ class AdminOrderCancelTest extends TestCase
 	{
 		// create order
 		// cancel order
+		// list recent orders: to be missing last cancelled order
 
-		$pdo = new MySQLPDO();
+		$this->markTestIncomplete("Cancel an order.");
 	}
 }

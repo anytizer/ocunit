@@ -29,7 +29,7 @@ class MySQLPDO
     }
 
     /**
-     * Queries that return the data
+     * Queries that return the data - like: select, count, show
      */
     public function query($sql='', $data=[])
     {
@@ -44,7 +44,7 @@ class MySQLPDO
     }
 
     /**
-     * Fire-only queries - like: insert, update, delete
+     * Fire-only queries - like: insert, update, delete, replace
      */
     public function raw($sql='', $data=[])
     {

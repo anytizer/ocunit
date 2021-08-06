@@ -54,7 +54,7 @@ class AdminFeaturesTest extends TestCase
 
     public function testLowTaxInAlberta()
     {
-        $this->markTestIncomplete("Taxes not calculated.");
+        $this->markTestIncomplete("Taxes not calculated for Alberta Tax Zone.");
     }
 
     public function testFreeShippingInEdmonton()

@@ -17,6 +17,10 @@ Admin Settings (cases\admin\AdminSettings)
  [x] Database constants defined
  [x] Other settings defined in backend
 
+Api Login (cases\business\ApiLogin)
+ [x] Get api token
+ [ ] Apis
+
 Business Index (cases\business\BusinessIndex)
  [x] Index contains unique category names
 
@@ -38,16 +42,15 @@ Catalog (cases\catalog\Catalog)
 
 General Database (cases\general\GeneralDatabase)
  [x] Can connect to the database
- [x] Settings
+ [x] Settings count match
  [x] At least one language is active
- [x] At least one store is active
 
 General Include (cases\general\GeneralInclude)
  [x] All included paths exist
 
 General Login (cases\general\GeneralLogin)
- [ ] Simple login works
- [ ] Protected login works
+ [ ] Simple login is functional
+ [ ] Protected login is functional
 
 General Mail (cases\general\GeneralMail)
  [ ] Email sent from windows
@@ -57,7 +60,8 @@ General Model Included (cases\general\GeneralModelIncluded)
  [ ] Model is included on demand
 
 General Session (cases\general\GeneralSession)
- [ ] Sessions cleared
+ [x] Sessions cleared
+ [x] At least one store is active
  [ ] Sessions are active
 
 Settings (cases\general\Settings)

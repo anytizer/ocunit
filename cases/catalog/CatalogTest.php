@@ -46,4 +46,25 @@ class CatalogTest extends TestCase
 	{
 		$this->assertTrue(str_contains($this->html, "<span class=\"price-tax\">Ex Tax: $10.00</span>"), "Failed loading exclusive of tax tag.");
 	}
+
+	public function testInnerPagesNeedLogin()
+	{
+		/**
+		Login => "http://localhost/opencart/upload/index.php?route=account/login&language=en-gb",
+		Register
+		Forgotten Password
+		My Account
+		Address Book
+		Wish List
+		Order History
+		Downloads
+		Recurring payments
+		Reward Points
+		Returns
+		Transactions
+		Newsletter
+		 */
+
+		 $this->markTestIncomplete("Navigating to these links require a login.");
+	}
 }

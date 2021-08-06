@@ -9,38 +9,33 @@ class GeneralDatabaseTest extends TestCase
     public function testCanConnectToTheDatabase()
     {
         $pdo = new MySQLPDO();
+
         $this->assertNotNull($pdo, "Failed connecting to the database.");
     }
     
-    public function testSettings()
+    public function testSettingsCountMatch()
     {
         $pdo = new MySQLPDO();
 
-        $sql = "SELECT COUNT(*) total FROM oc_setting;";
+        $sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."setting`;";
         $data = $pdo->query($sql);
-        $total = $data[0]["total"];
+        $total = (int)$data[0]["total"];
 
-        $this->assertEquals(373, $total);
+        $records = 373;
+        $this->assertEquals($records, $total);
     }
 
     public function testAtLeastOneLanguageIsActive()
     {
         $pdo = new MySQLPDO();
 
-        $sql = "SELECT COUNT(*) total FROM oc_language;";
+        $sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."language`;";
         $data = $pdo->query($sql);
         $total = (int)$data[0]["total"];
 
+        /**
+         * Do NOT add multiple languages
+         */
         $this->assertEquals(1, $total);
-    }
-
-    public function testAtLeastOneStoreIsActive()
-    {
-        $pdo = new MySQLPDO();
-
-        $sql = "SELECT COUNT(*) total FROM oc_store;";
-        $total = (int)$pdo->query($sql)[0]["total"];
-
-        $this->assertTrue($total > 0);
     }
 }

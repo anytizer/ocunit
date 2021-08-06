@@ -2,35 +2,25 @@
 namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
-use \anytizer\relay as relay;
-use \MySQLPDO;
+use \catalog as catalog;
 
 class GeneralLoginTest extends TestCase
 {
-	public function testSimpleLoginWorks()
+	public function testSimpleLoginIsFunctional()
 	{
-		$username = "opencart";
-		$password = "shop009";
+		// http://localhost/opencart/upload/index.php?route=account/login|login&language=en-gb&login_token=d83e4e1f39e7859c30eddc998b
 
-		$_GET = [];
-		$_POST = [];
-		$relay = new relay();
-		$html = $relay->fetch(HTTP_SERVER);
+		$catalog = new catalog();
+		$html = $catalog->login_simple();
 
 		$success = str_contains($html, "Success");
 		$this->assertTrue($success, "Failed simple log in");
 	}
 
-	public function testProtectedLoginWorks()
+	public function testProtectedLoginIsFunctional()
 	{
-		$_GET = [
-			"route" => "account/login|login",
-			"language" => "en-gb",
-			"login_token" => "5654914f48eccb41c6eb08fec3",
-		];
-
-		$relay = new relay();
-		$html = $relay->fetch(HTTP_SERVER."index.php");
+		$catalog = new catalog();
+		$html = $catalog->login_protected();
 
 		$this->assertTrue(str_contains($html, "Success"), "Failed protected log in.");
 		$this->assertFalse(str_contains($html, "warning"), "Login returned warning.");

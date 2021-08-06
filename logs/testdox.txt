@@ -1,5 +1,6 @@
 Catalog (cases\Catalog)
- [ ] Session
+ [ ] Products
+ [x] Tax tag present
 
 Database (cases\Database)
  [x] Database constants defined

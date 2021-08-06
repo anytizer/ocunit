@@ -14,8 +14,15 @@ class IndexTest extends TestCase
 		]);
 		$html = $relay->fetch(HTTP_SERVER);
 
-		$search = "Perfumes";
-		$found = str_contains($html, $search);
-		$this->assertTrue($found, "Failed loading categories in index page.");
+		/**
+		 * Categories listing should contain one of these words
+		 */
+		$categories = ["Perfumes", "Toys"];
+
+		foreach($categories as $category)
+		{
+			$found = str_contains($html, $category);
+			$this->assertTrue($found, "Failed loading proper categories in home page.");
+		}
 	}
 }

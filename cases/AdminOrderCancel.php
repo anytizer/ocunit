@@ -5,9 +5,9 @@ use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
 use \MySQLPDO;
 
-class AdminOrderCancel extends TestCase
+class AdminOrderCancelTest extends TestCase
 {
-	public function testOrderCancelled()
+	public function testOrderCancelledProperly()
 	{
 		// create order
 		// cancel order

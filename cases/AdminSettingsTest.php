@@ -2,9 +2,8 @@
 namespace cases;
 
 use \PHPUnit\Framework\TestCase;
-use \MySQLPDO as MySQLPDO;
 
-class SettingsTest extends TestCase
+class AdminSettingsTest extends TestCase
 {
 	public function testDatabaseConstantsDefined()
     {
@@ -17,7 +16,7 @@ class SettingsTest extends TestCase
         $this->assertTrue(defined('DB_PREFIX'));
     }
 
-    public function testOtherSettingsDefinedInFrontend()
+    public function testOtherSettingsDefinedInBackend()
     {
         $this->assertTrue(defined('APPLICATION'));        
         $this->assertTrue(defined('HTTP_SERVER'));
@@ -35,5 +34,7 @@ class SettingsTest extends TestCase
         $this->assertTrue(defined('DIR_LOGS'));
         $this->assertTrue(defined('DIR_SESSION'));
         $this->assertTrue(defined('DIR_UPLOAD'));
+        
+        $this->assertTrue(defined('OPENCART_SERVER'));
     }
 }

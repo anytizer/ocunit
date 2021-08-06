@@ -9,7 +9,12 @@ class PricingTest extends TestCase
 {
 	public function testVendorPriceExists()
 	{
-		$this->markTestIncomplete("Vendor pricing not implemented.");
+		$this->markTestIncomplete("Vendor pricing is not implemented.");
+	}
+
+	public function testProductPriceIsGreaterThanVendorPrice()
+	{
+		$this->markTestIncomplete("Comparing vendor price against store price is not implemented.");
 	}
 
 	public function testPriceChangeHistoryMaintained()

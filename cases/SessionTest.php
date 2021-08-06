@@ -7,6 +7,11 @@ use \MySQLPDO;
 
 class SessionTest extends TestCase
 {
+	public function testSessionsCleared()
+	{
+		$this->markTestIncomplete("Delete all sessions before test beigns.");
+	}
+
 	public function testSessionsAreActive()
 	{
 		$pdo = new MySQLPDO();

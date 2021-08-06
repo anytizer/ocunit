@@ -1,8 +1,15 @@
+Admin Extensions (cases\AdminExtensions)
+ [x] Database constants defined
+
+Admin Settings (cases\AdminSettings)
+ [x] Database constants defined
+ [x] Other settings defined in backend
+
 Catalog Image (cases\CatalogImage)
  [ ] Category images exist
 
 Catalog (cases\Catalog)
- [ ] Products listed under a page
+ [x] Products listed under a page
  [x] Tax tag present
 
 Database (cases\Database)
@@ -26,12 +33,14 @@ Model Included (cases\ModelIncluded)
 
 Pricing (cases\Pricing)
  [ ] Vendor price exists
+ [ ] Product price is greater than vendor price
  [ ] Price change history maintained
 
 Session (cases\Session)
+ [ ] Sessions clear
  [x] Sessions are active
 
 Settings (cases\Settings)
  [x] Database constants defined
- [x] Other settings defined
+ [x] Other settings defined in frontend
 

@@ -6,7 +6,9 @@ Admin Features (cases\AdminFeatures)
  [ ] Login fails
  [ ] Login succeeds
  [ ] Demo user does not see delete option
+ [ ] Demo user does not have permission to modify record
  [ ] Downloadable prdoucts has active downloadable file
+ [ ] Download counter
  [ ] Customer approval required for login
  [ ] Low tax in alberta
  [ ] Free shipping in edmonton

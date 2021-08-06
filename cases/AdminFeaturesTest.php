@@ -26,12 +26,24 @@ class AdminFeaturesTest extends TestCase
         $this->markTestIncomplete("Permissions based menu links not implemented.");
     }
 
+    public function testDemoUserDoesNotHavePermissionToModifyRecord()
+    {
+        $this->markTestIncomplete("Permissions checks not implemented.");
+    }
+
     public function testDownloadablePrdouctsHasActiveDownloadableFile()
     {
         // for each downloadable product
         // download product is masked
-        // download product is active
+        // download product is actively linked
+        // customer who purchased a download can download
         $this->markTestIncomplete("Downloadables check not implemented.");
+    }
+
+    public function testDownloadCounter()
+    {
+        // download counter added right after a product is downloaded
+        $this->markTestIncomplete("Downloadables statistics is not implemented.");
     }
 
     public function testCustomerApprovalRequiredForLogin()

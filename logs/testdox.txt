@@ -1,7 +1,9 @@
-Catalog (cases\Catalog)
- [ ] Products
- [x] Tax tag present
+Catalog Image (cases\CatalogImage)
  [ ] Category images exist
+
+Catalog (cases\Catalog)
+ [ ] Products listed under a page
+ [ ] Tax tag present
 
 Database (cases\Database)
  [x] Database constants defined
@@ -14,7 +16,7 @@ Include (cases\Include)
  [x] All paths exist
 
 Index (cases\Index)
- [x] Index contains unique category name
+ [ ] Index contains unique category name
 
 Session (cases\Session)
  [x] Sessions are active

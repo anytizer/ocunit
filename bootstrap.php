@@ -4,7 +4,7 @@ use \PDO as PDO;
 /**
  * Path where your OpenCart is installed.
  */
-$opencart_upload = "D:/htdocs/opencart/upload";
+$opencart_upload = "../opencart/upload";
 require_once("{$opencart_upload}/config.php");
 #require_once("{$opencart_upload}/admin/config.php");
 

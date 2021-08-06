@@ -5,7 +5,7 @@ use \PHPUnit\Framework\TestCase;
 
 class IncludeTest extends TestCase
 {
-	public function testAllPathsExist()
+	public function testAllIncludedPathsExist()
 	{
 		$paths = explode(PATH_SEPARATOR, ini_get("include_path"));
 		

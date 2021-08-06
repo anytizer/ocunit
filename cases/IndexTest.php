@@ -6,18 +6,22 @@ use \anytizer\relay as relay;
 
 class IndexTest extends TestCase
 {
-	public function testIndexContainsUniqueCategoryName()
+	public function testIndexContainsUniqueCategoryNames()
 	{
 		$relay = new relay();
 		$relay->headers([
 			"X-Protection-Token" => "",
 		]);
-		$html = $relay->fetch(HTTP_SERVER);
+		$html = $relay->fetch(HTTP_SERVER."index.php");
 
 		/**
-		 * Categories listing should contain one of these words
+		 * Categories that should be visible in home page
 		 */
-		$categories = ["Perfumes", "Toys"];
+		$categories = [
+			"Apparels",
+			"Perfumes",
+			"Toys",
+		];
 
 		foreach($categories as $category)
 		{

@@ -20,14 +20,14 @@ class CatalogTest extends TestCase
 		$relay->headers([
 			"X-Protection-Token" => "",
 		]);
-		$this->html = $relay->fetch(HTTP_SERVER."/index.php");
+		$this->html = $relay->fetch(HTTP_SERVER."index.php");
 		# http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=66_63
 	}
 
 	public function testProductsListedUnderAPage()
 	{
 		/**
-		 * Some list of products in a specific category defined in setup page
+		 * Few list of products in a specific category defined in setup page
 		 */
 		$products = [
 			"Raspberry Pi",

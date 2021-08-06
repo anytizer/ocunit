@@ -17,6 +17,11 @@ class PricingTest extends TestCase
 		$this->markTestIncomplete("Comparing vendor price against store price is not implemented.");
 	}
 
+	public function testProductPriceIsGreaterThanVendorPriceEvenAfterDiscounts()
+	{
+		$this->markTestIncomplete("Do not sell at below cost prices.");
+	}
+
 	public function testPriceChangeHistoryMaintained()
 	{
 		$this->markTestIncomplete("Pricing history is todo.");

@@ -36,4 +36,9 @@ class SettingsTest extends TestCase
         $this->assertTrue(defined('DIR_SESSION'));
         $this->assertTrue(defined('DIR_UPLOAD'));
     }
+
+    public function testStorageAreaIsOutOfUpload()
+    {
+        $this->markTestIncomplete("Storage area has not been moved.");
+    }
 }

@@ -9,7 +9,11 @@ class SessionTest extends TestCase
 {
 	public function testSessionsCleared()
 	{
-		$this->markTestIncomplete("Delete all sessions before test beigns.");
+		$pdo = new MySQLPDO();
+		$pdo->raw("DELETE FROM oc_session;");
+
+		$total = (int)$pdo->query("SELECT COOUNT(*) total FROM oc_session;")[0]["total"];
+		$this->assertEquals(0, $total, "Session not cleared.");
 	}
 
 	public function testSessionsAreActive()

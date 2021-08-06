@@ -1,6 +1,16 @@
 Admin Extensions (cases\AdminExtensions)
  [x] Database constants defined
 
+Admin Features (cases\AdminFeatures)
+ [ ] Admin brute force login discouraged
+ [ ] Login fails
+ [ ] Login succeeds
+ [ ] Demo user does not see delete option
+ [ ] Downloadable prdoucts has active downloadable file
+ [ ] Customer approval required for login
+ [ ] Low tax in alberta
+ [ ] Free shipping in edmonton
+
 Admin Settings (cases\AdminSettings)
  [x] Database constants defined
  [x] Other settings defined in backend
@@ -34,13 +44,15 @@ Model Included (cases\ModelIncluded)
 Pricing (cases\Pricing)
  [ ] Vendor price exists
  [ ] Product price is greater than vendor price
+ [ ] Product price is greater than vendor price even after discounts
  [ ] Price change history maintained
 
 Session (cases\Session)
- [ ] Sessions clear
- [x] Sessions are active
+ [ ] Sessions cleared
+ [ ] Sessions are active
 
 Settings (cases\Settings)
  [x] Database constants defined
  [x] Other settings defined in frontend
+ [ ] Storage area is out of upload
 

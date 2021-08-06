@@ -9,5 +9,6 @@ class CatalogTest extends TestCase
 	public function testSession()
 	{
 		// http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=66_63
+		$this->markTestIncomplete("Not finished.");
 	}
 }

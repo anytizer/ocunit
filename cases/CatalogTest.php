@@ -25,7 +25,16 @@ class CatalogTest extends TestCase
 
 	public function testProducts()
 	{
-		$products = ["Raspberry Pi", "Camcorder", "Piano"];
+		/**
+		 * Some list of products in a specific category
+		 */
+		$products = [
+			"Raspberry Pi",
+			"Camcorder",
+			"Piano",
+			"Headphones",
+			"Micro SD Card",
+		];
 		foreach($products as $product)
 		{
 			$this->assertTrue(str_contains($this->html, $product), "Failed loading proper product: ".$product);
@@ -34,6 +43,6 @@ class CatalogTest extends TestCase
 	
 	public function testTaxTagPresent()
 	{
-		$this->assertTrue(str_contains($this->html, "<span class=\"price-tax\">Ex Tax: $10.00</span>"), "Failed loading proper product(s).");
+		$this->assertTrue(str_contains($this->html, "<span class=\"price-tax\">Ex Tax: $10.00</span>"), "Failed loading tax tag.");
 	}
 }

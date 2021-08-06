@@ -27,4 +27,21 @@ class CatalogImageTest extends TestCase
 			}
 		}
 	}
+
+	public function testImageFilesDoNotContainScripts()
+	{
+		// for each images:
+		// php script is not found in the file.
+		$this->markTestIncomplete("Need to scan images for presence of scripts.");
+	}
+
+	public function testProductImagesAreValidImages()
+	{
+		$this->markTestIncomplete("Only PNG Allowed in product image.");
+	}
+
+	public function testCategoryImagesAreValidImages()
+	{
+		$this->markTestIncomplete("Only PNG Allowed in category images.");
+	}
 }

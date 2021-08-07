@@ -42,13 +42,13 @@ class CatalogImageTest extends TestCase
 		$this->markTestIncomplete("Need to scan images for presence of scripts.");
 	}
 
-	public function testProductImagesAreValidImages()
-	{
-		$this->markTestIncomplete("Only PNG Allowed in product image.");
-	}
-
 	public function testCategoryImagesAreValidImages()
 	{
 		$this->markTestIncomplete("Only PNG Allowed in category images.");
+	}
+
+	public function testProductImagesAreValidImages()
+	{
+		$this->markTestIncomplete("Only PNG Allowed in product image.");
 	}
 }

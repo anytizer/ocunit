@@ -34,8 +34,8 @@ Business Pricing (cases\business\BusinessPricing)
 Catalog Image (cases\catalog\CatalogImage)
  [ ] Category images exist
  [ ] Image files do not contain scripts
- [ ] Product images are valid images
  [ ] Category images are valid images
+ [ ] Product images are valid images
 
 Catelog Index (cases\catalog\CatelogIndex)
  [x] Index page

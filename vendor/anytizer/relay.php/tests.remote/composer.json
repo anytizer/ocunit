@@ -1,6 +1,0 @@
-{
-  "require": {
-    "anytizer/relay.php": "dev-master",
-    "anytizer/includer.php": "dev-master"
-  }
-}

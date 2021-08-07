@@ -1,5 +1,5 @@
 Admin Extensions (cases\admin\AdminExtensions)
- [x] Database constants defined
+ [ ] Database constants defined
 
 Admin Features (cases\admin\AdminFeatures)
  [ ] Admin brute force login discouraged
@@ -18,7 +18,7 @@ Admin Settings (cases\admin\AdminSettings)
  [x] Other settings defined in backend
 
 Api Login (cases\business\ApiLogin)
- [x] Get api token
+ [ ] Get api token
  [ ] Apis
 
 Business Index (cases\business\BusinessIndex)
@@ -37,7 +37,7 @@ Catalog Image (cases\catalog\CatalogImage)
  [ ] Category images are valid images
 
 Catalog (cases\catalog\Catalog)
- [x] Products listed under a page
+ [ ] Products listed under a page
  [x] Tax tag present
  [ ] Inner pages need login
 

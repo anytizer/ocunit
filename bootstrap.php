@@ -3,7 +3,7 @@
  * Relative path where your OpenCart is installed.
  * Put without trailing /
  */
-$opencart_upload = "../opencart/upload";
+$opencart_upload_folder = "../opencart/upload";
 
 
 
@@ -24,14 +24,14 @@ require_once("class.admin.inc.php");
 /**
  * Frontend config file
  */
-require_once("{$opencart_upload}/config.php");
+require_once("{$opencart_upload_folder}/config.php");
 
 /**
  * Admin config file
+ * 
  * Silently load admin configurations too.
  * The admin config for contsants collide with that in frontend.
  */
 ob_start();
-require_once("{$opencart_upload}/admin/config.php");
+require_once("{$opencart_upload_folder}/admin/config.php");
 ob_end_clean();
-

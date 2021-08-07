@@ -2,16 +2,14 @@
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
-use \MySQLPDO;
+use \admin;
 
 class AdminExtensionsTest extends TestCase
 {
-	public function testDatabaseConstantsDefined()
+	public function testCustomExtensionTablesPresent()
     {
-        $pdo = new MySQLPDO();
-
-        $tables_sql="SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE();"; // DB_DATABASE
-        $tables = $pdo->query($tables_sql);
+        $admin = new admin();
+        $tables = $admin->tables();
         
         $names = [];
         foreach($tables as $table)
@@ -29,7 +27,7 @@ class AdminExtensionsTest extends TestCase
 
         foreach($searches as $search)
         {
-            $this->assertTrue(in_array($search, $names), "Table `{$search}` is not available");
+            $this->assertTrue(in_array($search, $names), "Extension table `{$search}` is not available.");
         }
     }
 }

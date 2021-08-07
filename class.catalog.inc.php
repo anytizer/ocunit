@@ -10,10 +10,6 @@ class catalog
     private $username = "test@example.com";
     private $password = "password";
 
-	public function __construct()
-	{
-	}
-
 	/**
 	 * Visit the home page
 	 */
@@ -49,12 +45,12 @@ class catalog
 		$this->html = $relay->fetch(HTTP_SERVER."index.php");
 	}
 
-	/**
-	 * Micro SD Card 32GB
-	 * @see http://localhost/opencart/upload/index.php?route=product/product&language=en-gb&path=66_63&product_id=82
-	 */
 	public function browse_product()
 	{
+		/**
+		 * Micro SD Card 32GB
+		 * @see http://localhost/opencart/upload/index.php?route=product/product&language=en-gb&path=66_63&product_id=82
+		 */
 		$_GET = [
 			"route" => "product/product",
 			"language" => "en-gb",

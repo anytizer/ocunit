@@ -40,7 +40,20 @@ class SettingsTest extends TestCase
     public function testStorageAreaIsOutOfUpload()
     {
         $parent = dirname(realpath(DIR_STORAGE));
-        $this->assertFalse(str_contains($parent, "upload"));
-        //$this->markTestIncomplete("Storage area has not been moved.");
+
+        /**
+         * Following folders should NOT appear in the directory name
+         */
+        $restrictions = [
+            "upload",
+            "public_html",
+            "htdocs",
+            "www",
+            "web"
+        ];
+        foreach($restrictions as $folder)
+        {
+            $this->assertFalse(str_contains($parent, $folder), "Matches {$folder}.");
+        }
     }
 }

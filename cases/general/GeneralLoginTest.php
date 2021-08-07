@@ -14,7 +14,7 @@ class GeneralLoginTest extends TestCase
 		$html = $catalog->login_simple();
 
 		$success = str_contains($html, "Success");
-		$this->assertTrue($success, "Failed simple log in");
+		$this->assertTrue($success, "Failed simple log in.");
 	}
 
 	public function testProtectedLoginIsFunctional()

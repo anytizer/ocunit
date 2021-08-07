@@ -1,5 +1,5 @@
 Admin Extensions (cases\admin\AdminExtensions)
- [x] Database constants defined
+ [x] Custom extension tables present
 
 Admin Features (cases\admin\AdminFeatures)
  [ ] Admin brute force login discouraged
@@ -19,7 +19,8 @@ Admin Settings (cases\admin\AdminSettings)
 
 Api Login (cases\business\ApiLogin)
  [x] Get api token
- [ ] Apis
+ [ ] List of all apis
+ [ ] Routes
 
 Business Index (cases\business\BusinessIndex)
  [ ] Index contains unique category names
@@ -75,5 +76,5 @@ General Session (cases\general\GeneralSession)
 Settings (cases\general\Settings)
  [x] Database constants defined
  [x] Other settings defined in frontend
- [x] Storage area is out of upload
+ [ ] Storage area is out of upload
 

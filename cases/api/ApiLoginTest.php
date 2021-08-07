@@ -3,6 +3,7 @@ namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
+use \api as api;
 
 /**
  * @see https://docs.opencart.com/en-gb/system/users/api/
@@ -43,6 +44,34 @@ class ApiLoginTest extends TestCase
 
 	public function testListOfAllApis()
 	{
+		$api = new api();
+		$apis = $api->list_all_api();
+        
+        $usernames = [];
+        foreach($apis as $api)
+        {
+            $usernames[] = strtolower($api["username"]);
+        }
+
+        /**
+         * These API usernames are not allowed.
+         */
+        $searches = [
+            "test",
+            "default",
+			"demo",
+			"admin",
+			"customer",
+        ];
+
+        foreach($searches as $search)
+        {
+            $this->assertFalse(in_array($search, $usernames), "API Username `{$search}` found in APIs. Remove such user.");
+        }
+	}
+
+	public function testRoutes()
+	{
 		$_GET = [
 			"route" => "api/cart/add",
 		];
@@ -70,6 +99,5 @@ class ApiLoginTest extends TestCase
 		// api/payment/address
 		// api/payment/methods
 		// api/payment/method
-		$this->markTestIncomplete("More todo for API Login");
 	}
 }

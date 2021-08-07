@@ -18,7 +18,7 @@ class AdminExtensionsTest extends TestCase
         }
 
         /**
-         * These tables are installed and used by third party extensions.
+         * Tables that are installed and used by third party extensions.
          */
         $searches = [
             "tw_price_history",

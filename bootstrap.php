@@ -59,6 +59,7 @@ class PostQuery
 }
 
 $searches_in_html_pages = [
+    // index page
     new PostQuery(
         "index.php",
         [],
@@ -70,6 +71,8 @@ $searches_in_html_pages = [
             "<div id=\"toast\"></div>",
         ]
     ),
+
+    // Sub-Category Listing Page
     new PostQuery(
         // Used electronics, wires and parts
         // index.php?route=product/category&language=en-gb&path=66_63
@@ -87,6 +90,8 @@ $searches_in_html_pages = [
             // "<h4><a href="http://localhost/opencart/upload/index.php?route=product/product&amp;language=en-gb&amp;path=66_63&amp;product_id=82">Micro SD Card 32GB</a></h4>",
         ]
     ),
+
+    // Product Details Page
     new PostQuery(
         // http://localhost/opencart/upload/index.php?route=product/product&language=en-gb&path=66_63&product_id=82
         "index.php",
@@ -102,14 +107,14 @@ $searches_in_html_pages = [
         ]        
     ),
 
-
+    // API Token
     new PostQuery(
         "index.php",
         [
             "route" => "api/login",
         ],
         [
-			"username" => "test",
+			"username" => "test1",
 			"key" => "9acd35f146d93542c062e73697564373f0eac52ebf84ace1d9f59f2face8c5c4ed67d2939ebe86756e6fe4f1fbeb7bf3189d195883b8556b79339d9f3fbb518c32f9a72ab4226a495c2a6aa0f4508a7f8662d1d8fc7d5cfba81a89294556ba10338771247914482be7ce08e4c196af019802a8b69874a82f50863c7f89f64dcc",
 		],
         [

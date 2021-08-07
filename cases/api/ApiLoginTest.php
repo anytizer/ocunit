@@ -10,36 +10,17 @@ use \api as api;
  */
 class ApiLoginTest extends TestCase
 {
-	private function getAPiToken()
-	{
-
-		// data={'username':username, 'key':key};
-		$_GET = [
-			"route" => "api/login",
-		];
-
-		// @todo Read username and key from private config file
-		$_POST = [
-			"username" => "test",
-			"key" => "9acd35f146d93542c062e73697564373f0eac52ebf84ace1d9f59f2face8c5c4ed67d2939ebe86756e6fe4f1fbeb7bf3189d195883b8556b79339d9f3fbb518c32f9a72ab4226a495c2a6aa0f4508a7f8662d1d8fc7d5cfba81a89294556ba10338771247914482be7ce08e4c196af019802a8b69874a82f50863c7f89f64dcc",
-		];
-		$relay = new relay();
-		$relay->headers([
-			"X-Protection-Token" => "",
-		]);
-		$html = $relay->fetch(HTTP_SERVER."index.php");
-		$data = json_decode($html, true);
-
-		return $data["api_token"];
-	}
-
 	public function testGetApiToken()
 	{
-		$api_token = $this->getAPiToken();
-		// print_r($data);
-		// echo $html;
+		$api = new api();
+		$api_token_html = $api->get_token_html();
+		$data = json_decode($api_token_html, true);
+
+		$this->assertTrue(array_key_exists("api_token", $data), "api_token - key missing in html response.");
+		$api_token = $data["api_token"];
 		// {"success":"Success: API session successfully started!","api_token":"f5a254e32400369e587457dfd9"}
-		$this->assertEquals(strlen("f5a254e32400369e587457dfd9"), strlen($api_token), "API Token length mismatched");
+		
+		$this->assertEquals(strlen("f5a254e32400369e587457dfd9"), strlen($api_token), "API Token length mismatched.");
 	}
 
 	public function testListOfAllApis()

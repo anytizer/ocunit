@@ -39,6 +39,8 @@ class SettingsTest extends TestCase
 
     public function testStorageAreaIsOutOfUpload()
     {
-        $this->markTestIncomplete("Storage area has not been moved.");
+        $parent = dirname(realpath(DIR_STORAGE));
+        $this->assertFalse(str_contains($parent, "upload"));
+        //$this->markTestIncomplete("Storage area has not been moved.");
     }
 }

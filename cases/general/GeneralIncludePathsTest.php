@@ -3,7 +3,7 @@ namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
 
-class GeneralIncludeTest extends TestCase
+class GeneralIncludePathsTest extends TestCase
 {
 	public function testAllIncludedPathsExist()
 	{

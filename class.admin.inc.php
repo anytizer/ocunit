@@ -6,6 +6,5 @@ class admin
 {
     public function __construct()
     {
-        
     }
 }

@@ -30,7 +30,7 @@ class CatalogImageTest extends TestCase
 			}
 			else
 			{
-				$this->assertTrue(false, "Breaking: Category image NOT defined in database for id: ".$image["category_id"]);
+				$this->assertTrue(false, "\033[1;31mBREAKING:\033[0m Category image NOT defined in database for id: ".$image["category_id"]);
 			}
 		}
 	}

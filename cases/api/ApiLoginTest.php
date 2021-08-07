@@ -41,7 +41,7 @@ class ApiLoginTest extends TestCase
 		$this->assertEquals(strlen("f5a254e32400369e587457dfd9"), strlen($api_token), "API Token length mismatched");
 	}
 
-	public function testApis()
+	public function testListOfAllApis()
 	{
 		$_GET = [
 			"route" => "api/cart/add",

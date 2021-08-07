@@ -1,5 +1,5 @@
 Admin Extensions (cases\admin\AdminExtensions)
- [ ] Database constants defined
+ [x] Database constants defined
 
 Admin Features (cases\admin\AdminFeatures)
  [ ] Admin brute force login discouraged
@@ -18,11 +18,11 @@ Admin Settings (cases\admin\AdminSettings)
  [x] Other settings defined in backend
 
 Api Login (cases\business\ApiLogin)
- [ ] Get api token
+ [x] Get api token
  [ ] Apis
 
 Business Index (cases\business\BusinessIndex)
- [x] Index contains unique category names
+ [ ] Index contains unique category names
 
 Business Pricing (cases\business\BusinessPricing)
  [ ] Vendor price exists
@@ -36,8 +36,13 @@ Catalog Image (cases\catalog\CatalogImage)
  [ ] Product images are valid images
  [ ] Category images are valid images
 
+Catelog Index (cases\catalog\CatelogIndex)
+ [x] Index page
+ [x] Searches in pages
+
 Catalog (cases\catalog\Catalog)
- [ ] Products listed under a page
+ [x] Index page
+ [x] Products listed under a page
  [x] Tax tag present
  [ ] Inner pages need login
 
@@ -48,7 +53,7 @@ General Database (cases\general\GeneralDatabase)
  [x] Admin paginates 100 items
  [x] Single currency operation
 
-General Include (cases\general\GeneralInclude)
+General Include Paths (cases\general\GeneralIncludePaths)
  [x] All included paths exist
 
 General Login (cases\general\GeneralLogin)
@@ -70,5 +75,5 @@ General Session (cases\general\GeneralSession)
 Settings (cases\general\Settings)
  [x] Database constants defined
  [x] Other settings defined in frontend
- [ ] Storage area is out of upload
+ [x] Storage area is out of upload
 

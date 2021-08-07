@@ -3,6 +3,7 @@ namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
+use \catalog as catalog;
 use \MySQLPDO;
 
 class CatalogTest extends TestCase
@@ -22,6 +23,14 @@ class CatalogTest extends TestCase
 		]);
 		$this->html = $relay->fetch(HTTP_SERVER."index.php");
 		# http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=66_63
+	}
+
+	public function testIndexPage()
+	{
+		$catalog = new catalog();
+		$html = $catalog->browse_index();
+
+		$this->assertTrue(str_contains($html, "<div id=\"toast\"></div>"), "Failed checking index page contains toast placeholder.");
 	}
 
 	public function testProductsListedUnderAPage()

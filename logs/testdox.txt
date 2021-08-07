@@ -19,7 +19,7 @@ Admin Settings (cases\admin\AdminSettings)
 
 Api Login (cases\business\ApiLogin)
  [x] Get api token
- [ ] List of all apis
+ [x] List of all apis
  [ ] Routes
 
 Business Index (cases\business\BusinessIndex)
@@ -61,7 +61,8 @@ General Login (cases\general\GeneralLogin)
  [ ] Protected login is functional
 
 General Mail (cases\general\GeneralMail)
- [ ] Email sent from windows
+ [ ] Email sent from windows machine
+ [ ] Email sent from linux machine
  [ ] Sendgrid implemented
 
 General Model Included (cases\general\GeneralModelIncluded)

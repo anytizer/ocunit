@@ -70,7 +70,11 @@ $searches_in_html_pages = [
         ],
         [],
         [
+			"Piano",
             "Raspberry Pi",
+			"Camcorder",
+			"Headphones",
+			"Micro SD Card",
             ">Micro SD Card 32GB</a></h4>", // starts with ">" as a part of h4.a tag
             // "<h4><a href="http://localhost/opencart/upload/index.php?route=product/product&amp;language=en-gb&amp;path=66_63&amp;product_id=82">Micro SD Card 32GB</a></h4>",
         ]

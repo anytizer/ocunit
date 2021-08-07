@@ -8,8 +8,6 @@ use \library\MySQLPDO;
 
 class CatalogTest extends TestCase
 {
-	private $html = "";
-
 	public function setUp(): void
 	{
 		$_GET = [
@@ -58,6 +56,9 @@ class CatalogTest extends TestCase
 
 	public function testInnerPagesNeedLogin()
 	{
+		$this->markTestSkipped();
+		return;
+
 		$client_links = [
 			"Login" => "route=account/login",
 			"Register" => "route=account/register",

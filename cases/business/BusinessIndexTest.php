@@ -2,7 +2,6 @@
 namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
-use \anytizer\relay as relay;
 
 class BusinessIndexTest extends TestCase
 {

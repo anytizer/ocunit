@@ -1,4 +1,6 @@
 <?php
+namespace library;
+
 use \PDO as PDO;
 
 /**

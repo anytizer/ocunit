@@ -16,10 +16,11 @@ require_once("vendor/autoload.php");
 /**
  * Test suite specific content
  */
-require_once("class.MySQLPDO.inc.php");
-require_once("class.api.inc.php");
-require_once("class.catalog.inc.php");
-require_once("class.admin.inc.php");
+require_once("library/class.PostQuery.inc.php");
+require_once("library/class.MySQLPDO.inc.php");
+require_once("library/class.api.inc.php");
+require_once("library/class.catalog.inc.php");
+require_once("library/class.admin.inc.php");
 
 /**
  * Frontend config file
@@ -37,26 +38,7 @@ require_once("{$opencart_upload_folder}/admin/config.php");
 ob_end_clean();
 
 
-/**
- * @todo Utilize search options. Do NOT hard code in test scripts.
- */
-class PostQuery
-{
-    public $page = "index.php";
-
-    public $get = [];
-    public $post = [];
-
-    public $lookups = [];
-
-    public function __construct($page="", $get=[], $post=[], $lookups=[])
-    {
-        $this->page = $page;
-        $this->get = $get;
-        $this->post = $post;
-        $this->lookups = $lookups;
-    }
-}
+use \library\PostQuery;
 
 $searches_in_html_pages = [
     // index page

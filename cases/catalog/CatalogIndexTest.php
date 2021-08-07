@@ -3,8 +3,8 @@ namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
-use \catalog as catalog;
-use \MySQLPDO;
+use \library\catalog as catalog;
+use \library\MySQLPDO;
 
 class CatelogIndexTest extends TestCase
 {

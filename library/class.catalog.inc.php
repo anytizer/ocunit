@@ -1,5 +1,7 @@
 <?php
-use \MySQLPDO as MySQLPDO;
+namespace library;
+
+use \library\MySQLPDO as MySQLPDO;
 use \anytizer\relay as relay;
 
 /**

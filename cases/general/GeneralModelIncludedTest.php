@@ -3,7 +3,7 @@ namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
-use \MySQLPDO;
+use \library\MySQLPDO;
 
 class GeneralModelIncludedTest extends TestCase
 {

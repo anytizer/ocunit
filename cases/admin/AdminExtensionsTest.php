@@ -2,7 +2,7 @@
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
-use \admin;
+use \library\admin as admin;
 
 class AdminExtensionsTest extends TestCase
 {

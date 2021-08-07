@@ -3,7 +3,7 @@ namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
-use \MySQLPDO;
+use \library\MySQLPDO;
 
 class CatalogImageTest extends TestCase
 {

@@ -2,7 +2,7 @@
 namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
-use \MySQLPDO as MySQLPDO;
+use \library\MySQLPDO as MySQLPDO;
 
 class SettingsTest extends TestCase
 {

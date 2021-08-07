@@ -2,7 +2,6 @@
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
-use \MySQLPDO;
 
 class AdminFeaturesTest extends TestCase
 {

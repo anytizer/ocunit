@@ -2,7 +2,7 @@
 namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
-use \catalog as catalog;
+use \library\catalog as catalog;
 
 class GeneralLoginTest extends TestCase
 {

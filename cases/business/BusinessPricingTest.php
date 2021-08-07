@@ -2,8 +2,6 @@
 namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
-use \anytizer\relay as relay;
-use \MySQLPDO;
 
 class BusinessPricingTest extends TestCase
 {

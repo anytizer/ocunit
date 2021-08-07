@@ -16,22 +16,17 @@ class CatalogImageTest extends TestCase
 
 		foreach($images as $image)
 		{
-			if($image["image"]!="")
-			{
-				$category_image_file = DIR_OPENCART . 'image/' . $image["image"];
-				$image_file_exists = file_exists($category_image_file) && is_file($category_image_file);
-				$this->assertTrue($image_file_exists, "Missing category image for id: ".$image["category_id"]);
+			// $this->assertNotEmpty(trim($image["image"]), "Empty image value.");
+			$category_image_file = DIR_OPENCART . 'image/' . $image["image"];
+			$image_file_exists = file_exists($category_image_file) && is_file($category_image_file);
+			$this->assertTrue($image_file_exists, "\033[1;31mMISSING:\033[0m category image for id: ".$image["category_id"]);
 
-				// @todo
-				// image is 40 x 40 px for icon.
-				// image file is not a php script
-				// mime type of the file is an image
-				// only png allowed
-			}
-			else
-			{
-				$this->assertTrue(false, "\033[1;31mBREAKING:\033[0m Category image NOT defined in database for id: ".$image["category_id"]);
-			}
+			// @todo
+			// image is 40 x 40 px for icon.
+			// image file is not a php, js, css, html script
+			// mime type of the file is an image
+			// only png allowed
+			// gd can obtain the image info
 		}
 	}
 

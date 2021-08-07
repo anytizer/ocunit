@@ -41,7 +41,10 @@ ob_end_clean();
 use \library\PostQuery;
 
 $searches_in_html_pages = [
-    // index page
+    // home page
+    // http://localhost/opencart/upload/
+    // http://localhost/opencart/upload/index.php
+    // http://localhost/opencart/upload/index.php?route=common/home&language=en-gb
     new PostQuery(
         "index.php",
         [],
@@ -68,7 +71,7 @@ $searches_in_html_pages = [
         [],
         [
             "Raspberry Pi",
-            ">Micro SD Card 32GB</a></h4>",
+            ">Micro SD Card 32GB</a></h4>", // starts with ">" as a part of h4.a tag
             // "<h4><a href="http://localhost/opencart/upload/index.php?route=product/product&amp;language=en-gb&amp;path=66_63&amp;product_id=82">Micro SD Card 32GB</a></h4>",
         ]
     ),

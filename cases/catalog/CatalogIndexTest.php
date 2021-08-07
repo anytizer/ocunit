@@ -8,29 +8,12 @@ use \library\MySQLPDO;
 
 class CatelogIndexTest extends TestCase
 {
-	public function testIndexPage()
-	{
-		$catalog = new catalog();
-		$html = $catalog->browse_index();
-
-		/**
-		 * Categories that should be visible in home page
-		 */
-		$categories = [
-			"Apparels",
-			"Perfumes",
-			"Toys",
-		];
-
-		foreach($categories as $category)
-		{
-			$found = str_contains($html, $category);
-			$this->assertTrue($found, "Failed loading proper categories in home page.");
-		}
-	}
-
 	public function testSearchesInPages()
 	{
+		/**
+		 * Obtain user defined configurations for searches
+		 * @see bootstrap.php
+		 */
 		global $searches_in_html_pages;
 
 		foreach($searches_in_html_pages as $post_query)

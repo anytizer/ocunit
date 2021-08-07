@@ -38,4 +38,28 @@ class GeneralDatabaseTest extends TestCase
          */
         $this->assertEquals(1, $total);
     }
+
+    public function testAdminPaginates100Items()
+    {
+        $pdo = new MySQLPDO();
+
+        $sql = "SELECT * FROM `".DB_PREFIX."setting` WHERE `key`='config_pagination_admin';";
+        $data = $pdo->query($sql);
+        
+        $this->assertEquals(100, (int)$data[0]["value"]);
+    }
+
+    /**
+     * Currently accepting CAD only.
+     */
+    public function testSingleCurrencyOperation()
+    {
+        $pdo = new MySQLPDO();
+
+        $sql = "SELECT * FROM `".DB_PREFIX."currency`;";
+        $data = $pdo->query($sql);
+        
+        $this->assertEquals(1, count($data));
+        $this->assertEquals(1, (int)$data[0]["status"]);
+    }
 }

@@ -39,11 +39,14 @@ Catalog Image (cases\catalog\CatalogImage)
 Catalog (cases\catalog\Catalog)
  [x] Products listed under a page
  [x] Tax tag present
+ [ ] Inner pages need login
 
 General Database (cases\general\GeneralDatabase)
  [x] Can connect to the database
  [x] Settings count match
  [x] At least one language is active
+ [x] Admin paginates 100 items
+ [x] Single currency operation
 
 General Include (cases\general\GeneralInclude)
  [x] All included paths exist

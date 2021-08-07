@@ -49,21 +49,37 @@ class CatalogTest extends TestCase
 
 	public function testInnerPagesNeedLogin()
 	{
-		/**
-		Login => "http://localhost/opencart/upload/index.php?route=account/login&language=en-gb",
-		Register
-		Forgotten Password
-		My Account
-		Address Book
-		Wish List
-		Order History
-		Downloads
-		Recurring payments
-		Reward Points
-		Returns
-		Transactions
-		Newsletter
-		 */
+		$client_links = [
+			"Login" => "route=account/login",
+			"Register" => "route=account/register",
+			"Forgotten Password" => "route=account/forgotten",
+			"My Account" => "route=account/account",
+			"Address Book" => "route=account/address",
+			"Wish List" => "route=account/wishlist",
+			"Order History" => "route=account/order",
+			"Downloads" => "route=account/download",
+			"Recurring payments" => "route=account/recurring",
+			"Reward Points" => "route=account/reward",
+			"Returns" => "route=account/returns",
+			"Transactions" => "route=account/transaction",
+			"Newsletter" => "route=account/newsletter",
+		];
+
+		foreach($client_links as $link_name => $route)
+		{
+			// open link
+			// html must see LOGIN REQUIRJED
+			$_GET = [
+				"route" => $route,
+				"language" => "en-gb",
+			];
+			$relay = new relay();
+			$relay->headers([
+				"X-Protection-Token" => "",
+			]);
+			
+			$html = $relay->fetch(HTTP_SERVER."index.php");
+		}
 
 		 $this->markTestIncomplete("Navigating to these links require a login.");
 	}

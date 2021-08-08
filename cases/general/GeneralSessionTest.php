@@ -3,6 +3,7 @@ namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
+use \library\catalog;
 use \library\MySQLPDO;
 
 class GeneralSessionTest extends TestCase
@@ -12,6 +13,18 @@ class GeneralSessionTest extends TestCase
 		$pdo = new MySQLPDO();
 
 		$pdo->raw("DELETE FROM `".DB_PREFIX."session`;");
+
+		$total = (int)$pdo->query("SELECT COUNT(*) total FROM `".DB_PREFIX."session`;")[0]["total"];
+		$this->assertEquals(0, $total, "Session not cleared.");
+	}
+
+	public function testSessionIsCreated()
+	{
+		$pdo = new MySQLPDO();
+		$pdo->raw("DELETE FROM `".DB_PREFIX."session`;");
+
+		$catalog = new catalog();
+		$index = $catalog->browse_index();
 
 		$total = (int)$pdo->query("SELECT COUNT(*) total FROM `".DB_PREFIX."session`;")[0]["total"];
 		$this->assertEquals(0, $total, "Session not cleared.");
@@ -32,13 +45,6 @@ class GeneralSessionTest extends TestCase
 		$pdo = new MySQLPDO();
 
 		$sessions = $pdo->query("SELECT `data` FROM `".DB_PREFIX."session` WHERE `expire`>=NOW() LIMIT 1;");
-		if(count($sessions))
-		{
-			$this->assertArrayHasKey("data", $sessions[0], "Session data is empty!");
-		}
-		else
-		{
-			$this->markTestIncomplete("Session does not have data!");
-		}
+		$this->assertArrayHasKey("data", $sessions[0], "Session data is empty!");
 	}
 }

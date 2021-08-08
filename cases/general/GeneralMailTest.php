@@ -8,11 +8,17 @@ class GeneralMailTest extends TestCase
 {
 	public function testEmailSentFromWindowsMachine()
     {
+        /**
+         * @todo Server should run under Windows
+         */
         $this->markTestIncomplete("Email not sent from Windows.");
     }
 
     public function testEmailSentFromLinuxMachine()
     {
+        /**
+         * @todo Server should run under Linux
+         */
         $this->markTestIncomplete("Email not sent from Linux.");
     }
 

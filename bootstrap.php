@@ -5,12 +5,6 @@
  */
 $opencart_upload_folder = "../opencart/upload";
 
-
-
-/**
- * *********** DO NOT MODIFIY BELOW ***********
- */
-
 require_once("vendor/autoload.php");
 
 /**
@@ -58,10 +52,10 @@ $searches_in_html_pages = [
     ),
 
     // Sub-Category Listing Page
+    // Used electronics, wires and parts
+    // index.php?route=product/category&language=en-gb&path=66_63
+    // http://localhost/opencart/upload/index.php?route=product/product&language=en-gb&path=66_63&product_id=82
     new PostQuery(
-        // Used electronics, wires and parts
-        // index.php?route=product/category&language=en-gb&path=66_63
-        // http://localhost/opencart/upload/index.php?route=product/product&language=en-gb&path=66_63&product_id=82
         "index.php",
         [
             "route" => "product/category",
@@ -81,8 +75,8 @@ $searches_in_html_pages = [
     ),
 
     // Product Details Page
+    // http://localhost/opencart/upload/index.php?route=product/product&language=en-gb&path=66_63&product_id=82
     new PostQuery(
-        // http://localhost/opencart/upload/index.php?route=product/product&language=en-gb&path=66_63&product_id=82
         "index.php",
         [
             "route" => "product/product",

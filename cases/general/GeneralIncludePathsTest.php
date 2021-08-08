@@ -14,4 +14,10 @@ class GeneralIncludePathsTest extends TestCase
 			$this->assertTrue(is_dir($path), "Path does not exist: {$path}");
 		}
 	}
+
+	public function testInstallFolderDoesNotExist()
+	{
+		$install = DIR_OPENCART."install";
+		$this->assertFalse(is_dir($install), "Remove install folder!");
+	}
 }

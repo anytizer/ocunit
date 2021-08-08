@@ -55,6 +55,7 @@ General Database (cases\general\GeneralDatabase)
 
 General Include Paths (cases\general\GeneralIncludePaths)
  [x] All included paths exist
+ [ ] Install folder does not exist
 
 General Login (cases\general\GeneralLogin)
  [ ] Simple login is functional
@@ -70,8 +71,9 @@ General Model Included (cases\general\GeneralModelIncluded)
 
 General Session (cases\general\GeneralSession)
  [x] Sessions cleared
+ [ ] Session is created
  [x] At least one store is active
- [ ] Sessions are active
+ [x] Sessions are active
 
 Settings (cases\general\Settings)
  [x] Database constants defined

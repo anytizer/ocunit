@@ -7,10 +7,17 @@ Clone the project:
 
     git clone https://github.com/anytizer/opencart.phpunit.git
 
+
 Download the phpunit main phar file in the directory.
 
     cd opencart.phpunit
     wget https://phar.phpunit.de/phpunit-9.5.8.phar
+
+
+Update the composer dependencies:
+
+    composer update
+
 
 ## Configuration
 

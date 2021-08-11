@@ -24,6 +24,7 @@ SELECT
     p.price - mp.product_price profit,
     p.quantity stock,
     p.minimum,
+    p.subtract,
     p.image
 FROM oc_product p
 INNER JOIN oc_product_description pd ON pd.product_id = p.product_id
@@ -61,17 +62,22 @@ ORDER BY
             /**
              * @todo Read image within ./image dir
              */
+            $subtract_tick = $inventory["subtract"]=='1'?'Y':'N';
             $image_tick = is_file($inventory["image"])?"x":".";
             $download_tick = is_file($inventory["image"])?"x":"."; // @todo replace with download tick
             $inventory['price'] = number_format($inventory['price'], 2, ".", ",");
             $inventory['vprice'] = number_format($inventory['vprice'], 2, ".", ",");
             $inventory['profit'] = number_format($inventory['profit'], 2, ".", ",");
             
+            /**
+             * @see format.txt
+             */
             $line = "
-{$inventory['name']} #{$inventory['product_id']}
-    Profitability: {$inventory['price']} - {$inventory['vprice']} = {$inventory['profit']}
+{$inventory['name']} #{$inventory['product_id']}: {$inventory['minimum']} of {$inventory['stock']}: ±{$subtract_tick}
+{$inventory['cname']} - {$inventory['model']} | {$inventory['sku']}
+    {$inventory['price']} - {$inventory['vprice']} = {$inventory['profit']}
     [ {$image_tick} ] Image exists
-    [ {$download_tick} ] Download Exists
+    [ {$download_tick} ] Linked download exists
 ";
 
             fwrite($file, $line);

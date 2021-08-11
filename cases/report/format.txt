@@ -3,3 +3,10 @@ Minimum buy: x
 Vendor Price: yy.zz, Store Price: zz.aa, Profit: oo.oo
 zz.aa - yy.zz = oo.oo x stock
 image - exists
+
+
+Mittens #59 x 1 of 10: ±Y
+Apparels
+    5.00 - 0.00 = 0.00
+    [ . ] Image exists
+    [ . ] Download Exists

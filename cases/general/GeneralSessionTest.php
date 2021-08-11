@@ -8,7 +8,7 @@ use \library\MySQLPDO;
 
 class GeneralSessionTest extends TestCase
 {
-	public function testSessionsCleared()
+	public function testSessionsAreCleared()
 	{
 		$pdo = new MySQLPDO();
 
@@ -18,16 +18,22 @@ class GeneralSessionTest extends TestCase
 		$this->assertEquals(0, $total, "Session not cleared.");
 	}
 
+	/**
+	 * @todo Do NOT run against live database!
+	 */
 	public function testSessionIsCreated()
 	{
 		$pdo = new MySQLPDO();
 		$pdo->raw("DELETE FROM `".DB_PREFIX."session`;");
 
+		/**
+		 * Just browse the home page
+		 */
 		$catalog = new catalog();
 		$index = $catalog->browse_index();
 
 		$total = (int)$pdo->query("SELECT COUNT(*) total FROM `".DB_PREFIX."session`;")[0]["total"];
-		$this->assertEquals(0, $total, "Session not cleared.");
+		$this->assertEquals(1, $total, "Session not created.");
 	}
 
     public function testAtLeastOneStoreIsActive()

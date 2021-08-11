@@ -14,7 +14,7 @@ Download the phpunit main phar file in the directory.
 
 ## Configuration
 
-Edit `bootstrap.php` file for ponting the location of your opencart.
+Edit `bootstrap.php` file for pointing to the location of your opencart.
 
 ## Run
 

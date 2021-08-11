@@ -20,7 +20,7 @@ Admin Settings (cases\admin\AdminSettings)
 Api Login (cases\business\ApiLogin)
  [x] Get api token
  [x] List of all apis
- [ ] Routes
+ [ ] Access routes
 
 Business Index (cases\business\BusinessIndex)
  [ ] Index contains unique category names
@@ -55,7 +55,7 @@ General Database (cases\general\GeneralDatabase)
 
 General Include Paths (cases\general\GeneralIncludePaths)
  [x] All included paths exist
- [ ] Install folder does not exist
+ [ ] Php modules available
 
 General Login (cases\general\GeneralLogin)
  [ ] Simple login is functional
@@ -70,8 +70,8 @@ General Model Included (cases\general\GeneralModelIncluded)
  [ ] Model is included on demand
 
 General Session (cases\general\GeneralSession)
- [x] Sessions cleared
- [ ] Session is created
+ [x] Sessions are cleared
+ [x] Session is created
  [x] At least one store is active
  [x] Sessions are active
 
@@ -79,4 +79,9 @@ Settings (cases\general\Settings)
  [x] Database constants defined
  [x] Other settings defined in frontend
  [ ] Storage area is out of upload
+ [ ] Install folder does not exist
+ [ ] Admin folder renamed
+
+Report Stock Management (cases\general\ReportStockManagement)
+ [ ] Generate inventory report
 

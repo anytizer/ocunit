@@ -16,8 +16,7 @@ class GeneralModelIncludedTest extends TestCase
 
 		// include OC Framework
 		// $controller->model();
-
-		$pdo = new MySQLPDO();
+	
 		$this->markTestIncomplete("OC Framework not loaded for now.");
 	}
 }

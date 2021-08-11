@@ -5,6 +5,9 @@ use \PHPUnit\Framework\TestCase;
 
 class GeneralIncludePathsTest extends TestCase
 {
+	/**
+	 * Standard PHP Tests
+	 */
 	public function testAllIncludedPathsExist()
 	{
 		$paths = explode(PATH_SEPARATOR, ini_get("include_path"));
@@ -15,9 +18,10 @@ class GeneralIncludePathsTest extends TestCase
 		}
 	}
 
-	public function testInstallFolderDoesNotExist()
+	public function testPhpModulesAvailable()
 	{
-		$install = DIR_OPENCART."install";
-		$this->assertFalse(is_dir($install), "Remove install folder!");
+		// gd_info
+		// mb_string
+		$this->markTestIncomplete("PHP Modules testing");
 	}
 }

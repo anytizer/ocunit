@@ -1,4 +1,6 @@
 <?php
+define("__ROOT__", dirname(__FILE__));
+
 /**
  * Relative path where your OpenCart is installed.
  * Put without trailing /

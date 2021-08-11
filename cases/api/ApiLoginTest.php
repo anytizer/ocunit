@@ -51,7 +51,7 @@ class ApiLoginTest extends TestCase
         }
 	}
 
-	public function testRoutes()
+	public function testAccessRoutes()
 	{
 		$_GET = [
 			"route" => "api/cart/add",
@@ -80,5 +80,7 @@ class ApiLoginTest extends TestCase
 		// api/payment/address
 		// api/payment/methods
 		// api/payment/method
+
+		$this->markTestIncomplete("Unable to test routes.");
 	}
 }

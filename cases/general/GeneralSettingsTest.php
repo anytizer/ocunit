@@ -56,4 +56,16 @@ class SettingsTest extends TestCase
             $this->assertFalse(str_contains($parent, $folder), "Matches {$folder}.");
         }
     }
+
+    public function testInstallFolderDoesNotExist()
+	{
+		$install = DIR_OPENCART."install";
+		$this->assertFalse(is_dir($install), "Remove install folder!");
+	}
+
+	public function testAdminFolderRenamed()
+	{
+		$admin = DIR_OPENCART."admin";
+		$this->assertFalse(is_dir($admin), "Rename admin folder!");
+	}
 }

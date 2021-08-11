@@ -1,0 +1,5 @@
+[product name] #stock
+Minimum buy: x
+Vendor Price: yy.zz, Store Price: zz.aa, Profit: oo.oo
+zz.aa - yy.zz = oo.oo x stock
+image - exists

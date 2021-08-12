@@ -83,5 +83,6 @@ Settings (cases\general\Settings)
  [ ] Admin folder renamed
 
 Report Stock Management (cases\general\ReportStockManagement)
+ [ ] Fix shipping requires inventory subtraction
  [ ] Generate inventory report
 

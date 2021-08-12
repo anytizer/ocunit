@@ -89,6 +89,10 @@ $searches_in_html_pages = [
         [],
         [
             "<h1>Micro SD Card 32GB</h1>",
+            "<h2>$14.00</h2>",
+            "<li>Product Code: SDCARD</li>",
+            "<li>Availability: In Stock</li>",
+            "<li>Ex Tax: $10.00</li>",
         ]        
     ),
 

@@ -3,6 +3,7 @@
         "anytizer/relay.php": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit-selenium": "^9.0"
     }
 }

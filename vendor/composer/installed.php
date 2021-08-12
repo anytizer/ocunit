@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '0e62469e95e07b6fcf2d0538e67fcf8930868c29',
+        'reference' => 'f10f24befec4011d83af5a66f971186dea81fb49',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '0e62469e95e07b6fcf2d0538e67fcf8930868c29',
+            'reference' => 'f10f24befec4011d83af5a66f971186dea81fb49',
             'dev_requirement' => false,
         ),
         'anytizer/relay.php' => array(
@@ -166,6 +166,15 @@
             'install_path' => __DIR__ . '/../phpunit/phpunit',
             'aliases' => array(),
             'reference' => '191768ccd5c85513b4068bdbe99bb6390c7d54fb',
+            'dev_requirement' => true,
+        ),
+        'phpunit/phpunit-selenium' => array(
+            'pretty_version' => '9.0.0',
+            'version' => '9.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpunit/phpunit-selenium',
+            'aliases' => array(),
+            'reference' => '41711edd4dfcc5a0db2f8a22da6d2ddc908da741',
             'dev_requirement' => true,
         ),
         'sebastian/cli-parser' => array(

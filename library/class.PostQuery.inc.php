@@ -21,6 +21,7 @@ class PostQuery
         $this->page = $page;
         $this->get = $get;
         $this->post = $post;
+
         $this->lookups = $lookups;
     }
 }

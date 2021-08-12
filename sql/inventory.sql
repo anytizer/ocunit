@@ -15,6 +15,7 @@ SELECT
     p.minimum,
     p.shipping,
     p.subtract,
+    p.tax_class_id,
     p.image
 FROM oc_product p
 INNER JOIN oc_product_description pd ON pd.product_id = p.product_id

@@ -43,7 +43,6 @@ Catelog Index (cases\catalog\CatelogIndex)
 
 Catalog (cases\catalog\Catalog)
  [x] Index page
- [ ] Excluding tax tag present
  [ ] Inner pages need login
 
 General Database (cases\general\GeneralDatabase)

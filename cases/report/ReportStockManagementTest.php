@@ -10,9 +10,13 @@ class ReportStockManagementTest extends TestCase
     {
         $pdo = new MySQLPDO();
         
-        $sql = "UPDATE oc_product SET subtract='1' WHERE shipping='1';";
-        $pdo->fire($sql);
+        $sql = "UPDATE `".DB_PREFIX."product` SET subtract='1' WHERE shipping='1';";
+        $pdo->raw($sql);
         
+        // tax_class_id == 10 (Downloadable Prodcut)
+        $sql = "UPDATE `".DB_PREFIX."product` SET subtract='0' WHERE tax_class_id='10';";
+        $pdo->raw($sql);
+
         $this->markTestIncomplete("Shipping of tangiable products must require subtraction in inventory.");
     }
  
@@ -54,7 +58,7 @@ class ReportStockManagementTest extends TestCase
             $inventory['vprice'] = number_format($inventory['vprice'], 2, ".", ",");
             $inventory['profit'] = number_format($inventory['profit'], 2, ".", ",");
             $inventory['sku'] = $inventory['sku']!=""?$inventory['sku']:"____";
-            $inventory["download"] = ""; // @todo replace with downloadable file
+            $inventory["download"] = ""; // @todo obtain downloadable file
 
             /**
              * @todo Read image within ./image dir inside upload/.
@@ -75,7 +79,7 @@ class ReportStockManagementTest extends TestCase
              */
             $line = "
 {$inventory['name']} #{$inventory['product_id']}: {$inventory['minimum']} of {$inventory['stock']}: ±{$subtract_tick}
-{$inventory['cname']} - {$inventory['model']} | {$inventory['sku']}
+{$inventory['cname']} - {$inventory['model']} > {$inventory['sku']}
     {$inventory['price']} - {$inventory['vprice']} = {$inventory['profit']}
     [ {$image_tick} ] Image.   [ {$download_tick} ] Download.   [ {$profit_tick} ] Profits.
 ";

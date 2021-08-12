@@ -15,26 +15,6 @@ class CatalogTest extends TestCase
 
 		$this->assertTrue(str_contains($html, "<div id=\"toast\"></div>"), "Failed checking index page contains toast placeholder.");
 	}
-	
-	public function testExcludingTaxTagPresent()
-	{
-		// @todo Move parameters to Post Query configuration in bootstrap.php
-		// http://localhost/opencart/upload/index.php?route=product/product&language=en-gb&path=70_94&product_id=88
-		$_GET = [
-			"route" => "product/product",
-			"language" => "en-gb",
-			"language" => "70_94",
-			"product_id" => "88",
-		];
-		$_POST = [];
-		$relay = new relay();
-		$relay->headers([
-			"X-Protection-Token" => "",
-		]);
-		
-		$html = $relay->fetch(HTTP_SERVER."index.php");
-		$this->assertTrue(str_contains($html, "<span class=\"price-tax\">Ex Tax: $2.00</span>"), "Failed loading exclusive of tax tag in product details page.");
-	}
 
 	public function testInnerPagesNeedLogin()
 	{

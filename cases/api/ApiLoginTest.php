@@ -31,6 +31,9 @@ class ApiLoginTest extends TestCase
         $usernames = [];
         foreach($apis as $api)
         {
+			/**
+			 * @todo Replace numerals with empty strings.
+			 */
             $usernames[] = strtolower($api["username"]);
         }
 

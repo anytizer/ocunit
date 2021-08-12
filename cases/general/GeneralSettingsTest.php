@@ -53,11 +53,11 @@ class SettingsTest extends TestCase
         ];
         foreach($restrictions as $folder)
         {
-            $this->assertFalse(str_contains($parent, $folder), "/storage area not outside of {$folder}.");
+            $this->assertFalse(str_contains($parent, $folder), "/storage area is not outside of {$folder}.");
         }
     }
 
-    public function testInstallFolderDoesNotExist()
+    public function testInstallFolderIsRemoved()
 	{
 		$install = DIR_OPENCART."install";
 		$this->assertFalse(is_dir($install), "Remove install folder!");
@@ -69,8 +69,34 @@ class SettingsTest extends TestCase
 		$this->assertFalse(is_dir($admin), "Rename admin folder to something difficult!");
 	}
 
-    public function testFilePermissions()
+    public function testSystemFilePermissions()
     {
-        $this->markTestIncomplete("Look for file permissions.");
+        $folders = [
+            DIR_STORAGE."backup",
+            DIR_STORAGE."cache",
+            DIR_STORAGE."download",
+            DIR_STORAGE."logs",
+            DIR_STORAGE."marketplace",
+            DIR_STORAGE."session",
+            DIR_STORAGE."upload",
+            DIR_STORAGE."vendor",
+
+            // @todo look for subfolders as well
+            DIR_IMAGE,
+        ];
+        foreach($folders as $folder)
+        {
+            $can_write = is_writable($folder);
+            $this->assertTrue($can_write, "Cannot write to {$folder}.");
+        }
+        
+        
+        // images, images/category/n.png, sql backup logs,
+        // $this->markTestIncomplete("Look for system file permissions.");
+    }
+
+    public function testHtaccessDisablesDirectoryListing()
+    {
+        $this->markTestIncomplete("Look for Options -Indexes.");
     }
 }

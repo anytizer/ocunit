@@ -55,7 +55,7 @@ General Database (cases\general\GeneralDatabase)
 General Include Paths (cases\general\GeneralIncludePaths)
  [x] All included paths exist
  [x] Php modules available
- [ ] X debug should present and be disabled
+ [ ] X debug should present
 
 General Login (cases\general\GeneralLogin)
  [ ] Simple login is functional
@@ -79,8 +79,10 @@ Settings (cases\general\Settings)
  [x] Database constants defined
  [x] Other settings defined in frontend
  [ ] Storage area is out of upload
- [ ] Install folder does not exist
- [ ] Admin folder renamed
+ [ ] Install folder is removed
+ [ ] Admin folder be renamed
+ [x] System file permissions
+ [ ] Htaccess disables directory listing
 
 Report Stock Management (cases\general\ReportStockManagement)
  [ ] Fix shipping requires inventory subtraction

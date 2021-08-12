@@ -12,7 +12,7 @@ class AdminFeaturesTest extends TestCase
 
     public function testLoginFails()
     {
-        $this->markTestIncomplete("Failure case not implemented.");
+        $this->markTestIncomplete("Admin login failure case not implemented.");
     }
 
     public function testLoginSucceeds()

@@ -19,7 +19,7 @@ class AdminSettingsTest extends TestCase
     public function testOtherSettingsDefinedInBackend()
     {
         /**
-         * Tests of frontend Constants.
+         * Tests of frontend Constants - some of which are repeated in admin config.
          */
         // $this->assertTrue(defined('APPLICATION'));
         // $this->assertTrue(defined('HTTP_SERVER'));

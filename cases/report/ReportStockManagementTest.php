@@ -12,7 +12,7 @@ class ReportStockManagementTest extends TestCase
         # $pdo = new MySQLPDO();
         # $pdo->query($sql);
         
-        $this->markTestIncomplete("Shipping must require subtraction in inventory.");
+        $this->markTestIncomplete("Shipping of tangiable products must require subtraction in inventory.");
     }
  
     public function testGenerateInventoryReport()
@@ -24,9 +24,9 @@ class ReportStockManagementTest extends TestCase
         $total = count($data);
 
         /**
-         * Produce data log
+         * Produce data log: Printable report for the merchant.
          */
-        $this->logInventoryData($data);
+        $this->_logInventoryData($data);
 
         foreach($data as $inventory)
         {
@@ -38,7 +38,7 @@ class ReportStockManagementTest extends TestCase
         $this->assertEquals($records, $total, "Number of items in the database changed!");
     }
 
-    private function logInventoryData($data)
+    private function _logInventoryData($data)
     {
         $tick = "✓";
         $cross = "x";
@@ -47,7 +47,7 @@ class ReportStockManagementTest extends TestCase
         foreach($data as $inventory)
         {
             /**
-             * @todo Read image within ./image dir
+             * @todo Read image within ./image dir inside upload/.
              */
             $subtract_tick = $inventory["subtract"]=='1'?'Y':'N';
             $image_tick = is_file($inventory["image"])?$tick:".";
@@ -63,6 +63,7 @@ class ReportStockManagementTest extends TestCase
 
             /**
              * Product makes sufficient profit based on vendor price by 1.5 times business rule
+             * Final product price should include original shipping costs as well.
              * @todo see business rule for profit margnin
              */
             $profit_tick = $inventory["price"] >= $inventory["vprice"] * 1.5 ? $tick: $cross;
@@ -74,7 +75,7 @@ class ReportStockManagementTest extends TestCase
 {$inventory['name']} #{$inventory['product_id']}: {$inventory['minimum']} of {$inventory['stock']}: ±{$subtract_tick}
 {$inventory['cname']} - {$inventory['model']} | {$inventory['sku']}
     {$inventory['price']} - {$inventory['vprice']} = {$inventory['profit']}
-    [ {$image_tick} ] Image.   [ {$download_tick} ] Download.   [ {$profit_tick} ] Profit margin.
+    [ {$image_tick} ] Image.   [ {$download_tick} ] Download.   [ {$profit_tick} ] Profits.
 ";
 
             fwrite($file, $line);

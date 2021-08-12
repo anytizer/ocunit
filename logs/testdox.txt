@@ -86,6 +86,7 @@ Settings (cases\general\Settings)
  [x] Htaccess disables directory listing in admin
 
 Report Stock Management (cases\report\ReportStockManagement)
- [ ] Fix shipping requires inventory subtraction
+ [x] Fix shipping requires inventory subtraction
+ [x] Fix vendor pricing by product price
  [ ] Inventory report
 

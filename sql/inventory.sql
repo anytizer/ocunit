@@ -16,7 +16,7 @@ SELECT
     p.shipping,
     p.subtract,
     p.tax_class_id,
-    p.width, p.length, p.height,
+    p.width, p.length, p.height, p.length_class_id,
     p.weight, p.weight_class_id,
     p.image
 FROM oc_product p

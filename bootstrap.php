@@ -27,7 +27,7 @@ require_once("{$opencart_upload_folder}/config.php");
  * Admin config file
  * 
  * Silently load admin configurations too.
- * The admin config for contsants collide with that in frontend.
+ * The admin config for contsants will definitely collide with that in frontend.
  */
 ob_start();
 require_once("{$opencart_upload_folder}/admin/config.php");

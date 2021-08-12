@@ -6,6 +6,13 @@ use \library\MySQLPDO as MySQLPDO;
 
 class ReportStockManagementTest extends TestCase
 {
+    /**
+     * Business rules
+     */
+    public $multiplier = 2.5;
+    // eg. price = vprice * multiplier
+    // eg. vprice = price / multiplier
+
     public function testFixShippingRequiresInventorySubtraction()
     {
         $pdo = new MySQLPDO();
@@ -13,12 +20,32 @@ class ReportStockManagementTest extends TestCase
         $sql = "UPDATE `".DB_PREFIX."product` SET subtract='1' WHERE shipping='1';";
         $pdo->raw($sql);
         
-        // tax_class_id == 10 (Downloadable Prodcut)
+        // tax_class_id == 10 (Downloadable Product)
         $sql = "UPDATE `".DB_PREFIX."product` SET subtract='0' WHERE tax_class_id='10';";
         $pdo->raw($sql);
 
-        $this->markTestIncomplete("Shipping of tangiable products must require subtraction in inventory.");
+        $this->assertTrue(true, "Shipping of tangiable products must require subtraction in inventory.");
     }
+
+    /**
+     * @todo Once vendor pricing managed, disable this fixture.
+     */
+    public function testFixVendorPricingByProductPrice()
+    {
+        $pdo = new MySQLPDO();
+        
+        $sql = "DELETE FROM tw_manufacturer_prices;";
+        $pdo->raw($sql);
+
+        // @todo Replace 2.5 divider by business rule.
+        // 13 = Internal Sourcing
+        $sql = "INSERT INTO tw_manufacturer_prices SELECT NULL, 13, product_id, price/{$this->multiplier} FROM oc_product;";
+        $pdo->raw($sql);
+
+        $this->assertTrue(true, "Vendor prices are assigned to Internal Sources.");
+    }
+
+    // @todo update product prices based on vendor pricing x multiplier
  
     public function testInventoryReport()
     {
@@ -38,6 +65,16 @@ class ReportStockManagementTest extends TestCase
             $taxes[$tax["tax_class_id"]] = $tax["title"];
         }
 
+        $lengths = [
+            "0" => "None",
+        ];
+        $length_class_sql = "SELECT length_class_id, unit FROM `oc_length_class_description` WHERE language_id=1;";
+        $lengths_db = $pdo->query($length_class_sql);
+        foreach($lengths_db as $length)
+        {
+            $lengths[$length["length_class_id"]] = $length["unit"];
+        }
+
         $weights = [
             "0" => "None",
         ];
@@ -51,10 +88,14 @@ class ReportStockManagementTest extends TestCase
         /**
          * Produce data log as printable report for the merchant.
          */
-        $this->_logInventoryData($data, $taxes, $weights);
+        $this->_logInventoryData($data, $taxes, $lengths, $weights);
 
         foreach($data as $inventory)
         {
+            $pricing_managed = $inventory["price"] >= $inventory["vprice"] * $this->multiplier;
+            $this->assertTrue($pricing_managed, "Probably loss in pricing based on vendor price.");
+
+
             $this->assertNotNull($inventory["vprice"], "Missing vendor price for product id #".$inventory["product_id"]);
             $this->assertTrue($inventory["price"] > $inventory["vprice"], "Loss in inventory/vendor pricing.");
         }
@@ -63,7 +104,7 @@ class ReportStockManagementTest extends TestCase
         $this->assertEquals($records, $total, "Number of products in the database changed!");
     }
 
-    private function _logInventoryData($data=[], $taxes=[], $weights=[])
+    private function _logInventoryData($data=[], $taxes=[], $lengths=[], $weights=[])
     {
         $tick = "✓";
         $cross = "x";
@@ -72,7 +113,7 @@ class ReportStockManagementTest extends TestCase
         foreach($data as $inventory)
         {
             /**
-             * Overwrite the data
+             * Sanitize the data
              */
             $inventory['price'] = number_format($inventory['price'], 2, ".", ",");
             $inventory['vprice'] = number_format($inventory['vprice'], 2, ".", ",");
@@ -81,6 +122,7 @@ class ReportStockManagementTest extends TestCase
             $inventory['length'] = number_format($inventory['length'], 2, ".", ",");
             $inventory['width'] = number_format($inventory['width'], 2, ".", ",");
             $inventory['height'] = number_format($inventory['height'], 2, ".", ",");
+            $inventory['weight'] = number_format($inventory['weight'], 2, ".", ",");
 
             $inventory['sku'] = $inventory['sku']!=""?$inventory['sku']:"____";
             $inventory["download"] = ""; // @todo obtain downloadable file
@@ -100,21 +142,22 @@ class ReportStockManagementTest extends TestCase
             $profit_tick = $inventory["price"] >= $inventory["vprice"] * 1.5 ? $tick: $cross;
 
             $tax_class_name = $taxes[$inventory['tax_class_id']];
+            $length_unit = $lengths[$inventory['length_class_id']];
             $weight_unit = $weights[$inventory['weight_class_id']];
             
             /**
              * @see format.txt
              */
-            $line = "
+            $product_information = "
 {$inventory['name']} #{$inventory['product_id']}: {$inventory['minimum']} of {$inventory['stock']}: ±{$subtract_tick}
 {$inventory['cname']} - {$inventory['model']} > {$inventory['sku']}
 Tax Class: {$tax_class_name} #{$inventory['tax_class_id']}
-{$inventory['length']} x {$inventory['width']} x {$inventory['height']}: @{$inventory['weight_class_id']} - {$weight_unit}
+{$inventory['length']} x {$inventory['width']} x {$inventory['height']} {$length_unit}: @{$inventory['weight']} {$weight_unit}
     {$inventory['price']} - {$inventory['vprice']} = {$inventory['profit']}
     [ {$image_tick} ] Image.   [ {$download_tick} ] Download.   [ {$profit_tick} ] Profits.
 ";
 
-            fwrite($file, $line);
+            fwrite($file, $product_information);
         }
 
         fclose($file);

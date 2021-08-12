@@ -1,12 +1,14 @@
-[product name] #stock
-Minimum buy: x
-Vendor Price: yy.zz, Store Price: zz.aa, Profit: oo.oo
-zz.aa - yy.zz = oo.oo x stock
-image - exists
+Product Name #ID: Min Buy of Stock: ±Y/N
+Apparels - MODEL > SKU
+Tax Class: Taxable iten name #ID
+L x W x H @weight_class_id: Weight Unit
+    Price - VPrice = Profit
+    [ . ] Image.   [ . ] Download.   [ ✓ ] Profits.
 
 
-Mittens #59 x 1 of 10: ±Y
-Apparels
+Mittens #59: 1 of 10: ±Y
+Apparels - MITTENS > ____
+Tax Class: Taxable Goods #9
+0.00 x 0.00 x 0.00: @1 - kg
     5.00 - 0.00 = 0.00
-    [ . ] Image exists
-    [ . ] Download Exists
+    [ . ] Image.   [ . ] Download.   [ ✓ ] Profits.

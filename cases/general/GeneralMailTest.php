@@ -24,6 +24,6 @@ class GeneralMailTest extends TestCase
 
     public function testSendgridImplemented()
     {
-        $this->markTestIncomplete("Send email using Sendgrid SMTP.");
+        $this->markTestIncomplete("Send email using Sendgrid SMTP/API.");
     }
 }

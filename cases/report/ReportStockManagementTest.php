@@ -28,10 +28,30 @@ class ReportStockManagementTest extends TestCase
         $data = $pdo->query($sql);
         $total = count($data);
 
+        $taxes = [
+            "0" => "None",
+        ];
+        $taxes_class_sql = "SELECT tax_class_id, title FROM `oc_tax_class`;";
+        $taxes_db = $pdo->query($taxes_class_sql);
+        foreach($taxes_db as $tax)
+        {
+            $taxes[$tax["tax_class_id"]] = $tax["title"];
+        }
+
+        $weights = [
+            "0" => "None",
+        ];
+        $weight_class_sql = "SELECT weight_class_id, unit FROM `oc_weight_class_description` WHERE language_id=1;";
+        $weights_db = $pdo->query($weight_class_sql);
+        foreach($weights_db as $weight)
+        {
+            $weights[$weight["weight_class_id"]] = $weight["unit"];
+        }
+
         /**
          * Produce data log as printable report for the merchant.
          */
-        $this->_logInventoryData($data);
+        $this->_logInventoryData($data, $taxes, $weights);
 
         foreach($data as $inventory)
         {
@@ -43,7 +63,7 @@ class ReportStockManagementTest extends TestCase
         $this->assertEquals($records, $total, "Number of products in the database changed!");
     }
 
-    private function _logInventoryData($data=[])
+    private function _logInventoryData($data=[], $taxes=[], $weights=[])
     {
         $tick = "✓";
         $cross = "x";
@@ -57,6 +77,11 @@ class ReportStockManagementTest extends TestCase
             $inventory['price'] = number_format($inventory['price'], 2, ".", ",");
             $inventory['vprice'] = number_format($inventory['vprice'], 2, ".", ",");
             $inventory['profit'] = number_format($inventory['profit'], 2, ".", ",");
+
+            $inventory['length'] = number_format($inventory['length'], 2, ".", ",");
+            $inventory['width'] = number_format($inventory['width'], 2, ".", ",");
+            $inventory['height'] = number_format($inventory['height'], 2, ".", ",");
+
             $inventory['sku'] = $inventory['sku']!=""?$inventory['sku']:"____";
             $inventory["download"] = ""; // @todo obtain downloadable file
 
@@ -73,6 +98,9 @@ class ReportStockManagementTest extends TestCase
              * @todo see business rule for profit margnin
              */
             $profit_tick = $inventory["price"] >= $inventory["vprice"] * 1.5 ? $tick: $cross;
+
+            $tax_class_name = $taxes[$inventory['tax_class_id']];
+            $weight_unit = $weights[$inventory['weight_class_id']];
             
             /**
              * @see format.txt
@@ -80,6 +108,8 @@ class ReportStockManagementTest extends TestCase
             $line = "
 {$inventory['name']} #{$inventory['product_id']}: {$inventory['minimum']} of {$inventory['stock']}: ±{$subtract_tick}
 {$inventory['cname']} - {$inventory['model']} > {$inventory['sku']}
+Tax Class: {$tax_class_name} #{$inventory['tax_class_id']}
+{$inventory['length']} x {$inventory['width']} x {$inventory['height']}: @{$inventory['weight_class_id']} - {$weight_unit}
     {$inventory['price']} - {$inventory['vprice']} = {$inventory['profit']}
     [ {$image_tick} ] Image.   [ {$download_tick} ] Download.   [ {$profit_tick} ] Profits.
 ";

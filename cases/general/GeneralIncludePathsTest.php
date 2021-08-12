@@ -14,7 +14,7 @@ class GeneralIncludePathsTest extends TestCase
 		
 		foreach($paths as $path)
 		{
-			$this->assertTrue(is_dir($path), "Path does not exist: {$path}");
+			$this->assertTrue(is_dir($path), "Include path does not exist: {$path}.");
 		}
 	}
 
@@ -26,7 +26,7 @@ class GeneralIncludePathsTest extends TestCase
 		$this->assertTrue(function_exists("mb_check_encoding"), "Missing extension: MB String");
 	}
 
-	public function testXDebugShouldPresent()
+	public function testXDebugShouldBePresent()
 	{
 		/**
 		 * xDebug must be present and disabled bu default on the server environment

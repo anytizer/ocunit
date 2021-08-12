@@ -29,7 +29,8 @@ Windows: `run.bat` or Linux: `run8.0.sh`
 
 ## log
 
-`logs/testdox.log`
+* `logs/testdox.log`
+* `logs/inventory.log` reports on products and prices
 
 
 # Inspirations

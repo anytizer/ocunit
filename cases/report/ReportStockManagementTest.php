@@ -1,5 +1,5 @@
 <?php
-namespace cases\general;
+namespace cases\report;
 
 use \PHPUnit\Framework\TestCase;
 use \library\MySQLPDO as MySQLPDO;
@@ -8,14 +8,15 @@ class ReportStockManagementTest extends TestCase
 {
     public function testFixShippingRequiresInventorySubtraction()
     {
-        # $sql = "UPDATE oc_product SET subtract='1' WHERE shipping='1'";
-        # $pdo = new MySQLPDO();
-        # $pdo->query($sql);
+        $pdo = new MySQLPDO();
+        
+        $sql = "UPDATE oc_product SET subtract='1' WHERE shipping='1';";
+        $pdo->fire($sql);
         
         $this->markTestIncomplete("Shipping of tangiable products must require subtraction in inventory.");
     }
  
-    public function testGenerateInventoryReport()
+    public function testInventoryReport()
     {
         $pdo = new MySQLPDO();
 
@@ -24,7 +25,7 @@ class ReportStockManagementTest extends TestCase
         $total = count($data);
 
         /**
-         * Produce data log: Printable report for the merchant.
+         * Produce data log as printable report for the merchant.
          */
         $this->_logInventoryData($data);
 
@@ -34,11 +35,11 @@ class ReportStockManagementTest extends TestCase
             $this->assertTrue($inventory["price"] > $inventory["vprice"], "Loss in inventory/vendor pricing.");
         }
 
-        $records = 91;
-        $this->assertEquals($records, $total, "Number of items in the database changed!");
+        $records = 91; // how many total products are tehre in one language (en-gb)
+        $this->assertEquals($records, $total, "Number of products in the database changed!");
     }
 
-    private function _logInventoryData($data)
+    private function _logInventoryData($data=[])
     {
         $tick = "✓";
         $cross = "x";
@@ -47,19 +48,20 @@ class ReportStockManagementTest extends TestCase
         foreach($data as $inventory)
         {
             /**
-             * @todo Read image within ./image dir inside upload/.
-             */
-            $subtract_tick = $inventory["subtract"]=='1'?'Y':'N';
-            $image_tick = is_file($inventory["image"])?$tick:".";
-            $download_tick = is_file($inventory["image"])?$tick:"."; // @todo replace with download tick
-
-            /**
              * Overwrite the data
              */
             $inventory['price'] = number_format($inventory['price'], 2, ".", ",");
             $inventory['vprice'] = number_format($inventory['vprice'], 2, ".", ",");
             $inventory['profit'] = number_format($inventory['profit'], 2, ".", ",");
             $inventory['sku'] = $inventory['sku']!=""?$inventory['sku']:"____";
+            $inventory["download"] = ""; // @todo replace with downloadable file
+
+            /**
+             * @todo Read image within ./image dir inside upload/.
+             */
+            $subtract_tick = $inventory["subtract"]=='1'?'Y':'N';
+            $image_tick = is_file($inventory["image"])?$tick:".";
+            $download_tick = is_file($inventory["download"])?$tick:".";
 
             /**
              * Product makes sufficient profit based on vendor price by 1.5 times business rule

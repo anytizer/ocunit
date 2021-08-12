@@ -63,7 +63,7 @@ class SettingsTest extends TestCase
 		$this->assertFalse(is_dir($install), "Remove install folder!");
 	}
 
-	public function testAdminFolderBeRenamed()
+	public function testAdminFolderIsRenamed()
 	{
 		$admin = DIR_OPENCART."admin";
 		$this->assertFalse(is_dir($admin), "Rename admin folder to something difficult!");
@@ -90,13 +90,19 @@ class SettingsTest extends TestCase
             $this->assertTrue($can_write, "Cannot write to {$folder}.");
         }
         
-        
         // images, images/category/n.png, sql backup logs,
         // $this->markTestIncomplete("Look for system file permissions.");
     }
 
-    public function testHtaccessDisablesDirectoryListing()
+    public function testHtaccessDisablesDirectoryListingInFrontend()
     {
-        $this->markTestIncomplete("Look for Options -Indexes.");
+        $htaccess = file_get_contents(DIR_OPENCART.".htaccess");
+        $this->assertEquals($htaccess, "Options -Indexes", "Invalid .htaccess file in frontend.");
+    }
+
+    public function testHtaccessDisablesDirectoryListingInAdmin()
+    {
+        $htaccess_admin = file_get_contents(DIR_OPENCART."admin/.htaccess");
+        $this->assertEquals($htaccess_admin, "Options -Indexes", "Invalid .htaccess file in admin.");
     }
 }

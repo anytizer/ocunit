@@ -33,6 +33,7 @@ Business Pricing (cases\business\BusinessPricing)
 
 Catalog Image (cases\catalog\CatalogImage)
  [ ] Category images exist
+ [ ] Product images exist
  [ ] Image files do not contain scripts
  [ ] Category images are valid images
  [ ] Product images are valid images
@@ -55,7 +56,7 @@ General Database (cases\general\GeneralDatabase)
 General Include Paths (cases\general\GeneralIncludePaths)
  [x] All included paths exist
  [x] Php modules available
- [ ] X debug should present
+ [ ] X debug should be present
 
 General Login (cases\general\GeneralLogin)
  [ ] Simple login is functional
@@ -80,11 +81,12 @@ Settings (cases\general\Settings)
  [x] Other settings defined in frontend
  [ ] Storage area is out of upload
  [ ] Install folder is removed
- [ ] Admin folder be renamed
+ [ ] Admin folder is renamed
  [x] System file permissions
- [ ] Htaccess disables directory listing
+ [x] Htaccess disables directory listing in frontend
+ [x] Htaccess disables directory listing in admin
 
-Report Stock Management (cases\general\ReportStockManagement)
+Report Stock Management (cases\report\ReportStockManagement)
  [ ] Fix shipping requires inventory subtraction
- [ ] Generate inventory report
+ [ ] Inventory report
 

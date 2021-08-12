@@ -42,8 +42,7 @@ Catelog Index (cases\catalog\CatelogIndex)
 
 Catalog (cases\catalog\Catalog)
  [x] Index page
- [x] Products listed under a page
- [x] Tax tag present
+ [ ] Excluding tax tag present
  [ ] Inner pages need login
 
 General Database (cases\general\GeneralDatabase)
@@ -55,7 +54,8 @@ General Database (cases\general\GeneralDatabase)
 
 General Include Paths (cases\general\GeneralIncludePaths)
  [x] All included paths exist
- [ ] Php modules available
+ [x] Php modules available
+ [ ] X debug should present and be disabled
 
 General Login (cases\general\GeneralLogin)
  [ ] Simple login is functional

@@ -18,24 +18,27 @@ class ReportStockManagementTest extends TestCase
     public function testGenerateInventoryReport()
     {
         $pdo = new MySQLPDO();
-        $sql = file_get_contents(__ROOT__."/sql/inventory.sql");
 
+        $sql = file_get_contents(__ROOT__."/sql/inventory.sql");
         $data = $pdo->query($sql);
         $total = count($data);
 
-        $this->log($data);
+        /**
+         * Produce data log
+         */
+        $this->logInventoryData($data);
 
         foreach($data as $inventory)
         {
-            $this->assertTNotNull($inventory["vprice"], "Missing vendor price for product id #".$inventory["product_id"]);
+            $this->assertNotNull($inventory["vprice"], "Missing vendor price for product id #".$inventory["product_id"]);
             $this->assertTrue($inventory["price"] > $inventory["vprice"], "Loss in inventory/vendor pricing.");
         }
 
         $records = 91;
-        $this->assertEquals($records, $total);
+        $this->assertEquals($records, $total, "Number of items in the database changed!");
     }
 
-    private function log($data)
+    private function logInventoryData($data)
     {
         $tick = "✓";
         $cross = "x";
@@ -49,9 +52,14 @@ class ReportStockManagementTest extends TestCase
             $subtract_tick = $inventory["subtract"]=='1'?'Y':'N';
             $image_tick = is_file($inventory["image"])?$tick:".";
             $download_tick = is_file($inventory["image"])?$tick:"."; // @todo replace with download tick
+
+            /**
+             * Overwrite the data
+             */
             $inventory['price'] = number_format($inventory['price'], 2, ".", ",");
             $inventory['vprice'] = number_format($inventory['vprice'], 2, ".", ",");
             $inventory['profit'] = number_format($inventory['profit'], 2, ".", ",");
+            $inventory['sku'] = $inventory['sku']!=""?$inventory['sku']:"____";
 
             /**
              * Product makes sufficient profit based on vendor price by 1.5 times business rule

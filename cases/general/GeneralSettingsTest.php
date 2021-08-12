@@ -53,7 +53,7 @@ class SettingsTest extends TestCase
         ];
         foreach($restrictions as $folder)
         {
-            $this->assertFalse(str_contains($parent, $folder), "Matches {$folder}.");
+            $this->assertFalse(str_contains($parent, $folder), "/storage area not outside of {$folder}.");
         }
     }
 
@@ -63,9 +63,14 @@ class SettingsTest extends TestCase
 		$this->assertFalse(is_dir($install), "Remove install folder!");
 	}
 
-	public function testAdminFolderRenamed()
+	public function testAdminFolderBeRenamed()
 	{
 		$admin = DIR_OPENCART."admin";
-		$this->assertFalse(is_dir($admin), "Rename admin folder!");
+		$this->assertFalse(is_dir($admin), "Rename admin folder to something difficult!");
 	}
+
+    public function testFilePermissions()
+    {
+        $this->markTestIncomplete("Look for file permissions.");
+    }
 }

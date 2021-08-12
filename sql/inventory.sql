@@ -1,3 +1,5 @@
+-- Single sql file for generating inventory report.
+-- Used within phpunit test script.
 SELECT
     p.product_id,
     cd.name cname,
@@ -11,8 +13,8 @@ SELECT
     p.price - mp.product_price profit,
     p.quantity stock,
     p.minimum,
-    p.subtract,
     p.shipping,
+    p.subtract,
     p.image
 FROM oc_product p
 INNER JOIN oc_product_description pd ON pd.product_id = p.product_id

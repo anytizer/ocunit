@@ -20,8 +20,22 @@ class GeneralIncludePathsTest extends TestCase
 
 	public function testPhpModulesAvailable()
 	{
-		// gd_info
-		// mb_string
-		$this->markTestIncomplete("PHP Modules testing");
+		$this->assertTrue(function_exists("spl_autoload_register"), "Missing extension: SPL");
+		$this->assertTrue(function_exists("gd_info"), "Missing extension: GD");
+		$this->assertTrue(function_exists("curl_init"), "Missing extension: cURL");
+		$this->assertTrue(function_exists("mb_check_encoding"), "Missing extension: MB String");
+	}
+
+	public function testXDebugShouldPresent()
+	{
+		/**
+		 * xDebug must be present and disabled bu default on the server environment
+		 */
+		$autostart = ini_get("xdebug.remote_autostart")?(int)ini_get("xdebug.remote_autostart"):-1;
+		$this->assertEquals(0, $autostart, "xDebug should NOT autostart.");
+
+		# xdebug.profiler_enable=0
+		
+		//$this->assertTrue(function_exists("xdebug_get_profiler_filename"), "Missing extension: xDebug");
 	}
 }

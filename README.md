@@ -35,7 +35,7 @@ Edit `bootstrap.php` file for pointing to the location of your opencart.
 
 ## Run
 
-Under Windows: `run8.0.bat` or Under Linux: `run8.0.sh`.
+Under Windows: `run8.0.bat` or Under Linux: `./run8.0.sh`.
 
 
 ## Log

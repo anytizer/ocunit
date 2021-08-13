@@ -14,7 +14,7 @@ class BusinessRules
     public $downloadable_product_tax_class_id = 10;
 
     /**
-     * Store's internal Manufacturer ID
+     * Store's internal/own Manufacturer ID
      */
     public $internal_sourcing_manufacturer_id = 13;
 }

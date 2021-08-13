@@ -40,7 +40,7 @@ class CatalogTest extends TestCase
 		foreach($client_links as $link_name => $route)
 		{
 			// open link
-			// html must see LOGIN REQUIRJED
+			// html must see LOGIN REQUIRED
 			$_GET = [
 				"route" => $route,
 				"language" => "en-gb",

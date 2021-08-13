@@ -26,7 +26,7 @@ class IncludePathsTest extends TestCase
 		$this->assertTrue(function_exists("mb_check_encoding"), "Missing extension: MB String");
 	}
 
-	public function testXDebugModule()
+	public function testXDebugModuleAvailable()
 	{
 		$this->assertTrue(function_exists("xdebug_break"), "Missing extension: xDebug.");
 	}

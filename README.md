@@ -1,5 +1,14 @@
 # opencart.phpunit
+
 Test scripts for OpenCart based on PHPUnit
+
+
+## Environment
+
+* PHP 8+
+* PHPUnit 9+
+* [OpenCart](https://github.com/opencart/opencart) 4+ (master branch)
+
 
 ## Installation
 
@@ -23,11 +32,13 @@ Update the composer dependencies:
 
 Edit `bootstrap.php` file for pointing to the location of your opencart.
 
+
 ## Run
 
-Windows: `run.bat` or Linux: `run8.0.sh`
+Under Windows: `run8.0.bat` or Under Linux: `run8.0.sh`.
 
-## log
+
+## Log
 
 * `logs/testdox.log`
 * `logs/inventory.log` reports on products and prices

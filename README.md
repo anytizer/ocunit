@@ -25,7 +25,8 @@ Download the phpunit main phar file in the directory.
 
 Update the composer dependencies:
 
-    composer update
+    wget https://getcomposer.org/download/latest-stable/composer.phar
+    php composer.phar update
 
 
 ## Configuration

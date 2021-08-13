@@ -88,5 +88,5 @@ Settings (cases\general\Settings)
 Report Stock Management (cases\report\ReportStockManagement)
  [x] Fix shipping requires inventory subtraction
  [x] Fix vendor pricing by product price
- [ ] Inventory report
+ [x] Inventory report
 

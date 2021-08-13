@@ -53,7 +53,7 @@ class ReportStockManagementTest extends TestCase
 
         $sql = file_get_contents(__ROOT__."/sql/inventory.sql");
         $data = $pdo->query($sql);
-        $total = count($data);
+        $total_products = count($data);
 
         $taxes = [
             "0" => "None",
@@ -92,16 +92,14 @@ class ReportStockManagementTest extends TestCase
 
         foreach($data as $inventory)
         {
-            $pricing_managed = $inventory["price"] >= $inventory["vprice"] * $this->multiplier;
-            $this->assertTrue($pricing_managed, "Probably loss in pricing based on vendor price.");
+            $this->assertNotNull($inventory["vprice"], "Missing vendor price for product {$inventory['name']} #{$inventory['product_id']}");
 
-
-            $this->assertNotNull($inventory["vprice"], "Missing vendor price for product id #".$inventory["product_id"]);
-            $this->assertTrue($inventory["price"] > $inventory["vprice"], "Loss in inventory/vendor pricing.");
+            $pricing_profitability_managed = $inventory["price"] >= $inventory["vprice"] * $this->multiplier;
+            $this->assertTrue($pricing_profitability_managed, "Probably loss in pricing based on vendor price.");
         }
 
-        $records = 91; // how many total products are tehre in one language (en-gb)
-        $this->assertEquals($records, $total, "Number of products in the database changed!");
+        $records = 91; // How many actual products are there in one language (en-gb) in a store?
+        $this->assertEquals($records, $total_products, "Number of products in the database changed! Update \$records.");
     }
 
     private function _logInventoryData($data=[], $taxes=[], $lengths=[], $weights=[])

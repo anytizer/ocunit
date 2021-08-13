@@ -3,7 +3,7 @@ namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
 
-class AdminFeaturesTest extends TestCase
+class FeaturesTest extends TestCase
 {
 	public function testAdminBruteForceLoginDiscouraged()
     {

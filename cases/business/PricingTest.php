@@ -3,7 +3,7 @@ namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
 
-class BusinessPricingTest extends TestCase
+class PricingTest extends TestCase
 {
 	public function testVendorPriceExists()
 	{

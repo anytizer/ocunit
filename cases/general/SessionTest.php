@@ -6,7 +6,7 @@ use \anytizer\relay as relay;
 use \library\catalog;
 use \library\MySQLPDO;
 
-class GeneralSessionTest extends TestCase
+class SessionTest extends TestCase
 {
 	public function testSessionsAreCleared()
 	{

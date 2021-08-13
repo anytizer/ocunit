@@ -6,7 +6,7 @@ use \anytizer\relay as relay;
 use \library\catalog as catalog;
 use \library\MySQLPDO;
 
-class CatelogIndexTest extends TestCase
+class IndexTest extends TestCase
 {
 	public function testSearchesInPages()
 	{

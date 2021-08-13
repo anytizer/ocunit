@@ -4,47 +4,20 @@ namespace cases\report;
 use \PHPUnit\Framework\TestCase;
 use \library\MySQLPDO as MySQLPDO;
 
-class ReportStockManagementTest extends TestCase
+class InventoryTest extends TestCase
 {
-    /**
-     * Business rules
-     */
+     /**
+      * eg. price = vprice * multiplier
+      * eg. vprice = price / multiplier
+      */
     public $multiplier = 2.5;
-    // eg. price = vprice * multiplier
-    // eg. vprice = price / multiplier
-
-    public function testFixShippingRequiresInventorySubtraction()
-    {
-        $pdo = new MySQLPDO();
-        
-        $sql = "UPDATE `".DB_PREFIX."product` SET subtract='1' WHERE shipping='1';";
-        $pdo->raw($sql);
-        
-        // tax_class_id == 10 (Downloadable Product)
-        $sql = "UPDATE `".DB_PREFIX."product` SET subtract='0' WHERE tax_class_id='10';";
-        $pdo->raw($sql);
-
-        $this->assertTrue(true, "Shipping of tangiable products must require subtraction in inventory.");
-    }
 
     /**
-     * @todo Once vendor pricing managed, disable this fixture.
+     * How many actual products are there in one language (en-gb) in a store?
      */
-    public function testFixVendorPricingByProductPrice()
-    {
-        $pdo = new MySQLPDO();
-        
-        $sql = "DELETE FROM tw_manufacturer_prices;";
-        $pdo->raw($sql);
+    public $total_products = 91;
 
-        // @todo Replace 2.5 divider by business rule.
-        // 13 = Internal Sourcing
-        $sql = "INSERT INTO tw_manufacturer_prices SELECT NULL, 13, product_id, price/{$this->multiplier} FROM oc_product;";
-        $pdo->raw($sql);
-
-        $this->assertTrue(true, "Vendor prices are assigned to Internal Sources.");
-    }
-
+ 
     // @todo update product prices based on vendor pricing x multiplier
  
     public function testInventoryReport()
@@ -53,7 +26,7 @@ class ReportStockManagementTest extends TestCase
 
         $sql = file_get_contents(__ROOT__."/sql/inventory.sql");
         $data = $pdo->query($sql);
-        $total_products = count($data);
+        $total_products_counted = count($data);
 
         $taxes = [
             "0" => "None",
@@ -98,8 +71,7 @@ class ReportStockManagementTest extends TestCase
             $this->assertTrue($pricing_profitability_managed, "Probably loss in pricing based on vendor price.");
         }
 
-        $records = 91; // How many actual products are there in one language (en-gb) in a store?
-        $this->assertEquals($records, $total_products, "Number of products in the database changed! Update \$records.");
+        $this->assertEquals($this->total_products, $total_products_counted, "Number of products in the database changed! Update \$records.");
     }
 
     private function _logInventoryData($data=[], $taxes=[], $lengths=[], $weights=[])

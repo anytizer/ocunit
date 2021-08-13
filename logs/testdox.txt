@@ -1,7 +1,7 @@
-Admin Extensions (cases\admin\AdminExtensions)
+Extensions (cases\admin\Extensions)
  [x] Custom extension tables present
 
-Admin Features (cases\admin\AdminFeatures)
+Features (cases\admin\Features)
  [ ] Admin brute force login discouraged
  [ ] Login fails
  [ ] Login succeeds
@@ -13,63 +13,66 @@ Admin Features (cases\admin\AdminFeatures)
  [ ] Low tax in alberta
  [ ] Free shipping in edmonton
 
-Admin Settings (cases\admin\AdminSettings)
+Order Cancel (cases\admin\OrderCancel)
+ [ ] Order cancelled properly
+
+Settings (cases\admin\Settings)
  [x] Database constants defined
  [x] Other settings defined in backend
 
-Api Login (cases\business\ApiLogin)
+Login (cases\business\Login)
  [x] Get api token
  [x] List of all apis
  [ ] Access routes
 
-Business Index (cases\business\BusinessIndex)
+Index (cases\business\Index)
  [ ] Index contains unique category names
 
-Business Pricing (cases\business\BusinessPricing)
+Pricing (cases\business\Pricing)
  [ ] Vendor price exists
  [ ] Product price is greater than vendor price
  [ ] Product price is greater than vendor price even after discounts
  [ ] Price change history maintained
 
-Catalog Image (cases\catalog\CatalogImage)
+Catalog (cases\catalog\Catalog)
+ [x] Index page
+ [ ] Inner pages need login
+
+Image (cases\catalog\Image)
  [ ] Category images exist
  [ ] Product images exist
  [ ] Image files do not contain scripts
  [ ] Category images are valid images
  [ ] Product images are valid images
 
-Catelog Index (cases\catalog\CatelogIndex)
+Index (cases\catalog\Index)
  [x] Searches in pages
 
-Catalog (cases\catalog\Catalog)
- [x] Index page
- [ ] Inner pages need login
-
-General Database (cases\general\GeneralDatabase)
+Database (cases\general\Database)
  [x] Can connect to the database
  [x] Settings count match
  [x] At least one language is active
  [x] Admin paginates 100 items
  [x] Single currency operation
 
-General Include Paths (cases\general\GeneralIncludePaths)
+Include Paths (cases\general\IncludePaths)
  [x] All included paths exist
  [x] Php modules available
  [ ] X debug should be present
 
-General Login (cases\general\GeneralLogin)
+Login (cases\general\Login)
  [ ] Simple login is functional
  [ ] Protected login is functional
 
-General Mail (cases\general\GeneralMail)
+Mail (cases\general\Mail)
  [ ] Email sent from windows machine
  [ ] Email sent from linux machine
  [ ] Sendgrid implemented
 
-General Model Included (cases\general\GeneralModelIncluded)
+Model Included (cases\general\ModelIncluded)
  [ ] Model is included on demand
 
-General Session (cases\general\GeneralSession)
+Session (cases\general\Session)
  [x] Sessions are cleared
  [x] Session is created
  [x] At least one store is active
@@ -85,8 +88,10 @@ Settings (cases\general\Settings)
  [x] Htaccess disables directory listing in frontend
  [x] Htaccess disables directory listing in admin
 
-Report Stock Management (cases\report\ReportStockManagement)
+Fixtures (cases\report\Fixtures)
  [x] Fix shipping requires inventory subtraction
  [x] Fix vendor pricing by product price
+
+Inventory (cases\report\Inventory)
  [x] Inventory report
 

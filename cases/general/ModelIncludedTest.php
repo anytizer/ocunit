@@ -5,7 +5,7 @@ use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
 use \library\MySQLPDO;
 
-class GeneralModelIncludedTest extends TestCase
+class ModelIncludedTest extends TestCase
 {
 	public function testModelIsIncludedOnDemand()
 	{

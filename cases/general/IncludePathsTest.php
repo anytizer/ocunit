@@ -3,7 +3,7 @@ namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
 
-class GeneralIncludePathsTest extends TestCase
+class IncludePathsTest extends TestCase
 {
 	/**
 	 * Standard PHP Tests

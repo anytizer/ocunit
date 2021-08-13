@@ -4,7 +4,7 @@ namespace cases\general;
 use \PHPUnit\Framework\TestCase;
 use \library\catalog as catalog;
 
-class GeneralLoginTest extends TestCase
+class LoginTest extends TestCase
 {
 	public function testSimpleLoginIsFunctional()
 	{

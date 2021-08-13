@@ -5,8 +5,8 @@ Test scripts for OpenCart based on PHPUnit
 
 ## Environment
 
-* PHP 8+
-* PHPUnit 9+
+* [PHP](https://www.php.net/) 8+
+* [PHPUnit](https://phpunit.de/) 9+
 * [OpenCart](https://github.com/opencart/opencart) 4+ (master branch)
 
 

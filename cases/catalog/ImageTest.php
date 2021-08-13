@@ -5,7 +5,7 @@ use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
 use \library\MySQLPDO;
 
-class CatalogImageTest extends TestCase
+class ImageTest extends TestCase
 {
 	public function testCategoryImagesExist()
 	{

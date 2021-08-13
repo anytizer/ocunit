@@ -4,7 +4,7 @@ namespace cases\admin;
 use \PHPUnit\Framework\TestCase;
 use \library\admin as admin;
 
-class AdminExtensionsTest extends TestCase
+class ExtensionsTest extends TestCase
 {
 	public function testCustomExtensionTablesPresent()
     {

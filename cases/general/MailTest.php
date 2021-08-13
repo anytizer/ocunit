@@ -4,7 +4,7 @@ namespace cases\general;
 use \PHPUnit\Framework\TestCase;
 use \library\MySQLPDO as MySQLPDO;
 
-class GeneralMailTest extends TestCase
+class MailTest extends TestCase
 {
 	public function testEmailSentFromWindowsMachine()
     {

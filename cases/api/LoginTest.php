@@ -8,7 +8,7 @@ use \library\api as api;
 /**
  * @see https://docs.opencart.com/en-gb/system/users/api/
  */
-class ApiLoginTest extends TestCase
+class LoginTest extends TestCase
 {
 	public function testGetApiToken()
 	{

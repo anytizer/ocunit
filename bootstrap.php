@@ -19,6 +19,11 @@ require_once("library/class.catalog.inc.php");
 require_once("library/class.admin.inc.php");
 
 /**
+ * Defeine sitewide business rules, multipliers, etc.
+ */
+require_once("library/class.BusinessRules.inc.php");
+
+/**
  * Frontend config file
  */
 require_once("{$opencart_upload_folder}/config.php");

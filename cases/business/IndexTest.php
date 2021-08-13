@@ -3,7 +3,7 @@ namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
 
-class BusinessIndexTest extends TestCase
+class IndexTest extends TestCase
 {
 	public function testIndexContainsUniqueCategoryNames()
 	{

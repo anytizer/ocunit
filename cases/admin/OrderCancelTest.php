@@ -4,7 +4,7 @@ namespace cases\admin;
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
 
-class AdminOrderCancelTest extends TestCase
+class OrderCancelTest extends TestCase
 {
 	public function testOrderCancelledProperly()
 	{

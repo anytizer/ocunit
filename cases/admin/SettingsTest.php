@@ -3,7 +3,7 @@ namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
 
-class AdminSettingsTest extends TestCase
+class SettingsTest extends TestCase
 {
 	public function testDatabaseConstantsDefined()
     {

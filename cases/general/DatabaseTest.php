@@ -4,7 +4,7 @@ namespace cases\general;
 use \PHPUnit\Framework\TestCase;
 use \library\MySQLPDO as MySQLPDO;
 
-class GeneralDatabaseTest extends TestCase
+class DatabaseTest extends TestCase
 {
     public function testCanConnectToTheDatabase()
     {

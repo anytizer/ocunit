@@ -6,7 +6,7 @@ use \library\admin as admin;
 
 class DownloadsTest extends TestCase
 {
-	public function testDownloadablePrdouctsHasActiveDownloadableFile()
+	public function testDownloadablePrdouctHasFile()
     {
         // for each downloadable product
         // download product is masked
@@ -21,17 +21,12 @@ class DownloadsTest extends TestCase
         {
             /**
              * @todo Figure out where is the downloadable file
+             * @todo Downloadable file must be a .zip file
              */
             $masked_file = DIR_STORAGE."download/{$download['filename']}";
 
             $download_exists = is_file($masked_file);
             $this->assertTrue($download_exists, "Missing download #{$download['download_id']}: {$download['name']}.");
         }
-    }
-
-    public function testDownloadCounter()
-    {
-        // download counter added right after a product is downloaded
-        $this->markTestIncomplete("Downloadables statistics is not implemented.");
     }
 }

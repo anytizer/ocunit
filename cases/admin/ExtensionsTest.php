@@ -10,12 +10,6 @@ class ExtensionsTest extends TestCase
     {
         $admin = new admin();
         $tables = $admin->tables();
-        
-        $names = [];
-        foreach($tables as $table)
-        {
-            $names[] = $table["TABLE_NAME"];
-        }
 
         /**
          * Tables that are installed and used by third party extensions.
@@ -26,7 +20,7 @@ class ExtensionsTest extends TestCase
         ];
         foreach($searches as $table)
         {
-            $this->assertTrue(in_array($table, $names), "Extension table `{$table}` is not available.");
+            $this->assertTrue(in_array($table, $tables), "Extension table `{$table}` is not available.");
         }
     }
 }

@@ -14,7 +14,16 @@ class admin
         $tables_sql="SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE();";
         $tables = $pdo->query($tables_sql);
 
-        return $tables;
+        /**
+         * Send a list of tables only
+         */
+        $names = [];
+        foreach($tables as $table)
+        {
+            $names[] = $table["TABLE_NAME"];
+        }
+
+        return $names;
     }
 
     public function downloads()

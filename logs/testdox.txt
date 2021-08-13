@@ -1,6 +1,5 @@
 Downloads (cases\admin\Downloads)
- [ ] Downloadable prdoucts has active downloadable file
- [ ] Download counter
+ [ ] Downloadable prdouct has file
 
 Extensions (cases\admin\Extensions)
  [x] Custom extension tables present

@@ -21,7 +21,7 @@ Settings (cases\admin\Settings)
  [x] Other settings defined in backend
 
 Login (cases\business\Login)
- [x] Get api token
+ [ ] Get api token
  [x] List of all apis
  [ ] Access routes
 
@@ -46,7 +46,7 @@ Image (cases\catalog\Image)
  [ ] Product images are valid images
 
 Index (cases\catalog\Index)
- [x] Searches in pages
+ [ ] Searches in pages
 
 Database (cases\general\Database)
  [x] Can connect to the database
@@ -58,7 +58,7 @@ Database (cases\general\Database)
 Include Paths (cases\general\IncludePaths)
  [x] All included paths exist
  [x] Php modules available
- [ ] X debug should be present
+ [x] X debug should be present
 
 Login (cases\general\Login)
  [ ] Simple login is functional

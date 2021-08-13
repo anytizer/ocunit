@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ebacea70405a4834e41c883e46dd93fbbffadd15',
+        'reference' => '068326b18864966a8a2de6f4f6a3d422d8c80bf4',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ebacea70405a4834e41c883e46dd93fbbffadd15',
+            'reference' => '068326b18864966a8a2de6f4f6a3d422d8c80bf4',
             'dev_requirement' => false,
         ),
         'anytizer/relay.php' => array(

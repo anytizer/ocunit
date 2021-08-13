@@ -26,10 +26,15 @@ class IncludePathsTest extends TestCase
 		$this->assertTrue(function_exists("mb_check_encoding"), "Missing extension: MB String");
 	}
 
-	public function testXDebugShouldBePresent()
+	public function testXDebugModule()
+	{
+		$this->assertTrue(function_exists("xdebug_break"), "Missing extension: xDebug.");
+	}
+
+	public function testXDebugShouldNotAutostart()
 	{
 		/**
-		 * xDebug must be present and disabled bu default on the server environment
+		 * xDebug must be present and disabled by default on the server environment
 		 */
 		$autostart = ini_get("xdebug.remote_autostart")?(int)ini_get("xdebug.remote_autostart"):-1;
 		$this->assertEquals(0, $autostart, "xDebug should NOT autostart.");

@@ -2,7 +2,7 @@
 namespace library;
 
 /**
- * @todo Utilize search options. Do NOT hard code in test scripts.
+ * To NOT hard code searches in test scripts.
  */
 class PostQuery
 {

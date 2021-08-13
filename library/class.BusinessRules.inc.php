@@ -5,6 +5,9 @@ class BusinessRules
 {
     /**
      * Factor multiplyer that converts vendor price into store price
+     * eg. price = vprice * multiplier
+     * eg. vprice = price / multiplier
+     * @todo update product prices based on vendor pricing x multiplier
      */
     public $multiplier = 2.5;
 
@@ -17,4 +20,9 @@ class BusinessRules
      * Store's internal/own Manufacturer ID
      */
     public $internal_sourcing_manufacturer_id = 13;
+
+    /**
+     * How many actual products are there in one language (en-gb) in a store?
+     */
+    public $total_products = 91;
 }

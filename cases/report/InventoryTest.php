@@ -3,22 +3,16 @@ namespace cases\report;
 
 use \PHPUnit\Framework\TestCase;
 use \library\MySQLPDO as MySQLPDO;
+use \library\BusinessRules as BusinessRules;
 
 class InventoryTest extends TestCase
 {
-     /**
-      * eg. price = vprice * multiplier
-      * eg. vprice = price / multiplier
-      */
-    public $multiplier = 2.5;
+    private $business_rules;
 
-    /**
-     * How many actual products are there in one language (en-gb) in a store?
-     */
-    public $total_products = 91;
-
- 
-    // @todo update product prices based on vendor pricing x multiplier
+    public function setUp(): void
+    {
+        $this->business_rules = new BusinessRules();
+    }
  
     public function testInventoryReport()
     {
@@ -67,11 +61,11 @@ class InventoryTest extends TestCase
         {
             $this->assertNotNull($inventory["vprice"], "Missing vendor price for product {$inventory['name']} #{$inventory['product_id']}");
 
-            $pricing_profitability_managed = $inventory["price"] >= $inventory["vprice"] * $this->multiplier;
+            $pricing_profitability_managed = $inventory["price"] >= $inventory["vprice"] * $this->business_rules->multiplier;
             $this->assertTrue($pricing_profitability_managed, "Probably loss in pricing based on vendor price.");
         }
 
-        $this->assertEquals($this->total_products, $total_products_counted, "Number of products in the database changed! Update \$records.");
+        $this->assertEquals($this->business_rules->total_products, $total_products_counted, "Number of products in the database changed! Update \$records.");
     }
 
     private function _logInventoryData($data=[], $taxes=[], $lengths=[], $weights=[])

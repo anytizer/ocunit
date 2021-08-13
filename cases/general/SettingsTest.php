@@ -19,8 +19,9 @@ class SettingsTest extends TestCase
 
     public function testOtherSettingsDefinedInFrontend()
     {
-        $this->assertTrue(defined('APPLICATION'));        
+        $this->assertTrue(defined('APPLICATION'));
         $this->assertTrue(defined('HTTP_SERVER'));
+
         $this->assertTrue(defined('DIR_OPENCART'));
         $this->assertTrue(defined('DIR_APPLICATION'));
         $this->assertTrue(defined('DIR_EXTENSION'));

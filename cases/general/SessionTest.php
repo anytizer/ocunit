@@ -14,7 +14,8 @@ class SessionTest extends TestCase
 
 		$pdo->raw("DELETE FROM `".DB_PREFIX."session`;");
 
-		$total = (int)$pdo->query("SELECT COUNT(*) total FROM `".DB_PREFIX."session`;")[0]["total"];
+		$sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."session`;";
+		$total = (int)$pdo->query($sql)[0]["total"];
 		$this->assertEquals(0, $total, "Session not cleared.");
 	}
 
@@ -32,7 +33,8 @@ class SessionTest extends TestCase
 		$catalog = new catalog();
 		$index = $catalog->browse_index();
 
-		$total = (int)$pdo->query("SELECT COUNT(*) total FROM `".DB_PREFIX."session`;")[0]["total"];
+		$sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."session`;";
+		$total = (int)$pdo->query($sql)[0]["total"];
 		$this->assertEquals(1, $total, "Session not created.");
 	}
 
@@ -50,7 +52,8 @@ class SessionTest extends TestCase
 	{
 		$pdo = new MySQLPDO();
 
-		$sessions = $pdo->query("SELECT `data` FROM `".DB_PREFIX."session` WHERE `expire`>=NOW() LIMIT 1;");
+		$sql = "SELECT `data` FROM `".DB_PREFIX."session` WHERE `expire`>=NOW() LIMIT 1;";
+		$sessions = $pdo->query($sql);
 		$this->assertArrayHasKey("data", $sessions[0], "Session data is empty!");
 	}
 }

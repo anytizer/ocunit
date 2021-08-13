@@ -29,6 +29,8 @@ class IncludePathsTest extends TestCase
 	public function testXDebugModuleAvailable()
 	{
 		$this->assertTrue(function_exists("xdebug_break"), "Missing extension: xDebug.");
+		$this->assertTrue(function_exists("xdebug_info"), "xDebug should be upgraded.");
+
 	}
 
 	public function testXDebugShouldNotAutostart()
@@ -39,8 +41,7 @@ class IncludePathsTest extends TestCase
 		$autostart = ini_get("xdebug.remote_autostart")?(int)ini_get("xdebug.remote_autostart"):-1;
 		$this->assertEquals(0, $autostart, "xDebug should NOT autostart.");
 
-		# xdebug.profiler_enable=0
-		
-		//$this->assertTrue(function_exists("xdebug_get_profiler_filename"), "Missing extension: xDebug");
+		$profiler_enable = ini_get("xdebug.profiler_enable")?(int)ini_get("xdebug.profiler_enable"):-1;
+		$this->assertEquals(0, $profiler_enable, "xDebug profiler enable value to be 0.");
 	}
 }

@@ -4,6 +4,7 @@ namespace cases\report;
 use \PHPUnit\Framework\TestCase;
 use \library\MySQLPDO as MySQLPDO;
 use \library\BusinessRules as BusinessRules;
+use \PDOException;
 
 class FixturesTest extends TestCase
 {
@@ -14,18 +15,24 @@ class FixturesTest extends TestCase
         $this->business_rules = new BusinessRules();
     }
 
-    public function testFixShippingRequiresInventorySubtraction()
+    public function testCreateMissingTables()
     {
-        $pdo = new MySQLPDO();
-        
-        $sql = "UPDATE `".DB_PREFIX."product` SET subtract='1' WHERE shipping='1';";
-        $pdo->raw($sql);
-        
-        // tax_class_id == 10 (Downloadable Product)
-        $sql = "UPDATE `".DB_PREFIX."product` SET subtract='0' WHERE tax_class_id='{$this->business_rules->downloadable_product_tax_class_id}';";
-        $pdo->raw($sql);
+        $this->expectException(PDOException::class);
 
-        $this->assertTrue(true, "Shipping of tangiable products must require subtraction in inventory.");
+        $pdo = new MySQLPDO();
+
+        $files = [
+            "sql/tw_manufacturer_prices.sql",
+            "sql/tw_price_history.sql",
+        ];
+
+        foreach($files as $filename)
+        {
+            $sql = file_get_contents($filename);
+            $pdo->raw($sql);
+        }
+
+        $this->markTestSkipped("Database Tables might have been created manually.");
     }
 
     /**
@@ -44,5 +51,19 @@ class FixturesTest extends TestCase
         $pdo->raw($sql);
 
         $this->assertTrue(true, "Vendor prices are assigned to Internal Sources.");
+    }
+
+    public function testFixShippingRequiresInventorySubtraction()
+    {
+        $pdo = new MySQLPDO();
+        
+        $sql = "UPDATE `".DB_PREFIX."product` SET subtract='1' WHERE shipping='1';";
+        $pdo->raw($sql);
+        
+        // tax_class_id == 10 (Downloadable Product)
+        $sql = "UPDATE `".DB_PREFIX."product` SET subtract='0' WHERE tax_class_id='{$this->business_rules->downloadable_product_tax_class_id}';";
+        $pdo->raw($sql);
+
+        $this->assertTrue(true, "Shipping of tangiable products must require subtraction in inventory.");
     }
 }

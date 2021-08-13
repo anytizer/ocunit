@@ -53,7 +53,7 @@ Index (cases\catalog\Index)
 
 Database (cases\general\Database)
  [x] Can connect to the database
- [x] Settings count match
+ [x] Count number of settings
  [x] At least one language is active
  [x] Admin paginates 100 items
  [x] Single currency operation

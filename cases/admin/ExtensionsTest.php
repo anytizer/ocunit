@@ -25,9 +25,9 @@ class ExtensionsTest extends TestCase
             "tw_manufacturer_prices",
         ];
 
-        foreach($searches as $search)
+        foreach($searches as $table)
         {
-            $this->assertTrue(in_array($search, $names), "Extension table `{$search}` is not available.");
+            $this->assertTrue(in_array($table, $names), "Extension table `{$table}` is not available.");
         }
     }
 }

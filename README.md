@@ -11,10 +11,10 @@ __WARNING__: Never execute these tests against your live database or in server e
 
 ## Requirements
 
-* [PHP](https://www.php.net/) 8.0+
-* [PHPUnit](https://phpunit.de/) 9.5+
-* [OpenCart](https://github.com/opencart/opencart) 4.0+ (master branch)
-* [relay.php](https://packagist.org/packages/anytizer/relay.php) -- composer package
+* [PHP](https://www.php.net/) 8.0.8+
+* [PHPUnit](https://phpunit.de/) 9.5.8+
+* [OpenCart](https://github.com/opencart/opencart) 4.0.0+ (master branch)
+* [relay.php](https://packagist.org/packages/anytizer/relay.php) -- composer package of a minimal HTTP client
 
 
 ## Installation

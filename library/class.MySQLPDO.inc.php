@@ -15,7 +15,7 @@ class MySQLPDO
         $this->connect();
     }
 
-    public function connect()
+    public function connect(): void
     {
         $this->connection = new PDO(
             'mysql:host='.DB_HOSTNAME.';dbname='.DB_DATABASE.';port=3306;',
@@ -48,7 +48,7 @@ class MySQLPDO
     /**
      * Fire-only queries - like: insert, update, delete, replace
      */
-    public function raw($sql='', $data=[])
+    public function raw($sql='', $data=[]): void
     {
         $statement = $this->connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY,]);
         $statement->execute($data);

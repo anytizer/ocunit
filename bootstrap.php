@@ -1,11 +1,14 @@
 <?php
-define("__ROOT__", dirname(__FILE__));
-
 /**
- * Relative path where your OpenCart is installed.
- * Put without trailing /
+ * Disable stacktracing with xDebug, if available.
  */
-$opencart_upload_folder = "../opencart/upload";
+$xdebug_disable = "xdebug_disable";
+if(function_exists($xdebug_disable))
+{
+    $xdebug_disable();
+}
+
+define("__ROOT__", dirname(__FILE__));
 
 require_once("vendor/autoload.php");
 
@@ -19,9 +22,15 @@ require_once("library/class.catalog.inc.php");
 require_once("library/class.admin.inc.php");
 
 /**
- * Defeine sitewide business rules, multipliers, etc.
+ * Defeine sitewide business rules, multipliers, product count, etc.
  */
 require_once("library/class.BusinessRules.inc.php");
+
+/**
+ * Relative path where your OpenCart is installed at.
+ * Put without trailing /
+ */
+$opencart_upload_folder = "../opencart/upload";
 
 /**
  * Frontend config file
@@ -37,7 +46,6 @@ require_once("{$opencart_upload_folder}/config.php");
 ob_start();
 require_once("{$opencart_upload_folder}/admin/config.php");
 ob_end_clean();
-
 
 use \library\PostQuery;
 
@@ -112,7 +120,7 @@ $searches_in_html_pages = [
 			"key" => "9acd35f146d93542c062e73697564373f0eac52ebf84ace1d9f59f2face8c5c4ed67d2939ebe86756e6fe4f1fbeb7bf3189d195883b8556b79339d9f3fbb518c32f9a72ab4226a495c2a6aa0f4508a7f8662d1d8fc7d5cfba81a89294556ba10338771247914482be7ce08e4c196af019802a8b69874a82f50863c7f89f64dcc",
 		],
         [
-            "api_token"
+            "api_token",
         ]
     ),
 ];

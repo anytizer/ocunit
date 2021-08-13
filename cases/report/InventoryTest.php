@@ -25,7 +25,7 @@ class InventoryTest extends TestCase
         $taxes = [
             "0" => "None",
         ];
-        $taxes_class_sql = "SELECT tax_class_id, title FROM `oc_tax_class`;";
+        $taxes_class_sql = "SELECT tax_class_id, title FROM `".DB_PREFIX."tax_class`;";
         $taxes_db = $pdo->query($taxes_class_sql);
         foreach($taxes_db as $tax)
         {
@@ -35,7 +35,7 @@ class InventoryTest extends TestCase
         $lengths = [
             "0" => "None",
         ];
-        $length_class_sql = "SELECT length_class_id, unit FROM `oc_length_class_description` WHERE language_id=1;";
+        $length_class_sql = "SELECT length_class_id, unit FROM `".DB_PREFIX."length_class_description` WHERE language_id=1;";
         $lengths_db = $pdo->query($length_class_sql);
         foreach($lengths_db as $length)
         {
@@ -45,7 +45,7 @@ class InventoryTest extends TestCase
         $weights = [
             "0" => "None",
         ];
-        $weight_class_sql = "SELECT weight_class_id, unit FROM `oc_weight_class_description` WHERE language_id=1;";
+        $weight_class_sql = "SELECT weight_class_id, unit FROM `".DB_PREFIX."weight_class_description` WHERE language_id=1;";
         $weights_db = $pdo->query($weight_class_sql);
         foreach($weights_db as $weight)
         {
@@ -55,20 +55,20 @@ class InventoryTest extends TestCase
         /**
          * Produce data log as printable report for the merchant.
          */
-        $this->_logInventoryData($data, $taxes, $lengths, $weights);
+        $this->_logInventoryForMerchantReports($data, $taxes, $lengths, $weights);
 
         foreach($data as $inventory)
         {
             $this->assertNotNull($inventory["vprice"], "Missing vendor price for product {$inventory['name']} #{$inventory['product_id']}");
 
             $pricing_profitability_managed = $inventory["price"] >= $inventory["vprice"] * $this->business_rules->multiplier;
-            $this->assertTrue($pricing_profitability_managed, "Probably loss in pricing based on vendor price.");
+            $this->assertTrue($pricing_profitability_managed, "Probably loss in final pricing based on vendor price.");
         }
 
         $this->assertEquals($this->business_rules->total_products, $total_products_counted, "Number of products in the database changed! Update \$records.");
     }
 
-    private function _logInventoryData($data=[], $taxes=[], $lengths=[], $weights=[])
+    private function _logInventoryForMerchantReports($data=[], $taxes=[], $lengths=[], $weights=[])
     {
         $tick = "✓";
         $cross = "x";

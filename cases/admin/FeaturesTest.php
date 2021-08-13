@@ -51,12 +51,12 @@ class FeaturesTest extends TestCase
         $this->markTestIncomplete("Customer approval required for login.");
     }
 
-    public function testLowOrderFee()
+    public function testLowOrderFeeApplies()
     {
         $this->markTestIncomplete("Low Order Fee to apply.");
     }
 
-    public function testLowTaxInAlberta()
+    public function testLowTaxRateInAlberta()
     {
         $this->markTestIncomplete("Taxes not calculated for Alberta Tax Zone.");
     }

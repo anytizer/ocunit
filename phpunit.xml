@@ -13,5 +13,8 @@
   </testsuites>
   <logging>
     <testdoxText outputFile="logs/testdox.txt"/>
+    <testdoxHtml outputFile="logs/testdox.html"/>
+    <testdoxXml outputFile="logs/testdox.xml"/>
+    <text outputFile="logs/tests.log"/>
   </logging>
 </phpunit>

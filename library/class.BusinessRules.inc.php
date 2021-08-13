@@ -5,14 +5,13 @@ class BusinessRules
 {
     /**
      * Factor multiplyer that converts vendor price into store price
-     * eg. price = vprice * multiplier
-     * eg. vprice = price / multiplier
-     * @todo update product prices based on vendor pricing x multiplier
+     * eg. price = vendor price * multiplier
+     * eg. vendor price = price / multiplier
      */
     public $multiplier = 2.5;
 
     /**
-     * Database's Tax class ID for Downloable Product
+     * Database's Tax class ID for Downloadable Product
      */
     public $downloadable_product_tax_class_id = 10;
 

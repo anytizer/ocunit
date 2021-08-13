@@ -22,8 +22,8 @@ class FixturesTest extends TestCase
         $pdo = new MySQLPDO();
 
         $files = [
-            "sql/tw_manufacturer_prices.sql",
-            "sql/tw_price_history.sql",
+            __ROOT__."/sql/tw_manufacturer_prices.sql",
+            __ROOT__."/sql/tw_price_history.sql",
         ];
 
         foreach($files as $filename)
@@ -45,9 +45,7 @@ class FixturesTest extends TestCase
         $sql = "DELETE FROM tw_manufacturer_prices;";
         $pdo->raw($sql);
 
-        // @todo Replace 2.5 divider by business rule.
-        // 13 = Internal Sourcing
-        $sql = "INSERT INTO tw_manufacturer_prices SELECT NULL, {$this->business_rules->internal_sourcing_manufacturer_id}, product_id, price/{$this->business_rules->multiplier} FROM oc_product;";
+        $sql = "INSERT INTO tw_manufacturer_prices SELECT NULL, {$this->business_rules->internal_sourcing_manufacturer_id}, product_id, price/{$this->business_rules->multiplier} FROM `".DB_PREFIX."product`;";
         $pdo->raw($sql);
 
         $this->assertTrue(true, "Vendor prices are assigned to Internal Sources.");
@@ -59,11 +57,18 @@ class FixturesTest extends TestCase
         
         $sql = "UPDATE `".DB_PREFIX."product` SET subtract='1' WHERE shipping='1';";
         $pdo->raw($sql);
+
+        $this->assertTrue(true, "Shipping of tangiable products must require subtraction in inventory.");
+    }
+
+    public function testFixDownloadableProductDoesNotSubtractInventory()
+    {
+        $pdo = new MySQLPDO();
         
         // tax_class_id == 10 (Downloadable Product)
         $sql = "UPDATE `".DB_PREFIX."product` SET subtract='0' WHERE tax_class_id='{$this->business_rules->downloadable_product_tax_class_id}';";
         $pdo->raw($sql);
 
-        $this->assertTrue(true, "Shipping of tangiable products must require subtraction in inventory.");
+        $this->assertTrue(true, "Downloadable product does not subtract inventory.");
     }
 }

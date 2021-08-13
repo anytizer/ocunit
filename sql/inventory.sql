@@ -1,12 +1,13 @@
 -- Single sql file for generating inventory report.
 -- Used within phpunit test script.
+-- Mind the database prefix - which may NOT be oc_.
 SELECT
     p.product_id,
-    cd.name cname,
+    cd.`name` cname,
     p.model,
     p.sku,
-    pd.name,
-    p.status enabled,
+    pd.`name` name,
+    p.`status` enabled,
     m.`name` vname,
     mp.product_price vprice,
     p.price,

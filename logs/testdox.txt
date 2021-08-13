@@ -10,8 +10,8 @@ Features (cases\admin\Features)
  [ ] Downloadable prdoucts has active downloadable file
  [ ] Download counter
  [ ] Customer approval required for login
- [ ] Low order fee
- [ ] Low tax in alberta
+ [ ] Low order fee applies
+ [ ] Low tax rate in alberta
  [ ] Free shipping in edmonton
 
 Order Cancel (cases\admin\OrderCancel)
@@ -94,6 +94,7 @@ Fixtures (cases\report\Fixtures)
  [x] Create missing tables
  [x] Fix vendor pricing by product price
  [x] Fix shipping requires inventory subtraction
+ [x] Fix downloadable product does not subtract inventory
 
 Inventory (cases\report\Inventory)
  [x] Inventory report

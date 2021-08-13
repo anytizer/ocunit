@@ -1,13 +1,20 @@
 # opencart.phpunit
 
-Test scripts for OpenCart based on PHPUnit
+Test scripts for OpenCart based on PHPUnit.
+
+The project reads the actual values from your OpenCart configurations and makes [various tests](logs/testdox.txt).
+This has sometimes, hardcoded or embeded database IDs which should be changed to fit your store.
+Similarly, there are some [business rules](library/class.BusinessRules.inc.php) and [configurations](bootstrap.php) you should edit before running the test.
+
+__WARNING__: Never execute these tests against your live database or in server environment.
 
 
-## Environment
+## Requirements
 
 * [PHP](https://www.php.net/) 8.0+
 * [PHPUnit](https://phpunit.de/) 9.5+
 * [OpenCart](https://github.com/opencart/opencart) 4.0+ (master branch)
+* [relay.php](https://packagist.org/packages/anytizer/relay.php) -- composer package
 
 
 ## Installation

@@ -16,4 +16,14 @@ class admin
 
         return $tables;
     }
+
+    public function downloads()
+    {
+        $pdo = new MySQLPDO();
+
+        $downloads_sql = file_get_contents(__ROOT__."/sql/downloads.sql");
+        $downloads = $pdo->query($downloads_sql);
+
+        return $downloads;
+    }
 }

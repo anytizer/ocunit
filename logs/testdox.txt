@@ -1,3 +1,7 @@
+Downloads (cases\admin\Downloads)
+ [ ] Downloadable prdoucts has active downloadable file
+ [ ] Download counter
+
 Extensions (cases\admin\Extensions)
  [x] Custom extension tables present
 
@@ -7,8 +11,6 @@ Features (cases\admin\Features)
  [ ] Login succeeds
  [ ] Demo user does not see delete option
  [ ] Demo user does not have permission to modify record
- [ ] Downloadable prdoucts has active downloadable file
- [ ] Download counter
  [ ] Customer approval required for login
  [ ] Low order fee applies
  [ ] Low tax rate in alberta
@@ -42,9 +44,9 @@ Catalog (cases\catalog\Catalog)
 Image (cases\catalog\Image)
  [ ] Category images exist
  [ ] Product images exist
- [ ] Image files do not contain scripts
  [ ] Category images are valid images
  [ ] Product images are valid images
+ [ ] Image files do not contain scripts
 
 Index (cases\catalog\Index)
  [x] Searches in pages
@@ -59,8 +61,8 @@ Database (cases\general\Database)
 Include Paths (cases\general\IncludePaths)
  [x] All included paths exist
  [x] Php modules available
- [x] X debug module available
- [x] X debug should not autostart
+ [ ] X debug module available
+ [ ] X debug should not autostart
 
 Login (cases\general\Login)
  [ ] Simple login is functional

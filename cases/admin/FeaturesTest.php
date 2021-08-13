@@ -30,22 +30,6 @@ class FeaturesTest extends TestCase
         $this->markTestIncomplete("Permissions checks not implemented.");
     }
 
-    public function testDownloadablePrdouctsHasActiveDownloadableFile()
-    {
-        // for each downloadable product
-        // download product is masked
-        // download product is actively linked
-        // customer who purchased a download can download
-        // download links are protected with login
-        $this->markTestIncomplete("Downloadables check not implemented.");
-    }
-
-    public function testDownloadCounter()
-    {
-        // download counter added right after a product is downloaded
-        $this->markTestIncomplete("Downloadables statistics is not implemented.");
-    }
-
     public function testCustomerApprovalRequiredForLogin()
     {
         $this->markTestIncomplete("Customer approval required for login.");

@@ -16,10 +16,19 @@ class ImageTest extends TestCase
 
 		foreach($categories as $category)
 		{
-			// $this->assertNotEmpty(trim($image["image"]), "Empty image value.");
-			$category_image_file = DIR_OPENCART . 'image/' . $category["image"];
-			$image_file_exists = file_exists($category_image_file) && is_file($category_image_file);
-			$this->assertTrue($image_file_exists, "\033[1;31mMISSING:\033[0m category image for id: ".$category["category_id"]);
+			/**
+			 * Cache image file
+			 */
+			$category_image_cache_file = DIR_OPENCART . 'image/cache' . $category["image"];
+			$image_file_exists = file_exists($category_image_cache_file) && is_file($category_image_cache_file);
+			$this->assertTrue($image_file_exists, "\033[1;31mMISSING:\033[0m category image (cache) for id: ".$category["category_id"]);
+
+			/**
+			 * Main image file
+			 */
+			$category_image_cache_file = DIR_OPENCART . 'image/' . $category["image"];
+			$image_file_exists = file_exists($category_image_cache_file) && is_file($category_image_cache_file);
+			$this->assertTrue($image_file_exists, "\033[1;31mMISSING:\033[0m category image (original) for id: ".$category["category_id"]);
 
 			// @todo
 			// image is 40 x 40 px for icon.
@@ -53,13 +62,6 @@ class ImageTest extends TestCase
 		}
 	}
 
-	public function testImageFilesDoNotContainScripts()
-	{
-		// for each images:
-		// php script is not found in the file.
-		$this->markTestIncomplete("Need to scan images for presence of scripts.");
-	}
-
 	public function testCategoryImagesAreValidImages()
 	{
 		$this->markTestIncomplete("Only PNG Allowed in category images.");
@@ -68,5 +70,12 @@ class ImageTest extends TestCase
 	public function testProductImagesAreValidImages()
 	{
 		$this->markTestIncomplete("Only PNG Allowed in product image.");
+	}
+
+	public function testImageFilesDoNotContainScripts()
+	{
+		// for each images:
+		// php script is not found in the file.
+		$this->markTestIncomplete("Need to scan images for presence of scripts.");
 	}
 }

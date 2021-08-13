@@ -32,7 +32,7 @@ class FixturesTest extends TestCase
             $pdo->raw($sql);
         }
 
-        $this->markTestSkipped("Database Tables might have been created manually.");
+        // $this->markTestSkipped("Database tables might have been created already, manually.");
     }
 
     /**

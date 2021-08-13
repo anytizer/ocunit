@@ -3,7 +3,12 @@
   <coverage/>
   <testsuites>
     <testsuite name="cases">
-      <directory suffix="Test.php">cases</directory>
+      <directory suffix="Test.php">cases/admin</directory>
+      <directory suffix="Test.php">cases/api</directory>
+      <directory suffix="Test.php">cases/business</directory>
+      <directory suffix="Test.php">cases/catalog</directory>
+      <directory suffix="Test.php">cases/general</directory>
+      <directory suffix="Test.php">cases/report</directory>
     </testsuite>
   </testsuites>
   <logging>

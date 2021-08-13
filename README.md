@@ -5,9 +5,9 @@ Test scripts for OpenCart based on PHPUnit
 
 ## Environment
 
-* [PHP](https://www.php.net/) 8+
-* [PHPUnit](https://phpunit.de/) 9+
-* [OpenCart](https://github.com/opencart/opencart) 4+ (master branch)
+* [PHP](https://www.php.net/) 8.0+
+* [PHPUnit](https://phpunit.de/) 9.5+
+* [OpenCart](https://github.com/opencart/opencart) 4.0+ (master branch)
 
 
 ## Installation
@@ -26,7 +26,7 @@ Download the phpunit main phar file in the directory.
 Update the composer dependencies:
 
     wget https://getcomposer.org/download/latest-stable/composer.phar
-    php composer.phar update
+    php8.0 composer.phar update
 
 
 ## Configuration
@@ -34,15 +34,16 @@ Update the composer dependencies:
 Edit `bootstrap.php` file for pointing to the location of your opencart.
 
 
-## Run
+## Test Execution
 
-Under Windows: `run8.0.bat` or Under Linux: `./run8.0.sh`.
+* Under Windows: `run8.0.bat`
+* Or, under Linux: `./run8.0.sh`
 
 
-## Log
+## Logs
 
 * `logs/testdox.log`
-* `logs/inventory.log` reports on products and prices
+* `logs/inventory.log` reports on products and prices for the merchant.
 
 
 # Inspirations

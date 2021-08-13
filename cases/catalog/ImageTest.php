@@ -3,16 +3,14 @@ namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
-use \library\MySQLPDO;
+use \library\admin as admin;
 
 class ImageTest extends TestCase
 {
 	public function testCategoryImagesExist()
 	{
-		$pdo = new MySQLPDO();
-		
-		$sql = "SELECT category_id, image FROM `".DB_PREFIX."category`;";
-		$categories = $pdo->query($sql);
+		$admin = new admin();
+		$categories = $admin->categories();
 
 		foreach($categories as $category)
 		{
@@ -41,10 +39,8 @@ class ImageTest extends TestCase
 
 	public function testProductImagesExist()
 	{
-		$pdo = new MySQLPDO();
-		
-		$sql = "SELECT product_id, image FROM `".DB_PREFIX."product`;";
-		$products = $pdo->query($sql);
+		$admin = new admin();
+		$products = $admin->products();
 
 		foreach($products as $product)
 		{

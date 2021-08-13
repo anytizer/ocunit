@@ -2,7 +2,7 @@
 namespace cases\report;
 
 use \PHPUnit\Framework\TestCase;
-use \library\MySQLPDO as MySQLPDO;
+use \library\admin as admin;
 use \library\BusinessRules as BusinessRules;
 
 class InventoryTest extends TestCase
@@ -16,48 +16,21 @@ class InventoryTest extends TestCase
  
     public function testInventoryReport()
     {
-        $pdo = new MySQLPDO();
+        $admin = new admin();
+        $inventories = $admin->inventories();
+        
+        $total_products_counted = count($inventories);
 
-        $sql = file_get_contents(__ROOT__."/sql/inventory.sql");
-        $data = $pdo->query($sql);
-        $total_products_counted = count($data);
-
-        $taxes = [
-            "0" => "None",
-        ];
-        $taxes_class_sql = "SELECT tax_class_id, title FROM `".DB_PREFIX."tax_class`;";
-        $taxes_db = $pdo->query($taxes_class_sql);
-        foreach($taxes_db as $tax)
-        {
-            $taxes[$tax["tax_class_id"]] = $tax["title"];
-        }
-
-        $lengths = [
-            "0" => "None",
-        ];
-        $length_class_sql = "SELECT length_class_id, unit FROM `".DB_PREFIX."length_class_description` WHERE language_id=1;";
-        $lengths_db = $pdo->query($length_class_sql);
-        foreach($lengths_db as $length)
-        {
-            $lengths[$length["length_class_id"]] = $length["unit"];
-        }
-
-        $weights = [
-            "0" => "None",
-        ];
-        $weight_class_sql = "SELECT weight_class_id, unit FROM `".DB_PREFIX."weight_class_description` WHERE language_id=1;";
-        $weights_db = $pdo->query($weight_class_sql);
-        foreach($weights_db as $weight)
-        {
-            $weights[$weight["weight_class_id"]] = $weight["unit"];
-        }
+        $taxes = $admin->taxes();
+        $lengths = $admin->lengths();
+        $weights = $admin->weights();
 
         /**
          * Produce data log as printable report for the merchant.
          */
-        $this->_logInventoryForMerchantReports($data, $taxes, $lengths, $weights);
+        $this->_logInventoryForMerchantReports($inventories, $taxes, $lengths, $weights);
 
-        foreach($data as $inventory)
+        foreach($inventories as $inventory)
         {
             $this->assertNotNull($inventory["vprice"], "Missing vendor price for product {$inventory['name']} #{$inventory['product_id']}");
 
@@ -68,13 +41,13 @@ class InventoryTest extends TestCase
         $this->assertEquals($this->business_rules->total_products, $total_products_counted, "Number of products in the database changed! Update \$records.");
     }
 
-    private function _logInventoryForMerchantReports($data=[], $taxes=[], $lengths=[], $weights=[])
+    private function _logInventoryForMerchantReports($inventories=[], $taxes=[], $lengths=[], $weights=[])
     {
         $tick = "✓";
         $cross = "x";
 
         $file = fopen(__ROOT__."/logs/inventory.log", "wb+");
-        foreach($data as $inventory)
+        foreach($inventories as $inventory)
         {
             /**
              * Sanitize the data

@@ -16,7 +16,7 @@ class SettingsTest extends TestCase
         $this->assertTrue(defined('DB_PREFIX'));
     }
 
-    public function testOtherSettingsDefinedInBackend()
+    public function testOtherSettingsDefined()
     {
         /**
          * Tests of frontend Constants - some of which are repeated in admin config.

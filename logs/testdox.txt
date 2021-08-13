@@ -21,7 +21,7 @@ Order Cancel (cases\admin\OrderCancel)
 
 Settings (cases\admin\Settings)
  [x] Database constants defined
- [x] Other settings defined in backend
+ [x] Other settings defined
 
 Login (cases\business\Login)
  [x] Get api token

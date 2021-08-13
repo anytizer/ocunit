@@ -24,4 +24,10 @@ class BusinessRules
      * How many actual products are there in one language (en-gb) in a store?
      */
     public $total_products = 91;
+
+    /**
+     * Number of settings/configuratiosn count
+     * SELECT COUNT(*) total FROM oc_setting;
+     */
+    public $settings_count = 373;
 }

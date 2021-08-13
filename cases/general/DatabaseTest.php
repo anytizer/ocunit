@@ -3,6 +3,7 @@ namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
 use \library\MySQLPDO as MySQLPDO;
+use \library\BusinessRules as BusinessRules;
 
 class DatabaseTest extends TestCase
 {
@@ -13,7 +14,7 @@ class DatabaseTest extends TestCase
         $this->assertNotNull($pdo, "Failed connecting to the database.");
     }
     
-    public function testSettingsCountMatch()
+    public function testCountNumberOfSettings()
     {
         $pdo = new MySQLPDO();
 
@@ -21,8 +22,8 @@ class DatabaseTest extends TestCase
         $data = $pdo->query($sql);
         $total = (int)$data[0]["total"];
 
-        $records = 373;
-        $this->assertEquals($records, $total);
+        $business_rules = new BusinessRules();
+        $this->assertEquals($business_rules->settings_count, $total, "The configruations count has been modified.");
     }
 
     public function testAtLeastOneLanguageIsActive()
@@ -34,7 +35,7 @@ class DatabaseTest extends TestCase
         $total = (int)$data[0]["total"];
 
         /**
-         * Do NOT add multiple languages
+         * Do NOT add multiple languages, and it should be en-gb.
          */
         $this->assertEquals(1, $total);
     }

@@ -2,9 +2,11 @@
 
 Test scripts for OpenCart based on PHPUnit.
 
-The project reads the actual values from your OpenCart configurations and makes [various tests](logs/testdox.txt).
-This has sometimes, hardcoded or embeded database IDs which should be changed to fit your store.
-Similarly, there are some [business rules](library/class.BusinessRules.inc.php) and [configurations](bootstrap.php) you should edit before running the test.
+The project reads the actual configuraion values from within your OpenCart and makes [various tests](logs/testdox.txt).
+This has sometimes, hardcoded or embeded Database IDs which should be changed to fit your store.
+Similarly, there are some [business rules](library/class.BusinessRules.inc.php) and few [configurations](bootstrap.php) you should edit before running the test.
+
+A list of fixutes is [available here](cases/business/).
 
 __WARNING__: Never execute these tests against your live database or in server environment.
 

@@ -1,4 +1,4 @@
-# opencart.phpunit
+# ocunit
 
 Test scripts for OpenCart based on PHPUnit.
 
@@ -26,12 +26,12 @@ Clone the project:
     cd htdocs|public_html|www
 
     git clone https://github.com/opencart/opencart.git
-    git clone https://github.com/anytizer/opencart.phpunit.git
+    git clone https://github.com/anytizer/ocunit.git
 
 
 Download the phpunit main phar file in the directory.
 
-    cd opencart.phpunit
+    cd ocunit
     wget https://phar.phpunit.de/phpunit-9.5.8.phar
 
 

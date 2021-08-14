@@ -1,5 +1,16 @@
 <?php
 /**
+ * Relative full path where your OpenCart is installed at.
+ * Put without trailing /
+ */
+$opencart_upload_folder = realpath("../opencart/upload");
+
+/**
+ * Disables warning when including admin/config.php of the OpenCart system.
+ */
+error_reporting(0);
+
+/**
  * Disable stacktracing with xDebug, if available.
  */
 $xdebug_disable = "xdebug_disable";
@@ -8,7 +19,7 @@ if(function_exists($xdebug_disable))
     $xdebug_disable();
 }
 
-define("__ROOT__", dirname(__FILE__));
+define("__ROOT__", dirname(__FILE__)); // do not change it
 
 require_once("vendor/autoload.php");
 
@@ -27,13 +38,7 @@ require_once("library/class.admin.inc.php");
 require_once("library/class.BusinessRules.inc.php");
 
 /**
- * Relative path where your OpenCart is installed at.
- * Put without trailing /
- */
-$opencart_upload_folder = "../opencart/upload";
-
-/**
- * Frontend config file
+ * OpenCart Frontend configuration file
  */
 require_once("{$opencart_upload_folder}/config.php");
 
@@ -41,7 +46,7 @@ require_once("{$opencart_upload_folder}/config.php");
  * Admin config file
  * 
  * Silently load admin configurations too.
- * The admin config for contsants will definitely collide with that in frontend.
+ * The contsants defined in admin will definitely collide with that in frontend.
  */
 ob_start();
 require_once("{$opencart_upload_folder}/admin/config.php");
@@ -49,6 +54,9 @@ ob_end_clean();
 
 use \library\PostQuery;
 
+/**
+ * Modify with your store data
+ */
 $searches_in_html_pages = [
     // home page
     // http://localhost/opencart/upload/

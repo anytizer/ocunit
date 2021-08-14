@@ -26,7 +26,7 @@ class DownloadsTest extends TestCase
             $masked_file = DIR_STORAGE."download/{$download['filename']}";
 
             $download_exists = is_file($masked_file);
-            $this->assertTrue($download_exists, "Missing download file for #{$download['download_id']}: {$download['name']}.");
+            $this->assertTrue($download_exists, "Missing download file for download id #{$download['download_id']}: {$download['name']}.");
         }
     }
 }

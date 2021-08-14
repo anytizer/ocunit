@@ -19,14 +19,14 @@ class ImageTest extends TestCase
 			 */
 			$category_image_cache_file = DIR_OPENCART . 'image/cache' . $category["image"];
 			$image_file_exists = file_exists($category_image_cache_file) && is_file($category_image_cache_file);
-			$this->assertTrue($image_file_exists, "\033[1;31mMISSING:\033[0m category image (cache) for id: ".$category["category_id"]);
+			$this->assertTrue($image_file_exists, "\033[1;31mMISSING:\033[0m category image (cache) for id: #".$category["category_id"]);
 
 			/**
 			 * Main image file
 			 */
 			$category_image_cache_file = DIR_OPENCART . 'image/' . $category["image"];
 			$image_file_exists = file_exists($category_image_cache_file) && is_file($category_image_cache_file);
-			$this->assertTrue($image_file_exists, "\033[1;31mMISSING:\033[0m category image (original) for id: ".$category["category_id"]);
+			$this->assertTrue($image_file_exists, "\033[1;31mMISSING:\033[0m category image (original) for id: #".$category["category_id"]);
 
 			// @todo
 			// image is 40 x 40 px for icon.

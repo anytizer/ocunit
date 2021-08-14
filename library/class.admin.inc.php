@@ -11,7 +11,7 @@ class admin
         $pdo = new MySQLPDO();
 
         // DB_DATABASE
-        $tables_sql="SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE();";
+        $tables_sql="SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE();";
         $tables = $pdo->query($tables_sql);
 
         /**

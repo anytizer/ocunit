@@ -21,6 +21,9 @@ __WARNING__: Never execute these tests against your live database or in server e
 
 Clone the project:
 
+    cd htdocs|public_html|www
+
+    git clone https://github.com/opencart/opencart.git
     git clone https://github.com/anytizer/opencart.phpunit.git
 
 

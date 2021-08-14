@@ -5,15 +5,18 @@ Extensions (cases\admin\Extensions)
  [x] Custom extension tables present
 
 Features (cases\admin\Features)
- [ ] Admin brute force login discouraged
- [ ] Login fails
- [ ] Login succeeds
  [ ] Demo user does not see delete option
  [ ] Demo user does not have permission to modify record
  [ ] Customer approval required for login
  [ ] Low order fee applies
  [ ] Low tax rate in alberta
  [ ] Free shipping in edmonton
+
+Login (cases\admin\Login)
+ [ ] Admin brute force login discouraged
+ [ ] Login fails
+ [ ] Login succeeds
+ [ ] Login has captcha
 
 Order Cancel (cases\admin\OrderCancel)
  [ ] Order cancelled properly

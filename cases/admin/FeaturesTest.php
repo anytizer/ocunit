@@ -5,21 +5,6 @@ use \PHPUnit\Framework\TestCase;
 
 class FeaturesTest extends TestCase
 {
-	public function testAdminBruteForceLoginDiscouraged()
-    {
-        $this->markTestIncomplete("Brute Force check not implemented.");
-    }
-
-    public function testLoginFails()
-    {
-        $this->markTestIncomplete("Admin login failure case not implemented.");
-    }
-
-    public function testLoginSucceeds()
-    {
-        $this->markTestIncomplete("Login success case not implemented.");
-    }
-
     public function testDemoUserDoesNotSeeDeleteOption()
     {
         $this->markTestIncomplete("Permissions based menu links not implemented.");

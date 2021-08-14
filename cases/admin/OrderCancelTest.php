@@ -8,10 +8,6 @@ class OrderCancelTest extends TestCase
 {
 	public function testOrderCancelledProperly()
 	{
-		// create order
-		// cancel order
-		// list recent orders: to be missing last cancelled order
-
 		$this->markTestIncomplete("Cancel an order.");
 	}
 }

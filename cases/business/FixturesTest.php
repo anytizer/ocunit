@@ -1,5 +1,5 @@
 <?php
-namespace cases\report;
+namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
 use \library\MySQLPDO as MySQLPDO;

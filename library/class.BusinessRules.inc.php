@@ -33,4 +33,11 @@ class BusinessRules
      * SELECT COUNT(*) total FROM oc_setting; -- on a trusted database
      */
     public $settings_count = 373;
+
+    /**
+     * Country of business operation
+     * UPDATE oc_country SET `status`=0;
+     * UPDATE oc_country SET `status`=1 WHERE iso_code_2='CA';
+     */
+    public $countries_of_business_operations = ["CA", ];
 }

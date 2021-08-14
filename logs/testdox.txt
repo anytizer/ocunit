@@ -107,5 +107,5 @@ Settings (cases\general\Settings)
  [x] Htaccess disables directory listing in admin
 
 Inventory (cases\report\Inventory)
- [x] Inventory report
+ [x] Generate inventory report
 

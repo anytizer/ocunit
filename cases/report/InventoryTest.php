@@ -14,7 +14,7 @@ class InventoryTest extends TestCase
         $this->business_rules = new BusinessRules();
     }
  
-    public function testInventoryReport()
+    public function testGenerateInventoryReport()
     {
         $admin = new admin();
         $inventories = $admin->inventories();
@@ -52,16 +52,16 @@ class InventoryTest extends TestCase
             /**
              * Sanitize the data
              */
-            $inventory['price'] = number_format($inventory['price'], 2, ".", ",");
-            $inventory['vprice'] = number_format($inventory['vprice'], 2, ".", ",");
-            $inventory['profit'] = number_format($inventory['profit'], 2, ".", ",");
+            $inventory["price"] = number_format($inventory["price"], 2, ".", ",");
+            $inventory["vprice"] = number_format($inventory["vprice"], 2, ".", ",");
+            $inventory["profit"] = number_format($inventory["profit"], 2, ".", ",");
 
-            $inventory['length'] = number_format($inventory['length'], 2, ".", ",");
-            $inventory['width'] = number_format($inventory['width'], 2, ".", ",");
-            $inventory['height'] = number_format($inventory['height'], 2, ".", ",");
-            $inventory['weight'] = number_format($inventory['weight'], 2, ".", ",");
+            $inventory["length"] = number_format($inventory["length"], 2, ".", ",");
+            $inventory["width"] = number_format($inventory["width"], 2, ".", ",");
+            $inventory["height"] = number_format($inventory["height"], 2, ".", ",");
+            $inventory["weight"] = number_format($inventory["weight"], 2, ".", ",");
 
-            $inventory['sku'] = $inventory['sku']!=""?$inventory['sku']:"____";
+            $inventory["sku"] = $inventory["sku"]!=""?$inventory["sku"]:"____";
             $inventory["download"] = ""; // @todo obtain downloadable file
 
             /**
@@ -78,9 +78,9 @@ class InventoryTest extends TestCase
              */
             $profit_tick = $inventory["price"] >= $inventory["vprice"] * 1.5 ? $tick: $cross;
 
-            $tax_class_name = $taxes[$inventory['tax_class_id']];
-            $length_unit = $lengths[$inventory['length_class_id']];
-            $weight_unit = $weights[$inventory['weight_class_id']];
+            $tax_class_name = $taxes[$inventory["tax_class_id"]];
+            $length_unit = $lengths[$inventory["length_class_id"]];
+            $weight_unit = $weights[$inventory["weight_class_id"]];
             
             /**
              * @see format.txt
@@ -88,10 +88,11 @@ class InventoryTest extends TestCase
             $product_information = "
 {$inventory['name']} #{$inventory['product_id']}: {$inventory['minimum']} of {$inventory['stock']}: ±{$subtract_tick}
 {$inventory['cname']} - {$inventory['model']} > {$inventory['sku']}
-Tax Class: {$tax_class_name} #{$inventory['tax_class_id']}
-{$inventory['length']} x {$inventory['width']} x {$inventory['height']} {$length_unit}: @{$inventory['weight']} {$weight_unit}
+{$tax_class_name} #{$inventory['tax_class_id']}
+    {$inventory['length']} x {$inventory['width']} x {$inventory['height']} {$length_unit}: @{$inventory['weight']} {$weight_unit}
     {$inventory['price']} - {$inventory['vprice']} = {$inventory['profit']}
     [ {$image_tick} ] Image.   [ {$download_tick} ] Download.   [ {$profit_tick} ] Profits.
+
 ";
 
             fwrite($file, $product_information);

@@ -61,6 +61,7 @@ class admin
         $pdo = new MySQLPDO();
 
         $sql = file_get_contents(__ROOT__."/sql/inventories.sql");
+        $sql = str_replace("oc_", DB_PREFIX, $sql); // optional
         $inventories = $pdo->query($sql);
 
         return $inventories;

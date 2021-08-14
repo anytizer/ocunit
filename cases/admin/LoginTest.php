@@ -24,4 +24,9 @@ class LoginTest extends TestCase
     {
         $this->markTestIncomplete("Login not protected with Captcha.");
     }
+    
+    public function testCustomerApprovalRequiredForLogin()
+    {
+        $this->markTestIncomplete("Customer approval required for login.");
+    }
 }

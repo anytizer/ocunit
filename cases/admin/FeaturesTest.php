@@ -15,11 +15,6 @@ class FeaturesTest extends TestCase
         $this->markTestIncomplete("Permissions checks not implemented.");
     }
 
-    public function testCustomerApprovalRequiredForLogin()
-    {
-        $this->markTestIncomplete("Customer approval required for login.");
-    }
-
     public function testLowOrderFeeApplies()
     {
         $this->markTestIncomplete("Low Order Fee to apply.");

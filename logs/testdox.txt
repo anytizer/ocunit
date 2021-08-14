@@ -1,5 +1,5 @@
 Downloads (cases\admin\Downloads)
- [ ] Downloadable prdouct has file
+ [ ] Downloadable product has file
 
 Extensions (cases\admin\Extensions)
  [x] Custom extension tables present
@@ -7,7 +7,6 @@ Extensions (cases\admin\Extensions)
 Features (cases\admin\Features)
  [ ] Demo user does not see delete option
  [ ] Demo user does not have permission to modify record
- [ ] Customer approval required for login
  [ ] Low order fee applies
  [ ] Low tax rate in alberta
  [ ] Free shipping in edmonton
@@ -17,6 +16,7 @@ Login (cases\admin\Login)
  [ ] Login fails
  [ ] Login succeeds
  [ ] Login has captcha
+ [ ] Customer approval required for login
 
 Order Cancel (cases\admin\OrderCancel)
  [ ] Order cancelled properly

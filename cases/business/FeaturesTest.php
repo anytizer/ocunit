@@ -14,19 +14,4 @@ class FeaturesTest extends TestCase
     {
         $this->markTestIncomplete("Permissions checks not implemented.");
     }
-
-    public function testLowOrderFeeApplies()
-    {
-        $this->markTestIncomplete("Low Order Fee to apply.");
-    }
-
-    public function testLowTaxRateInAlberta()
-    {
-        $this->markTestIncomplete("Taxes not calculated for Alberta Tax Zone.");
-    }
-
-    public function testFreeShippingInEdmonton()
-    {
-        $this->markTestIncomplete("Free shipping within city of store location.");
-    }
 }

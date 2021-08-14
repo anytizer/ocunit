@@ -17,10 +17,11 @@ class LoginTest extends TestCase
 
     public function testLoginSucceeds()
     {
+        // @todo supply valid username and password to make a login
         $this->markTestIncomplete("Login success case not implemented.");
     }
 
-    public function testLoginHasCaptcha()
+    public function testCustomerLoginFormHasCaptcha()
     {
         $this->markTestIncomplete("Login not protected with Captcha.");
     }

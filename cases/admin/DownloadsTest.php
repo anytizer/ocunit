@@ -6,7 +6,7 @@ use \library\admin as admin;
 
 class DownloadsTest extends TestCase
 {
-	public function testDownloadableProductHasFile()
+	public function testDownloadableProductHasAFileLinked()
     {
         // for each downloadable product
         // download product is masked

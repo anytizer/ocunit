@@ -15,7 +15,7 @@ class FixturesTest extends TestCase
         $this->business_rules = new BusinessRules();
     }
 
-    public function testCreateMissingTables()
+    public function testCreateMissingThirdPartyTables()
     {
         $this->expectException(PDOException::class);
 
@@ -31,8 +31,6 @@ class FixturesTest extends TestCase
             $sql = file_get_contents($filename);
             $pdo->raw($sql);
         }
-
-        // $this->markTestSkipped("Database tables might have been created already, manually.");
     }
 
     /**

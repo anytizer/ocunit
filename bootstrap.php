@@ -12,6 +12,7 @@ error_reporting(E_ALL|E_STRICT);
 
 /**
  * Disable stack tracing with xDebug, if available.
+ * But chances are rare on modern xDebug.
  */
 $xdebug_disable = "xdebug_disable";
 if(function_exists($xdebug_disable))

@@ -24,6 +24,10 @@ class IncludePathsTest extends TestCase
 		$this->assertTrue(function_exists("gd_info"), "Missing PHP extension: GD");
 		$this->assertTrue(function_exists("curl_init"), "Missing PHP extension: cURL");
 		$this->assertTrue(function_exists("mb_check_encoding"), "Missing PHP extension: MB String");
+
+		// more tests required:
+		// PDO
+		// PostGres if supported for OpenCart
 	}
 
 	public function testXDebugModuleAvailable()

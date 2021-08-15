@@ -1,14 +1,14 @@
 # OCUnit
 
-Test scripts for OpenCart based on PHPUnit.
+Merchant oriented test scripts for OpenCart based on PHPUnit.
 
-The project reads the actual configuraion values from within your OpenCart and makes [various tests](logs/testdox.txt).
+This project reads the actual configuraion values from within your OpenCart and makes [various tests](logs/testdox.txt).
 This has sometimes, hardcoded or embeded Database IDs which should be changed to fit your store.
 Similarly, there are some [business rules](library/class.BusinessRules.inc.php) and few [configurations](bootstrap.php) you should edit before running the test.
 
 A list of fixutes is [available here](cases/business/).
 
-__WARNING__: Never execute these tests against your live database or in server environment.
+__WARNING__: Never execute these tests against your live database or in server environment. It is likely to override the product information, pricing, session and more.
 
 
 ## Requirements
@@ -43,7 +43,9 @@ Update the composer dependencies:
 
 ## Configuration
 
-Edit `bootstrap.php` file for pointing to the location of your opencart.
+* Edit `bootstrap.php` file for pointing to the location of your opencart.
+* Edit `$searches_in_html_pages` for your products in various pages.
+* Edit business rules.
 
 
 ## Test Execution

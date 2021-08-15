@@ -32,7 +32,7 @@ class IncludePathsTest extends TestCase
 
 	public function testXDebugModuleAvailable()
 	{
-		$this->assertTrue(function_exists("xdebug_break"), "Missing extension: xDebug.");
+		$this->assertTrue(function_exists("xdebug_break"), "Missing PHP extension: xDebug.");
 
 		/**
 		 * Looks like only newer version of xDebug has this feature.

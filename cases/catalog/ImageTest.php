@@ -3,13 +3,13 @@ namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
-use \library\admin as admin;
+use \library\DatabaseExecuter as DatabaseExecuter;
 
 class ImageTest extends TestCase
 {
 	public function testCategoryImagesExist()
 	{
-		$admin = new admin();
+		$admin = new DatabaseExecuter();
 		$categories = $admin->categories();
 
 		foreach($categories as $category)
@@ -39,7 +39,7 @@ class ImageTest extends TestCase
 
 	public function testProductImagesExist()
 	{
-		$admin = new admin();
+		$admin = new DatabaseExecuter();
 		$products = $admin->products();
 
 		foreach($products as $product)

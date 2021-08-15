@@ -22,8 +22,8 @@ class FixturesTest extends TestCase
         $pdo = new MySQLPDO();
 
         $files = [
-            __ROOT__."/sql/tw_manufacturer_prices.sql",
-            __ROOT__."/sql/tw_price_history.sql",
+            __OCUNIT_ROOT__."/sql/tw_manufacturer_prices.sql",
+            __OCUNIT_ROOT__."/sql/tw_price_history.sql",
         ];
 
         foreach($files as $filename)

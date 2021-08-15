@@ -46,7 +46,7 @@ class InventoryTest extends TestCase
         $tick = "✓";
         $cross = "x";
 
-        $file = fopen(__ROOT__."/logs/inventory.log", "wb+");
+        $file = fopen(__OCUNIT_ROOT__."/logs/inventory.log", "wb+");
         foreach($inventories as $inventory)
         {
             /**

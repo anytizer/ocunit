@@ -19,7 +19,7 @@ if(function_exists($xdebug_disable))
     $xdebug_disable();
 }
 
-define("__ROOT__", dirname(__FILE__)); // do not change it
+define("__OCUNIT_ROOT__", dirname(__FILE__)); // do not change it
 
 require_once("vendor/autoload.php");
 require_once("library/class.PostQuery.inc.php");

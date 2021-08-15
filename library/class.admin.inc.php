@@ -30,7 +30,7 @@ class admin
     {
         $pdo = new MySQLPDO();
 
-        $downloads_sql = file_get_contents(__ROOT__."/sql/downloads.sql");
+        $downloads_sql = file_get_contents(__OCUNIT_ROOT__."/sql/downloads.sql");
         $downloads = $pdo->query($downloads_sql);
 
         return $downloads;
@@ -60,7 +60,7 @@ class admin
     {
         $pdo = new MySQLPDO();
 
-        $sql = file_get_contents(__ROOT__."/sql/inventories.sql");
+        $sql = file_get_contents(__OCUNIT_ROOT__."/sql/inventories.sql");
         $sql = str_replace("oc_", DB_PREFIX, $sql); // optional
         $inventories = $pdo->query($sql);
 

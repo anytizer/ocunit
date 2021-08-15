@@ -39,6 +39,10 @@ class FixturesTest extends TestCase
     public function testFixVendorPricingByProductPrice()
     {
         $pdo = new MySQLPDO();
+
+        // rename table
+        // create table
+        // insert the data
         
         $sql = "DELETE FROM tw_manufacturer_prices;";
         $pdo->raw($sql);
@@ -46,7 +50,7 @@ class FixturesTest extends TestCase
         $sql = "INSERT INTO tw_manufacturer_prices SELECT NULL, {$this->business_rules->internal_sourcing_manufacturer_id}, product_id, price/{$this->business_rules->multiplier} FROM `".DB_PREFIX."product`;";
         $pdo->raw($sql);
 
-        $this->assertTrue(true, "Vendor prices are assigned to Internal Sources.");
+        $this->assertTrue(true, "Vendor prices are assigned to internally sourced Manufaturer ID.");
     }
 
     public function testFixShippingRequiresInventorySubtraction()
@@ -74,9 +78,11 @@ class FixturesTest extends TestCase
 	{
         $pdo = new MySQLPDO();
 
+        $pdo->raw("UPDATE `".DB_PREFIX."country` SET `status`=0;");
+
         foreach($this->business_rules->countries_of_business_operations as $country_of_business_operation)
-		{	
-			$pdo->raw("UPDATE `".DB_PREFIX."country` SET `status`=0;");
+		{
+            $country_of_business_operation = preg_replace("/[^A-Z]/", "", $country_of_business_operation);
 			$pdo->raw("UPDATE `".DB_PREFIX."country` SET `status`=1 WHERE iso_code_2='{$country_of_business_operation}' LIMIT 1;");
 		}
 

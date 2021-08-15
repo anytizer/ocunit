@@ -2,8 +2,8 @@
 namespace cases\report;
 
 use \PHPUnit\Framework\TestCase;
-use \library\admin as admin;
 use \library\BusinessRules as BusinessRules;
+use \library\DatabaseExecuter as DatabaseExecuter;
 
 class InventoryTest extends TestCase
 {
@@ -16,7 +16,7 @@ class InventoryTest extends TestCase
  
     public function testGenerateInventoryReport()
     {
-        $admin = new admin();
+        $admin = new DatabaseExecuter();
         $inventories = $admin->inventories();
         
         $total_products_counted = count($inventories);

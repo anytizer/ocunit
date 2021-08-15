@@ -16,6 +16,7 @@ class SessionTest extends TestCase
 
 		$sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."session`;";
 		$total = (int)$pdo->query($sql)[0]["total"];
+		
 		$this->assertEquals(0, $total, "Session not cleared.");
 	}
 
@@ -35,6 +36,7 @@ class SessionTest extends TestCase
 
 		$sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."session`;";
 		$total = (int)$pdo->query($sql)[0]["total"];
+		
 		$this->assertEquals(1, $total, "Session not created.");
 	}
 
@@ -54,6 +56,7 @@ class SessionTest extends TestCase
 
 		$sql = "SELECT `data` FROM `".DB_PREFIX."session` WHERE `expire`>=NOW() LIMIT 1;";
 		$sessions = $pdo->query($sql);
+		
 		$this->assertArrayHasKey("data", $sessions[0], "Session data is empty!");
 	}
 }

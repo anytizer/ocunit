@@ -72,7 +72,7 @@ class FixturesTest extends TestCase
 
     public function testSetupBusinessRules()
 	{
-		$pdo = new MySQLPDO();
+        $pdo = new MySQLPDO();
 
         foreach($this->business_rules->countries_of_business_operations as $country_of_business_operation)
 		{	

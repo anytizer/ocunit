@@ -53,7 +53,7 @@ class ImageTest extends TestCase
 			// image is 40 x 40 px for icon.
 			// image file is not a php, js, css, html script
 			// mime type of the file is an image
-			// only png allowed
+			// only png allowed: no jpg, jpeg, gif, bmp, ...
 			// gd can obtain the image info
 		}
 	}

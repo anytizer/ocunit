@@ -32,7 +32,7 @@ class IndexTest extends TestCase
 			foreach($lookups as $lookup)
 			{
 				$found = str_contains($html, $lookup);
-				$this->assertTrue($found, "\033[1;31mFAILED:\033[0m searching [ {$lookup} ] in HTML.");
+				$this->assertTrue($found, "\033[1;31mFAILED:\033[0m searching [ {$lookup} ] in HTML output.");
 			}
 		}
 	}

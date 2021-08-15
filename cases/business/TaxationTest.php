@@ -14,9 +14,4 @@ class TaxationTest extends TestCase
     {
         $this->markTestIncomplete("Taxes not calculated for Alberta Tax Zone.");
     }
-
-    public function testFreeShippingInEdmonton()
-    {
-        $this->markTestIncomplete("Free shipping within city of store location.");
-    }
 }

@@ -25,6 +25,7 @@ define("__OCUNIT_ROOT__", dirname(__FILE__)); // do not change it
 require_once("vendor/autoload.php");
 require_once("library/class.PostQuery.inc.php");
 require_once("library/class.MySQLPDO.inc.php");
+require_once("library/class.DatabaseExecuter.inc.php");
 require_once("library/class.api.inc.php");
 require_once("library/class.catalog.inc.php");
 require_once("library/class.admin.inc.php");

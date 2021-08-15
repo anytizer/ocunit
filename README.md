@@ -1,4 +1,4 @@
-# ocunit
+# OCUnit
 
 Test scripts for OpenCart based on PHPUnit.
 
@@ -48,13 +48,14 @@ Edit `bootstrap.php` file for pointing to the location of your opencart.
 
 ## Test Execution
 
+* `php phpunit-9.5.8.phar`
 * Under Windows: `run8.0.bat`
 * Or, under Linux: `./run8.0.sh`
 
 
-## Logs
+## Logs Produced
 
-* `logs/testdox.log`
+* `logs/testdox.*`
 * `logs/inventory.log` reports on products and prices for the merchant.
 
 
@@ -63,3 +64,9 @@ Edit `bootstrap.php` file for pointing to the location of your opencart.
 * https://github.com/beyondit/opencart-test-suite
 * [Selenium : OpenCart User Creation Automation Test With CSS Locators](https://www.youtube.com/watch?v=DEwzzZfMYwM)
 * [Unit testing, Jenkins, code sniffing, github etc](https://forum.opencart.com/viewtopic.php?t=124532)
+
+
+# Contribution
+
+If you have a specific idea on how OCUnit (Test scripts for OpenCart based on PHPUnit) should run, fork the project and submit your test cases.
+In more general, these test scripts are merchant oriented.

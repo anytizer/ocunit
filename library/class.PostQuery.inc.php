@@ -6,7 +6,7 @@ namespace library;
  */
 class PostQuery
 {
-    public $page = "index.php";
+    public $page = null;
 
     public $get = [];
     public $post = [];
@@ -16,7 +16,7 @@ class PostQuery
 	 */
     public $lookups = [];
 
-    public function __construct($page="", $get=[], $post=[], $lookups=[])
+    public function __construct($page="index.php", $get=[], $post=[], $lookups=[])
     {
         $this->page = $page;
         $this->get = $get;

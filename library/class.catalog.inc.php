@@ -9,6 +9,9 @@ use \anytizer\relay as relay;
  */
 class catalog
 {
+	/**
+	 * Test customer
+	 */
     private $username = "test@example.com";
     private $password = "password";
 

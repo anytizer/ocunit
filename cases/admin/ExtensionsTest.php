@@ -2,13 +2,13 @@
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
-use \library\admin as admin;
+use \library\DatabaseExecuter as DatabaseExecuter;
 
 class ExtensionsTest extends TestCase
 {
 	public function testCustomExtensionTablesPresent()
     {
-        $admin = new admin();
+        $admin = new DatabaseExecuter();
         $tables = $admin->tables();
 
         /**

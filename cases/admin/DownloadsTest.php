@@ -2,7 +2,7 @@
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
-use \library\admin as admin;
+use \library\DatabaseExecuter as DatabaseExecuter;
 
 class DownloadsTest extends TestCase
 {
@@ -14,7 +14,7 @@ class DownloadsTest extends TestCase
         // customer who purchased a download can download
         // download links are protected with login
 
-        $admin = new admin();
+        $admin = new DatabaseExecuter();
         $downloads = $admin->downloads();
         
         foreach($downloads as $download)

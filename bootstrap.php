@@ -1,17 +1,17 @@
 <?php
 /**
- * Relative full path where your OpenCart is installed at.
+ * Path where your OpenCart is installed at.
  * Put without trailing /
  */
 $opencart_upload_folder = realpath("../opencart/upload");
 
 /**
- * Disables warning when including admin/config.php of the OpenCart system.
+ * Show all error reporting.
  */
-error_reporting(0);
+error_reporting(E_ALL|E_STRICT);
 
 /**
- * Disable stacktracing with xDebug, if available.
+ * Disable stack tracing with xDebug, if available.
  */
 $xdebug_disable = "xdebug_disable";
 if(function_exists($xdebug_disable))
@@ -22,10 +22,6 @@ if(function_exists($xdebug_disable))
 define("__ROOT__", dirname(__FILE__)); // do not change it
 
 require_once("vendor/autoload.php");
-
-/**
- * Test suite specific content
- */
 require_once("library/class.PostQuery.inc.php");
 require_once("library/class.MySQLPDO.inc.php");
 require_once("library/class.api.inc.php");
@@ -55,7 +51,7 @@ ob_end_clean();
 use \library\PostQuery;
 
 /**
- * Modify with your store data
+ * Modify these values with your store data
  */
 $searches_in_html_pages = [
     // home page

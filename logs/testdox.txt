@@ -1,5 +1,5 @@
 Downloads (cases\admin\Downloads)
- [ ] Downloadable product has file
+ [ ] Downloadable product has a file linked
 
 Extensions (cases\admin\Extensions)
  [x] Custom extension tables present
@@ -8,7 +8,7 @@ Login (cases\admin\Login)
  [ ] Admin brute force login discouraged
  [ ] Login fails
  [ ] Login succeeds
- [ ] Login has captcha
+ [ ] Customer login form has captcha
  [ ] Customer approval required for login
 
 Order Cancel (cases\admin\OrderCancel)
@@ -26,15 +26,13 @@ Login (cases\business\Login)
 Features (cases\business\Features)
  [ ] Demo user does not see delete option
  [ ] Demo user does not have permission to modify record
- [ ] Low order fee applies
- [ ] Low tax rate in alberta
- [ ] Free shipping in edmonton
 
 Fixtures (cases\business\Fixtures)
- [x] Create missing tables
+ [x] Create missing third party tables
  [x] Fix vendor pricing by product price
  [x] Fix shipping requires inventory subtraction
  [x] Fix downloadable product does not subtract inventory
+ [x] Setup business rules
 
 Index (cases\business\Index)
  [ ] Index contains unique category names
@@ -42,14 +40,16 @@ Index (cases\business\Index)
 Maintenance (cases\business\Maintenance)
  [ ] Post installation cleanups
 
-Operations (cases\business\Operations)
- [x] Setup business rules
-
 Pricing (cases\business\Pricing)
  [ ] Vendor price exists
  [ ] Product price is greater than vendor price
  [ ] Product price is greater than vendor price even after discounts
  [ ] Price change history maintained
+
+Taxation (cases\business\Taxation)
+ [ ] Low order fee applies
+ [ ] Low tax rate in alberta
+ [ ] Free shipping in edmonton
 
 Catalog (cases\catalog\Catalog)
  [x] Index page

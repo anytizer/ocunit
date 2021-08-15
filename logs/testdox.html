@@ -30,7 +30,7 @@
     <body>
         <h2 id="cases\admin\DownloadsTest">Downloads (cases\admin\Downloads)</h2>
         <ul>
-            <li style="color: #ef2929;">❌ Downloadable product has file</li>
+            <li style="color: #ef2929;">❌ Downloadable product has a file linked</li>
         </ul>
         <h2 id="cases\admin\ExtensionsTest">Extensions (cases\admin\Extensions)</h2>
         <ul>
@@ -41,7 +41,7 @@
             <li style="color: #ef2929;">❌ Admin brute force login discouraged</li>
             <li style="color: #ef2929;">❌ Login fails</li>
             <li style="color: #ef2929;">❌ Login succeeds</li>
-            <li style="color: #ef2929;">❌ Login has captcha</li>
+            <li style="color: #ef2929;">❌ Customer login form has captcha</li>
             <li style="color: #ef2929;">❌ Customer approval required for login</li>
         </ul>
         <h2 id="cases\admin\OrderCancelTest">Order Cancel (cases\admin\OrderCancel)</h2>
@@ -63,16 +63,14 @@
         <ul>
             <li style="color: #ef2929;">❌ Demo user does not see delete option</li>
             <li style="color: #ef2929;">❌ Demo user does not have permission to modify record</li>
-            <li style="color: #ef2929;">❌ Low order fee applies</li>
-            <li style="color: #ef2929;">❌ Low tax rate in alberta</li>
-            <li style="color: #ef2929;">❌ Free shipping in edmonton</li>
         </ul>
         <h2 id="cases\business\FixturesTest">Fixtures (cases\business\Fixtures)</h2>
         <ul>
-            <li style="color: #555753;">✓ Create missing tables</li>
+            <li style="color: #555753;">✓ Create missing third party tables</li>
             <li style="color: #555753;">✓ Fix vendor pricing by product price</li>
             <li style="color: #555753;">✓ Fix shipping requires inventory subtraction</li>
             <li style="color: #555753;">✓ Fix downloadable product does not subtract inventory</li>
+            <li style="color: #555753;">✓ Setup business rules</li>
         </ul>
         <h2 id="cases\business\IndexTest">Index (cases\business\Index)</h2>
         <ul>
@@ -82,16 +80,18 @@
         <ul>
             <li style="color: #ef2929;">❌ Post installation cleanups</li>
         </ul>
-        <h2 id="cases\business\OperationsTest">Operations (cases\business\Operations)</h2>
-        <ul>
-            <li style="color: #555753;">✓ Setup business rules</li>
-        </ul>
         <h2 id="cases\business\PricingTest">Pricing (cases\business\Pricing)</h2>
         <ul>
             <li style="color: #ef2929;">❌ Vendor price exists</li>
             <li style="color: #ef2929;">❌ Product price is greater than vendor price</li>
             <li style="color: #ef2929;">❌ Product price is greater than vendor price even after discounts</li>
             <li style="color: #ef2929;">❌ Price change history maintained</li>
+        </ul>
+        <h2 id="cases\business\TaxationTest">Taxation (cases\business\Taxation)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Low order fee applies</li>
+            <li style="color: #ef2929;">❌ Low tax rate in alberta</li>
+            <li style="color: #ef2929;">❌ Free shipping in edmonton</li>
         </ul>
         <h2 id="cases\catalog\CatalogTest">Catalog (cases\catalog\Catalog)</h2>
         <ul>

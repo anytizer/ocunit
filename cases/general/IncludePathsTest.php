@@ -20,17 +20,20 @@ class IncludePathsTest extends TestCase
 
 	public function testPhpModulesAvailable()
 	{
-		$this->assertTrue(function_exists("spl_autoload_register"), "Missing extension: SPL");
-		$this->assertTrue(function_exists("gd_info"), "Missing extension: GD");
-		$this->assertTrue(function_exists("curl_init"), "Missing extension: cURL");
-		$this->assertTrue(function_exists("mb_check_encoding"), "Missing extension: MB String");
+		$this->assertTrue(function_exists("spl_autoload_register"), "Missing PHP extension: SPL");
+		$this->assertTrue(function_exists("gd_info"), "Missing PHP extension: GD");
+		$this->assertTrue(function_exists("curl_init"), "Missing PHP extension: cURL");
+		$this->assertTrue(function_exists("mb_check_encoding"), "Missing PHP extension: MB String");
 	}
 
 	public function testXDebugModuleAvailable()
 	{
 		$this->assertTrue(function_exists("xdebug_break"), "Missing extension: xDebug.");
-		$this->assertTrue(function_exists("xdebug_info"), "xDebug should be upgraded.");
 
+		/**
+		 * Looks like only newer version of xDebug has this feature.
+		 */
+		$this->assertTrue(function_exists("xdebug_info"), "xDebug should be upgraded, if you are using it.");
 	}
 
 	public function testXDebugShouldNotAutostart()

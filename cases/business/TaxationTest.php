@@ -3,7 +3,7 @@ namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
 
-class FeaturesTest extends TestCase
+class TaxationTest extends TestCase
 {
     public function testLowOrderFeeApplies()
     {

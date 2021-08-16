@@ -1,9 +1,24 @@
 <?php
 /**
  * Path where your OpenCart is installed at.
- * Put without trailing /
+ * Put WITHOUT trailing slash /
  */
 $opencart_upload_folder = realpath("../opencart/upload");
+
+/**
+ * OpenCart Frontend configuration file
+ */
+require_once("{$opencart_upload_folder}/config.php");
+
+/**
+ * Admin config file
+ * 
+ * Silently load admin configurations too.
+ * The constants defined in admin will definitely collide with that in frontend.
+ */
+ob_start();
+require_once("{$opencart_upload_folder}/admin/config.php");
+ob_end_clean();
 
 /**
  * Show all error reporting.
@@ -12,7 +27,7 @@ error_reporting(E_ALL|E_STRICT);
 
 /**
  * Disable stack tracing with xDebug, if available.
- * But chances are rare on modern xDebug.
+ * But, chances are rare on modern xDebug.
  */
 $xdebug_disable = "xdebug_disable";
 if(function_exists($xdebug_disable))
@@ -32,24 +47,9 @@ require_once("library/class.catalog.inc.php");
 require_once("library/class.admin.inc.php");
 
 /**
- * Defeine sitewide business rules, multipliers, product count, etc.
+ * Define site-wide business rules, multipliers, product count, etc.
  */
 require_once("library/class.BusinessRules.inc.php");
-
-/**
- * OpenCart Frontend configuration file
- */
-require_once("{$opencart_upload_folder}/config.php");
-
-/**
- * Admin config file
- * 
- * Silently load admin configurations too.
- * The contsants defined in admin will definitely collide with that in frontend.
- */
-ob_start();
-require_once("{$opencart_upload_folder}/admin/config.php");
-ob_end_clean();
 
 use \library\PostQuery;
 

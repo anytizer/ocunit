@@ -11,11 +11,12 @@ class DownloadsTest extends TestCase
         // for each downloadable product
         // download product is masked
         // download product is actively linked
-        // customer who purchased a download can download
+        // customer who purchased a download can successfully download
         // download links are protected with login
+        // logged in customer cannot download another file, unless purchased
 
-        $admin = new DatabaseExecuter();
-        $downloads = $admin->downloads();
+        $dbx = new DatabaseExecuter();
+        $downloads = $dbx->downloads();
         
         foreach($downloads as $download)
         {
@@ -26,7 +27,7 @@ class DownloadsTest extends TestCase
             $masked_file = DIR_STORAGE."download/{$download['filename']}";
 
             $download_exists = is_file($masked_file);
-            $this->assertTrue($download_exists, "Missing download file for download id #{$download['download_id']}: {$download['name']}.");
+            $this->assertTrue($download_exists, "Missing file for download id #{$download['download_id']}: {$download['name']}.");
         }
     }
 }

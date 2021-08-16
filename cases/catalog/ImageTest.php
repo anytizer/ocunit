@@ -9,8 +9,8 @@ class ImageTest extends TestCase
 {
 	public function testCategoryImagesExist()
 	{
-		$admin = new DatabaseExecuter();
-		$categories = $admin->categories();
+		$dbx = new DatabaseExecuter();
+		$categories = $dbx->categories();
 
 		foreach($categories as $category)
 		{
@@ -39,8 +39,8 @@ class ImageTest extends TestCase
 
 	public function testProductImagesExist()
 	{
-		$admin = new DatabaseExecuter();
-		$products = $admin->products();
+		$dbx = new DatabaseExecuter();
+		$products = $dbx->products();
 
 		foreach($products as $product)
 		{

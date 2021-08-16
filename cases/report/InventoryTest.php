@@ -16,14 +16,13 @@ class InventoryTest extends TestCase
  
     public function testGenerateInventoryReport()
     {
-        $admin = new DatabaseExecuter();
-        $inventories = $admin->inventories();
-        
-        $total_products_counted = count($inventories);
+        $dbx = new DatabaseExecuter();
+        $inventories = $dbx->inventories();
+        $taxes = $dbx->taxes();
+        $lengths = $dbx->lengths();
+        $weights = $dbx->weights();
 
-        $taxes = $admin->taxes();
-        $lengths = $admin->lengths();
-        $weights = $admin->weights();
+        $total_products_counted = count($inventories);
 
         /**
          * Produce data log as printable report for the merchant.

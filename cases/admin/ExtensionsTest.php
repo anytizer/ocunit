@@ -8,8 +8,8 @@ class ExtensionsTest extends TestCase
 {
 	public function testCustomExtensionTablesPresent()
     {
-        $admin = new DatabaseExecuter();
-        $tables = $admin->tables();
+        $dbx = new DatabaseExecuter();
+        $tables = $dbx->tables();
 
         /**
          * Tables that are installed and used by third party extensions.

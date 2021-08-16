@@ -17,8 +17,9 @@ class MySQLPDO
 
     public function connect(): void
     {
+        $dsn = 'mysql:host='.DB_HOSTNAME.';dbname='.DB_DATABASE.';port=3306;';
         $this->connection = new PDO(
-            'mysql:host='.DB_HOSTNAME.';dbname='.DB_DATABASE.';port=3306;',
+            $dsn,
             DB_USERNAME,
             DB_PASSWORD,
             array(

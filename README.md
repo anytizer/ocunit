@@ -21,7 +21,7 @@ A list of fixutes is [available here](cases/business/).
 
 ## Installation
 
-Clone the project:
+Clone the projects and configure them independently:
 
     cd htdocs|public_html|www
 

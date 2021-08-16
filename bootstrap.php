@@ -23,6 +23,7 @@ if(function_exists($xdebug_disable))
 define("__OCUNIT_ROOT__", dirname(__FILE__)); // do not change it
 
 require_once("vendor/autoload.php");
+require_once("library/class.fql.inc.php");
 require_once("library/class.PostQuery.inc.php");
 require_once("library/class.MySQLPDO.inc.php");
 require_once("library/class.DatabaseExecuter.inc.php");

@@ -2,6 +2,7 @@
 namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
+use \library\fql as fql;
 use \library\MySQLPDO as MySQLPDO;
 use \library\BusinessRules as BusinessRules;
 use \PDOException;
@@ -88,4 +89,14 @@ class FixturesTest extends TestCase
 
 		$this->assertTrue(true, "Setup business rules.");
 	}
+
+    public function testAdminPaginationSizeIncreased()
+    {
+        $pdo = new MySQLPDO();
+
+        $sql = (new fql())->read("oc_setting.sql");
+        $pdo->raw($sql);
+
+        $this->assertTrue(true, "Admin pagination size increased.");
+    }
 }

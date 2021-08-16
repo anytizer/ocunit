@@ -1,21 +1,11 @@
 <?php
 namespace library;
 
+use \library\fql as fql;
 use \library\MySQLPDO as MySQLPDO;
 
 class DatabaseExecuter
 {
-    /**
-     * Read the SQL from file and rename the oc_ prefix.
-     */
-    private function fql($sql_filename="")
-    {
-        $sql = file_get_contents(__OCUNIT_ROOT__."/sql/".$sql_filename);
-        $sql = str_replace("oc_", DB_PREFIX, $sql);
-
-        return $sql;
-    }
-
     public function tables()
     {
         $pdo = new MySQLPDO();
@@ -40,7 +30,7 @@ class DatabaseExecuter
     {
         $pdo = new MySQLPDO();
 
-        $downloads_sql = $this->fql("downloads.sql");
+        $downloads_sql = (new fql())->read("downloads.sql");
         $downloads = $pdo->query($downloads_sql);
 
         return $downloads;
@@ -70,7 +60,7 @@ class DatabaseExecuter
     {
         $pdo = new MySQLPDO();
 
-        $sql = $this->fql("inventories.sql");
+        $sql = (new fql())->read("inventories.sql");
         $inventories = $pdo->query($sql);
 
         return $inventories;

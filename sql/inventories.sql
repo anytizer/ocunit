@@ -1,6 +1,3 @@
--- Single sql file for generating inventory report.
--- Used within phpunit test script.
--- Mind the database prefix - which may NOT be oc_.
 SELECT
     p.product_id,
     cd.`name` cname,

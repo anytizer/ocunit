@@ -1,6 +1,6 @@
 <?php
-
 use \PHPUnit\Framework\TestCase as TestCase;
+use Opencart\System\Engine\Action as Action;
 
 class OpenCartTest extends TestCase
 {
@@ -24,7 +24,7 @@ class OpenCartTest extends TestCase
         }
 
         $this->request->get['route'] = $route;
-        $this->controller->dispatch(new \Action($route), new \Action($this->config->get('action_error')));
+        $this->controller->dispatch(new Action($route), new Action($this->config->get('action_error')));
 
         return $this->response;
     }
@@ -32,13 +32,7 @@ class OpenCartTest extends TestCase
     public function loadModel($route)
     {
         $this->load->model($route);
-        $parts = explode("/", $route);
-
-        $model = 'model';
-        foreach ($parts as $part) {
-            $model .= "_" . $part;
-        }
-
+        $model = "model_".str_replace("/", "_", $route);
         return $this->$model;
     }
 

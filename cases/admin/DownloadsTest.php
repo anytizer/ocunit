@@ -11,12 +11,13 @@ class DownloadsTest extends TestCase
         // for each downloadable product
         // download product is masked
         // download product is actively linked
-        // customer who purchased a download can successfully download
+        // customer who purchased a download can successfully download file
         // download links are protected with login
         // logged in customer cannot download another file, unless purchased
 
         $dbx = new DatabaseExecuter();
         $downloads = $dbx->downloads();
+        $this->assertNotEmpty($downloads, "There are no downloadable products in your store.");
         
         foreach($downloads as $download)
         {

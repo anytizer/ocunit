@@ -4,7 +4,7 @@
  * Put WITHOUT trailing slash /
  */
 global $opencart_upload_folder;
-$opencart_upload_folder = realpath("d:/htdocs/oc/opencart/upload");
+$opencart_upload_folder = realpath("d:/htdocs/oc/store/upload");
 assert($opencart_upload_folder!="");
 
 /**

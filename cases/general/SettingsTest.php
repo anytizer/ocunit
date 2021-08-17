@@ -61,7 +61,7 @@ class SettingsTest extends TestCase
     public function testInstallFolderIsRemoved()
 	{
 		$install = DIR_OPENCART."install";
-		$this->assertFalse(is_dir($install), "Remove install folder!");
+		$this->assertFalse(is_dir($install), "Remove install/ folder!");
 	}
 
 	public function testAdminFolderIsRenamed()
@@ -82,7 +82,7 @@ class SettingsTest extends TestCase
             DIR_STORAGE."upload",
             DIR_STORAGE."vendor",
 
-            // @todo look for subfolders as well
+            // @todo look for sub-folders as well
             DIR_IMAGE,
         ];
         foreach($folders as $folder)
@@ -98,12 +98,19 @@ class SettingsTest extends TestCase
     public function testHtaccessDisablesDirectoryListingInFrontend()
     {
         $htaccess = file_get_contents(DIR_OPENCART.".htaccess");
-        $this->assertEquals($htaccess, "Options -Indexes", "Invalid .htaccess file in frontend.");
+        $this->assertEquals("Options -Indexes", $htaccess, "Invalid .htaccess file in frontend.");
     }
 
     public function testHtaccessDisablesDirectoryListingInAdmin()
     {
+        // @todo Move admin/ using a variable
         $htaccess_admin = file_get_contents(DIR_OPENCART."admin/.htaccess");
-        $this->assertEquals($htaccess_admin, "Options -Indexes", "Invalid .htaccess file in admin.");
+        $this->assertEquals("Options -Indexes", $htaccess_admin, "Invalid .htaccess file in admin.");
+    }
+
+    public function testCreateUrl()
+    {
+        // $link = $this->url->link('common/home');
+        // $this->assertEquals(HTTP_SERVER . 'index.php?route=common/home', $link, "Could not construct homepage URL");
     }
 }

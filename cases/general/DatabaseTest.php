@@ -23,7 +23,7 @@ class DatabaseTest extends TestCase
         $total = (int)$data[0]["total"];
 
         $business_rules = new BusinessRules();
-        $this->assertEquals($business_rules->settings_count, $total, "The configruations count has been modified.");
+        $this->assertEquals($business_rules->settings_count, $total, "The settings count has been modified.");
     }
 
     public function testAtLeastOneLanguageIsActive()
@@ -35,7 +35,8 @@ class DatabaseTest extends TestCase
         $total = (int)$data[0]["total"];
 
         /**
-         * Do NOT add multiple languages, and it should be en-gb.
+         * Do NOT add multiple languages.
+         * Default language should be eb-gb with id 1.
          */
         $this->assertEquals(1, $total);
     }
@@ -60,7 +61,7 @@ class DatabaseTest extends TestCase
         $sql = "SELECT * FROM `".DB_PREFIX."currency`;";
         $data = $pdo->query($sql);
         
-        $this->assertEquals(1, count($data));
+        $this->assertCount(1, $data);
         $this->assertEquals(1, (int)$data[0]["status"]);
     }
 }

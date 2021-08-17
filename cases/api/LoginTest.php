@@ -16,7 +16,7 @@ class LoginTest extends TestCase
 		$api_token_html = $api->get_token_html();
 		$data = json_decode($api_token_html, true);
 
-		$this->assertTrue(array_key_exists("api_token", $data), "`api_token` key missing in HTML/token-json response.");
+		$this->assertArrayHasKey("api_token", $data, "`api_token` key missing in HTML/token-json response.");
 		$api_token = $data["api_token"];
 		// {"success":"Success: API session successfully started!","api_token":"f5a254e32400369e587457dfd9"}
 		
@@ -75,7 +75,7 @@ class LoginTest extends TestCase
 		// api/shipping/address
 		// api/shipping/methods
 		// api/reward
-		// api/reward/avaliable
+		// api/reward/available
 		// api/order/add
 		// api/order/edit
 		// api/order/delete

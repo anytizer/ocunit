@@ -18,6 +18,9 @@ class IncludePathsTest extends TestCase
 		}
 	}
 
+    /**
+     * Minimum modules necessary to run OpenCart
+     */
 	public function testPhpModulesAvailable()
 	{
 		$this->assertTrue(function_exists("spl_autoload_register"), "Missing PHP extension: SPL");

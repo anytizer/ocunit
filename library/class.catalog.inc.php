@@ -71,6 +71,8 @@ class catalog
 
     public function login_simple()
     {
+        // http://localhost/opencart/upload/index.php?route=account/login|login&language=en-gb&login_token=d83e4e1f39e7859c30eddc998b
+
         $_GET = [
 			"route" => "account/login|login",
 			"language" => "en-gb",
@@ -86,11 +88,16 @@ class catalog
         return $html;
     }
 
-    public function login_protected()
+    /**
+     * @see // index.php?route=account/login|login&language=en-gb&login_token=5654914f48eccb41c6eb08fec3
+     * @return bool|string
+     */
+    public function login_advanced()
     {
         $_GET = [
 			"route" => "account/login|login",
 			"language" => "en-gb",
+
 			"login_token" => "5654914f48eccb41c6eb08fec3",
 		];
 

@@ -3,7 +3,9 @@
  * Path where your OpenCart is installed at.
  * Put WITHOUT trailing slash /
  */
-$opencart_upload_folder = realpath("../opencart/upload");
+global $opencart_upload_folder;
+$opencart_upload_folder = realpath("d:/htdocs/oc/opencart/upload");
+assert($opencart_upload_folder!="");
 
 /**
  * OpenCart Frontend configuration file

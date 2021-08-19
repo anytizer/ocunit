@@ -24,9 +24,9 @@ class PricingTest extends TestCase
 
 	public function testPriceChangeHistoryMaintained()
 	{
-	    // pick a project.
+	    // for each product:
         // edit the price using the admin panel.
-        // look for new record in price history table.
+        // look for a new record in price history table.
 		$this->markTestIncomplete("Pricing history is a todo.");
 	}
 }

@@ -121,7 +121,7 @@ class FixturesTest extends TestCase
                 $store = "store"; // @todo Replace with proper store name
                 $product_id = $product["product_id"];
                 $pdo->raw($update_sql, [
-                    "image" => "image/catalog/{$store}/products/{$product_id}-250x500.png",
+                    "image" => "image/catalog/{$store}/products/{$product_id}-800x400.png",
                     "product_id" => $product["product_id"],
                 ]);
 

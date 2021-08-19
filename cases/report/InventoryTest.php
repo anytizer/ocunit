@@ -7,7 +7,7 @@ use \library\DatabaseExecuter as DatabaseExecuter;
 
 class InventoryTest extends TestCase
 {
-    private $business_rules;
+    private BusinessRules $business_rules;
 
     public function setUp(): void
     {
@@ -31,7 +31,7 @@ class InventoryTest extends TestCase
 
         foreach($inventories as $inventory)
         {
-            $this->assertNotNull($inventory["mprice"], "Missing manufacturer price for product {$inventory['name']} #{$inventory['product_id']}");
+            $this->assertNotNull($inventory["mprice"], "Missing manufacturer price for product #{$inventory['product_id']} - {$inventory['name']}");
 
             $pricing_profitability_managed = $inventory["price"] >= $inventory["mprice"] * $this->business_rules->multiplier;
             $this->assertTrue($pricing_profitability_managed, "Probably loss in final pricing based on manufacturer price.");

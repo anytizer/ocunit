@@ -1,4 +1,4 @@
--- Proce change history
+-- Price change history
 
 CREATE TABLE `tw_price_history` (
   `history_id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,

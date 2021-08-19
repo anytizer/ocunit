@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "abfdaf9955bfcf154fd32187a0ba7e69",
+    "content-hash": "fa1eaec5705269326963b03008a50583",
     "packages": [
         {
             "name": "anytizer/relay.php",
@@ -2221,7 +2221,9 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-pdo": "*"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
 }

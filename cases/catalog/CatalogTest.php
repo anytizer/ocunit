@@ -8,7 +8,7 @@ use \library\MySQLPDO;
 
 class CatalogTest extends TestCase
 {
-	public function testIndexPage()
+	public function testIndexPageHasToastSpace()
 	{
 		$catalog = new catalog();
 		$html = $catalog->browse_index();
@@ -16,25 +16,36 @@ class CatalogTest extends TestCase
 		$this->assertTrue(str_contains($html, "<div id=\"toast\"></div>"), "Failed checking index page contains toast placeholder.");
 	}
 
+	public function testAdminDashboardRequiresLogin()
+    {
+        // @todo Replace "admin" with a variable.
+        $inner_page = HTTP_SERVER."admin/index.php?route=common/dashboard";
+        $catalog = new catalog();
+        $html = $catalog->open($inner_page);
+
+        /**
+         * The page should have been redirected to login form, which contains the following search term:
+         */
+        $search_string = "Forgotten Password";
+        $this->assertTrue(str_contains($html, $search_string), "Dashboard should ask for login.");
+    }
+
 	public function testInnerPagesNeedLogin()
 	{
-		$this->markTestSkipped();
-		return;
-
 		$client_links = [
-			"Login" => "route=account/login",
-			"Register" => "route=account/register",
-			"Forgotten Password" => "route=account/forgotten",
-			"My Account" => "route=account/account",
-			"Address Book" => "route=account/address",
-			"Wish List" => "route=account/wishlist",
-			"Order History" => "route=account/order",
-			"Downloads" => "route=account/download",
-			"Recurring payments" => "route=account/recurring",
-			"Reward Points" => "route=account/reward",
-			"Returns" => "route=account/returns",
-			"Transactions" => "route=account/transaction",
-			"Newsletter" => "route=account/newsletter",
+			"Login" => "account/login",
+			"Register" => "account/register",
+			"Forgotten Password" => "account/forgotten",
+			"My Account" => "account/account",
+			"Address Book" => "account/address",
+			"Wish List" => "account/wishlist",
+			"Order History" => "account/order",
+			"Downloads" => "account/download",
+			"Recurring payments" => "account/recurring",
+			"Reward Points" => "account/reward",
+			"Returns" => "account/returns",
+			"Transactions" => "account/transaction",
+			"Newsletter" => "account/newsletter",
 		];
 
 		foreach($client_links as $link_name => $route)
@@ -52,8 +63,9 @@ class CatalogTest extends TestCase
 			]);
 			
 			$html = $relay->fetch(HTTP_SERVER."index.php");
-		}
 
-		 $this->markTestIncomplete("Navigating to these links require a login.");
+            $search_string = "Forgotten Password";
+            $this->assertTrue(str_contains($html, $search_string), "Route {$route} should ask for login.");
+		}
 	}
 }

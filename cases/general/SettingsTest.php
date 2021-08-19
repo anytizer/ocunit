@@ -2,7 +2,8 @@
 namespace cases\general;
 
 use \PHPUnit\Framework\TestCase;
-use \library\MySQLPDO as MySQLPDO;
+use \Opencart\System\Library\Url as Url;
+require_once(DIR_OPENCART."system/library/url.php");
 
 class SettingsTest extends TestCase
 {
@@ -114,9 +115,10 @@ class SettingsTest extends TestCase
         $this->assertEquals("Options -Indexes", $htaccess_admin, "Invalid .htaccess file in admin.");
     }
 
-    public function testCreateUrl()
+    public function testConstructHomepageUrl()
     {
-        // $link = $this->url->link('common/home');
-        // $this->assertEquals(HTTP_SERVER . 'index.php?route=common/home', $link, "Could not construct homepage URL");
+        $url = new Url(HTTP_SERVER);
+        $link = $url->link("common/home");
+        $this->assertEquals(HTTP_SERVER . "index.php?route=common/home", $link, "Could not construct homepage URL");
     }
 }

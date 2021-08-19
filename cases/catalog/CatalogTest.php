@@ -37,6 +37,8 @@ class CatalogTest extends TestCase
 			"Register" => "account/register",
 			"Forgotten Password" => "account/forgotten",
 			"My Account" => "account/account",
+			"Account Edit" => "account/edit",
+			"Password" => "account/password",
 			"Address Book" => "account/address",
 			"Wish List" => "account/wishlist",
 			"Order History" => "account/order",
@@ -46,12 +48,11 @@ class CatalogTest extends TestCase
 			"Returns" => "account/returns",
 			"Transactions" => "account/transaction",
 			"Newsletter" => "account/newsletter",
+            "Logout" => "account/logout",
 		];
 
 		foreach($account_links as $link_name => $route)
 		{
-			// open link
-			// html must see LOGIN REQUIRED
 			$_GET = [
 				"route" => $route,
 				"language" => "en-gb",
@@ -64,6 +65,9 @@ class CatalogTest extends TestCase
 			
 			$html = $relay->fetch(HTTP_SERVER."index.php");
 
+            /**
+             * When page redirected to login form, following message can be seen:
+             */
             $search_string = "Forgotten Password";
             $this->assertTrue(str_contains($html, $search_string), "Route {$route} should ask for login.");
 		}

@@ -22,8 +22,8 @@ class DownloadsTest extends TestCase
         foreach($downloads as $download)
         {
             /**
-             * @todo Figure out where is the downloadable file
-             * @todo Downloadable file must be a .zip file
+             * @todo Figure out where the downloadable file is.
+             * @todo Downloadable file must be a .zip file.
              */
             $masked_file = DIR_STORAGE."download/{$download['filename']}";
 

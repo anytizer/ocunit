@@ -5,7 +5,7 @@ Merchant oriented test scripts for OpenCart based on PHPUnit.
 __WARNING__: Never execute these tests against your live database or in server environment. It is likely to override the product information, pricing, session and more.
 Always choose a database that is not in production. The database may never return to its original state.
 
-This project is NOT about developing the core OpenCart but the implementation of OpenCart.
+This project is NOT about developing the core OpenCart but the implementation of OpenCart to run a store.
 
 OCUnit reads the actual configuration values from within your OpenCart and makes various tests.
 This has sometimes, hardcoded or embedded Database IDs which should be changed to fit your store.

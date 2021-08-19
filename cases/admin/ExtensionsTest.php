@@ -6,14 +6,11 @@ use \library\DatabaseExecuter as DatabaseExecuter;
 
 class ExtensionsTest extends TestCase
 {
-	public function testCustomExtensionTablesPresent()
+	public function testThirdPartyExtensionTablesArePresent()
     {
         $dbx = new DatabaseExecuter();
         $tables = $dbx->tables();
 
-        /**
-         * Tables that are installed and used by third party extensions.
-         */
         $searches = [
             "tw_price_history",
             "tw_manufacturer_prices",

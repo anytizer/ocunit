@@ -86,6 +86,6 @@ class LoginTest extends TestCase
 		// api/payment/methods
 		// api/payment/method
 
-		$this->markTestIncomplete("Unable to test routes.");
+		$this->markTestIncomplete("Unable to test API Routes.");
 	}
 }

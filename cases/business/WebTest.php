@@ -5,7 +5,7 @@ use \PHPUnit\Framework\TestCase;
 
 class WebTest extends TestCase
 {
-    public function testForceStrongPasswordInWebPages()
+    public function testShowMessageToChooseStrongPassword()
     {
         // user registration page
         // password change page

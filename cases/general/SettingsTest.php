@@ -43,14 +43,19 @@ class SettingsTest extends TestCase
         $parent = dirname(realpath(DIR_STORAGE));
 
         /**
-         * Following folders should NOT appear in the directory name
+         * Following folders should NOT appear in the directory name for ./storage/
+         * In most linux systems: /home/USER/public_html/opencart/upload/storage/
+         * In some dedicated systems: /var/www/html/opencart/upload/storage/
          */
         $restrictions = [
             "upload",
             "public_html",
             "htdocs",
             "www",
-            "web"
+            "web",
+
+            "opencart",
+            "store",
         ];
         foreach($restrictions as $folder)
         {
@@ -66,6 +71,7 @@ class SettingsTest extends TestCase
 
 	public function testAdminFolderIsRenamed()
 	{
+	    // @todo Replace "admin" with a variable
 		$admin = DIR_OPENCART."admin";
 		$this->assertFalse(is_dir($admin), "Rename admin folder to something difficult!");
 	}

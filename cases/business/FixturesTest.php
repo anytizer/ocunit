@@ -108,14 +108,13 @@ class FixturesTest extends TestCase
     {
         $pdo = new MySQLPDO();
 
-        $affected = 0;
-        $sql = "SELECT product_id, image FROM `".DB_PREFIX."product`;";
-        $products = $pdo->query($sql);
+        $modified = 0;
+        $products_sql = "SELECT product_id, image FROM `".DB_PREFIX."product`;";
+        $products = $pdo->query($products_sql);
         foreach($products as $p => $product)
         {
             if(empty($product["image"]))
             {
-                ++$affected;
                 $update_sql = "UPDATE `".DB_PREFIX."product` SET image=:image WHERE product_id=:product_id;";
 
                 $store = "store"; // @todo Replace with proper location name
@@ -124,13 +123,16 @@ class FixturesTest extends TestCase
                     "image" => "image/catalog/{$store}/{$product_id}-250x500.png",
                     "product_id" => $product["product_id"],
                 ]);
-            }
-            else
-            {
-                // @todo Assert that image exists
+
+                ++$modified;
             }
         }
 
-        $this->assertEquals(0, $affected, "Product must have a main image assigned.");
+        /**
+         * By design:
+         *    On first run, caches error.
+         *    On second run, it is ok.
+         */
+        $this->assertEquals(0, $modified, "Product images have been auto assigned.");
     }
 }

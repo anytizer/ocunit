@@ -4,9 +4,9 @@ namespace library;
 class BusinessRules
 {
     /**
-     * Factor multiplier that converts vendor price into store price
-     * eg. price = vendor price * multiplier
-     * eg. vendor price = price / multiplier
+     * Factor multiplier that converts manufacturer price into store price
+     * eg. price = manufacturer price * multiplier
+     * eg. manufacturer price = price / multiplier
      */
     public $multiplier = 2.5;
 
@@ -32,7 +32,7 @@ class BusinessRules
     public $total_products = 91;
 
     /**
-     * Number of settings/configuratiosn count
+     * Number of settings/configuration count
      * 
      * SELECT COUNT(*) total FROM oc_setting; -- on a trusted database
      */

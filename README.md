@@ -5,13 +5,13 @@ Merchant oriented test scripts for OpenCart based on PHPUnit.
 __WARNING__: Never execute these tests against your live database or in server environment. It is likely to override the product information, pricing, session and more.
 Always choose a database that is not in production. The database may never return to its original state.
 
-This project is NOT about developing the core OpenCart but the implementation.
+This project is NOT about developing the core OpenCart but the implementation of OpenCart.
 
-This project reads the actual configuration values from within your OpenCart and makes various tests.
+OCUnit reads the actual configuration values from within your OpenCart and makes various tests.
 This has sometimes, hardcoded or embedded Database IDs which should be changed to fit your store.
 There are [business rules](library/class.BusinessRules.inc.php) and few [configurations](bootstrap.php) you should edit before running the test.
 
-A list of fixes is [available here](cases/business/).
+A list of fixes is [available here](cases/business/) as business layer cases.
 
 
 ## Test Examples
@@ -83,7 +83,7 @@ Other examples are one of:
     phpunit phpunit-9.5.8.phar cases/report
 
 
-# Logs Produced
+## Logs Produced
 
 * `logs/testdox.txt`
 * `logs/inventory.log` - concise report about products and prices for the merchant.
@@ -100,10 +100,10 @@ Other examples are one of:
 
 # Contribution
 
-If you have a specific idea on how OCUnit (Test scripts for OpenCart based on PHPUnit) should run, fork the project and submit your test cases.
+If you have a specific idea on how OCUnit (Test scripts for OpenCart based on PHPUnit) should function, fork the project and submit your test cases.
 Or, mention your issue to @anytizer.
 
-In general, these test scripts are merchant oriented.
+In general, these test scripts are merchant oriented, rather than testing the OpenCart itself.
 
 
 # Made with

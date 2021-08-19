@@ -31,10 +31,10 @@ class InventoryTest extends TestCase
 
         foreach($inventories as $inventory)
         {
-            $this->assertNotNull($inventory["vprice"], "Missing vendor price for product {$inventory['name']} #{$inventory['product_id']}");
+            $this->assertNotNull($inventory["mprice"], "Missing manufacturer price for product {$inventory['name']} #{$inventory['product_id']}");
 
-            $pricing_profitability_managed = $inventory["price"] >= $inventory["vprice"] * $this->business_rules->multiplier;
-            $this->assertTrue($pricing_profitability_managed, "Probably loss in final pricing based on vendor price.");
+            $pricing_profitability_managed = $inventory["price"] >= $inventory["mprice"] * $this->business_rules->multiplier;
+            $this->assertTrue($pricing_profitability_managed, "Probably loss in final pricing based on manufacturer price.");
         }
 
         $this->assertEquals($this->business_rules->total_products, $total_products_counted, "Number of products in the database changed! Update \$records.");
@@ -52,7 +52,7 @@ class InventoryTest extends TestCase
              * Sanitize the data
              */
             $inventory["price"] = number_format($inventory["price"], 2, ".", ",");
-            $inventory["vprice"] = number_format($inventory["vprice"], 2, ".", ",");
+            $inventory["mprice"] = number_format($inventory["mprice"], 2, ".", ",");
             $inventory["profit"] = number_format($inventory["profit"], 2, ".", ",");
 
             $inventory["length"] = number_format($inventory["length"], 2, ".", ",");
@@ -71,11 +71,11 @@ class InventoryTest extends TestCase
             $download_tick = is_file($inventory["download"])?$tick:".";
 
             /**
-             * Product makes sufficient profit based on vendor price by 1.5 times business rule
+             * Product makes sufficient profit based on manufacturer price by 1.5 times business rule
              * Final product price should include original shipping costs as well.
-             * @todo see business rule for profit margnin
+             * @todo see business rule for profit margin
              */
-            $profit_tick = $inventory["price"] >= $inventory["vprice"] * 1.5 ? $tick: $cross;
+            $profit_tick = $inventory["price"] >= $inventory["mprice"] * 1.5 ? $tick: $cross;
 
             $tax_class_name = $taxes[$inventory["tax_class_id"]];
             $length_unit = $lengths[$inventory["length_class_id"]];
@@ -89,7 +89,7 @@ class InventoryTest extends TestCase
 {$inventory['cname']} - {$inventory['model']} > {$inventory['sku']}
 {$tax_class_name} #{$inventory['tax_class_id']}
     {$inventory['length']} x {$inventory['width']} x {$inventory['height']} {$length_unit}: @{$inventory['weight']} {$weight_unit}
-    {$inventory['price']} - {$inventory['vprice']} = {$inventory['profit']}
+    {$inventory['price']} - {$inventory['mprice']} = {$inventory['profit']}
     [ {$image_tick} ] Image.   [ {$download_tick} ] Download.   [ {$profit_tick} ] Profits.
 
 ";

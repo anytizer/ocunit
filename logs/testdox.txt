@@ -30,7 +30,7 @@ Features (cases\business\Features)
 
 Fixtures (cases\business\Fixtures)
  [x] Create missing third party tables
- [x] Fix vendor pricing by product price
+ [x] Fix manufacturer pricing by product price
  [x] Fix shipping requires inventory subtraction
  [x] Fix downloadable product does not subtract inventory
  [x] Setup business rules
@@ -43,15 +43,16 @@ Maintenance (cases\business\Maintenance)
  [ ] Post installation
 
 Pricing (cases\business\Pricing)
- [ ] Vendor price exists
- [ ] Product price is greater than vendor price
- [ ] Product price is greater than vendor price even after discounts
+ [ ] Manufacturer price exists
+ [ ] Product price is greater than manufacturer price
+ [ ] Product price is greater than manufacturer price even after discounts
  [ ] Price change history maintained
 
 Shipping (cases\business\Shipping)
  [ ] Free shipping within city of store
  [ ] Post office api usage
  [ ] Pickup request
+ [ ] Picked up item emails to customer
  [ ] Deny cross boarder shipping
 
 Taxation (cases\business\Taxation)

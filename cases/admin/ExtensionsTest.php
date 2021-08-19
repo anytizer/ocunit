@@ -17,6 +17,7 @@ class ExtensionsTest extends TestCase
         $searches = [
             "tw_price_history",
             "tw_manufacturer_prices",
+            "tw_product_videos",
         ];
         foreach($searches as $table)
         {

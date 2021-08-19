@@ -36,7 +36,7 @@ class FixturesTest extends TestCase
     }
 
     /**
-     * @todo Once vendor pricing managed for all products, disable this fixture.
+     * @todo Once vendor pricing managed for all products, disable this test.
      */
     public function testFixVendorPricingByProductPrice()
     {

@@ -7,7 +7,7 @@ Always choose a database that is not in production. The database may never retur
 
 This project is NOT about developing the core OpenCart but the implementation.
 
-This project reads the actual configuration values from within your OpenCart and makes [various tests](logs/testdox.txt).
+This project reads the actual configuration values from within your OpenCart and makes various tests.
 This has sometimes, hardcoded or embedded Database IDs which should be changed to fit your store.
 There are [business rules](library/class.BusinessRules.inc.php) and few [configurations](bootstrap.php) you should edit before running the test.
 
@@ -18,6 +18,7 @@ A list of fixes is [available here](cases/business/).
 
 * If you add a category, a corresponding image should exist.
 * If you add a product, a corresponding image should exist.
+* [More test examples](logs/testdox.txt).
 
 
 ### In progress
@@ -106,4 +107,5 @@ In general, these test scripts are merchant oriented.
 
 
 # Made with
+
 * [VS Code](https://code.visualstudio.com/download) | [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer)

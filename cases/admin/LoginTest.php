@@ -30,4 +30,9 @@ class LoginTest extends TestCase
     {
         $this->markTestIncomplete("Customer approval required for login.");
     }
+
+    public function testGuestCheckout()
+    {
+        $this->markTestIncomplete("Guest checkout disabled.");
+    }
 }

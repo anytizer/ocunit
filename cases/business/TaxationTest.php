@@ -7,11 +7,11 @@ class TaxationTest extends TestCase
 {
     public function testLowOrderFeeApplies()
     {
-        $this->markTestIncomplete("Low Order Fee to apply.");
+        $this->markTestIncomplete("Low order fee to apply.");
     }
 
     public function testLowTaxRateInAlberta()
     {
-        $this->markTestIncomplete("Taxes not calculated for Alberta Tax Zone.");
+        $this->markTestIncomplete("Low tax rate for Alberta Tax Zone.");
     }
 }

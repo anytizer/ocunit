@@ -23,7 +23,7 @@ class LoginTest extends TestCase
 		$this->assertEquals(strlen("f5a254e32400369e587457dfd9"), strlen($api_token), "API Token length mismatched.");
 	}
 
-	public function testListOfAllApis()
+	public function testInappropriateApiUsers()
 	{
 		$api = new api();
 		$apis = $api->list_all_api();
@@ -47,6 +47,7 @@ class LoginTest extends TestCase
 			"admin",
 			"customer",
 			"user",
+            "example",
         ];
 
         foreach($searches as $search)

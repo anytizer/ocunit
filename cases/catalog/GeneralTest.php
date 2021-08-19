@@ -11,12 +11,12 @@ class GeneralTest extends TestCase
 	public function testSearchesInPages()
 	{
 		/**
-		 * Obtain user defined configurations for searches
+		 * Obtain user defined configurations for store-wide searches
 		 * @see bootstrap.php
 		 */
 		global $searches_in_html_pages;
 
-		foreach($searches_in_html_pages as $post_query)
+		foreach($searches_in_html_pages as $pq => $post_query)
 		{
 			$page = $post_query->page;
 			$_GET = $post_query->get;

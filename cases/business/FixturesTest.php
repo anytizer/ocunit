@@ -9,7 +9,7 @@ use \PDOException;
 
 class FixturesTest extends TestCase
 {
-    public $business_rules;
+    public BusinessRules $business_rules;
 
     public function setUp(): void
     {
@@ -44,6 +44,7 @@ class FixturesTest extends TestCase
         // rename table
         // create table
         // insert the data
+        // look for price history by database trigger
         
         $sql = "DELETE FROM tw_manufacturer_prices;";
         $pdo->raw($sql);
@@ -61,7 +62,7 @@ class FixturesTest extends TestCase
         $sql = "UPDATE `".DB_PREFIX."product` SET subtract='1' WHERE shipping='1';";
         $pdo->raw($sql);
 
-        $this->assertTrue(true, "Shipping of tangiable products must require subtraction in inventory.");
+        $this->assertTrue(true, "Shipping of tangible products must require subtraction in inventory.");
     }
 
     public function testFixDownloadableProductDoesNotSubtractInventory()
@@ -98,5 +99,38 @@ class FixturesTest extends TestCase
         $pdo->raw($sql);
 
         $this->assertTrue(true, "Admin pagination size increased.");
+    }
+
+    /**
+     * @todo Empty the image data before running this test.
+     */
+    public function testFixProductImages()
+    {
+        $pdo = new MySQLPDO();
+
+        $affected = 0;
+        $sql = "SELECT product_id, image FROM `".DB_PREFIX."product`;";
+        $products = $pdo->query($sql);
+        foreach($products as $p => $product)
+        {
+            if(empty($product["image"]))
+            {
+                ++$affected;
+                $update_sql = "UPDATE `".DB_PREFIX."product` SET image=:image WHERE product_id=:product_id;";
+
+                $store = "store"; // @todo Replace with proper location name
+                $product_id = $product["product_id"];
+                $pdo->raw($update_sql, [
+                    "image" => "image/catalog/{$store}/{$product_id}-250x500.png",
+                    "product_id" => $product["product_id"],
+                ]);
+            }
+            else
+            {
+                // @todo Assert that image exists
+            }
+        }
+
+        $this->assertEquals(0, $affected, "Product must have a main image assigned.");
     }
 }

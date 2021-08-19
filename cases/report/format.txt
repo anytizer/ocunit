@@ -1,6 +1,6 @@
 Product Name #ID: Min Buy of Stock: ±Y/N
 Apparels - MODEL > SKU
-Tax Class: Taxable iten name #ID
+Tax Class: Taxable item name #ID
 L x W x H @weight_class_id: Weight Unit
     Price - VPrice = Profit
     [ . ] Image.   [ . ] Download.   [ ✓ ] Profits.

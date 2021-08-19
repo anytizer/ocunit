@@ -10,6 +10,7 @@ Login (cases\admin\Login)
  [ ] Login succeeds
  [ ] Customer login form has captcha
  [ ] Customer approval required for login
+ [ ] Guest checkout
 
 Order Cancel (cases\admin\OrderCancel)
  [ ] Order cancelled properly
@@ -18,9 +19,9 @@ Settings (cases\admin\Settings)
  [x] Database constants defined
  [x] Other settings defined
 
-Login (cases\business\Login)
+Login (cases\api\Login)
  [x] Get api token
- [x] List of all apis
+ [x] Inappropriate api users
  [ ] Access routes
 
 Features (cases\business\Features)
@@ -33,12 +34,13 @@ Fixtures (cases\business\Fixtures)
  [x] Fix shipping requires inventory subtraction
  [x] Fix downloadable product does not subtract inventory
  [x] Setup business rules
-
-Index (cases\business\Index)
- [ ] Index contains unique category names
+ [x] Admin pagination size increased
+ [x] Fix product images
+ [x] Fix category images
 
 Maintenance (cases\business\Maintenance)
- [ ] Post installation cleanups
+ [ ] Pre installation
+ [ ] Post installation
 
 Pricing (cases\business\Pricing)
  [ ] Vendor price exists
@@ -46,14 +48,26 @@ Pricing (cases\business\Pricing)
  [ ] Product price is greater than vendor price even after discounts
  [ ] Price change history maintained
 
+Shipping (cases\business\Shipping)
+ [ ] Free shipping within city of store
+ [ ] Post office api usage
+ [ ] Pickup request
+ [ ] Deny cross boarder shipping
+
 Taxation (cases\business\Taxation)
  [ ] Low order fee applies
  [ ] Low tax rate in alberta
- [ ] Free shipping in edmonton
+
+Web (cases\business\Web)
+ [ ] Force strong password in web pages
 
 Catalog (cases\catalog\Catalog)
- [x] Index page
- [ ] Inner pages need login
+ [x] Index page has toast div
+ [x] Admin dashboard requires login
+ [x] Account pages need login
+
+General (cases\catalog\General)
+ [x] Searches in pages
 
 Image (cases\catalog\Image)
  [ ] Category images exist
@@ -62,13 +76,10 @@ Image (cases\catalog\Image)
  [ ] Product images are valid images
  [ ] Image files do not contain scripts
 
-Index (cases\catalog\Index)
- [x] Searches in pages
-
 Database (cases\general\Database)
  [x] Can connect to the database
  [x] Count number of settings
- [x] At least one language is active
+ [x] Only one language is active
  [x] Admin paginates 100 items
  [x] Single currency operation
 
@@ -105,6 +116,7 @@ Settings (cases\general\Settings)
  [x] System file permissions
  [x] Htaccess disables directory listing in frontend
  [x] Htaccess disables directory listing in admin
+ [x] Construct homepage url
 
 Inventory (cases\report\Inventory)
  [x] Generate inventory report

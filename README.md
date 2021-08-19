@@ -14,10 +14,17 @@ There are [business rules](library/class.BusinessRules.inc.php) and few [configu
 A list of fixes is [available here](cases/business/).
 
 
-## Test Examples (in progress)
+## Test Examples
 
+* If you add a category, a corresponding image should exist.
 * If you add a product, a corresponding image should exist.
+
+
+### In progress
+
 * Store price cannot be less than the manufacturer price.
+* Products must have videos.
+* Price change history is maintained.
 
 
 # Requirements

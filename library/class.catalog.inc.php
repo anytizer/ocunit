@@ -43,6 +43,7 @@ class catalog
 			"language" => "en-gb",
 			"path" => "66_63",
 		];
+        $_POST = [];
 		$relay = new relay();
 		$relay->headers([
 			"X-Protection-Token" => "",
@@ -62,12 +63,32 @@ class catalog
 			"path" => "66_63",
 			"product_id" => 82,
 		];
+        $_POST = [];
 		$relay = new relay();
 		$relay->headers([
 			"X-Protection-Token" => "",
 		]);
 		$this->html = $relay->fetch(HTTP_SERVER."index.php");
 	}
+
+    /**
+     * Open an arbitrary page for testing its HTML
+     *
+     * @param string $url
+     * @return bool|string
+     */
+    public function open($url="https://...")
+    {
+        $_GET = [];
+        $_POST = [];
+        $relay = new relay();
+        $relay->headers([
+            "X-Protection-Token" => "",
+        ]);
+        $html = $relay->fetch($url);
+
+        return $html;
+    }
 
     public function login_simple()
     {

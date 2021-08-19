@@ -70,7 +70,7 @@ class ImageTest extends TestCase
 
 	public function testImageFilesDoNotContainScripts()
 	{
-		// for each images:
+		// for each image:
 		// php script is not found in the file.
 		$this->markTestIncomplete("Need to scan images for presence of scripts.");
 	}

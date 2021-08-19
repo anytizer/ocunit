@@ -5,6 +5,8 @@ Merchant oriented test scripts for OpenCart based on PHPUnit.
 __WARNING__: Never execute these tests against your live database or in server environment. It is likely to override the product information, pricing, session and more.
 Always choose a database that is not in production. The database may never return to its original state.
 
+This project is NOT about developing the core OpenCart.
+
 This project reads the actual configuration values from within your OpenCart and makes [various tests](logs/testdox.txt).
 This has sometimes, hardcoded or embedded Database IDs which should be changed to fit your store.
 There are [business rules](library/class.BusinessRules.inc.php) and few [configurations](bootstrap.php) you should edit before running the test.
@@ -12,7 +14,13 @@ There are [business rules](library/class.BusinessRules.inc.php) and few [configu
 A list of fixes is [available here](cases/business/).
 
 
-## Requirements
+## Test Examples (in progress)
+
+* If you add a product, a corresponding image should exist.
+* Store price cannot be less than the manufacturer price.
+
+
+# Requirements
 
 * [PHP](https://www.php.net/) 8.0.8+
 * [PHPUnit](https://phpunit.de/) 9.5.8+
@@ -20,7 +28,7 @@ A list of fixes is [available here](cases/business/).
 * [relay.php](https://packagist.org/packages/anytizer/relay.php) -- composer package of a minimal HTTP client
 
 
-## Installation
+# Installation
 
 Clone the projects and configure/install them independently:
 
@@ -42,22 +50,33 @@ Update the composer dependencies:
     php8.0 composer.phar update
 
 
-## Configuration
+# Configuration
 
 * Edit `bootstrap.php` file for pointing to the location of your opencart.
 * Edit `$searches_in_html_pages` for your products in various pages.
 * Edit your [business rules](library/class.BusinessRules.inc.php).
 
 
-## Test Execution
+# Test Execution
 
 `php phpunit-9.5.8.phar` runs the entire test cases.
 
 * Under Windows: `run8.0.bat`
 * Or, under Linux: `./run8.0.sh`
 
+For advanced uses, to run specific tests, an example would be: `php phpunit-9.5.8.phar cases/general`, which runs faster than running all the test cases.
+Other examples are one of:
 
-## Logs Produced
+    phpunit phpunit-9.5.8.phar cases/admin
+    phpunit phpunit-9.5.8.phar cases/api
+    phpunit phpunit-9.5.8.phar cases/business
+    phpunit phpunit-9.5.8.phar cases/catalog
+    phpunit phpunit-9.5.8.phar cases/catalog
+    phpunit phpunit-9.5.8.phar cases/general
+    phpunit phpunit-9.5.8.phar cases/report
+
+
+# Logs Produced
 
 * `logs/testdox.*`
 * `logs/inventory.log` reports about products and prices for the merchant.

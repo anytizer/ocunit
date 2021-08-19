@@ -1,6 +1,7 @@
 {
     "require": {
-        "anytizer/relay.php": "dev-master"
+        "anytizer/relay.php": "dev-master",
+      "ext-pdo": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",

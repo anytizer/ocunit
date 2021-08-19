@@ -6,15 +6,15 @@ namespace library;
  */
 class PostQuery
 {
-    public $page = null;
+    public string $page;
 
-    public $get = [];
-    public $post = [];
+    public array $get;
+    public array $post;
 
 	/**
 	 * Phrases to look for
 	 */
-    public $lookups = [];
+    public array $lookups;
 
     public function __construct($page="index.php", $get=[], $post=[], $lookups=[])
     {

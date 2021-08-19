@@ -6,11 +6,10 @@ use \library\MySQLPDO as MySQLPDO;
 
 class DatabaseExecuter
 {
-    public function tables()
+    public function tables(): array
     {
         $pdo = new MySQLPDO();
 
-        // DB_DATABASE
         $tables_sql="SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE();";
         $tables = $pdo->query($tables_sql);
 
@@ -26,7 +25,7 @@ class DatabaseExecuter
         return $names;
     }
 
-    public function downloads()
+    public function downloads(): array
     {
         $pdo = new MySQLPDO();
 
@@ -36,7 +35,7 @@ class DatabaseExecuter
         return $downloads;
     }
 
-    public function categories()
+    public function categories(): array
     {
         $pdo = new MySQLPDO();
 		
@@ -46,7 +45,7 @@ class DatabaseExecuter
         return $categories;
     }
 
-    public function products()
+    public function products(): array
     {
         $pdo = new MySQLPDO();
 		
@@ -56,7 +55,7 @@ class DatabaseExecuter
         return $products;
     }
 
-    public function inventories()
+    public function inventories(): array
     {
         $pdo = new MySQLPDO();
 
@@ -66,7 +65,7 @@ class DatabaseExecuter
         return $inventories;
     }
 
-    public function taxes()
+    public function taxes(): array
     {
         $pdo = new MySQLPDO();
         
@@ -83,7 +82,7 @@ class DatabaseExecuter
         return $taxes;
     }
 
-    public function lengths()
+    public function lengths(): array
     {
         $pdo = new MySQLPDO();
 
@@ -100,7 +99,7 @@ class DatabaseExecuter
         return $lengths;
     }
 
-    public function weights()
+    public function weights(): array
     {
         $pdo = new MySQLPDO();
 

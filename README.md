@@ -5,7 +5,7 @@ Merchant oriented test scripts for OpenCart based on PHPUnit.
 __WARNING__: Never execute these tests against your live database or in server environment. It is likely to override the product information, pricing, session and more.
 Always choose a database that is not in production. The database may never return to its original state.
 
-This project is NOT about developing the core OpenCart.
+This project is NOT about developing the core OpenCart but the implementation.
 
 This project reads the actual configuration values from within your OpenCart and makes [various tests](logs/testdox.txt).
 This has sometimes, hardcoded or embedded Database IDs which should be changed to fit your store.
@@ -61,7 +61,7 @@ Update the composer dependencies:
 
 `php phpunit-9.5.8.phar` runs the entire test cases.
 
-* Under Windows: `run8.0.bat`
+* Under Windows: `.\run8.0.bat`
 * Or, under Linux: `./run8.0.sh`
 
 For advanced uses, to run specific tests, an example would be: `php phpunit-9.5.8.phar cases/general`, which runs faster than running all the test cases.
@@ -71,15 +71,14 @@ Other examples are one of:
     phpunit phpunit-9.5.8.phar cases/api
     phpunit phpunit-9.5.8.phar cases/business
     phpunit phpunit-9.5.8.phar cases/catalog
-    phpunit phpunit-9.5.8.phar cases/catalog
     phpunit phpunit-9.5.8.phar cases/general
     phpunit phpunit-9.5.8.phar cases/report
 
 
 # Logs Produced
 
-* `logs/testdox.*`
-* `logs/inventory.log` reports about products and prices for the merchant.
+* `logs/testdox.txt`
+* `logs/inventory.log` - concise report about products and prices for the merchant.
 
 
 # Inspirations

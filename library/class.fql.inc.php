@@ -3,7 +3,7 @@ namespace library;
 
 class fql
 {
-    public function read($sql_filename="")
+    public function read($sql_filename=""): string
     {
         $sql = "";
 

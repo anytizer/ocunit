@@ -7,7 +7,7 @@ Always choose a database that is not in production. The database may never retur
 
 This project reads the actual configuration values from within your OpenCart and makes [various tests](logs/testdox.txt).
 This has sometimes, hardcoded or embedded Database IDs which should be changed to fit your store.
-Similarly, there are some [business rules](library/class.BusinessRules.inc.php) and few [configurations](bootstrap.php) you should edit before running the test.
+There are [business rules](library/class.BusinessRules.inc.php) and few [configurations](bootstrap.php) you should edit before running the test.
 
 A list of fixes is [available here](cases/business/).
 

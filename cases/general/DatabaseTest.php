@@ -26,7 +26,7 @@ class DatabaseTest extends TestCase
         $this->assertEquals($business_rules->settings_count, $total, "The settings count has been modified.");
     }
 
-    public function testAtLeastOneLanguageIsActive()
+    public function testOnlyOneLanguageIsActive()
     {
         $pdo = new MySQLPDO();
 
@@ -62,6 +62,8 @@ class DatabaseTest extends TestCase
         $data = $pdo->query($sql);
         
         $this->assertCount(1, $data);
+        $this->assertEquals("CAD", $data[0]["code"]);
         $this->assertEquals(1, (int)$data[0]["status"]);
+        $this->assertEquals((int)"1.00000000", (int)$data[0]["value"]);
     }
 }

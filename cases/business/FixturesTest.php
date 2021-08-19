@@ -23,13 +23,14 @@ class FixturesTest extends TestCase
         $pdo = new MySQLPDO();
 
         $files = [
-            __OCUNIT_ROOT__."/sql/tw_manufacturer_prices.sql",
-            __OCUNIT_ROOT__."/sql/tw_price_history.sql",
+            "tw_manufacturer_prices.sql",
+            "tw_price_history.sql",
+            "tw_product_videos.sql",
         ];
 
         foreach($files as $filename)
         {
-            $sql = file_get_contents($filename);
+            $sql = (new fql())->read($filename);
             $pdo->raw($sql);
         }
     }
@@ -117,10 +118,10 @@ class FixturesTest extends TestCase
             {
                 $update_sql = "UPDATE `".DB_PREFIX."product` SET image=:image WHERE product_id=:product_id;";
 
-                $store = "store"; // @todo Replace with proper location name
+                $store = "store"; // @todo Replace with proper store name
                 $product_id = $product["product_id"];
                 $pdo->raw($update_sql, [
-                    "image" => "image/catalog/{$store}/{$product_id}-250x500.png",
+                    "image" => "image/catalog/{$store}/products/{$product_id}-250x500.png",
                     "product_id" => $product["product_id"],
                 ]);
 
@@ -134,5 +135,40 @@ class FixturesTest extends TestCase
          *    On second run, it is ok.
          */
         $this->assertEquals(0, $modified, "Product images have been auto assigned.");
+    }
+
+    /**
+     * @todo Empty the image data before running this test.
+     */
+    public function testFixCategoryImages()
+    {
+        $pdo = new MySQLPDO();
+
+        $modified = 0;
+        $categories_sql = "SELECT category_id, image FROM `".DB_PREFIX."category`;";
+        $categories = $pdo->query($categories_sql);
+        foreach($categories as $c => $category)
+        {
+            if(empty($category["image"]))
+            {
+                $update_sql = "UPDATE `".DB_PREFIX."category` SET image=:image WHERE category_id=:category_id;";
+
+                $store = "store"; // @todo Replace with proper store name
+                $category_id = $category["category_id"];
+                $pdo->raw($update_sql, [
+                    "image" => "image/catalog/{$store}/categories/{$category_id}-200x200.png",
+                    "category_id" => $category["category_id"],
+                ]);
+
+                ++$modified;
+            }
+        }
+
+        /**
+         * By design:
+         *    On first run, caches error.
+         *    On second run, it is ok.
+         */
+        $this->assertEquals(0, $modified, "Category images have been auto assigned.");
     }
 }

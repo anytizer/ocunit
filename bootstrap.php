@@ -71,6 +71,7 @@ $searches_in_html_pages = [
             "Apparels",
             "Perfumes",
             "Toys",
+            "Information Technology",
             "<div id=\"toast\"></div>",
         ]
     ),

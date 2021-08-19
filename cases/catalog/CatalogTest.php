@@ -8,7 +8,7 @@ use \library\MySQLPDO;
 
 class CatalogTest extends TestCase
 {
-	public function testIndexPageHasToastSpace()
+	public function testIndexPageHasToastDiv()
 	{
 		$catalog = new catalog();
 		$html = $catalog->browse_index();
@@ -30,9 +30,9 @@ class CatalogTest extends TestCase
         $this->assertTrue(str_contains($html, $search_string), "Dashboard should ask for login.");
     }
 
-	public function testInnerPagesNeedLogin()
+	public function testAccountPagesNeedLogin()
 	{
-		$client_links = [
+		$account_links = [
 			"Login" => "account/login",
 			"Register" => "account/register",
 			"Forgotten Password" => "account/forgotten",
@@ -48,7 +48,7 @@ class CatalogTest extends TestCase
 			"Newsletter" => "account/newsletter",
 		];
 
-		foreach($client_links as $link_name => $route)
+		foreach($account_links as $link_name => $route)
 		{
 			// open link
 			// html must see LOGIN REQUIRED

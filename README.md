@@ -108,4 +108,4 @@ In general, these test scripts are merchant oriented.
 
 # Made with
 
-* [VS Code](https://code.visualstudio.com/download) | [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer)
+* [VS Code](https://code.visualstudio.com/download) + [SonarLint](https://www.sonarlint.org/) | [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer)

@@ -12,7 +12,7 @@ class DownloadsTest extends TestCase
         
         foreach($downloads as $download)
         {
-            $extension = pathinfo(basename($download['mask']))["extension"];
+            $extension = pathinfo(basename($download["mask"]))["extension"];
             $this->assertEquals("zip", $extension, "Offer downloads in .zip format only.");
         }
     }

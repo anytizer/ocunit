@@ -5,10 +5,6 @@ use anytizer\relay as relay;
 
 class admin
 {
-    // @todo Move these settings to business rules
-    public string $username = "admin";
-    public string $password = "admin";
-
     private function _browse_login_form(): string
     {
         // HTTP request of the login page
@@ -52,6 +48,8 @@ class admin
      */
     public function _login_attempt_successful(string $login_token=""): string
     {
+        $br = new BusinessRules();
+
         // return login redirect in json
         // generate token in advance using api
         // supply username and password
@@ -69,8 +67,9 @@ class admin
             "login_token" => $login_token,
         ];
         $_POST = [
-            "username" => $this->username,
-            "password" => $this->password,
+            // credentials that should succeed
+            "username" => $br->credentials[0]->username,
+            "password" => $br->credentials[0]->password,
         ];
 
         $relay = new relay();
@@ -90,14 +89,17 @@ class admin
      */
     private function _login_attempt_failure(string $login_token=""): string
     {
+        $br = new BusinessRules();
+
         $url = HTTP_CATALOG."admin/index.php";
         $_GET = [
             "route" => "common/login|login",
             "login_token" => $login_token,
         ];
         $_POST = [
-            "username" => $this->username,
-            "password" => "garbage", // everything same to __ but this line
+            // credentials that should fail
+            "username" => $br->credentials[1]->username,
+            "password" => $br->credentials[1]->password,
         ];
 
         $relay = new relay();

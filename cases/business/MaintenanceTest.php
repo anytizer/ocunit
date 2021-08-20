@@ -5,15 +5,17 @@ use \PHPUnit\Framework\TestCase;
 
 class MaintenanceTest extends TestCase
 {
-	public function testPreInstallation()
+	public function testPreInstallationHook()
 	{
-		$this->markTestIncomplete("Pre-installation.");
+	    // absence of config file
+		$this->markTestIncomplete("Pre-installation Hook not implemented.");
 	}
 
 	public function testPostInstallation()
 	{
 		// default data are removed
 		// default images are removed
-		$this->markTestIncomplete("Post installation.");
+        // auto increments of databases IDs are reset
+		$this->markTestIncomplete("Post installation Hook not implemented.");
 	}
 }

@@ -33,6 +33,7 @@ class LoginTest extends TestCase
         {
 			/**
 			 * @todo Replace numerals with empty strings.
+             * eg. admin1 becomes admin.
 			 */
             $usernames[] = strtolower($api["username"]);
         }
@@ -61,6 +62,8 @@ class LoginTest extends TestCase
 		$_GET = [
 			"route" => "api/cart/add",
 		];
+
+		$_POST = [];
 
 		// api/login: username, key => api_token
 		// api/shipping/address

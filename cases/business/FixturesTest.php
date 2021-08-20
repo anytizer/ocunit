@@ -45,7 +45,7 @@ class FixturesTest extends TestCase
         // rename table
         // create table
         // insert the data
-        // look for price history by database trigger
+        // disable price history trigger
         
         $sql = "DELETE FROM tw_manufacturer_prices;";
         $pdo->raw($sql);

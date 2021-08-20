@@ -14,11 +14,16 @@ class PricingTest extends TestCase
 
 	public function testProductPriceIsGreaterThanManufacturerPrice()
 	{
+	    // for each product:
+        // price > manufacturer price x multiplier
 		$this->markTestIncomplete("Comparing manufacturer price against store price is not implemented.");
 	}
 
 	public function testProductPriceIsGreaterThanManufacturerPriceEvenAfterDiscounts()
 	{
+	    // create a discount
+        // apply a discount
+        // price is still higher than manufacturer pricing
 		$this->markTestIncomplete("Do not sell at below cost prices.");
 	}
 
@@ -27,6 +32,7 @@ class PricingTest extends TestCase
 	    // for each product:
         // edit the price using the admin panel.
         // look for a new record in price history table.
+        // database trigger created
 		$this->markTestIncomplete("Pricing history is a todo.");
 	}
 }

@@ -6,7 +6,7 @@ use \library\DatabaseExecuter as DatabaseExecuter;
 
 class DownloadsTest extends TestCase
 {
-	public function testDownloadablesAreZipFiles()
+	public function testDownloadableFilesAreZipFiles()
     {
         $downloads = $this->_downloads();
         
@@ -17,7 +17,7 @@ class DownloadsTest extends TestCase
         }
     }
 
-    public function testMaskedDownloadExist()
+    public function testMaskedDownloadShouldExist()
     {
         $downloads = $this->_downloads();
         
@@ -40,7 +40,7 @@ class DownloadsTest extends TestCase
         return $downloads;
     }
 
-    public function testDownloadableProductHasAFile()
+    public function testDownloadableProductHasAFileLinked()
     {
         $downloads = $this->_downloads();
 
@@ -58,7 +58,7 @@ class DownloadsTest extends TestCase
                 }
             }
 
-            $this->assertTrue($download_found, "Failied linking a downloadable product for Product ID: #{$product['product_id']}.");
+            $this->assertTrue($download_found, "Failed linking a downloadable product for Product ID: #{$product['product_id']}.");
         }
     }
 

@@ -1,0 +1,1 @@
+SELECT product_id FROM `oc_product` WHERE tax_class_id=10;

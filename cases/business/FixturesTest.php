@@ -71,25 +71,6 @@ class FixturesTest extends TestCase
         $this->assertEquals(0, $hits, "Some tables with AUTO_INCREMENT were NOT reset to 1.");
     }
 
-    public function testCreateMissingThirdPartyTables()
-    {
-        $this->expectException(PDOException::class);
-
-        $pdo = new MySQLPDO();
-
-        $files = [
-            "tw_manufacturer_prices.sql",
-            "tw_price_history.sql",
-            "tw_product_videos.sql",
-        ];
-
-        foreach($files as $filename)
-        {
-            $sql = (new fql())->read($filename);
-            $pdo->raw($sql);
-        }
-    }
-
     /**
      * @todo Once manufacturer pricing is managed for all products, disable this test.
      */

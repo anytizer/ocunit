@@ -10,7 +10,6 @@ class DatabaseExecuter
     {
         $pdo = new MySQLPDO();
 
-        # $tables_sql="SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE();";
         $tables_sql="SHOW FULL TABLES FROM `".DB_DATABASE."` WHERE table_type = 'BASE TABLE';";
         $tables = $pdo->query($tables_sql);
 
@@ -20,7 +19,6 @@ class DatabaseExecuter
         $names = [];
         foreach($tables as $table)
         {
-            #$names[] = $table["TABLE_NAME"];
             $names[] = array_values($table)[0]; // `Tables_in_DATABASE` => 0
         }
 
@@ -45,6 +43,17 @@ class DatabaseExecuter
         $downloads = $pdo->query($downloads_sql);
 
         return $downloads;
+    }
+    
+    public function downloadable_products(): array
+    {
+        $pdo = new MySQLPDO();
+
+        // @todo Apply business rule for downloadable product id
+        $products_sql = (new fql())->read("downloadable_products.sql");
+        $products = $pdo->query($products_sql);
+
+        return $products;
     }
 
     public function categories(): array

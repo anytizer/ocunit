@@ -3,10 +3,13 @@ namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
 use \library\DatabaseExecuter as DatabaseExecuter;
+use \library\MySQLPDO as MySQLPDO;
+use \library\fql as fql;
+use \PDOException as PDOException;
 
 class ExtensionsTest extends TestCase
 {
-	public function testThirdPartyExtensionTablesArePresent()
+    public function testThirdPartyExtensionTablesArePresent()
     {
         $dbx = new DatabaseExecuter();
         $tables = $dbx->tables();
@@ -19,6 +22,25 @@ class ExtensionsTest extends TestCase
         foreach($searches as $table)
         {
             $this->assertTrue(in_array($table, $tables), "Third party extension table `{$table}` is not available.");
+        }
+    }
+
+    public function testCreateMissingThirdPartyExtensionTables()
+    {
+        $this->expectException(PDOException::class);
+
+        $pdo = new MySQLPDO();
+
+        $files = [
+            "tw_manufacturer_prices.sql",
+            "tw_price_history.sql",
+            "tw_product_videos.sql",
+        ];
+
+        foreach($files as $filename)
+        {
+            $sql = (new fql())->read($filename);
+            $pdo->raw($sql);
         }
     }
 }

@@ -7,6 +7,22 @@ use \library\BusinessRules as BusinessRules;
 
 class DatabaseExecuter
 {
+    public function triggers(): array
+    {
+        $pdo = new MySQLPDO();
+
+        $triggers_sql="SHOW TRIGGERS FROM `".DB_DATABASE."`;";
+        $triggers = $pdo->query($triggers_sql);
+
+        $names = [];
+        foreach($triggers as $trigger)
+        {
+            $names[] = $trigger["Trigger"];
+        }
+
+        return $names;
+    }
+
     public function tables(): array
     {
         $pdo = new MySQLPDO();
@@ -54,6 +70,19 @@ class DatabaseExecuter
         $products_sql = (new fql())->read("downloadable_products.sql");
         $products_sql = str_replace("10", $br->downloadable_product_tax_class_id, $products_sql);
         
+        $products = $pdo->query($products_sql);
+
+        return $products;
+    }
+
+    public function physical_products(): array
+    {
+        $pdo = new MySQLPDO();
+        $br = new BusinessRules();
+
+        $products_sql = (new fql())->read("physical_products.sql");
+        $products_sql = str_replace("10", $br->downloadable_product_tax_class_id, $products_sql);
+
         $products = $pdo->query($products_sql);
 
         return $products;

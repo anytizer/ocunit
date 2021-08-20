@@ -37,25 +37,26 @@ class LoginTest extends TestCase
 
 	public function testAdminBruteForceLoginDiscouraged()
     {
-        // an IP address cannot send a login request continuously
+        // an IP address cannot send a login request continuously over a short period
+        // bottleneck such IPs and usernames
         $this->markTestIncomplete("Brute Force check not implemented.");
     }
 
     public function testLoginFails()
     {
         $admin = new admin();
-        $donot_redirect_to_dashboard = $admin->login_failure();
+        $donot_redirect_to_dashboard = $admin->login_failure_case();
 
         $json = json_decode($donot_redirect_to_dashboard, true);
         assert(array_key_exists("error", $json));
 
-        $this->assertTrue(str_contains($json["error"], "No match for Username and/or Password."), "No match for Username and/or Password.");
+        $this->assertTrue(str_contains($json["error"], "No match for Username and/or Password."), "Problems at login!");
     }
 
     public function testLoginSucceeds()
     {
         $admin = new admin();
-        $redirect_to_dashboard = $admin->login();
+        $redirect_to_dashboard = $admin->login_success_case();
 
         $json = json_decode($redirect_to_dashboard, true);
         assert(array_key_exists("redirect", $json));

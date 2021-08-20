@@ -109,7 +109,7 @@ class admin
         return $html;
     }
 
-    public function login(): string
+    public function login_success_case(): string
     {
         // open login page
         // save session state
@@ -126,7 +126,7 @@ class admin
         return $logged_in_html;
     }
 
-    public function login_failure(): string
+    public function login_failure_case(): string
     {
         $form_html = $this->_browse_login_form();
         $login_token = $this->_parse_login_form($form_html);

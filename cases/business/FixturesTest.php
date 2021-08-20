@@ -1,7 +1,7 @@
 <?php
 namespace cases\business;
 
-use library\DatabaseExecuter;
+use library\DatabaseExecutor;
 use \PHPUnit\Framework\TestCase;
 use \library\fql as fql;
 use \library\MySQLPDO as MySQLPDO;
@@ -21,7 +21,7 @@ class FixturesTest extends TestCase
     {
         if(__OCUNIT_EXECUTE_EXPENSIVE__)
         {
-            $dbx = new DatabaseExecuter();
+            $dbx = new DatabaseExecutor();
             $pdo = new MySQLPDO();
 
             $tables = $dbx->tables();
@@ -37,7 +37,7 @@ class FixturesTest extends TestCase
 
     public function testFixAutoIncrementValues()
     {
-        $dbx = new DatabaseExecuter();
+        $dbx = new DatabaseExecutor();
         $tables = $dbx->tables();
 
         $hits = 0;

@@ -3,7 +3,7 @@ namespace cases\report;
 
 use \PHPUnit\Framework\TestCase;
 use \library\BusinessRules as BusinessRules;
-use \library\DatabaseExecuter as DatabaseExecuter;
+use \library\DatabaseExecutor as DatabaseExecutor;
 
 class InventoryTest extends TestCase
 {
@@ -16,7 +16,7 @@ class InventoryTest extends TestCase
  
     public function testGenerateInventoryReport()
     {
-        $dbx = new DatabaseExecuter();
+        $dbx = new DatabaseExecutor();
         $inventories = $dbx->inventories();
         $taxes = $dbx->taxes();
         $lengths = $dbx->lengths();

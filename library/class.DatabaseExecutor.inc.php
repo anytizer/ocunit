@@ -5,7 +5,7 @@ use \library\fql as fql;
 use \library\MySQLPDO as MySQLPDO;
 use \library\BusinessRules as BusinessRules;
 
-class DatabaseExecuter
+class DatabaseExecutor
 {
     public function triggers(): array
     {

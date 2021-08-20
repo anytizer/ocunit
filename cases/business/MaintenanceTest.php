@@ -1,7 +1,7 @@
 <?php
 namespace cases\business;
 
-use library\DatabaseExecuter;
+use library\DatabaseExecutor;
 use library\MySQLPDO;
 use \PHPUnit\Framework\TestCase;
 

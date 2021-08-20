@@ -1,7 +1,7 @@
 <?php
 namespace cases\business;
 
-use library\DatabaseExecuter;
+use library\DatabaseExecutor;
 use \PHPUnit\Framework\TestCase;
 
 class PricingTest extends TestCase
@@ -39,7 +39,7 @@ class PricingTest extends TestCase
             "trigger_after_update_oc_product",
         ];
 
-        $dbx = new DatabaseExecuter();
+        $dbx = new DatabaseExecutor();
         $triggers = $dbx->triggers();
         foreach($lookups as $trigger)
         {
@@ -49,7 +49,7 @@ class PricingTest extends TestCase
 
     public function testPhysicalProductMustHaveNonZeroPrice()
     {
-        $dbx = new DatabaseExecuter();
+        $dbx = new DatabaseExecutor();
         $physical_products = $dbx->physical_products();
         foreach($physical_products as $product)
         {

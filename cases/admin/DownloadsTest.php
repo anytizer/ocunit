@@ -2,7 +2,7 @@
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
-use \library\DatabaseExecuter as DatabaseExecuter;
+use \library\DatabaseExecutor as DatabaseExecutor;
 
 class DownloadsTest extends TestCase
 {
@@ -33,7 +33,7 @@ class DownloadsTest extends TestCase
 
     private function _downloads()
     {
-        $dbx = new DatabaseExecuter();
+        $dbx = new DatabaseExecutor();
         $downloads = $dbx->downloads();
 
         assert(count($downloads) > 0, "Your store does not have downloadable products.");
@@ -44,7 +44,7 @@ class DownloadsTest extends TestCase
     {
         $downloads = $this->_downloads();
 
-        $dbx = new DatabaseExecuter();
+        $dbx = new DatabaseExecutor();
         $downloadable_products = $dbx->downloadable_products();
         foreach($downloadable_products as $product)
         {

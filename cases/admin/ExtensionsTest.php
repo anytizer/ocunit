@@ -2,7 +2,7 @@
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
-use \library\DatabaseExecuter as DatabaseExecuter;
+use \library\DatabaseExecutor as DatabaseExecutor;
 use \library\MySQLPDO as MySQLPDO;
 use \library\fql as fql;
 use \PDOException as PDOException;
@@ -11,7 +11,7 @@ class ExtensionsTest extends TestCase
 {
     public function testThirdPartyExtensionTablesArePresent()
     {
-        $dbx = new DatabaseExecuter();
+        $dbx = new DatabaseExecutor();
         $tables = $dbx->tables();
 
         $searches = [

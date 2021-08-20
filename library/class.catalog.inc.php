@@ -27,6 +27,9 @@ class catalog
 		];
 
 		$relay = new relay();
+        $relay->headers([
+            "X-Protection-Token" => "",
+        ]);
 		$html = $relay->fetch(HTTP_SERVER."index.php");
         
         return $html;
@@ -104,6 +107,9 @@ class catalog
 			"password" => $this->password,
 		];
 		$relay = new relay();
+        $relay->headers([
+            "X-Protection-Token" => "",
+        ]);
 		$html = $relay->fetch(HTTP_SERVER."index.php");
         
         return $html;
@@ -128,6 +134,9 @@ class catalog
 		];
 
 		$relay = new relay();
+        $relay->headers([
+            "X-Protection-Token" => "",
+        ]);
 		$html = $relay->fetch(HTTP_SERVER."index.php");
 
         return $html;

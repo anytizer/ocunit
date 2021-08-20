@@ -12,13 +12,13 @@ class catalog
 	/**
 	 * Test customer
 	 */
-    private $username = "test@example.com";
-    private $password = "password";
+    private string $username = "test@example.com";
+    private string $password = "password";
 
 	/**
 	 * Visit the home page
 	 */
-	public function browse_index()
+	public function browse_index(): string
 	{
         $_GET = [
 		];
@@ -32,7 +32,7 @@ class catalog
         return $html;
 	}
 
-	public function browse_categories()
+	public function browse_categories(): string
 	{
 		/**
 		 * Used electronics, wires and parts
@@ -51,7 +51,7 @@ class catalog
 		$this->html = $relay->fetch(HTTP_SERVER."index.php");
 	}
 
-	public function browse_product()
+	public function browse_product(): string
 	{
 		/**
 		 * Micro SD Card 32GB
@@ -77,7 +77,7 @@ class catalog
      * @param string $url
      * @return bool|string
      */
-    public function open($url="https://...")
+    public function open($url="https://..."): string
     {
         $_GET = [];
         $_POST = [];
@@ -90,7 +90,7 @@ class catalog
         return $html;
     }
 
-    public function login_simple()
+    public function login_simple(): string
     {
         // http://localhost/opencart/upload/index.php?route=account/login|login&language=en-gb&login_token=d83e4e1f39e7859c30eddc998b
 
@@ -113,7 +113,7 @@ class catalog
      * @see // index.php?route=account/login|login&language=en-gb&login_token=5654914f48eccb41c6eb08fec3
      * @return bool|string
      */
-    public function login_advanced()
+    public function login_advanced(): string
     {
         $_GET = [
 			"route" => "account/login|login",

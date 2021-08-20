@@ -43,7 +43,13 @@ class LoginTest extends TestCase
 
     public function testLoginFails()
     {
-        $this->markTestIncomplete("Admin login failure case not implemented.");
+        $admin = new admin();
+        $donot_redirect_to_dashboard = $admin->login_failure();
+
+        $json = json_decode($donot_redirect_to_dashboard, true);
+        assert(array_key_exists("error", $json));
+
+        $this->assertTrue(str_contains($json["error"], "No match for Username and/or Password."), "No match for Username and/or Password.");
     }
 
     public function testLoginSucceeds()
@@ -55,7 +61,7 @@ class LoginTest extends TestCase
         assert(array_key_exists("redirect", $json));
 
         /**
-         * A successful login sends redirect to dashboard
+         * A successful login sends "redirect" information to dashboard
          */
         $this->assertTrue(str_contains($json["redirect"], "route=common/dashboard"), "Redirecting to {$json['redirect']}");
     }
@@ -67,6 +73,7 @@ class LoginTest extends TestCase
     
     public function testCustomerApprovalRequiredForLogin()
     {
+        // @todo Move to catalog
         $this->markTestIncomplete("Customer approval required for login.");
     }
 

@@ -26,7 +26,7 @@ class admin
         return $html;
     }
 
-    private function _parse_login_form($html=""): string
+    private function _parse_login_form(string $html=""): string
     {
         $matches = [];
         $link_pattern = "/data-oc-action=\".*?route\=(.*?)\&login_token\=(.*?)\"/i";
@@ -44,7 +44,13 @@ class admin
         return $login_token;
     }
 
-    public function _login_attempt($login_token=""): string
+    /**
+     * Login MUST pass successfully.
+     *
+     * @param string $login_token
+     * @return string
+     */
+    public function _login_attempt_successful(string $login_token=""): string
     {
         // return login redirect in json
         // generate token in advance using api
@@ -76,6 +82,33 @@ class admin
         return $html;
     }
 
+    /**
+     * Do NOT login successfully.
+     *
+     * @param string $login_token
+     * @return string
+     */
+    private function _login_attempt_failure(string $login_token=""): string
+    {
+        $url = HTTP_CATALOG."admin/index.php";
+        $_GET = [
+            "route" => "common/login|login",
+            "login_token" => $login_token,
+        ];
+        $_POST = [
+            "username" => $this->username,
+            "password" => "garbage", // everything same to __ but this line
+        ];
+
+        $relay = new relay();
+        $relay->headers([
+            "X-Protection-Token" => "",
+        ]);
+
+        $html = $relay->fetch($url);
+        return $html;
+    }
+
     public function login(): string
     {
         // open login page
@@ -88,8 +121,17 @@ class admin
         // @todo Replace admin with a variable
         $form_html = $this->_browse_login_form();
         $login_token = $this->_parse_login_form($form_html);
-        $logged_in_html = $this->_login_attempt($login_token);
+        $logged_in_html = $this->_login_attempt_successful($login_token);
 
         return $logged_in_html;
+    }
+
+    public function login_failure(): string
+    {
+        $form_html = $this->_browse_login_form();
+        $login_token = $this->_parse_login_form($form_html);
+        $not_logged_in_html = $this->_login_attempt_failure($login_token);
+
+        return $not_logged_in_html;
     }
 }

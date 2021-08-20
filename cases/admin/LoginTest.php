@@ -1,6 +1,7 @@
 <?php
 namespace cases\admin;
 
+use library\admin;
 use \PHPUnit\Framework\TestCase;
 
 class LoginTest extends TestCase
@@ -31,7 +32,7 @@ class LoginTest extends TestCase
         // report the user and ip
         // black list the user and ip
 
-        $this->markTestIncomplete("Block the IPs that are demanding system user level login.");
+        $this->markTestIncomplete("Block the IPs that are demanding system level user login.");
     }
 
 	public function testAdminBruteForceLoginDiscouraged()
@@ -47,8 +48,16 @@ class LoginTest extends TestCase
 
     public function testLoginSucceeds()
     {
-        // @todo supply valid username and password to make a login
-        $this->markTestIncomplete("Login success case not implemented.");
+        $admin = new admin();
+        $redirect_to_dashboard = $admin->login();
+
+        $json = json_decode($redirect_to_dashboard, true);
+        assert(array_key_exists("redirect", $json));
+
+        /**
+         * A successful login sends redirect to dashboard
+         */
+        $this->assertTrue(str_contains($json["redirect"], "route=common/dashboard"), "Redirecting to {$json['redirect']}");
     }
 
     public function testCustomerLoginFormHasCaptcha()

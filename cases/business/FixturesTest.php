@@ -19,7 +19,7 @@ class FixturesTest extends TestCase
 
     public function testFixInnodbDatabaseEngine()
     {
-        if(__OCUNIT_EXPENSIVE_EXECUTE__)
+        if(__OCUNIT_EXECUTE_EXPENSIVE__)
         {
             $dbx = new DatabaseExecuter();
             $pdo = new MySQLPDO();
@@ -32,7 +32,7 @@ class FixturesTest extends TestCase
             }
         }
 
-        $this->assertFalse(__OCUNIT_EXPENSIVE_EXECUTE__, "Heavy duty operation: Table engines were changed");
+        $this->assertFalse(__OCUNIT_EXECUTE_EXPENSIVE__, "Heavy duty operation: Table engines were changed.");
     }
 
     public function testFixAutoIncrementValues()

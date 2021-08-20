@@ -72,10 +72,10 @@ class catalog
 	}
 
     /**
-     * Open an arbitrary page for testing its HTML
+     * Open an arbitrary simple page for testing its HTML in GET mode using full url
      *
      * @param string $url
-     * @return bool|string
+     * @return string
      */
     public function open($url="https://..."): string
     {

@@ -20,6 +20,7 @@ class CatalogTest extends TestCase
     {
         // @todo Replace "admin" with a variable.
         $inner_page = HTTP_SERVER."admin/index.php?route=common/dashboard";
+
         $catalog = new catalog();
         $html = $catalog->open($inner_page);
 

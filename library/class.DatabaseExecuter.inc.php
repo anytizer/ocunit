@@ -3,6 +3,7 @@ namespace library;
 
 use \library\fql as fql;
 use \library\MySQLPDO as MySQLPDO;
+use \library\BusinessRules as BusinessRules;
 
 class DatabaseExecuter
 {
@@ -48,9 +49,11 @@ class DatabaseExecuter
     public function downloadable_products(): array
     {
         $pdo = new MySQLPDO();
-
-        // @todo Apply business rule for downloadable product id
+        $br = new BusinessRules();
+        
         $products_sql = (new fql())->read("downloadable_products.sql");
+        $products_sql = str_replace("10", $br->downloadable_product_tax_class_id, $products_sql);
+        
         $products = $pdo->query($products_sql);
 
         return $products;

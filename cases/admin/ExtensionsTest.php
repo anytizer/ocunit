@@ -18,7 +18,9 @@ class ExtensionsTest extends TestCase
             "tw_price_history",
             "tw_manufacturer_prices",
             "tw_product_videos",
+            "tw_login_failures",
         ];
+
         foreach($searches as $table)
         {
             $this->assertTrue(in_array($table, $tables), "Third party extension table `{$table}` is not available.");
@@ -35,6 +37,7 @@ class ExtensionsTest extends TestCase
             "tw_manufacturer_prices.sql",
             "tw_price_history.sql",
             "tw_product_videos.sql",
+            "tw_login_failures.sql",
         ];
 
         foreach($files as $filename)

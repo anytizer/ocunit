@@ -19,6 +19,7 @@ class GeneralTest extends TestCase
 		foreach($searches_in_html_pages as $pq => $post_query)
 		{
 			$page = $post_query->page;
+
 			$_GET = $post_query->get;
 			$_POST = $post_query->post;
 			$lookups = $post_query->lookups;

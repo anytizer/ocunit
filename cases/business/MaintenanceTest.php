@@ -1,6 +1,8 @@
 <?php
 namespace cases\business;
 
+use library\DatabaseExecuter;
+use library\MySQLPDO;
 use \PHPUnit\Framework\TestCase;
 
 class MaintenanceTest extends TestCase
@@ -8,14 +10,14 @@ class MaintenanceTest extends TestCase
 	public function testPreInstallationHook()
 	{
 	    // absence of config file
-		$this->markTestIncomplete("Pre-installation Hook not implemented.");
+        // undefined APPLICATION constant
+		$this->markTestIncomplete("Pre-installation Hooks are not implemented.");
 	}
 
-	public function testPostInstallation()
+	public function testPostInstallationHook()
 	{
 		// default data are removed
 		// default images are removed
-        // auto increments of databases IDs are reset
-		$this->markTestIncomplete("Post installation Hook not implemented.");
+		$this->markTestIncomplete("Post installation Hooks are not implemented.");
 	}
 }

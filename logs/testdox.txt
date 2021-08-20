@@ -2,9 +2,10 @@ Downloads (cases\admin\Downloads)
  [ ] Downloadable product has a file linked
 
 Extensions (cases\admin\Extensions)
- [x] Custom extension tables present
+ [x] Third party extension tables are present
 
 Login (cases\admin\Login)
+ [ ] Black list system user demanders
  [ ] Admin brute force login discouraged
  [ ] Login fails
  [ ] Login succeeds
@@ -14,10 +15,11 @@ Login (cases\admin\Login)
 
 Order Cancel (cases\admin\OrderCancel)
  [ ] Order cancelled properly
+ [ ] Incomplete order not cancelled
 
 Settings (cases\admin\Settings)
  [x] Database constants defined
- [x] Other settings defined
+ [ ] Other settings defined
 
 Login (cases\api\Login)
  [x] Get api token
@@ -26,9 +28,12 @@ Login (cases\api\Login)
 
 Features (cases\business\Features)
  [ ] Demo user does not see delete option
+ [ ] Demo user cannot delete record
  [ ] Demo user does not have permission to modify record
 
 Fixtures (cases\business\Fixtures)
+ [x] Fix innodb database engine
+ [ ] Fix auto increment values
  [x] Create missing third party tables
  [x] Fix manufacturer pricing by product price
  [x] Fix shipping requires inventory subtraction
@@ -39,8 +44,8 @@ Fixtures (cases\business\Fixtures)
  [x] Fix category images
 
 Maintenance (cases\business\Maintenance)
- [ ] Pre installation
- [ ] Post installation
+ [ ] Pre installation hook
+ [ ] Post installation hook
 
 Pricing (cases\business\Pricing)
  [ ] Manufacturer price exists
@@ -60,7 +65,7 @@ Taxation (cases\business\Taxation)
  [ ] Low tax rate in alberta
 
 Web (cases\business\Web)
- [ ] Force strong password in web pages
+ [ ] Show message to choose strong password
 
 Catalog (cases\catalog\Catalog)
  [x] Index page has toast div

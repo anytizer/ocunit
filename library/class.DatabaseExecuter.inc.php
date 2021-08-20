@@ -10,7 +10,8 @@ class DatabaseExecuter
     {
         $pdo = new MySQLPDO();
 
-        $tables_sql="SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE();";
+        # $tables_sql="SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE();";
+        $tables_sql="SHOW FULL TABLES FROM `".DB_DATABASE."` WHERE table_type = 'BASE TABLE';";
         $tables = $pdo->query($tables_sql);
 
         /**
@@ -19,10 +20,21 @@ class DatabaseExecuter
         $names = [];
         foreach($tables as $table)
         {
-            $names[] = $table["TABLE_NAME"];
+            #$names[] = $table["TABLE_NAME"];
+            $names[] = array_values($table)[0]; // `Tables_in_DATABASE` => 0
         }
 
         return $names;
+    }
+
+    public function info($table=""): string
+    {
+        $pdo = new MySQLPDO();
+
+        $sql = "SHOW CREATE TABLE `{$table}`;";
+        $info = array_values($pdo->query($sql)[0])[1]; // ["Table" | "Create Table"]
+
+        return $info;
     }
 
     public function downloads(): array

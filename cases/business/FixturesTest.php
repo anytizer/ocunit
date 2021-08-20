@@ -1,6 +1,7 @@
 <?php
 namespace cases\business;
 
+use library\DatabaseExecuter;
 use \PHPUnit\Framework\TestCase;
 use \library\fql as fql;
 use \library\MySQLPDO as MySQLPDO;
@@ -14,6 +15,60 @@ class FixturesTest extends TestCase
     public function setUp(): void
     {
         $this->business_rules = new BusinessRules();
+    }
+
+    public function testFixInnodbDatabaseEngine()
+    {
+        if(__OCUNIT_EXPENSIVE_EXECUTE__)
+        {
+            $dbx = new DatabaseExecuter();
+            $pdo = new MySQLPDO();
+
+            $tables = $dbx->tables();
+            foreach($tables as $table)
+            {
+                $innodb_sql = "ALTER TABLE `{$table}` ENGINE=INNODB;";
+                $pdo->raw($innodb_sql);
+            }
+        }
+
+        $this->assertFalse(__OCUNIT_EXPENSIVE_EXECUTE__, "Heavy duty operation: Table engines were changed");
+    }
+
+    public function testFixAutoIncrementValues()
+    {
+        $dbx = new DatabaseExecuter();
+        $tables = $dbx->tables();
+
+        $hits = 0;
+        $pdo = new MySQLPDO();
+        foreach($tables as $table)
+        {
+            $info = $dbx->info($table);
+
+            $matches = [];
+            preg_match_all("/ AUTO_INCREMENT\=([\d+]) /is", $info, $matches, PREG_SET_ORDER);
+            #print_r($matches);
+            if(isset($matches[0][1]))
+            {
+                $auto_increment = (int)$matches[0][1];
+
+                $sql = "SELECT COUNT(*)+1 total FROM `{$table}`;";
+                $count_match = (int)$pdo->query($sql)[0]["total"];
+
+                if($auto_increment!=$count_match)
+                {
+                    ++$hits;
+
+                    $reset_sql = "ALTER TABLE `{$table}` AUTO_INCREMENT = {$count_match};";
+                    $pdo->raw($reset_sql);
+                    # echo "\r\n", $reset_sql, " -- ", $auto_increment, ";";
+                }
+            }
+        }
+
+        // @todo Enhance this test
+        $this->assertEquals(0, $hits, "Some tables with AUTO_INCREMENT were NOT reset to 1.");
     }
 
     public function testCreateMissingThirdPartyTables()

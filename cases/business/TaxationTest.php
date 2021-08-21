@@ -17,11 +17,16 @@ class TaxationTest extends TestCase
 
     public function testGstTax()
     {
-        $this->markTestIncomplete("GST Calculation required.");
+        $this->markTestIncomplete("GST calculation required.");
     }
 
     public function testHstTax()
     {
-        $this->markTestIncomplete("HST Calculation required.");
+        $this->markTestIncomplete("HST calculation required.");
+    }
+
+    public function testValueAddedTax()
+    {
+        $this->markTestIncomplete("VAT calculation required.");
     }
 }

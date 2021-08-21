@@ -35,6 +35,7 @@ class FixturesTest extends TestCase
         $this->assertFalse(__OCUNIT_EXECUTE_EXPENSIVE__, "Heavy duty operation: Table engines were changed.");
     }
 
+    // @todo Improve auto increments
     public function testFixAutoIncrementValues()
     {
         $dbx = new DatabaseExecutor();

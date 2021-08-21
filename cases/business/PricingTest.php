@@ -51,9 +51,16 @@ class PricingTest extends TestCase
     {
         $dbx = new DatabaseExecutor();
         $physical_products = $dbx->physical_products();
-        foreach($physical_products as $product)
+        if(count($physical_products))
         {
-            $this->assertTrue((float)$product["price"] > 0.01, "Pricing error on Product ID: #{$product['product_id']}");
+            foreach($physical_products as $product)
+            {
+                $this->assertTrue((float)$product["price"] > 0.01, "Pricing error on Product ID: #{$product['product_id']}");
+            }
+        }
+        else
+        {
+            $this->assertTrue(true, "Done checking prices of physical products.");
         }
     }
 }

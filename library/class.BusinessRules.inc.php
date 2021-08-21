@@ -50,14 +50,27 @@ class BusinessRules
 
     public function __construct()
     {
+        // List of different levels of users with valid and invalid passwords
+        // @todo Rename numeral indexes to CONST definitions.
+        $this->credentials[0] = new credentials("admin", "admin");
+        $this->credentials[1] = new credentials("admin", "garbage");
+        // Customer
+        $this->credentials[2] = new credentials("customer", "customer");
+        $this->credentials[3] = new credentials("customer", "garbage");
+        // Guest user
+        $this->credentials[4] = new credentials("guest", "guest");
+        $this->credentials[5] = new credentials("guest", "garbage");
+        // API Login
+        $this->credentials[6] = new credentials("test1", "9acd35f146d93542c062e73697564373f0eac52ebf84ace1d9f59f2face8c5c4ed67d2939ebe86756e6fe4f1fbeb7bf3189d195883b8556b79339d9f3fbb518c32f9a72ab4226a495c2a6aa0f4508a7f8662d1d8fc7d5cfba81a89294556ba10338771247914482be7ce08e4c196af019802a8b69874a82f50863c7f89f64dcc");
+        $this->credentials[7] = new credentials("api1", "garbage");
+        // orders
+        // sales
+        // returns
+        // marketing
+        // reports
         // guest
         // marketing agent
         // demo admin user
         // other user types...
-        // @todo Rename numeral indexes to CONST definitions.
-        $this->credentials[0] = new credentials("admin", "admin");
-        $this->credentials[1] = new credentials("admin", "garbage");
-        $this->credentials[2] = new credentials("customer", "customer");
-        $this->credentials[3] = new credentials("customer", "garbage");
     }
 }

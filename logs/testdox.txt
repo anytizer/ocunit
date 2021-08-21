@@ -2,6 +2,7 @@ Downloads (cases\admin\Downloads)
  [ ] Downloadable files are zip files
  [ ] Masked download should exist
  [ ] Downloadable product has a file linked
+ [ ] Add mime and size
 
 Extensions (cases\admin\Extensions)
  [x] Third party extension tables are present
@@ -24,9 +25,9 @@ Settings (cases\admin\Settings)
  [x] Database constants defined
  [x] Other settings defined
 
-Login (cases\api\Login)
+Api (cases\api\Api)
  [x] Get api token
- [x] Inappropriate api users
+ [ ] Inappropriate api users denied
  [x] Access api login
  [x] Change session currency
  [ ] Api cart add
@@ -76,8 +77,10 @@ Shipping (cases\business\Shipping)
 Taxation (cases\business\Taxation)
  [ ] Low order fee applies
  [ ] Low tax rate in alberta
+ [ ] Eco tax
  [ ] Gst tax
  [ ] Hst tax
+ [ ] Value added tax
 
 Web (cases\business\Web)
  [ ] Show message to choose strong password
@@ -120,7 +123,7 @@ Mail (cases\general\Mail)
  [ ] Sendgrid implemented
 
 Model Included (cases\general\ModelIncluded)
- [ ] Model is included on demand
+ [ ] Opencart model is included on demand
 
 Session (cases\general\Session)
  [x] Sessions are cleared
@@ -138,6 +141,32 @@ Settings (cases\general\Settings)
  [x] Htaccess disables directory listing in frontend
  [x] Htaccess disables directory listing in admin
  [x] Construct homepage url
+
+CVE (cases\issues\CVE)
+ [ ] Handle c v e deetails
+
+Gui Design (cases\issues\GuiDesign)
+ [ ] Gui dashboard latest orders
+ [ ] Placeholder image fits square area
+ [ ] Show store logo
+
+Issues From Github (cases\issues\IssuesFromGithub)
+ [ ] Category image placeholder in admin
+ [ ] Product image placeholder in admin
+ [ ] Consolidated config file
+ [ ] Account requires admin approval before login
+ [ ] Keep a log of admin access
+ [ ] Add category description in product detail page
+ [ ] Do not return product with non existing product id
+ [ ] Show pre setup file permissions
+ [ ] Do post setup cleanups
+ [ ] User is registered properly
+ [ ] Admin password forgotten
+ [ ] Confusing constants
+ [ ] Undefined custom field key
+ [ ] Customer group not loaded
+ [ ] Clearing saas
+ [ ] Cannot read db session data
 
 Inventory (cases\report\Inventory)
  [x] Generate inventory report

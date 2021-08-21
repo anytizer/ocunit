@@ -26,7 +26,7 @@ class IssuesFromGithubTest extends TestCase
     public function testAccountRequiresAdminApprovalBeforeLogin()
     {
         //This message is printed always.
-        //Warning: Your account requires approval before you can login.
+        //Warning: Your account requires approval before you can log in.
         //
         //The problem is: user account has status=1 in the database already.
         //Cannot login as customer.

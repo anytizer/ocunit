@@ -45,6 +45,7 @@ class SettingsTest extends TestCase
 
         /**
          * Following folders should NOT appear in the directory name for ./storage/
+         *
          * In most linux systems: /home/USER/public_html/opencart/upload/storage/
          * In some dedicated systems: /var/www/html/opencart/upload/storage/
          */
@@ -95,11 +96,11 @@ class SettingsTest extends TestCase
         foreach($folders as $folder)
         {
             $can_write = is_writable($folder);
-            $this->assertTrue($can_write, "Cannot write to {$folder}.");
+            $basename = basename($folder);
+            $this->assertTrue($can_write, "Cannot write to storage/{$basename}.");
         }
         
         // images, images/category/n.png, sql backup logs,
-        // $this->markTestIncomplete("Look for system file permissions.");
     }
 
     public function testHtaccessDisablesDirectoryListingInFrontend()

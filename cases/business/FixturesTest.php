@@ -126,7 +126,7 @@ class FixturesTest extends TestCase
 			$pdo->raw("UPDATE `".DB_PREFIX."country` SET `status`=1 WHERE iso_code_2='{$country_of_business_operation}' LIMIT 1;");
 		}
 
-		$this->assertTrue(true, "Setup business rules.");
+		$this->assertTrue(true, "Setup business rules - countries disabled.");
 	}
 
     public function testAdminPaginationSizeIncreased()

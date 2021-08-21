@@ -15,6 +15,11 @@ class TaxationTest extends TestCase
         $this->markTestIncomplete("Low tax rate for Alberta Tax Zone.");
     }
 
+    public function testEcoTax()
+    {
+        $this->markTestIncomplete("Need to apply eco-tax.");
+    }
+
     public function testGstTax()
     {
         $this->markTestIncomplete("GST calculation required.");

@@ -31,19 +31,19 @@ class ApiTest extends TestCase
         $this->assertEquals(strlen("f5a254e32400369e587457dfd9"), strlen($this->api_token), "API Token length mismatched.");
     }
 
-    public function testInappropriateApiUsers()
+    public function testInappropriateApiUsersDenied()
     {
         $api = new api();
-        $apis = $api->list_all_api();
+        $users = $api->list_all_api_users();
 
         $usernames = [];
-        foreach($apis as $api)
+        foreach($users as $user)
         {
             /**
              * @todo Replace numerals with empty strings.
              * eg. admin1 becomes admin.
              */
-            $usernames[] = strtolower($api["username"]);
+            $usernames[] = preg_replace("/[\d+]/", "", strtolower($user["username"]));
         }
 
         /**
@@ -349,6 +349,7 @@ class ApiTest extends TestCase
                 "route" => $route,
                 "api_token" => $api_token,
             ];
+
             $_POST = [
                 "username" => $this->br->credentials[6]->username,
                 "key" => $this->br->credentials[6]->password,

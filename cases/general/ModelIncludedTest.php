@@ -7,7 +7,7 @@ use \library\MySQLPDO;
 
 class ModelIncludedTest extends TestCase
 {
-	public function testModelIsIncludedOnDemand()
+	public function testOpencartModelIsIncludedOnDemand()
 	{
 		// create order
 		// cancel order

@@ -6,10 +6,10 @@ use \library\DatabaseExecutor as DatabaseExecutor;
 
 class DownloadsTest extends TestCase
 {
-	public function testDownloadableFilesAreZipFiles()
+    public function testDownloadableFilesAreZipFiles()
     {
         $downloads = $this->_downloads();
-        
+
         foreach($downloads as $download)
         {
             $extension = pathinfo(basename($download["mask"]))["extension"];
@@ -20,7 +20,7 @@ class DownloadsTest extends TestCase
     public function testMaskedDownloadShouldExist()
     {
         $downloads = $this->_downloads();
-        
+
         foreach($downloads as $download)
         {
             $download['filename'] = basename($download['filename']);
@@ -70,4 +70,13 @@ class DownloadsTest extends TestCase
     // logged in customer cannot download another file, unless purchased
 
     // SELECT product_id FROM `oc_product` WHERE tax_class_id=10;
+
+    public function testAddMimeAndSize()
+    {
+        // Add file size, file MIME, and hash signature to a downloadable file.
+        //
+        //apply file size limits
+        //restrict others but .zip: reject!
+        //A product can have multiple files attached. All files should exist.
+    }
 }

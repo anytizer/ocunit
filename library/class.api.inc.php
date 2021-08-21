@@ -6,7 +6,7 @@ use \anytizer\relay as relay;
 
 class api
 {
-    public function list_all_api()
+    public function list_all_api_users()
     {
         $pdo = new MySQLPDO();
 

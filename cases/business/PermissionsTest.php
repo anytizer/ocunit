@@ -3,10 +3,12 @@ namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
 
-class FeaturesTest extends TestCase
+class PermissionsTest extends TestCase
 {
     public function testDemoUserDoesNotSeeDeleteOption()
     {
+        // delete all demo users
+        // create a demo user
         // login as a demo user
         // link to delete option is invisible
         $this->markTestIncomplete("Permissions based menu links not implemented.");

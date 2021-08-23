@@ -28,17 +28,20 @@ There are [business rules](library/class.BusinessRules.inc.php) and few [configu
 * Extension tables are added into the database.
 
 
-## Cases in details
+# Test Cases
 
-* api -- API tests as on [this Documentation](https://docs.opencart.com/en-gb/system/users/api/).
-* admin -- various tests in admin features
-* core -- opencart core tests
-* business -- business logic tests
-* catalog -- frontend general tests
-* general -- other general tests
-* database
-* mail
-* issues -- For issues imported from GitHub
+* [admin](cases/admin) -- various tests in admin features
+* [api](cases/api) -- API tests as on [this Documentation](https://docs.opencart.com/en-gb/system/users/api/).
+* [business](cases/business) -- business logic tests
+* [catalog](cases/catalog) -- frontend general tests
+* [core](cases/core) -- opencart core tests
+* [general](cases/general) -- other general tests
+* [database](cases/database) -- tests with direct database hits
+* [general](cases/general) -- other uncategorized tests appear here
+* [issues](cases/issues) -- For issues imported from GitHub
+* [mail](cases/mail) -- test email sending features
+* [report](cases/report)-- inventory statistics
+
 
 # Requirements
 

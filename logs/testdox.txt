@@ -19,7 +19,7 @@ Login (cases\admin\Login)
 
 Order Cancel (cases\admin\OrderCancel)
  [ ] Order cancelled properly
- [ ] Incomplete order not cancelled
+ [ ] Do not cancel incomplete order
 
 Settings (cases\admin\Settings)
  [x] Database constants defined
@@ -55,11 +55,6 @@ Maintenance (cases\business\Maintenance)
  [ ] Pre installation hook
  [ ] Post installation hook
 
-Permissions (cases\business\Permissions)
- [ ] Demo user does not see delete option
- [ ] Demo user cannot delete record
- [ ] Demo user does not have permission to modify record
-
 Pricing (cases\business\Pricing)
  [ ] Manufacturer price exists
  [ ] Product price is greater than manufacturer price
@@ -82,6 +77,11 @@ Taxation (cases\business\Taxation)
  [ ] Hst tax
  [ ] Value added tax
 
+User Permissions (cases\business\UserPermissions)
+ [ ] Demo user does not see delete option
+ [ ] Demo user cannot delete record
+ [ ] Demo user does not have permission to modify record
+
 Web (cases\business\Web)
  [ ] Show message to choose strong password
 
@@ -89,8 +89,6 @@ Catalog (cases\catalog\Catalog)
  [x] Index page has toast div
  [x] Admin dashboard requires login
  [x] Account pages need login
-
-General (cases\catalog\General)
  [x] Searches in pages
 
 Image (cases\catalog\Image)
@@ -100,12 +98,37 @@ Image (cases\catalog\Image)
  [ ] Product images are valid images
  [ ] Image files do not contain scripts
 
-Database (cases\general\Database)
+Login (cases\catalog\Login)
+ [ ] Simple login is functional
+ [ ] Protected login is functional
+
+Settings (cases\catalog\Settings)
+ [x] Database constants defined
+ [x] Core settings defined
+ [x] Directory settings defined
+
+Model Included (cases\core\ModelIncluded)
+ [ ] Opencart model is included on demand
+
+URL (cases\core\URL)
+ [x] Construct homepage url
+
+Database (cases\database\Database)
  [x] Can connect to the database
  [x] Count number of settings
  [x] Only one language is active
  [x] Admin paginates 100 items
  [x] Single currency operation
+
+Session (cases\database\Session)
+ [x] Sessions are cleared
+ [x] Session is created
+ [x] At least one store is active
+ [x] Sessions are active
+
+Htaccess (cases\general\Htaccess)
+ [x] Htaccess disables directory listing in frontend
+ [x] Htaccess disables directory listing in admin
 
 Include Paths (cases\general\IncludePaths)
  [x] All included paths exist
@@ -113,44 +136,16 @@ Include Paths (cases\general\IncludePaths)
  [ ] X debug module available
  [ ] X debug should not autostart
 
-Login (cases\general\Login)
- [ ] Simple login is functional
- [ ] Protected login is functional
-
-Mail (cases\general\Mail)
- [ ] Email sent from windows machine
- [ ] Email sent from linux machine
- [ ] Sendgrid implemented
-
-Model Included (cases\general\ModelIncluded)
- [ ] Opencart model is included on demand
-
-Session (cases\general\Session)
- [x] Sessions are cleared
- [x] Session is created
- [x] At least one store is active
- [x] Sessions are active
-
-Settings (cases\general\Settings)
- [x] Database constants defined
- [x] Other settings defined in frontend
+Storage Area (cases\general\StorageArea)
  [ ] Storage area is out of upload
  [ ] Install folder is removed
  [ ] Admin folder is renamed
  [x] System file permissions
- [x] Htaccess disables directory listing in frontend
- [x] Htaccess disables directory listing in admin
- [x] Construct homepage url
 
 CVE (cases\issues\CVE)
- [ ] Handle c v e deetails
+ [ ] Handle cve details
 
-Gui Design (cases\issues\GuiDesign)
- [ ] Gui dashboard latest orders
- [ ] Placeholder image fits square area
- [ ] Show store logo
-
-Issues From Github (cases\issues\IssuesFromGithub)
+From Github (cases\issues\FromGithub)
  [ ] Category image placeholder in admin
  [ ] Product image placeholder in admin
  [ ] Consolidated config file
@@ -167,6 +162,19 @@ Issues From Github (cases\issues\IssuesFromGithub)
  [ ] Customer group not loaded
  [ ] Clearing saas
  [ ] Cannot read db session data
+ [ ] Call route common security
+ [ ] Wrong toast printed old message
+
+Gui Design (cases\issues\GuiDesign)
+ [ ] Dashboard latest orders
+ [ ] Placeholder image fits square area
+ [ ] Show store logo
+ [ ] Small quantity input box
+
+Mail (cases\mail\Mail)
+ [ ] Email sent from windows machine
+ [ ] Email sent from linux machine
+ [ ] Sendgrid implemented
 
 Inventory (cases\report\Inventory)
  [x] Generate inventory report

@@ -3,7 +3,7 @@ namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;
 
-class PermissionsTest extends TestCase
+class UserPermissionsTest extends TestCase
 {
     public function testDemoUserDoesNotSeeDeleteOption()
     {

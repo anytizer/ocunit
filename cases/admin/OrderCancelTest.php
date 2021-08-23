@@ -15,7 +15,7 @@ class OrderCancelTest extends TestCase
 		$this->markTestIncomplete("Cancelling an order failed.");
 	}
 
-    public function testIncompleteOrderNotCancelled()
+    public function testDoNotCancelIncompleteOrder()
     {
         $this->markTestIncomplete("Do NOT allow to cancel an incomplete order.");
     }

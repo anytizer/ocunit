@@ -1,5 +1,5 @@
 <?php
-namespace cases\general;
+namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
 use \library\catalog as catalog;

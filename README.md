@@ -11,22 +11,34 @@ OCUnit reads the actual configuration values from within your OpenCart and makes
 This has sometimes, hardcoded or embedded Database IDs which should be changed to fit your store.
 There are [business rules](library/class.BusinessRules.inc.php) and few [configurations](bootstrap.php) you should edit before running the test.
 
-A list of fixes is [available here](cases/business/) as business layer cases.
-
 
 ## Test Examples
 
-* If you add a category, a corresponding image should exist.
-* If you add a product, a corresponding image should exist.
-* [More test examples](logs/testdox.txt).
+* If you add a category or a product, a corresponding image should exist.
+* If you add a download file, it has to be a .zip file only.
+* Directory listing is disabled throughout the website,
+* Complete [test examples](logs/testdox.txt).
 
 
-### In progress
+### Other possible tests
 
 * Store price cannot be less than the manufacturer price.
 * Products must have videos.
 * Price change history is maintained.
+* Extension tables are added into the database.
 
+
+## Cases in details
+
+* api -- API tests as on [this Documentation](https://docs.opencart.com/en-gb/system/users/api/).
+* admin -- various tests in admin features
+* core -- opencart core tests
+* business -- business logic tests
+* catalog -- frontend general tests
+* general -- other general tests
+* database
+* mail
+* issues -- For issues imported from GitHub
 
 # Requirements
 
@@ -101,7 +113,7 @@ Other examples are one of:
 # Contribution
 
 If you have a specific idea on how OCUnit (Test scripts for OpenCart based on PHPUnit) should function, fork the project and submit your test cases.
-Or, mention your issue to @anytizer.
+Or, mention your issue to __@anytizer__.
 
 In general, these test scripts are merchant oriented, rather than testing the OpenCart itself.
 

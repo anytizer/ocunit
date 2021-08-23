@@ -1,5 +1,5 @@
 <?php
-namespace cases\general;
+namespace cases\core;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;
@@ -15,8 +15,9 @@ class ModelIncludedTest extends TestCase
 		// credit issued
 
 		// include OC Framework
-		// $controller->model();
-	
+		// $controller->load(model);
+		// $controller->language(en-gb);
+
 		$this->markTestIncomplete("OC Framework not loaded for now.");
 	}
 }

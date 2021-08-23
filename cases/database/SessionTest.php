@@ -1,5 +1,5 @@
 <?php
-namespace cases\general;
+namespace cases\database;
 
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay as relay;

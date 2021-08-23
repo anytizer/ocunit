@@ -5,7 +5,7 @@ use \PHPUnit\Framework\TestCase;
 use \library\BusinessRules as BusinessRules;
 use \library\DatabaseExecutor as DatabaseExecutor;
 
-class IssuesFromGithubTest extends TestCase
+class FromGithubTest extends TestCase
 {
     public function testCategoryImagePlaceholderInAdmin()
     {

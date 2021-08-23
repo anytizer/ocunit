@@ -62,7 +62,7 @@ Update the composer dependencies:
 
 * Edit `bootstrap.php` file for pointing to the location of your opencart.
 * Edit `$searches_in_html_pages` for your products in various pages.
-* Edit your [business rules](library/class.BusinessRules.inc.php).
+* Edit your store-wide [business rules](library/class.BusinessRules.inc.php).
 
 
 # Test Execution
@@ -72,7 +72,7 @@ Update the composer dependencies:
 * Under Windows: `.\run8.0.bat`
 * Or, under Linux: `./run8.0.sh`
 
-For advanced uses, to run specific tests, an example would be: `php phpunit-9.5.8.phar cases/general`, which runs faster than running all the test cases.
+For some advanced uses, to run specific tests, an example would be: `php phpunit-9.5.8.phar cases/general`, which runs faster than running all the test cases.
 Other examples are one of:
 
     phpunit phpunit-9.5.8.phar cases/admin

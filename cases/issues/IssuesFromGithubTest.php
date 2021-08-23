@@ -119,4 +119,15 @@ class IssuesFromGithubTest extends TestCase
         //TypeError: Opencart\System\Library\Session\DB::read(): Return value must be of type array, null returned in
         // system/library/session/db.php on line 21
     }
+
+    public function testCallRouteCommonSecurity()
+    {
+        // Exception: Error: Could not call route common/security!
+    }
+
+    public function testWrongToastPrintedOldMessage()
+    {
+        // But this is a condition where mail() function not available under Windows in old page I navigated (password forgotten).
+        //Later, there appears the message in the shopping cart listing page.
+    }
 }

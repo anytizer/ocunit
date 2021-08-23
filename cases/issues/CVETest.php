@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class CVETest extends TestCase
 {
-    public function testHandleCVEDeetails()
+    public function testHandleCveDetails()
     {
         // https://www.cvedetails.com/vulnerability-list/vendor_id-9599/Opencart.html
         // https://www.cvedetails.com/product/17142/Opencart-Opencart.html?vendor_id=9599

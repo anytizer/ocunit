@@ -5,8 +5,9 @@ class BusinessRules
 {
     /**
      * Factor multiplier that converts manufacturer price into store price
-     * eg. price = manufacturer price * multiplier
-     * eg. manufacturer price = price / multiplier
+     *
+     * eg. product price = manufacturer price * multiplier
+     * eg. manufacturer price = product price / multiplier
      */
     public float $multiplier = 2.5;
 

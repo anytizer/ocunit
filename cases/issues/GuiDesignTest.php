@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 
 class GuiDesignTest extends TestCase
 {
-    public function testGuiDashboardLatestOrders()
+    public function testDashboardLatestOrders()
     {
         // Minor design issue:
         // Second table has an extra whitespace at least when no data in the table.
@@ -25,5 +25,8 @@ class GuiDesignTest extends TestCase
         // Show store logo in the store listing page.
     }
 
-
+    public function testSmallQuantityInputBox()
+    {
+        // Frontend: The input field for quantity can become small - in cart page.
+    }
 }

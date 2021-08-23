@@ -35,7 +35,6 @@ There are [business rules](library/class.BusinessRules.inc.php) and few [configu
 * [business](cases/business) -- business logic tests
 * [catalog](cases/catalog) -- frontend general tests
 * [core](cases/core) -- opencart core tests
-* [general](cases/general) -- other general tests
 * [database](cases/database) -- tests with direct database hits
 * [general](cases/general) -- other uncategorized tests appear here
 * [issues](cases/issues) -- For issues imported from GitHub

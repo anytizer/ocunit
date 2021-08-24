@@ -11,15 +11,22 @@ class ImageTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testParsePngImageWidthHeight()
+    public function testParsePngImageForWidthAndHeight()
     {
-        $filename = DIR_IMAGE."placeholder.png";
-        $image = new Image($filename);
+        $images = [
+            DIR_IMAGE."no_image.png",
+            DIR_IMAGE."placeholder.png",
+            DIR_IMAGE."profile.png",
+        ];
+        foreach($images as $filename)
+        {
+            $image = new Image($filename);
 
-        $width = $image->getWidth();
-        $height = $image->getHeight();
+            $width = $image->getWidth();
+            $height = $image->getHeight();
 
-        $this->assertTrue($width > 0, "GD failed parsing placeholder image's - width.");
-        $this->assertTrue($height > 0, "GD failed parsing placeholder image's - height.");
+            $this->assertTrue($width > 0, "GD failed parsing placeholder image's - width.");
+            $this->assertTrue($height > 0, "GD failed parsing placeholder image's - height.");
+        }
     }
 }

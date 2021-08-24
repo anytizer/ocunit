@@ -2,9 +2,8 @@
 namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
-use \anytizer\relay as relay;
-use \library\catalog as catalog;
-use \library\MySQLPDO;
+use \anytizer\relay;
+use \library\catalog;
 
 class CatalogTest extends TestCase
 {

@@ -2,8 +2,6 @@
 namespace cases\issues;
 
 use \PHPUnit\Framework\TestCase;
-use \library\BusinessRules as BusinessRules;
-use \library\DatabaseExecutor as DatabaseExecutor;
 
 class FromGithubTest extends TestCase
 {

@@ -3,9 +3,9 @@ namespace cases\business;
 
 use library\DatabaseExecutor;
 use \PHPUnit\Framework\TestCase;
-use \library\fql as fql;
-use \library\MySQLPDO as MySQLPDO;
-use \library\BusinessRules as BusinessRules;
+use \library\fql;
+use \library\MySQLPDO;
+use \library\BusinessRules;
 use \PDOException;
 
 class FixturesTest extends TestCase

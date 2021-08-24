@@ -2,10 +2,10 @@
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
-use \library\DatabaseExecutor as DatabaseExecutor;
-use \library\MySQLPDO as MySQLPDO;
-use \library\fql as fql;
-use \PDOException as PDOException;
+use \library\DatabaseExecutor;
+use \library\MySQLPDO;
+use \library\fql;
+use \PDOException;
 
 class ExtensionsTest extends TestCase
 {

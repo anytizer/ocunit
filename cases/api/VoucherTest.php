@@ -2,8 +2,8 @@
 
 namespace cases\api;
 
-use anytizer\relay as relay;
-use library\api as api;
+use anytizer\relay;
+use library\api;
 use library\BusinessRules;
 use PHPUnit\Framework\TestCase;
 

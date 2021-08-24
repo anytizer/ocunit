@@ -2,7 +2,6 @@
 namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
-use \Opencart\System\Library\Url as Url;
 require_once(DIR_OPENCART."system/library/url.php");
 
 class SettingsTest extends TestCase

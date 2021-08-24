@@ -1,15 +1,13 @@
 <?php
 namespace cases\api;
 
-use library\BusinessRules;
 use \PHPUnit\Framework\TestCase;
-use \anytizer\relay as relay;
-use \library\api as api;
+use \anytizer\relay;
+use \library\api;
 
 class CouponTest extends TestCase
 {
     private string $api_token = "";
-    private BusinessRules $br;
 
     private function token()
     {
@@ -28,7 +26,6 @@ class CouponTest extends TestCase
     public function setUp(): void
     {
         $this->api_token = $this->token();
-        $this->br = new BusinessRules();
     }
 
     public function testApiCoupon()

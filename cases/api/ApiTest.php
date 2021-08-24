@@ -3,8 +3,8 @@ namespace cases\api;
 
 use library\BusinessRules;
 use \PHPUnit\Framework\TestCase;
-use \anytizer\relay as relay;
-use \library\api as api;
+use \anytizer\relay;
+use \library\api;
 
 class ApiTest extends TestCase
 {

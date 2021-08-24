@@ -2,9 +2,8 @@
 
 namespace cases\api;
 
-use anytizer\relay as relay;
-use library\api as api;
-use library\BusinessRules;
+use anytizer\relay;
+use library\api;
 use PHPUnit\Framework\TestCase;
 
 class CurrencyTest extends TestCase

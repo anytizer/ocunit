@@ -2,8 +2,6 @@
 namespace cases\core;
 
 use \PHPUnit\Framework\TestCase;
-use \anytizer\relay as relay;
-use \library\MySQLPDO;
 
 class ModelIncludedTest extends TestCase
 {

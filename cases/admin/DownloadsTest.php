@@ -2,7 +2,7 @@
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
-use \library\DatabaseExecutor as DatabaseExecutor;
+use \library\DatabaseExecutor;
 
 class DownloadsTest extends TestCase
 {

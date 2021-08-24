@@ -1,5 +1,4 @@
 <?php
-
 namespace cases\general;
 
 use PHPUnit\Framework\TestCase;

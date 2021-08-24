@@ -2,8 +2,7 @@
 namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
-use \anytizer\relay as relay;
-use \library\DatabaseExecutor as DatabaseExecutor;
+use \library\DatabaseExecutor;
 
 class ImageTest extends TestCase
 {

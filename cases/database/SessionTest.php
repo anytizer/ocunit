@@ -2,7 +2,6 @@
 namespace cases\database;
 
 use \PHPUnit\Framework\TestCase;
-use \anytizer\relay as relay;
 use \library\catalog;
 use \library\MySQLPDO;
 

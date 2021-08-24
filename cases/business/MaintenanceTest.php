@@ -1,8 +1,6 @@
 <?php
 namespace cases\business;
 
-use library\DatabaseExecutor;
-use library\MySQLPDO;
 use \PHPUnit\Framework\TestCase;
 
 class MaintenanceTest extends TestCase

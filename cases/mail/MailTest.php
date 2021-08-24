@@ -2,7 +2,6 @@
 namespace cases\mail;
 
 use \PHPUnit\Framework\TestCase;
-use \library\MySQLPDO as MySQLPDO;
 
 class MailTest extends TestCase
 {

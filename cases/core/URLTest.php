@@ -1,8 +1,10 @@
 <?php
 namespace cases\core;
 
-use Opencart\System\Library\Url as Url;
+use Opencart\System\Library\Url;
 use PHPUnit\Framework\TestCase;
+
+require_once DIR_OPENCART."system/library/url.php";
 
 class URLTest extends TestCase
 {

@@ -56,9 +56,9 @@ class BusinessRules
         $this->credentials[0] = new credentials("admin", "admin");
         $this->credentials[1] = new credentials("admin", "garbage");
         // Customer
-        $this->credentials[2] = new credentials("customer", "customer");
+        $this->credentials[2] = new credentials("customer@example.com", "password");
         $this->credentials[3] = new credentials("customer", "garbage");
-        // Guest user
+        // Guest User
         $this->credentials[4] = new credentials("guest", "guest");
         $this->credentials[5] = new credentials("guest", "garbage");
         // API Login

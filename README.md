@@ -9,7 +9,7 @@ This project is NOT about developing the core OpenCart but the implementation of
 
 OCUnit reads the actual configuration values from within your OpenCart and makes various tests.
 This has sometimes, hardcoded or embedded Database IDs which should be changed to fit your store.
-There are [business rules](library/class.BusinessRules.inc.php) and few [configurations](bootstrap.php) you should edit before running the test.
+There are [business rules](library/class.BusinessRules.inc.php) and few [bootstrap configurations](bootstrap.php) you should edit before running the test.
 
 
 ## Test Examples
@@ -74,10 +74,10 @@ Update the composer dependencies:
 
 # Configuration
 
-* Edit `bootstrap.php` file for pointing to the location of your opencart.
+* Edit [bootstrap.php](bootstrap.php) file for pointing to the location of your opencart.
 * Edit `$searches_in_html_pages` for your products in various pages.
 * Edit your store-wide [business rules](library/class.BusinessRules.inc.php).
-
+* OpenCart database configurations, URLs and system paths will be auto loaded.
 
 # Test Execution
 

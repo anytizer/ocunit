@@ -7,6 +7,15 @@ use \library\MySQLPDO;
 
 class SessionTest extends TestCase
 {
+    public function setUp(): void
+    {
+        /**
+         * Just browse the home page. It should create a guest session in the database.
+         */
+        $catalog = new catalog();
+        $index = $catalog->browse_index();
+    }
+
 	public function testSessionsAreCleared()
 	{
 		$pdo = new MySQLPDO();
@@ -20,18 +29,12 @@ class SessionTest extends TestCase
 	}
 
 	/**
-	 * @todo Do NOT run against live database!
+	 * @todo Do NOT run against the live database!
 	 */
 	public function testSessionIsCreated()
 	{
 		$pdo = new MySQLPDO();
 		$pdo->raw("DELETE FROM `".DB_PREFIX."session`;");
-
-		/**
-		 * Just browse the home page
-		 */
-		$catalog = new catalog();
-		$index = $catalog->browse_index();
 
 		$sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."session`;";
 		$total = (int)$pdo->query($sql)[0]["total"];
@@ -55,7 +58,8 @@ class SessionTest extends TestCase
 
 		$sql = "SELECT `data` FROM `".DB_PREFIX."session` WHERE `expire`>=NOW() LIMIT 1;";
 		$sessions = $pdo->query($sql);
-		
+
+		$this->assertTrue(count($sessions) > 0, "Zero count in the session.");
 		$this->assertArrayHasKey("data", $sessions[0], "Session data is empty!");
 	}
 }

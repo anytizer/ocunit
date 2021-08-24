@@ -72,10 +72,12 @@ class CartTest extends TestCase
         $this->registry = $registry;
     }
 
-    public function testCart()
+    public function testCartClear()
     {
         $cart = new Cart($this->registry);
         $cart->clear();
+
+        $this->assertEmpty($cart->getProducts(), "Cart was not cleared.");
     }
 
     public function testCustomer()

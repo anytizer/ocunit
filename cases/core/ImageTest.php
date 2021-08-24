@@ -8,7 +8,10 @@ require_once DIR_SYSTEM."library/image.php";
 
 class ImageTest extends TestCase
 {
-    public function testPngImage()
+    /**
+     * @throws \Exception
+     */
+    public function testParsePngImageWidthHeight()
     {
         $filename = DIR_IMAGE."placeholder.png";
         $image = new Image($filename);
@@ -16,7 +19,7 @@ class ImageTest extends TestCase
         $width = $image->getWidth();
         $height = $image->getHeight();
 
-        $this->assertTrue($width > 0, "GD PNG failed parsing placeholder image - width.");
-        $this->assertTrue($height > 0, "GD PNG failed parsing placeholder image - height.");
+        $this->assertTrue($width > 0, "GD failed parsing placeholder image's - width.");
+        $this->assertTrue($height > 0, "GD failed parsing placeholder image's - height.");
     }
 }

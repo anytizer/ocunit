@@ -34,6 +34,6 @@ class LogTest extends TestCase
         unset($log);
 
         $full_filename = DIR_LOGS.$this->filename;
-        $this->assertTrue(is_file($full_filename), "Log file not written.");
+        $this->assertTrue(is_file($full_filename), "Log file not written to: ".$full_filename);
     }
 }

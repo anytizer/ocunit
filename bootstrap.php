@@ -4,13 +4,14 @@
  * Put WITHOUT trailing slash /
  */
 global $opencart_upload_folder;
-$opencart_upload_folder = realpath("d:/htdocs/oc/store/upload");
+$opencart_upload_folder = realpath("../store/upload");
 assert($opencart_upload_folder!="");
+assert(is_dir($opencart_upload_folder));
 
 /**
  * OpenCart Frontend configuration file
  */
-require_once("{$opencart_upload_folder}/config.php");
+#require_once("{$opencart_upload_folder}/config.php");
 
 /**
  * Admin config file
@@ -18,9 +19,9 @@ require_once("{$opencart_upload_folder}/config.php");
  * Silently load admin configurations too.
  * The constants defined in admin will definitely collide with that in frontend.
  */
-ob_start();
+#ob_start();
 require_once("{$opencart_upload_folder}/admin/config.php");
-ob_end_clean();
+#ob_end_clean();
 
 /**
  * Show all error reporting.
@@ -37,19 +38,23 @@ if(function_exists($xdebug_disable))
     $xdebug_disable();
 }
 
-define("__OCUNIT_ROOT__", dirname(__FILE__)); // do not change it
+define("__OCUNIT_ROOT__", dirname(__FILE__, 1)); // do not change it
+const __OCUNIT_EXECUTE_EXPENSIVE__ = false; // Should I run expensive database operations?
 
 require_once("vendor/autoload.php");
+
 require_once("library/class.fql.inc.php");
 require_once("library/class.PostQuery.inc.php");
 require_once("library/class.MySQLPDO.inc.php");
-require_once("library/class.DatabaseExecuter.inc.php");
+require_once("library/class.DatabaseExecutor.inc.php");
 require_once("library/class.api.inc.php");
 require_once("library/class.catalog.inc.php");
 require_once("library/class.admin.inc.php");
+require_once("library/class.credentials.inc.php");
 
 /**
  * Define site-wide business rules, multipliers, product count, etc.
+ * Also, user credentials,
  */
 require_once("library/class.BusinessRules.inc.php");
 
@@ -133,4 +138,53 @@ $searches_in_html_pages = [
             "api_token",
         ]
     ),
+];
+
+/**
+ * Boot to OpenCart front page without HTML output
+ */
+# ob_start();
+# require_once("{$opencart_upload_folder}/index.php");
+# require_once(DIR_SYSTEM . "startup.php");
+# ob_end_clean();
+
+/**
+ * Define which tables should have how many records count?
+ * Hints: Look into the database tables manually and edit your preferences.
+ *
+ * Tables with 0 count will be truncated.
+ */
+$tables_counters = [
+    DB_PREFIX."api" => 2,
+    DB_PREFIX."banner" => 0,
+    DB_PREFIX."banner_image" => 0,
+    DB_PREFIX."cart" => 0,
+    DB_PREFIX."coupon" => 0,
+    DB_PREFIX."currency" => 1,
+    DB_PREFIX."customer" => 1,
+    DB_PREFIX."customer_group_description" => 4,
+    DB_PREFIX."customer_login" => 0,
+    DB_PREFIX."filter" => 0,
+    DB_PREFIX."fraud_ip" => 0,
+    DB_PREFIX."gdpr" => 0,
+    DB_PREFIX."language" => 1, // 1
+    DB_PREFIX."manufacturer" => 6,
+    DB_PREFIX."notification" => 0,
+    DB_PREFIX."order" => 0,
+    DB_PREFIX."order_product" => 0,
+
+    DB_PREFIX."product" => 91,
+    DB_PREFIX."product_description" => 91,
+    DB_PREFIX."product_to_category" => 91,
+
+    #DB_PREFIX."download" => 5,
+    #DB_PREFIX."product_to_download" => 5,
+
+    DB_PREFIX."review" => 0,
+    DB_PREFIX."session" => 0,
+    DB_PREFIX."setting" => 373,
+    DB_PREFIX."store" => 3,
+    DB_PREFIX."user_group" => 5,
+    DB_PREFIX."voucher" => 0,
+    DB_PREFIX."voucher_history" => 0,
 ];

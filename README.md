@@ -17,10 +17,12 @@ There are [business rules](library/class.BusinessRules.inc.php) and few [bootstr
 * If you add a category or a product, a corresponding image should exist.
 * If you add a download file, it has to be a .zip file only.
 * Directory listing is disabled throughout the website,
-* Complete [test examples](logs/testdox.txt).
+* Complete [active tests](logs/testdox.txt).
 
 
-### Other possible tests
+### Other tests
+
+Examples of some other tests possible through ocunit are:
 
 * Store price cannot be less than the manufacturer price.
 * Products must have videos.
@@ -39,7 +41,7 @@ There are [business rules](library/class.BusinessRules.inc.php) and few [bootstr
 * [general](cases/general) -- other uncategorized tests appear here
 * [issues](cases/issues) -- For issues imported from GitHub
 * [mail](cases/mail) -- test email sending features
-* [report](cases/report)-- inventory statistics
+* [report](cases/report)-- inventory statistics from merchant's perspectives
 
 
 # Requirements

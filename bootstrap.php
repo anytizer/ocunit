@@ -23,6 +23,15 @@ assert(is_dir($opencart_upload_folder));
 require_once("{$opencart_upload_folder}/admin/config.php");
 #ob_end_clean();
 
+// Helper
+require_once(DIR_SYSTEM . "helper/general.php");
+require_once(DIR_SYSTEM . "helper/utf8.php");
+require_once(DIR_STORAGE . "vendor/autoload.php");
+require_once(DIR_SYSTEM . "engine/autoloader.php");
+require_once(DIR_SYSTEM . "engine/config.php");
+
+$_SERVER["REMOTE_ADDR"] = "0.0.0.0";
+
 /**
  * Show all error reporting.
  */

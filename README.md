@@ -95,8 +95,17 @@ Other examples are one of:
     phpunit phpunit-9.5.8.phar cases/api
     phpunit phpunit-9.5.8.phar cases/business
     phpunit phpunit-9.5.8.phar cases/catalog
+    phpunit phpunit-9.5.8.phar cases/core
+    phpunit phpunit-9.5.8.phar cases/database
     phpunit phpunit-9.5.8.phar cases/general
+    phpunit phpunit-9.5.8.phar cases/issues
+    phpunit phpunit-9.5.8.phar cases/mail
     phpunit phpunit-9.5.8.phar cases/report
+
+
+Also, you can specifiy an individual test file to run, for example:
+
+    php phpunit-9.5.8.phar cases/database/CountersTest.php
 
 
 ## Logs Produced

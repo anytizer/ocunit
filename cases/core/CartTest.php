@@ -13,16 +13,6 @@ use Opencart\System\Library\Request;
 use Opencart\System\Library\Session;
 use PHPUnit\Framework\TestCase;
 
-// Helper
-require_once(DIR_SYSTEM . "helper/general.php");
-require_once(DIR_SYSTEM . "helper/utf8.php");
-require_once(DIR_STORAGE . "vendor/autoload.php");
-require_once(DIR_SYSTEM . "engine/autoloader.php");
-require_once(DIR_SYSTEM . "engine/config.php");
-#require_once(DIR_SYSTEM . "framework.php");
-
-$_SERVER["REMOTE_ADDR"] = "0.0.0.0";
-
 
 class CartTest extends TestCase
 {

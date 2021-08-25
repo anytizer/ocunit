@@ -21,7 +21,8 @@ There are [business rules](library/class.BusinessRules.inc.php) and few [bootstr
 * Products must have videos associated.
 * Price change history is maintained.
 * Extension tables are added into the database.
-* Complete [active tests](logs/testdox.txt).
+
+Not all the tests are complete. See [tests](logs/testdox.txt) with x mark for completion.
 
 
 # Test Cases

@@ -48,7 +48,7 @@ if(function_exists($xdebug_disable))
 }
 
 define("__OCUNIT_ROOT__", dirname(__FILE__, 1)); // do not change it
-const __OCUNIT_EXECUTE_EXPENSIVE__ = true; // Should I run expensive database operations?
+const __OCUNIT_EXECUTE_EXPENSIVE__ = false; // Should I run expensive database operations?
 
 require_once("vendor/autoload.php");
 

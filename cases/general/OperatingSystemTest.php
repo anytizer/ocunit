@@ -25,6 +25,13 @@ class OperatingSystemTest extends TestCase
 
     public function testLinuxOperatingSystem()
     {
-        $this->assertEquals("LINUX", PHP_OS);
+        $this->assertEquals("Linux", PHP_OS);
+    }
+
+    public function testUname()
+    {
+        $uname = php_uname();
+        // Windows NT ...
+        $this->assertEquals("Windows NT", substr($uname, 0, 10));
     }
 }

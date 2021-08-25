@@ -13,7 +13,7 @@ class DownloadsTest extends TestCase
         foreach($downloads as $download)
         {
             $extension = pathinfo(basename($download["mask"]))["extension"];
-            $this->assertEquals("zip", $extension, "Offer downloads in .zip format only.");
+            $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only.");
         }
     }
 
@@ -78,5 +78,6 @@ class DownloadsTest extends TestCase
         //apply file size limits
         //restrict others but .zip: reject!
         //A product can have multiple files attached. All files should exist.
+        $this->markTestSkipped();
     }
 }

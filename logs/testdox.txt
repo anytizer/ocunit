@@ -1,5 +1,156 @@
+Downloads (cases\admin\Downloads)
+ [ ] Downloadable files are zip files
+ [ ] Masked download should exist
+ [ ] Downloadable product has a file linked
+ [ ] Add mime and size
+
+Extensions (cases\admin\Extensions)
+ [x] Third party extension tables are present
+ [x] Create missing third party extension tables
+
+Login (cases\admin\Login)
+ [ ] Black list system user demanders
+ [ ] Admin brute force login discouraged
+ [ ] Login fails
+ [ ] Login succeeds
+ [ ] Customer login form has captcha
+ [ ] Customer approval required for login
+ [ ] Guest checkout
+
+Order Cancel (cases\admin\OrderCancel)
+ [ ] Order cancelled properly
+ [ ] Do not cancel incomplete order
+
+Settings (cases\admin\Settings)
+ [x] Database constants defined
+ [x] Other settings defined
+
+Api (cases\api\Api)
+ [ ] Get api token
+ [ ] Access routes
+
+Cart (cases\api\Cart)
+ [ ] Api cart add
+ [ ] Api cart edit
+ [ ] Api cart remove
+ [ ] Api cart products
+
+Coupon (cases\api\Coupon)
+ [ ] Api coupon
+
+Currency (cases\api\Currency)
+ [ ] Change session currency
+
+Customer (cases\api\Customer)
+ [ ] Api customer
+
+Login (cases\api\Login)
+ [ ] Get api token
+ [ ] Inappropriate api users denied
+ [ ] Access api login
+
+Voucher (cases\api\Voucher)
+ [ ] Api voucher
+ [ ] Api voucher add
+
+Fixtures (cases\business\Fixtures)
+ [ ] Fix innodb database engine
+ [ ] Fix auto increment values
+ [ ] Fix sku
+ [x] Fix manufacturer pricing by product price
+ [x] Fix shipping requires inventory subtraction
+ [x] Fix downloadable product does not subtract inventory
+ [x] Setup business rules
+ [x] Admin pagination size increased
+
+Images (cases\business\Images)
+ [x] Fix product images
+ [x] Fix category images
+
+Maintenance (cases\business\Maintenance)
+ [ ] Pre installation hook
+ [ ] Post installation hook
+
+Pricing (cases\business\Pricing)
+ [ ] Manufacturer price exists
+ [ ] Product price is greater than manufacturer price
+ [ ] Product price is greater than manufacturer price even after discounts
+ [x] Price change history maintained
+ [x] Physical product must have non zero price
+
+Shipping (cases\business\Shipping)
+ [ ] Free shipping within city of store
+ [ ] Post office api usage
+ [ ] Pickup request
+ [ ] Picked up item emails to customer
+ [ ] Deny cross boarder shipping
+
+Taxation (cases\business\Taxation)
+ [ ] Low order fee applies
+ [ ] Low tax rate in alberta
+ [ ] Eco tax
+ [ ] Gst tax
+ [ ] Hst tax
+ [ ] Value added tax
+
+User Permissions (cases\business\UserPermissions)
+ [ ] Demo user does not see delete option
+ [ ] Demo user cannot delete record
+ [ ] Demo user does not have permission to modify record
+
+Web (cases\business\Web)
+ [ ] Show message to choose strong password
+
+Catalog (cases\catalog\Catalog)
+ [ ] Index page has toast div
+ [ ] Admin dashboard requires login
+ [ ] Account pages need login
+ [ ] Searches in pages
+
+Image (cases\catalog\Image)
+ [ ] Category images exist
+ [x] Product images exist
+ [ ] Category images are valid images
+ [ ] Product images are valid images
+ [ ] Image files do not contain scripts
+
+Login (cases\catalog\Login)
+ [ ] Simple login is functional
+ [ ] Protected login is functional
+
+Settings (cases\catalog\Settings)
+ [x] Database constants defined
+ [x] Core settings defined
+ [x] Directory settings defined
+
+Cart (cases\core\Cart)
+ [ ] Cart clear
+ [ ] Customer
+
+Encryption (cases\core\Encryption)
+ [x] Encrypt
+
+Image (cases\core\Image)
+ [x] Parse png image for width and height
+
+Language (cases\core\Language)
+ [ ] Language loaded
+
+Log (cases\core\Log)
+ [x] Log file produced
+
+Model Included (cases\core\ModelIncluded)
+ [ ] Opencart model is included on demand
+
+Password (cases\core\Password)
+ [x] Password hash
+
+URL (cases\core\URL)
+ [x] Construct homepage url
+
 Counters (cases\database\Counters)
- [x] Total record counter
+ [ ] Count truncated tables
+ [ ] Total record counter
 
 Database (cases\database\Database)
  [x] Can connect to the database
@@ -9,8 +160,69 @@ Database (cases\database\Database)
  [x] Single currency operation
 
 Session (cases\database\Session)
- [x] Sessions are cleared
  [ ] Session is created
- [x] At least one store is active
- [ ] Sessions are active
+ [ ] At least one store is active
+
+Htaccess (cases\general\Htaccess)
+ [x] Htaccess disables directory listing in frontend
+ [x] Htaccess disables directory listing in admin
+
+Include Paths (cases\general\IncludePaths)
+ [x] All included paths exist
+
+Operating System (cases\general\OperatingSystem)
+ [x] Windows operating system
+ [ ] Linux operating system
+ [x] Uname
+
+Php Modules (cases\general\PhpModules)
+ [x] Php modules available
+
+Storage Area (cases\general\StorageArea)
+ [ ] Storage area is out of upload
+ [ ] Install folder is removed
+ [ ] Admin folder is renamed
+ [x] Storage folders permissions
+ [x] Other folders permissions
+
+XDebug (cases\general\XDebug)
+ [x] X debug module available
+ [x] X debug should not autostart
+
+CVE (cases\issues\CVE)
+ [ ] Handle cve details
+
+From Github (cases\issues\FromGithub)
+ [ ] Category image placeholder in admin
+ [ ] Product image placeholder in admin
+ [ ] Consolidated config file
+ [ ] Account requires admin approval before login
+ [ ] Keep a log of admin access
+ [ ] Add category description in product detail page
+ [ ] Do not return product with non existing product id
+ [ ] Show pre setup file permissions
+ [ ] Do post setup cleanups
+ [ ] User is registered properly
+ [ ] Admin password forgotten
+ [ ] Confusing constants
+ [ ] Undefined custom field key
+ [ ] Customer group not loaded
+ [ ] Clearing saas
+ [ ] Cannot read db session data
+ [ ] Call route common security
+ [ ] Wrong toast printed old message
+
+Gui Design (cases\issues\GuiDesign)
+ [ ] Dashboard latest orders
+ [ ] Placeholder image fits square area
+ [ ] Show store logo
+ [ ] Small quantity input box
+
+Mail (cases\mail\Mail)
+ [ ] Email sent from windows machine
+ [ ] Email sent from linux machine
+ [ ] Sendgrid implemented
+
+Inventory (cases\report\Inventory)
+ [x] Generate inventory report
 

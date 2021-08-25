@@ -7,7 +7,11 @@
       <directory suffix="Test.php">cases/api</directory>
       <directory suffix="Test.php">cases/business</directory>
       <directory suffix="Test.php">cases/catalog</directory>
+      <directory suffix="Test.php">cases/core</directory>
+      <directory suffix="Test.php">cases/database</directory>
       <directory suffix="Test.php">cases/general</directory>
+      <directory suffix="Test.php">cases/issues</directory>
+      <directory suffix="Test.php">cases/mail</directory>
       <directory suffix="Test.php">cases/report</directory>
     </testsuite>
   </testsuites>

@@ -7,59 +7,68 @@ use \library\MySQLPDO;
 
 class SessionTest extends TestCase
 {
+    private static function truncate()
+    {
+        $pdo = new MySQLPDO();
+        $pdo->raw("TRUNCATE TABLE `".DB_PREFIX."session`;");
+    }
+
+    private function delete()
+    {
+        $pdo = new MySQLPDO();
+        $pdo->raw("DELETE FROM `".DB_PREFIX."session`;");
+    }
+
+    private function counter(): int
+    {
+        $pdo = new MySQLPDO();
+
+        $sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."session`;";
+        $total = (int)$pdo->query($sql)[0]["total"];
+
+        return $total;
+    }
+
+    public static function setUpBeforeClass(): void
+    {
+        self::truncate();
+    }
+
     public function setUp(): void
     {
+        //$this->delete();
+
         /**
-         * Just browse the home page. It should create a guest session in the database.
+         * Just browse the home page.
+         * It should create a guest session in the database.
          */
         $catalog = new catalog();
         $index = $catalog->browse_index();
     }
 
-	public function testSessionsAreCleared()
-	{
-		$pdo = new MySQLPDO();
+    public function tearDown(): void
+    {
+        # $this->delete();
+    }
 
-		$pdo->raw("DELETE FROM `".DB_PREFIX."session`;");
+    /**
+     * @todo Do NOT run against the live database!
+     */
+    public function testSessionIsCreated()
+    {
+        $total = $this->counter();
 
-		$sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."session`;";
-		$total = (int)$pdo->query($sql)[0]["total"];
-		
-		$this->assertEquals(0, $total, "Session not cleared.");
-	}
-
-	/**
-	 * @todo Do NOT run against the live database!
-	 */
-	public function testSessionIsCreated()
-	{
-		$pdo = new MySQLPDO();
-		$pdo->raw("DELETE FROM `".DB_PREFIX."session`;");
-
-		$sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."session`;";
-		$total = (int)$pdo->query($sql)[0]["total"];
-		
-		$this->assertEquals(1, $total, "Session not created.");
-	}
+        $this->assertEquals(1, $total, "Invalid session data count: {$total}.");
+    }
 
     public function testAtLeastOneStoreIsActive()
     {
-        $pdo = new MySQLPDO();
+        $catalog = new catalog();
+        $index1 = $catalog->browse_index();
+        $index2 = $catalog->browse_index();
 
-        $sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."store`;";
-        $total = (int)$pdo->query($sql)[0]["total"];
+        $total = $this->counter();
 
         $this->assertTrue($total > 0);
     }
-
-	public function testSessionsAreActive()
-	{
-		$pdo = new MySQLPDO();
-
-		$sql = "SELECT `data` FROM `".DB_PREFIX."session` WHERE `expire`>=NOW() LIMIT 1;";
-		$sessions = $pdo->query($sql);
-
-		$this->assertTrue(count($sessions) > 0, "Zero count in the session.");
-		$this->assertArrayHasKey("data", $sessions[0], "Session data is empty!");
-	}
 }

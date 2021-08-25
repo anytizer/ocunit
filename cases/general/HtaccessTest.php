@@ -7,14 +7,31 @@ class HtaccessTest extends TestCase
 {
     public function testHtaccessDisablesDirectoryListingInFrontend()
     {
-        $htaccess = file_get_contents(DIR_OPENCART.".htaccess");
-        $this->assertEquals("Options -Indexes", $htaccess, "Invalid .htaccess file in frontend.");
+        $body = "Options -Indexes";
+        $dothtaccess = DIR_OPENCART.".htaccess";
+        if(is_file($dothtaccess))
+        {
+            $htaccess = file_get_contents($dothtaccess);
+            $this->assertEquals($body, $htaccess, "Invalid .htaccess file in frontend.");
+        }
+        else
+        {
+            file_put_contents($dothtaccess, $body);
+        }
     }
 
     public function testHtaccessDisablesDirectoryListingInAdmin()
     {
-        // @todo Move admin/ using a variable
-        $htaccess_admin = file_get_contents(DIR_OPENCART."admin/.htaccess");
-        $this->assertEquals("Options -Indexes", $htaccess_admin, "Invalid .htaccess file in admin.");
+        $body = "Options -Indexes";
+        $dothtaccess = DIR_OPENCART."admin/.htaccess";
+        if(is_file($dothtaccess))
+        {
+            $htaccess = file_get_contents($dothtaccess);
+            $this->assertEquals($body, $htaccess, "Invalid .htaccess file.");
+        }
+        else
+        {
+            file_put_contents($dothtaccess, $body);
+        }
     }
 }

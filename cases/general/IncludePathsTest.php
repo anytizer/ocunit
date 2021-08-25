@@ -17,43 +17,4 @@ class IncludePathsTest extends TestCase
 			$this->assertTrue(is_dir($path), "Include path does not exist: {$path}.");
 		}
 	}
-
-    /**
-     * Minimum modules necessary to run OpenCart
-     */
-	public function testPhpModulesAvailable()
-	{
-		$this->assertTrue(function_exists("spl_autoload_register"), "Missing PHP extension: SPL");
-		$this->assertTrue(function_exists("gd_info"), "Missing PHP extension: GD");
-		$this->assertTrue(function_exists("curl_init"), "Missing PHP extension: cURL");
-		$this->assertTrue(function_exists("mb_check_encoding"), "Missing PHP extension: MB String");
-
-        /**
-         * @see system/helper/general.php
-         */
-		$this->assertTrue(function_exists("random_bytes"), "Missing PHP function: random_bytes");
-		$this->assertTrue(function_exists("openssl_random_pseudo_bytes"), "Missing PHP extension: OpenSSL");
-	}
-
-	public function testXDebugModuleAvailable()
-	{
-		$this->assertTrue(function_exists("xdebug_break"), "Missing PHP extension: xDebug.");
-
-		/**
-		 * Looks like only newer version of xDebug has this feature.
-		 */
-		$this->assertTrue(function_exists("xdebug_info"), "xDebug should be upgraded, if you are using it.");
-	}
-
-	public function testXDebugShouldNotAutostart()
-	{
-		/**
-		 * xDebug must be present and disabled by default on the server environment
-		 */
-		$autostart = ini_get("xdebug.remote_autostart")?(int)ini_get("xdebug.remote_autostart"):-1;
-		$this->assertEquals(0, $autostart, "xDebug should NOT autostart.");
-
-		$profiler_enable = ini_get("xdebug.profiler_enable")?(int)ini_get("xdebug.profiler_enable"):-1;
-		$this->assertEquals(0, $profiler_enable, "xDebug profiler enable value to be 0.");
-	}
 }

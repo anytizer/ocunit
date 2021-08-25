@@ -14,7 +14,7 @@ class ImagesTest extends TestCase
     {
         $pdo = new MySQLPDO();
 
-        // UPDATE oc_product SET image='';
+        // UPDATE oc_product SET image=null;
 
         $modified = 0;
         $products_sql = "SELECT product_id, image FROM `".DB_PREFIX."product`;";
@@ -36,7 +36,10 @@ class ImagesTest extends TestCase
             }
             else
             {
-                // product image MUST exist
+                $dir = dirname(DIR_IMAGE.$product["image"]);
+                if(!is_dir($dir))
+                    mkdir($dir, 0777, true);
+
                 copy(DIR_IMAGE."placeholder.png", DIR_IMAGE.$product["image"]);
                 $image_file = DIR_IMAGE.$product["image"];
                 $this->assertTrue(is_file($image_file), "Missing image for product id: #".$product["product_id"]);
@@ -58,7 +61,7 @@ class ImagesTest extends TestCase
     {
         $pdo = new MySQLPDO();
 
-        // UPDATE oc_category SET image='';
+        // UPDATE oc_category SET image=null;
 
         $modified = 0;
         $categories_sql = "SELECT category_id, image FROM `".DB_PREFIX."category`;";
@@ -80,8 +83,14 @@ class ImagesTest extends TestCase
             }
             else
             {
-                // product image MUST exist
-                copy(DIR_IMAGE."placeholder.png", DIR_IMAGE.$category["image"]);
+                $dir = dirname(DIR_IMAGE.$category["image"]);
+                if(!is_dir($dir))
+                    mkdir($dir, 0777, true);
+
+                if(!is_file(DIR_IMAGE.$category["image"]))
+                {
+                    copy(DIR_IMAGE."placeholder.png", DIR_IMAGE.$category["image"]);
+                }
                 $image_file = DIR_IMAGE.$category["image"];
                 $this->assertTrue(is_file($image_file), "Missing image for category id: #".$category["category_id"]);
             }

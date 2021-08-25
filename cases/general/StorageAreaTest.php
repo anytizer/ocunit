@@ -1,5 +1,4 @@
 <?php
-
 namespace cases\general;
 
 use PHPUnit\Framework\TestCase;
@@ -52,7 +51,7 @@ class StorageAreaTest extends TestCase
         $this->assertFalse(is_dir($admin), "Rename admin folder to something difficult!");
     }
 
-    public function testSystemFilePermissions()
+    public function testStorageFoldersPermissions()
     {
         $folders = [
             DIR_STORAGE."backup",
@@ -63,9 +62,6 @@ class StorageAreaTest extends TestCase
             DIR_STORAGE."session",
             DIR_STORAGE."upload",
             DIR_STORAGE."vendor",
-
-            // @todo look for sub-folders as well
-            DIR_IMAGE,
         ];
         foreach($folders as $folder)
         {
@@ -73,7 +69,18 @@ class StorageAreaTest extends TestCase
             $basename = basename($folder);
             $this->assertTrue($can_write, "Cannot write to storage/{$basename}.");
         }
+    }
 
-        // images, images/category/n.png, sql backup logs,
+    public function testOtherFoldersPermissions()
+    {
+        $folders = [
+            DIR_IMAGE,
+        ];
+        foreach($folders as $folder)
+        {
+            $can_write = is_writable($folder);
+            $basename = basename($folder);
+            $this->assertTrue($can_write, "Cannot write to OTHER FOLDER: {$basename}.");
+        }
     }
 }

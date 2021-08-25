@@ -19,9 +19,6 @@ class FixturesTest extends TestCase
 
     public function testFixInnodbDatabaseEngine()
     {
-        $this->markAsRisky();
-        return;
-
         if(__OCUNIT_EXECUTE_EXPENSIVE__)
         {
             $dbx = new DatabaseExecutor();
@@ -41,6 +38,8 @@ class FixturesTest extends TestCase
     // @todo Improve auto increments
     public function testFixAutoIncrementValues()
     {
+        if(!__OCUNIT_EXECUTE_EXPENSIVE__) return;
+
         $dbx = new DatabaseExecutor();
         $tables = $dbx->tables();
 
@@ -80,7 +79,7 @@ class FixturesTest extends TestCase
         $pdo = new MySQLPDO();
         $pdo->query("UPDATE `".DB_PREFIX."product` SET sku=model WHERE sku='';");
 
-        $this->markAsRisky();
+        $this->assertFalse(__OCUNIT_EXECUTE_EXPENSIVE__, "SKU were modified.");
     }
 
     /**
@@ -111,7 +110,7 @@ class FixturesTest extends TestCase
         $sql = "UPDATE `".DB_PREFIX."product` SET subtract='1' WHERE shipping='1';";
         $pdo->raw($sql);
 
-        $this->assertTrue(true, "Shipping of tangible products must require subtraction in inventory.");
+        $this->assertTrue(true, "Shipping of physical products must require subtraction in inventory.");
     }
 
     public function testFixDownloadableProductDoesNotSubtractInventory()

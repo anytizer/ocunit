@@ -14,7 +14,7 @@ class CountersTest extends TestCase
         global $tables_counters;
         $this->tables_counters = $tables_counters;
 
-        $this->truncated = 0;
+        $truncated = 0;
 
         $pdo = new MySQLPDO();
 
@@ -25,10 +25,17 @@ class CountersTest extends TestCase
                 if($total===0)
                 {
                     $pdo->query("TRUNCATE `{$table}`;");
-                    ++$this->truncated;
+                    ++$truncated;
                 }
             }
         }
+
+        $this->truncated = $truncated;
+    }
+
+    public function testCountTruncatedTables()
+    {
+        $this->assertEquals(15, $this->truncated, "Mismatched truncated count.");
     }
 
     public function testTotalRecordCounter()

@@ -28,14 +28,14 @@ class BusinessRules
     /**
      * How many actual products are there in one language (en-gb) in a store?
      * 
-     * SELECT COUNT(*) total FROM oc_product WHERE `status`=1;
+     * SELECT COUNT(*) total FROM oc_product; -- WHERE `status`=1;
      */
     public int $total_products = 91;
 
     /**
      * Number of settings/configuration count
      * 
-     * SELECT COUNT(*) total FROM oc_setting; -- on a trusted database
+     * SELECT COUNT(*) total FROM oc_setting;
      */
     public int $settings_count = 373;
 
@@ -67,11 +67,8 @@ class BusinessRules
         // orders
         // sales
         // returns
-        // marketing
         // reports
-        // guest
         // marketing agent
         // demo admin user
-        // other user types...
     }
 }

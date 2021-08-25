@@ -9,7 +9,6 @@ use \library\api;
 class ApiTest extends TestCase
 {
     private string $api_token = "";
-    private BusinessRules $br;
 
     private function token()
     {
@@ -28,12 +27,10 @@ class ApiTest extends TestCase
     public function setUp(): void
     {
         $this->api_token = $this->token();
-        $this->br = new BusinessRules();
     }
 
     public function testGetApiToken()
     {
-        // $api_token = $this->token();
         $this->assertEquals(strlen("f5a254e32400369e587457dfd9"), strlen($this->api_token), "API Token length mismatched.");
     }
 

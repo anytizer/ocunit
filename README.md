@@ -17,17 +17,11 @@ There are [business rules](library/class.BusinessRules.inc.php) and few [bootstr
 * If you add a category or a product, a corresponding image should exist.
 * If you add a download file, it has to be a .zip file only.
 * Directory listing is disabled throughout the website,
-* Complete [active tests](logs/testdox.txt).
-
-
-### Other tests
-
-Examples of some other tests possible through ocunit are:
-
 * Store price cannot be less than the manufacturer price.
-* Products must have videos.
+* Products must have videos associated.
 * Price change history is maintained.
 * Extension tables are added into the database.
+* Complete [active tests](logs/testdox.txt).
 
 
 # Test Cases
@@ -79,7 +73,8 @@ Update the composer dependencies:
 * Edit [bootstrap.php](bootstrap.php) file for pointing to the location of your opencart.
 * Edit `$searches_in_html_pages` for your products in various pages.
 * Edit your store-wide [business rules](library/class.BusinessRules.inc.php).
-* OpenCart database configurations, URLs and system paths will be auto loaded.
+* Carefully edit your table statistics `$tables_counters`.
+
 
 # Test Execution
 
@@ -103,7 +98,7 @@ Other examples are one of:
     phpunit phpunit-9.5.8.phar cases/report
 
 
-Also, you can specifiy an individual test file to run, for example:
+Also, you can specify an individual test file to run, for example:
 
     php phpunit-9.5.8.phar cases/database/CountersTest.php
 
@@ -125,10 +120,8 @@ Also, you can specifiy an individual test file to run, for example:
 
 # Contribution
 
-If you have a specific idea on how OCUnit (Test scripts for OpenCart based on PHPUnit) should function, fork the project and submit your test cases.
+If you have a specific idea on how OCUnit (Test scripts for OpenCart based on PHPUnit) should function, fork the project and open pull request for your new test cases.
 Or, mention your issue to __@anytizer__.
-
-In general, these test scripts are merchant oriented, rather than testing the OpenCart itself.
 
 
 # Made with

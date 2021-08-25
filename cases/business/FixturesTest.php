@@ -19,6 +19,9 @@ class FixturesTest extends TestCase
 
     public function testFixInnodbDatabaseEngine()
     {
+        $this->markAsRisky();
+        return;
+
         if(__OCUNIT_EXECUTE_EXPENSIVE__)
         {
             $dbx = new DatabaseExecutor();
@@ -123,7 +126,9 @@ class FixturesTest extends TestCase
         foreach($this->business_rules->countries_of_business_operations as $country_of_business_operation)
 		{
             $country_of_business_operation = preg_replace("/[^A-Z]/", "", $country_of_business_operation);
-			$pdo->raw("UPDATE `".DB_PREFIX."country` SET `status`=1 WHERE iso_code_2='{$country_of_business_operation}' LIMIT 1;");
+			$pdo->raw("UPDATE `".DB_PREFIX."country` SET `status`=1 WHERE iso_code_2=:iso_code_2 LIMIT 1;", [
+			    ":iso_code_2" => $country_of_business_operation,
+            ]);
 		}
 
 		$this->assertTrue(true, "Setup business rules - countries disabled.");
@@ -137,75 +142,5 @@ class FixturesTest extends TestCase
         $pdo->raw($sql);
 
         $this->assertTrue(true, "Admin pagination size increased.");
-    }
-
-    /**
-     * @todo Empty the image data before running this test.
-     */
-    public function testFixProductImages()
-    {
-        $pdo = new MySQLPDO();
-
-        $modified = 0;
-        $products_sql = "SELECT product_id, image FROM `".DB_PREFIX."product`;";
-        $products = $pdo->query($products_sql);
-        foreach($products as $p => $product)
-        {
-            if(empty($product["image"]))
-            {
-                $update_sql = "UPDATE `".DB_PREFIX."product` SET image=:image WHERE product_id=:product_id;";
-
-                $store = "store"; // @todo Replace with proper store name
-                $product_id = $product["product_id"];
-                $pdo->raw($update_sql, [
-                    "image" => "image/catalog/{$store}/products/{$product_id}-800x400.png",
-                    "product_id" => $product["product_id"],
-                ]);
-
-                ++$modified;
-            }
-        }
-
-        /**
-         * By design:
-         *    On first run, caches error.
-         *    On second run, it is ok.
-         */
-        $this->assertEquals(0, $modified, "Product images have been auto assigned.");
-    }
-
-    /**
-     * @todo Empty the image data before running this test.
-     */
-    public function testFixCategoryImages()
-    {
-        $pdo = new MySQLPDO();
-
-        $modified = 0;
-        $categories_sql = "SELECT category_id, image FROM `".DB_PREFIX."category`;";
-        $categories = $pdo->query($categories_sql);
-        foreach($categories as $c => $category)
-        {
-            if(empty($category["image"]))
-            {
-                $update_sql = "UPDATE `".DB_PREFIX."category` SET image=:image WHERE category_id=:category_id;";
-
-                $store = "store"; // @todo Replace with proper store name
-                $category_id = $category["category_id"];
-                $pdo->raw($update_sql, [
-                    "image" => "image/catalog/{$store}/categories/{$category_id}-200x200.png",
-                    "category_id" => $category["category_id"],
-                ]);
-
-                ++$modified;
-            }
-        }
-
-        /**
-         * By design:
-         *    On first run, caches error.
-         *    On second run, it is ok.
-         */
-        $this->assertEquals(0, $modified, "Category images have been auto assigned.");
     }
 }

@@ -108,6 +108,9 @@ Also, you can specify an individual test file to run, for example:
     php phpunit-9.5.8.phar cases/database/CountersTest.php
 
 
+More information at: https://phpunit.readthedocs.io/en/9.5/textui.html.
+
+
 ## Logs Produced
 
 * `logs/testdox.txt`

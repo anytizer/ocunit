@@ -12,15 +12,25 @@ class catalog
 	/**
 	 * Test customer
 	 */
-    private string $username = "test@example.com";
-    private string $password = "password";
+    private string $username;
+    private string $password;
+
+    public function __construct()
+    {
+        $br = new BusinessRules();
+        $this->username = $br->credentials[4]->username;
+        $this->password = $br->credentials[4]->password;
+    }
 
 	/**
 	 * Visit the home page
 	 */
 	public function browse_index(): string
 	{
+	    $random = mt_rand(1000, 9999);
+
         $_GET = [
+            "random" => $random,
 		];
 
 		$_POST = [

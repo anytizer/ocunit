@@ -48,7 +48,7 @@ if(function_exists($xdebug_disable))
 }
 
 define("__OCUNIT_ROOT__", dirname(__FILE__, 1)); // do not change it
-const __OCUNIT_EXECUTE_EXPENSIVE__ = false; // Should I run expensive database operations?
+const __OCUNIT_EXECUTE_EXPENSIVE__ = true; // Should I run expensive database operations?
 
 require_once("vendor/autoload.php");
 
@@ -150,18 +150,10 @@ $searches_in_html_pages = [
 ];
 
 /**
- * Boot to OpenCart front page without HTML output
- */
-# ob_start();
-# require_once("{$opencart_upload_folder}/index.php");
-# require_once(DIR_SYSTEM . "startup.php");
-# ob_end_clean();
-
-/**
  * Define which tables should have how many records count?
  * Hints: Look into the database tables manually and edit your preferences.
  *
- * Tables with 0 count will be truncated.
+ * Risky Operation: Tables with 0 count will be truncated once to reset their IDs.
  */
 $tables_counters = [
     DB_PREFIX."api" => 2,
@@ -176,7 +168,7 @@ $tables_counters = [
     DB_PREFIX."filter" => 0,
     DB_PREFIX."fraud_ip" => 0,
     DB_PREFIX."gdpr" => 0,
-    DB_PREFIX."language" => 1, // 1
+    DB_PREFIX."language" => 1,
     DB_PREFIX."manufacturer" => 6,
     DB_PREFIX."notification" => 0,
     DB_PREFIX."order" => 0,

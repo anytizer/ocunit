@@ -4,8 +4,6 @@ namespace cases\core;
 use \Opencart\System\Library\Language;
 use \PHPUnit\Framework\TestCase;
 
-require_once DIR_OPENCART."system/library/language.php";
-
 class LanguageTest extends TestCase
 {
     public function setUp(): void
@@ -38,7 +36,7 @@ class LanguageTest extends TestCase
 
         $namespace = "catalog"; // "Opencart\\Catalog"; // "Opencart\\Catalog\\Controller\\Account"
         $code = "en-gb";
-        $directory = DIR_OPENCART."catalog/language/";
+        $directory = DIR_OPENCART."admin/language/";
         $filename = "account/account";
         $prefix = "text_";
 

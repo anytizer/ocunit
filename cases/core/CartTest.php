@@ -13,7 +13,6 @@ use Opencart\System\Library\Request;
 use Opencart\System\Library\Session;
 use PHPUnit\Framework\TestCase;
 
-
 class CartTest extends TestCase
 {
     private Registry $registry;
@@ -69,6 +68,9 @@ class CartTest extends TestCase
         $customer = new Customer($registry);
         $registry->set("customer", $customer);
 
+        #$cart = new Cart($registry);
+        #$registry->set("cart", $cart);
+
         $this->registry = $registry;
     }
 
@@ -77,10 +79,11 @@ class CartTest extends TestCase
         $cart = new Cart($this->registry);
         $cart->clear();
 
-        $this->assertEmpty($cart->getProducts(), "Cart was not cleared.");
+        $products = $cart->getProducts();
+        $this->assertEmpty($products, "Cart was not cleared.");
     }
 
-    public function testCustomer()
+    public function testCustomerLogin()
     {
         $customer = new Customer($this->registry);
 

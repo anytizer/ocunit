@@ -15,7 +15,7 @@ assert(is_dir($opencart_upload_folder));
 
 /**
  * Admin config file
- * 
+ *
  * Silently load admin configurations too.
  * The constants defined in admin will definitely collide with that in frontend.
  */
@@ -31,6 +31,11 @@ require_once(DIR_SYSTEM . "engine/autoloader.php");
 require_once(DIR_SYSTEM . "engine/config.php");
 
 $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
+
+$autoloader = new \Opencart\System\Engine\Autoloader();
+$autoloader->register("Opencart\\" . APPLICATION, DIR_APPLICATION);
+$autoloader->register("Opencart\Extension", DIR_EXTENSION);
+$autoloader->register("Opencart\System", DIR_SYSTEM);
 
 /**
  * Show all error reporting.
@@ -68,6 +73,7 @@ require_once("library/class.credentials.inc.php");
 require_once("library/class.BusinessRules.inc.php");
 
 use \library\PostQuery;
+use Opencart\System\Engine\Registry;
 
 /**
  * Modify these values with your store data
@@ -103,11 +109,11 @@ $searches_in_html_pages = [
         ],
         [],
         [
-			"Piano",
+            "Piano",
             "Raspberry Pi",
-			"Camcorder",
-			"Headphones",
-			"Micro SD Card",
+            "Camcorder",
+            "Headphones",
+            "Micro SD Card",
             ">Micro SD Card 32GB</a></h4>", // starts with ">" as a part of h4.a tag
             // "<h4><a href="http://localhost/opencart/upload/index.php?route=product/product&amp;language=en-gb&amp;path=66_63&amp;product_id=82">Micro SD Card 32GB</a></h4>",
         ]
@@ -130,7 +136,7 @@ $searches_in_html_pages = [
             "<li>Product Code: SDCARD</li>",
             "<li>Availability: In Stock</li>",
             "<li>Ex Tax: $10.00</li>",
-        ]        
+        ]
     ),
 
     // API Token
@@ -140,9 +146,9 @@ $searches_in_html_pages = [
             "route" => "api/login",
         ],
         [
-			"username" => "test1",
-			"key" => "9acd35f146d93542c062e73697564373f0eac52ebf84ace1d9f59f2face8c5c4ed67d2939ebe86756e6fe4f1fbeb7bf3189d195883b8556b79339d9f3fbb518c32f9a72ab4226a495c2a6aa0f4508a7f8662d1d8fc7d5cfba81a89294556ba10338771247914482be7ce08e4c196af019802a8b69874a82f50863c7f89f64dcc",
-		],
+            "username" => "test1",
+            "key" => "9acd35f146d93542c062e73697564373f0eac52ebf84ace1d9f59f2face8c5c4ed67d2939ebe86756e6fe4f1fbeb7bf3189d195883b8556b79339d9f3fbb518c32f9a72ab4226a495c2a6aa0f4508a7f8662d1d8fc7d5cfba81a89294556ba10338771247914482be7ce08e4c196af019802a8b69874a82f50863c7f89f64dcc",
+        ],
         [
             "api_token",
         ]

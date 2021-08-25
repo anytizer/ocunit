@@ -26,24 +26,28 @@ There are [business rules](library/class.BusinessRules.inc.php) and few [bootstr
 
 # Test Cases
 
-* [admin](cases/admin) -- various tests in admin features
-* [api](cases/api) -- API tests as on [this Documentation](https://docs.opencart.com/en-gb/system/users/api/).
-* [business](cases/business) -- business logic tests
-* [catalog](cases/catalog) -- frontend general tests
-* [core](cases/core) -- opencart core tests
-* [database](cases/database) -- tests with direct database hits
-* [general](cases/general) -- other uncategorized tests appear here
-* [issues](cases/issues) -- For issues imported from GitHub
-* [mail](cases/mail) -- test email sending features
-* [report](cases/report)-- inventory statistics from merchant's perspectives
+Case                       | Description
+---------------------------|---------------------------------
+[admin](cases/admin)       | various tests in admin features
+[api](cases/api)           | API tests as on [documentation](https://docs.opencart.com/en-gb/system/users/api/)
+[business](cases/business) | business logic tests
+[catalog](cases/catalog)   | frontend general tests
+[core](cases/core)         | opencart core tests
+[database](cases/database) | tests with direct database hits
+[general](cases/general)   | other uncategorized tests appear here
+[issues](cases/issues)     | For issues imported from GitHub
+[mail](cases/mail)         | test email sending features
+[report](cases/report)     | inventory statistics from merchant's perspectives
 
 
 # Requirements
 
-* [PHP](https://www.php.net/) 8.0.8+
-* [PHPUnit](https://phpunit.de/) 9.5.8+
-* [OpenCart](https://github.com/opencart/opencart) 4.0.0+ (master branch)
-* [relay.php](https://packagist.org/packages/anytizer/relay.php) -- composer package of a minimal HTTP client
+Dependency                     | Version             | Description
+-------------------------------|---------------------|---------------------
+[PHP](https://www.php.net/)    | 8.0.8+              | -
+[PHPUnit](https://phpunit.de/) | 9.5.8+              | -
+[OpenCart](https://github.com/opencart/opencart)               | 4.0.0+ | master branch
+[relay.php](https://packagist.org/packages/anytizer/relay.php) | - | composer package of a minimal HTTP client
 
 
 # Installation

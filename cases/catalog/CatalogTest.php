@@ -5,7 +5,6 @@ use \PHPUnit\Framework\TestCase;
 use \anytizer\relay;
 use \library\catalog;
 
-
 class CatalogTest extends TestCase
 {
     public function testIndexPageHasToastDiv()
@@ -74,7 +73,43 @@ class CatalogTest extends TestCase
         }
     }
 
-    public function testSearchesInPages()
+//    public function testSearchesInPages()
+//    {
+//        /**
+//         * Obtain user defined configurations for store-wide searches
+//         * @see config.ini
+//         */
+//        global $configurations;
+//
+//        $searches_in_html_pages = [
+//            $configurations["html_index"],
+//            $configurations["html_categories"],
+//            $configurations["html_product_details"],
+//        ];
+//
+//        foreach($searches_in_html_pages as $post_query)
+//        {
+//            $page = "index.php";
+//
+//            $_GET = $post_query["get"];
+//            $_POST = $post_query["post"];
+//            $lookups = $post_query["lookup"];
+//
+//            $relay = new relay();
+//            $relay->headers([
+//                "X-Protection-Token" => "",
+//            ]);
+//            $html = $relay->fetch(HTTP_SERVER.$page);
+//
+//            foreach($lookups as $lookup)
+//            {
+//                $found = str_contains($html, $lookup);
+//                $this->assertTrue($found, "\033[1;31mFAILED:\033[0m searching [ {$lookup} ] in HTML output.");
+//            }
+//        }
+//    }
+
+    public function testSearchesInHomePage()
     {
         /**
          * Obtain user defined configurations for store-wide searches
@@ -82,31 +117,58 @@ class CatalogTest extends TestCase
          */
         global $configurations;
 
-        $searches_in_html_pages = [
-            $configurations["html_index"],
-            $configurations["html_categories"],
-            $configurations["html_product_details"],
-        ];
+        $post_query = $configurations["html_index"];
 
-        foreach($searches_in_html_pages as $post_query)
+        $catalog = new catalog();
+        $html = $catalog->lookup($post_query);
+
+        $lookups = $post_query["lookup"];
+        foreach($lookups as $lookup)
         {
-            $page = "index.php";
+            $found = str_contains($html, $lookup);
+            $this->assertTrue($found, "\033[1;31mFAILED:\033[0m searching [ {$lookup} ] in HTML output.");
+        }
+    }
 
-            $_GET = $post_query["get"];
-            $_POST = $post_query["post"];
-            $lookups = $post_query["lookup"];
+    public function testSearchCategoriesPage()
+    {
+        /**
+         * Obtain user defined configurations for store-wide searches
+         * @see config.ini
+         */
+        global $configurations;
 
-            $relay = new relay();
-            $relay->headers([
-                "X-Protection-Token" => "",
-            ]);
-            $html = $relay->fetch(HTTP_SERVER.$page);
+        $post_query = $configurations["html_product_details"];
 
-            foreach($lookups as $lookup)
-            {
-                $found = str_contains($html, $lookup);
-                $this->assertTrue($found, "\033[1;31mFAILED:\033[0m searching [ {$lookup} ] in HTML output.");
-            }
+        $catalog = new catalog();
+        $html = $catalog->lookup($post_query);
+
+        $lookups = $post_query["lookup"];
+        foreach($lookups as $lookup)
+        {
+            $found = str_contains($html, $lookup);
+            $this->assertTrue($found, "\033[1;31mFAILED:\033[0m searching [ {$lookup} ] in HTML output.");
+        }
+    }
+
+    public function testSearchesInProductDetailsPage()
+    {
+        /**
+         * Obtain user defined configurations for store-wide searches
+         * @see config.ini
+         */
+        global $configurations;
+
+        $post_query = $configurations["html_product_details"];
+
+        $catalog = new catalog();
+        $html = $catalog->lookup($post_query);
+
+        $lookups = $post_query["lookup"];
+        foreach($lookups as $lookup)
+        {
+            $found = str_contains($html, $lookup);
+            $this->assertTrue($found, "\033[1;31mFAILED:\033[0m searching [ {$lookup} ] in HTML output.");
         }
     }
 }

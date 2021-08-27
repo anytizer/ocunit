@@ -6,7 +6,7 @@ use \library\DatabaseExecutor;
 
 class DownloadsTest extends TestCase
 {
-    public function testDownloadableFilesAreZipFiles()
+    public function testDownloadableFilesMustBeZipFormat()
     {
         $downloads = $this->_downloads();
 

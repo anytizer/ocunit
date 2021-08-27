@@ -22,6 +22,8 @@ class StorageAreaTest extends TestCase
             "upload",
             "public_html",
             "htdocs",
+            "httpdocs",
+            "httpsdocs",
             "www",
             "web",
 

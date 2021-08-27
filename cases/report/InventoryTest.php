@@ -23,7 +23,7 @@ class InventoryTest extends TestCase
         $weights = $dbx->weights();
 
         /**
-         * Produce data log as printable report for the merchant.
+         * Printable report for the merchant.
          */
         $this->_logInventoryForMerchantReports($inventories, $taxes, $lengths, $weights);
 

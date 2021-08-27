@@ -36,7 +36,7 @@ class SessionTest extends TestCase
 
     public function setUp(): void
     {
-        //$this->delete();
+        $this->delete();
 
         /**
          * Just browse the home page.

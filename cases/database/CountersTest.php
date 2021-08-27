@@ -6,15 +6,16 @@ use PHPUnit\Framework\TestCase;
 
 class CountersTest extends TestCase
 {
-    private array $tables_counters = [];
+    private array $tables_counters;
 
     public function setUp(): void
     {
         global $configurations;
 
+        $this->tables_counters = [];
         foreach($configurations["tables_counters"] as $table => $counter)
         {
-            $this->tables_counters[str_replace("oc_", DB_PREFIX, $table)] = $counter;
+            $this->tables_counters[str_replace("oc_", DB_PREFIX, $table)] = (int)$counter;
         }
     }
 
@@ -34,9 +35,13 @@ class CountersTest extends TestCase
                     ++$truncated;
                 }
             }
-        }
 
-        $this->assertEquals(15, $truncated, "Mismatched truncated count.");
+            $this->assertEquals(15, $truncated, "Mismatched truncated count.");
+        }
+        else
+        {
+            $this->assertFalse(__OCUNIT_EXECUTE_EXPENSIVE__, "Tables were truncated.");
+        }
     }
 
     public function testTotalRecordCounter()

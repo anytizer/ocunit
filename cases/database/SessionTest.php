@@ -69,6 +69,6 @@ class SessionTest extends TestCase
 
         $total = $this->counter();
 
-        $this->assertTrue($total > 0);
+        $this->assertTrue($total > 0, "Session not created.");
     }
 }

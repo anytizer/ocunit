@@ -52,6 +52,16 @@ class DatabaseExecutor
         return $info;
     }
 
+    public function statistics(): array
+    {
+        $pdo = new MySQLPDO();
+
+        $sql = "SHOW TABLE STATUS FROM `".DB_DATABASE."` WHERE ENGINE IS NOT NULL;";
+        $statistics = $pdo->query($sql);
+
+        return $statistics;
+    }
+
     public function downloads(): array
     {
         $pdo = new MySQLPDO();

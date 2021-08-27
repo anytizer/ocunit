@@ -4,28 +4,31 @@ Merchant oriented test scripts for OpenCart based on PHPUnit.
 
 __WARNING__: Never execute these tests against your live database or in server environment.
 It is likely to override the product information, pricing, images, session and more.
-Always choose a database that is not in production.
 The database may never return to its original state.
 
 This project is NOT about developing the core OpenCart but the implementation of OpenCart to run a store.
 
-OCUnit reads the actual configuration values from within your OpenCart and makes various tests.
-This has sometimes, hardcoded or embedded Database IDs which should be changed to fit your store.
-There are [business rules](library/class.BusinessRules.inc.php) and few [bootstrap configurations](bootstrap.php) you should edit before running the test.
+OCUnit reads the actual database configuration values and URLs from within your OpenCart to run tests.
+There are few [business rules](config.ini) and configurations you should edit before running the test.
 
 Take a backup first!
 
 ## Test Examples
 
-* If you add a category or a product, a corresponding image should exist.
-* If you add a download file, it has to be a .zip file only.
+See how the tests are merchant oriented!
+
+* A corresponding image should exist for product or category.
+  * Product: 800x400
+  * Category: 200x200
+* A "downloadable" file has to be a .zip file only.
 * Directory listing is disabled throughout the website,
 * Store price cannot be less than the manufacturer price.
-* Products must have videos associated.
-* Price change history is maintained.
+* Updating price makes a history of change.
 * Extension tables are added into the database.
+* Products must have videos associated.
+* Product concise inventory statistics.
 
-Not all the tests are complete. See [tests](logs/testdox.txt) with x mark for completion.
+Not [all the tests](logs/testdox.txt) are complete. See those with x mark.
 
 
 # Test Cases

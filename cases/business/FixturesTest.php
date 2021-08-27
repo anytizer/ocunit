@@ -10,13 +10,6 @@ use \PDOException;
 
 class FixturesTest extends TestCase
 {
-    public BusinessRules $business_rules;
-
-    public function setUp(): void
-    {
-        $this->business_rules = new BusinessRules();
-    }
-
     public function testFixInnodbDatabaseEngine()
     {
         if(__OCUNIT_EXECUTE_EXPENSIVE__)
@@ -38,7 +31,12 @@ class FixturesTest extends TestCase
     // @todo Improve auto increments
     public function testFixAutoIncrementValues()
     {
-        if(!__OCUNIT_EXECUTE_EXPENSIVE__) return;
+        $this->assertFalse(__OCUNIT_EXECUTE_EXPENSIVE__);
+
+        if(!__OCUNIT_EXECUTE_EXPENSIVE__)
+        {
+            return;
+        }
 
         $dbx = new DatabaseExecutor();
         $tables = $dbx->tables();
@@ -79,7 +77,7 @@ class FixturesTest extends TestCase
         $pdo = new MySQLPDO();
         $pdo->raw("UPDATE `".DB_PREFIX."product` SET sku=model WHERE sku='';");
 
-        $this->assertFalse(__OCUNIT_EXECUTE_EXPENSIVE__, "SKU were modified.");
+        $this->assertFalse(__OCUNIT_EXECUTE_EXPENSIVE__, "SKU were modified with model.");
     }
 
     /**
@@ -97,31 +95,38 @@ class FixturesTest extends TestCase
         $sql = "DELETE FROM tw_manufacturer_prices;";
         $pdo->raw($sql);
 
-        $sql = "INSERT INTO tw_manufacturer_prices SELECT NULL, {$this->business_rules->internal_sourcing_manufacturer_id}, product_id, price/{$this->business_rules->multiplier} FROM `".DB_PREFIX."product`;";
+        global $configurations;
+        $multiplier = (float)$configurations["business_rules"]["multiplier"];
+        $internal_sourcing_manufacturer_id = (int)$configurations["business_rules"]["internal_sourcing_manufacturer_id"];
+        $sql = "INSERT INTO tw_manufacturer_prices SELECT NULL, {$internal_sourcing_manufacturer_id}, product_id, price/{$multiplier} FROM `".DB_PREFIX."product`;";
         $pdo->raw($sql);
 
-        $this->assertTrue(true, "Manufacturer prices are assigned to internally sourced Manufacturer ID.");
+        $this->assertTrue(true, "Manufacturer prices are assigned to internal source.");
+    }
+
+    public function testFixDownloadableProductDoesNotSubtractInventory()
+    {
+        $pdo = new MySQLPDO();
+
+        // tax_class_id == 10 (Downloadable Product)
+        global $configurations;
+        $downloadable_product_tax_class_id = (int)$configurations["business_rules"]["downloadable_product_tax_class_id"];
+        $sql = "UPDATE `".DB_PREFIX."product` SET subtract=0, shipping=0 WHERE tax_class_id=:tax_class_id;";
+        $pdo->raw($sql, [
+            "tax_class_id" => $downloadable_product_tax_class_id
+        ]);
+
+        $this->assertTrue(true, "Downloadable product does not subtract inventory.");
     }
 
     public function testFixShippingRequiresInventorySubtraction()
     {
         $pdo = new MySQLPDO();
         
-        $sql = "UPDATE `".DB_PREFIX."product` SET subtract='1' WHERE shipping='1';";
+        $sql = "UPDATE `".DB_PREFIX."product` SET subtract=1 WHERE shipping=1;";
         $pdo->raw($sql);
 
         $this->assertTrue(true, "Shipping of physical products must require subtraction in inventory.");
-    }
-
-    public function testFixDownloadableProductDoesNotSubtractInventory()
-    {
-        $pdo = new MySQLPDO();
-        
-        // tax_class_id == 10 (Downloadable Product)
-        $sql = "UPDATE `".DB_PREFIX."product` SET subtract='0' WHERE tax_class_id='{$this->business_rules->downloadable_product_tax_class_id}';";
-        $pdo->raw($sql);
-
-        $this->assertTrue(true, "Downloadable product does not subtract inventory.");
     }
 
     public function testSetupBusinessRules()
@@ -130,7 +135,9 @@ class FixturesTest extends TestCase
 
         $pdo->raw("UPDATE `".DB_PREFIX."country` SET `status`=0;");
 
-        foreach($this->business_rules->countries_of_business_operations as $country_of_business_operation)
+        global $configurations;
+        $countries_of_business_operations = $configurations["business_rules"]["countries_of_business_operations"];
+        foreach($countries_of_business_operations as $country_of_business_operation)
 		{
             $country_of_business_operation = preg_replace("/[^A-Z]/", "", $country_of_business_operation);
 			$pdo->raw("UPDATE `".DB_PREFIX."country` SET `status`=1 WHERE iso_code_2=:iso_code_2 LIMIT 1;", [

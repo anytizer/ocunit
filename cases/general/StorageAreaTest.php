@@ -48,9 +48,8 @@ class StorageAreaTest extends TestCase
 
     public function testAdminFolderIsRenamed()
     {
-        // @todo Replace "admin" with a variable
-        $admin = DIR_OPENCART."admin";
-        $this->assertFalse(is_dir($admin), "Rename admin folder to something difficult!");
+        // @todo: config.ini > opencart > admin
+        $this->assertFalse(is_dir(DIR_OPENCART."admin"), "Rename admin folder to something difficult!");
     }
 
     public function testStorageFoldersPermissions()

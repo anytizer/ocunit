@@ -6,6 +6,15 @@ use \library\DatabaseExecutor;
 
 class DownloadsTest extends TestCase
 {
+    private function _downloads()
+    {
+        $dbx = new DatabaseExecutor();
+        $downloads = $dbx->downloads();
+
+        assert(count($downloads) > 0, "Your store does not have downloadable products.");
+        return $downloads;
+    }
+
     public function testDownloadableFilesMustBeZipFormat()
     {
         $downloads = $this->_downloads();
@@ -17,7 +26,7 @@ class DownloadsTest extends TestCase
         }
     }
 
-    public function testMaskedDownloadShouldExist()
+    public function testDownloadShouldExist()
     {
         $downloads = $this->_downloads();
 
@@ -29,15 +38,6 @@ class DownloadsTest extends TestCase
             $download_exists = is_file($masked_file);
             $this->assertTrue($download_exists, "Missing download file for id #{$download['download_id']}: {$download['name']}.");
         }
-    }
-
-    private function _downloads()
-    {
-        $dbx = new DatabaseExecutor();
-        $downloads = $dbx->downloads();
-
-        assert(count($downloads) > 0, "Your store does not have downloadable products.");
-        return $downloads;
     }
 
     public function testDownloadableProductHasAFileLinked()
@@ -71,13 +71,23 @@ class DownloadsTest extends TestCase
 
     // SELECT product_id FROM `oc_product` WHERE tax_class_id=10;
 
-    public function testAddMimeAndSize()
+    public function testAddMimeColumn()
     {
         // Add file size, file MIME, and hash signature to a downloadable file.
         //
         //apply file size limits
         //restrict others but .zip: reject!
         //A product can have multiple files attached. All files should exist.
+        $this->markTestSkipped();
+    }
+
+    public function testAddSizeColumn()
+    {
+       $this->markTestSkipped();
+    }
+
+    public function testAddHashColumn()
+    {
         $this->markTestSkipped();
     }
 }

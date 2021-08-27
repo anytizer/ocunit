@@ -100,7 +100,7 @@ class FixturesTest extends TestCase
         $sql = "INSERT INTO tw_manufacturer_prices SELECT NULL, {$this->business_rules->internal_sourcing_manufacturer_id}, product_id, price/{$this->business_rules->multiplier} FROM `".DB_PREFIX."product`;";
         $pdo->raw($sql);
 
-        $this->assertTrue(true, "Manufacturer prices are assigned to internally sourced Manufaturer ID.");
+        $this->assertTrue(true, "Manufacturer prices are assigned to internally sourced Manufacturer ID.");
     }
 
     public function testFixShippingRequiresInventorySubtraction()

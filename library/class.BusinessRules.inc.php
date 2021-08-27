@@ -1,4 +1,5 @@
 <?php
+// now obsolete
 namespace library;
 
 class BusinessRules
@@ -30,14 +31,14 @@ class BusinessRules
      * 
      * SELECT COUNT(*) total FROM oc_product; -- WHERE `status`=1;
      */
-    public int $total_products = 91;
+    # public int $total_products = 91;
 
     /**
      * Number of settings/configuration count
      * 
      * SELECT COUNT(*) total FROM oc_setting;
      */
-    public int $settings_count = 373;
+    # public int $settings_count = 373;
 
     /**
      * Country of business operation

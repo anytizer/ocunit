@@ -9,9 +9,10 @@ class LoginTest extends TestCase
     public function testBlackListSystemUserDemanders()
     {
         $system_users = [
+            "api",
             "admin",
             "customer",
-            "api",
+            "guest",
         ];
 
         $whitelisted_ip = [
@@ -39,6 +40,7 @@ class LoginTest extends TestCase
     {
         // an IP address cannot send a login request continuously over a short period
         // bottleneck such IPs and usernames
+        // immediately terminate system user demanders
         $this->markTestIncomplete("Brute Force check not implemented.");
     }
 
@@ -69,6 +71,9 @@ class LoginTest extends TestCase
 
     public function testCustomerLoginFormHasCaptcha()
     {
+        // for valid username and password
+        // and no captcha information
+        // fail the login page
         $this->markTestIncomplete("Login not protected with Captcha.");
     }
     

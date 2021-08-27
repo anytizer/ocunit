@@ -112,7 +112,7 @@ class DatabaseExecutor
     {
         $pdo = new MySQLPDO();
 		
-		$sql = "SELECT product_id, image FROM `".DB_PREFIX."product`;";
+		$sql = "SELECT product_id, image, price FROM `".DB_PREFIX."product`;";
 		$products = $pdo->query($sql);
 
         return $products;

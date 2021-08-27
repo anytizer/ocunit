@@ -13,18 +13,6 @@ class DatabaseTest extends TestCase
 
         $this->assertNotNull($pdo, "Failed connecting to the database.");
     }
-    
-//    public function testCountNumberOfSettings()
-//    {
-//        $pdo = new MySQLPDO();
-//
-//        $sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."setting`;";
-//        $data = $pdo->query($sql);
-//        $total = (int)$data[0]["total"];
-//
-//        $business_rules = new BusinessRules();
-//        $this->assertEquals($business_rules->settings_count, $total, "The settings count has been modified.");
-//    }
 
     public function testOnlyOneLanguageIsActive()
     {

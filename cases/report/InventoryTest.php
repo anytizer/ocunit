@@ -34,8 +34,6 @@ class InventoryTest extends TestCase
             $pricing_profitability_managed = $inventory["price"] >= $inventory["mprice"] * $this->business_rules->multiplier;
             $this->assertTrue($pricing_profitability_managed, "Probably loss in final pricing based on manufacturer price.");
         }
-
-        //$this->assertEquals($this->business_rules->total_products, count($inventories), "Number of products in the database changed! Update \$records.");
     }
 
     private function _logInventoryForMerchantReports($inventories=[], $taxes=[], $lengths=[], $weights=[])

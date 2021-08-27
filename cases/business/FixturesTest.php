@@ -77,7 +77,7 @@ class FixturesTest extends TestCase
     public function testFixSku()
     {
         $pdo = new MySQLPDO();
-        $pdo->query("UPDATE `".DB_PREFIX."product` SET sku=model WHERE sku='';");
+        $pdo->raw("UPDATE `".DB_PREFIX."product` SET sku=model WHERE sku='';");
 
         $this->assertFalse(__OCUNIT_EXECUTE_EXPENSIVE__, "SKU were modified.");
     }

@@ -1,8 +1,10 @@
 Downloads (cases\admin\Downloads)
- [ ] Downloadable files are zip files
- [ ] Masked download should exist
+ [x] Downloadable files must be zip format
+ [ ] Download should exist
  [ ] Downloadable product has a file linked
- [ ] Add mime and size
+ [ ] Add mime column
+ [ ] Add size column
+ [ ] Add hash column
 
 Extensions (cases\admin\Extensions)
  [x] Third party extension tables are present
@@ -53,30 +55,34 @@ Voucher (cases\api\Voucher)
  [ ] Api voucher
  [ ] Api voucher add
 
+Category Images (cases\business\CategoryImages)
+ [x] Create category images
+ [x] Fix category images database records
+
 Fixtures (cases\business\Fixtures)
- [ ] Fix innodb database engine
- [ ] Fix auto increment values
- [ ] Fix sku
+ [x] Fix innodb database engine
+ [x] Fix auto increment values
+ [x] Fix sku
  [x] Fix manufacturer pricing by product price
- [x] Fix shipping requires inventory subtraction
  [x] Fix downloadable product does not subtract inventory
+ [x] Fix shipping requires inventory subtraction
  [x] Setup business rules
  [x] Admin pagination size increased
-
-Images (cases\business\Images)
- [x] Fix product images
- [x] Fix category images
 
 Maintenance (cases\business\Maintenance)
  [ ] Pre installation hook
  [ ] Post installation hook
 
 Pricing (cases\business\Pricing)
- [ ] Manufacturer price exists
- [ ] Product price is greater than manufacturer price
+ [x] Manufacturer price exists
+ [x] Product price is greater than manufacturer price
  [ ] Product price is greater than manufacturer price even after discounts
  [x] Price change history maintained
  [x] Physical product must have non zero price
+
+Product Images (cases\business\ProductImages)
+ [x] Create product images
+ [x] Fix product images database records
 
 Shipping (cases\business\Shipping)
  [ ] Free shipping within city of store
@@ -105,7 +111,9 @@ Catalog (cases\catalog\Catalog)
  [ ] Index page has toast div
  [ ] Admin dashboard requires login
  [ ] Account pages need login
- [ ] Searches in pages
+ [ ] Searches in home page
+ [ ] Search categories page
+ [ ] Searches in product details page
 
 Image (cases\catalog\Image)
  [ ] Category images exist
@@ -125,10 +133,10 @@ Settings (cases\catalog\Settings)
 
 Cart (cases\core\Cart)
  [ ] Cart clear
- [ ] Customer
+ [ ] Customer login
 
 Encryption (cases\core\Encryption)
- [x] Encrypt
+ [x] Encrypt decrypt
 
 Image (cases\core\Image)
  [x] Parse png image for width and height
@@ -149,12 +157,11 @@ URL (cases\core\URL)
  [x] Construct homepage url
 
 Counters (cases\database\Counters)
- [ ] Count truncated tables
+ [x] Count truncated tables
  [ ] Total record counter
 
 Database (cases\database\Database)
  [x] Can connect to the database
- [x] Count number of settings
  [x] Only one language is active
  [x] Admin paginates 100 items
  [x] Single currency operation
@@ -167,9 +174,6 @@ Htaccess (cases\general\Htaccess)
  [x] Htaccess disables directory listing in frontend
  [x] Htaccess disables directory listing in admin
 
-Include Paths (cases\general\IncludePaths)
- [x] All included paths exist
-
 Operating System (cases\general\OperatingSystem)
  [x] Windows operating system
  [ ] Linux operating system
@@ -177,6 +181,8 @@ Operating System (cases\general\OperatingSystem)
 
 Php Modules (cases\general\PhpModules)
  [x] Php modules available
+ [x] Zend assertions
+ [x] All included paths exist
 
 Storage Area (cases\general\StorageArea)
  [ ] Storage area is out of upload
@@ -222,7 +228,12 @@ Mail (cases\mail\Mail)
  [ ] Email sent from windows machine
  [ ] Email sent from linux machine
  [ ] Sendgrid implemented
+ [ ] Email body is html formatted
+ [ ] Email is whitelisted
 
 Inventory (cases\report\Inventory)
  [x] Generate inventory report
+
+Records Count (cases\report\RecordsCount)
+ [x] Records count
 

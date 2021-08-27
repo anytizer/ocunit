@@ -73,7 +73,6 @@ require_once DIR_SYSTEM . "engine/config.php";
 require_once("vendor/autoload.php");
 
 require_once("library/class.fql.inc.php");
-#require_once("library/class.PostQuery.inc.php");
 require_once("library/class.MySQLPDO.inc.php");
 require_once("library/class.DatabaseExecutor.inc.php");
 require_once("library/class.api.inc.php");
@@ -93,6 +92,7 @@ require_once("library/class.BusinessRules.inc.php");
 if(!isset($_SERVER["REMOTE_ADDR"])) { $_SERVER["REMOTE_ADDR"] = "0.0.0.0"; }
 
 use \Opencart\System\Engine\Autoloader;
+global $autoloader;
 $autoloader = new Autoloader();
 $autoloader->register("Opencart\\" . APPLICATION, DIR_APPLICATION);
 $autoloader->register("Opencart\Extension", DIR_EXTENSION);

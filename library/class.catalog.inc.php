@@ -17,9 +17,10 @@ class catalog
 
     public function __construct()
     {
-        $br = new BusinessRules();
-        $this->username = $br->credentials[4]->username;
-        $this->password = $br->credentials[4]->password;
+        global $configurations;
+        $credentials = $configurations["credentials"]["customer_valid"];
+        $this->username = $credentials["username"];
+        $this->password = $credentials["password"];
     }
 
 	/**

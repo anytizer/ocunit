@@ -81,9 +81,7 @@ Update the composer dependencies:
 
 # Configuration
 
-* Edit [bootstrap.php](bootstrap.php) file for pointing to the location of your opencart.
-* Edit `$searches_in_html_pages` for your products in various pages.
-* Edit your store-wide [business rules](library/class.BusinessRules.inc.php).
+* Edit [config.ini](config.ini) for paths, business rules, catalog information etc.
 * Carefully edit your table statistics `$tables_counters`.
 
 

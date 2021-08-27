@@ -1,5 +1,4 @@
 <?php
-
 namespace cases\api;
 
 use anytizer\relay;

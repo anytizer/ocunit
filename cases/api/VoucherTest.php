@@ -1,5 +1,4 @@
 <?php
-
 namespace cases\api;
 
 use anytizer\relay;
@@ -9,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class VoucherTest extends TestCase
 {
-    private $api_token;
+    private string $api_token;
     public function setUp(): void
     {
         $this->api_token = $this->token();

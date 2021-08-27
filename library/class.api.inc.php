@@ -18,7 +18,8 @@ class api
 
     public function get_token_html()
 	{
-	    $br = new BusinessRules();
+	    global $configurations;
+	    $credentials = $configurations["credentials"]["api_valid"];
 
 		$_GET = [
 			"route" => "api/login",
@@ -26,8 +27,8 @@ class api
 
 		// @todo Read username and key from private config file that definitely should login.
 		$_POST = [
-			"username" => $br->credentials[6]->username,
-			"key" => $br->credentials[6]->password,
+			"username" => $credentials["username"],
+			"key" => $credentials["password"],
 		];
 		$relay = new relay();
 		$relay->headers([

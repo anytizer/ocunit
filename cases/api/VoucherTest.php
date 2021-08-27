@@ -3,7 +3,6 @@ namespace cases\api;
 
 use anytizer\relay;
 use library\api;
-use library\BusinessRules;
 use PHPUnit\Framework\TestCase;
 
 class VoucherTest extends TestCase
@@ -12,7 +11,6 @@ class VoucherTest extends TestCase
     public function setUp(): void
     {
         $this->api_token = $this->token();
-        $this->br = new BusinessRules();
     }
 
     private function token()

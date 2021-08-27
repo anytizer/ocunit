@@ -73,11 +73,11 @@ class DatabaseExecutor
     
     public function downloadable_products(): array
     {
+        global $configurations;
         $pdo = new MySQLPDO();
-        $br = new BusinessRules();
-        
+
         $products_sql = (new fql())->read("downloadable_products.sql");
-        $products_sql = str_replace("10", $br->downloadable_product_tax_class_id, $products_sql);
+        $products_sql = str_replace("10", $configurations["business_rules"]["downloadable_product_tax_class_id"], $products_sql);
         
         $products = $pdo->query($products_sql);
 

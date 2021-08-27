@@ -5,8 +5,6 @@ use library\DatabaseExecutor;
 use \PHPUnit\Framework\TestCase;
 use \library\fql;
 use \library\MySQLPDO;
-use \library\BusinessRules;
-use \PDOException;
 
 class FixturesTest extends TestCase
 {

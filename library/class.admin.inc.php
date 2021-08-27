@@ -48,8 +48,6 @@ class admin
      */
     public function _login_attempt_successful(string $login_token=""): string
     {
-        $br = new BusinessRules();
-
         // return login redirect in json
         // generate token in advance using api
         // supply username and password
@@ -61,6 +59,9 @@ class admin
         // {
         //  "redirect": "http://localhost/oc/store/upload/admin/index.php?route=common/dashboard&user_token=7c650ce5d2f347ec48217ab3efb42f57"
         // }
+        global $configurations;
+        $credentials = $configurations["credentials"]["admin_valid"];
+
         $url = HTTP_CATALOG."admin/index.php";
         $_GET = [
             "route" => "common/login|login",
@@ -68,8 +69,8 @@ class admin
         ];
         $_POST = [
             // credentials that should succeed
-            "username" => $br->credentials[0]->username,
-            "password" => $br->credentials[0]->password,
+            "username" => $credentials["username"],
+            "password" => $credentials["password"],
         ];
 
         $relay = new relay();
@@ -89,7 +90,8 @@ class admin
      */
     private function _login_attempt_failure(string $login_token=""): string
     {
-        $br = new BusinessRules();
+        global $configurations;
+        $credentials = $configurations["credentials"]["admin_invalid"];
 
         $url = HTTP_CATALOG."admin/index.php";
         $_GET = [
@@ -98,8 +100,8 @@ class admin
         ];
         $_POST = [
             // credentials that should fail
-            "username" => $br->credentials[1]->username,
-            "password" => $br->credentials[1]->password,
+            "username" => $credentials["username"],
+            "password" => $credentials["password"],
         ];
 
         $relay = new relay();

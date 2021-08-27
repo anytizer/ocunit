@@ -81,12 +81,6 @@ require_once("library/class.admin.inc.php");
 require_once("library/class.credentials.inc.php");
 
 /**
- * Define site-wide business rules, multipliers, product count, etc.
- * Also, user credentials,
- */
-require_once("library/class.BusinessRules.inc.php");
-
-/**
  * Basic headers to browse OpenCart pages
  */
 if(!isset($_SERVER["REMOTE_ADDR"])) { $_SERVER["REMOTE_ADDR"] = "0.0.0.0"; }

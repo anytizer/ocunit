@@ -1,9 +1,7 @@
 <?php
 namespace cases\api;
 
-use library\BusinessRules;
 use \PHPUnit\Framework\TestCase;
-use \anytizer\relay;
 use \library\api;
 
 class ApiTest extends TestCase

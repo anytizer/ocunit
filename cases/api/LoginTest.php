@@ -1,7 +1,6 @@
 <?php
 namespace cases\api;
 
-use library\BusinessRules;
 use \PHPUnit\Framework\TestCase;
 use \anytizer\relay;
 use \library\api;
@@ -9,7 +8,6 @@ use \library\api;
 class LoginTest extends TestCase
 {
     private string $api_token = "";
-    private BusinessRules $br;
 
     private function token()
     {
@@ -28,7 +26,6 @@ class LoginTest extends TestCase
     public function setUp(): void
     {
         $this->api_token = $this->token();
-        $this->br = new BusinessRules();
     }
 
     public function testGetApiToken()
@@ -76,13 +73,16 @@ class LoginTest extends TestCase
 
     public function testAccessApiLogin()
     {
+        global $configurations;
+        $credentials = $configurations["credentials"]["api_valid"];
+
         $_GET = [
             "route" => "api/login",
         ];
 
         $_POST = [
-            "username" => $this->br->credentials[6]->username,
-            "key" => $this->br->credentials[6]->password,
+            "username" => $credentials["username"],
+            "key" => $credentials["password"],
         ];
 
         $relay = new relay();

@@ -2,7 +2,6 @@
 namespace cases\report;
 
 use \PHPUnit\Framework\TestCase;
-use \library\BusinessRules;
 use \library\DatabaseExecutor;
 
 class InventoryTest extends TestCase

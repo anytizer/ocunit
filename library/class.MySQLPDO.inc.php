@@ -4,18 +4,16 @@ namespace library;
 use \PDO as PDO;
 
 /**
- * Mimicry of basic database wrapper
+ * Basic database wrapper without exceptions.
+ * Expecting a true connection each time you start this class.
+ *
+ * Always connects to only-opencart database.
  */
 class MySQLPDO
 {
-    private $connection = null;
+    private PDO $connection;
 
     public function __construct()
-    {
-        $this->connect();
-    }
-
-    public function connect(): void
     {
         $dsn = 'mysql:host='.DB_HOSTNAME.';dbname='.DB_DATABASE.';port=3306;';
         $this->connection = new PDO(

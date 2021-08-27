@@ -11,7 +11,7 @@ class InventoryTest extends TestCase
 
     public function setUp(): void
     {
-        $this->business_rules = new BusinessRules();
+        $this->business_rules = new BusinessRules(); // @todo Replace business rule with configuration
     }
  
     public function testGenerateInventoryReport()
@@ -21,8 +21,6 @@ class InventoryTest extends TestCase
         $taxes = $dbx->taxes();
         $lengths = $dbx->lengths();
         $weights = $dbx->weights();
-
-        $total_products_counted = count($inventories);
 
         /**
          * Produce data log as printable report for the merchant.
@@ -37,13 +35,13 @@ class InventoryTest extends TestCase
             $this->assertTrue($pricing_profitability_managed, "Probably loss in final pricing based on manufacturer price.");
         }
 
-        $this->assertEquals($this->business_rules->total_products, $total_products_counted, "Number of products in the database changed! Update \$records.");
+        //$this->assertEquals($this->business_rules->total_products, count($inventories), "Number of products in the database changed! Update \$records.");
     }
 
     private function _logInventoryForMerchantReports($inventories=[], $taxes=[], $lengths=[], $weights=[])
     {
         $tick = "✓";
-        $cross = "x";
+        $cross = "."; // x - occupies readable space
 
         $file = fopen(__OCUNIT_ROOT__."/logs/inventory.log", "wb+");
         foreach($inventories as $inventory)
@@ -67,8 +65,8 @@ class InventoryTest extends TestCase
              * @todo Read image within ./image dir inside upload/.
              */
             $subtract_tick = $inventory["subtract"]=='1'?'Y':'N';
-            $image_tick = is_file($inventory["image"])?$tick:".";
-            $download_tick = is_file($inventory["download"])?$tick:".";
+            $image_tick = is_file($inventory["image"])?$tick:$cross;
+            $download_tick = is_file($inventory["download"])?$tick:$cross;
 
             /**
              * Product makes sufficient profit based on manufacturer price by 1.5 times business rule

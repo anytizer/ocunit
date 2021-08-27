@@ -7,15 +7,10 @@ use \library\DatabaseExecutor;
 
 class InventoryTest extends TestCase
 {
-    private BusinessRules $business_rules;
-
-    public function setUp(): void
-    {
-        $this->business_rules = new BusinessRules(); // @todo Replace business rule with configuration
-    }
- 
     public function testGenerateInventoryReport()
     {
+        global $configurations;
+
         $dbx = new DatabaseExecutor();
         $inventories = $dbx->inventories();
         $taxes = $dbx->taxes();
@@ -31,7 +26,7 @@ class InventoryTest extends TestCase
         {
             $this->assertNotNull($inventory["mprice"], "Missing manufacturer price for product #{$inventory['product_id']} - {$inventory['name']}");
 
-            $pricing_profitability_managed = $inventory["price"] >= $inventory["mprice"] * $this->business_rules->multiplier;
+            $pricing_profitability_managed = $inventory["price"] >= $inventory["mprice"] * $configurations["business_rules"]["multiplier"];
             $this->assertTrue($pricing_profitability_managed, "Probably loss in final pricing based on manufacturer price.");
         }
     }

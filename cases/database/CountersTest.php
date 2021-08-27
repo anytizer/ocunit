@@ -7,13 +7,19 @@ use PHPUnit\Framework\TestCase;
 class CountersTest extends TestCase
 {
     private array $tables_counters = [];
-    private int $truncated = 0;
 
     public function setUp(): void
     {
-        global $tables_counters;
-        $this->tables_counters = $tables_counters;
+        global $configurations;
 
+        foreach($configurations["tables_counters"] as $table => $counter)
+        {
+            $this->tables_counters[str_replace("oc_", DB_PREFIX, $table)] = $counter;
+        }
+    }
+
+    public function testCountTruncatedTables()
+    {
         $truncated = 0;
 
         $pdo = new MySQLPDO();
@@ -30,12 +36,7 @@ class CountersTest extends TestCase
             }
         }
 
-        $this->truncated = $truncated;
-    }
-
-    public function testCountTruncatedTables()
-    {
-        $this->assertEquals(15, $this->truncated, "Mismatched truncated count.");
+        $this->assertEquals(15, $truncated, "Mismatched truncated count.");
     }
 
     public function testTotalRecordCounter()

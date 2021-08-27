@@ -41,17 +41,17 @@ Case                       | Description
 [general](cases/general)   | other uncategorized tests appear here
 [issues](cases/issues)     | For issues imported from GitHub
 [mail](cases/mail)         | test email sending features
-[report](cases/report)     | inventory statistics from merchant's perspectives
+[report](cases/report)     | inventory and database statistics from merchant's perspectives
 
 
 # Requirements
 
-Dependency                     | Version             | Description
--------------------------------|---------------------|---------------------
-[PHP](https://www.php.net/)    | 8.0.8+              | -
-[PHPUnit](https://phpunit.de/) | 9.5.8+              | -
+Dependency                     | Version                       | Description
+-------------------------------|-------------------------------|---------------------
+[PHP](https://www.php.net/)    | 8.0.8+                        | -
+[PHPUnit](https://phpunit.de/) | 9.5.8+                        | -
 [OpenCart](https://github.com/opencart/opencart)               | 4.0.0+ | master branch
-[relay.php](https://packagist.org/packages/anytizer/relay.php) | - | composer package of a minimal HTTP client
+[relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
 
 
 # Installation
@@ -133,7 +133,7 @@ More information at: https://phpunit.readthedocs.io/en/9.5/textui.html.
 # Contribution
 
 If you have a specific idea on how OCUnit (Test scripts for OpenCart based on PHPUnit) should function, fork the project and open pull request for your new test cases.
-Or, mention your issue to __@anytizer__.
+Or, create a [new issue](https://github.com/anytizer/ocunit/issues/new) in __@anytizer__/ocunit project.
 
 
 # Made with

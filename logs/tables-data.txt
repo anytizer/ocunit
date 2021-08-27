@@ -67,7 +67,6 @@ oc_return_reason               - 5
 oc_return_status               - 3
 oc_seo_profile                 - 10
 oc_seo_url                     - 407
-oc_session                     - 1
 oc_setting                     - 373
 oc_shipping_courier            - 6
 oc_statistics                  - 7

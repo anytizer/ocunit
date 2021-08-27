@@ -45,6 +45,7 @@ oc_recurring                   - 0
 oc_recurring_description       - 0
 oc_return_history              - 0
 oc_review                      - 0
+oc_session                     - 0
 oc_startup                     - 0
 oc_theme                       - 0
 oc_translation                 - 0

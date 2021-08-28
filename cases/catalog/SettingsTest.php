@@ -20,7 +20,7 @@ class SettingsTest extends TestCase
     public function testCoreSettingsDefined()
     {
         $this->assertTrue(defined("APPLICATION"));
-        $this->assertTrue(defined("HTTP_SERVER"));
+        $this->assertTrue(defined("HTTP_CATALOG"));
     }
 
     public function testDirectorySettingsDefined()

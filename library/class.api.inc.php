@@ -34,7 +34,7 @@ class api
 		$relay->headers([
 			"X-Protection-Token" => "",
 		]);
-		$html = $relay->fetch(HTTP_SERVER."index.php");
+		$html = $relay->fetch(HTTP_CATALOG."index.php");
         
         return $html;
 	}

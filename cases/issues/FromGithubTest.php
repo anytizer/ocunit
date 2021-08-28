@@ -81,7 +81,7 @@ class FromGithubTest extends TestCase
 
     public function testConfusingConstants()
     {
-        // 'HTTP_SERVER',
+        // 'HTTP_CATALOG',
         //'HTTPS_SERVER', // Remove this
         //'HTTP_CATALOG',
         //'HTTPS_CATALOG', // Remove this
@@ -89,7 +89,7 @@ class FromGithubTest extends TestCase
         //config.php
         //admin/config.php
         // Remove HTTPS_* for being old styled. Serve in one protocol.
-        // Use HTTP_SERVER and HTTP_CATALOG constants only.
+        // Use HTTP_CATALOG and HTTP_CATALOG constants only.
     }
 
     public function testUndefinedCustomFieldKey()

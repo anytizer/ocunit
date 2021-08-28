@@ -18,7 +18,7 @@ class CatalogTest extends TestCase
     public function testAdminDashboardRequiresLogin()
     {
         // @todo Replace "admin" with a variable.
-        $inner_page = HTTP_SERVER."admin/index.php?route=common/dashboard";
+        $inner_page = HTTP_CATALOG."admin/index.php?route=common/dashboard";
 
         $catalog = new catalog();
         $html = $catalog->open($inner_page);
@@ -63,7 +63,7 @@ class CatalogTest extends TestCase
                 "X-Protection-Token" => "",
             ]);
 
-            $html = $relay->fetch(HTTP_SERVER."index.php");
+            $html = $relay->fetch(HTTP_CATALOG."index.php");
 
             /**
              * When page redirected to login form, following message can be seen:
@@ -99,7 +99,7 @@ class CatalogTest extends TestCase
 //            $relay->headers([
 //                "X-Protection-Token" => "",
 //            ]);
-//            $html = $relay->fetch(HTTP_SERVER.$page);
+//            $html = $relay->fetch(HTTP_CATALOG.$page);
 //
 //            foreach($lookups as $lookup)
 //            {

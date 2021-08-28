@@ -10,8 +10,8 @@ class URLTest extends TestCase
 {
     public function testConstructHomepageUrl()
     {
-        $url = new Url(HTTP_SERVER);
+        $url = new Url(HTTP_CATALOG);
         $link = $url->link("common/home");
-        $this->assertEquals(HTTP_SERVER . "index.php?route=common/home", $link, "Could not construct homepage URL");
+        $this->assertEquals(HTTP_CATALOG . "index.php?route=common/home", $link, "Could not construct homepage URL");
     }
 }

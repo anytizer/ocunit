@@ -13,24 +13,20 @@ class CategoryImagesTest extends TestCase
         $dbx = new DatabaseExecutor();
         $categories = $dbx->categories();
 
-        foreach($categories as $c => $category)
-        {
-            $image_file = DIR_IMAGE.$category["image"];
+        foreach ($categories as $c => $category) {
+            $image_file = DIR_IMAGE . $category["image"];
 
-            if(!is_file($image_file))
-            {
+            if (!is_file($image_file)) {
                 $dir = dirname($image_file);
-                if(!is_dir($dir))
-                {
+                if (!is_dir($dir)) {
                     mkdir($dir, 0777, true);
                 }
 
-                copy(DIR_IMAGE."placeholder.png", $image_file);
+                copy(DIR_IMAGE . "placeholder.png", $image_file);
             }
 
-            $this->assertTrue(is_file($image_file), "Missing image for category id: #".$category["category_id"]);
+            $this->assertTrue(is_file($image_file), "Missing image for category id: #" . $category["category_id"]);
         }
-
     }
 
     /**
@@ -46,11 +42,9 @@ class CategoryImagesTest extends TestCase
         // UPDATE oc_category SET image=null;
 
         $modified = 0;
-        foreach($categories as $c => $category)
-        {
-            if(empty($category["image"]))
-            {
-                $update_sql = "UPDATE `".DB_PREFIX."category` SET image=:image WHERE category_id=:category_id;";
+        foreach ($categories as $c => $category) {
+            if (empty($category["image"])) {
+                $update_sql = "UPDATE `" . DB_PREFIX . "category` SET image=:image WHERE category_id=:category_id;";
 
                 $store = "store"; // @todo Replace with proper store name
                 $category_id = $category["category_id"];

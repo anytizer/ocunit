@@ -1,10 +1,11 @@
 <?php
+
 namespace cases\core;
 
 use Opencart\System\Library\Image;
 use PHPUnit\Framework\TestCase;
 
-require_once DIR_SYSTEM."library/image.php";
+require_once DIR_SYSTEM . "library/image.php";
 
 class ImageTest extends TestCase
 {
@@ -14,12 +15,11 @@ class ImageTest extends TestCase
     public function testParsePngImageForWidthAndHeight()
     {
         $images = [
-            DIR_IMAGE."no_image.png",
-            DIR_IMAGE."placeholder.png",
-            DIR_IMAGE."profile.png",
+            DIR_IMAGE . "no_image.png",
+            DIR_IMAGE . "placeholder.png",
+            DIR_IMAGE . "profile.png",
         ];
-        foreach($images as $filename)
-        {
+        foreach ($images as $filename) {
             $image = new Image($filename);
 
             $width = $image->getWidth();

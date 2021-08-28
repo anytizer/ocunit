@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\issues;
 
 use \PHPUnit\Framework\TestCase;

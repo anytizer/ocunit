@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\api;
 
 use \PHPUnit\Framework\TestCase;
@@ -45,7 +46,7 @@ class CartTest extends TestCase
             "X-Protection-Token" => "",
         ]);
 
-        $html = $relay->fetch(HTTP_CATALOG."index.php");
+        $html = $relay->fetch(HTTP_CATALOG . "index.php");
         $this->assertFalse(str_contains($html, "Your shopping cart is empty!"), "Your shopping cart is empty!");
         # echo $html;
         // {"error":"Warning: Currency code is invalid!"}
@@ -71,7 +72,7 @@ class CartTest extends TestCase
             "X-Protection-Token" => "",
         ]);
 
-        $html = $relay->fetch(HTTP_CATALOG."index.php");
+        $html = $relay->fetch(HTTP_CATALOG . "index.php");
         #$this->assertFalse(str_contains($html, "Your shopping cart is empty!"), "Your shopping cart is empty!");
         # echo $html;
     }
@@ -92,7 +93,7 @@ class CartTest extends TestCase
             "X-Protection-Token" => "",
         ]);
 
-        $html = $relay->fetch(HTTP_CATALOG."index.php");
+        $html = $relay->fetch(HTTP_CATALOG . "index.php");
         #$this->assertFalse(str_contains($html, "Your shopping cart is empty!"), "Your shopping cart is empty!");
         # print_r($html);
         # The page you requested cannot be found.
@@ -113,7 +114,7 @@ class CartTest extends TestCase
             "X-Protection-Token" => "",
         ]);
 
-        $html = $relay->fetch(HTTP_CATALOG."index.php");
+        $html = $relay->fetch(HTTP_CATALOG . "index.php");
         #echo $html;
         #$this->assertFalse(str_contains($html, "Your shopping cart is empty!"), "Your shopping cart is empty!");
     }

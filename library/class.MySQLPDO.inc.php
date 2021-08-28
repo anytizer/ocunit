@@ -1,4 +1,5 @@
 <?php
+
 namespace library;
 
 use \PDO as PDO;
@@ -15,7 +16,7 @@ class MySQLPDO
 
     public function __construct()
     {
-        $dsn = "mysql:host=".DB_HOSTNAME.";dbname=".DB_DATABASE.";port=3306;";
+        $dsn = "mysql:host=" . DB_HOSTNAME . ";dbname=" . DB_DATABASE . ";port=3306;";
         $this->connection = new PDO(
             $dsn,
             DB_USERNAME,
@@ -32,7 +33,7 @@ class MySQLPDO
     /**
      * Queries that return the data - like: select, count, show
      */
-    public function query($sql="", $data=[])
+    public function query($sql = "", $data = [])
     {
         $statement = $this->connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY,]);
         $statement->execute($data);
@@ -47,7 +48,7 @@ class MySQLPDO
     /**
      * Fire-only queries - like: insert, update, delete, replace
      */
-    public function raw($sql="", $data=[]): void
+    public function raw($sql = "", $data = []): void
     {
         $statement = $this->connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY,]);
         $statement->execute($data);

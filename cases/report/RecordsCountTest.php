@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\report;
 
 use library\DatabaseExecutor;
@@ -14,14 +15,10 @@ class RecordsCountTest extends TestCase
         $non_empty = [];
         $empty = [];
 
-        foreach($records as $info)
-        {
-            if((int)$info["Rows"] > 0)
-            {
+        foreach ($records as $info) {
+            if ((int)$info["Rows"] > 0) {
                 $non_empty[$info["Name"]] = $info["Rows"];
-            }
-            else
-            {
+            } else {
                 $empty[$info["Name"]] = $info["Rows"];
             }
 
@@ -39,11 +36,10 @@ class RecordsCountTest extends TestCase
         $this->assertEquals((int)$configurations["statistics"]["empty"], count($empty), "Empty Tables count mismatch!");
     }
 
-    private function _logTableRecords($filename="", $data=[])
+    private function _logTableRecords($filename = "", $data = [])
     {
-        $file = fopen(__OCUNIT_ROOT__."/logs/".basename($filename), "wb+");
-        foreach($data as $table => $data_count)
-        {
+        $file = fopen(__OCUNIT_ROOT__ . "/logs/" . basename($filename), "wb+");
+        foreach ($data as $table => $data_count) {
             fwrite($file, sprintf("%-30s - %d\r\n", substr($table, 0, 30), $data_count));
         }
 

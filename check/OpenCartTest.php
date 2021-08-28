@@ -1,4 +1,5 @@
 <?php
+
 use \PHPUnit\Framework\TestCase as TestCase;
 use Opencart\System\Engine\Action as Action;
 
@@ -32,7 +33,7 @@ class OpenCartTest extends TestCase
     public function loadModel($route)
     {
         $this->load->model($route);
-        $model = "model_".str_replace("/", "_", $route);
+        $model = "model_" . str_replace("/", "_", $route);
         return $this->$model;
     }
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\api;
 
 use anytizer\relay;
@@ -8,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 class VoucherTest extends TestCase
 {
     private string $api_token;
+
     public function setUp(): void
     {
         $this->api_token = $this->token();
@@ -40,7 +42,7 @@ class VoucherTest extends TestCase
             "X-Protection-Token" => "",
         ]);
 
-        $html = $relay->fetch(HTTP_CATALOG."index.php");
+        $html = $relay->fetch(HTTP_CATALOG . "index.php");
         # echo $html;
         # {"error":"Warning: Gift Voucher is either invalid or the balance has been used up!"}
     }
@@ -67,7 +69,7 @@ class VoucherTest extends TestCase
             "X-Protection-Token" => "",
         ]);
 
-        $html = $relay->fetch(HTTP_CATALOG."index.php");
+        $html = $relay->fetch(HTTP_CATALOG . "index.php");
         # echo $html;
         # <p>The page you requested cannot be found.</p>
     }

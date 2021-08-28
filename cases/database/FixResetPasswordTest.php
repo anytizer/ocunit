@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\database;
 
 use library\DatabaseExecutor;
@@ -13,12 +14,11 @@ class FixResetPasswordTest extends TestCase
         $dbx = new DatabaseExecutor();
 
         $customers = $dbx->customers();
-        foreach($customers as $customer)
-        {
+        foreach ($customers as $customer) {
             $password = "password";
             $password = password_hash($password, PASSWORD_DEFAULT);
 
-            $sql = "UPDATE `".DB_PREFIX."customer` SET `password`=:password WHERE `customer_id`=:customer_id;";
+            $sql = "UPDATE `" . DB_PREFIX . "customer` SET `password`=:password WHERE `customer_id`=:customer_id;";
             $pdo->query($sql, [
                 "password" => $password,
                 "customer_id" => $customer["customer_id"],

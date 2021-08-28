@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\database;
 
 use \PHPUnit\Framework\TestCase;
@@ -10,20 +11,20 @@ class SessionTest extends TestCase
     private static function truncate()
     {
         $pdo = new MySQLPDO();
-        $pdo->raw("TRUNCATE TABLE `".DB_PREFIX."session`;");
+        $pdo->raw("TRUNCATE TABLE `" . DB_PREFIX . "session`;");
     }
 
     private function delete()
     {
         $pdo = new MySQLPDO();
-        $pdo->raw("DELETE FROM `".DB_PREFIX."session`;");
+        $pdo->raw("DELETE FROM `" . DB_PREFIX . "session`;");
     }
 
     private function counter(): int
     {
         $pdo = new MySQLPDO();
 
-        $sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."session`;";
+        $sql = "SELECT COUNT(*) total FROM `" . DB_PREFIX . "session`;";
         $total = (int)$pdo->query($sql)[0]["total"];
 
         return $total;

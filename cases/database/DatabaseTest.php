@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\database;
 
 use \PHPUnit\Framework\TestCase;
@@ -18,7 +19,7 @@ class DatabaseTest extends TestCase
     {
         $pdo = new MySQLPDO();
 
-        $sql = "SELECT COUNT(*) total FROM `".DB_PREFIX."language`;";
+        $sql = "SELECT COUNT(*) total FROM `" . DB_PREFIX . "language`;";
         $data = $pdo->query($sql);
         $total = (int)$data[0]["total"];
 
@@ -33,9 +34,9 @@ class DatabaseTest extends TestCase
     {
         $pdo = new MySQLPDO();
 
-        $sql = "SELECT * FROM `".DB_PREFIX."setting` WHERE `key`='config_pagination_admin';";
+        $sql = "SELECT * FROM `" . DB_PREFIX . "setting` WHERE `key`='config_pagination_admin';";
         $data = $pdo->query($sql);
-        
+
         $this->assertEquals(100, (int)$data[0]["value"]);
     }
 
@@ -46,9 +47,9 @@ class DatabaseTest extends TestCase
     {
         $pdo = new MySQLPDO();
 
-        $sql = "SELECT * FROM `".DB_PREFIX."currency`;";
+        $sql = "SELECT * FROM `" . DB_PREFIX . "currency`;";
         $data = $pdo->query($sql);
-        
+
         $this->assertCount(1, $data);
         $this->assertEquals("CAD", $data[0]["code"]);
         $this->assertEquals(1, (int)$data[0]["status"]);

@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
@@ -19,8 +20,7 @@ class DownloadsTest extends TestCase
     {
         $downloads = $this->_downloads();
 
-        foreach($downloads as $download)
-        {
+        foreach ($downloads as $download) {
             $extension = pathinfo(basename($download["mask"]))["extension"];
             $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only.");
         }
@@ -30,10 +30,9 @@ class DownloadsTest extends TestCase
     {
         $downloads = $this->_downloads();
 
-        foreach($downloads as $download)
-        {
+        foreach ($downloads as $download) {
             $download['filename'] = basename($download['filename']);
-            $masked_file = DIR_STORAGE."download/{$download['filename']}";
+            $masked_file = DIR_STORAGE . "download/{$download['filename']}";
 
             $download_exists = is_file($masked_file);
             $this->assertTrue($download_exists, "Missing download file for id #{$download['download_id']}: {$download['name']}.");
@@ -46,14 +45,11 @@ class DownloadsTest extends TestCase
 
         $dbx = new DatabaseExecutor();
         $downloadable_products = $dbx->downloadable_products();
-        foreach($downloadable_products as $product)
-        {
+        foreach ($downloadable_products as $product) {
             // check downloadable record exists
             $download_found = false;
-            foreach($downloads as $download)
-            {
-                if($download["product_id"] == $product["product_id"])
-                {
+            foreach ($downloads as $download) {
+                if ($download["product_id"] == $product["product_id"]) {
                     $download_found = true;
                 }
             }
@@ -83,7 +79,7 @@ class DownloadsTest extends TestCase
 
     public function testAddSizeColumn()
     {
-       $this->markTestSkipped();
+        $this->markTestSkipped();
     }
 
     public function testAddHashColumn()

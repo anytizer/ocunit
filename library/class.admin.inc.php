@@ -1,4 +1,5 @@
 <?php
+
 namespace library;
 
 use anytizer\relay as relay;
@@ -8,7 +9,7 @@ class admin
     private function _browse_login_form(): string
     {
         // HTTP request of the login page
-        $login_page = HTTP_CATALOG."/admin/index.php";
+        $login_page = HTTP_CATALOG . "/admin/index.php";
         $_GET = [
             "route" => "common/login",
         ];
@@ -22,15 +23,14 @@ class admin
         return $html;
     }
 
-    private function _parse_login_form(string $html=""): string
+    private function _parse_login_form(string $html = ""): string
     {
         $login_token = "";
 
         $matches = [];
         $link_pattern = "/data-oc-action=\".*?route\=(.*?)\&login_token\=(.*?)\"/i";
         preg_match_all($link_pattern, $html, $matches, PREG_SET_ORDER);
-        if(assert(count($matches) == 1))
-        {
+        if (assert(count($matches) == 1)) {
             # print_r($matches);
             // Look for:
             #  <button type="button" data-oc-action="http://localhost/oc/store/upload/admin/index.php?route=common/login|login&login_token=f4db649e5bad571d85714acaf3298468" data-oc-form="#form-login" class="btn btn-primary"><i class="fas fa-key"></i> Login</button>
@@ -50,7 +50,7 @@ class admin
      * @param string $login_token
      * @return string
      */
-    public function _login_attempt_successful(string $login_token=""): string
+    public function _login_attempt_successful(string $login_token = ""): string
     {
         // return login redirect in json
         // generate token in advance using api
@@ -66,7 +66,7 @@ class admin
         global $configurations;
         $credentials = $configurations["credentials"]["admin_valid"];
 
-        $url = HTTP_CATALOG."admin/index.php";
+        $url = HTTP_CATALOG . "admin/index.php";
         $_GET = [
             "route" => "common/login|login",
             "login_token" => $login_token,
@@ -92,12 +92,12 @@ class admin
      * @param string $login_token
      * @return string
      */
-    private function _login_attempt_failure(string $login_token=""): string
+    private function _login_attempt_failure(string $login_token = ""): string
     {
         global $configurations;
         $credentials = $configurations["credentials"]["admin_invalid"];
 
-        $url = HTTP_CATALOG."admin/index.php";
+        $url = HTTP_CATALOG . "admin/index.php";
         $_GET = [
             "route" => "common/login|login",
             "login_token" => $login_token,

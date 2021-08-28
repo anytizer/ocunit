@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\api;
 
 use \PHPUnit\Framework\TestCase;
@@ -40,8 +41,7 @@ class LoginTest extends TestCase
         $users = $api->list_all_api_users();
 
         $usernames = [];
-        foreach($users as $user)
-        {
+        foreach ($users as $user) {
             /**
              * @todo Replace numerals with empty strings.
              * eg. admin1 becomes admin.
@@ -65,8 +65,7 @@ class LoginTest extends TestCase
             "value",
         ];
 
-        foreach($searches as $search)
-        {
+        foreach ($searches as $search) {
             $this->assertFalse(in_array($search, $usernames), "Remove such API User: `{$search}`.");
         }
     }
@@ -90,7 +89,7 @@ class LoginTest extends TestCase
             "X-Protection-Token" => "",
         ]);
 
-        $html = $relay->fetch(HTTP_CATALOG."index.php");
+        $html = $relay->fetch(HTTP_CATALOG . "index.php");
         $result = json_decode($html, true);
         $this->assertArrayHasKey("success", $result, "success flag");
         $this->assertArrayHasKey("api_token", $result, "API Token missing");

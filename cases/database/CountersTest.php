@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\database;
 
 use library\MySQLPDO;
@@ -13,8 +14,7 @@ class CountersTest extends TestCase
         global $configurations;
 
         $this->tables_counters = [];
-        foreach($configurations["tables_counters"] as $table => $counter)
-        {
+        foreach ($configurations["tables_counters"] as $table => $counter) {
             $this->tables_counters[str_replace("oc_", DB_PREFIX, $table)] = (int)$counter;
         }
     }
@@ -25,21 +25,16 @@ class CountersTest extends TestCase
 
         $pdo = new MySQLPDO();
 
-        if(__OCUNIT_EXECUTE_EXPENSIVE__)
-        {
-            foreach($this->tables_counters as $table => $total)
-            {
-                if($total===0)
-                {
+        if (__OCUNIT_EXECUTE_EXPENSIVE__) {
+            foreach ($this->tables_counters as $table => $total) {
+                if ($total === 0) {
                     $pdo->query("TRUNCATE `{$table}`;");
                     ++$truncated;
                 }
             }
 
             $this->assertEquals(15, $truncated, "Mismatched truncated count.");
-        }
-        else
-        {
+        } else {
             $this->assertFalse(__OCUNIT_EXECUTE_EXPENSIVE__, "Tables were truncated.");
         }
     }
@@ -48,8 +43,7 @@ class CountersTest extends TestCase
     {
         $pdo = new MySQLPDO();
 
-        foreach($this->tables_counters as $table => $total)
-        {
+        foreach ($this->tables_counters as $table => $total) {
             $sql = "SELECT COUNT(*) total FROM `{$table}`;";
             $total_db = $pdo->query($sql)[0]["total"];
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace library;
 
 class credentials
@@ -8,7 +9,7 @@ class credentials
 
     public string $token;
 
-    public function __construct($username="", $password="")
+    public function __construct($username = "", $password = "")
     {
         $this->username = $username;
         $this->password = $password;

@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\mail;
 
 use \PHPUnit\Framework\TestCase;
@@ -7,7 +8,7 @@ class MailTest extends TestCase
 {
     // SELECT * FROM oc_setting WHERE `key` LIKE '%_mail_%';
 
-	public function testEmailSentFromWindowsMachine()
+    public function testEmailSentFromWindowsMachine()
     {
         /**
          * @todo Server should run under Windows

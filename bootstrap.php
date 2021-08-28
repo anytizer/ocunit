@@ -8,15 +8,14 @@
 /**
  * Show all error reporting.
  */
-error_reporting(E_ALL|E_STRICT);
+error_reporting(E_ALL | E_STRICT);
 
 /**
  * Disable stack tracing with xDebug, if available.
  * But, chances are rare on modern xDebug.
  */
 $xdebug_disable = "xdebug_disable";
-if(function_exists($xdebug_disable))
-{
+if (function_exists($xdebug_disable)) {
     $xdebug_disable();
 }
 
@@ -30,29 +29,23 @@ $configurations = parse_ini_file("config.ini", true, INI_SCANNER_NORMAL);
  */
 global $opencart_admin_folder;
 $opencart_admin_folder = realpath($configurations["opencart"]["admin"]);
-if($opencart_admin_folder!="" && is_dir($opencart_admin_folder) && is_file("{$opencart_admin_folder}/config.php"))
-{
+if ($opencart_admin_folder != "" && is_dir($opencart_admin_folder) && is_file("{$opencart_admin_folder}/config.php")) {
     /**
      * OpenCart Frontend configuration file
      */
     require_once "{$opencart_admin_folder}/config.php";
-}
-else
-{
+} else {
     die("Cannot continue - Store admin not loaded.");
 }
 
 global $opencart_upload_folder;
 $opencart_upload_folder = realpath($configurations["opencart"]["store"]);
-if($opencart_upload_folder!="" && is_dir($opencart_upload_folder) && is_file("{$opencart_upload_folder}/config.php"))
-{
+if ($opencart_upload_folder != "" && is_dir($opencart_upload_folder) && is_file("{$opencart_upload_folder}/config.php")) {
     /**
      * OpenCart Frontend configuration file
      */
     require_once "{$opencart_upload_folder}/config.php";
-}
-else
-{
+} else {
     die("Cannot continue - Store front not loaded.");
 }
 
@@ -83,9 +76,12 @@ require_once("library/class.credentials.inc.php");
 /**
  * Basic headers to browse OpenCart pages
  */
-if(!isset($_SERVER["REMOTE_ADDR"])) { $_SERVER["REMOTE_ADDR"] = "0.0.0.0"; }
+if (!isset($_SERVER["REMOTE_ADDR"])) {
+    $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
+}
 
 use \Opencart\System\Engine\Autoloader;
+
 global $autoloader;
 $autoloader = new Autoloader();
 $autoloader->register("Opencart\\" . APPLICATION, DIR_APPLICATION);

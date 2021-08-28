@@ -1,13 +1,14 @@
 <?php
+
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
 
 class SettingsTest extends TestCase
 {
-	public function testDatabaseConstantsDefined()
+    public function testDatabaseConstantsDefined()
     {
-        $this->assertTrue(defined("DB_DRIVER"));        
+        $this->assertTrue(defined("DB_DRIVER"));
         $this->assertTrue(defined("DB_HOSTNAME"));
         $this->assertTrue(defined("DB_USERNAME"));
         $this->assertTrue(defined("DB_PASSWORD"));

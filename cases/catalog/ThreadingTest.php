@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\catalog;
 
 use PHPUnit\Framework\TestCase;

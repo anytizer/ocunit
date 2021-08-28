@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\admin;
 
 use library\admin;
@@ -36,7 +37,7 @@ class LoginTest extends TestCase
         $this->markTestIncomplete("Block the IPs that are demanding system level user login.");
     }
 
-	public function testAdminBruteForceLoginDiscouraged()
+    public function testAdminBruteForceLoginDiscouraged()
     {
         // an IP address cannot send a login request continuously over a short period
         // bottleneck such IPs and usernames
@@ -76,7 +77,7 @@ class LoginTest extends TestCase
         // fail the login page
         $this->markTestIncomplete("Login not protected with Captcha.");
     }
-    
+
     public function testCustomerApprovalRequiredForLogin()
     {
         // @todo Move to catalog

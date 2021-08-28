@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
@@ -18,7 +19,7 @@ class CatalogTest extends TestCase
     public function testAdminDashboardRequiresLogin()
     {
         // @todo Replace "admin" with a variable.
-        $inner_page = HTTP_CATALOG."admin/index.php?route=common/dashboard";
+        $inner_page = HTTP_CATALOG . "admin/index.php?route=common/dashboard";
 
         $catalog = new catalog();
         $html = $catalog->open($inner_page);
@@ -51,8 +52,7 @@ class CatalogTest extends TestCase
             "Logout" => "account/logout",
         ];
 
-        foreach($account_links as $link_name => $route)
-        {
+        foreach ($account_links as $link_name => $route) {
             $_GET = [
                 "route" => $route,
                 "language" => "en-gb",
@@ -63,7 +63,7 @@ class CatalogTest extends TestCase
                 "X-Protection-Token" => "",
             ]);
 
-            $html = $relay->fetch(HTTP_CATALOG."index.php");
+            $html = $relay->fetch(HTTP_CATALOG . "index.php");
 
             /**
              * When page redirected to login form, following message can be seen:
@@ -123,8 +123,7 @@ class CatalogTest extends TestCase
         $html = $catalog->lookup($post_query);
 
         $lookups = $post_query["lookup"];
-        foreach($lookups as $lookup)
-        {
+        foreach ($lookups as $lookup) {
             $found = str_contains($html, $lookup);
             $this->assertTrue($found, "\033[1;31mFAILED:\033[0m searching [ {$lookup} ] in HTML output.");
         }
@@ -144,8 +143,7 @@ class CatalogTest extends TestCase
         $html = $catalog->lookup($post_query);
 
         $lookups = $post_query["lookup"];
-        foreach($lookups as $lookup)
-        {
+        foreach ($lookups as $lookup) {
             $found = str_contains($html, $lookup);
             $this->assertTrue($found, "\033[1;31mFAILED:\033[0m searching [ {$lookup} ] in HTML output.");
         }
@@ -165,8 +163,7 @@ class CatalogTest extends TestCase
         $html = $catalog->lookup($post_query);
 
         $lookups = $post_query["lookup"];
-        foreach($lookups as $lookup)
-        {
+        foreach ($lookups as $lookup) {
             $found = str_contains($html, $lookup);
             $this->assertTrue($found, "\033[1;31mFAILED:\033[0m searching [ {$lookup} ] in HTML output.");
         }

@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\api;
 
 use anytizer\relay;
@@ -44,7 +45,7 @@ class CurrencyTest extends TestCase
             "X-Protection-Token" => "",
         ]);
 
-        $html = $relay->fetch(HTTP_CATALOG."index.php");
+        $html = $relay->fetch(HTTP_CATALOG . "index.php");
         # echo $html;
         // {"error":"Warning: Currency code is invalid!"}
         // {"success":"Success: Your currency has been changed!"}

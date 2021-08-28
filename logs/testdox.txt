@@ -13,8 +13,8 @@ Extensions (cases\admin\Extensions)
 Login (cases\admin\Login)
  [ ] Black list system user demanders
  [ ] Admin brute force login discouraged
- [ ] Login fails
- [ ] Login succeeds
+ [x] Login fails
+ [x] Login succeeds
  [ ] Customer login form has captcha
  [ ] Customer approval required for login
  [ ] Guest checkout
@@ -28,7 +28,7 @@ Settings (cases\admin\Settings)
  [x] Other settings defined
 
 Api (cases\api\Api)
- [ ] Get api token
+ [x] Get api token
  [ ] Access routes
 
 Cart (cases\api\Cart)
@@ -41,15 +41,15 @@ Coupon (cases\api\Coupon)
  [ ] Api coupon
 
 Currency (cases\api\Currency)
- [ ] Change session currency
+ [x] Change session currency
 
 Customer (cases\api\Customer)
  [ ] Api customer
 
 Login (cases\api\Login)
- [ ] Get api token
+ [x] Get api token
  [ ] Inappropriate api users denied
- [ ] Access api login
+ [x] Access api login
 
 Voucher (cases\api\Voucher)
  [ ] Api voucher
@@ -108,12 +108,12 @@ Web (cases\business\Web)
  [ ] Show message to choose strong password
 
 Catalog (cases\catalog\Catalog)
- [ ] Index page has toast div
- [ ] Admin dashboard requires login
+ [x] Index page has toast div
+ [x] Admin dashboard requires login
  [ ] Account pages need login
- [ ] Searches in home page
- [ ] Search categories page
- [ ] Searches in product details page
+ [x] Searches in home page
+ [x] Search categories page
+ [x] Searches in product details page
 
 Image (cases\catalog\Image)
  [ ] Category images exist
@@ -123,8 +123,10 @@ Image (cases\catalog\Image)
  [ ] Image files do not contain scripts
 
 Login (cases\catalog\Login)
- [ ] Simple login is functional
- [ ] Protected login is functional
+ [x] Simple login successful
+ [x] Advanced login successful
+ [ ] Simple login failure
+ [ ] Advanced login failure
 
 Settings (cases\catalog\Settings)
  [x] Database constants defined
@@ -166,9 +168,12 @@ Database (cases\database\Database)
  [x] Admin paginates 100 items
  [x] Single currency operation
 
+Fix Reset Password (cases\database\FixResetPassword)
+ [x] Reset customer passwords
+
 Session (cases\database\Session)
- [ ] Session is created
- [ ] At least one store is active
+ [x] Session is created
+ [x] At least one store is active
 
 Htaccess (cases\general\Htaccess)
  [x] Htaccess disables directory listing in frontend
@@ -235,5 +240,5 @@ Inventory (cases\report\Inventory)
  [x] Generate inventory report
 
 Records Count (cases\report\RecordsCount)
- [x] Records count
+ [ ] Records count
 

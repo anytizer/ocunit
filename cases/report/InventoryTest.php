@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\report;
 
 use \PHPUnit\Framework\TestCase;
@@ -21,8 +22,7 @@ class InventoryTest extends TestCase
          */
         $this->_logInventoryForMerchantReports($inventories, $taxes, $lengths, $weights);
 
-        foreach($inventories as $inventory)
-        {
+        foreach ($inventories as $inventory) {
             $this->assertNotNull($inventory["mprice"], "Missing manufacturer price for product #{$inventory['product_id']} - {$inventory['name']}");
 
             $pricing_profitability_managed = $inventory["price"] >= $inventory["mprice"] * $configurations["business_rules"]["multiplier"];
@@ -30,14 +30,13 @@ class InventoryTest extends TestCase
         }
     }
 
-    private function _logInventoryForMerchantReports($inventories=[], $taxes=[], $lengths=[], $weights=[])
+    private function _logInventoryForMerchantReports($inventories = [], $taxes = [], $lengths = [], $weights = [])
     {
         $tick = "✓";
         $cross = "."; // x - occupies readable space
 
-        $file = fopen(__OCUNIT_ROOT__."/logs/inventory.log", "wb+");
-        foreach($inventories as $inventory)
-        {
+        $file = fopen(__OCUNIT_ROOT__ . "/logs/inventory.log", "wb+");
+        foreach ($inventories as $inventory) {
             /**
              * Sanitize the data
              */
@@ -50,27 +49,27 @@ class InventoryTest extends TestCase
             $inventory["height"] = number_format($inventory["height"], 2, ".", ",");
             $inventory["weight"] = number_format($inventory["weight"], 2, ".", ",");
 
-            $inventory["sku"] = $inventory["sku"]!=""?$inventory["sku"]:"____";
+            $inventory["sku"] = $inventory["sku"] != "" ? $inventory["sku"] : "____";
             $inventory["download"] = ""; // @todo obtain downloadable file
 
             /**
              * @todo Read image within ./image dir inside upload/.
              */
-            $subtract_tick = $inventory["subtract"]=='1'?'Y':'N';
-            $image_tick = is_file($inventory["image"])?$tick:$cross;
-            $download_tick = is_file($inventory["download"])?$tick:$cross;
+            $subtract_tick = $inventory["subtract"] == '1' ? 'Y' : 'N';
+            $image_tick = is_file($inventory["image"]) ? $tick : $cross;
+            $download_tick = is_file($inventory["download"]) ? $tick : $cross;
 
             /**
              * Product makes sufficient profit based on manufacturer price by 1.5 times business rule
              * Final product price should include original shipping costs as well.
              * @todo see business rule for profit margin
              */
-            $profit_tick = $inventory["price"] >= $inventory["mprice"] * 1.5 ? $tick: $cross;
+            $profit_tick = $inventory["price"] >= $inventory["mprice"] * 1.5 ? $tick : $cross;
 
             $tax_class_name = $taxes[$inventory["tax_class_id"]];
             $length_unit = $lengths[$inventory["length_class_id"]];
             $weight_unit = $weights[$inventory["weight_class_id"]];
-            
+
             /**
              * @see format.txt
              */

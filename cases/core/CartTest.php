@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\core;
 
 use Opencart\System\Engine\Loader;

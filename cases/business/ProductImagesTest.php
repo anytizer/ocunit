@@ -13,22 +13,19 @@ class ProductImagesTest extends TestCase
         $dbx = new DatabaseExecutor();
         $products = $dbx->products();
 
-        foreach($products as $p => $product)
-        {
-            $image_file = DIR_IMAGE.$product["image"];
+        foreach ($products as $p => $product) {
+            $image_file = DIR_IMAGE . $product["image"];
 
-            if(!is_file($image_file))
-            {
+            if (!is_file($image_file)) {
                 $dir = dirname($image_file);
-                if(!is_dir($dir))
-                {
+                if (!is_dir($dir)) {
                     mkdir($dir, 0777, true);
                 }
 
-                copy(DIR_IMAGE."placeholder.png", $image_file);
+                copy(DIR_IMAGE . "placeholder.png", $image_file);
             }
 
-            $this->assertTrue(is_file($image_file), "Missing image for product id: #".$product["product_id"]);
+            $this->assertTrue(is_file($image_file), "Missing image for product id: #" . $product["product_id"]);
         }
     }
 
@@ -44,11 +41,9 @@ class ProductImagesTest extends TestCase
         $modified = 0;
         $dbx = new DatabaseExecutor();
         $products = $dbx->products();
-        foreach($products as $p => $product)
-        {
-            if(empty($product["image"]))
-            {
-                $update_sql = "UPDATE `".DB_PREFIX."product` SET image=:image WHERE product_id=:product_id;";
+        foreach ($products as $p => $product) {
+            if (empty($product["image"])) {
+                $update_sql = "UPDATE `" . DB_PREFIX . "product` SET image=:image WHERE product_id=:product_id;";
 
                 $store = "store"; // @todo Replace with proper store name
                 $product_id = $product["product_id"];

@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\core;
 
 use \Opencart\System\Library\Language;
@@ -10,7 +11,7 @@ class LanguageTest extends TestCase
     {
         $namespace = "catalog"; // "Opencart\\Catalog"; // "Opencart\\Catalog\\Controller\\Account"
         $code = "en-gb";
-        $directory = DIR_OPENCART."admin/language/";
+        $directory = DIR_OPENCART . "admin/language/";
         $filename = "account/account";
         $prefix = "text_";
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\api;
 
 use \PHPUnit\Framework\TestCase;
@@ -44,7 +45,7 @@ class CouponTest extends TestCase
             "X-Protection-Token" => "",
         ]);
 
-        $html = $relay->fetch(HTTP_CATALOG."index.php");
+        $html = $relay->fetch(HTTP_CATALOG . "index.php");
         #echo $html;
         #$this->assertFalse(str_contains($html, "Your shopping cart is empty!"), "Your shopping cart is empty!");
         # <b>Warning</b>: Undefined array key "model_extension_total_coupon" in <b>system\engine\registry.php</b> on line <b>51</b>Missing model_extension_total_coupon

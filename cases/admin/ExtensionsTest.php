@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\admin;
 
 use \PHPUnit\Framework\TestCase;
@@ -21,8 +22,7 @@ class ExtensionsTest extends TestCase
             "tw_login_failures",
         ];
 
-        foreach($searches as $table)
-        {
+        foreach ($searches as $table) {
             $this->assertTrue(in_array($table, $tables), "Third party extension table `{$table}` is not available.");
         }
     }
@@ -40,8 +40,7 @@ class ExtensionsTest extends TestCase
             "tw_login_failures.sql",
         ];
 
-        foreach($files as $filename)
-        {
+        foreach ($files as $filename) {
             $sql = (new fql())->read($filename);
             $pdo->raw($sql);
         }

@@ -1,1 +1,3 @@
-SELECT product_id, price FROM `oc_product` WHERE tax_class_id=10;
+SELECT product_id, price
+FROM `oc_product`
+WHERE tax_class_id = 10;

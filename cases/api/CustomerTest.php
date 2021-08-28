@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\api;
 
 use \PHPUnit\Framework\TestCase;
@@ -47,7 +48,7 @@ class CustomerTest extends TestCase
             "X-Protection-Token" => "",
         ]);
 
-        $html = $relay->fetch(HTTP_CATALOG."index.php");
+        $html = $relay->fetch(HTTP_CATALOG . "index.php");
         # echo $html;
         # <p>The page you requested cannot be found.</p>
     }

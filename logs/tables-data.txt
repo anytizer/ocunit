@@ -1,6 +1,6 @@
 oc_api                         - 2
 oc_api_ip                      - 1
-oc_api_session                 - 61
+oc_api_session                 - 15
 oc_attribute                   - 6
 oc_attribute_description       - 6
 oc_attribute_group             - 4
@@ -22,7 +22,7 @@ oc_customer                    - 1
 oc_customer_group              - 4
 oc_customer_group_description  - 4
 oc_customer_history            - 2
-oc_customer_ip                 - 13
+oc_customer_ip                 - 9
 oc_customer_wishlist           - 1
 oc_download                    - 5
 oc_download_description        - 5
@@ -67,6 +67,7 @@ oc_return_reason               - 5
 oc_return_status               - 3
 oc_seo_profile                 - 10
 oc_seo_url                     - 407
+oc_session                     - 1
 oc_setting                     - 373
 oc_shipping_courier            - 6
 oc_statistics                  - 7

@@ -1,4 +1,5 @@
 <?php
+
 namespace cases\business;
 
 use \PHPUnit\Framework\TestCase;

@@ -1,4 +1,5 @@
 <?php
+
 namespace library;
 
 use \library\fql as fql;
@@ -10,12 +11,11 @@ class DatabaseExecutor
     {
         $pdo = new MySQLPDO();
 
-        $triggers_sql="SHOW TRIGGERS FROM `".DB_DATABASE."`;";
+        $triggers_sql = "SHOW TRIGGERS FROM `" . DB_DATABASE . "`;";
         $triggers = $pdo->query($triggers_sql);
 
         $names = [];
-        foreach($triggers as $trigger)
-        {
+        foreach ($triggers as $trigger) {
             $names[] = $trigger["Trigger"];
         }
 
@@ -26,22 +26,21 @@ class DatabaseExecutor
     {
         $pdo = new MySQLPDO();
 
-        $tables_sql="SHOW FULL TABLES FROM `".DB_DATABASE."` WHERE table_type = 'BASE TABLE';";
+        $tables_sql = "SHOW FULL TABLES FROM `" . DB_DATABASE . "` WHERE table_type = 'BASE TABLE';";
         $tables = $pdo->query($tables_sql);
 
         /**
          * Send a list of tables only
          */
         $names = [];
-        foreach($tables as $table)
-        {
+        foreach ($tables as $table) {
             $names[] = array_values($table)[0]; // `Tables_in_DATABASE` => 0
         }
 
         return $names;
     }
 
-    public function info($table=""): string
+    public function info($table = ""): string
     {
         $pdo = new MySQLPDO();
 
@@ -55,7 +54,7 @@ class DatabaseExecutor
     {
         $pdo = new MySQLPDO();
 
-        $sql = "SHOW TABLE STATUS FROM `".DB_DATABASE."` WHERE ENGINE IS NOT NULL;";
+        $sql = "SHOW TABLE STATUS FROM `" . DB_DATABASE . "` WHERE ENGINE IS NOT NULL;";
         $statistics = $pdo->query($sql);
 
         return $statistics;
@@ -70,7 +69,7 @@ class DatabaseExecutor
 
         return $downloads;
     }
-    
+
     public function downloadable_products(): array
     {
         global $configurations;
@@ -78,7 +77,7 @@ class DatabaseExecutor
 
         $products_sql = (new fql())->read("downloadable_products.sql");
         $products_sql = str_replace("10", $configurations["business_rules"]["downloadable_product_tax_class_id"], $products_sql);
-        
+
         $products = $pdo->query($products_sql);
 
         return $products;
@@ -100,9 +99,9 @@ class DatabaseExecutor
     public function categories(): array
     {
         $pdo = new MySQLPDO();
-		
-		$sql = "SELECT category_id, image FROM `".DB_PREFIX."category`;";
-		$categories = $pdo->query($sql);
+
+        $sql = "SELECT category_id, image FROM `" . DB_PREFIX . "category`;";
+        $categories = $pdo->query($sql);
 
         return $categories;
     }
@@ -110,9 +109,9 @@ class DatabaseExecutor
     public function products(): array
     {
         $pdo = new MySQLPDO();
-		
-		$sql = "SELECT product_id, image, price FROM `".DB_PREFIX."product`;";
-		$products = $pdo->query($sql);
+
+        $sql = "SELECT product_id, image, price FROM `" . DB_PREFIX . "product`;";
+        $products = $pdo->query($sql);
 
         return $products;
     }
@@ -130,14 +129,13 @@ class DatabaseExecutor
     public function taxes(): array
     {
         $pdo = new MySQLPDO();
-        
+
         $taxes = [
             "0" => "None",
         ];
-        $taxes_class_sql = "SELECT tax_class_id, title FROM `".DB_PREFIX."tax_class`;";
+        $taxes_class_sql = "SELECT tax_class_id, title FROM `" . DB_PREFIX . "tax_class`;";
         $taxes_db = $pdo->query($taxes_class_sql);
-        foreach($taxes_db as $tax)
-        {
+        foreach ($taxes_db as $tax) {
             $taxes[$tax["tax_class_id"]] = $tax["title"];
         }
 
@@ -151,10 +149,9 @@ class DatabaseExecutor
         $lengths = [
             "0" => "None",
         ];
-        $length_class_sql = "SELECT length_class_id, unit FROM `".DB_PREFIX."length_class_description` WHERE language_id=1;";
+        $length_class_sql = "SELECT length_class_id, unit FROM `" . DB_PREFIX . "length_class_description` WHERE language_id=1;";
         $lengths_db = $pdo->query($length_class_sql);
-        foreach($lengths_db as $length)
-        {
+        foreach ($lengths_db as $length) {
             $lengths[$length["length_class_id"]] = $length["unit"];
         }
 
@@ -168,10 +165,9 @@ class DatabaseExecutor
         $weights = [
             "0" => "None",
         ];
-        $weight_class_sql = "SELECT weight_class_id, unit FROM `".DB_PREFIX."weight_class_description` WHERE language_id=1;";
+        $weight_class_sql = "SELECT weight_class_id, unit FROM `" . DB_PREFIX . "weight_class_description` WHERE language_id=1;";
         $weights_db = $pdo->query($weight_class_sql);
-        foreach($weights_db as $weight)
-        {
+        foreach ($weights_db as $weight) {
             $weights[$weight["weight_class_id"]] = $weight["unit"];
         }
 
@@ -182,7 +178,7 @@ class DatabaseExecutor
     {
         $pdo = new MySQLPDO();
 
-        $sql="SELECT `customer_id`, email, `password` FROM `".DB_PREFIX."customer`;";
+        $sql = "SELECT `customer_id`, email, `password` FROM `" . DB_PREFIX . "customer`;";
         $customers = $pdo->query($sql);
         return $customers;
     }

@@ -1,12 +1,14 @@
 <?php
+
 namespace cases\catalog;
 
 use \PHPUnit\Framework\TestCase;
-require_once(DIR_OPENCART."system/library/url.php");
+
+require_once(DIR_OPENCART . "system/library/url.php");
 
 class SettingsTest extends TestCase
 {
-	public function testDatabaseConstantsDefined()
+    public function testDatabaseConstantsDefined()
     {
         $this->assertTrue(defined("DB_DRIVER"));
         $this->assertTrue(defined("DB_HOSTNAME"));

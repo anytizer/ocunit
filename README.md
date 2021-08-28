@@ -58,9 +58,11 @@ Dependency                     | Version                       | Description
 Clone the projects and configure/install them independently:
 
     cd htdocs|public_html|www|web
+    mkdir oc
+    cd oc
 
     git clone https://github.com/opencart/opencart.git store
-    git clone https://github.com/anytizer/ocunit.git
+    git clone https://github.com/anytizer/ocunit.git ocunit
 
 Download the phpunit phar file in the directory.
 
@@ -84,7 +86,7 @@ Update the composer dependencies:
 * Under Windows: `.\run8.0.bat`
 * Or, under Linux: `./run8.0.sh`
 
-For some advanced uses, to run specific tests, an example would be: `php phpunit-9.5.8.phar cases/general`, which runs
+To run specific tests, an example would be: `php phpunit-9.5.8.phar cases/general`, which runs
 faster than running all the test cases. Other examples are one of:
 
     phpunit phpunit-9.5.8.phar cases/admin
@@ -102,11 +104,11 @@ Also, you can specify an individual test file to run, for example:
 
     php phpunit-9.5.8.phar cases/database/CountersTest.php
 
-More information at: https://phpunit.readthedocs.io/en/9.5/textui.html.
+More information on tests is available at: https://phpunit.readthedocs.io/en/9.5/textui.html.
 
 ## Logs Produced
 
-* `logs/testdox.txt`
+* `logs/testdox.txt` - Log of test status - pass or fail
 * `logs/inventory.log` - concise report about products and prices for the merchant.
 
 # Inspirations

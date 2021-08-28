@@ -7,7 +7,7 @@ use library\MySQLPDO as MySQLPDO;
 
 class api
 {
-    public function list_all_api_users()
+    public function list_all_api_users(): array
     {
         $pdo = new MySQLPDO();
 
@@ -17,7 +17,7 @@ class api
         return $apis;
     }
 
-    public function get_token_html()
+    public function get_token_html(): string
     {
         global $configurations;
         $credentials = $configurations["credentials"]["api_valid"];

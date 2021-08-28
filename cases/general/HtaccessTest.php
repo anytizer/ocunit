@@ -8,25 +8,29 @@ class HtaccessTest extends TestCase
 {
     public function testHtaccessDisablesDirectoryListingInFrontend()
     {
-        $body = "Options -Indexes";
-        $dothtaccess = DIR_OPENCART . ".htaccess";
-        if (is_file($dothtaccess)) {
-            $htaccess = file_get_contents($dothtaccess);
-            $this->assertEquals($body, $htaccess, "Invalid .htaccess file in frontend.");
+        $expected_body = "Options -Indexes";
+        $htaccess = $expected_body;
+        $dothtaccessfile = DIR_OPENCART . ".htaccess";
+        if (is_file($dothtaccessfile)) {
+            $htaccess = file_get_contents($dothtaccessfile);
         } else {
-            file_put_contents($dothtaccess, $body);
+            file_put_contents($dothtaccessfile, $htaccess);
         }
+
+        $this->assertEquals($expected_body, $htaccess, "Invalid .htaccess file in front.");
     }
 
     public function testHtaccessDisablesDirectoryListingInAdmin()
     {
-        $body = "Options -Indexes";
-        $dothtaccess = DIR_OPENCART . "admin/.htaccess";
-        if (is_file($dothtaccess)) {
-            $htaccess = file_get_contents($dothtaccess);
-            $this->assertEquals($body, $htaccess, "Invalid .htaccess file.");
+        $expected_body = "Options -Indexes";
+        $htaccess = $expected_body;
+        $dothtaccessfile = DIR_OPENCART . "admin/.htaccess";
+        if (is_file($dothtaccessfile)) {
+            $htaccess = file_get_contents($dothtaccessfile);
         } else {
-            file_put_contents($dothtaccess, $body);
+            file_put_contents($dothtaccessfile, $htaccess);
         }
+
+        $this->assertEquals($expected_body, $htaccess, "Invalid .htaccess file in admin.");
     }
 }

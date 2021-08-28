@@ -177,4 +177,13 @@ class DatabaseExecutor
 
         return $weights;
     }
+
+    public function customers(): array
+    {
+        $pdo = new MySQLPDO();
+
+        $sql="SELECT `customer_id`, email, `password` FROM `".DB_PREFIX."customer`;";
+        $customers = $pdo->query($sql);
+        return $customers;
+    }
 }

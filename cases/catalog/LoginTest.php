@@ -12,20 +12,18 @@ class LoginTest extends TestCase
 		$html = $catalog->login_simple();
 
 		$success = str_contains($html, "Success");
-		$this->assertTrue($success, "Failed simple log in.");
+		$this->assertFalse($success, "Error - Simple login passed the gateway.");
 	}
 
 	public function testAdvancedLoginSuccessful()
 	{
 		$catalog = new catalog();
 		$html = $catalog->login_advanced();
+		// {"redirect":"...index.php?route=account/account&language=en-gb&customer_token=2aabe45515d06814ee9ff9d415"}
         $json = json_decode($html, true);
 
-        print_r($json);
-        // {"error":{"warning":"Warning: No match for E-Mail Address and\/or Password."}}
-		// expect JSON Data
+        $this->assertArrayHasKey("redirect", $json, "Failed reading redirect information.");
 
-		$this->assertTrue(str_contains($html, "Success"), "Failed protected log in."); // Capital S
 		$this->assertFalse(str_contains($html, "warning"), "Login returned warning.");
 		$this->assertFalse(str_contains($html, "error"), "Login returned warning.");
 	}

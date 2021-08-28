@@ -13,7 +13,8 @@ class catalog
 	 */
     private string $username;
     private string $password;
-    private string $token = "";
+
+    private string $token;
 
     public function __construct()
     {
@@ -22,10 +23,15 @@ class catalog
 
         $this->username = $credentials["username"];
         $this->password = $credentials["password"];
+
+        $this->token = "";
     }
 
     private function login_token(): string
     {
+        // open log out page first!
+        $this->logout();
+
         // open login form page
         // grab token in the link
         // reuse token to login next time
@@ -50,8 +56,10 @@ class catalog
     private function _parse_login_token($html=""): string
     {
         $matches = [];
-        preg_match_all("/login_token\=([0-9a-f]+)\"/", $html, $matches, PREG_PATTERN_ORDER);
-        $login_token = $matches[1][0]; // ??"00000000000000000000000000;
+        preg_match_all("#;login_token=(.*?)\"#", $html, $matches, PREG_PATTERN_ORDER);
+
+        $login_token = $matches[1][0] ?? "INVALID-LOGIN-TOKEN"; // ??"00000000000000000000000000;
+
         return $login_token;
     }
 
@@ -158,6 +166,25 @@ class catalog
             "X-Protection-Token" => "",
         ]);
 		$html = $relay->fetch(HTTP_CATALOG."index.php");
+
+        return $html;
+    }
+
+    private function logout()
+    {
+        // http://localhost/oc/store/upload/index.php?route=account/logout&language=en-gb
+        $_GET = [
+            "route" => "account/logout",
+            "language" => "en-gb",
+        ];
+
+        $_POST = [];
+
+        $relay = new relay();
+        $relay->headers([
+            "X-Protection-Token" => "",
+        ]);
+        $html = $relay->fetch(HTTP_CATALOG."index.php");
 
         return $html;
     }

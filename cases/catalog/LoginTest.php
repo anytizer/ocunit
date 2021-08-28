@@ -2,8 +2,8 @@
 
 namespace cases\catalog;
 
-use \PHPUnit\Framework\TestCase;
-use \library\catalog;
+use library\catalog;
+use PHPUnit\Framework\TestCase;
 
 class LoginTest extends TestCase
 {

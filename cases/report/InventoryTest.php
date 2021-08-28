@@ -2,8 +2,8 @@
 
 namespace cases\report;
 
-use \PHPUnit\Framework\TestCase;
-use \library\DatabaseExecutor;
+use library\DatabaseExecutor;
+use PHPUnit\Framework\TestCase;
 
 class InventoryTest extends TestCase
 {

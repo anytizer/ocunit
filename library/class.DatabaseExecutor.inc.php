@@ -2,8 +2,8 @@
 
 namespace library;
 
-use \library\fql as fql;
-use \library\MySQLPDO as MySQLPDO;
+use library\fql as fql;
+use library\MySQLPDO as MySQLPDO;
 
 class DatabaseExecutor
 {

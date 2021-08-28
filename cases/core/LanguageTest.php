@@ -2,8 +2,8 @@
 
 namespace cases\core;
 
-use \Opencart\System\Library\Language;
-use \PHPUnit\Framework\TestCase;
+use Opencart\System\Library\Language;
+use PHPUnit\Framework\TestCase;
 
 class LanguageTest extends TestCase
 {

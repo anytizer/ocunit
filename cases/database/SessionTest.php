@@ -2,37 +2,21 @@
 
 namespace cases\database;
 
-use \PHPUnit\Framework\TestCase;
-use \library\catalog;
-use \library\MySQLPDO;
+use library\catalog;
+use library\MySQLPDO;
+use PHPUnit\Framework\TestCase;
 
 class SessionTest extends TestCase
 {
+    public static function setUpBeforeClass(): void
+    {
+        self::truncate();
+    }
+
     private static function truncate()
     {
         $pdo = new MySQLPDO();
         $pdo->raw("TRUNCATE TABLE `" . DB_PREFIX . "session`;");
-    }
-
-    private function delete()
-    {
-        $pdo = new MySQLPDO();
-        $pdo->raw("DELETE FROM `" . DB_PREFIX . "session`;");
-    }
-
-    private function counter(): int
-    {
-        $pdo = new MySQLPDO();
-
-        $sql = "SELECT COUNT(*) total FROM `" . DB_PREFIX . "session`;";
-        $total = (int)$pdo->query($sql)[0]["total"];
-
-        return $total;
-    }
-
-    public static function setUpBeforeClass(): void
-    {
-        self::truncate();
     }
 
     public function setUp(): void
@@ -45,6 +29,12 @@ class SessionTest extends TestCase
          */
         $catalog = new catalog();
         $index = $catalog->browse_index();
+    }
+
+    private function delete()
+    {
+        $pdo = new MySQLPDO();
+        $pdo->raw("DELETE FROM `" . DB_PREFIX . "session`;");
     }
 
     public function tearDown(): void
@@ -60,6 +50,16 @@ class SessionTest extends TestCase
         $total = $this->counter();
 
         $this->assertEquals(1, $total, "Invalid session data count: {$total}.");
+    }
+
+    private function counter(): int
+    {
+        $pdo = new MySQLPDO();
+
+        $sql = "SELECT COUNT(*) total FROM `" . DB_PREFIX . "session`;";
+        $total = (int)$pdo->query($sql)[0]["total"];
+
+        return $total;
     }
 
     public function testAtLeastOneStoreIsActive()

@@ -2,7 +2,7 @@
 
 namespace library;
 
-use \PDO as PDO;
+use PDO as PDO;
 
 /**
  * Basic database wrapper without exceptions.

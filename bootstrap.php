@@ -80,7 +80,7 @@ if (!isset($_SERVER["REMOTE_ADDR"])) {
     $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
 }
 
-use \Opencart\System\Engine\Autoloader;
+use Opencart\System\Engine\Autoloader;
 
 global $autoloader;
 $autoloader = new Autoloader();

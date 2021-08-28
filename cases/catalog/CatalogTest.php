@@ -2,9 +2,9 @@
 
 namespace cases\catalog;
 
-use \PHPUnit\Framework\TestCase;
-use \anytizer\relay;
-use \library\catalog;
+use anytizer\relay;
+use library\catalog;
+use PHPUnit\Framework\TestCase;
 
 class CatalogTest extends TestCase
 {

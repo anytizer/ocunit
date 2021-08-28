@@ -2,7 +2,7 @@
 
 namespace cases\business;
 
-use \PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
 
 class MaintenanceTest extends TestCase
 {

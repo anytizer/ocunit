@@ -2,7 +2,7 @@
 
 namespace cases\admin;
 
-use \PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
 
 class OrderCancelTest extends TestCase
 {

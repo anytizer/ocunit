@@ -3,7 +3,7 @@
 namespace cases\admin;
 
 use library\admin;
-use \PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
 
 class LoginTest extends TestCase
 {

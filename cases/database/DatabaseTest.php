@@ -2,9 +2,8 @@
 
 namespace cases\database;
 
-use \PHPUnit\Framework\TestCase;
-use \library\MySQLPDO;
-use \library\BusinessRules;
+use library\MySQLPDO;
+use PHPUnit\Framework\TestCase;
 
 class DatabaseTest extends TestCase
 {

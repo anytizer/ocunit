@@ -2,20 +2,11 @@
 
 namespace cases\admin;
 
-use \PHPUnit\Framework\TestCase;
-use \library\DatabaseExecutor;
+use library\DatabaseExecutor;
+use PHPUnit\Framework\TestCase;
 
 class DownloadsTest extends TestCase
 {
-    private function _downloads()
-    {
-        $dbx = new DatabaseExecutor();
-        $downloads = $dbx->downloads();
-
-        assert(count($downloads) > 0, "Your store does not have downloadable products.");
-        return $downloads;
-    }
-
     public function testDownloadableFilesMustBeZipFormat()
     {
         $downloads = $this->_downloads();
@@ -24,6 +15,15 @@ class DownloadsTest extends TestCase
             $extension = pathinfo(basename($download["mask"]))["extension"];
             $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only.");
         }
+    }
+
+    private function _downloads()
+    {
+        $dbx = new DatabaseExecutor();
+        $downloads = $dbx->downloads();
+
+        assert(count($downloads) > 0, "Your store does not have downloadable products.");
+        return $downloads;
     }
 
     public function testDownloadShouldExist()

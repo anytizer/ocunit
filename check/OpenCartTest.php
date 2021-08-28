@@ -1,12 +1,12 @@
 <?php
 
-use \PHPUnit\Framework\TestCase as TestCase;
 use Opencart\System\Engine\Action as Action;
+use PHPUnit\Framework\TestCase as TestCase;
 
 class OpenCartTest extends TestCase
 {
-    private static $loaded = false;
     public static $registry;
+    private static $loaded = false;
     private static $is_admin = null;
 
     public function __get($name)

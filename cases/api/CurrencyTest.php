@@ -10,6 +10,11 @@ class CurrencyTest extends TestCase
 {
     private string $api_token = "";
 
+    public function setUp(): void
+    {
+        $this->api_token = $this->token();
+    }
+
     private function token()
     {
         $api = new api();
@@ -22,11 +27,6 @@ class CurrencyTest extends TestCase
         // {"success":"Success: API session successfully started!","api_token":"f5a254e32400369e587457dfd9"}
 
         return $api_token;
-    }
-
-    public function setUp(): void
-    {
-        $this->api_token = $this->token();
     }
 
     public function testChangeSessionCurrency()

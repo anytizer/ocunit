@@ -2,12 +2,17 @@
 
 namespace cases\api;
 
-use \PHPUnit\Framework\TestCase;
-use \library\api;
+use library\api;
+use PHPUnit\Framework\TestCase;
 
 class ApiTest extends TestCase
 {
     private string $api_token = "";
+
+    public function setUp(): void
+    {
+        $this->api_token = $this->token();
+    }
 
     private function token()
     {
@@ -23,11 +28,6 @@ class ApiTest extends TestCase
         return $api_token;
     }
 
-    public function setUp(): void
-    {
-        $this->api_token = $this->token();
-    }
-
     public function testGetApiToken()
     {
         $this->assertEquals(strlen("f5a254e32400369e587457dfd9"), strlen($this->api_token), "API Token length mismatched.");
@@ -36,7 +36,6 @@ class ApiTest extends TestCase
     public function testAccessRoutes()
     {
         $this->markTestIncomplete("API test routes.");
-        return;
 
 //        // look into the ways of accessing various api endpoints
 //        // @see https://docs.opencart.com/en-gb/system/users/api/

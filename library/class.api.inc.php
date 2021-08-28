@@ -2,8 +2,8 @@
 
 namespace library;
 
-use \library\MySQLPDO as MySQLPDO;
-use \anytizer\relay as relay;
+use anytizer\relay as relay;
+use library\MySQLPDO as MySQLPDO;
 
 class api
 {

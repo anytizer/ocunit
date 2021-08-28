@@ -6,6 +6,23 @@ use anytizer\relay as relay;
 
 class admin
 {
+    public function login_success_case(): string
+    {
+        // open login page
+        // save session state
+        // save cookie state
+        // login
+        // obtain redirect information
+        // go to dashboard, aka redirect information
+
+        // @todo Replace admin with a variable
+        $form_html = $this->_browse_login_form();
+        $login_token = $this->_parse_login_form($form_html);
+        $logged_in_html = $this->_login_attempt_successful($login_token);
+
+        return $logged_in_html;
+    }
+
     private function _browse_login_form(): string
     {
         // HTTP request of the login page
@@ -86,6 +103,15 @@ class admin
         return $html;
     }
 
+    public function login_failure_case(): string
+    {
+        $form_html = $this->_browse_login_form();
+        $login_token = $this->_parse_login_form($form_html);
+        $not_logged_in_html = $this->_login_attempt_failure($login_token);
+
+        return $not_logged_in_html;
+    }
+
     /**
      * Do NOT login successfully.
      *
@@ -115,31 +141,5 @@ class admin
 
         $html = $relay->fetch($url);
         return $html;
-    }
-
-    public function login_success_case(): string
-    {
-        // open login page
-        // save session state
-        // save cookie state
-        // login
-        // obtain redirect information
-        // go to dashboard, aka redirect information
-
-        // @todo Replace admin with a variable
-        $form_html = $this->_browse_login_form();
-        $login_token = $this->_parse_login_form($form_html);
-        $logged_in_html = $this->_login_attempt_successful($login_token);
-
-        return $logged_in_html;
-    }
-
-    public function login_failure_case(): string
-    {
-        $form_html = $this->_browse_login_form();
-        $login_token = $this->_parse_login_form($form_html);
-        $not_logged_in_html = $this->_login_attempt_failure($login_token);
-
-        return $not_logged_in_html;
     }
 }

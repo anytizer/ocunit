@@ -2,13 +2,18 @@
 
 namespace cases\api;
 
-use \PHPUnit\Framework\TestCase;
-use \anytizer\relay;
-use \library\api;
+use anytizer\relay;
+use library\api;
+use PHPUnit\Framework\TestCase;
 
 class CustomerTest extends TestCase
 {
     private string $api_token = "";
+
+    public function setUp(): void
+    {
+        $this->api_token = $this->token();
+    }
 
     private function token()
     {
@@ -22,11 +27,6 @@ class CustomerTest extends TestCase
         // {"success":"Success: API session successfully started!","api_token":"f5a254e32400369e587457dfd9"}
 
         return $api_token;
-    }
-
-    public function setUp(): void
-    {
-        $this->api_token = $this->token();
     }
 
     public function testApiCustomer()

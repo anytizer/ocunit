@@ -2,11 +2,11 @@
 
 namespace cases\admin;
 
-use \PHPUnit\Framework\TestCase;
-use \library\DatabaseExecutor;
-use \library\MySQLPDO;
-use \library\fql;
-use \PDOException;
+use library\DatabaseExecutor;
+use library\fql;
+use library\MySQLPDO;
+use PDOException;
+use PHPUnit\Framework\TestCase;
 
 class ExtensionsTest extends TestCase
 {

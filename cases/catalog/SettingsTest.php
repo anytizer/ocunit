@@ -2,7 +2,7 @@
 
 namespace cases\catalog;
 
-use \PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
 
 require_once(DIR_OPENCART . "system/library/url.php");
 

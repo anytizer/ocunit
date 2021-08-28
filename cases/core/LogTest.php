@@ -2,8 +2,8 @@
 
 namespace cases\core;
 
-use \Opencart\System\Library\Log;
-use \PHPUnit\Framework\TestCase;
+use Opencart\System\Library\Log;
+use PHPUnit\Framework\TestCase;
 
 require_once DIR_OPENCART . "system/library/log.php";
 

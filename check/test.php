@@ -2,9 +2,8 @@
 require_once "opencart.php";
 require_once "OpenCartTest.php";
 
-use Opencart\Catalog\Controller\Startup\Setting as Setting;
-use \Opencart\System\Engine\Registry as Registry;
-use \Opencart\System\Engine\Event as Event;
+use Opencart\System\Engine\Event as Event;
+use Opencart\System\Engine\Registry as Registry;
 
 class Test extends OpenCartTest
 {

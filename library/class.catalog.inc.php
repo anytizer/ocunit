@@ -2,7 +2,7 @@
 
 namespace library;
 
-use \anytizer\relay;
+use anytizer\relay;
 
 /**
  * Catalog
@@ -26,42 +26,6 @@ class catalog
         $this->password = $credentials["password"];
 
         $this->token = "";
-    }
-
-    private function login_token(): string
-    {
-        // open log out page first!
-        $this->logout();
-
-        // open login form page
-        // grab token in the link
-        // reuse token to login next time
-
-        $_GET = [
-            "route" => "account/login",
-            "language" => "en-gb",
-        ];
-
-        $_POST = [];
-
-        $relay = new relay();
-        $relay->headers([
-            "X-Protection-Token" => "",
-        ]);
-        $html = $relay->fetch(HTTP_CATALOG . "index.php"); // when admin config file included
-
-        $login_token = $this->_parse_login_token($html);
-        return $login_token;
-    }
-
-    private function _parse_login_token($html = ""): string
-    {
-        $matches = [];
-        preg_match_all("#;login_token=(.*?)\"#", $html, $matches, PREG_PATTERN_ORDER);
-
-        $login_token = $matches[1][0] ?? "INVALID-LOGIN-TOKEN"; // ??"00000000000000000000000000;
-
-        return $login_token;
     }
 
     /**
@@ -105,7 +69,6 @@ class catalog
 
         return $html;
     }
-
 
     public function lookup($post_query = []): string
     {
@@ -171,6 +134,32 @@ class catalog
         return $html;
     }
 
+    private function login_token(): string
+    {
+        // open log out page first!
+        $this->logout();
+
+        // open login form page
+        // grab token in the link
+        // reuse token to login next time
+
+        $_GET = [
+            "route" => "account/login",
+            "language" => "en-gb",
+        ];
+
+        $_POST = [];
+
+        $relay = new relay();
+        $relay->headers([
+            "X-Protection-Token" => "",
+        ]);
+        $html = $relay->fetch(HTTP_CATALOG . "index.php"); // when admin config file included
+
+        $login_token = $this->_parse_login_token($html);
+        return $login_token;
+    }
+
     private function logout()
     {
         // http://localhost/oc/store/upload/index.php?route=account/logout&language=en-gb
@@ -188,5 +177,15 @@ class catalog
         $html = $relay->fetch(HTTP_CATALOG . "index.php");
 
         return $html;
+    }
+
+    private function _parse_login_token($html = ""): string
+    {
+        $matches = [];
+        preg_match_all("#;login_token=(.*?)\"#", $html, $matches, PREG_PATTERN_ORDER);
+
+        $login_token = $matches[1][0] ?? "INVALID-LOGIN-TOKEN"; // ??"00000000000000000000000000;
+
+        return $login_token;
     }
 }

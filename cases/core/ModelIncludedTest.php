@@ -2,7 +2,7 @@
 
 namespace cases\core;
 
-use \PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
 
 class ModelIncludedTest extends TestCase
 {

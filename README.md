@@ -3,7 +3,7 @@
 Merchant oriented test scripts for OpenCart based on PHPUnit.
 
 __WARNING__: Never execute these tests against your live database or in server environment. It is likely to override the
-product information, pricing, images, session and more. The database may never return to its original state.
+product information, pricing, images, session, passwords and more. The database may never return to its original state.
 
 This project is NOT about developing the core OpenCart but the implementation of OpenCart to run a store.
 
@@ -17,8 +17,8 @@ Take a backup first!
 See how the tests are merchant oriented!
 
 * A corresponding image should exist for product or category.
-    * Product: 800x400
-    * Category: 200x200
+    * Product Image: 800x400 px
+    * Category Image: 200x200 px
 * A "downloadable" file has to be a .zip file only.
 * Directory listing is disabled throughout the website,
 * Store price cannot be less than the manufacturer price.
@@ -59,7 +59,7 @@ Clone the projects and configure/install them independently:
 
     cd htdocs|public_html|www|web
 
-    git clone https://github.com/opencart/opencart.git
+    git clone https://github.com/opencart/opencart.git store
     git clone https://github.com/anytizer/ocunit.git
 
 Download the phpunit phar file in the directory.

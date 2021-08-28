@@ -24,18 +24,22 @@ class admin
 
     private function _parse_login_form(string $html=""): string
     {
+        $login_token = "";
+
         $matches = [];
         $link_pattern = "/data-oc-action=\".*?route\=(.*?)\&login_token\=(.*?)\"/i";
         preg_match_all($link_pattern, $html, $matches, PREG_SET_ORDER);
-        assert(count($matches) == 1);
-        # print_r($matches);
-        // Look for:
-        #  <button type="button" data-oc-action="http://localhost/oc/store/upload/admin/index.php?route=common/login|login&login_token=f4db649e5bad571d85714acaf3298468" data-oc-form="#form-login" class="btn btn-primary"><i class="fas fa-key"></i> Login</button>
-        #echo $html;
+        if(assert(count($matches) == 1))
+        {
+            # print_r($matches);
+            // Look for:
+            #  <button type="button" data-oc-action="http://localhost/oc/store/upload/admin/index.php?route=common/login|login&login_token=f4db649e5bad571d85714acaf3298468" data-oc-form="#form-login" class="btn btn-primary"><i class="fas fa-key"></i> Login</button>
+            #echo $html;
 
-        $route = $matches[0][1];
-        $login_token = $matches[0][2];
-        assert(strlen($login_token) == strlen("7c650ce5d2f347ec48217ab3efb42f57"));
+            $route = $matches[0][1];
+            $login_token = $matches[0][2];
+            assert(strlen($login_token) == strlen("7c650ce5d2f347ec48217ab3efb42f57"));
+        }
 
         return $login_token;
     }

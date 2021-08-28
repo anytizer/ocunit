@@ -1,8 +1,7 @@
 <?php
 namespace library;
 
-use \library\MySQLPDO as MySQLPDO;
-use \anytizer\relay as relay;
+use \anytizer\relay;
 
 /**
  * Catalog
@@ -14,13 +13,46 @@ class catalog
 	 */
     private string $username;
     private string $password;
+    private string $token = "";
 
     public function __construct()
     {
         global $configurations;
         $credentials = $configurations["credentials"]["customer_valid"];
+
         $this->username = $credentials["username"];
         $this->password = $credentials["password"];
+    }
+
+    private function login_token(): string
+    {
+        // open login form page
+        // grab token in the link
+        // reuse token to login next time
+
+        $_GET = [
+            "route" => "account/login",
+            "language" => "en-gb",
+        ];
+
+        $_POST = [];
+
+        $relay = new relay();
+        $relay->headers([
+            "X-Protection-Token" => "",
+        ]);
+        $html = $relay->fetch(HTTP_CATALOG."index.php"); // when admin config file included
+
+        $login_token = $this->_parse_login_token($html);
+        return $login_token;
+    }
+
+    private function _parse_login_token($html=""): string
+    {
+        $matches = [];
+        preg_match_all("/login_token\=([0-9a-f]+)\"/", $html, $matches, PREG_PATTERN_ORDER);
+        $login_token = $matches[1][0]; // ??"00000000000000000000000000;
+        return $login_token;
     }
 
 	/**
@@ -41,7 +73,7 @@ class catalog
         $relay->headers([
             "X-Protection-Token" => "",
         ]);
-		$html = $relay->fetch(HTTP_SERVER."index.php");
+		$html = $relay->fetch(HTTP_CATALOG."index.php");
         
         return $html;
 	}
@@ -65,57 +97,8 @@ class catalog
         return $html;
     }
 
-    public function login_simple(): string
-    {
-        // http://localhost/opencart/upload/index.php?route=account/login|login&language=en-gb&login_token=d83e4e1f39e7859c30eddc998b
 
-        $_GET = [
-			"route" => "account/login|login",
-			"language" => "en-gb",
-		];
-
-		$_POST = [
-			"email" => $this->username,
-			"password" => $this->password,
-		];
-		$relay = new relay();
-        $relay->headers([
-            "X-Protection-Token" => "",
-        ]);
-		$html = $relay->fetch(HTTP_SERVER."index.php");
-        
-        return $html;
-    }
-
-    /**
-     * @see // index.php?route=account/login|login&language=en-gb&login_token=5654914f48eccb41c6eb08fec3
-     * @return string
-     */
-    public function login_advanced(): string
-    {
-        $_GET = [
-			"route" => "account/login|login",
-			"language" => "en-gb",
-
-            // @todo Generate login token
-			"login_token" => "5654914f48eccb41c6eb08fec3",
-		];
-
-		$_POST = [
-			"email" => $this->username,
-			"password" => $this->password,
-		];
-
-		$relay = new relay();
-        $relay->headers([
-            "X-Protection-Token" => "",
-        ]);
-		$html = $relay->fetch(HTTP_SERVER."index.php");
-
-        return $html;
-    }
-
-    public function lookup($post_query)
+    public function lookup($post_query=[]): string
     {
         $page = "index.php";
         $_GET = $post_query["get"];
@@ -126,7 +109,56 @@ class catalog
             "X-Protection-Token" => "",
         ]);
 
-        $html = $relay->fetch(HTTP_SERVER.$page);
+        $html = $relay->fetch(HTTP_CATALOG.$page);
+        return $html;
+    }
+
+    public function login_simple(): string
+    {
+        $_GET = [
+			"route" => "account/login|login",
+			"language" => "en-gb",
+		];
+
+		$_POST = [
+			"email" => $this->username,
+			"password" => $this->password,
+		];
+		$relay = new relay();
+        $relay->headers([
+            "X-Protection-Token" => "",
+        ]);
+		$html = $relay->fetch(HTTP_CATALOG."index.php");
+        
+        return $html;
+    }
+
+    /**
+     * @see index.php?route=account/login&language=en-gb
+     * @see index.php?route=account/login|login&language=en-gb&login_token=71349433b0800cf219d769d35c
+     * @return string
+     */
+    public function login_advanced(): string
+    {
+        $this->token = $this->login_token();
+
+        $_GET = [
+			"route" => "account/login|login",
+			"language" => "en-gb",
+			"login_token" => $this->token,
+		];
+
+		$_POST = [
+			"email" => $this->username,
+			"password" => $this->password,
+		];
+
+		$relay = new relay();
+        $relay->headers([
+            "X-Protection-Token" => "",
+        ]);
+		$html = $relay->fetch(HTTP_CATALOG."index.php");
+
         return $html;
     }
 }

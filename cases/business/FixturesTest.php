@@ -55,7 +55,7 @@ class FixturesTest extends TestCase
                     ++$hits;
 
                     $reset_sql = "ALTER TABLE `{$table}` AUTO_INCREMENT = {$count_match};";
-                    $pdo->raw($reset_sql);
+                    $pdo->raw($reset_sql, []);
                     # echo "\r\n", $reset_sql, " -- ", $auto_increment, ";";
                 }
             }
@@ -68,7 +68,7 @@ class FixturesTest extends TestCase
     public function testFixSku()
     {
         $pdo = new MySQLPDO();
-        $pdo->raw("UPDATE `" . DB_PREFIX . "product` SET sku=model WHERE sku='';");
+        $pdo->raw("UPDATE `" . DB_PREFIX . "product` SET sku=model WHERE sku='';", []);
 
         $this->assertFalse(__OCUNIT_EXECUTE_EXPENSIVE__, "SKU were modified with model.");
     }
@@ -86,13 +86,13 @@ class FixturesTest extends TestCase
         // disable price history trigger
 
         $sql = "DELETE FROM tw_manufacturer_prices;";
-        $pdo->raw($sql);
+        $pdo->raw($sql, []);
 
         global $configurations;
         $multiplier = (float)$configurations["business_rules"]["multiplier"];
         $internal_sourcing_manufacturer_id = (int)$configurations["business_rules"]["internal_sourcing_manufacturer_id"];
         $sql = "INSERT INTO tw_manufacturer_prices SELECT NULL, {$internal_sourcing_manufacturer_id}, product_id, price/{$multiplier} FROM `" . DB_PREFIX . "product`;";
-        $pdo->raw($sql);
+        $pdo->raw($sql, []);
 
         $this->assertTrue(true, "Manufacturer prices are assigned to internal source.");
     }
@@ -117,7 +117,7 @@ class FixturesTest extends TestCase
         $pdo = new MySQLPDO();
 
         $sql = "UPDATE `" . DB_PREFIX . "product` SET subtract=1 WHERE shipping=1;";
-        $pdo->raw($sql);
+        $pdo->raw($sql, []);
 
         $this->assertTrue(true, "Shipping of physical products must require subtraction in inventory.");
     }
@@ -145,7 +145,7 @@ class FixturesTest extends TestCase
         $pdo = new MySQLPDO();
 
         $sql = (new fql())->read("oc_setting.sql");
-        $pdo->raw($sql);
+        $pdo->raw($sql, []);
 
         $this->assertTrue(true, "Admin pagination size increased.");
     }

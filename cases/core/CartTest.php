@@ -15,17 +15,19 @@ use PHPUnit\Framework\TestCase;
 
 class CartTest extends TestCase
 {
-    private Registry $registry;
-
     /**
      * @throws \Exception
      */
-    public function setUp(): void
+    private function registry()
     {
         global $autoloader;
 
         $registry = new Registry();
         $registry->set("autoloader", $autoloader);
+
+        // Loader
+        $loader = new \Opencart\System\Engine\Loader($registry);
+        $registry->set('load', $loader);
 
         $config = new \Opencart\System\Engine\Config();
         $config->addPath(DIR_CONFIG);
@@ -61,31 +63,44 @@ class CartTest extends TestCase
         $weight = new Weight($registry);
         $registry->set("weight", $weight);
 
-        $customer = new Customer($registry);
-        $registry->set("customer", $customer);
+        $cart = new Cart($registry);
+        $registry->set("cart", $cart);
 
-        #$cart = new Cart($registry);
-        #$registry->set("cart", $cart);
-
-        $this->registry = $registry;
+        return $registry;
     }
 
     public function testCartClear()
     {
-        $cart = new Cart($this->registry);
+        $registry = $this->registry();
+
+        $cart = new Cart($registry);
         $cart->clear();
 
         $products = $cart->getProducts();
-        $this->assertEmpty($products, "Cart was not cleared.");
+        $this->assertEmpty($products, "Cart was not cleared for anonymous visitor.");
     }
 
     public function testCustomerLogin()
     {
-        $customer = new Customer($this->registry);
+        $registry = $this->registry();
+
+        $customer = new Customer($registry);
 
         global $configurations;
         $credentials = $configurations["credentials"]["customer_valid"];
         $success = $customer->login($credentials["username"], $credentials["password"]);
         $this->assertTrue($success, "Customer could NOT login.");
+    }
+
+    public function testCustomerLoginFailure()
+    {
+        $registry = $this->registry();
+
+        $customer = new Customer($registry);
+
+        global $configurations;
+        $credentials = $configurations["credentials"]["customer_invalid"];
+        $success = $customer->login($credentials["username"], $credentials["password"]);
+        $this->assertFalse($success, "Customer logged in with wrong credentials.");
     }
 }

@@ -8,6 +8,9 @@ class OrderCancelTest extends TestCase
 {
     public function testOrderCancelledProperly()
     {
+        $order = new Order();
+        $order->create();
+        $order->cancel();
         // order is fully paid, and we have a transaction log in payment gateway
         // order received cancellation request
         // order did not pass n number of days

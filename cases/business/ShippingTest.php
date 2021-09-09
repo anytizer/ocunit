@@ -34,4 +34,9 @@ class ShippingTest extends TestCase
     {
         $this->markTestIncomplete("Sell within the country of store only.");
     }
+
+    public function testEstimationsTendToBeGenuine()
+    {
+        $this->markTestIncomplete("Use API for more precise shipping calculation.");
+    }
 }

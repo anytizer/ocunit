@@ -8,17 +8,18 @@ class StorageAreaTest extends TestCase
 {
     public function testStorageAreaIsOutOfUpload()
     {
-        $parent = dirname(realpath(DIR_STORAGE));
+        // @todo Also test when upload/ becomes public_html
+        $parent = dirname(realpath(DIR_OPENCART));
 
         /**
          * Following folders should NOT appear in the directory name for ./storage/
          *
-         * In most linux systems: /home/USER/public_html/opencart/upload/storage/
-         * In some dedicated systems: /var/www/html/opencart/upload/storage/
+         * In most linux systems: /home/USER/public_html/OPENCART/upload/storage/
+         * In some dedicated systems: /var/www/html/OPENCART/upload/storage/
          */
-        $restrictions = [
+        $restricted_folders = [
             /**
-             * Default www rot paths
+             * Control panel web root paths
              */
             "upload",
             "public_html",
@@ -29,13 +30,20 @@ class StorageAreaTest extends TestCase
             "web",
 
             /**
-             * OpenCart storage area
+             * OpenCart possible areas
              */
             "opencart",
             "store",
             "shop",
+//          "buy",
+//          "sell",
+//          "merchant",
+//          "products",
+//          "purchase",
         ];
-        foreach ($restrictions as $folder) {
+
+        foreach ($restricted_folders as $folder) {
+            // @todo Logic not enough to filter folders.
             $this->assertFalse(str_contains($parent, $folder), "/storage area is not outside of {$folder}.");
         }
     }

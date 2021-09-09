@@ -14,13 +14,12 @@ class ApiTest extends TestCase
         $this->api_token = $this->token();
     }
 
-    private function token()
+    private function token(): string
     {
         $api = new api();
         $api_token_html = $api->get_token_html();
         $data = json_decode($api_token_html, true);
 
-        //$this->assertArrayHasKey("api_token", $data, "`api_token` key missing in HTML/token-json response.");
         assert(array_key_exists("api_token", $data));
         $api_token = $data["api_token"];
         // {"success":"Success: API session successfully started!","api_token":"f5a254e32400369e587457dfd9"}

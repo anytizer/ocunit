@@ -7,16 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class DownloadsTest extends TestCase
 {
-    public function testDownloadableFilesMustBeZipFormat()
-    {
-        $downloads = $this->_downloads();
-
-        foreach ($downloads as $download) {
-            $extension = pathinfo(basename($download["mask"]))["extension"];
-            $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only.");
-        }
-    }
-
     private function _downloads()
     {
         $dbx = new DatabaseExecutor();
@@ -24,6 +14,16 @@ class DownloadsTest extends TestCase
 
         assert(count($downloads) > 0, "Your store does not have downloadable products.");
         return $downloads;
+    }
+
+    public function testDownloadableFilesMustBeZipFormat()
+    {
+        $downloads = $this->_downloads();
+
+        foreach ($downloads as $download) {
+            $extension = pathinfo(basename($download["mask"]))["extension"];
+            $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only: {$download['mask']}");
+        }
     }
 
     public function testDownloadShouldExist()
@@ -70,20 +70,24 @@ class DownloadsTest extends TestCase
     public function testAddMimeColumn()
     {
         // Add file size, file MIME, and hash signature to a downloadable file.
-        //
-        //apply file size limits
-        //restrict others but .zip: reject!
-        //A product can have multiple files attached. All files should exist.
-        $this->markTestSkipped();
+        $this->markTestSkipped("MIME column to be added.");
     }
 
     public function testAddSizeColumn()
     {
-        $this->markTestSkipped();
+        $this->markTestSkipped("Size column to be added.");
     }
 
     public function testAddHashColumn()
     {
-        $this->markTestSkipped();
+        $this->markTestSkipped("Hash column to be added.");
+    }
+
+    public function testOthers()
+    {
+        //apply file size limits
+        //restrict others but .zip: reject!
+        //A product can have multiple files attached. All files should exist.
+        $this->markTestIncomplete("Other tests");
     }
 }

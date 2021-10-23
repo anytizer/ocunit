@@ -22,10 +22,10 @@ See how the tests are merchant oriented!
 * A "downloadable" file has to be a .zip file only.
 * Directory listing is disabled throughout the website,
 * Store price cannot be less than the manufacturer price.
-* Updating price makes a history of change.
+* Updating price makes a history of price change.
 * Extension tables are added into the database.
-* Products must have videos associated.
-* Product concise inventory statistics.
+* Products must have videos associated with them.
+* Concise inventory statistics generation.
 
 Not [all the tests](logs/testdox.txt) are complete. See those with x mark.
 
@@ -86,19 +86,19 @@ Update the composer dependencies:
 * Under Windows: `.\run8.0.bat`
 * Or, under Linux: `./run8.0.sh`
 
-To run specific tests, an example would be: `php phpunit-9.5.8.phar cases/general`, which runs
-faster than running all the test cases. Other examples are one of:
+To run specific tests, an example would be: `php phpunit-9.5.8.phar cases/general`, which runs faster than running all
+the test cases. Other examples are one of:
 
-    phpunit phpunit-9.5.8.phar cases/admin
-    phpunit phpunit-9.5.8.phar cases/api
-    phpunit phpunit-9.5.8.phar cases/business
-    phpunit phpunit-9.5.8.phar cases/catalog
-    phpunit phpunit-9.5.8.phar cases/core
-    phpunit phpunit-9.5.8.phar cases/database
-    phpunit phpunit-9.5.8.phar cases/general
-    phpunit phpunit-9.5.8.phar cases/issues
-    phpunit phpunit-9.5.8.phar cases/mail
-    phpunit phpunit-9.5.8.phar cases/report
+    php phpunit-9.5.8.phar cases/admin
+    php phpunit-9.5.8.phar cases/api
+    php phpunit-9.5.8.phar cases/business
+    php phpunit-9.5.8.phar cases/catalog
+    php phpunit-9.5.8.phar cases/core
+    php phpunit-9.5.8.phar cases/database
+    php phpunit-9.5.8.phar cases/general
+    php phpunit-9.5.8.phar cases/issues
+    php phpunit-9.5.8.phar cases/mail
+    php phpunit-9.5.8.phar cases/report
 
 Also, you can specify an individual test file to run, for example:
 

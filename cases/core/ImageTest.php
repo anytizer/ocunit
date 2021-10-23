@@ -2,6 +2,7 @@
 
 namespace cases\core;
 
+use Exception;
 use Opencart\System\Library\Image;
 use PHPUnit\Framework\TestCase;
 
@@ -10,7 +11,7 @@ require_once DIR_SYSTEM . "library/image.php";
 class ImageTest extends TestCase
 {
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public function testParsePngImageForWidthAndHeight()
     {

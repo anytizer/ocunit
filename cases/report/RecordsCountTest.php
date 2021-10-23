@@ -24,7 +24,7 @@ class RecordsCountTest extends TestCase
 
             // @todo: split tests into tables that are always:
             // zero
-            // fixed non-zero
+            // fixed non-zero - eg: categories once setup
             // and variable counts as the website operates, eg. session data.
         }
 

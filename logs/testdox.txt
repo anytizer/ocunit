@@ -5,6 +5,7 @@ Downloads (cases\admin\Downloads)
  [ ] Add mime column
  [ ] Add size column
  [ ] Add hash column
+ [ ] Others
 
 Extensions (cases\admin\Extensions)
  [x] Third party extension tables are present
@@ -90,6 +91,7 @@ Shipping (cases\business\Shipping)
  [ ] Pickup request
  [ ] Picked up item emails to customer
  [ ] Deny cross boarder shipping
+ [ ] Estimations tend to be genuine
 
 Taxation (cases\business\Taxation)
  [ ] Low order fee applies
@@ -110,7 +112,7 @@ Web (cases\business\Web)
 Catalog (cases\catalog\Catalog)
  [x] Index page has toast div
  [x] Admin dashboard requires login
- [ ] Account pages need login
+ [x] Account pages need login
  [x] Searches in home page
  [x] Search categories page
  [x] Searches in product details page
@@ -136,6 +138,7 @@ Settings (cases\catalog\Settings)
 Cart (cases\core\Cart)
  [ ] Cart clear
  [ ] Customer login
+ [ ] Customer login failure
 
 Encryption (cases\core\Encryption)
  [x] Encrypt decrypt
@@ -180,9 +183,8 @@ Htaccess (cases\general\Htaccess)
  [x] Htaccess disables directory listing in admin
 
 Operating System (cases\general\OperatingSystem)
- [x] Windows operating system
- [ ] Linux operating system
- [x] Uname
+ [x] Cli
+ [x] Operating system
 
 Php Modules (cases\general\PhpModules)
  [x] Php modules available

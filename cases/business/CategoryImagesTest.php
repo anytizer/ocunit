@@ -8,6 +8,20 @@ use PHPUnit\Framework\TestCase;
 
 class CategoryImagesTest extends TestCase
 {
+    public function testCreateCategoryImages()
+    {
+        $dbx = new DatabaseExecutor();
+        $categories = $dbx->categories();
+
+        $this->_copy_images($categories);
+
+        foreach ($categories as $c => $category) {
+            $image_file = DIR_IMAGE . $category["image"];
+
+            $this->assertTrue(is_file($image_file), "Missing image for category id: #" . $category["category_id"]);
+        }
+    }
+
     private function _copy_images($categories)
     {
         foreach ($categories as $c => $category) {
@@ -21,20 +35,6 @@ class CategoryImagesTest extends TestCase
 
                 copy(DIR_IMAGE . "placeholder.png", $image_file);
             }
-        }
-    }
-
-    public function testCreateCategoryImages()
-    {
-        $dbx = new DatabaseExecutor();
-        $categories = $dbx->categories();
-
-        $this->_copy_images($categories);
-
-        foreach ($categories as $c => $category) {
-            $image_file = DIR_IMAGE . $category["image"];
-
-            $this->assertTrue(is_file($image_file), "Missing image for category id: #" . $category["category_id"]);
         }
     }
 

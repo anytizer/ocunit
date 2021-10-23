@@ -29,8 +29,7 @@ class OperatingSystemTest extends TestCase
 
     public function testOperatingSystem()
     {
-        switch($this->os)
-        {
+        switch ($this->os) {
             case "WINNT":
                 $this->assertEquals("Windows NT", substr($this->uname, 0, 10));
                 break;

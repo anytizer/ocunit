@@ -2,6 +2,8 @@
 
 namespace cases\core;
 
+use Exception;
+use Opencart\System\Engine\Config;
 use Opencart\System\Engine\Loader;
 use Opencart\System\Engine\Registry;
 use Opencart\System\Library\Cache;
@@ -9,14 +11,27 @@ use Opencart\System\Library\Cart\Cart;
 use Opencart\System\Library\Cart\Customer;
 use Opencart\System\Library\Cart\Tax;
 use Opencart\System\Library\Cart\Weight;
+use Opencart\System\Library\DB;
+use Opencart\System\Library\Log;
 use Opencart\System\Library\Request;
 use Opencart\System\Library\Session;
 use PHPUnit\Framework\TestCase;
 
 class CartTest extends TestCase
 {
+    public function testCartClear()
+    {
+        $registry = $this->registry();
+
+        $cart = new Cart($registry);
+        $cart->clear();
+
+        $products = $cart->getProducts();
+        $this->assertEmpty($products, "Cart was not cleared for anonymous visitor.");
+    }
+
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     private function registry()
     {
@@ -26,23 +41,23 @@ class CartTest extends TestCase
         $registry->set("autoloader", $autoloader);
 
         // Loader
-        $loader = new \Opencart\System\Engine\Loader($registry);
+        $loader = new Loader($registry);
         $registry->set('load', $loader);
 
-        $config = new \Opencart\System\Engine\Config();
+        $config = new Config();
         $config->addPath(DIR_CONFIG);
         $config->load("default");
         $config->load(strtolower(APPLICATION));
         $config->set("application", APPLICATION);
         $registry->set("config", $config);
 
-        $log = new \Opencart\System\Library\Log($config->get("error_filename"));
+        $log = new Log($config->get("error_filename"));
         $registry->set("log", $log);
 
         $loader = new Loader($registry);
         $registry->set("load", $loader);
 
-        $db = new \Opencart\System\Library\DB("mysqli", DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
+        $db = new DB("mysqli", DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
         $registry->set("db", $db);
 
         $request = new Request();
@@ -67,17 +82,6 @@ class CartTest extends TestCase
         $registry->set("cart", $cart);
 
         return $registry;
-    }
-
-    public function testCartClear()
-    {
-        $registry = $this->registry();
-
-        $cart = new Cart($registry);
-        $cart->clear();
-
-        $products = $cart->getProducts();
-        $this->assertEmpty($products, "Cart was not cleared for anonymous visitor.");
     }
 
     public function testCustomerLogin()

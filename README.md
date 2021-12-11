@@ -2,29 +2,30 @@
 
 Merchant oriented test scripts for OpenCart based on PHPUnit.
 
-__WARNING__: Never execute these tests against your live database or in server environment. It is likely to override the
-product information, pricing, images, session, passwords and more. The database may never return to its original state.
+__WARNING__: Never execute these tests against your live database or __in server environment__.
+It is likely to override the  product information, pricing, images, session, passwords and more.
+The database may never return to its original state.
 
-This project is NOT about developing the core OpenCart but the implementation of OpenCart to run a store.
+This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart) but the implementation
+of OpenCart to run a store.
 
 OCUnit reads the actual database configuration values and URLs from within your OpenCart to run tests. There are
 few [business rules](config.ini) and configurations you should edit before running the test.
 
-Take a backup first!
+But please take a backup first!
 
 ## Test Examples
-
-See how the tests are merchant oriented!
 
 * A corresponding image should exist for product or category.
     * Product Image: 800 px x 400 px
     * Category Image: 200 px x 200 px
-* A "downloadable" file has to be a .zip file only.
+* A "downloadable" file has to be in a .zip file only.
 * Directory listing is disabled throughout the website,
-* Store price cannot be less than the manufacturer price.
+* Store price cannot be less than the manufacturer price even after discounts.
 * Updating price makes a history of price change.
-* Extension tables are added into the database.
-* Products must have videos associated with them.
+  [*] Keep a log of when prices were changed.
+  * Custom Extension tables are added into the database.
+* Products must have videos associated with them in their description.
 * Concise inventory statistics generation.
 
 Not [all the tests](logs/testdox.txt) are complete. See those with x mark.
@@ -55,7 +56,7 @@ Dependency                     | Version                       | Description
 
 # Installation
 
-Clone the projects and configure/install them independently:
+Clone OpenCart and OCUnit projects. Then install/configure them independently in "/oc/store" and "/oc/ocunit":
 
     cd htdocs|public_html|www|web
     mkdir oc
@@ -68,13 +69,14 @@ Download the phpunit phar file in the directory.
 
     cd ocunit
     wget https://phar.phpunit.de/phpunit-9.5.10.phar
+    mv phpunit-9.5.10.phar phpunit.phar
 
 Update the composer dependencies:
 
     wget https://getcomposer.org/download/latest-stable/composer.phar
     php8.0 composer.phar update
 
-# Configuration
+# Configuration of OCUnit
 
 * Edit [config.ini](config.ini) for project paths, business rules, catalog information etc.
 * Carefully edit your statistics in `$tables_counters`.
@@ -86,23 +88,23 @@ Update the composer dependencies:
 * Under Windows: `.\run8.0.bat`
 * Or, under Linux: `./run8.0.sh`
 
-To run specific tests, an example would be: `php phpunit-9.5.8.phar cases/general`, which runs faster than running all
-the test cases. Other examples are one of:
+To run specific tests, an example would be: `php phpunit.phar.phar cases/general`, which runs faster than running all
+the test cases. Other examples are __one of__:
 
-    php phpunit-9.5.10.phar cases/admin
-    php phpunit-9.5.10.phar cases/api
-    php phpunit-9.5.10.phar cases/business
-    php phpunit-9.5.10.phar cases/catalog
-    php phpunit-9.5.10.phar cases/core
-    php phpunit-9.5.10.phar cases/database
-    php phpunit-9.5.10.phar cases/general
-    php phpunit-9.5.10.phar cases/issues
-    php phpunit-9.5.10.phar cases/mail
-    php phpunit-9.5.10.phar cases/report
+    php phpunit.phar cases/admin
+    php phpunit.phar cases/api
+    php phpunit.phar cases/business
+    php phpunit.phar cases/catalog
+    php phpunit.phar cases/core
+    php phpunit.phar cases/database
+    php phpunit.phar cases/general
+    php phpunit.phar cases/issues
+    php phpunit.phar cases/mail
+    php phpunit.phar cases/report
 
 Also, you can specify an individual test file to run, for example:
 
-    php phpunit-9.5.10.phar cases/database/CountersTest.php
+    php phpunit.phar cases/database/CountersTest.php
 
 More information on tests is available at: https://phpunit.readthedocs.io/en/9.5/textui.html.
 

@@ -49,7 +49,7 @@ Case                       | Description
 Dependency                     | Version                       | Description
 -------------------------------|-------------------------------|---------------------
 [PHP](https://www.php.net/)    | 8.0.8+                        | -
-[PHPUnit](https://phpunit.de/) | 9.5.8+                        | -
+[PHPUnit](https://phpunit.de/) | 9.5.10+                        | -
 [OpenCart](https://github.com/opencart/opencart)               | 4.0.0+ | master branch
 [relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
 
@@ -67,7 +67,7 @@ Clone the projects and configure/install them independently:
 Download the phpunit phar file in the directory.
 
     cd ocunit
-    wget https://phar.phpunit.de/phpunit-9.5.8.phar
+    wget https://phar.phpunit.de/phpunit-9.5.10.phar
 
 Update the composer dependencies:
 
@@ -76,12 +76,12 @@ Update the composer dependencies:
 
 # Configuration
 
-* Edit [config.ini](config.ini) for paths, business rules, catalog information etc.
-* Carefully edit your table statistics `$tables_counters`.
+* Edit [config.ini](config.ini) for project paths, business rules, catalog information etc.
+* Carefully edit your statistics in `$tables_counters`.
 
 # Test Execution
 
-`php phpunit-9.5.8.phar` runs the entire test cases.
+`php phpunit-9.5.10.phar` runs the entire test cases.
 
 * Under Windows: `.\run8.0.bat`
 * Or, under Linux: `./run8.0.sh`
@@ -89,20 +89,20 @@ Update the composer dependencies:
 To run specific tests, an example would be: `php phpunit-9.5.8.phar cases/general`, which runs faster than running all
 the test cases. Other examples are one of:
 
-    php phpunit-9.5.8.phar cases/admin
-    php phpunit-9.5.8.phar cases/api
-    php phpunit-9.5.8.phar cases/business
-    php phpunit-9.5.8.phar cases/catalog
-    php phpunit-9.5.8.phar cases/core
-    php phpunit-9.5.8.phar cases/database
-    php phpunit-9.5.8.phar cases/general
-    php phpunit-9.5.8.phar cases/issues
-    php phpunit-9.5.8.phar cases/mail
-    php phpunit-9.5.8.phar cases/report
+    php phpunit-9.5.10.phar cases/admin
+    php phpunit-9.5.10.phar cases/api
+    php phpunit-9.5.10.phar cases/business
+    php phpunit-9.5.10.phar cases/catalog
+    php phpunit-9.5.10.phar cases/core
+    php phpunit-9.5.10.phar cases/database
+    php phpunit-9.5.10.phar cases/general
+    php phpunit-9.5.10.phar cases/issues
+    php phpunit-9.5.10.phar cases/mail
+    php phpunit-9.5.10.phar cases/report
 
 Also, you can specify an individual test file to run, for example:
 
-    php phpunit-9.5.8.phar cases/database/CountersTest.php
+    php phpunit-9.5.10.phar cases/database/CountersTest.php
 
 More information on tests is available at: https://phpunit.readthedocs.io/en/9.5/textui.html.
 
@@ -128,4 +128,4 @@ in __@anytizer__/ocunit project.
 # Made with
 
 * [VS Code](https://code.visualstudio.com/download) + [SonarLint](https://www.sonarlint.org/)
-  | [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer)
+* [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer)

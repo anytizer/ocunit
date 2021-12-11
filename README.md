@@ -17,8 +17,8 @@ Take a backup first!
 See how the tests are merchant oriented!
 
 * A corresponding image should exist for product or category.
-    * Product Image: 800x400 px
-    * Category Image: 200x200 px
+    * Product Image: 800 px x 400 px
+    * Category Image: 200 px x 200 px
 * A "downloadable" file has to be a .zip file only.
 * Directory listing is disabled throughout the website,
 * Store price cannot be less than the manufacturer price.

@@ -6,6 +6,8 @@ __WARNING__: Never execute these tests against your live database or __in server
 It is likely to override the  product information, pricing, images, session, passwords and more.
 The database may never return to its original state.
 
+![Sample Output](sample-output.png)
+
 This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart) but the implementation
 of OpenCart to run a store.
 

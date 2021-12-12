@@ -2,10 +2,12 @@
 
 namespace library;
 
+use \Exception;
+
 class oc
 {
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     function must_include($directory = ".", $file="config.php"): void
     {
@@ -14,15 +16,18 @@ class oc
         }
         else
         {
-            throw new \Exception("Cannot include: {$directory}/{$file}");
+            throw new Exception("Cannot include: {$directory}/{$file}");
         }
     }
 
+    /**
+     * @throws Exception
+     */
     function must_define($constant=""): void
     {
         if(!defined($constant))
         {
-            throw new \Exception("Must define: {$constant}");
+            throw new Exception("Must define: {$constant}");
         }
     }
 }

@@ -3,9 +3,6 @@
 /*.zip
 /out
 /vendor
-/logs/*.log
-/logs/testdox.html
-/logs/testdox.xml
-/logs/visual-report.txt
+/logs/*.*
 /ini.php
 /.idea

@@ -6,7 +6,7 @@ User login history is kept
 Home page can browse a list of categories, subcategories and product count
 Information, gdpr, terms and conditions pages are complete
 Business descriptions of products are complete.
-All categoies are described well.
+All categories are described well.
 Images present in products.
 Images present in categories.
 Cannot cancel an order twice.
@@ -24,5 +24,5 @@ limit countries of business operation
 
 reset database ids to start with 1, after removing demo data
 
-http://localhost/opencart/upload/admin/index.php?route=catalog/download&user_token=
+http://localhost/oc/store/upload/admin/index.php?route=catalog/download&user_token=
 Download Name | File Mask | Link

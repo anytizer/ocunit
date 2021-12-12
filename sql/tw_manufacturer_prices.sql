@@ -1,4 +1,4 @@
--- Create manufacturer price
+-- Create manufacturer price log
 
 CREATE TABLE `tw_manufacturer_prices`
 (

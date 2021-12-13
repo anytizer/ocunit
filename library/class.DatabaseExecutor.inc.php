@@ -2,8 +2,8 @@
 
 namespace ocunit\library;
 
-use ocunit\library\fql as fql;
-use ocunit\library\MySQLPDO;
+use \ocunit\library\fql as fql;
+use \ocunit\library\MySQLPDO as MySQLPDO;
 
 class DatabaseExecutor
 {
@@ -55,9 +55,7 @@ class DatabaseExecutor
         $pdo = new MySQLPDO();
 
         $sql = "SHOW TABLE STATUS FROM `" . DB_DATABASE . "` WHERE ENGINE IS NOT NULL;";
-        $statistics = $pdo->query($sql);
-
-        return $statistics;
+        return $pdo->query($sql);
     }
 
     public function downloads(): array
@@ -65,9 +63,7 @@ class DatabaseExecutor
         $pdo = new MySQLPDO();
 
         $downloads_sql = (new fql())->read("downloads.sql");
-        $downloads = $pdo->query($downloads_sql);
-
-        return $downloads;
+        return $pdo->query($downloads_sql);
     }
 
     public function downloadable_products(): array
@@ -78,9 +74,7 @@ class DatabaseExecutor
         $products_sql = (new fql())->read("downloadable_products.sql");
         $products_sql = str_replace("10", $configurations["business_rules"]["downloadable_product_tax_class_id"], $products_sql);
 
-        $products = $pdo->query($products_sql);
-
-        return $products;
+        return $pdo->query($products_sql);
     }
 
     public function physical_products(): array
@@ -101,9 +95,7 @@ class DatabaseExecutor
         $pdo = new MySQLPDO();
 
         $sql = "SELECT category_id, image FROM `" . DB_PREFIX . "category`;";
-        $categories = $pdo->query($sql);
-
-        return $categories;
+        return $pdo->query($sql);
     }
 
     public function products(): array

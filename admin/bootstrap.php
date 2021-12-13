@@ -14,3 +14,5 @@ try {
     $occonfig->must_define("HTTP_CATALOG");
 } catch (\Exception $e) {
 }
+
+require_once("../continuation.inc.php");

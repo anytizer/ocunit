@@ -2,7 +2,7 @@
 
 namespace ocunit\admin\cases\admin;
 
-use ocunit\library\DatabaseExecutor;
+use ocunit\library\DatabaseExecutor as DatabaseExecutor;
 use PHPUnit\Framework\TestCase;
 
 class DownloadsTest extends TestCase

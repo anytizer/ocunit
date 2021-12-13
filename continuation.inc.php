@@ -14,13 +14,13 @@ require_once DIR_SYSTEM . "engine/config.php";
 
 require_once("vendor/autoload.php");
 
-require_once("library/class.fql.inc.php");
-require_once("library/class.MySQLPDO.inc.php");
-require_once("library/class.DatabaseExecutor.inc.php");
-require_once("library/class.api.inc.php");
-require_once("library/class.catalog.inc.php");
-require_once("library/class.admin.inc.php");
-require_once("library/class.credentials.inc.php");
+require_once(__OCUNIT_ROOT__."/library/class.fql.inc.php");
+require_once(__OCUNIT_ROOT__."/library/class.MySQLPDO.inc.php");
+require_once(__OCUNIT_ROOT__."/library/class.DatabaseExecutor.inc.php");
+require_once(__OCUNIT_ROOT__."/library/class.api.inc.php");
+require_once(__OCUNIT_ROOT__."/library/class.catalog.inc.php");
+require_once(__OCUNIT_ROOT__."/library/class.admin.inc.php");
+require_once(__OCUNIT_ROOT__."/library/class.credentials.inc.php");
 
 /**
  * Basic headers to browse OpenCart pages
@@ -30,7 +30,7 @@ if (empty($_SERVER["REMOTE_ADDR"])) {
 }
 
 #global $autoloader;
-$autoloader = new Opencart\System\Engine\Autoloader();
+$autoloader = new \Opencart\System\Engine\Autoloader();
 $autoloader->register("Opencart\\" . APPLICATION, DIR_APPLICATION);
 $autoloader->register("Opencart\Extension", DIR_EXTENSION);
 $autoloader->register("Opencart\System", DIR_SYSTEM);

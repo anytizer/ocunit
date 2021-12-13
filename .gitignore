@@ -8,3 +8,6 @@
 /.idea
 /catalog/.phpunit.result.cache
 /admin/.phpunit.result.cache
+/admin/logs
+/catalog/logs
+/*.lock

@@ -90,11 +90,11 @@ Update the composer dependencies:
 # Test Execution
 
 `cd admin`
-`php ../phpunit.phar ../admin` runs the entire test cases.
+`php ../phpunit.phar cases/admin` runs the entire admin test cases.
 
 Or,
 `cd catalog`
-`php ../phpunit.phar ../catalog`
+`php ../phpunit.phar cases/catalog`
 
 * Under Windows: `.\run8.0.bat`
 * Or, under Linux: `./run8.0.sh`

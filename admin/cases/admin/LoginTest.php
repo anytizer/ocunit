@@ -2,7 +2,7 @@
 
 namespace cases\admin;
 
-use library\admin;
+use ocunit\library\admin;
 use PHPUnit\Framework\TestCase;
 
 class LoginTest extends TestCase
@@ -86,6 +86,10 @@ class LoginTest extends TestCase
 
     public function testGuestCheckout()
     {
-        $this->markTestIncomplete("Guest checkout disabled.");
+        $guest = new Customer();
+        $guest->buildCart();
+        $guest->checkout();
+
+        $this->markTestIncomplete("Guest checkout to be disabled.");
     }
 }

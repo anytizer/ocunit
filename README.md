@@ -1,6 +1,6 @@
 # OCUnit
 
-Merchant oriented test scripts for OpenCart based on PHPUnit.
+Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based on [PHPUnit](https://phpunit.de).
 
 __WARNING__: Never execute these tests against your live database or __in server environment__.
 It is likely to override the  product information, pricing, images, session, passwords and more.
@@ -11,13 +11,13 @@ The database may never return to its original state.
 This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart) but the implementation
 of OpenCart to run a store.
 
+Business rules may differ per business. Hence, most of the tests are empty.
+But they should guide you technically on how to write teh tests.
+
 OCUnit reads the actual database configuration values and URLs from within your OpenCart to run tests. There are
 few [business rules](config.ini) and configurations you should edit before running the test.
 
-But please take a backup first!
-Run OCUnit at your own risk.
-
-#
+But please take a backup first! Run OCUnit at your own risk.
 
 # Test Examples
 
@@ -25,11 +25,12 @@ Run OCUnit at your own risk.
     * Product Image: 800 px x 400 px
     * Category Image: 200 px x 200 px
 * A "downloadable" file has to be in a .zip file only.
-* Directory listing is disabled throughout the website,
+* Directory listing should be disabled throughout the website,
 * Store price cannot be less than the manufacturer price even after discounts.
 * Updating price makes a history of price change.
   [*] Keep a log of when prices were changed.
-  * Custom Extension tables are added into the database.
+  [*] Maintain a price change history.
+  [*] Create a price log table.
 * Products must have videos associated with them in their description.
 * Concise inventory statistics generation.
 

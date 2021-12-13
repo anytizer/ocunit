@@ -80,7 +80,7 @@ Download the phpunit phar file in the directory.
 Update the composer dependencies:
 
     wget https://getcomposer.org/download/latest-stable/composer.phar
-    php8.0 composer.phar update
+    php composer.phar update
 
 # Configuration of OCUnit
 
@@ -89,12 +89,13 @@ Update the composer dependencies:
 
 # Test Execution
 
-`cd admin`
-`php ../phpunit.phar cases/admin` runs the entire admin test cases.
+    cd admin
+    php ../phpunit.phar cases/admin
 
 Or,
-`cd catalog`
-`php ../phpunit.phar cases/catalog`
+
+    cd catalog
+    php ../phpunit.phar cases/catalog
 
 * Under Windows: `.\run8.0.bat`
 * Or, under Linux: `./run8.0.sh`

@@ -5,13 +5,13 @@
     <coverage/>
     <testsuites>
         <testsuite name="Combined Admin Cases">
-            <directory suffix="Test.php">../admin</directory>
+            <directory suffix="Test.php">cases/admin</directory>
         </testsuite>
     </testsuites>
     <logging>
-        <testdoxText outputFile="../logs/admin/testdox.txt"/>
-        <testdoxHtml outputFile="../logs/admin/testdox.html"/>
-        <testdoxXml outputFile="../logs/admin/testdox.xml"/>
-        <text outputFile="../logs/admin/visual-report.txt"/>
+        <testdoxText outputFile="logs/testdox.txt"/>
+        <testdoxHtml outputFile="logs/testdox.html"/>
+        <testdoxXml outputFile="logs/testdox.xml"/>
+        <text outputFile="logs/visual-report.txt"/>
     </logging>
 </phpunit>

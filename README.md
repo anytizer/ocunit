@@ -8,16 +8,17 @@ The database may never return to its original state.
 
 ![Sample Output](sample-output.png)
 
+Tests have been now separated to admin or catalog.
+
 This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart) but the implementation
 of OpenCart to run a store.
 
-Business rules may differ per business. Hence, most of the tests are empty.
-But they should guide you technically on how to write teh tests.
+OCUnit reads the real database configuration values and URLs from within your OpenCart's config.php files to run tests.
+There are few [business rules](config.ini) and configurations you should edit before running the test.
+Rules may differ per business. Hence, most of the tests are empty.
+But they should guide you technically on how to write the tests.
 
-OCUnit reads the actual database configuration values and URLs from within your OpenCart to run tests. There are
-few [business rules](config.ini) and configurations you should edit before running the test.
-
-But please take a backup first! Run OCUnit at your own risk.
+Please make a backup first! Run OCUnit at your own risk.
 
 # Test Examples
 
@@ -28,13 +29,13 @@ But please take a backup first! Run OCUnit at your own risk.
 * Directory listing should be disabled throughout the website,
 * Store price cannot be less than the manufacturer price even after discounts.
 * Updating price makes a history of price change.
-  [*] Keep a log of when prices were changed.
-  [*] Maintain a price change history.
-  [*] Create a price log table.
+  * [x] Keep a log of when prices were changed.
+  * [x] Maintain a price change history.
+  * [x] Create a price log table.
 * Products must have videos associated with them in their description.
 * Concise inventory statistics generation.
 
-Not [all the tests](logs/testdox.txt) are complete. See those with x mark.
+These are just samples to illustrate how business rules are tested.
 
 # Test Cases
 
@@ -56,7 +57,7 @@ Case                       | Description
 Dependency                     | Version                       | Description
 -------------------------------|-------------------------------|---------------------
 [PHP](https://www.php.net/)    | 8.0.8+                        | -
-[PHPUnit](https://phpunit.de/) | 9.5.10+                        | -
+[PHPUnit](https://phpunit.de/) | 9.5.10+                       | -
 [OpenCart](https://github.com/opencart/opencart)               | 4.0.0+ | master branch
 [relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
 

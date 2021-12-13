@@ -1,8 +1,8 @@
 <?php
 
-namespace cases\report;
+namespace ocunit\catalog\cases\report;
 
-use library\DatabaseExecutor;
+use ocunit\library\DatabaseExecutor;
 use PHPUnit\Framework\TestCase;
 
 class RecordsCountTest extends TestCase

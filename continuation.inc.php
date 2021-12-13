@@ -12,15 +12,15 @@ require_once DIR_STORAGE . "vendor/autoload.php";
 require_once DIR_SYSTEM . "engine/autoloader.php";
 require_once DIR_SYSTEM . "engine/config.php";
 
-require_once("vendor/autoload.php");
+require_once(__OCUNIT_ROOT__."/vendor/autoload.php");
 
-require_once(__OCUNIT_ROOT__."/library/class.fql.inc.php");
-require_once(__OCUNIT_ROOT__."/library/class.MySQLPDO.inc.php");
-require_once(__OCUNIT_ROOT__."/library/class.DatabaseExecutor.inc.php");
-require_once(__OCUNIT_ROOT__."/library/class.api.inc.php");
-require_once(__OCUNIT_ROOT__."/library/class.catalog.inc.php");
-require_once(__OCUNIT_ROOT__."/library/class.admin.inc.php");
-require_once(__OCUNIT_ROOT__."/library/class.credentials.inc.php");
+require_once(__OCUNIT_ROOT__."/library/FQL.php");
+require_once(__OCUNIT_ROOT__."/library/MySQLPDO.php");
+require_once(__OCUNIT_ROOT__."/library/DatabaseExecutor.php");
+require_once(__OCUNIT_ROOT__."/library/api.php");
+require_once(__OCUNIT_ROOT__."/library/catalog.php");
+require_once(__OCUNIT_ROOT__."/library/admin.php");
+require_once(__OCUNIT_ROOT__."/library/credentials.php");
 
 /**
  * Basic headers to browse OpenCart pages
@@ -29,8 +29,9 @@ if (empty($_SERVER["REMOTE_ADDR"])) {
     $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
 }
 
-#global $autoloader;
-$autoloader = new \Opencart\System\Engine\Autoloader();
-$autoloader->register("Opencart\\" . APPLICATION, DIR_APPLICATION);
-$autoloader->register("Opencart\Extension", DIR_EXTENSION);
-$autoloader->register("Opencart\System", DIR_SYSTEM);
+use \Opencart\System\Engine\Autoloader as Autoloader;
+$autoloader = new Autoloader();
+$autoloader->register("Opencart\\Admin", DIR_APPLICATION);
+$autoloader->register("Opencart\\Catalog", DIR_OPENCART."/catalog");
+$autoloader->register("Opencart\\Extension", DIR_EXTENSION);
+$autoloader->register("Opencart\\System", DIR_SYSTEM);

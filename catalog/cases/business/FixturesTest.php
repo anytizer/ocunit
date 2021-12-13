@@ -144,7 +144,7 @@ class FixturesTest extends TestCase
     {
         $pdo = new MySQLPDO();
 
-        $sql = (new fql())->read("oc_setting.sql");
+        $sql = (new FQL())->read("oc_setting.sql");
         $pdo->raw($sql, []);
 
         $this->assertTrue(true, "Admin pagination size increased.");

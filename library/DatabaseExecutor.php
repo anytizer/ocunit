@@ -62,7 +62,7 @@ class DatabaseExecutor
     {
         $pdo = new MySQLPDO();
 
-        $downloads_sql = (new fql())->read("downloads.sql");
+        $downloads_sql = (new FQL())->read("downloads.sql");
         return $pdo->query($downloads_sql);
     }
 
@@ -71,7 +71,7 @@ class DatabaseExecutor
         global $configurations;
         $pdo = new MySQLPDO();
 
-        $products_sql = (new fql())->read("downloadable_products.sql");
+        $products_sql = (new FQL())->read("downloadable_products.sql");
         $products_sql = str_replace("10", $configurations["business_rules"]["downloadable_product_tax_class_id"], $products_sql);
 
         return $pdo->query($products_sql);
@@ -82,7 +82,7 @@ class DatabaseExecutor
         global $configurations;
         $pdo = new MySQLPDO();
 
-        $products_sql = (new fql())->read("physical_products.sql");
+        $products_sql = (new FQL())->read("physical_products.sql");
         $products_sql = str_replace("10", $configurations["business_rules"]["downloadable_product_tax_class_id"], $products_sql);
 
         $products = $pdo->query($products_sql);
@@ -112,7 +112,7 @@ class DatabaseExecutor
     {
         $pdo = new MySQLPDO();
 
-        $sql = (new fql())->read("inventories.sql");
+        $sql = (new FQL())->read("inventories.sql");
         $inventories = $pdo->query($sql);
 
         return $inventories;

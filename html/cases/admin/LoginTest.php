@@ -3,6 +3,7 @@
 namespace cases\admin;
 
 use ocunit\library\admin;
+use ocunit\library\Customer;
 use PHPUnit\Framework\TestCase;
 
 class LoginTest extends TestCase
@@ -81,6 +82,15 @@ class LoginTest extends TestCase
     public function testCustomerApprovalRequiredForLogin()
     {
         // @todo Move to catalog
+        // Create a customer
+        // Try to login
+        // Should fail
+
+        $guest = new Customer();
+        $guest->signup("guest@example.com");
+        $guest->set_password("guest");
+        $guest->login();
+
         $this->markTestIncomplete("Customer approval required for login.");
     }
 

@@ -3,7 +3,7 @@ namespace ocunit\library;
 
 if(!defined("DB_PREFIX")) { define("DB_PREFIX", "oc_"); }
 
-class fql
+class FQL
 {
     public function read($sql_filename = ""): string
     {

@@ -11,3 +11,5 @@
 /admin/logs
 /catalog/logs
 /*.lock
+/html/.phpunit.result.cache
+/html/logs

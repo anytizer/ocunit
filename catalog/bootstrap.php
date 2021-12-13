@@ -1,10 +1,15 @@
 <?php
-require_once "../bootstrap.php";
+namespace ocunit\admin;
 
-require_once("../library/class.oc.inc.php");
-$occonfig = new library\oc();
-$occonfig->must_include(realpath($configurations["opencart"]["store"]), "config.php");
-$occonfig->must_define("DIR_SYSTEM");
-$occonfig->must_define("DIR_STORAGE");
+use \ocunit\library\oc as oc;
+
+require_once "../config.php";
+
+require_once(__OCUNIT_ROOT__."/library/class.oc.inc.php");
+
+$oc = new oc();
+$oc->must_include(realpath($configurations["opencart"]["store"]), "config.php");
+$oc->must_define("DIR_SYSTEM");
+$oc->must_define("DIR_STORAGE");
 
 require_once "../continuation.inc.php";

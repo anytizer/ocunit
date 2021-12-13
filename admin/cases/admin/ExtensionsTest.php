@@ -41,7 +41,7 @@ class ExtensionsTest extends TestCase
         ];
 
         foreach ($files as $filename) {
-            $sql = (new fql())->read($filename);
+            $sql = (new FQL())->read($filename);
             $pdo->raw($sql, []);
         }
     }

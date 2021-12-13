@@ -5,6 +5,9 @@ use \ocunit\library\oc;
 require_once "../bootstrap.php";
 
 require_once("../library/class.oc.inc.php");
+
+global $configurations;
+
 $occonfig = new oc();
 try {
     $occonfig->must_include(realpath($configurations["opencart"]["admin"]), "config.php");

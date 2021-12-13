@@ -2,9 +2,9 @@
 
 namespace cases\business;
 
-use library\DatabaseExecutor;
-use library\fql;
-use library\MySQLPDO;
+use ocunit\library\DatabaseExecutor;
+use ocunit\library\FQL;
+use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
 
 class FixturesTest extends TestCase

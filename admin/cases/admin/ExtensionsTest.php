@@ -3,7 +3,7 @@
 namespace ocunit\admin\cases\admin;
 
 use ocunit\library\DatabaseExecutor;
-use ocunit\library\fql;
+use ocunit\library\FQL as FQL;
 use ocunit\library\MySQLPDO;
 use PDOException;
 use PHPUnit\Framework\TestCase;

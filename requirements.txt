@@ -1,0 +1,16 @@
+# PHP Settings
+# ---------------------
+# PHP Version	8.0.13
+# Register Globals Off
+# Magic Quotes GPC Off
+# File Uploads On
+# Session Auto Start Off
+
+# Extension Settings
+# ---------------------
+# Database
+# GD
+# cURL
+# OpenSSL
+# ZLib
+# Zip

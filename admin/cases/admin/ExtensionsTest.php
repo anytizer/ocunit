@@ -1,10 +1,10 @@
 <?php
 
-namespace cases\admin;
+namespace ocunit\admin\cases\admin;
 
-use library\DatabaseExecutor;
-use library\fql;
-use library\MySQLPDO;
+use ocunit\library\DatabaseExecutor;
+use ocunit\library\fql;
+use ocunit\library\MySQLPDO;
 use PDOException;
 use PHPUnit\Framework\TestCase;
 

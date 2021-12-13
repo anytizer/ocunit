@@ -1,9 +1,9 @@
 <?php
 
-namespace library;
+namespace ocunit\library;
 
-use library\fql as fql;
-use library\MySQLPDO as MySQLPDO;
+use ocunit\library\fql as fql;
+use ocunit\library\MySQLPDO;
 
 class DatabaseExecutor
 {

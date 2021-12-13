@@ -1,33 +1,3 @@
-Downloads (cases\admin\Downloads)
- [ ] Downloadable files must be zip format
- [ ] Download should exist
- [ ] Downloadable product has a file linked
- [ ] Add mime column
- [ ] Add size column
- [ ] Add hash column
- [ ] Others
-
-Extensions (cases\admin\Extensions)
- [x] Third party extension tables are present
- [x] Create missing third party extension tables
-
-Login (cases\admin\Login)
- [ ] Black list system user demanders
- [ ] Admin brute force login discouraged
- [ ] Login fails
- [ ] Login succeeds
- [ ] Customer login form has captcha
- [ ] Customer approval required for login
- [ ] Guest checkout
-
-Order Cancel (cases\admin\OrderCancel)
- [ ] Order cancelled properly
- [ ] Do not cancel incomplete order
-
-Settings (cases\admin\Settings)
- [x] Database constants defined
- [ ] Other settings defined
-
 Api (cases\api\Api)
  [ ] Get api token
  [ ] Access routes

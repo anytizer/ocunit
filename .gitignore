@@ -6,3 +6,5 @@
 /logs/*.*
 /ini.php
 /.idea
+/catalog/.phpunit.result.cache
+/admin/.phpunit.result.cache

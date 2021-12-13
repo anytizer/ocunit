@@ -1,6 +1,6 @@
 <?php
 
-namespace library;
+namespace ocunit\library;
 
 use PDO as PDO;
 
@@ -41,8 +41,7 @@ class MySQLPDO
         /**
          * Return the data
          */
-        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**

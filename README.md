@@ -15,8 +15,11 @@ OCUnit reads the actual database configuration values and URLs from within your 
 few [business rules](config.ini) and configurations you should edit before running the test.
 
 But please take a backup first!
+Run OCUnit at your own risk.
 
-## Test Examples
+#
+
+# Test Examples
 
 * A corresponding image should exist for product or category.
     * Product Image: 800 px x 400 px
@@ -71,6 +74,7 @@ Download the phpunit phar file in the directory.
 
     cd ocunit
     wget https://phar.phpunit.de/phpunit-9.5.10.phar
+
     mv phpunit-9.5.10.phar phpunit.phar
 
 Update the composer dependencies:
@@ -85,28 +89,15 @@ Update the composer dependencies:
 
 # Test Execution
 
-`php phpunit-9.5.10.phar` runs the entire test cases.
+`cd admin`
+`php ../phpunit.phar ../admin` runs the entire test cases.
+
+Or,
+`cd catalog`
+`php ../phpunit.phar ../catalog`
 
 * Under Windows: `.\run8.0.bat`
 * Or, under Linux: `./run8.0.sh`
-
-To run specific tests, an example would be: `php phpunit.phar.phar cases/general`, which runs faster than running all
-the test cases. Other examples are __one of__:
-
-    php phpunit.phar cases/admin
-    php phpunit.phar cases/api
-    php phpunit.phar cases/business
-    php phpunit.phar cases/catalog
-    php phpunit.phar cases/core
-    php phpunit.phar cases/database
-    php phpunit.phar cases/general
-    php phpunit.phar cases/issues
-    php phpunit.phar cases/mail
-    php phpunit.phar cases/report
-
-Also, you can specify an individual test file to run, for example:
-
-    php phpunit.phar cases/database/CountersTest.php
 
 More information on tests is available at: https://phpunit.readthedocs.io/en/9.5/textui.html.
 

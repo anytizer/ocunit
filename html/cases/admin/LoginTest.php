@@ -97,7 +97,7 @@ class LoginTest extends TestCase
     public function testGuestCheckout()
     {
         $guest = new Customer();
-        $guest->buildCart();
+        $guest->build_cart();
         $guest->checkout();
 
         $this->markTestIncomplete("Guest checkout to be disabled.");

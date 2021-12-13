@@ -2,6 +2,7 @@
 
 namespace cases\admin;
 
+use Opencart\System\Library\DB\PDO;
 use PHPUnit\Framework\TestCase;
 
 class SettingsTest extends TestCase
@@ -17,8 +18,21 @@ class SettingsTest extends TestCase
         $this->assertTrue(defined("DB_PREFIX"));
     }
 
+    public function testConnectivity()
+    {
+        $connected = $this->_connect();
+        $this->assertTrue($connected);
+    }
+
+    private function _connect(): bool
+    {
+        $pdo = new PDO(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
+        return $pdo->isConnected();
+    }
+
     public function testOtherSettingsDefined()
     {
+        $this->assertTrue(defined("HTTP_CATALOG"));
         $this->assertTrue(defined("OPENCART_SERVER"));
     }
 }

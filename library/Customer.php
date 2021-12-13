@@ -20,7 +20,7 @@ class Customer
     }
 
 
-    public function buildCart()
+    public function build_cart()
     {
 
     }

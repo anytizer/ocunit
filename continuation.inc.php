@@ -21,6 +21,7 @@ require_once(__OCUNIT_ROOT__."/library/api.php");
 require_once(__OCUNIT_ROOT__."/library/catalog.php");
 require_once(__OCUNIT_ROOT__."/library/admin.php");
 require_once(__OCUNIT_ROOT__."/library/credentials.php");
+require_once(__OCUNIT_ROOT__."/library/Order.php");
 
 /**
  * Basic headers to browse OpenCart pages

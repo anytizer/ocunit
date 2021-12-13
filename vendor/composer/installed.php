@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '875527d4dd42dddfc04db0ceac99a3f381d5cd9d',
+        'reference' => '1fc686056dc9ba8f0cf790fca8e3cea91f4cffcf',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '875527d4dd42dddfc04db0ceac99a3f381d5cd9d',
+            'reference' => '1fc686056dc9ba8f0cf790fca8e3cea91f4cffcf',
             'dev_requirement' => false,
         ),
         'anytizer/relay.php' => array(
@@ -112,6 +112,15 @@
             'install_path' => __DIR__ . '/../phpspec/prophecy',
             'aliases' => array(),
             'reference' => 'bbcd7380b0ebf3961ee21409db7b38bc31d69a13',
+            'dev_requirement' => true,
+        ),
+        'phpstan/phpstan' => array(
+            'pretty_version' => '1.2.0',
+            'version' => '1.2.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpstan/phpstan',
+            'aliases' => array(),
+            'reference' => 'cbe085f9fdead5b6d62e4c022ca52dc9427a10ee',
             'dev_requirement' => true,
         ),
         'phpunit/php-code-coverage' => array(

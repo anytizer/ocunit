@@ -7,30 +7,21 @@ use PHPUnit\Framework\TestCase;
 
 class DownloadsTest extends TestCase
 {
-    public function testDownloadableFilesMustBeZipFormat()
+    private array $downloadables = [];
+    public function setUp(): void
     {
-        $downloads = $this->_downloads();
+        if(empty($this->downloadables))
+        {
+            $dbx = new DatabaseExecutor();
+            $this->downloadables = $dbx->downloads();
 
-        foreach ($downloads as $download) {
-            $extension = pathinfo(basename($download["mask"]))["extension"];
-            $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only: {$download['mask']}");
+            $this->assertNotEmpty($this->downloadables, "Your store does not have downloadable products.");
         }
-    }
-
-    private function _downloads()
-    {
-        $dbx = new DatabaseExecutor();
-        $downloads = $dbx->downloads();
-
-        assert(count($downloads) > 0, "Your store does not have downloadable products.");
-        return $downloads;
     }
 
     public function testDownloadShouldExist()
     {
-        $downloads = $this->_downloads();
-
-        foreach ($downloads as $download) {
+        foreach ($this->downloadables as $download) {
             $download['filename'] = basename($download['filename']);
             $masked_file = DIR_STORAGE . "download/{$download['filename']}";
 
@@ -39,16 +30,22 @@ class DownloadsTest extends TestCase
         }
     }
 
+    public function testDownloadableFilesMustBeZipFormat()
+    {
+        foreach ( $this->downloadables as $download) {
+            $extension = pathinfo(basename($download["mask"]))["extension"];
+            $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only: {$download['mask']}");
+        }
+    }
+
     public function testDownloadableProductHasAFileLinked()
     {
-        $downloads = $this->_downloads();
-
         $dbx = new DatabaseExecutor();
         $downloadable_products = $dbx->downloadable_products();
         foreach ($downloadable_products as $product) {
             // check downloadable record exists
             $download_found = false;
-            foreach ($downloads as $download) {
+            foreach ($this->downloadables as $download) {
                 if ($download["product_id"] == $product["product_id"]) {
                     $download_found = true;
                 }

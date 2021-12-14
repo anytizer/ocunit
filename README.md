@@ -3,7 +3,7 @@
 Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based on [PHPUnit](https://phpunit.de).
 
 __WARNING__: Never execute these tests against your live database or __in server environment__.
-It is likely to override the  product information, pricing, images, session, passwords and more.
+It is likely to overwrite the  product information, pricing, images, session, passwords and more.
 The database may never return to its original state.
 
 ![Sample Output](sample-output.png)
@@ -93,6 +93,8 @@ Update the composer dependencies:
 
     cd admin
     php ../phpunit.phar cases/admin
+
+    ..\vendor\bin\phpstan analyse ..
 
 Or,
 

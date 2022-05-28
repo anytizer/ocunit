@@ -3,7 +3,7 @@
 namespace cases\catalog;
 
 use anytizer\relay;
-use library\catalog;
+use ocunit\library\catalog;
 use PHPUnit\Framework\TestCase;
 
 class CatalogTest extends TestCase

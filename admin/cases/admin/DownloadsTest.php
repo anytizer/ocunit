@@ -15,7 +15,7 @@ class DownloadsTest extends TestCase
             $dbx = new DatabaseExecutor();
             $this->downloadables = $dbx->downloads();
 
-            $this->assertNotEmpty($this->downloadables, "Your store does not have downloadable products.");
+            $this->assertNotEmpty($this->downloadables, "Your store does not have any downloadable products.");
         }
     }
 

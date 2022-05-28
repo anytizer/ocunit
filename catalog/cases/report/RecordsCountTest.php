@@ -32,8 +32,8 @@ class RecordsCountTest extends TestCase
         $this->_logTableRecords("tables-no-data.txt", $empty);
 
         global $configurations;
-        $this->assertEquals((int)$configurations["statistics"]["non_empty"], count($non_empty), "Non-Empty Tables count mismatch!");
-        $this->assertEquals((int)$configurations["statistics"]["empty"], count($empty), "Empty Tables count mismatch!");
+        $this->assertCount((int)$configurations["statistics"]["non_empty"], $non_empty, "Non-Empty Tables count mismatch!");
+        $this->assertCount((int)$configurations["statistics"]["empty"], $empty, "Empty Tables count mismatch!");
     }
 
     private function _logTableRecords($filename = "", $data = [])

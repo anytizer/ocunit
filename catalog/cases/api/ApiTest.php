@@ -2,7 +2,7 @@
 
 namespace cases\api;
 
-use library\api;
+use ocunit\library\api;
 use PHPUnit\Framework\TestCase;
 
 class ApiTest extends TestCase

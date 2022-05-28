@@ -2,8 +2,8 @@
 
 namespace cases\database;
 
-use library\catalog;
-use library\MySQLPDO;
+use ocunit\library\catalog;
+use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
 
 class SessionTest extends TestCase

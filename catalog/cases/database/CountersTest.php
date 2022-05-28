@@ -2,7 +2,7 @@
 
 namespace cases\database;
 
-use library\MySQLPDO;
+use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
 
 class CountersTest extends TestCase

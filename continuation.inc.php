@@ -2,15 +2,16 @@
 namespace ocunit;
 
 // IDE Silencer: Do nothing as already defined in config.php files.
-if(!defined("DIR_SYSTEM")) define("DIR_SYSTEM", "../store/upload/system");
-if(!defined("DIR_STORAGE")) define("DIR_STORAGE", "../store/upload/system/storage");
+if(!defined("DIR_SYSTEM")) die("DIR_SYSTEM not defined.");
+if(!defined("DIR_STORAGE")) die("DIR_STORAGE not defined.");
 
 // Helper
-require_once DIR_SYSTEM . "helper/general.php";
-require_once DIR_SYSTEM . "helper/utf8.php";
-require_once DIR_STORAGE . "vendor/autoload.php";
-require_once DIR_SYSTEM . "engine/autoloader.php";
-require_once DIR_SYSTEM . "engine/config.php";
+$system = realpath(DIR_SYSTEM);
+require_once $system . "/helper/general.php";
+require_once $system . "/helper/utf8.php";
+require_once DIR_STORAGE . "/vendor/autoload.php";
+require_once $system . "/engine/autoloader.php";
+require_once $system . "/engine/config.php";
 
 require_once(__OCUNIT_ROOT__."/vendor/autoload.php");
 

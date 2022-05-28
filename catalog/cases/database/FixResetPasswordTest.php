@@ -2,8 +2,8 @@
 
 namespace cases\database;
 
-use library\DatabaseExecutor;
-use library\MySQLPDO;
+use ocunit\library\DatabaseExecutor;
+use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
 
 class FixResetPasswordTest extends TestCase

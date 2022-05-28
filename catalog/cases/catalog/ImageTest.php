@@ -2,7 +2,7 @@
 
 namespace cases\catalog;
 
-use library\DatabaseExecutor;
+use ocunit\library\DatabaseExecutor;
 use PHPUnit\Framework\TestCase;
 
 class ImageTest extends TestCase

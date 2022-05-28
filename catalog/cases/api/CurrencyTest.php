@@ -3,7 +3,7 @@
 namespace cases\api;
 
 use anytizer\relay;
-use library\api;
+use ocunit\library\api;
 use PHPUnit\Framework\TestCase;
 
 class CurrencyTest extends TestCase

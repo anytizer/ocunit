@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
 class DownloadsTest extends TestCase
 {
     private array $downloadables = [];
+
     public function setUp(): void
     {
         if(empty($this->downloadables))

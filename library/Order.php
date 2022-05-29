@@ -2,14 +2,11 @@
 
 namespace ocunit\library;
 
-use JetBrains\PhpStorm\Pure;
-
 class Order
 {
     public function create(): bool
     {
-        $created = $this->create_good_order();
-        return $created;
+        return $this->create_good_order();
     }
 
     public function create_good_order(): bool

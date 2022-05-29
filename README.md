@@ -8,7 +8,7 @@ The database may never return to its original state.
 
 ![Sample Output](sample-output.png)
 
-Tests have been now separated to admin or catalog.
+Tests have been now separated to [admin](./admin/cases/admin) and [catalog](catalog/cases/catalog).
 
 This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart) but the implementation
 of OpenCart to run a store.
@@ -41,22 +41,22 @@ These are just samples to illustrate how business rules are tested.
 
 Case                       | Description
 ---------------------------|---------------------------------
-[admin](cases/admin)       | various tests in admin features
-[api](cases/api)           | API tests as on [documentation](https://docs.opencart.com/en-gb/system/users/api/)
-[business](cases/business) | business logic tests
-[catalog](cases/catalog)   | frontend general tests
-[core](cases/core)         | opencart core tests
-[database](cases/database) | tests with direct database hits
-[general](cases/general)   | other uncategorized tests appear here
-[issues](cases/issues)     | For issues imported from GitHub
-[mail](cases/mail)         | test email sending features
-[report](cases/report)     | inventory and database statistics from merchant's perspectives
+[admin](admin/cases/admin)       | various tests in admin features
+[api](catalog/cases/api)           | API tests as on [documentation](https://docs.opencart.com/en-gb/system/users/api/)
+[business](catalog/cases/business) | business logic tests
+[catalog](catalog/cases/catalog)   | frontend general tests
+[core](catalog/cases/core)         | opencart core tests
+[database](catalog/cases/database) | tests with direct database hits
+[general](catalog/cases/general)   | other uncategorized tests appear here
+[issues](catalog/cases/issues)     | For issues imported from GitHub
+[mail](catalog/cases/mail)         | test email sending features
+[report](catalog/cases/report)     | inventory and database statistics from merchant's perspectives
 
 # Requirements
 
 Dependency                     | Version                       | Description
 -------------------------------|-------------------------------|---------------------
-[PHP](https://www.php.net/)    | 8.0.8+                        | -
+[PHP](https://www.php.net/)    | 8.1.1+                        | -
 [PHPUnit](https://phpunit.de/) | 9.5.10+                       | -
 [OpenCart](https://github.com/opencart/opencart)               | 4.0.0+ | master branch
 [relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
@@ -69,7 +69,7 @@ Clone OpenCart and OCUnit projects. Then install/configure them independently in
     mkdir oc
     cd oc
 
-    git clone https://github.com/opencart/opencart.git store
+    git clone https://github.com/opencart/opencart.git opencart
     git clone https://github.com/anytizer/ocunit.git ocunit
 
 Download the phpunit phar file in the directory.
@@ -125,7 +125,8 @@ If you have a specific idea on how OCUnit (Test scripts for OpenCart based on PH
 and open pull request for your new test cases. Or, create a [new issue](https://github.com/anytizer/ocunit/issues/new)
 in __@anytizer__/ocunit project.
 
-# Made with
+# Made with IDEs
 
 * [VS Code](https://code.visualstudio.com/download) + [SonarLint](https://www.sonarlint.org/)
-* [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer)
+* [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer+ocunit)
+* Notepad++

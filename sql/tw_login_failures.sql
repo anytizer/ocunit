@@ -7,4 +7,4 @@ CREATE TABLE `tw_login_failures`
     `login_browser`    varchar(255)        NOT NULL DEFAULT '',
     PRIMARY KEY (`login_failure_id`)
 ) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+  DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;

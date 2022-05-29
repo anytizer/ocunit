@@ -21,5 +21,6 @@ define("__OCUNIT_ROOT__", dirname(__FILE__, 1)); // do not change it
 
 /**
  * Should I run expensive database operations?
+ * Boolean true/false value
  */
-define("__OCUNIT_EXECUTE_EXPENSIVE__", (bool)$configurations["ocunit"]["execute_expensive"]);
+define("__OCUNIT_EXECUTE_EXPENSIVE__", $configurations["ocunit"]["execute_expensive"] == "true");

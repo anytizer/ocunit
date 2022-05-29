@@ -36,6 +36,6 @@ class MailTest extends TestCase
 
     public function testEmailIsWhitelisted()
     {
-        $this->markTestIncomplete("Email is whitelisted.");
+        $this->markTestIncomplete("Email is whitelisted. Send an email. Confirm received.");
     }
 }

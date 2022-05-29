@@ -2,8 +2,8 @@
 
 namespace ocunit\library;
 
-use \ocunit\library\fql as fql;
-use \ocunit\library\MySQLPDO as MySQLPDO;
+use ocunit\library\MySQLPDO as MySQLPDO;
+use ocunit\library\FQL;
 
 class DatabaseExecutor
 {

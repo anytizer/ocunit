@@ -19,7 +19,7 @@ class MailTest extends TestCase
     public function testEmailSentFromLinuxMachine()
     {
         /**
-         * @todo Server should run under Linux
+         * @todo Important: Server should run under Linux only!
          */
         $this->markTestIncomplete("Email not sent from Linux.");
     }

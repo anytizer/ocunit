@@ -1,6 +1,13 @@
 <?php
 namespace ocunit;
 
+/**
+ * Basic headers to browse OpenCart pages
+ */
+if (empty($_SERVER["REMOTE_ADDR"])) $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
+if(empty($_SERVER["HTTP_USER_AGENT"])) $_SERVER["HTTP_USER_AGENT"] = "ocunit";
+if(empty($_SERVER["HTTP_REFERER"])) $_SERVER["HTTP_REFERER"] = "http://localhost/oc/opencart/";
+
 // IDE Silencer: Do nothing as already defined in config.php files.
 if(!defined("DIR_SYSTEM")) die("DIR_SYSTEM not defined.");
 if(!defined("DIR_STORAGE")) die("DIR_STORAGE not defined.");
@@ -23,13 +30,6 @@ require_once(__OCUNIT_ROOT__."/library/catalog.php");
 require_once(__OCUNIT_ROOT__."/library/admin.php");
 require_once(__OCUNIT_ROOT__."/library/credentials.php");
 require_once(__OCUNIT_ROOT__."/library/Order.php");
-
-/**
- * Basic headers to browse OpenCart pages
- */
-if (empty($_SERVER["REMOTE_ADDR"])) {
-    $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
-}
 
 use \Opencart\System\Engine\Autoloader as Autoloader;
 $autoloader = new Autoloader();

@@ -6,13 +6,13 @@ use PHPUnit\Framework\TestCase;
 
 class FromGithubTest extends TestCase
 {
-    public function testCategoryImagePlaceholderInAdmin()
+    public function testCategoryImagePlaceholder()
     {
         // Display a placeholder image while listing categories in the admin.
         $this->markTestIncomplete("Image placeholder not applied for categories");
     }
 
-    public function testProductImagePlaceholderInAdmin()
+    public function testProductImagePlaceholder()
     {
         $this->markTestIncomplete("Image placeholder not applied for products.");
     }

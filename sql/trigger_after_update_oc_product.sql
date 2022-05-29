@@ -1,5 +1,5 @@
 -- Before installing trigger
-INSERT INTO tw_price_history (product_id, product_price, date_added)
+INSERT IGNORE INTO tw_price_history (product_id, product_price, date_added)
 SELECT product_id, price, NOW()
 FROM oc_product;
 

@@ -10,33 +10,33 @@ class DownloadsTest extends TestCase
     private array $downloadables = [];
 
     public function setUp(): void
-    {
+    {/*
         if(empty($this->downloadables))
         {
             $dbx = new DatabaseExecutor();
             $this->downloadables = $dbx->downloads();
 
             $this->assertNotEmpty($this->downloadables, "Your store does not have any downloadable products.");
-        }
+        }*/
     }
 
     public function testDownloadShouldExist()
     {
-        foreach ($this->downloadables as $download) {
-            $download['filename'] = basename($download['filename']);
+        $dbx = new DatabaseExecutor();
+        $downloadables = $dbx->downloads();
+
+        foreach ($downloadables as $download) {
+            $download["filename"] = basename($download['filename']);
             $masked_file = DIR_STORAGE . "download/{$download['filename']}";
 
             $download_exists = is_file($masked_file);
             $this->assertTrue($download_exists, "Missing download file for id #{$download['download_id']}: {$download['name']}.");
-        }
-    }
 
-    public function testDownloadableFilesMustBeZipFormat()
-    {
-        foreach ( $this->downloadables as $download) {
             $extension = pathinfo(basename($download["mask"]))["extension"];
             $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only: {$download['mask']}");
         }
+
+        $this->assertTrue(count($downloadables) > 0, "Did not check downloads.");
     }
 
     public function testDownloadableProductHasAFileLinked()
@@ -54,6 +54,8 @@ class DownloadsTest extends TestCase
 
             $this->assertTrue($download_found, "Failed linking a downloadable product for Product ID: #{$product['product_id']}.");
         }
+
+        $this->assertTrue(count($downloadable_products) > 0, "Did not check downloadable products.");
     }
 
     // for each downloadable product

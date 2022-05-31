@@ -73,12 +73,12 @@ class admin
         // generate token in advance using api
         // supply username and password
         // send data to login on this page
-        // http://localhost/oc/store/upload/admin/index.php?route=common/login|login&login_token=f8ab7db9a7932520a7b044c418828433
+        // http://localhost/oc/opencart/upload/admin/index.php?route=common/login|login&login_token=f8ab7db9a7932520a7b044c418828433
         // username=admin
         // password=admin
         // obtain redirect json
         // {
-        //  "redirect": "http://localhost/oc/store/upload/admin/index.php?route=common/dashboard&user_token=7c650ce5d2f347ec48217ab3efb42f57"
+        //  "redirect": "http://localhost/oc/opencart/upload/admin/index.php?route=common/dashboard&user_token=7c650ce5d2f347ec48217ab3efb42f57"
         // }
         global $configurations;
         $credentials = $configurations["credentials"]["admin_valid"];
@@ -129,7 +129,7 @@ class admin
             "login_token" => $login_token,
         ];
         $_POST = [
-            // credentials that should fail
+            // supply invalid credentials that should fail
             "username" => $credentials["username"],
             "password" => $credentials["password"],
         ];

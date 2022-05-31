@@ -57,7 +57,7 @@ Case                       | Description
 Dependency                     | Version                       | Description
 -------------------------------|-------------------------------|---------------------
 [PHP](https://www.php.net/)    | 8.1.1+                        | -
-[PHPUnit](https://phpunit.de/) | 9.5.10+                       | -
+[PHPUnit](https://phpunit.de/) | 9.5.20+                       | -
 [OpenCart](https://github.com/opencart/opencart)               | 4.0.0+ | master branch
 [relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
 
@@ -75,9 +75,9 @@ Clone OpenCart and OCUnit projects. Then install/configure them independently in
 Download the phpunit phar file in the directory.
 
     cd ocunit
-    wget https://phar.phpunit.de/phpunit-9.5.10.phar
+    wget https://phar.phpunit.de/phpunit-9.5.20.phar
 
-    mv phpunit-9.5.10.phar phpunit.phar
+    mv phpunit-9.5.20.phar phpunit.phar
 
 Update the composer dependencies:
 

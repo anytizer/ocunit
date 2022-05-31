@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e58fed7694deb2e4efffe955028c4512f04b43e4',
+        'reference' => 'a0f814c8ec6323298fdcd0fee2c69f9a5554693d',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e58fed7694deb2e4efffe955028c4512f04b43e4',
+            'reference' => 'a0f814c8ec6323298fdcd0fee2c69f9a5554693d',
             'dev_requirement' => false,
         ),
         'anytizer/relay.php' => array(
@@ -112,12 +112,12 @@
             'dev_requirement' => true,
         ),
         'phpstan/phpstan' => array(
-            'pretty_version' => '1.7.3',
-            'version' => '1.7.3.0',
+            'pretty_version' => '1.7.6',
+            'version' => '1.7.6.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpstan/phpstan',
             'aliases' => array(),
-            'reference' => '48c4621b1a6dde32aab2e9a79658b843ffb614f7',
+            'reference' => '1af9271ea529f995e57a1f493bebba6b830a97d0',
             'dev_requirement' => true,
         ),
         'phpunit/php-code-coverage' => array(

@@ -1,6 +1,6 @@
 # PHP Settings
 # ---------------------
-# PHP Version	8.0.13
+# PHP Version	8.1.1
 # Register Globals Off
 # Magic Quotes GPC Off
 # File Uploads On

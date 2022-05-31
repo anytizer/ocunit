@@ -1,6 +1,6 @@
 @ECHO OFF
 
-cd admin
+REM cd admin
 
 REM ../vendor/bin/phpstan analyse ./
 php ../phpunit.phar cases

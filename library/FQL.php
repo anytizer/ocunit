@@ -1,7 +1,10 @@
 <?php
+
 namespace ocunit\library;
 
-if(!defined("DB_PREFIX")) { define("DB_PREFIX", "oc_"); }
+if (!defined("DB_PREFIX")) {
+    define("DB_PREFIX", "oc_");
+}
 
 class FQL
 {

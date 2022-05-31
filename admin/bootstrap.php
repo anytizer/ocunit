@@ -1,11 +1,11 @@
 <?php
+
 namespace ocunit\admin;
 
-use \ocunit\library\oc as oc;
-use \Exception;
+use ocunit\library\oc as oc;
 
-require_once dirname(__FILE__)."/../config.php";
-require_once dirname(__FILE__)."/../library/oc.php";
+require_once dirname(__FILE__) . "/../config.php";
+require_once dirname(__FILE__) . "/../library/oc.php";
 
 $oc = new oc();
 $oc->must_include(realpath($configurations["opencart"]["admin"]), "config.php");

@@ -1,8 +1,9 @@
 <?php
+
 namespace ocunit\admin;
 
-use \ocunit\library\oc as oc;
-use \Exception;
+use Exception;
+use ocunit\library\oc as oc;
 
 require_once "../config.php";
 require_once "../library/oc.php";

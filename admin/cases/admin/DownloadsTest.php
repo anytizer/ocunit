@@ -13,6 +13,7 @@ class DownloadsTest extends TestCase
     {/*
         if(empty($this->downloadables))
         {
+            // @todo It is being called all the times.
             $dbx = new DatabaseExecutor();
             $this->downloadables = $dbx->downloads();
 

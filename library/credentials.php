@@ -4,10 +4,10 @@ namespace ocunit\library;
 
 class credentials
 {
-    public string $username;
-    public string $password;
+    public string $username = "";
+    public string $password = "";
 
-    public string $token;
+    public string $token = "";
 
     public function __construct($username = "", $password = "")
     {

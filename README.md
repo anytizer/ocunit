@@ -1,22 +1,22 @@
 # OCUnit
 
-Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based on [PHPUnit](https://phpunit.de).
+Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based
+on [PHPUnit](https://phpunit.de).
 
-__WARNING__: Never execute these tests against your live database or __in server environment__.
-It is likely to overwrite the  product information, pricing, images, session, passwords and more.
-The database may never return to its original state.
+__WARNING__: Never execute these tests against your live database or __in server environment__. It is likely to
+overwrite the product information, pricing, images, session, passwords and more. The database may never return to its
+original state.
 
 ![Sample Output](sample-output.png)
 
 Tests have been now separated to [admin](./admin/cases/admin) and [catalog](catalog/cases/catalog).
 
-This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart) but the implementation
-of OpenCart to run a store.
+**Disclaimer**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart) but the
+implementation of OpenCart to run a store.
 
 OCUnit reads the real database configuration values and URLs from within your OpenCart's config.php files to run tests.
-There are few [business rules](config.ini) and configurations you should edit before running the test.
-Rules may differ per business. Hence, most of the tests are empty.
-But they should guide you technically on how to write the tests.
+There are few [business rules](config.ini) and configurations you should edit before running the test. Rules may differ
+per business. Hence, most of the tests are empty. But they should guide you technically on how to write the tests.
 
 Please make a backup first! Run OCUnit at your own risk.
 
@@ -29,9 +29,9 @@ Please make a backup first! Run OCUnit at your own risk.
 * Directory listing should be disabled throughout the website,
 * Store price cannot be less than the manufacturer price even after discounts.
 * Updating price makes a history of price change.
-  * [x] Keep a log of when prices were changed.
-  * [x] Maintain a price change history.
-  * [x] Create a price log table.
+    * [x] Keep a log of when prices were changed.
+    * [x] Maintain a price change history.
+    * [x] Create a price log table.
 * Products must have videos associated with them in their description.
 * Concise inventory statistics generation.
 

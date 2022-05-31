@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class HtaccessTest extends TestCase
 {
-    public function testHtaccessDisablesDirectoryListingInFrontend()
+    public function testHtaccessDisablesDirectoryListingInStore()
     {
         $expected_body = "Options -Indexes";
         $htaccess = $expected_body;
@@ -17,7 +17,7 @@ class HtaccessTest extends TestCase
             file_put_contents($dothtaccessfile, $htaccess);
         }
 
-        $this->assertEquals($expected_body, $htaccess, "Invalid .htaccess file in front.");
+        $this->assertEquals($expected_body, $htaccess, "Invalid .htaccess file in store.");
     }
 
     public function testHtaccessDisablesDirectoryListingInAdmin()

@@ -24,8 +24,8 @@ class StorageAreaTest extends TestCase
             "upload",
             "public_html",
             "htdocs",
-            "httpdocs",
-            "httpsdocs",
+            #"httpdocs",
+            #"httpsdocs",
             "www",
             "web",
 
@@ -57,7 +57,7 @@ class StorageAreaTest extends TestCase
     public function testAdminFolderIsRenamed()
     {
         // @todo: config.ini > opencart > admin
-        $this->assertFalse(is_dir(DIR_OPENCART . "admin"), "Rename admin folder to something difficult!");
+        $this->assertFalse(is_dir(DIR_OPENCART . "admin"), "It is important to rename admin folder!");
     }
 
     public function testStorageFoldersPermissions()

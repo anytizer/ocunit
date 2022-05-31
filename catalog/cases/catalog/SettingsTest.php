@@ -4,8 +4,6 @@ namespace cases\catalog;
 
 use PHPUnit\Framework\TestCase;
 
-require_once(DIR_OPENCART . "system/library/url.php");
-
 class SettingsTest extends TestCase
 {
     public function testDatabaseConstantsDefined()

@@ -38,7 +38,7 @@ class OperatingSystemTest extends TestCase
                 $this->assertTrue(true, "Valid operating system.");
                 break;
             default:
-                $this->fail("Invalid Valid operating system: " . $this->os);
+                $this->fail("Invalid operating system: " . $this->os);
         }
     }
 }

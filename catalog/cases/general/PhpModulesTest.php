@@ -30,7 +30,7 @@ class PhpModulesTest extends TestCase
     }
 
     /**
-     * Standard PHP Tests
+     * PHP include file configuration tests
      */
     public function testAllIncludedPathsExist()
     {

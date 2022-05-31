@@ -57,7 +57,7 @@ class PricingTest extends TestCase
         // apply a discount
         // price is still higher than manufacturer pricing
         // @todo: `oc_product_special`
-        $this->markTestIncomplete("Do not sell at below cost prices even after discounts.");
+        $this->markTestIncomplete("Do not sell for prices below the cost prices even after discounts.");
     }
 
     public function testPriceChangeHistoryMaintained()

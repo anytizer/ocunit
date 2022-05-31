@@ -4,19 +4,16 @@ namespace ocunit\library;
 
 class Order
 {
-    public function create(): bool
+    public function create_good_order(): string
     {
-        return $this->create_good_order();
+        $order_id = "";
+        return $order_id;
     }
 
-    public function create_good_order(): bool
+    public function create_fake_order(): string
     {
-        return true;
-    }
-
-    public function create_fake_order(): bool
-    {
-        return false;
+        $order_id = "";
+        return $order_id;
     }
 
     public function cancel(): bool

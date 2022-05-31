@@ -17,6 +17,8 @@ class InventoryTest extends TestCase
         $lengths = $dbx->lengths();
         $weights = $dbx->weights();
 
+        $this->assertTrue(count($inventories) > 0);
+
         /**
          * Printable report of all the products in a single page - for the merchant.
          */

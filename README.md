@@ -3,9 +3,9 @@
 Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based
 on [PHPUnit](https://phpunit.de).
 
-__WARNING__: Never execute these tests against your live database or __in server environment__. It is likely to
-overwrite the product information, pricing, images, session, passwords and more. The database may never return to its
-original state.
+__WARNING__: Never execute these tests against your live database or __in server environment__.
+It is likely to overwrite the product information, pricing, images, currencies, session, emails, passwords and more.
+The database may never return to its original state. Always duplicate your OpenCart into demo mode only.
 
 ![Sample Output](sample-output.png)
 

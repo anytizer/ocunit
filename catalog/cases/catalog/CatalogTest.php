@@ -2,8 +2,8 @@
 
 namespace cases\catalog;
 
-use anytizer\relay;
-use ocunit\library\catalog;
+use anytizer\relay as relay;
+use ocunit\library\catalog as catalog;
 use PHPUnit\Framework\TestCase;
 
 class CatalogTest extends TestCase

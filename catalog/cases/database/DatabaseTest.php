@@ -14,6 +14,16 @@ class DatabaseTest extends TestCase
         $this->assertNotNull($pdo, "Failed connecting to the database.");
     }
 
+    public function testDoSingleCurrencyFix()
+    {
+        $pdo = new MySQLPDO();
+
+        $sql = "SELECT * FROM `" . DB_PREFIX . "currency` WHERE STATUS='1';";
+        $data = $pdo->query($sql);
+
+        $this->assertTrue(count($data) == 1, "Too many currencies are active.");
+    }
+
     public function testOnlyOneLanguageIsActive()
     {
         $pdo = new MySQLPDO();
@@ -36,7 +46,12 @@ class DatabaseTest extends TestCase
         $sql = "SELECT * FROM `" . DB_PREFIX . "setting` WHERE `key`='config_pagination_admin';";
         $data = $pdo->query($sql);
 
-        $this->assertEquals(100, (int)$data[0]["value"]);
+        // @todo Load pagination size from config
+        //global $configurations;
+        //$admin_pagination = $configurations["settings"]["admin_pagination"];
+        $admin_pagination = 100;
+
+        $this->assertEquals($admin_pagination, (int)$data[0]["value"]);
     }
 
     /**
@@ -49,8 +64,10 @@ class DatabaseTest extends TestCase
         $sql = "SELECT * FROM `" . DB_PREFIX . "currency`;";
         $data = $pdo->query($sql);
 
-        $this->assertCount(1, $data);
-        $this->assertEquals("CAD", $data[0]["code"]);
+        global $configurations;
+
+        $this->assertCount(1, $data, "Store should operate with single currency (non-international) on an initial phase.");
+        $this->assertEquals($configurations["business_rules"]["default_currency"], $data[0]["code"], "Default currency must match business rule's currency.");
         $this->assertEquals(1, (int)$data[0]["status"]);
         $this->assertEquals((int)"1.00000000", (int)$data[0]["value"]);
     }

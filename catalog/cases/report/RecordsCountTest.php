@@ -40,7 +40,7 @@ class RecordsCountTest extends TestCase
     {
         $file = fopen(__OCUNIT_ROOT__ . "/logs/" . basename($filename), "wb+");
         foreach ($data as $table => $data_count) {
-            fwrite($file, sprintf("%-30s - %d\r\n", substr($table, 0, 30), $data_count));
+            fwrite($file, sprintf("%-40s - %d\r\n", substr($table, 0, 30), $data_count));
         }
 
         fclose($file);

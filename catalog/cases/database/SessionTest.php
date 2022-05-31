@@ -2,7 +2,7 @@
 
 namespace cases\database;
 
-use ocunit\library\catalog;
+use ocunit\library\catalog as catalog;
 use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
 
@@ -10,10 +10,10 @@ class SessionTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
-        self::truncate();
+        self::_truncate();
     }
 
-    private static function truncate()
+    private static function _truncate()
     {
         $pdo = new MySQLPDO();
         $pdo->raw("TRUNCATE TABLE `" . DB_PREFIX . "session`;");
@@ -21,7 +21,7 @@ class SessionTest extends TestCase
 
     public function setUp(): void
     {
-        $this->delete();
+        $this->_delete();
 
         /**
          * Just browse the home page.
@@ -31,7 +31,7 @@ class SessionTest extends TestCase
         $index = $catalog->browse_index();
     }
 
-    private function delete()
+    private function _delete()
     {
         $pdo = new MySQLPDO();
         $pdo->raw("DELETE FROM `" . DB_PREFIX . "session`;");
@@ -47,12 +47,12 @@ class SessionTest extends TestCase
      */
     public function testSessionIsCreated()
     {
-        $total = $this->counter();
+        $total = $this->_counter();
 
         $this->assertEquals(1, $total, "Invalid session data count: {$total}.");
     }
 
-    private function counter(): int
+    private function _counter(): int
     {
         $pdo = new MySQLPDO();
 
@@ -68,7 +68,7 @@ class SessionTest extends TestCase
         $index1 = $catalog->browse_index();
         $index2 = $catalog->browse_index();
 
-        $total = $this->counter();
+        $total = $this->_counter();
 
         $this->assertTrue($total > 0, "Session not created.");
     }

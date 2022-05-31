@@ -46,7 +46,9 @@ class catalog
         $relay->headers([
             "X-Protection-Token" => "",
         ]);
-        $html = $relay->fetch(HTTP_CATALOG . "index.php");
+
+        global $configurations;
+        $html = $relay->fetch($configurations["urls"]["store"]."/index.php"); // HTTP_CATALOG
 
         return $html;
     }

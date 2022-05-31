@@ -11,8 +11,8 @@ class OrderCancelTest extends TestCase
     {
         $order = new Order();
 
-        $order->create_good_order();
-        $cancelled = $order->cancel();
+        $order_id = $order->create_good_order();
+        $cancelled = $order->cancel($order_id);
 
         // order is fully paid, and we have a transaction log in payment gateway
         // order received cancellation request
@@ -26,8 +26,8 @@ class OrderCancelTest extends TestCase
     {
         $order = new Order();
 
-        $order->create_fake_order();
-        $cancelled = $order->cancel(); // must fail for this order
+        $order_id = $order->create_fake_order();
+        $cancelled = $order->cancel($order_id); // must fail for this order
 
         $this->assertFalse($cancelled);
     }

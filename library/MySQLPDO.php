@@ -8,7 +8,7 @@ use \PDO as PDO;
  * Basic database wrapper without exceptions.
  * Expecting a true connection each time you start this class.
  *
- * Always connects to only-opencart database.
+ * Always connects to opencart database.
  */
 class MySQLPDO
 {
@@ -21,12 +21,9 @@ class MySQLPDO
             $dsn,
             DB_USERNAME,
             DB_PASSWORD,
-            array(
-                // PDO::MYSQL_ATTR_SSL_KEY  => "/path/to/client-key.pem",
-                // PDO::MYSQL_ATTR_SSL_CERT => "/path/to/client-cert.pem",
-                // PDO::MYSQL_ATTR_SSL_CA   => "/path/to/ca-cert.pem",
+            [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            )
+            ]
         );
     }
 

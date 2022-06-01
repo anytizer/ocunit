@@ -18,6 +18,7 @@ class Order
 
     public function cancel(): bool
     {
-        return true;
+        $cancelled = true;
+        return $cancelled;
     }
 }

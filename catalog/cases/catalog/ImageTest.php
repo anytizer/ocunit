@@ -4,6 +4,7 @@ namespace cases\catalog;
 
 use ocunit\library\DatabaseExecutor;
 use PHPUnit\Framework\TestCase;
+use Throwable;
 
 class ImageTest extends TestCase
 {
@@ -63,6 +64,8 @@ class ImageTest extends TestCase
 
     public function testProductImagesAreValidImages()
     {
+        // file ending is .png
+        // gd can obtain height/width information
         $this->markTestIncomplete("Only PNG Allowed in product image.");
     }
 
@@ -71,5 +74,10 @@ class ImageTest extends TestCase
         // for each image:
         // php script is not found in the file.
         $this->markTestIncomplete("Need to scan images for presence of scripts.");
+    }
+
+    public function testNoOrphanedImages()
+    {
+        // every image in folder MUST match to some product or category data
     }
 }

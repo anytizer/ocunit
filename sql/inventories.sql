@@ -1,3 +1,7 @@
+/**
+ * Complete list of inventories, manufacturer pricing, shipment details
+ */
+
 SELECT p.product_id,
        cd.`name`                  cname,
        p.model,

@@ -14,4 +14,4 @@ BEGIN
     IF old.price <> new.price THEN
         INSERT INTO tw_price_history (product_id, product_price, date_added) VALUES (new.product_id, new.price, NOW());
     END IF;
-END$$
+END $$

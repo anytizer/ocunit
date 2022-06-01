@@ -32,8 +32,7 @@ class MySQLPDO
      */
     public function query($sql = "", $data = [])
     {
-        $statement = $this->connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY,]);
-        $statement->execute($data);
+        $statement = $this->raw($sql, $data);
 
         /**
          * Return the data
@@ -44,9 +43,11 @@ class MySQLPDO
     /**
      * Fire-only queries - like: insert, update, delete, replace
      */
-    public function raw($sql = "", $data = []): void
+    public function raw($sql = "", $data = [])
     {
         $statement = $this->connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY,]);
         $statement->execute($data);
+
+        return $statement;
     }
 }

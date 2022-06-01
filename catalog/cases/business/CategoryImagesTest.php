@@ -8,20 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class CategoryImagesTest extends TestCase
 {
-    public function testCreateCategoryImages()
-    {
-        $dbx = new DatabaseExecutor();
-        $categories = $dbx->categories();
-
-        $this->_copy_images($categories);
-
-        foreach ($categories as $c => $category) {
-            $image_file = DIR_IMAGE . $category["image"];
-
-            $this->assertTrue(is_file($image_file), "Missing image for category id: #" . $category["category_id"]);
-        }
-    }
-
     private function _copy_images($categories)
     {
         foreach ($categories as $c => $category) {
@@ -58,7 +44,7 @@ class CategoryImagesTest extends TestCase
                 $store = "store"; // @todo Replace with proper store name
                 $category_id = $category["category_id"];
                 $pdo->raw($update_sql, [
-                    ":image" => "catalog/{$store}/categories/{$category_id}-200x200.png",
+                    ":image" => "catalog/{$store}/categories/{$category_id}/200x200.png",
                     ":category_id" => $category["category_id"],
                 ]);
 
@@ -72,5 +58,19 @@ class CategoryImagesTest extends TestCase
          *    On second run, it is ok.
          */
         $this->assertEquals(0, $modified, "Category images have been auto assigned.");
+    }
+
+    public function testCreateCategoryImages()
+    {
+        $dbx = new DatabaseExecutor();
+        $categories = $dbx->categories();
+
+        $this->_copy_images($categories);
+
+        foreach ($categories as $c => $category) {
+            $image_file = DIR_IMAGE . $category["image"];
+
+            $this->assertTrue(is_file($image_file), "Missing image for category id: #" . $category["category_id"]);
+        }
     }
 }

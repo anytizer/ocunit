@@ -3,16 +3,16 @@
 Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based
 on [PHPUnit](https://phpunit.de).
 
-__WARNING__: Never execute these tests against your live database or __in server environment__.
-It is likely to overwrite the product information, pricing, images, currencies, session, emails, passwords and more.
-The database may never return to its original state. Always duplicate your OpenCart into demo mode only.
+__WARNING__: Never execute these tests against your live database or __in server environment__. It is likely to
+overwrite the product information, pricing, images, currencies, session, emails, passwords and more. The database may
+never return to its original state. Always duplicate your OpenCart into demo mode only.
 
 ![Sample Output](sample-output.png)
 
 Tests have been now separated to [admin](./admin/cases/admin) and [catalog](catalog/cases/catalog).
 
 **Disclaimer**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart) but the
-implementation of OpenCart to run a store.
+implementation of OpenCart to run a store. Hence, please do not expect a code coverage test.
 
 OCUnit reads the real database configuration values and URLs from within your OpenCart's config.php files to run tests.
 There are few [business rules](config.ini) and configurations you should edit before running the test. Rules may differ
@@ -33,7 +33,7 @@ Please make a backup first! Run OCUnit at your own risk.
     * [x] Maintain a price change history.
     * [x] Create a price log table.
 * Products must have videos associated with them in their description.
-* Concise inventory statistics generation.
+* Concisely generate inventory statistics.
 
 These are just samples to illustrate how business rules are tested.
 
@@ -76,7 +76,6 @@ Download the phpunit phar file in the directory.
 
     cd ocunit
     wget https://phar.phpunit.de/phpunit-9.5.20.phar
-
     mv phpunit-9.5.20.phar phpunit.phar
 
 Update the composer dependencies:
@@ -86,8 +85,7 @@ Update the composer dependencies:
 
 # Configuration of OCUnit
 
-* Edit [config.ini](config.ini) for project paths, business rules, catalog information etc.
-* Carefully edit your statistics in `$tables_counters`.
+Before running any tests scripts, you should edit [config.ini](config.ini) to tell something about your installation.
 
 # Test Execution
 
@@ -116,7 +114,6 @@ More information on tests is available at: https://phpunit.readthedocs.io/en/9.5
 * https://github.com/beyondit/opencart-test-suite
 * [Selenium : OpenCart User Creation Automation Test With CSS Locators](https://www.youtube.com/watch?v=DEwzzZfMYwM)
 * [Unit testing, Jenkins, code sniffing, github etc](https://forum.opencart.com/viewtopic.php?t=124532)
-* https://gitlab.com/abricos07/opencart/-/tree/master
 * https://github.com/sarkershantonu/OpencartTesting
 
 # Contribution
@@ -129,4 +126,4 @@ in __@anytizer__/ocunit project.
 
 * [VS Code](https://code.visualstudio.com/download) + [SonarLint](https://www.sonarlint.org/)
 * [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer+ocunit)
-* Notepad++
+* [Notepad++](https://notepad-plus-plus.org/downloads/)

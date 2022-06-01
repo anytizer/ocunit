@@ -17,6 +17,9 @@ class SettingsTest extends TestCase
         $this->assertTrue(defined("DB_PREFIX"));
     }
 
+    /**
+     * @todo Include library resources
+     */
     public function testCoreSettingsDefined()
     {
         $this->assertTrue(defined("APPLICATION"));

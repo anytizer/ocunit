@@ -10,11 +10,11 @@ class HtaccessTest extends TestCase
     {
         $expected_body = "Options -Indexes";
         $htaccess = $expected_body;
-        $dothtaccessfile = DIR_OPENCART . ".htaccess";
-        if (is_file($dothtaccessfile)) {
-            $htaccess = file_get_contents($dothtaccessfile);
+        $dot_htaccess_file = DIR_OPENCART . ".htaccess";
+        if (is_file($dot_htaccess_file)) {
+            $htaccess = file_get_contents($dot_htaccess_file);
         } else {
-            file_put_contents($dothtaccessfile, $htaccess);
+            file_put_contents($dot_htaccess_file, $htaccess);
         }
 
         $this->assertEquals($expected_body, $htaccess, "Invalid .htaccess file in store.");
@@ -24,11 +24,11 @@ class HtaccessTest extends TestCase
     {
         $expected_body = "Options -Indexes";
         $htaccess = $expected_body;
-        $dothtaccessfile = DIR_OPENCART . "admin/.htaccess";
-        if (is_file($dothtaccessfile)) {
-            $htaccess = file_get_contents($dothtaccessfile);
+        $dot_htaccess_file = DIR_OPENCART . "admin/.htaccess";
+        if (is_file($dot_htaccess_file)) {
+            $htaccess = file_get_contents($dot_htaccess_file);
         } else {
-            file_put_contents($dothtaccessfile, $htaccess);
+            file_put_contents($dot_htaccess_file, $htaccess);
         }
 
         $this->assertEquals($expected_body, $htaccess, "Invalid .htaccess file in admin.");

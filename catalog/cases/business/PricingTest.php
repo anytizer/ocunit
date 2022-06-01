@@ -36,9 +36,9 @@ class PricingTest extends TestCase
         $dbx = new DatabaseExecutor();
         $products = $dbx->products();
         foreach ($products as $product) {
-            $check_sql = "SELECT product_price FROM `tw_manufacturer_prices` WHERE product_id=:product_id;";
+            $check_manufacturer_price_sql = "SELECT product_price FROM `tw_manufacturer_prices` WHERE product_id=:product_id;";
 
-            $exists = $pdo->query($check_sql, [
+            $exists = $pdo->query($check_manufacturer_price_sql, [
                 "product_id" => $product["product_id"],
             ]);
 
@@ -55,9 +55,24 @@ class PricingTest extends TestCase
     {
         // create a discount
         // apply a discount
-        // price is still higher than manufacturer pricing
-        // @todo: `oc_product_special`
-        $this->markTestIncomplete("Do not sell for prices below the cost prices even after discounts.");
+        // price should be higher than manufacturer pricing
+        // @todo: @see: `oc_product_special`
+        $pdo = new MySQLPDO();
+
+        $dbx = new DatabaseExecutor();
+        $products = $dbx->products();
+        foreach($products as $product)
+        {
+            $store_price = $product["price"];
+            #$store_price = $pdo->query("SELECT price FROM oc_product WHERE product_id=:product_id;", ["product_id" => $product["product_id"]])[0]["price"];
+            $manufacturer_price = $pdo->query("SELECT product_price FROM tw_manufacturer_prices WHERE product_id=:product_id", ["product_id" =>  $product["product_id"]])[0]["product_price"];
+            $discounted_price = $pdo->query("SELECT price FROM oc_product_special WHERE product_id=:product_id;", ["product_id" => $product["product_id"]])[0]["price"]??"0.00";
+
+            $this->assertTrue($discounted_price > $manufacturer_price, "Discounted price ($discounted_price) is NOT higher than Manufacturer Price ($manufacturer_price).");
+            # $this->assertTrue($store_price > $manufacturer_price);
+        }
+
+        # $this->markTestIncomplete("Do not sell for prices below the cost prices even after discounts.");
     }
 
     public function testPriceChangeHistoryMaintained()

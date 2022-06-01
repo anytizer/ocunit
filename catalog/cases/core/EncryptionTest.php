@@ -17,6 +17,6 @@ class EncryptionTest extends TestCase
         $cipher = $e->encrypt($key, $message);
         $plain = $e->decrypt($key, $cipher);
 
-        $this->assertEquals($message, $plain, "Failed encrypt/decrypt");
+        $this->assertEquals($message, $plain, "Failed to encrypt/decrypt");
     }
 }

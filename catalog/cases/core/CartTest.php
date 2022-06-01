@@ -19,6 +19,9 @@ use PHPUnit\Framework\TestCase;
 
 class CartTest extends TestCase
 {
+    /**
+     * @throws Exception
+     */
     public function testCartClear()
     {
         $registry = $this->registry();
@@ -33,7 +36,7 @@ class CartTest extends TestCase
     /**
      * @throws Exception
      */
-    private function registry()
+    private function registry(): Registry
     {
         global $autoloader;
 
@@ -84,6 +87,9 @@ class CartTest extends TestCase
         return $registry;
     }
 
+    /**
+     * @throws Exception
+     */
     public function testCustomerLogin()
     {
         $registry = $this->registry();
@@ -96,6 +102,9 @@ class CartTest extends TestCase
         $this->assertTrue($success, "Customer could NOT login.");
     }
 
+    /**
+     * @throws Exception
+     */
     public function testCustomerLoginFailure()
     {
         $registry = $this->registry();

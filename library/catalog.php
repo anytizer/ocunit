@@ -48,7 +48,7 @@ class catalog
         ]);
 
         global $configurations;
-        $html = $relay->fetch($configurations["urls"]["store"]."/index.php"); // HTTP_CATALOG
+        $html = $relay->fetch($configurations["urls"]["store"] . "/index.php"); // HTTP_CATALOG
 
         return $html;
     }

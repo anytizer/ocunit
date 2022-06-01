@@ -34,7 +34,7 @@ class ChangeDatabaseValuesTest extends TestCase
     public function testResetCustomerEmails()
     {
         $pdo = new MySQLPDO();
-        $pdo->raw("UPDATE `" . DB_PREFIX . "customer` SET email=CONCAT(UUID(), '@example.com');", []);
+        $pdo->raw("UPDATE `" . DB_PREFIX . "customer` SET email=CONCAT(UPPER(UUID()), '@example.com');", []);
 
         $total = $pdo->query("SELECT COUNT(*) total FROM oc_customer WHERE email NOT LIKE '%email.com';", [])[0]["total"];
 

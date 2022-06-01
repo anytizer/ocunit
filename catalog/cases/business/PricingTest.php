@@ -61,12 +61,11 @@ class PricingTest extends TestCase
 
         $dbx = new DatabaseExecutor();
         $products = $dbx->products();
-        foreach($products as $product)
-        {
+        foreach ($products as $product) {
             $store_price = $product["price"];
             #$store_price = $pdo->query("SELECT price FROM oc_product WHERE product_id=:product_id;", ["product_id" => $product["product_id"]])[0]["price"];
-            $manufacturer_price = $pdo->query("SELECT product_price FROM tw_manufacturer_prices WHERE product_id=:product_id", ["product_id" =>  $product["product_id"]])[0]["product_price"];
-            $discounted_price = $pdo->query("SELECT price FROM oc_product_special WHERE product_id=:product_id;", ["product_id" => $product["product_id"]])[0]["price"]??"0.00";
+            $manufacturer_price = $pdo->query("SELECT product_price FROM tw_manufacturer_prices WHERE product_id=:product_id", ["product_id" => $product["product_id"]])[0]["product_price"];
+            $discounted_price = $pdo->query("SELECT price FROM oc_product_special WHERE product_id=:product_id;", ["product_id" => $product["product_id"]])[0]["price"] ?? "0.00";
 
             $this->assertTrue($discounted_price > $manufacturer_price, "Discounted price ($discounted_price) is NOT higher than Manufacturer Price ($manufacturer_price).");
             # $this->assertTrue($store_price > $manufacturer_price);

@@ -6,7 +6,7 @@ use Exception;
 use Opencart\System\Library\Image;
 use PHPUnit\Framework\TestCase;
 
-require_once DIR_SYSTEM . "library/image.php";
+# require_once DIR_SYSTEM . "library/image.php";
 
 class ImageTest extends TestCase
 {

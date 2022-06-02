@@ -43,7 +43,7 @@ class FixturesTest extends TestCase
             $info = $dbx->info($table);
 
             $matches = [];
-            preg_match_all("/ AUTO_INCREMENT\=([\d+]) /is", $info, $matches, PREG_SET_ORDER);
+            preg_match_all("/ AUTO_INCREMENT\=([\d+])/is", $info, $matches, PREG_SET_ORDER);
             #print_r($matches);
             if (isset($matches[0][1])) {
                 $auto_increment = (int)$matches[0][1];
@@ -85,7 +85,7 @@ class FixturesTest extends TestCase
         // insert the data
         // disable price history trigger
 
-        $sql = "DELETE FROM tw_manufacturer_prices;";
+        $sql = "TRUNCATE TABLE tw_manufacturer_prices;";
         $pdo->raw($sql, []);
 
         global $configurations;
@@ -147,6 +147,6 @@ class FixturesTest extends TestCase
         $sql = (new FQL())->read("oc_setting.sql");
         $pdo->raw($sql, []);
 
-        $this->assertTrue(true, "Admin pagination size increased.");
+        $this->assertTrue(true, "OC behaviours were NOT modified.");
     }
 }

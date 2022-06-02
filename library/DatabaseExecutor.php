@@ -108,6 +108,20 @@ class DatabaseExecutor
         return $products;
     }
 
+    public function metrics(): array
+    {
+        $pdo = new MySQLPDO();
+
+        $tax_class_id = _env("business_rules")["downloadable_product_tax_class_id"];
+
+        $sql = "SELECT p.product_id, p.weight, p.weight_class_id, p.length, p.width, p.height, p.length_class_id FROM oc_product p WHERE tax_class_id!=:tax_class_id;";
+        $products = $pdo->query($sql, [
+            "tax_class_id" => $tax_class_id,
+        ]);
+
+        return $products;
+    }
+
     public function inventories(): array
     {
         $pdo = new MySQLPDO();

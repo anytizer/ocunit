@@ -65,14 +65,6 @@ class FixturesTest extends TestCase
         $this->assertEquals(0, $hits, "Some tables with AUTO_INCREMENT were NOT reset to 1.");
     }
 
-    public function testFixSku()
-    {
-        $pdo = new MySQLPDO();
-        $pdo->raw("UPDATE `" . DB_PREFIX . "product` SET sku=model WHERE sku='';", []);
-
-        $this->assertFalse(__OCUNIT_EXECUTE_EXPENSIVE__, "SKU were modified with model.");
-    }
-
     /**
      * @todo Once manufacturer pricing is managed for all products, disable this test.
      */

@@ -5,6 +5,7 @@ namespace cases\business;
 use ocunit\library\DatabaseExecutor;
 use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
+use Slug;
 
 class CategoryImagesTest extends TestCase
 {
@@ -34,8 +35,6 @@ class CategoryImagesTest extends TestCase
 
         $pdo = new MySQLPDO();
 
-        // UPDATE oc_category SET image=null;
-
         $modified = 0;
         foreach ($categories as $c => $category) {
             if (empty($category["image"])) {
@@ -43,8 +42,10 @@ class CategoryImagesTest extends TestCase
 
                 $store = "store"; // @todo Replace with proper store name
                 $category_id = $category["category_id"];
+                $category_slug = $category_id; // @todo Use category name from first language,
+                // @todo Replace with: (new Slug())->create("Some  Category  +   Name   ");
                 $pdo->raw($update_sql, [
-                    ":image" => "catalog/{$store}/categories/{$category_id}/200x200.png",
+                    ":image" => "catalog/{$store}/categories/{$category_slug}/200x200.png",
                     ":category_id" => $category["category_id"],
                 ]);
 

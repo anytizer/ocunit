@@ -5,6 +5,11 @@ namespace ocunit\library;
 use ocunit\library\FQL as FQL;
 use ocunit\library\MySQLPDO as MySQLPDO;
 
+/**
+ * This is not a generic database wrapper.
+ * It operates some SQLs against your OpenCart database which may include modifying the database.
+ */
+
 class DatabaseExecutor
 {
     public function triggers(): array

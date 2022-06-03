@@ -4,23 +4,46 @@ namespace ocunit\admin\cases\admin;
 
 use PHPUnit\Framework\TestCase;
 
+class FileToucher
+{
+    /**
+     * @param string $file
+     * @return int File size in bytes
+     */
+    public function touch($file="")
+    {
+        touch($file);
+
+        assert(is_file($file));
+        return filesize($file);
+    }
+}
+
 class InstallationTest extends TestCase
 {
-    function testTouchStoreConfigurationFile()
+    private $admin_config_file = "";
+    private $store_config_file = "";
+
+    public function setUp(): void
     {
         global $configurations;
-        touch($configurations["opencart"]["store"] . "/config.php");
-
-        $this->assertTrue(file_exists($configurations["opencart"]["store"] . "/config.php"));
-        $this->assertFalse(filesize($configurations["opencart"]["store"] . "/config.php") == 0, "Please install the software!");
+        $this->admin_config_file = $configurations["opencart"]["admin"]."/config.php";
+        $this->store_config_file = $configurations["opencart"]["store"]."/config.php";
     }
 
     function testTouchAdminConfigurationFile()
     {
-        global $configurations;
-        touch($configurations["opencart"]["admin"] . "/config.php");
+        $toucher = new FileToucher();
+        $filesize = $toucher->touch($this->admin_config_file);
 
-        $this->assertTrue(file_exists($configurations["opencart"]["admin"] . "/config.php"));
-        $this->assertFalse(filesize($configurations["opencart"]["admin"] . "/config.php") == 0, "Please install the software!");
+        $this->assertTrue($filesize > 0, "Install the OpenCart software.");
+    }
+
+    function testTouchStoreConfigurationFile()
+    {
+        $toucher = new FileToucher();
+        $filesize = $toucher->touch($this->store_config_file);
+
+        $this->assertTrue($filesize > 0, "Install the OpenCart software.");
     }
 }

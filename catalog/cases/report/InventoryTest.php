@@ -17,7 +17,7 @@ class InventoryTest extends TestCase
         $lengths = $dbx->lengths();
         $weights = $dbx->weights();
 
-        $this->assertTrue(count($inventories) > 0);
+        $this->assertNotEmpty($inventories);
 
         /**
          * Printable report of all the products in a single page - for the merchant.
@@ -52,12 +52,12 @@ class InventoryTest extends TestCase
             $inventory["weight"] = number_format($inventory["weight"], 2, ".", ",");
 
             $inventory["sku"] = $inventory["sku"] != "" ? $inventory["sku"] : "____";
-            $inventory["download"] = ""; // @todo obtain downloadable file
+            $inventory["download"] = ""; // @todo obtain its downloadable file
 
             /**
              * @todo Read image within ./image dir inside upload/.
              */
-            $subtract_tick = $inventory["subtract"] == '1' ? 'Y' : 'N';
+            $subtract_tick = $inventory["subtract"] == "1" ? "Y" : "N";
             $image_tick = is_file($inventory["image"]) ? $tick : $cross;
             $download_tick = is_file($inventory["download"]) ? $tick : $cross;
 

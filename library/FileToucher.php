@@ -1,5 +1,7 @@
 <?php
 
+namespace ocunit\library;
+
 class FileToucher
 {
     /**

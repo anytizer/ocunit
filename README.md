@@ -9,29 +9,30 @@ never return to its original state. Always duplicate your OpenCart database for 
 
 ![Sample Output](sample-output.png)
 
-Tests have been now separated to [admin](./admin/cases/admin) and [catalog](catalog/cases/catalog).
+Tests have been now separated to [admin](./admin/cases/admin) and [catalog](catalog/cases/catalog) to match the nature of OpenCart.
 
-**Disclaimer**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart) but the
-implementation of OpenCart to run a store. Hence, please do not expect a code coverage test.
+**Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart) but the
+implementation of OpenCart to run a store. Hence, please do not expect a code coverage test OpenCart.
 
 OCUnit reads the real database configuration values and URLs from within your OpenCart's config.php files to run tests.
 There are few [business rules](config.ini) and configurations you should edit before running the test. Rules may differ
-per business. Hence, most of the tests are empty. But they should guide you technically on how to write the tests.
+as per businesses. Hence, most of the tests are empty. But they should guide you technically on how to write the tests.
 
-Please make a backup first! Run OCUnit at your own risk.
+Please make a backup of your OpenCart database first! Run OCUnit at your own risk.
 
 # Test Examples
 
 * A corresponding image should exist for product or category.
-    * Product Image: 800 px x 400 px
-    * Category Image: 200 px x 200 px
+    * [x] Product Image: 800 px x 400 px
+    * [x] Category Image: 200 px x 200 px
 * A "downloadable" file has to be in a .zip file only.
-* Directory listing should be disabled throughout the website,
+* Directory listing should be disabled throughout the website - admin or store.
 * Store price cannot be less than the manufacturer price even after discounts.
 * Updating price makes a history of price change.
     * [x] Keep a log of when prices were changed.
     * [x] Maintain a price change history.
     * [x] Create a price log table.
+    * In some cases, you should be able to generate how prices were changed, in a graph.
 * Products must have videos associated with them in their description.
 * Concisely generate inventory statistics.
 
@@ -83,7 +84,7 @@ Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit d
 
 # Configuration of OCUnit
 
-Before running any tests scripts, you should complete editing [config.ini](config.ini) to tell something about your opencart installation.
+Before running any tests scripts, you should consider editing [config.ini](config.ini) to tell something about your opencart installation.
 
 # Test Execution
 

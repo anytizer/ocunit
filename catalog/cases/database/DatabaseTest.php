@@ -21,7 +21,7 @@ class DatabaseTest extends TestCase
         $sql = "SELECT * FROM `" . DB_PREFIX . "currency` WHERE STATUS='1';";
         $data = $pdo->query($sql);
 
-        $this->assertTrue(count($data) == 1, "Too many currencies are active.");
+        $this->assertTrue(count($data) == 1, "Several currencies are active: Ensure that your business supports them.");
     }
 
     public function testOnlyOneLanguageIsActive()
@@ -53,6 +53,4 @@ class DatabaseTest extends TestCase
 
         $this->assertEquals($admin_pagination, (int)$data[0]["value"]);
     }
-
-
 }

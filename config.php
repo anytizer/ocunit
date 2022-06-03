@@ -34,6 +34,15 @@ $configurations = _env("");
  */
 define("__OCUNIT_EXECUTE_EXPENSIVE__", $configurations["ocunit"]["execute_expensive"] == "true");
 
-require_once(__OCUNIT_ROOT__ . "/library/oc.php");
+require_once(__OCUNIT_ROOT__ . "/library/DatabaseExecutor.php");
+require_once(__OCUNIT_ROOT__ . "/library/FQL.php");
 require_once(__OCUNIT_ROOT__ . "/library/FileToucher.php");
+require_once(__OCUNIT_ROOT__ . "/library/MySQLPDO.php");
+require_once(__OCUNIT_ROOT__ . "/library/Order.php");
 require_once(__OCUNIT_ROOT__ . "/library/Slug.php");
+require_once(__OCUNIT_ROOT__ . "/library/admin.php");
+require_once(__OCUNIT_ROOT__ . "/library/api.php");
+require_once(__OCUNIT_ROOT__ . "/library/catalog.php");
+require_once(__OCUNIT_ROOT__ . "/library/credentials.php");
+require_once(__OCUNIT_ROOT__ . "/library/oc.php");
+require_once(__OCUNIT_ROOT__ . "/vendor/autoload.php");

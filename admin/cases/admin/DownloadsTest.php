@@ -51,6 +51,13 @@ class DownloadsTest extends TestCase
         $this->assertTrue(count($downloadable_products) > 0, "Did not check downloadable products.");
     }
 
+    public function testDownloadableIsAZipArchive()
+    {
+        // get a downloadable product.
+        // file name when downloaded sould end in a .zip format.
+        $this->markTestSkipped("ZIP format download file - skipped testing for now..");
+    }
+
     public function testAddMimeColumn()
     {
         // Add file size, file MIME, and hash signature to a downloadable file.

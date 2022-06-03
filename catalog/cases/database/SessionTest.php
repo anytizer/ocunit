@@ -6,6 +6,9 @@ use ocunit\library\catalog as catalog;
 use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Exepensive operations.
+ */
 class SessionTest extends TestCase
 {
     public static function setUpBeforeClass(): void

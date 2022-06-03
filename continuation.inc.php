@@ -3,7 +3,7 @@
 namespace ocunit;
 
 /**
- * Basic headers to browse OpenCart pages
+ * Basic headers to browse the OpenCart pages
  */
 if (empty($_SERVER["REMOTE_ADDR"])) $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
 if (empty($_SERVER["HTTP_USER_AGENT"])) $_SERVER["HTTP_USER_AGENT"] = "ocunit";
@@ -20,17 +20,6 @@ require_once $system . "/helper/utf8.php";
 require_once DIR_STORAGE . "/vendor/autoload.php";
 require_once $system . "/engine/autoloader.php";
 require_once $system . "/engine/config.php";
-
-require_once(__OCUNIT_ROOT__ . "/vendor/autoload.php");
-
-require_once(__OCUNIT_ROOT__ . "/library/FQL.php");
-require_once(__OCUNIT_ROOT__ . "/library/MySQLPDO.php");
-require_once(__OCUNIT_ROOT__ . "/library/DatabaseExecutor.php");
-require_once(__OCUNIT_ROOT__ . "/library/api.php");
-require_once(__OCUNIT_ROOT__ . "/library/catalog.php");
-require_once(__OCUNIT_ROOT__ . "/library/admin.php");
-require_once(__OCUNIT_ROOT__ . "/library/credentials.php");
-require_once(__OCUNIT_ROOT__ . "/library/Order.php");
 
 use Opencart\System\Engine\Autoloader as Autoloader;
 

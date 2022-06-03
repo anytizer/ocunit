@@ -4,46 +4,70 @@ use PHPUnit\Framework\TestCase;
 
 class SlugTest extends TestCase
 {
+    private Slug $slug;
+
+    public function setUp(): void
+    {
+        $this->slug = new Slug();
+    }
 
     public function testSlug1()
     {
-        $slug = (new Slug())->create(" Category Name ");
+        $slug = $this->slug->create(" Category Name ");
         $this->assertEquals("category-name", $slug);
     }
 
     public function testSlug2()
     {
-        $slug = (new Slug())->create(" Some Category Name ");
+        $slug = $this->slug->create(" Some Category Name ");
         $this->assertEquals("some-category-name", $slug);
     }
 
     public function testSlug3()
     {
-        $slug = (new Slug())->create("Some  Category  +   Name   ");
+        $slug = $this->slug->create("Some  Category  +   Name   ");
         $this->assertEquals("some-category-name", $slug);
     }
 
     public function testSlug4()
     {
-        $slug = (new Slug())->create("Some  ' Ca<teg>ory  +   Name   ");
+        $slug = $this->slug->create("Some  ' Ca<teg>ory  +   Name   ");
         $this->assertEquals("some-category-name", $slug);
     }
 
     public function testSlug5()
     {
-        $slug = (new Slug())->create("Latest Released (#400) items!");
+        $slug = $this->slug->create("Latest Released (#400) items!");
         $this->assertEquals("latest-released-400-items", $slug);
     }
 
     public function testSlug6()
     {
-        $slug = (new Slug())->create("bingo");
+        $slug = $this->slug->create("bingo");
         $this->assertEquals("bingo", $slug);
     }
 
     public function testSlug7()
     {
-        $slug = (new Slug())->create("70'th bingo");
+        $slug = $this->slug->create("70'th bingo");
         $this->assertEquals("70th-bingo", $slug);
+    }
+
+    public function testSlug8()
+    {
+        $slug = $this->slug->create("pages: 76");
+        $this->assertEquals("pages-76", $slug);
+    }
+
+    public function testSlug9()
+    {
+        $slug = $this->slug->create("important: read-me");
+        $this->assertEquals("important-read-me", $slug);
+    }
+
+    public function testSlug10()
+    {
+        $slug = $this->slug->create("!Learn </XML>");
+        $this->assertEquals("learn-xml", $slug);
     }
 }

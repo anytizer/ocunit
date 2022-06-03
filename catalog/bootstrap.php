@@ -2,6 +2,7 @@
 
 use ocunit\library\oc as oc;
 
+$configurations = [];
 require_once "../config.php";
 
 $oc = new oc();

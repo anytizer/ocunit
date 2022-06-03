@@ -4,21 +4,6 @@ namespace ocunit\admin\cases\admin;
 
 use PHPUnit\Framework\TestCase;
 
-class FileToucher
-{
-    /**
-     * @param string $file
-     * @return int File size in bytes
-     */
-    public function touch($file="")
-    {
-        touch($file);
-
-        assert(is_file($file));
-        return filesize($file);
-    }
-}
-
 class InstallationTest extends TestCase
 {
     private $admin_config_file = "";

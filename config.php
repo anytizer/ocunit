@@ -35,4 +35,5 @@ $configurations = _env("");
 define("__OCUNIT_EXECUTE_EXPENSIVE__", $configurations["ocunit"]["execute_expensive"] == "true");
 
 require_once(__OCUNIT_ROOT__ . "/library/oc.php");
+require_once(__OCUNIT_ROOT__ . "/library/FileToucher.php");
 require_once(__OCUNIT_ROOT__ . "/library/Slug.php");

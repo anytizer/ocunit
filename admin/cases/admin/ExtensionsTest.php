@@ -39,6 +39,7 @@ class ExtensionsTest extends TestCase
             "tw_price_history.sql",
             "tw_product_videos.sql",
             "tw_login_failures.sql",
+            "tw_download_history.sql"
         ];
 
         foreach ($files as $filename) {

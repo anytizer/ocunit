@@ -63,7 +63,8 @@ Dependency                     | Version                       | Description
 
 # Installation
 
-Clone OpenCart and OCUnit projects. Then install/configure them independently in "/oc/store" and "/oc/ocunit":
+Clone OpenCart and OCUnit projects. Then install/configure them independently in "/oc/opencart" and "/oc/ocunit".
+Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit directory and update [composer](https://getcomposer.org) dependencies.
 
     cd htdocs|public_html|www|web
     mkdir oc
@@ -72,42 +73,37 @@ Clone OpenCart and OCUnit projects. Then install/configure them independently in
     git clone https://github.com/opencart/opencart.git opencart
     git clone https://github.com/anytizer/ocunit.git ocunit
 
-Download the phpunit phar file in the directory.
-
     cd ocunit
+
     wget https://phar.phpunit.de/phpunit-9.5.20.phar
     mv phpunit-9.5.20.phar phpunit.phar
-
-Update the composer dependencies:
 
     wget https://getcomposer.org/download/latest-stable/composer.phar
     php composer.phar update
 
 # Configuration of OCUnit
 
-Before running any tests scripts, you should edit [config.ini](config.ini) to tell something about your installation.
+Before running any tests scripts, you should complete editing [config.ini](config.ini) to tell something about your opencart installation.
 
 # Test Execution
 
     cd admin
-    php ../phpunit.phar cases/admin
+    php ../phpunit.phar cases/admin/
 
     ..\vendor\bin\phpstan analyse ..
 
 Or,
 
     cd catalog
-    php ../phpunit.phar cases/catalog
+    php ../phpunit.phar cases/catalog/
 
-* Under Windows: `.\run8.0.bat`
-* Or, under Linux: `./run8.0.sh`
 
 More information on tests is available at: https://phpunit.readthedocs.io/en/9.5/textui.html.
 
 ## Logs Produced
 
-* `logs/testdox.txt` - Log of test status - pass or fail
-* `logs/inventory.log` - concise report about products and prices for the merchant.
+* `logs/testdox.txt` - Log of test status - pass or fail of test cases.
+* `logs/inventory.log` - concise report about products and prices for the merchant's review.
 
 # Inspirations
 

@@ -5,7 +5,7 @@ on [PHPUnit](https://phpunit.de).
 
 __WARNING__: Never execute these tests against your live database or __in server environment__. It is likely to
 overwrite the product information, pricing, images, currencies, session, emails, passwords and more. The database may
-never return to its original state. Always duplicate your OpenCart into demo mode only.
+never return to its original state. Always duplicate your OpenCart database for use in demo mode.
 
 ![Sample Output](sample-output.png)
 

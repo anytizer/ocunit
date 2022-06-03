@@ -1,0 +1,26 @@
+Downloads (ocunit\admin\cases\admin\Downloads)
+ [ ] Download should exist
+ [ ] Product must have a file linked
+ [ ] Downloadable is a zip archive
+ [ ] Add mime column
+ [ ] Add size column
+ [ ] Add hash column
+ [ ] Others
+
+Extensions (ocunit\admin\cases\admin\Extensions)
+ [x] Third party extension tables are present
+ [x] Create missing third party extension tables
+
+Installation (ocunit\admin\cases\admin\Installation)
+ [x] Touch admin configuration file
+ [x] Touch store configuration file
+
+Order Cancel (cases\admin\OrderCancel)
+ [x] Order cancelled properly
+ [ ] Do not cancel incomplete order
+
+Settings (cases\admin\Settings)
+ [x] Database constants defined
+ [x] Connectivity
+ [x] Other settings defined
+

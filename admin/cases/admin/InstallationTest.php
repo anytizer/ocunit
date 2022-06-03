@@ -2,6 +2,7 @@
 
 namespace ocunit\admin\cases\admin;
 
+use ocunit\library\FileToucher;
 use PHPUnit\Framework\TestCase;
 
 class InstallationTest extends TestCase

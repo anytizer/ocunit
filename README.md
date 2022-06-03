@@ -11,14 +11,14 @@ never return to its original state. Always duplicate your OpenCart database for 
 
 Tests have been now separated to [admin](./admin/cases/admin) and [catalog](catalog/cases/catalog) to match the nature of OpenCart.
 
-**Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart) but the
-implementation of OpenCart to run a store. Hence, please do not expect a code coverage test OpenCart.
+**Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
+but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
 
 OCUnit reads the real database configuration values and URLs from within your OpenCart's config.php files to run tests.
 There are few [business rules](config.ini) and configurations you should edit before running the test. Rules may differ
 as per businesses. Hence, most of the tests are empty. But they should guide you technically on how to write the tests.
 
-Please make a backup of your OpenCart database first! Run OCUnit at your own risk.
+Please make a backup of your OpenCart database first! **Run OCUnit at your own risk.**
 
 # Test Examples
 
@@ -90,8 +90,6 @@ Before running any tests scripts, you should consider editing [config.ini](confi
 
     cd admin
     php ../phpunit.phar cases/admin/
-
-    ..\vendor\bin\phpstan analyse ..
 
 Or,
 

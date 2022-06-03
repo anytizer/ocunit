@@ -14,7 +14,7 @@ class DatabaseTest extends TestCase
         $this->assertNotNull($pdo, "Failed connecting to the database.");
     }
 
-    public function testDoSingleCurrencyFix()
+    public function testSingleCurrency()
     {
         $pdo = new MySQLPDO();
 

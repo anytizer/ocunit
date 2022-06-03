@@ -3,6 +3,7 @@
 namespace cases\core;
 
 use Exception;
+use ocunit\library\oc;
 use Opencart\System\Engine\Config;
 use Opencart\System\Engine\Loader;
 use Opencart\System\Engine\Registry;
@@ -19,12 +20,17 @@ use PHPUnit\Framework\TestCase;
 
 class CartTest extends TestCase
 {
+    private function _registry()
+    {
+        return (new oc())->_registry();
+    }
+
     /**
      * @throws Exception
      */
     public function testCartClear()
     {
-        $registry = $this->registry();
+        $registry = $this->_registry();
 
         $cart = new Cart($registry);
         $cart->clear();
@@ -36,63 +42,9 @@ class CartTest extends TestCase
     /**
      * @throws Exception
      */
-    private function registry(): Registry
-    {
-        global $autoloader;
-
-        $registry = new Registry();
-        $registry->set("autoloader", $autoloader);
-
-        // Loader
-        $loader = new Loader($registry);
-        $registry->set('load', $loader);
-
-        $config = new Config();
-        $config->addPath(DIR_CONFIG);
-        $config->load("default");
-        $config->load(strtolower(APPLICATION));
-        $config->set("application", APPLICATION);
-        $registry->set("config", $config);
-
-        $log = new Log($config->get("error_filename"));
-        $registry->set("log", $log);
-
-        $loader = new Loader($registry);
-        $registry->set("load", $loader);
-
-        $db = new DB("mysqli", DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
-        $registry->set("db", $db);
-
-        $request = new Request();
-        $registry->set("request", $request);
-
-        $session = new Session("db", $registry);
-        $registry->set("session", $session);
-
-        $customer = new Customer($registry);
-        $registry->set("customer", $customer);
-
-        $cache = new Cache("file");
-        $registry->set("cache", $cache);
-
-        $tax = new Tax($registry);
-        $registry->set("tax", $tax);
-
-        $weight = new Weight($registry);
-        $registry->set("weight", $weight);
-
-        $cart = new Cart($registry);
-        $registry->set("cart", $cart);
-
-        return $registry;
-    }
-
-    /**
-     * @throws Exception
-     */
     public function testCustomerLogin()
     {
-        $registry = $this->registry();
+        $registry = $this->_registry();
 
         $customer = new Customer($registry);
 
@@ -107,7 +59,7 @@ class CartTest extends TestCase
      */
     public function testCustomerLoginFailure()
     {
-        $registry = $this->registry();
+        $registry = $this->_registry();
 
         $customer = new Customer($registry);
 

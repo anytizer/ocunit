@@ -1,3 +1,5 @@
+Template:
+
 Product Name #ID: Min Buy of Stock: ±Y/N
 Apparels - MODEL > SKU
 Tax Class: Taxable item name #ID
@@ -5,6 +7,8 @@ L x W x H @weight_class_id: Weight Unit
     Price - MPrice = Profit
     [ . ] Image.   [ . ] Download.   [ ✓ ] Profits.
 
+
+Product information example:
 
 Mittens #59: 1 of 10: ±Y
 Apparels - MITTENS > ____

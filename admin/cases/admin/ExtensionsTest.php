@@ -12,39 +12,30 @@ class ExtensionsTest extends TestCase
 {
     public function testThirdPartyExtensionTablesArePresent()
     {
+        $pdo = new MySQLPDO();
+        $fql = new FQL();
+
         $dbx = new DatabaseExecutor();
         $tables = $dbx->tables();
 
-        $searches = [
-            "tw_price_history",
-            "tw_manufacturer_prices",
-            "tw_product_videos",
-            "tw_login_failures",
-            "tw_download_history", // @todo add a history of downloads
+        $extensions = [
+            "tw_price_history" => "tw_price_history.sql",
+            "tw_manufacturer_prices" => "tw_manufacturer_prices.sql",
+            "tw_product_videos" => "tw_product_videos.sql",
+            "tw_login_failures" => "tw_login_failures.sql",
+            "tw_download_history" => "tw_download_history.sql",
         ];
 
-        foreach ($searches as $table) {
-            $this->assertTrue(in_array($table, $tables), "Third party extension table `{$table}` is not available.");
+        $found = 0;
+        foreach ($extensions as $table => $filename) {
+            if(!in_array($table, $tables)) {
+                $sql = $fql->read($filename);
+                $pdo->raw($sql, []);
+
+                ++$found;
+            }
         }
-    }
 
-    public function testCreateMissingThirdPartyExtensionTables()
-    {
-        $this->expectException(PDOException::class);
-
-        $pdo = new MySQLPDO();
-
-        $files = [
-            "tw_manufacturer_prices.sql",
-            "tw_price_history.sql",
-            "tw_product_videos.sql",
-            "tw_login_failures.sql",
-            "tw_download_history.sql"
-        ];
-
-        foreach ($files as $filename) {
-            $sql = (new FQL())->read($filename);
-            $pdo->raw($sql, []);
-        }
+        $this->assertEquals(0, $found);
     }
 }

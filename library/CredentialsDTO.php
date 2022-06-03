@@ -2,7 +2,7 @@
 
 namespace ocunit\library;
 
-class credentials
+class CredentialsDTO
 {
     public string $username = "";
     public string $password = "";

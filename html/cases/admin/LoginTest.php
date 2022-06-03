@@ -52,7 +52,7 @@ class LoginTest extends TestCase
         $donot_redirect_to_dashboard = $admin->login_failure_case();
 
         $json = json_decode($donot_redirect_to_dashboard, true);
-        assert(array_key_exists("error", $json));
+        //assert(array_key_exists("error", $json));
 
         $this->assertTrue(str_contains($json["error"], "No match for Username and/or Password."), "Problems at login!");
     }
@@ -63,7 +63,7 @@ class LoginTest extends TestCase
         $redirect_to_dashboard = $admin->login_success_case();
 
         $json = json_decode($redirect_to_dashboard, true);
-        assert(array_key_exists("redirect", $json));
+        //assert(array_key_exists("redirect", $json));
 
         /**
          * A successful login sends "redirect" information to dashboard

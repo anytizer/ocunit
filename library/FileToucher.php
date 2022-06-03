@@ -12,7 +12,7 @@ class FileToucher
     {
         touch($file);
 
-        assert(is_file($file));
+        //assert(is_file($file));
         return filesize($file);
     }
 }

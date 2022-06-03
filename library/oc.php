@@ -58,7 +58,6 @@ class oc
         $registry = new Registry();
         $registry->set("autoloader", $autoloader);
 
-        // Loader
         $loader = new Loader($registry);
         $registry->set("load", $loader);
 
@@ -105,12 +104,6 @@ class oc
 }
 
 /**
-$registry = new Registry();
-$registry->set("autoloader", $autoloader);
-
-// Loader
-$loader = new Loader($registry);
-$registry->set("load", $loader);
 
 $event = new Event($registry);
 $registry->set("event", $event);
@@ -131,19 +124,9 @@ $data = $language->load($filename, $prefix, $code);
 $text = $language->get("text_account");
 #$text = $language->get("text_home");
 
-$db = new DB("mysqli", DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
-$registry->set("db", $db);
-
 // Response
 $response = new Response();
 $registry->set("response", $response);
-
-$request = new Request();
-$registry->set("request", $request);
-
-$session = new Session("db", $registry);
-$session->start();
-$registry->set("session", $session);
 
 $template = new Template($config->get("template_engine")); // engine: twig
 $template->addPath(DIR_TEMPLATE);

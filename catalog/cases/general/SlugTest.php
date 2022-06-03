@@ -70,4 +70,22 @@ class SlugTest extends TestCase
         $slug = $this->slug->create("!Learn </XML>");
         $this->assertEquals("learn-xml", $slug);
     }
+
+    public function testSlug11()
+    {
+        $slug = $this->slug->create_from_path("c:/test/example.txt");
+        $this->assertEquals("example-txt", $slug);
+    }
+
+    public function testSlug12()
+    {
+        $slug = $this->slug->create_from_path("c:/test/example-txt");
+        $this->assertEquals("example-txt", $slug);
+    }
+
+    public function testSlug13()
+    {
+        $slug = $this->slug->create_from_path("/test/example.txt");
+        $this->assertEquals("example-txt", $slug);
+    }
 }

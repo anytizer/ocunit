@@ -43,6 +43,6 @@ require_once(__OCUNIT_ROOT__ . "/library/Slug.php");
 require_once(__OCUNIT_ROOT__ . "/library/admin.php");
 require_once(__OCUNIT_ROOT__ . "/library/api.php");
 require_once(__OCUNIT_ROOT__ . "/library/catalog.php");
-require_once(__OCUNIT_ROOT__ . "/library/credentials.php");
+require_once(__OCUNIT_ROOT__ . "/library/CredentialsDTO.php");
 require_once(__OCUNIT_ROOT__ . "/library/oc.php");
 require_once(__OCUNIT_ROOT__ . "/vendor/autoload.php");

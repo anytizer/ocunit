@@ -17,61 +17,46 @@ class DownloadsTest extends TestCase
     {
         $dbx = new DatabaseExecutor();
         $downloadables = $dbx->downloads();
+        if(count($downloadables))
+        {
+            foreach ($downloadables as $download) {
+                $download["filename"] = basename($download['filename']);
+                $masked_file = DIR_STORAGE . "download/{$download['filename']}";
 
-        foreach ($downloadables as $download) {
-            $download["filename"] = basename($download['filename']);
-            $masked_file = DIR_STORAGE . "download/{$download['filename']}";
+                $download_exists = is_file($masked_file);
+                $this->assertTrue($download_exists, "Missing download file for id #{$download['download_id']}: {$download['name']}.");
 
-            $download_exists = is_file($masked_file);
-            $this->assertTrue($download_exists, "Missing download file for id #{$download['download_id']}: {$download['name']}.");
-
-            $extension = pathinfo(basename($download["mask"]))["extension"];
-            $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only: {$download['mask']}");
+                $extension = pathinfo(basename($download["mask"]))["extension"];
+                $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only: {$download['mask']}");
+            }
         }
-
-        $this->assertTrue(count($downloadables) > 0, "Did not check downloads.");
     }
 
     public function testProductMustHaveAFileLinked()
     {
         $dbx = new DatabaseExecutor();
         $downloadable_products = $dbx->downloadable_products();
-        foreach ($downloadable_products as $product) {
-            // check downloadable record exists
-            $download_found = false;
-            foreach ($this->downloadables as $download) {
-                if ($download["product_id"] == $product["product_id"]) {
-                    $download_found = true;
+
+        if(count($downloadable_products)) {
+            foreach ($downloadable_products as $product) {
+                // check downloadable record exists
+                $download_found = false;
+                foreach ($this->downloadables as $download) {
+                    if ($download["product_id"] == $product["product_id"]) {
+                        $download_found = true;
+                    }
                 }
+
+                $this->assertTrue($download_found, "Failed linking a downloadable product for Product ID: #{$product['product_id']}.");
             }
-
-            $this->assertTrue($download_found, "Failed linking a downloadable product for Product ID: #{$product['product_id']}.");
         }
-
-        $this->assertTrue(count($downloadable_products) > 0, "Did not check downloadable products.");
     }
 
     public function testDownloadableIsAZipArchive()
     {
         // get a downloadable product.
-        // file name when downloaded sould end in a .zip format.
+        // file name when downloaded should end in a .zip format.
         $this->markTestSkipped("ZIP format download file - skipped testing for now..");
-    }
-
-    public function testAddMimeColumn()
-    {
-        // Add file size, file MIME, and hash signature to a downloadable file.
-        $this->markTestSkipped("MIME column to be added.");
-    }
-
-    public function testAddSizeColumn()
-    {
-        $this->markTestSkipped("Size column to be added.");
-    }
-
-    public function testAddHashColumn()
-    {
-        $this->markTestSkipped("Hash column to be added.");
     }
 
     public function testOthers()

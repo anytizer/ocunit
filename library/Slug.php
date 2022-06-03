@@ -16,4 +16,11 @@ class Slug
 
         return $slug;
     }
+
+    public function create_from_path($path="/direcotry/path")
+    {
+        $paths = pathinfo($path);
+
+        return $this->create(str_replace(".", "-", $paths["basename"]));
+    }
 }

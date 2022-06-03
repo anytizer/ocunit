@@ -20,6 +20,7 @@ class ExtensionsTest extends TestCase
             "tw_manufacturer_prices",
             "tw_product_videos",
             "tw_login_failures",
+            "tw_download_history", // @todo add a history of downloads
         ];
 
         foreach ($searches as $table) {

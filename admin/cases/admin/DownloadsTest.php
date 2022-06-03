@@ -10,15 +10,7 @@ class DownloadsTest extends TestCase
     private array $downloadables = [];
 
     public function setUp(): void
-    {/*
-        if(empty($this->downloadables))
-        {
-            // @todo It is being called all the times.
-            $dbx = new DatabaseExecutor();
-            $this->downloadables = $dbx->downloads();
-
-            $this->assertNotEmpty($this->downloadables, "Your store does not have any downloadable products.");
-        }*/
+    {
     }
 
     public function testDownloadShouldExist()
@@ -40,7 +32,7 @@ class DownloadsTest extends TestCase
         $this->assertTrue(count($downloadables) > 0, "Did not check downloads.");
     }
 
-    public function testDownloadableProductHasAFileLinked()
+    public function testProductMustHaveAFileLinked()
     {
         $dbx = new DatabaseExecutor();
         $downloadable_products = $dbx->downloadable_products();
@@ -58,15 +50,6 @@ class DownloadsTest extends TestCase
 
         $this->assertTrue(count($downloadable_products) > 0, "Did not check downloadable products.");
     }
-
-    // for each downloadable product
-    // download product is masked
-    // download product is actively linked
-    // customer who purchased a download can successfully download file
-    // download links are protected with login
-    // logged in customer cannot download another file, unless purchased
-
-    // SELECT product_id FROM `oc_product` WHERE tax_class_id=10;
 
     public function testAddMimeColumn()
     {
@@ -86,7 +69,16 @@ class DownloadsTest extends TestCase
 
     public function testOthers()
     {
-        //apply file size limits
+        // for each downloadable product
+        // download product is masked
+        // download product is actively linked
+        // customer who purchased a download can successfully download file
+        // download links are protected with login
+        // logged in customer cannot download another file, unless purchased
+        // apply file size limits
+        // apply download limits, show number of downloads remaining
+
+        // SELECT product_id FROM `oc_product` WHERE tax_class_id=10;
         //restrict others but .zip: reject!
         //A product can have multiple files attached. All files should exist.
         $this->markTestIncomplete("Other tests");

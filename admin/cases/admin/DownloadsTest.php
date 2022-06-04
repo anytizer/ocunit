@@ -3,6 +3,7 @@
 namespace ocunit\admin\cases\admin;
 
 use ocunit\library\DatabaseExecutor as DatabaseExecutor;
+use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
 
 class DownloadsTest extends TestCase
@@ -62,9 +63,13 @@ class DownloadsTest extends TestCase
 
     public function testDownloadableFileIsAZipArchive()
     {
-        // get a downloadable product.
-        // file name when downloaded should end in a .zip format.
-        $this->markTestIncomplete("ZIP format download file - skipped testing for now..");
+        $dbx = new DatabaseExecutor();
+        $masks = $dbx->file_masks();
+
+        foreach($masks as $mask)
+        {
+            $this->assertStringEndsWith(".zip", $mask["mask"]);
+        }
     }
 
     public function testOthers()

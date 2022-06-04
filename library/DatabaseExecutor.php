@@ -6,7 +6,9 @@ use ocunit\library\FQL as FQL;
 use ocunit\library\MySQLPDO as MySQLPDO;
 
 /**
- * This is not a generic database wrapper. Rather see: @MySQLPDO.
+ * This is not a generic database wrapper.
+ * Rather see: @MySQLPDO.
+ *
  * It operates some known SQLs against your OpenCart database which MAY INCLUDE modifying the database.
  */
 class DatabaseExecutor
@@ -65,6 +67,11 @@ class DatabaseExecutor
     {
         $downloads_sql = (new FQL())->read("downloads.sql");
         return $this->pdo->query($downloads_sql);
+    }
+
+    public function file_masks(): array
+    {
+        return $this->pdo->query("SELECT mask FROM `" . DB_PREFIX . "download`;", []);
     }
 
     public function downloadable_products(): array

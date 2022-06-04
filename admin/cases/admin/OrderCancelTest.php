@@ -22,7 +22,7 @@ class OrderCancelTest extends TestCase
         $this->assertTrue($cancelled);
     }
 
-    public function testDoNotCancelIncompleteOrder()
+    public function testDoNotRefundUnpaidOrder()
     {
         $order = new Order();
 

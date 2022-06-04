@@ -30,6 +30,10 @@ class DownloadsTest extends TestCase
                 $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only: {$download['mask']}");
             }
         }
+        else
+        {
+            $this->assertFalse(false);
+        }
     }
 
     public function testProductMustHaveAFileLinked()
@@ -50,13 +54,17 @@ class DownloadsTest extends TestCase
                 $this->assertTrue($download_found, "Failed linking a downloadable product for Product ID: #{$product['product_id']}.");
             }
         }
+        else
+        {
+            $this->assertFalse(false);
+        }
     }
 
-    public function testDownloadableIsAZipArchive()
+    public function testDownloadableFileIsAZipArchive()
     {
         // get a downloadable product.
         // file name when downloaded should end in a .zip format.
-        $this->markTestSkipped("ZIP format download file - skipped testing for now..");
+        $this->markTestIncomplete("ZIP format download file - skipped testing for now..");
     }
 
     public function testOthers()

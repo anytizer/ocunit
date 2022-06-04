@@ -13,6 +13,7 @@ class InstallationTest extends TestCase
     public function setUp(): void
     {
         global $configurations;
+
         $this->admin_config_file = $configurations["opencart"]["admin"]."/config.php";
         $this->store_config_file = $configurations["opencart"]["store"]."/config.php";
     }
@@ -22,7 +23,7 @@ class InstallationTest extends TestCase
         $toucher = new FileToucher();
         $filesize = $toucher->touch($this->admin_config_file);
 
-        $this->assertTrue($filesize > 0, "Install the OpenCart software.");
+        $this->assertNotEquals(0, $filesize, "Admin might have been already installed.");
     }
 
     function testTouchStoreConfigurationFile()
@@ -30,6 +31,6 @@ class InstallationTest extends TestCase
         $toucher = new FileToucher();
         $filesize = $toucher->touch($this->store_config_file);
 
-        $this->assertTrue($filesize > 0, "Install the OpenCart software.");
+        $this->assertNotEquals(0, $filesize, "Store might have been already installed.");
     }
 }

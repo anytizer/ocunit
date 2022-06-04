@@ -38,4 +38,10 @@ class Customer
         $checked_out = false;
         return $checked_out;
     }
+
+    public function create()
+    {
+        $customer = new \Opencart\Admin\Model\Customer\Customer();
+        $customer->addCustomer();
+    }
 }

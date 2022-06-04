@@ -3,8 +3,11 @@
 namespace ocunit\library;
 
 use anytizer\relay as relay;
+use Opencart\Admin\Model\User\User;
+use Opencart\Catalog\Controller\Account\Password;
+use Opencart\System\Library\Encryption;
 
-class admin
+class Admin extends MySQLPDO
 {
     public function login_success_case(): string
     {
@@ -141,5 +144,35 @@ class admin
 
         $html = $relay->fetch($url);
         return $html;
+    }
+
+    public function delete_all()
+    {
+        $this->query("DELETE FROM `".DB_PREFIX."user` WHERE user_group_id=1;");
+        $total = $this->query("SELECT COUNT(*) total FROM `".DB_PREFIX."user` WHERE user_group_id=1;")[0]["total"];
+
+        return $total;
+    }
+
+    public function create($email="", $password=""): int
+    {
+        $registry = (new oc())->_registry();
+        $user = new User($registry);
+
+        $data = [
+            "username" => $email,
+            "user_group_id" => "1",
+            "password" => password_hash($password, PASSWORD_DEFAULT),
+            "firstname" => "",
+            "lastname" => "",
+            "email" => $email,
+            "image" => "",
+            "status" => "1",
+            "date_added" => date("Y-m-d H:i:s"),
+        ];
+
+        $user_id = $user->addUser($data);
+
+        return $user_id;
     }
 }

@@ -31,6 +31,11 @@ function _env($ini_file)
     return $ini;
 }
 
+function dt(): string
+{
+    return date("Y-m-d H:i:s");
+}
+
 $configurations = _env("config.ini");
 
 /**

@@ -18,38 +18,38 @@ OCUnit reads the real database configuration values and URLs from within your Op
 There are few [business rules](config.ini) and configurations you should edit before running the test. Rules may differ
 as per businesses. Hence, most of the tests are empty. But they should guide you technically on how to write the tests.
 
-Please make a backup of your OpenCart database first! **Run OCUnit at your own risk.**
+Please make a clone of your OpenCart database before proceeding! **Run OCUnit at your own risk.**
 
 # Test Examples
 
 * A corresponding image should exist for product or category.
     * [x] Product Image: 800 px x 400 px
     * [x] Category Image: 200 px x 200 px
-* A "downloadable" file has to be in a .zip file only.
+* A "downloadable" file has to be in a .zip format only.
 * Directory listing should be disabled throughout the website - admin or store.
 * Store price cannot be less than the manufacturer price even after discounts.
 * Updating price makes a history of price change.
     * [x] Keep a log of when prices were changed.
     * [x] Maintain a price change history.
     * [x] Create a price log table.
-    * In some cases, you should be able to generate how prices were changed, in a graph.
-* Products must have videos associated with them in their description.
+* Products must have video links associated with them in their description.
 * Concisely generate inventory statistics.
+* Reverse create the database from your memos.
 
-These are just samples to illustrate how business rules are tested.
+These are just some samples to illustrate how business rules are tested.
 
 # Test Cases
 
 Case                       | Description
 ---------------------------|---------------------------------
-[admin](admin/cases/admin)       | various tests in admin features
+[admin](admin/cases/admin)         | various tests in admin features
 [api](catalog/cases/api)           | API tests as on [documentation](https://docs.opencart.com/en-gb/system/users/api/)
 [business](catalog/cases/business) | business logic tests
 [catalog](catalog/cases/catalog)   | frontend general tests
 [core](catalog/cases/core)         | opencart core tests
 [database](catalog/cases/database) | tests with direct database hits
 [general](catalog/cases/general)   | other uncategorized tests appear here
-[issues](catalog/cases/issues)     | For issues imported from GitHub
+[issues](catalog/cases/issues)     | For issues imported from GitHub and CVE Database
 [mail](catalog/cases/mail)         | test email sending features
 [report](catalog/cases/report)     | inventory and database statistics from merchant's perspectives
 
@@ -76,6 +76,7 @@ Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit d
 
     cd ocunit
 
+    # Download PHPUnit
     wget https://phar.phpunit.de/phpunit-9.5.20.phar
     mv phpunit-9.5.20.phar phpunit.phar
 
@@ -96,6 +97,10 @@ Or,
     cd catalog
     php ../phpunit.phar cases/catalog/
 
+Or,
+
+    cd business
+    php ../phpunit.phar cases/
 
 More information on tests is available at: https://phpunit.readthedocs.io/en/9.5/textui.html.
 

@@ -12,6 +12,7 @@ class LoginFailuresTest extends \PHPUnit\Framework\TestCase
         // bottleneck such IPs and usernames
         // immediately terminate system user demanders
         $this->markTestIncomplete("Brute Force check not implemented.");
+        //
     }
 
     public function testLoginFails()
@@ -72,5 +73,4 @@ class LoginFailuresTest extends \PHPUnit\Framework\TestCase
 
         $this->assertFalse($loggedin, "Customer approval required for login.");
     }
-
 }

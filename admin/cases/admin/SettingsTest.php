@@ -18,16 +18,12 @@ class SettingsTest extends TestCase
         $this->assertTrue(defined("DB_PREFIX"));
     }
 
-    public function testConnectivity()
-    {
-        $connected = $this->_connect();
-        $this->assertTrue($connected);
-    }
-
-    private function _connect(): bool
+    public function testDbConstantsYieldConnection()
     {
         $pdo = new PDO(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
-        return $pdo->isConnected();
+        $connected = $pdo->isConnected();
+
+        $this->assertTrue($connected);
     }
 
     public function testOtherSettingsDefined()

@@ -17,6 +17,6 @@ Order Cancel (cases\admin\OrderCancel)
 
 Settings (cases\admin\Settings)
  [x] Database constants defined
- [x] Connectivity
+ [x] Db constants yield connection
  [x] Other settings defined
 

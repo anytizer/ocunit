@@ -22,7 +22,7 @@ remove default discounts
 remove foreign tax zones
 limit countries of business operation
 
-reset database ids to start with 1, after removing demo data
+reset database ids to start with 1, after removing their demo data
 
 http://localhost/oc/store/upload/admin/index.php?route=catalog/download&user_token=
 Download Name | File Mask | Link

@@ -5,7 +5,6 @@ namespace ocunit\admin\cases\admin;
 use ocunit\library\DatabaseExecutor;
 use ocunit\library\FQL as FQL;
 use ocunit\library\MySQLPDO;
-use PDOException;
 use PHPUnit\Framework\TestCase;
 
 class ExtensionsTest extends TestCase
@@ -23,7 +22,7 @@ class ExtensionsTest extends TestCase
             "tw_manufacturer_prices" => "tw_manufacturer_prices.sql",
             "tw_product_videos" => "tw_product_videos.sql",
             "tw_login_failures" => "tw_login_failures.sql",
-            "tw_download_history" => "tw_download_history.sql",
+            "tw_download_history" => "tw_download_history.sql", // different than download report
         ];
 
         $found = 0;

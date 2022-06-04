@@ -46,17 +46,17 @@ class Customer extends MySQLPDO
         $customer = new \Opencart\Admin\Model\Customer\Customer($registry);
 
         $data = [
-            "store_id" => 1,
-            "customer_group_id" => 1,
+            "store_id" => "1",
+            "customer_group_id" => "1",
             "firstname" => "",
             "lastname" => "",
             "email" => "info@example.com",
             "telephone" => "",
-            "custom_fieldd" => "",
-            "newsletter" => true,
+            "custom_field" => "",
+            "newsletter" => "1",
             "password" => password_hash(html_entity_decode("password", ENT_QUOTES, 'UTF-8'), PASSWORD_DEFAULT),
-            "status" => 1,
-            "safe" => 1,
+            "status" => "1",
+            "safe" => "1",
             "date_added" => dt(),
         ];
 

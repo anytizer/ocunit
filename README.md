@@ -4,12 +4,12 @@ Merchant oriented test scripts for [OpenCart](https://github.com/opencart/openca
 on [PHPUnit](https://phpunit.de).
 
 __WARNING__: Never execute these tests against your live database or __in server environment__. It is likely to
-overwrite the product information, pricing, images, currencies, session, emails, passwords and more. The database may
-never return to its original state. Always duplicate your OpenCart database for use in demo mode.
+overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more. The database may
+never return to its original state.
+
+Always clone your OpenCart database for use with OCUnit.
 
 ![Sample Output](sample-output.png)
-
-Tests have been now separated to [admin](./admin/cases) and [catalog](./catalog/cases) and [business](./business/cases/) to match the nature of OpenCart.
 
 **Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
@@ -20,12 +20,13 @@ as per businesses. Hence, most of the tests are empty. But they should guide you
 
 Please make a clone of your OpenCart database before proceeding! **Run OCUnit at your own risk.**
 
+
 # Test Examples
 
 * A corresponding image should exist for product or category.
     * [x] Product Image: 800 px x 400 px
     * [x] Category Image: 200 px x 200 px
-* A "downloadable" file has to be in a .zip format only.
+* [x] A "downloadable" file has to be in a .zip format only.
 * Directory listing should be disabled throughout the website - admin or store.
 * Store price cannot be less than the manufacturer price even after discounts.
 * Updating price makes a history of price change.
@@ -38,20 +39,25 @@ Please make a clone of your OpenCart database before proceeding! **Run OCUnit at
 
 These are just some samples to illustrate how business rules are tested.
 
+Tests have been now separated to [admin](./admin/cases) and [catalog](./catalog/cases) and [business](./business/cases/) to match the nature of OpenCart.
+
+
 # Test Cases
 
-Case                       | Description
----------------------------|---------------------------------
-[admin](admin/cases/admin)         | various tests in admin features
-[api](catalog/cases/api)           | API tests as on [documentation](https://docs.opencart.com/en-gb/system/users/api/)
-[business](catalog/cases/business) | business logic tests
-[catalog](catalog/cases/catalog)   | frontend general tests
-[core](catalog/cases/core)         | opencart core tests
-[database](catalog/cases/database) | tests with direct database hits
-[general](catalog/cases/general)   | other uncategorized tests appear here
-[issues](catalog/cases/issues)     | For issues imported from GitHub and CVE Database
-[mail](catalog/cases/mail)         | test email sending features
-[report](catalog/cases/report)     | inventory and database statistics from merchant's perspectives
+|Folder     | Case                               | Description
+|-----------|------------------------------------|----------------
+| admin     | [admin](admin/cases/admin)         | various tests in admin features
+| catalog   | [api](catalog/cases/api)           | API tests as on [documentation](https://docs.opencart.com/en-gb/system/users/api/)
+|           | [business](catalog/cases/business) | business logic tests
+|           | [catalog](catalog/cases/catalog)   | frontend general tests
+|           | [core](catalog/cases/core)         | opencart core tests
+|           | [database](catalog/cases/database) | tests with direct database hits
+|           | [general](catalog/cases/general)   | other uncategorized tests appear here
+|           | [issues](catalog/cases/issues)     | For issues imported from GitHub and CVE Database
+|           | [mail](catalog/cases/mail)         | test email sending features
+|           | [report](catalog/cases/report)     | inventory and database statistics from merchant's perspectives
+| business  | [All Others](business/cases)       |
+
 
 # Requirements
 
@@ -61,6 +67,7 @@ Dependency                     | Version                       | Description
 [PHPUnit](https://phpunit.de/) | 9.5.20+                       | -
 [OpenCart](https://github.com/opencart/opencart)               | 4.0.0+ | master branch
 [relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
+
 
 # Installation
 
@@ -80,12 +87,15 @@ Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit d
     wget https://phar.phpunit.de/phpunit-9.5.20.phar
     mv phpunit-9.5.20.phar phpunit.phar
 
+    # Optional
     wget https://getcomposer.org/download/latest-stable/composer.phar
     php composer.phar update
 
+
 # Configuration of OCUnit
 
-Before running any tests scripts, you should consider editing [config.ini](config.ini) to tell something about your opencart installation.
+Before running any tests scripts, you should consider editing [config.ini](config.ini) and [stores.ini](stores.ini) to tell something about your opencart installation.
+
 
 # Test Execution
 
@@ -102,12 +112,12 @@ Or,
     cd business
     php ../phpunit.phar cases/
 
-More information on tests is available at: https://phpunit.readthedocs.io/en/9.5/textui.html.
 
 ## Logs Produced
 
 * `logs/testdox.txt` - Log of test status - pass or fail of test cases.
 * `logs/inventory.log` - concise report about products and prices for the merchant's review.
+
 
 # Inspirations
 
@@ -116,11 +126,13 @@ More information on tests is available at: https://phpunit.readthedocs.io/en/9.5
 * [Unit testing, Jenkins, code sniffing, github etc](https://forum.opencart.com/viewtopic.php?t=124532)
 * https://github.com/sarkershantonu/OpencartTesting
 
+
 # Contribution
 
 If you have a specific idea on how OCUnit (Test scripts for OpenCart based on PHPUnit) should function, fork the project
 and open pull request for your new test cases. Or, create a [new issue](https://github.com/anytizer/ocunit/issues/new)
-in __@anytizer__/ocunit project.
+in __@anytizer/ocunit__ project.
+
 
 # Made with IDEs
 

@@ -7,13 +7,16 @@ use PHPUnit\Framework\TestCase;
 
 class LoginFailuresTest extends TestCase
 {
+    /**
+     * @see https://github.com/opencart/opencart/issues/8710
+     * @see https://github.com/opencart/opencart/issues/8805
+     */
     public function testAdminBruteForceLoginDiscouraged()
     {
         // an IP address cannot send a login request continuously over a short period
         // bottleneck such IPs and usernames
         // immediately terminate system user demanders
         $this->markTestIncomplete("Brute Force check not implemented.");
-        //
     }
 
     public function testLoginFails()
@@ -46,7 +49,7 @@ class LoginFailuresTest extends TestCase
 
         // A successful login sends "redirect" information to dashboard
         $this->assertTrue(str_contains($json["redirect"], "route=common/dashboard"), "Redirecting to {$json['redirect']}");
-         * */
+        */
     }
 
     public function testCustomerLoginFormHasCaptcha()
@@ -70,8 +73,8 @@ class LoginFailuresTest extends TestCase
         // otherwise, should NOT be able to login.
         // rather notify this guest to wait for admin approval.
 
-        $loggedin = $guest->login();
+        $logged_in = $guest->login();
 
-        $this->assertFalse($loggedin, "Customer approval required for login.");
+        $this->assertFalse($logged_in, "Customer approval required for login.");
     }
 }

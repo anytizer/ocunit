@@ -4,8 +4,6 @@ namespace ocunit\library;
 
 use anytizer\relay as relay;
 use Opencart\Admin\Model\User\User;
-use Opencart\Catalog\Controller\Account\Password;
-use Opencart\System\Library\Encryption;
 use function ocunit\dt;
 
 class Admin extends MySQLPDO
@@ -150,9 +148,9 @@ class Admin extends MySQLPDO
     public function delete_all()
     {
         $this->query("DELETE FROM `".DB_PREFIX."user` WHERE user_group_id=1;");
-        $total = $this->query("SELECT COUNT(*) total FROM `".DB_PREFIX."user` WHERE user_group_id=1;")[0]["total"];
+        #$total = $this->query("SELECT COUNT(*) total FROM `".DB_PREFIX."user` WHERE user_group_id=1;")[0]["total"];
 
-        return $total;
+        return false; // $total;
     }
 
     public function create($info=[]): int
@@ -165,7 +163,8 @@ class Admin extends MySQLPDO
             "user_group_id" => "1",
             // @todo this password has a problem logging in.
             // @see check/OpenCartTest()->__construct()
-            "password" => password_hash($info["password"], PASSWORD_DEFAULT),
+            // @see https://github.com/anytizer/ocunit/issues/4
+            "password" => "$2y$10$3jDPTKNazk1djB.6HlBiN.IKfjWwJppESqDMO/dzBdxNWg3bvX7M2", // password_hash("admin", PASSWORD_DEFAULT), // $info["password"]
             "firstname" => "",
             "lastname" => "",
             "email" => $info["email"],

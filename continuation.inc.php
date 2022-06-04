@@ -21,16 +21,17 @@ if (function_exists($xdebug_disable)) {
 
 define("__OCUNIT_ROOT__", realpath(dirname(__FILE__, 1))); // do not change it
 
-function _env($section="")
+/**
+ * @param $ini_file
+ * @return array|false
+ */
+function _env($ini_file)
 {
-    $configurations = parse_ini_file(__OCUNIT_ROOT__."/config.ini", true, INI_SCANNER_NORMAL);
-    if($section and array_key_exists($section, $configurations))
-        $configurations = $configurations[$section];
-
-    return $configurations;
+    $ini = parse_ini_file(__OCUNIT_ROOT__."/{$ini_file}", true, INI_SCANNER_NORMAL);
+    return $ini;
 }
 
-$configurations = _env("");
+$configurations = _env("config.ini");
 
 /**
  * Should I run expensive database operations?
@@ -45,11 +46,13 @@ require_once(__OCUNIT_ROOT__ . "/library/FileToucher.php");
 require_once(__OCUNIT_ROOT__ . "/library/MySQLPDO.php");
 require_once(__OCUNIT_ROOT__ . "/library/Order.php");
 require_once(__OCUNIT_ROOT__ . "/library/Slug.php");
-require_once(__OCUNIT_ROOT__ . "/library/admin.php");
+require_once(__OCUNIT_ROOT__ . "/library/Admin.php");
 require_once(__OCUNIT_ROOT__ . "/library/api.php");
 require_once(__OCUNIT_ROOT__ . "/library/catalog.php");
 require_once(__OCUNIT_ROOT__ . "/library/CredentialsDTO.php");
 require_once(__OCUNIT_ROOT__ . "/library/oc.php");
+require_once(__OCUNIT_ROOT__ . "/library/Store.php");
+require_once(__OCUNIT_ROOT__ . "/library/Session.php");
 
 require_once(__OCUNIT_ROOT__ . "/vendor/autoload.php");
 

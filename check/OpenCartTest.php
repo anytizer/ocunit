@@ -1,13 +1,19 @@
 <?php
+require_once "../continuation.inc.php";
 
 use Opencart\System\Engine\Action as Action;
-use PHPUnit\Framework\TestCase as TestCase;
 
-class OpenCartTest extends TestCase
+class OpenCartTest
 {
     public static $registry;
     private static $loaded = false;
     private static $is_admin = null;
+
+    public function __construct()
+    {
+        $password = password_hash("admin", PASSWORD_DEFAULT);
+        echo $password;
+    }
 
     public function __get($name)
     {
@@ -41,8 +47,7 @@ class OpenCartTest extends TestCase
     {
         return $logged = $this->user->login($username, $password);
     }
-
-    public function tearDown(): void
-    {
-    }
 }
+
+
+$oct = new OpenCartTest();

@@ -118,15 +118,6 @@ $config->load(strtolower(APPLICATION));
 $config->set("application", APPLICATION);
 $registry->set("config", $config);
 
-$language = new Language($code);
-$language->addPath(DIR_LANGUAGE);
-$language->load($code);
-$registry->set("language", $language);
-$data = $language->load($filename, $prefix, $code);
-#print_r($data);
-$text = $language->get("text_account");
-#$text = $language->get("text_home");
-
 // Response
 $response = new Response();
 $registry->set("response", $response);

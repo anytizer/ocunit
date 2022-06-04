@@ -1,7 +1,7 @@
 <?php
 namespace ocunit\business\cases\admin;
 
-use ocunit\library\admin;
+use ocunit\library\Admin;
 use ocunit\library\Customer;
 
 class LoginFailuresTest extends \PHPUnit\Framework\TestCase

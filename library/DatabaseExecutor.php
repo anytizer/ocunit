@@ -4,6 +4,7 @@ namespace ocunit\library;
 
 use ocunit\library\FQL as FQL;
 use ocunit\library\MySQLPDO as MySQLPDO;
+use function ocunit\_env;
 
 /**
  * This is not a generic database wrapper.
@@ -112,7 +113,7 @@ class DatabaseExecutor
 
     public function metrics(): array
     {
-        $tax_class_id = _env("business_rules")["downloadable_product_tax_class_id"];
+        $tax_class_id = _env("config.ini")["business_rules"]["downloadable_product_tax_class_id"];
 
         $sql = "SELECT p.product_id, p.weight, p.weight_class_id, p.length, p.width, p.height, p.length_class_id FROM oc_product p WHERE tax_class_id!=:tax_class_id;";
         $products = $this->pdo->query($sql, [

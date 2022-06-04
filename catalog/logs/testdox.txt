@@ -1,28 +1,4 @@
-Api (cases\api\Api)
- [ ] Get api token
- [ ] Access routes
-
-Cart (cases\api\Cart)
- [ ] Api cart add
- [ ] Api cart edit
- [ ] Api cart remove
- [ ] Api cart products
-
-Coupon (cases\api\Coupon)
- [ ] Api coupon
-
-Currency (cases\api\Currency)
- [ ] Change session currency
-
-Customer (cases\api\Customer)
- [ ] Api customer
-
-Login (cases\api\Login)
- [ ] Get api token
- [ ] Inappropriate api users denied
- [ ] Access api login
-
-Voucher (cases\api\Voucher)
- [ ] Api voucher
- [ ] Api voucher add
+Language (cases\core\Language)
+ [x] Admin language loaded
+ [x] Store language loaded
 

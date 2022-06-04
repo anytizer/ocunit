@@ -6,6 +6,7 @@ use anytizer\relay as relay;
 use Opencart\Admin\Model\User\User;
 use Opencart\Catalog\Controller\Account\Password;
 use Opencart\System\Library\Encryption;
+use function ocunit\dt;
 
 class Admin extends MySQLPDO
 {
@@ -154,21 +155,23 @@ class Admin extends MySQLPDO
         return $total;
     }
 
-    public function create($email="", $password=""): int
+    public function create($info=[]): int
     {
         $registry = (new oc())->_registry();
         $user = new User($registry);
 
         $data = [
-            "username" => $email,
+            "username" => $info["username"],
             "user_group_id" => "1",
-            "password" => password_hash($password, PASSWORD_DEFAULT),
+            // @todo this password has a problem logging in.
+            // @see check/OpenCartTest()->__construct()
+            "password" => password_hash($info["password"], PASSWORD_DEFAULT),
             "firstname" => "",
             "lastname" => "",
-            "email" => $email,
+            "email" => $info["email"],
             "image" => "",
             "status" => "1",
-            "date_added" => date("Y-m-d H:i:s"),
+            "date_added" => dt(),
         ];
 
         $user_id = $user->addUser($data);

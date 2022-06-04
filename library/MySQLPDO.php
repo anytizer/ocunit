@@ -3,6 +3,7 @@
 namespace ocunit\library;
 
 use PDO as PDO;
+use PDOStatement;
 
 /**
  * Basic database wrapper without exceptions.
@@ -43,7 +44,7 @@ class MySQLPDO
     /**
      * Fire-only queries - like: insert, update, delete, replace
      */
-    public function raw($sql = "", $data = []): \PDOStatement
+    public function raw($sql = "", $data = []): PDOStatement
     {
         $statement = $this->connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY,]);
         $statement->execute($data);

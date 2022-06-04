@@ -2,7 +2,6 @@
 namespace cases\business;
 
 use ocunit\library\Admin;
-use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
 use function ocunit\_env;
 
@@ -21,7 +20,7 @@ class CreateAdminTest extends TestCase
         $user = _env("stores.ini")["admin"];
 
         $admin = new Admin();
-        $user_id = $admin->create($user["email"], $user["password"]);
+        $user_id = $admin->create($user);
 
         $this->assertTrue($user_id != "");
     }

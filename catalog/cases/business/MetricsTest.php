@@ -1,7 +1,7 @@
 <?php
 
 use ocunit\library\DatabaseExecutor;
-use \PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
 
 class MetricsTest extends TestCase
 {

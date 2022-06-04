@@ -3,8 +3,9 @@ namespace ocunit\business\cases\admin;
 
 use ocunit\library\Admin;
 use ocunit\library\Customer;
+use PHPUnit\Framework\TestCase;
 
-class LoginFailuresTest extends \PHPUnit\Framework\TestCase
+class LoginFailuresTest extends TestCase
 {
     public function testAdminBruteForceLoginDiscouraged()
     {

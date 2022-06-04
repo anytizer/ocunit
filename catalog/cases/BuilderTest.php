@@ -1,5 +1,8 @@
 <?php
-class BuilderTest extends \PHPUnit\Framework\TestCase
+
+use PHPUnit\Framework\TestCase;
+
+class BuilderTest extends TestCase
 {
     function testImportImages()
     {

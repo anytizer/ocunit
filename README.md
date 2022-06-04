@@ -9,7 +9,7 @@ never return to its original state. Always duplicate your OpenCart database for 
 
 ![Sample Output](sample-output.png)
 
-Tests have been now separated to [admin](./admin/cases/admin) and [catalog](catalog/cases/catalog) to match the nature of OpenCart.
+Tests have been now separated to [admin](./admin/cases) and [catalog](./catalog/cases) and [business](./business/cases/) to match the nature of OpenCart.
 
 **Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.

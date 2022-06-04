@@ -26,25 +26,30 @@ class LanguageTest extends TestCase
     /**
      * @throws Exception
      */
-    public function testLanguageLoaded()
+    public function testAdminLanguageLoaded()
     {
-        $code = "en-gb";
-        $filename = "account/account";
-        $filename = "catalog/information";
-        $prefix = "text";
+        $language = new Language("en-gb");
+        $language->addPath(DIR_LANGUAGE); // from admin path
+        $language->load("catalog/attribute_group");
 
-        #global $autoloader;
-        #$registry = (new oc())->_registry();
+        $text = $language->get("heading_title");
 
-        $config = new Config();
+        $this->assertEquals("Attribute Groups", $text, "Failed reading the language data.");
+    }
 
+    // it tests 2 different ways of accessing language variables
+    public function testStoreLanguageLoaded()
+    {
+        // to load DIR_LANGUAGE of store
+        $path = str_replace("/admin", "/catalog", DIR_LANGUAGE);
 
-        $language = new Language($config->get("language_code"));
-        $language->addPath(DIR_LANGUAGE);
-        $language->load("extension/opencart/shipping/free");
-        #print_r($language);
-        $text = $language->get("text_home");
+        $language = new Language("en-gb");
+        $language->addPath($path); // from store frontend path
+        $language->load("account/account");
 
-        $this->assertEquals("Home", $text, "Failed reading the language data.");
+        $text = $language->get("heading_title");
+
+        $this->assertEquals("Account", $language->all("text")["account"]);
+        $this->assertEquals("My Account", $text, "Failed reading the language data.");
     }
 }

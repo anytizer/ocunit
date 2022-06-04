@@ -5,24 +5,24 @@ use Opencart\System\Engine\Config;
 use Opencart\System\Engine\Event;
 use Opencart\System\Engine\Loader;
 use Opencart\System\Engine\Registry;
-use Opencart\System\Library\Cart\User;
-use Opencart\System\Library\DB;
-use Opencart\System\Library\Language;
-use Opencart\System\Library\Request;
-use Opencart\System\Library\Response;
-use Opencart\System\Library\Session;
-use Opencart\System\Library\Template;
 use Opencart\System\Library\Cache;
 use Opencart\System\Library\Cart\Cart;
 use Opencart\System\Library\Cart\Customer;
 use Opencart\System\Library\Cart\Tax;
+use Opencart\System\Library\Cart\User;
 use Opencart\System\Library\Cart\Weight;
+use Opencart\System\Library\DB;
+use Opencart\System\Library\Language;
 use Opencart\System\Library\Log;
+use Opencart\System\Library\Request;
+use Opencart\System\Library\Response;
+use Opencart\System\Library\Session;
+use Opencart\System\Library\Template;
 
 use Exception;
 
 /**
- * OpenCart Core system accessor
+ * OpenCart core system accessor
  */
 class oc
 {
@@ -98,6 +98,9 @@ class oc
 
         $cart = new Cart($registry);
         $registry->set("cart", $cart);
+
+        $language = new Language("en-gb");
+        $registry->set("language", $language);
 
         return $registry;
     }

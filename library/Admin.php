@@ -153,18 +153,22 @@ class Admin extends MySQLPDO
         return false; // $total;
     }
 
+    /**
+     * @throws \Exception
+     */
     public function create($info=[]): int
     {
         $registry = (new oc())->_registry();
         $user = new User($registry);
 
         $data = [
-            "username" => $info["username"],
+            "username" => $info["email"],
             "user_group_id" => "1",
             // @todo this password has a problem logging in.
             // @see check/OpenCartTest()->__construct()
             // @see https://github.com/anytizer/ocunit/issues/4
-            "password" => "$2y$10$3jDPTKNazk1djB.6HlBiN.IKfjWwJppESqDMO/dzBdxNWg3bvX7M2", // password_hash("admin", PASSWORD_DEFAULT), // $info["password"]
+            // "password" => "$2y$10$3jDPTKNazk1djB.6HlBiN.IKfjWwJppESqDMO/dzBdxNWg3bvX7M2",
+            "password" => password_hash($info["password"], PASSWORD_DEFAULT), // $info["password"]
             "firstname" => "",
             "lastname" => "",
             "email" => $info["email"],

@@ -7,9 +7,7 @@ __WARNING__: Never execute these tests against your live database or __in server
 overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more. The database may
 never return to its original state.
 
-Always clone your OpenCart database for use with OCUnit.
-
-![Sample Output](sample-output.png)
+Always **clone your OpenCart database** for use with OCUnit. **Run OCUnit at your own risk.**
 
 **Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
@@ -18,8 +16,6 @@ OCUnit reads the real database configuration values and URLs from within your Op
 There are few [business rules](config.ini) and configurations you should edit before running the test. Rules may differ
 as per businesses. Hence, most of the tests are empty. But they should guide you technically on how to write the tests.
 
-Please make a clone of your OpenCart database before proceeding! **Run OCUnit at your own risk.**
-
 
 # Test Examples
 
@@ -27,19 +23,21 @@ Please make a clone of your OpenCart database before proceeding! **Run OCUnit at
     * [x] Product Image: 800 px x 400 px
     * [x] Category Image: 200 px x 200 px
 * [x] A "downloadable" file has to be in a .zip format only.
-* Directory listing should be disabled throughout the website - admin or store.
-* Store price cannot be less than the manufacturer price even after discounts.
+* [x] Directory listing should be disabled throughout the website - admin or store.
+* [x] Store price cannot be less than the manufacturer price even after discounts.
 * Updating price makes a history of price change.
     * [x] Keep a log of when prices were changed.
     * [x] Maintain a price change history.
     * [x] Create a price log table.
 * Products must have video links associated with them in their description.
-* Concisely generate inventory statistics.
+* [x] Concisely generate inventory statistics.
 * Reverse create the database from your memos.
 
 These are just some samples to illustrate how business rules are tested.
 
 Tests have been now separated to [admin](./admin/cases) and [catalog](./catalog/cases) and [business](./business/cases/) to match the nature of OpenCart.
+
+![Sample Output](sample-output.png)
 
 
 # Test Cases
@@ -92,7 +90,7 @@ Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit d
     php composer.phar update
 
 
-# Configuration of OCUnit
+# Configurations
 
 Before running any tests scripts, you should consider editing [config.ini](config.ini) and [stores.ini](stores.ini) to tell something about your opencart installation.
 

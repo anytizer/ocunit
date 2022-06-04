@@ -7,7 +7,6 @@ class Logo extends MySQLPDO
 {
     public function delete_logos()
     {
-
         $this->raw("DELETE FROM `" . DB_PREFIX . "setting` WHERE `key`='config_logo';");
     }
 

@@ -111,13 +111,6 @@ class oc
 $event = new Event($registry);
 $registry->set("event", $event);
 
-$config = new Config();
-$config->addPath(DIR_CONFIG);
-$config->load("default");
-$config->load(strtolower(APPLICATION));
-$config->set("application", APPLICATION);
-$registry->set("config", $config);
-
 // Response
 $response = new Response();
 $registry->set("response", $response);

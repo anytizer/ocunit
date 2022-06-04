@@ -8,9 +8,22 @@ class CustomerTest extends TestCase
 {
     public function testDeleteCustomer()
     {
-        $c = new Customer();
-        $c->delete_all();
+        $customer = new Customer();
+        $customer->delete_all();
 
         $this->assertFalse(false);
+    }
+
+    public function testCreateCustomer()
+    {
+        $customer = new Customer();
+
+        $info = [
+            "email" => "customer@example.com",
+            "password" => "customer",
+        ];
+
+        $customer_id = $customer->create($info);
+        $this->assertTrue($customer_id!="");
     }
 }

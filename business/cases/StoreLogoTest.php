@@ -5,7 +5,7 @@ namespace ocunit\business;
 use ocunit\library\Logo;
 use PHPUnit\Framework\TestCase;
 
-class StoreTest extends TestCase
+class StoreLogoTest extends TestCase
 {
     public function testChangeStoreLogo()
     {

@@ -4,7 +4,6 @@ namespace ocunit;
 
 use ocunit\library\oc as oc;
 
-$configurations = [];
 /**
  * Show all errors.
  */
@@ -25,9 +24,9 @@ define("__OCUNIT_ROOT__", realpath(dirname(__FILE__, 1))); // do not change it
  * @param $ini_file
  * @return array|false
  */
-function _env($ini_file)
+function _env($ini_file="something.ini")
 {
-    $ini = parse_ini_file(__OCUNIT_ROOT__."/{$ini_file}", true, INI_SCANNER_NORMAL);
+    $ini = parse_ini_file(__OCUNIT_ROOT__."/ini/{$ini_file}", true, INI_SCANNER_NORMAL);
     return $ini;
 }
 

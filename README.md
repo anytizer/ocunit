@@ -4,7 +4,7 @@ Merchant oriented test scripts for [OpenCart](https://github.com/opencart/openca
 on [PHPUnit](https://phpunit.de).
 
 __WARNING__: Never execute these tests against your live database or __in server environment__. It is likely to
-overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more. The database may
+overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more. The database will
 never return to its original state.
 
 Always **clone your OpenCart database** for use with OCUnit. **Run OCUnit at your own risk.**
@@ -12,10 +12,11 @@ Always **clone your OpenCart database** for use with OCUnit. **Run OCUnit at you
 **Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
 
-OCUnit reads the real database configuration values and URLs from within your OpenCart's config.php files to run tests.
-There are few [business rules](config.ini) and configurations you should edit before running the test. Rules may differ
+OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run tests.
+There are few [business rules](ini/config.ini) and configurations you should edit before running the test. Rules may differ
 as per businesses. Hence, most of the tests are empty. But they should guide you technically on how to write the tests.
 
+Some information in this document are drafts only.
 
 # Test Examples
 
@@ -30,20 +31,27 @@ as per businesses. Hence, most of the tests are empty. But they should guide you
     * [x] Maintain a price change history.
     * [x] Create a price log table.
 * Products must have video links associated with them in their description.
+* Products must have multiple images.
 * [x] Concisely generate inventory statistics.
-* Reverse create the database from your memos.
+* Reverse create the database from your memos and configuration files.
+
+# And NOT testing like
+
+* Add product feature should accept an image upload.
+* The system should allow to upload a downloadable file.
+* Price edit should be working fine.
 
 These are just some samples to illustrate how business rules are tested.
 
-Tests have been now separated to [admin](./admin/cases) and [catalog](./catalog/cases) and [business](./business/cases/) to match the nature of OpenCart.
+Tests have been now separated to [admin](./admin/cases), [catalog](./catalog/cases) and [business](./business/cases/) to match the nature of OpenCart.
 
 ![Sample Output](sample-output.png)
 
 
 # Test Cases
 
-|Folder     | Case                               | Description
-|-----------|------------------------------------|----------------
+| Folder    | Case                               | Description
+|-----------|------------------------------------|------------------------------------------------
 | admin     | [admin](admin/cases/admin)         | various tests in admin features
 | catalog   | [api](catalog/cases/api)           | API tests as on [documentation](https://docs.opencart.com/en-gb/system/users/api/)
 |           | [business](catalog/cases/business) | business logic tests
@@ -54,7 +62,7 @@ Tests have been now separated to [admin](./admin/cases) and [catalog](./catalog/
 |           | [issues](catalog/cases/issues)     | For issues imported from GitHub and CVE Database
 |           | [mail](catalog/cases/mail)         | test email sending features
 |           | [report](catalog/cases/report)     | inventory and database statistics from merchant's perspectives
-| business  | [All Others](business/cases)       |
+| business  | [All Others](business/cases)       | Customized business rules
 
 
 # Requirements
@@ -67,7 +75,10 @@ Dependency                     | Version                       | Description
 [relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
 
 
-# Installation
+# Three steps
+
+
+## Step 1: Installation
 
 Clone OpenCart and OCUnit projects. Then install/configure them independently in "/oc/opencart" and "/oc/ocunit".
 Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit directory and update [composer](https://getcomposer.org) dependencies.
@@ -90,12 +101,13 @@ Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit d
     php composer.phar update
 
 
-# Configurations
+## Step 2: Configurations
 
-Before running any tests scripts, you should consider editing [config.ini](config.ini) and [stores.ini](stores.ini) to tell something about your opencart installation.
+Right after installation, you should consider editing [config.ini](ini/config.ini) and [stores.ini](ini/stores.ini) and [products.ini](ini/products.ini) to tell something about your opencart installation.
+Merchants may depend on editing these ini files to change the behaviour of OpenCart.
 
 
-# Test Execution
+## Step 3: Test Execution
 
     cd admin
     php ../phpunit.phar cases/admin/
@@ -111,9 +123,12 @@ Or,
     php ../phpunit.phar cases/
 
 
-## Logs Produced
+### Logs Produced
 
 * `logs/testdox.txt` - Log of test status - pass or fail of test cases.
+  * [admin/logs/testdox.txt](admin/logs/testdox.txt)
+  * [catalog/logs/testdox.txt](catalog/logs/testdox.txt)
+  * [business/logs/testdox.txt](business/logs/testdox.txt)
 * `logs/inventory.log` - concise report about products and prices for the merchant's review.
 
 
@@ -134,6 +149,6 @@ in __@anytizer/ocunit__ project.
 
 # Made with IDEs
 
-* [VS Code](https://code.visualstudio.com/download) + [SonarLint](https://www.sonarlint.org/)
 * [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer+ocunit)
+* [VS Code](https://code.visualstudio.com/download) + [SonarLint](https://www.sonarlint.org/)
 * [Notepad++](https://notepad-plus-plus.org/downloads/)

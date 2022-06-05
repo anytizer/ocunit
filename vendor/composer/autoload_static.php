@@ -46,7 +46,8 @@ class ComposerStaticInitaf2d6c6502b74fd90e6506c6e5b9aff7
         ),
         'anytizer\\' => 
         array (
-            0 => __DIR__ . '/..' . '/anytizer/relay.php/src/anytizer',
+            0 => __DIR__ . '/..' . '/anytizer/guid.php/src/anytizer',
+            1 => __DIR__ . '/..' . '/anytizer/relay.php/src/anytizer',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -67,6 +68,16 @@ class ComposerStaticInitaf2d6c6502b74fd90e6506c6e5b9aff7
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Parsedown' => 
+            array (
+                0 => __DIR__ . '/..' . '/erusev/parsedown',
+            ),
         ),
     );
 
@@ -756,6 +767,7 @@ class ComposerStaticInitaf2d6c6502b74fd90e6506c6e5b9aff7
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitaf2d6c6502b74fd90e6506c6e5b9aff7::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitaf2d6c6502b74fd90e6506c6e5b9aff7::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitaf2d6c6502b74fd90e6506c6e5b9aff7::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitaf2d6c6502b74fd90e6506c6e5b9aff7::$classMap;
 
         }, null, ClassLoader::class);

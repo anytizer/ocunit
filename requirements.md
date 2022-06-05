@@ -17,3 +17,9 @@
     - OpenSSL
     - ZLib
     - Zip
+
+## Dependencies
+
+    - relay.php
+    - guid.php
+    - https://github.com/erusev/parsedown

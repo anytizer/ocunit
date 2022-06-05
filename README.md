@@ -74,9 +74,11 @@ Dependency                     | Version                       | Description
 [PHPUnit](https://phpunit.de/) | 9.5.20+                       | -
 [OpenCart](https://github.com/opencart/opencart)               | 4.0.0+ | master branch
 [relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
+[guid.php](https://packagist.org/packages/anytizer/guid.php)   | -      | UUID generator
+[parsedown](https://github.com/erusev/parsedown)               | -      | .md to .html
 
 
-# Three steps
+# Three steps of Operation
 
 
 ## Step 1: Installation

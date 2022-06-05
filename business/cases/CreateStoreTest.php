@@ -28,7 +28,7 @@ class CreateStoreTest extends TestCase
             $dbx->store_create($name, $url);
         }
 
-        $this->assertFalse(false);
+        $this->assertEquals(4, count($stores));
     }
 
     public function testViewStores()

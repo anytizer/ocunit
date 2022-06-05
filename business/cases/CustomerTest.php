@@ -3,6 +3,7 @@ namespace ocunit\business;
 
 use ocunit\library\Customer;
 use PHPUnit\Framework\TestCase;
+use function ocunit\_env;
 
 class CustomerTest extends TestCase
 {
@@ -18,13 +19,18 @@ class CustomerTest extends TestCase
     {
         $customer = new Customer();
 
-        // @todo Push to .ini file
-        $info = [
-            "email" => "customer@example.com",
-            "password" => "customer",
-        ];
+        $customers = _env("stores.ini")["customers"];
+        foreach($customers as $email => $name)
+        {
+            $info = [
+                "email" => $email,
+                "name" => $name,
+                "password" => "customer", // @todo change it | randomly generate | and email the customer
+            ];
 
-        $customer_id = $customer->create($info);
+            $customer_id = $customer->create($info);
+        }
+
         $this->assertTrue($customer_id!="");
     }
 }

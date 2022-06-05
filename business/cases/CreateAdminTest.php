@@ -15,6 +15,9 @@ class CreateAdminTest extends TestCase
         $this->assertEquals(0, $total);
     }
 
+    /**
+     * @throws \Exception
+     */
     public function testCreateAdminUser()
     {
         $user = _env("stores.ini")["admin"];

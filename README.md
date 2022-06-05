@@ -7,8 +7,11 @@ __WARNING__: Never execute these tests against your live database or __in server
 overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more. The database will
 never return to its original state.
 
-Always **clone your OpenCart database** for use with OCUnit. **Run OCUnit at your own risk.** Please learn its aspects, before using it.
+**Clone your OpenCart database** for use with OCUnit.
+**Run OCUnit at your own risk.** Please learn its aspects, before using it.
 Otherwise, you may end up with a corrupted database.
+
+OCUnit is better when you are about to setup a __new store__.
 
 **Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.

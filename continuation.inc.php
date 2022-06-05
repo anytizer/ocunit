@@ -39,7 +39,7 @@ $configurations = _env("config.ini");
 
 /**
  * Should I run expensive database operations?
- * Boolean true/false value
+ * Boolean value
  */
 define("__OCUNIT_EXECUTE_EXPENSIVE__", $configurations["ocunit"]["execute_expensive"] == "true");
 
@@ -58,6 +58,7 @@ require_once(__OCUNIT_ROOT__ . "/library/Customer.php");
 require_once(__OCUNIT_ROOT__ . "/library/Store.php");
 require_once(__OCUNIT_ROOT__ . "/library/Session.php");
 require_once(__OCUNIT_ROOT__ . "/library/Logo.php");
+require_once(__OCUNIT_ROOT__ . "/library/Information.php");
 
 require_once(__OCUNIT_ROOT__ . "/vendor/autoload.php");
 

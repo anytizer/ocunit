@@ -37,7 +37,12 @@ Some information in this document are drafts only.
 * Products must have video links associated with them in their description.
 * Products must have multiple images.
 * [x] Concisely generate inventory statistics.
-* Reverse create the database from your memos and configuration files.
+* Reverse create the database information from your memos and configuration files.
+  * [x] Stores and URLs
+  * [x] Categories and Products
+  * [x] Images
+  * [ ] Languages - always default: "1" for en-gb.
+  * [x] [Information Pages](ini/information/)
 
 # And NOT testing like
 

@@ -7,14 +7,15 @@ __WARNING__: Never execute these tests against your live database or __in server
 overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more. The database will
 never return to its original state.
 
-Always **clone your OpenCart database** for use with OCUnit. **Run OCUnit at your own risk.**
+Always **clone your OpenCart database** for use with OCUnit. **Run OCUnit at your own risk.** Please learn its aspects, before using it.
+Otherwise, you may end up with a corrupted database.
 
 **Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
 
 OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run tests.
 There are few [business rules](ini/config.ini) and configurations you should edit before running the test. Rules may differ
-as per businesses. Hence, most of the tests are empty. But they should guide you technically on how to write the tests.
+as per businesses. Hence, most of the tests are empty. But they should self-guide you technically on how to write the tests.
 
 Some information in this document are drafts only.
 
@@ -80,8 +81,8 @@ Dependency                     | Version                       | Description
 
 ## Step 1: Installation
 
-Clone OpenCart and OCUnit projects. Then install/configure them independently in "/oc/opencart" and "/oc/ocunit".
-Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit directory and update [composer](https://getcomposer.org) dependencies.
+Clone OpenCart and OCUnit projects. Then install and configure them independently in "/oc/opencart" and "/oc/ocunit".
+Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit directory and update the [composer](https://getcomposer.org) dependencies.
 
     cd htdocs|public_html|www|web
     mkdir oc
@@ -103,8 +104,9 @@ Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit d
 
 ## Step 2: Configurations
 
-Right after installation, you should consider editing [config.ini](ini/config.ini) and [stores.ini](ini/stores.ini) and [products.ini](ini/products.ini) to tell something about your opencart installation.
+**Important** - right after installation, you should consider editing [ini/config.ini](ini/config.ini), [ini/stores.ini](ini/stores.ini) and [ini/products.ini](ini/products.ini) to tell something about your opencart installation.
 Merchants may depend on editing these ini files to change the behaviour of OpenCart.
+Though not promised, OCUnit will build the OpenCart database based on these values.
 
 
 ## Step 3: Test Execution

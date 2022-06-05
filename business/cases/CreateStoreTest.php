@@ -2,20 +2,13 @@
 
 namespace ocunit\business\cases;
 
+use ocunit\library\Logo;
 use ocunit\library\Store;
 use PHPUnit\Framework\TestCase;
 use function ocunit\_env;
 
 class CreateStoreTest extends TestCase
 {
-    public function testViewStores()
-    {
-        $dbx = new Store();
-        $stores = $dbx->stores();
-
-        $this->assertNotEmpty($stores);
-    }
-
     public function testEmptyStores()
     {
         $dbx = new Store();
@@ -36,5 +29,13 @@ class CreateStoreTest extends TestCase
         }
 
         $this->assertFalse(false);
+    }
+
+    public function testViewStores()
+    {
+        $dbx = new Store();
+        $stores = $dbx->stores();
+
+        $this->assertNotEmpty($stores);
     }
 }

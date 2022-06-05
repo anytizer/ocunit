@@ -18,6 +18,7 @@ class CustomerTest extends TestCase
     {
         $customer = new Customer();
 
+        // @todo Push to .ini file
         $info = [
             "email" => "customer@example.com",
             "password" => "customer",

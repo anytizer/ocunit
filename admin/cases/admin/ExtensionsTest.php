@@ -19,10 +19,11 @@ class ExtensionsTest extends TestCase
 
         $extensions = [
             "tw_price_history" => "tw_price_history.sql",
+            "tw_manufacturer" => "tw_manufacturer.sql",
             "tw_manufacturer_prices" => "tw_manufacturer_prices.sql",
             "tw_product_videos" => "tw_product_videos.sql",
             "tw_login_failures" => "tw_login_failures.sql",
-            "tw_download_history" => "tw_download_history.sql", // different than download report
+            "tw_download_history" => "tw_download_history.sql", // different from oc_download_report
         ];
 
         $found = 0;

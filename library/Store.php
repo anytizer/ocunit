@@ -7,7 +7,14 @@ class Store extends MySQLPDO
 {
     public function stores(): array
     {
-        return $this->query("SELECT * FROM `" . DB_PREFIX . "store`;", []);
+        $stores = $this->query("SELECT * FROM `" . DB_PREFIX . "store`;", []);
+        $stores[] = [
+            "store_id" => 0,
+            "name" => "Default",
+            "url" => "http://localhost/oc/opencart/upload/",
+        ];
+
+        return $stores;
     }
 
     public function stores_delete(): bool

@@ -24,6 +24,8 @@ Some information in this document are drafts only.
 
 # Test Examples
 
+## Test like
+
 * A corresponding image should exist for product or category.
     * [x] Product Image: 800 px x 400 px
     * [x] Category Image: 200 px x 200 px
@@ -44,7 +46,7 @@ Some information in this document are drafts only.
   * [ ] Languages - always default: "1" for en-gb.
   * [x] [Information Pages](ini/information/)
 
-# And NOT testing like
+## And NOT test like
 
 * Add product feature should accept an image upload.
 * The system should allow to upload a downloadable file.

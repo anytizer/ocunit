@@ -1,3 +1,25 @@
+Downloads (ocunit\admin\cases\admin\Downloads)
+ [x] Download should exist
+ [x] Product must have a file linked
+ [ ] Downloadable file is a zip archive
+ [ ] Others
+
+Extensions (ocunit\admin\cases\admin\Extensions)
+ [x] Third party extension tables are present
+
 Information (ocunit\admin\cases\admin\Information)
  [x] Create cms pages
+
+Installation (ocunit\admin\cases\admin\Installation)
+ [x] Touch admin configuration file
+ [x] Touch store configuration file
+
+Order Cancel (cases\admin\OrderCancel)
+ [x] Order cancelled properly
+ [ ] Do not refund unpaid order
+
+Settings (cases\admin\Settings)
+ [x] Database constants defined
+ [x] Db constants yield connection
+ [x] Other settings defined
 

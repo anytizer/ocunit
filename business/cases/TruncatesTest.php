@@ -19,6 +19,9 @@ class TruncatesTest extends TestCase
             $pdo->raw("TRUNCATE TABLE `{$table}`;");
         }
 
+        /**
+         * @todo Individual components may truncate their own tables.
+         */
         $this->assertFalse(false);
     }
 }

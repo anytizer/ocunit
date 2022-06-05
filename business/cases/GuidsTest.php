@@ -6,12 +6,11 @@ use PHPUnit\Framework\TestCase;
 
 class GuidsTest extends TestCase
 {
-    public function testGenerateGuids()
+    public function testGenerateGuid()
     {
-        $number = 10;
-        for($i=1; $i<=$number; ++$i)
-        {
-            echo "\r\n", guid::NewGuid();
-        }
+        $guid = guid::NewGuid();
+
+        $this->assertEquals(36, strlen($guid));
     }
+
 }

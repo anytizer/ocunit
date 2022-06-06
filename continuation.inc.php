@@ -60,6 +60,9 @@ require_once(__OCUNIT_ROOT__ . "/library/Session.php");
 require_once(__OCUNIT_ROOT__ . "/library/Logo.php");
 require_once(__OCUNIT_ROOT__ . "/library/Information.php");
 require_once(__OCUNIT_ROOT__ . "/library/Banner.php");
+require_once(__OCUNIT_ROOT__ . "/library/Image.php");
+require_once(__OCUNIT_ROOT__ . "/library/Category.php");
+require_once(__OCUNIT_ROOT__ . "/library/Product.php");
 
 require_once(__OCUNIT_ROOT__ . "/vendor/autoload.php");
 

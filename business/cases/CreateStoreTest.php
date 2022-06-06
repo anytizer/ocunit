@@ -12,7 +12,7 @@ class CreateStoreTest extends TestCase
     public function testEmptyStores()
     {
         $s = new Store();
-        $deleted = $s->stores_delete();
+        $deleted = $s->truncate();
 
         $this->assertTrue($deleted);
     }

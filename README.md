@@ -73,7 +73,7 @@ Tests have been now separated to [admin](./admin/cases), [catalog](./catalog/cas
 |           | [issues](catalog/cases/issues)     | For issues imported from GitHub and CVE Database
 |           | [mail](catalog/cases/mail)         | test email sending features
 |           | [report](catalog/cases/report)     | inventory and database statistics from merchant's perspectives
-| business  | [All Others](business/cases)       | Customized business rules
+| business  | [cases](business/cases)            | Customized business rules
 
 
 # Requirements

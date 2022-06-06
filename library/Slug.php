@@ -17,7 +17,7 @@ class Slug
         return $slug;
     }
 
-    public function create_from_path($path="/direcotry/path")
+    public function create_from_path($path="/directory/path")
     {
         $paths = pathinfo($path);
         $slug = $this->create(str_replace(".", "-", $paths["basename"]));

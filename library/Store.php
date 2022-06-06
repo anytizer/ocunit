@@ -17,7 +17,7 @@ class Store extends MySQLPDO
         return $stores;
     }
 
-    public function stores_delete(): bool
+    public function truncate(): bool
     {
         $this->raw("TRUNCATE TABLE `" . DB_PREFIX . "store`;", []);
 

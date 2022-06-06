@@ -67,7 +67,7 @@ class Product extends MySQLPDO
             $data_product = [
                 "product_id" => null,
                 "master_id" => "0",
-                "model" => "MODEL", # required
+                "model" => "MODEL-001", # @todo Require product model
                 "sku" => "",
                 "upc" => "",
                 "ean" => "",

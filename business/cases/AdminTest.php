@@ -1,11 +1,12 @@
 <?php
 namespace cases\business;
 
+use Exception;
 use ocunit\library\Admin;
 use PHPUnit\Framework\TestCase;
 use function ocunit\_env;
 
-class CreateAdminTest extends TestCase
+class AdminTest extends TestCase
 {
     public function testDeleteAdminUsers()
     {
@@ -16,7 +17,7 @@ class CreateAdminTest extends TestCase
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public function testCreateAdminUser()
     {

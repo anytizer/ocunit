@@ -32,7 +32,7 @@ class InventoryTest extends TestCase
         }
     }
 
-    private function _logInventoryForMerchantReports($inventories = [], $taxes = [], $lengths = [], $weights = [])
+    private function _logInventoryForMerchantReports($inventories = [], $taxes = [], $lengths = [], $weights = []): void
     {
         $tick = "✓";
         $cross = "."; // x - occupies readable space

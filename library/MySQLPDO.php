@@ -51,4 +51,13 @@ class MySQLPDO
 
         return $statement;
     }
+
+    /**
+     * Use carefully.
+     * @return mixed
+     */
+    public function _id()
+    {
+        return $this->query("SELECT LAST_INSERT_ID() id;")[0]["id"];
+    }
 }

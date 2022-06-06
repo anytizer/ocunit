@@ -9,7 +9,7 @@ class BuilderTest extends TestCase
         $path = "D:/desktop/stores";
 
         $categories = [];
-        $everything = array_diff(scandir($path), ['', '..']);
+        $everything = array_diff(scandir($path), [".", ".."]);
         foreach($everything as $category)
         {
             $fullpath = $path."/".$category;

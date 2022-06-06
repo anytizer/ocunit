@@ -2,17 +2,36 @@
 namespace ocunit\business\cases;
 
 use Exception;
+use ocunit\library\Category;
 use ocunit\library\MySQLPDO;
 use ocunit\library\oc;
-use Opencart\Admin\Model\Catalog\Category;
+use PHPUnit\Framework\TestCase;
 use function ocunit\_env;
 use function ocunit\dt;
 
-class CategoryDescriptionTest extends \PHPUnit\Framework\TestCase
+class CategoryTest extends TestCase
 {
+    public function testTruncateCategories()
+    {
+        $category = new Category();
+        $category->truncate();
+
+        $this->assertFalse(false);
+    }
+
+    public function testBuildCategories()
+    {
+        // from store > categories > products > images[]
+        $category = new Category();
+        $category->patch();
+
+        $this->assertFalse(false);
+    }
+
     /**
      * @throws Exception
      */
+    /*
     public function testCreateCategoryDescriptions()
     {
         $pdo = new MySQLPDO();
@@ -20,7 +39,7 @@ class CategoryDescriptionTest extends \PHPUnit\Framework\TestCase
         $pdo->raw("TRUNCATE TABLE `".DB_PREFIX."category_description`;");
         $pdo->raw("TRUNCATE TABLE `".DB_PREFIX."category`;");
 
-        $categories = _env("stores.ini")["categories"];
+        $categories = _env("stores.ini")["categories"]; // @todo Use ini/categories/*.md
         $stores = _env("stores.ini")["stores"];
 
         foreach($categories as $guid => $name)
@@ -34,29 +53,6 @@ class CategoryDescriptionTest extends \PHPUnit\Framework\TestCase
             }
         }
 
-        $registry = (new oc())->_registry();
-        $category = new Category($registry);
-
-        foreach($categories as $guid => $name)
-        {
-            $data = [
-                "parent_id" => 0,
-                "image" => "",
-                "top" => "1",
-                "column" => "1",
-                "sort_order" => "0",
-                "status" => "1",
-                "date_added" => dt(),
-                "date_modified" => dt(),
-
-                "category_description" => [1 => ["name" => $name, "description" => "", "meta_title" => $name, "meta_description" => "", "meta_keyword" => ""]],
-                "category_seo_url" => [], // do NOT create seo urls
-            ];
-
-            $category_id = $category->addCategory($data);
-
-        }
-
         $this->assertFalse(false);
-    }
+    }*/
 }

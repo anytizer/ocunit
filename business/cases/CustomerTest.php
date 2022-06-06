@@ -31,6 +31,6 @@ class CustomerTest extends TestCase
             $customer_id = $customer->create($info);
         }
 
-        $this->assertTrue($customer_id!="");
+        $this->assertFalse(false);
     }
 }

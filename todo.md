@@ -12,3 +12,5 @@ Customize all OC Settings.
     * SELECT * FROM oc_setting WHERE `value` LIKE 'Your Store';
     * Store owner information
     * Contact details
+
+Enter category path.

@@ -53,12 +53,16 @@ class Product extends MySQLPDO
 
             // @todo Use .ini file for product details
 
-            # data gathered so far
+            /**
+             * # data gathered so far
+             */
+            /**
             echo "\r\n", $directory;
             echo "\r\n", $name, " - ", $slug, " - ", $product_description_md;
             echo "\r\n", $description;
             echo "\r\n", $price, " | ", $mprice;
             echo "\r\n";
+            */
 
             $sql_product_add = "insert into `".DB_PREFIX."product` (
             `product_id`, `master_id`,

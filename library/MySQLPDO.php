@@ -17,7 +17,7 @@ class MySQLPDO
 
     public function __construct()
     {
-        $dsn = "mysql:host=" . DB_HOSTNAME . ";dbname=" . DB_DATABASE . ";port=3306;";
+        $dsn = "mysql:host=" . DB_HOSTNAME . ";dbname=" . DB_DATABASE . ";port=" . DB_PORT . ";";
         $this->connection = new PDO(
             $dsn,
             DB_USERNAME,

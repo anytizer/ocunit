@@ -5,6 +5,7 @@ use Exception;
 use ocunit\library\Category;
 use ocunit\library\MySQLPDO;
 use ocunit\library\oc;
+use ocunit\library\Product;
 use PHPUnit\Framework\TestCase;
 use function ocunit\_env;
 use function ocunit\dt;
@@ -13,12 +14,18 @@ class CategoryTest extends TestCase
 {
     public function testTruncateCategories()
     {
+        $product = new Product();
+        $product->truncate();
+
         $category = new Category();
         $category->truncate();
 
         $this->assertFalse(false);
     }
 
+    /**
+     * @throws Exception
+     */
     public function testBuildCategories()
     {
         // from store > categories > products > images[]

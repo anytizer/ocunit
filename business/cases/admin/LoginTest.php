@@ -14,6 +14,9 @@ class LoginTest extends TestCase
         "customer",
         "guest",
         "demo",
+        "super",
+        "shop",
+        "cart",
     ];
 
     public function testRemoveSystemUsers()

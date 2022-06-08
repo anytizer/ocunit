@@ -25,7 +25,6 @@ class LoginFailuresTest extends TestCase
         $this->assertFalse(false);
 
        /*
-
         $admin = new admin();
         $donot_redirect_to_dashboard = $admin->login_failure_case();
 

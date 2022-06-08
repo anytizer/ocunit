@@ -72,7 +72,7 @@ class DownloadsTest extends TestCase
         }
     }
 
-    public function testOthers()
+    public function testDownloadFilesAreProtected()
     {
         // for each downloadable product
         // download product is masked
@@ -82,7 +82,11 @@ class DownloadsTest extends TestCase
         // logged in customer cannot download another file, unless purchased
         // apply file size limits
         // apply download limits, show number of downloads remaining
+    }
 
+    public function testOthers()
+    {
+        // @see ini/config.ini -> [business_rules][downloadable_product_tax_class_id]
         // SELECT product_id FROM `oc_product` WHERE tax_class_id=10;
         // restrict others but .zip: reject!
         // A product can have multiple files attached. All files should exist.

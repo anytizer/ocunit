@@ -2,6 +2,7 @@ Downloads (ocunit\admin\cases\admin\Downloads)
  [x] Download should exist
  [x] Product must have a file linked
  [ ] Downloadable file is a zip archive
+ [ ] Download files are protected
  [ ] Others
 
 Extensions (ocunit\admin\cases\admin\Extensions)
@@ -22,4 +23,6 @@ Settings (cases\admin\Settings)
  [x] Database constants defined
  [x] Db constants yield connection
  [x] Other settings defined
+ [ ] Mysql p connect is disabled
+ [ ] Mysql remote access to be blocked
 

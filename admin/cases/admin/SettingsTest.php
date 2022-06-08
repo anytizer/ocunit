@@ -31,4 +31,14 @@ class SettingsTest extends TestCase
         $this->assertTrue(defined("HTTP_CATALOG"));
         $this->assertTrue(defined("OPENCART_SERVER"));
     }
+
+    public function testMysqlPConnectIsDisabled()
+    {
+        //
+    }
+
+    public function testMysqlRemoteAccessToBeBlocked()
+    {
+        //
+    }
 }

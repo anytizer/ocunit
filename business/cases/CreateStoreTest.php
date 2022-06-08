@@ -28,7 +28,7 @@ class CreateStoreTest extends TestCase
             $s->store_create($name, $url);
         }
 
-        $this->assertEquals(4, count($stores));
+        $this->assertCount(4, $stores);
     }
 
     public function testViewStores()

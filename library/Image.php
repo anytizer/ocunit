@@ -19,6 +19,6 @@ class Image extends MySQLPDO
 
     public function patch()
     {
-        // catalog/demo/samsung_tab_2.jpg
+        // catalog/demo/product.png
     }
 }

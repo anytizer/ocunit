@@ -8,7 +8,7 @@ use function ocunit\_env;
 
 class ManufacturerTest extends TestCase
 {
-    public function testRebuildManufactuers()
+    public function testRebuildManufacturers()
     {
         $manufacturers = _env("stores.ini")["manufacturers"];
 

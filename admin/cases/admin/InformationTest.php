@@ -12,6 +12,7 @@ class InformationTest extends TestCase
     {
         $information = new Information();
         $information->truncate();
+
         $total = $information->patch(__OCUNIT_ROOT__."/ini/information/*.md");
 
         $this->assertTrue($total > 0);

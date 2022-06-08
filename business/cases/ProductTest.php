@@ -17,7 +17,7 @@ class ProductTest extends TestCase
     public function testBuildProducts()
     {
         // from store > categories > products > images[]
-        // products imported while looping through caregories.
+        // products imported while looping through categories.
         // @see Category.php
     }
 }

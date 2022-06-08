@@ -26,16 +26,16 @@ class ExtensionsTest extends TestCase
             "tw_download_history" => "tw_download_history.sql", // different from oc_download_report
         ];
 
-        $found = 0;
+        $missing = 0;
         foreach ($extensions as $table => $filename) {
             if(!in_array($table, $tables)) {
                 $sql = $fql->read($filename);
                 $pdo->raw($sql, []);
 
-                ++$found;
+                ++$missing;
             }
         }
 
-        $this->assertEquals(0, $found);
+        $this->assertEquals(0, $missing);
     }
 }

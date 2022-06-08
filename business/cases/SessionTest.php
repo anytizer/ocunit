@@ -10,7 +10,7 @@ class SessionTest extends TestCase
     public function testClearSession()
     {
         $session = new Session();
-        $session->delete();
+        $session->truncate();
 
         $this->assertFalse(false);
     }

@@ -84,8 +84,8 @@ class DownloadsTest extends TestCase
         // apply download limits, show number of downloads remaining
 
         // SELECT product_id FROM `oc_product` WHERE tax_class_id=10;
-        //restrict others but .zip: reject!
-        //A product can have multiple files attached. All files should exist.
+        // restrict others but .zip: reject!
+        // A product can have multiple files attached. All files should exist.
         $this->markTestIncomplete("Other tests");
     }
 }

@@ -9,7 +9,7 @@ use Opencart\System\Library\Encryption;
 
 class Session extends MySQLPDO
 {
-    public function delete()
+    public function truncate()
     {
         $this->query("TRUNCATE TABLE `".DB_PREFIX."session`;");
         return true;

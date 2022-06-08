@@ -25,9 +25,7 @@ class Customer extends MySQLPDO
 
     public function build_cart(): Cart
     {
-        $oc = new oc();
-
-        $registry = $oc->_registry();
+        $registry = (new oc())->_registry();
 
         $cart = new Cart($registry);
         return $cart;

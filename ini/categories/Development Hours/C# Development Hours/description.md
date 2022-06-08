@@ -1,1 +1,1 @@
-Developing multi purpose with C#
+Developing multipurpose application with C#.

@@ -15,7 +15,6 @@ class Category extends MySQLPDO
             DB_PREFIX."category_description",
             DB_PREFIX."category_path",
             DB_PREFIX."category_to_store",
-            DB_PREFIX."product_to_category",
         ];
 
         foreach($tables as $table) {
@@ -78,7 +77,7 @@ class Category extends MySQLPDO
 
 
             // @todo Category Path
-            $this->raw("INSERT INTO `" . DB_PREFIX . "category_path` SET `category_id` = :category_id, `path_id` = :path_id, `level` = 0;", ["category_id" => $category_id, "path_id" => 0]);
+            $this->raw("INSERT INTO `" . DB_PREFIX . "category_path` SET `category_id` = :category_id, `path_id` = :path_id, `level` = 0;", ["category_id" => $category_id, "path_id" => $category_id]);
 
 
             foreach($stores as $store)

@@ -4,8 +4,8 @@ Merchant oriented test scripts for [OpenCart](https://github.com/opencart/openca
 on [PHPUnit](https://phpunit.de).
 
 __WARNING__: Never execute these tests against your live database or __in server environment__. It is likely to
-overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more. The database will
-never return to its original state.
+overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more.
+The database will never return to its original state. It even truncates a lot of tables.
 
 **Clone your OpenCart database** for use with OCUnit.
 **Run OCUnit at your own risk.** Please learn its aspects, before using it.
@@ -116,8 +116,8 @@ Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit d
 
 ## Step 2: Configurations
 
-**Important** - right after installation, you should consider editing [ini/config.ini](ini/config.ini), [ini/stores.ini](ini/stores.ini) and [ini/products.ini](ini/products.ini) to tell something about your opencart installation.
-Merchants may depend on editing these ini files to change the behaviour of OpenCart.
+**Important** - right after installation, you should consider editing [ini/config.ini](ini/config.ini), [ini/stores.ini](ini/stores.ini), [ini/products.ini](ini/products.ini), ini/information and ini/categories to tell something about your opencart installation.
+Merchants may depend on editing these ini files to change the behaviour of OpenCart after first setup.
 Though not promised, OCUnit will build the OpenCart database based on these values.
 
 
@@ -161,8 +161,9 @@ and open pull request for your new test cases. Or, create a [new issue](https://
 in __@anytizer/ocunit__ project.
 
 
-# Made with IDEs
+# Made with IDEs and tools
 
 * [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer+ocunit)
 * [VS Code](https://code.visualstudio.com/download) + [SonarLint](https://www.sonarlint.org/)
 * [Notepad++](https://notepad-plus-plus.org/downloads/)
+* [SQLYog](https://github.com/webyog/sqlyog-community/wiki/Downloads) Community Edition and [Neor Profile SQL](https://www.profilesql.com/)

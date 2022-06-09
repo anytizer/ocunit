@@ -7,7 +7,7 @@ use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Exepensive operations.
+ * Expensive operations.
  */
 class SessionTest extends TestCase
 {

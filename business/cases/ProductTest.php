@@ -8,8 +8,8 @@ class ProductTest extends TestCase
 {
     public function testTruncateImages()
     {
-        $prodcuct = new Image();
-        $prodcuct->truncate();
+        $product = new Image();
+        $product->truncate();
 
         $this->assertFalse(false);
     }

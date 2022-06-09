@@ -4,7 +4,7 @@
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
     <coverage/>
     <testsuites>
-        <testsuite name="Combined Cases">
+        <testsuite name="Combined Catalog Cases">
             <directory suffix="Test.php">cases/api</directory>
             <directory suffix="Test.php">cases/business</directory>
             <directory suffix="Test.php">cases/catalog</directory>
@@ -17,9 +17,9 @@
         </testsuite>
     </testsuites>
     <logging>
-        <testdoxText outputFile="logs/testdox.txt"/>
-        <testdoxHtml outputFile="logs/testdox.html"/>
-        <testdoxXml outputFile="logs/testdox.xml"/>
-        <text outputFile="logs/visual-report.txt"/>
+        <testdoxText outputFile="../logs/catalog-testdox.txt"/>
+        <testdoxHtml outputFile="../logs/catalog-logs/testdox.html"/>
+        <testdoxXml outputFile="../logs/catalog-logs/testdox.xml"/>
+        <text outputFile="../logs/catalog-visual-report.txt"/>
     </logging>
 </phpunit>

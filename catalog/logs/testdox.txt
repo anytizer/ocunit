@@ -1,5 +1,0 @@
-Database Indexing (cases\database\DatabaseIndexing)
- [ ] Drop indexes
- [x] Apply indexes
- [ ] Analyse indexes
-

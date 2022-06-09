@@ -116,7 +116,7 @@ Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit d
 
 ## Step 2: Configurations
 
-**Important** - right after installation, you should consider editing [ini/config.ini](ini/config.ini), [ini/stores.ini](ini/stores.ini), [ini/products.ini](ini/products.ini), ini/information and ini/categories to tell something about your opencart installation.
+**Important** - right after installation, you should consider editing [ini/config.ini](ini/config.ini), [ini/stores.ini](ini/stores.ini), [ini/information](ini/information) and [ini/categories](ini/categories) to tell something about your opencart installation.
 Merchants may depend on editing these ini files to change the behaviour of OpenCart after first setup.
 Though not promised, OCUnit will build the OpenCart database based on these values.
 

@@ -59,6 +59,9 @@ class LoginFailuresTest extends TestCase
         $this->markTestIncomplete("Login not protected with Captcha.");
     }
 
+    /**
+     * Customer should receive email to activate their account.
+     */
     public function testCustomerApprovalRequiredForLogin()
     {
         $username = "guest@example.com";

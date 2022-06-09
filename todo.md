@@ -14,3 +14,5 @@ Customize all OC Settings.
     * Contact details
 
 Enter category path.
+
+Apply database indexes.

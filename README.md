@@ -3,15 +3,20 @@
 Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based
 on [PHPUnit](https://phpunit.de).
 
+----
+
 __WARNING__: Never execute these tests against your live database or __in server environment__. It is likely to
 overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more.
-The database will never return to its original state. It even truncates a lot of tables.
+The database will never return to its original state.
 
-**Clone your OpenCart database** for use with OCUnit.
-**Run OCUnit at your own risk.** Please learn its aspects, before using it.
-Otherwise, you may end up with a corrupted database.
+It even truncates a lot of tables.
 
-OCUnit is better when you are about to setup a __new store__.
+----
+
+**Run OCUnit at your own risk.** Clone your OpenCart database for use with OCUnit. Please learn its aspects, before using it.
+Otherwise, you may end up with a corrupted database or lost information.
+
+OCUnit is better when you are about to setup a __new store__. If you have already setup a store and do not have a copy of your catalog information, do not run these tests. You can however run selected tests that do not delete or truncate the database.
 
 **Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
@@ -39,7 +44,7 @@ Some information in this document are drafts only.
 * Products must have video links associated with them in their description.
 * Products must have multiple images.
 * [x] Concisely generate inventory statistics.
-* Reverse create the database information from your memos and configuration files.
+* Reverse create the database information from your [memos](ini/cateogories).
   * [x] Stores and URLs
   * [x] Categories and Products
   * [x] Images
@@ -55,6 +60,19 @@ Some information in this document are drafts only.
 These are just some samples to illustrate how business rules are tested.
 
 Tests have been now separated to [admin](./admin/cases), [catalog](./catalog/cases) and [business](./business/cases/) to match the nature of OpenCart.
+
+
+# Requirements
+
+Dependency                     | Version                       | Description
+-------------------------------|-------------------------------|---------------------
+[PHP](https://www.php.net/)    | 8.1.1+                        | -
+[PHPUnit](https://phpunit.de/) | 9.5.20+                       | -
+[OpenCart](https://github.com/opencart/opencart)               | 4.0.0+ | master branch
+[relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
+[guid.php](https://packagist.org/packages/anytizer/guid.php)   | -      | UUID generator
+[parsedown](https://github.com/erusev/parsedown)               | -      | .md to .html
+
 
 ![Sample Output](sample-output.png)
 
@@ -74,18 +92,6 @@ Tests have been now separated to [admin](./admin/cases), [catalog](./catalog/cas
 |           | [mail](catalog/cases/mail)         | test email sending features
 |           | [report](catalog/cases/report)     | inventory and database statistics from merchant's perspectives
 | business  | [cases](business/cases)            | Customized business rules
-
-
-# Requirements
-
-Dependency                     | Version                       | Description
--------------------------------|-------------------------------|---------------------
-[PHP](https://www.php.net/)    | 8.1.1+                        | -
-[PHPUnit](https://phpunit.de/) | 9.5.20+                       | -
-[OpenCart](https://github.com/opencart/opencart)               | 4.0.0+ | master branch
-[relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
-[guid.php](https://packagist.org/packages/anytizer/guid.php)   | -      | UUID generator
-[parsedown](https://github.com/erusev/parsedown)               | -      | .md to .html
 
 
 # Three steps of Operation

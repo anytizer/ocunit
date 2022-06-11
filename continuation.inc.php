@@ -21,15 +21,26 @@ if (function_exists($xdebug_disable)) {
 define("__OCUNIT_ROOT__", realpath(dirname(__FILE__, 1))); // do not change it
 
 /**
- * @param $ini_file
+ * @param string $ini_file
  * @return array|false
  */
-function _env($ini_file="something.ini")
+function _env(string $ini_file="something.ini")
 {
-    $ini = parse_ini_file(__OCUNIT_ROOT__."/ini/{$ini_file}", true, INI_SCANNER_NORMAL);
+    $file = __OCUNIT_ROOT__."/ini/{$ini_file}";
+
+    $ini = [];
+    if(is_file($file))
+    {
+        $ini = parse_ini_file($file, true, INI_SCANNER_NORMAL);
+    }
+
     return $ini;
 }
 
+/**
+ * Synchronized date time
+ * @return string
+ */
 function dt(): string
 {
     return date("Y-m-d H:i:s");

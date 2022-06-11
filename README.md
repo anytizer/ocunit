@@ -3,20 +3,24 @@
 Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based
 on [PHPUnit](https://phpunit.de).
 
-----
+---
 
-__WARNING__: Never execute these tests against your live database or __in server environment__. It is likely to
+__WARNING__
+
+Never execute these tests against your live database or __in server environment__. It is likely to
 overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more.
 The database will never return to its original state.
 
-It even truncates a lot of tables.
+It even truncates a lot of tables!
 
-----
+---
 
 **Run OCUnit at your own risk.** Clone your OpenCart database for use with OCUnit. Please learn its aspects, before using it.
 Otherwise, you may end up with a corrupted database or lost information.
 
-OCUnit is better when you are about to setup a __new store__. If you have already setup a store and do not have a copy of your catalog information, do not run these tests. You can however run selected tests that do not delete or truncate the database.
+OCUnit is better when you are about to setup a __new store__.
+If you setup a store live without havng a local copy of catalog memo, do not run these tests.
+You can however run selected tests that do not delete or truncate the database.
 
 **Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
@@ -41,10 +45,10 @@ Some information in this document are drafts only.
     * [x] Keep a log of when prices were changed.
     * [x] Maintain a price change history.
     * [x] Create a price log table.
-* Products must have video links associated with them in their description.
-* Products must have multiple images.
+* [ ] Products must have video links associated with them in their description.
+* [ ] Products must have multiple images.
 * [x] Concisely generate inventory statistics.
-* Reverse create the database information from your [memos](ini/cateogories).
+* [x] Reverse create the database information from your [memos](ini/categories).
   * [x] Stores and URLs
   * [x] Categories and Products
   * [x] Images
@@ -72,6 +76,7 @@ Dependency                     | Version                       | Description
 [relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
 [guid.php](https://packagist.org/packages/anytizer/guid.php)   | -      | UUID generator
 [parsedown](https://github.com/erusev/parsedown)               | -      | .md to .html
+[phpmailer](https://github.com/phpmailer/phpmailer)            | -      | to generate emails (compare with in-built smtp)
 
 
 ![Sample Output](sample-output.png)
@@ -145,11 +150,10 @@ Or,
 
 ### Logs Produced
 
-* `logs/testdox.txt` - Log of test status - pass or fail of test cases.
-  * [admin/logs/testdox.txt](admin/logs/testdox.txt)
-  * [catalog/logs/testdox.txt](catalog/logs/testdox.txt)
-  * [business/logs/testdox.txt](business/logs/testdox.txt)
-* `logs/inventory.log` - concise report about products and prices for the merchant's review.
+* [logs/admin-testdox.txt](logs/admin-testdox.txt)
+* [logs/catqlog-testdox.txt](logs/catqlog-testdox.txt)
+* [logs/admin-testdox.txt](logs/admin-testdox.txt)
+* [logs/inventory.log](logs/inventory.log) - concise report about products and prices for the merchant's review.
 
 
 # Inspirations

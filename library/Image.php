@@ -7,10 +7,10 @@ class Image extends MySQLPDO
     public function truncate()
     {
         $tables = [
-            DB_PREFIX."product_image",
+            DB_PREFIX . "product_image",
         ];
 
-        foreach($tables as $table) {
+        foreach ($tables as $table) {
             $this->raw("TRUNCATE TABLE `{$table}`;");
         }
 

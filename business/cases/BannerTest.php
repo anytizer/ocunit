@@ -1,7 +1,7 @@
 <?php
+
 namespace ocunit\business\cases;
 
-use anytizer\guid;
 use ocunit\library\Banner;
 use PHPUnit\Framework\TestCase;
 

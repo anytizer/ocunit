@@ -50,14 +50,14 @@ class Admin extends MySQLPDO
         $link_pattern = "/data-oc-action=\".*?route\=(.*?)\&login_token\=(.*?)\"/i";
         preg_match_all($link_pattern, $html, $matches, PREG_SET_ORDER);
         //if (assert(count($matches) == 1)) {
-            # print_r($matches);
-            // Look for:
-            #  <button type="button" data-oc-action="http://localhost/oc/store/upload/admin/index.php?route=common/login|login&login_token=f4db649e5bad571d85714acaf3298468" data-oc-form="#form-login" class="btn btn-primary"><i class="fas fa-key"></i> Login</button>
-            #echo $html;
+        # print_r($matches);
+        // Look for:
+        #  <button type="button" data-oc-action="http://localhost/oc/store/upload/admin/index.php?route=common/login|login&login_token=f4db649e5bad571d85714acaf3298468" data-oc-form="#form-login" class="btn btn-primary"><i class="fas fa-key"></i> Login</button>
+        #echo $html;
 
-            $route = $matches[0][1];
-            $login_token = $matches[0][2];
-            //assert(strlen($login_token) == strlen("7c650ce5d2f347ec48217ab3efb42f57"));
+        $route = $matches[0][1];
+        $login_token = $matches[0][2];
+        //assert(strlen($login_token) == strlen("7c650ce5d2f347ec48217ab3efb42f57"));
         //}
 
         return $login_token;
@@ -147,7 +147,7 @@ class Admin extends MySQLPDO
 
     public function delete_all()
     {
-        $this->query("DELETE FROM `".DB_PREFIX."user` WHERE user_group_id=1;");
+        $this->query("DELETE FROM `" . DB_PREFIX . "user` WHERE user_group_id=1;");
         #$total = $this->query("SELECT COUNT(*) total FROM `".DB_PREFIX."user` WHERE user_group_id=1;")[0]["total"];
 
         return false; // $total;
@@ -156,7 +156,7 @@ class Admin extends MySQLPDO
     /**
      * @throws \Exception
      */
-    public function create($info=[]): int
+    public function create($info = []): int
     {
         $registry = (new oc())->_registry();
         $user = new User($registry);

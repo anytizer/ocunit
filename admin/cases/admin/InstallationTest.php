@@ -14,8 +14,8 @@ class InstallationTest extends TestCase
     {
         global $configurations;
 
-        $this->admin_config_file = $configurations["opencart"]["admin"]."/config.php";
-        $this->store_config_file = $configurations["opencart"]["store"]."/config.php";
+        $this->admin_config_file = $configurations["opencart"]["admin"] . "/config.php";
+        $this->store_config_file = $configurations["opencart"]["store"] . "/config.php";
     }
 
     function testTouchAdminConfigurationFile()

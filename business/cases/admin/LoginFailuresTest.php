@@ -1,7 +1,7 @@
 <?php
+
 namespace ocunit\business\cases\admin;
 
-use ocunit\library\Admin;
 use ocunit\library\Customer;
 use PHPUnit\Framework\TestCase;
 
@@ -24,15 +24,15 @@ class LoginFailuresTest extends TestCase
 
         $this->fail();
 
-       /*
-        $admin = new admin();
-        $donot_redirect_to_dashboard = $admin->login_failure_case();
+        /*
+         $admin = new admin();
+         $donot_redirect_to_dashboard = $admin->login_failure_case();
 
-        $json = json_decode($donot_redirect_to_dashboard, true);
-        //assert(array_key_exists("error", $json));
+         $json = json_decode($donot_redirect_to_dashboard, true);
+         //assert(array_key_exists("error", $json));
 
-        $this->assertTrue(str_contains($json["error"], "No match for Username and/or Password."), "Problems at login!");
-       */
+         $this->assertTrue(str_contains($json["error"], "No match for Username and/or Password."), "Problems at login!");
+        */
     }
 
     public function testLoginSucceeds()
@@ -40,15 +40,15 @@ class LoginFailuresTest extends TestCase
         $this->fail();
 
         /**
-        $admin = new admin();
-        $redirect_to_dashboard = $admin->login_success_case();
-
-        $json = json_decode($redirect_to_dashboard, true);
-        //assert(array_key_exists("redirect", $json));
-
-        // A successful login sends "redirect" information to dashboard
-        $this->assertTrue(str_contains($json["redirect"], "route=common/dashboard"), "Redirecting to {$json['redirect']}");
-        */
+         * $admin = new admin();
+         * $redirect_to_dashboard = $admin->login_success_case();
+         *
+         * $json = json_decode($redirect_to_dashboard, true);
+         * //assert(array_key_exists("redirect", $json));
+         *
+         * // A successful login sends "redirect" information to dashboard
+         * $this->assertTrue(str_contains($json["redirect"], "route=common/dashboard"), "Redirecting to {$json['redirect']}");
+         */
     }
 
     public function testCustomerLoginFormHasCaptcha()

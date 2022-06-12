@@ -7,27 +7,27 @@ on [PHPUnit](https://phpunit.de).
 
 __WARNING__
 
-Never execute these tests against your live database or __in server environment__. It is likely to
-overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more.
-The database will never return to its original state.
+Never execute these tests against your live database or __in server environment__. It is likely to overwrite the product
+information, pricing, images, currencies, customers, users, session, emails, passwords and more. The database will never
+return to its original state.
 
 It even truncates a lot of tables!
 
 ---
 
-**Run OCUnit at your own risk.** Clone your OpenCart database for use with OCUnit. Please learn its aspects, before using it.
-Otherwise, you may end up with a corrupted database or lost information.
+**Run OCUnit at your own risk.** Clone your OpenCart database for use with OCUnit. Please learn its aspects, before
+using it. Otherwise, you may end up with a corrupted database or lost information.
 
-OCUnit is better when you are about to setup a __new store__.
-If you setup a store live without havng a local copy of catalog memo, do not run these tests.
-You can however run selected tests that do not delete or truncate the database.
+OCUnit is better when you are about to setup a __new store__. If you setup a store live without havng a local copy of
+catalog memo, do not run these tests. You can however run selected tests that do not delete or truncate the database.
 
 **Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
 
-OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run tests.
-There are few [business rules](ini/config.ini) and configurations you should edit before running the test. Rules may differ
-as per businesses. Hence, most of the tests are empty. But they should self-guide you technically on how to write the tests.
+OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run
+tests. There are few [business rules](ini/config.ini) and configurations you should edit before running the test. Rules
+may differ as per businesses. Hence, most of the tests are empty. But they should self-guide you technically on how to
+write the tests.
 
 Some information in this document are drafts only.
 
@@ -49,11 +49,11 @@ Some information in this document are drafts only.
 * [ ] Products must have multiple images.
 * [x] Concisely generate inventory statistics.
 * [x] Reverse create the database information from your [memos](ini/categories).
-  * [x] Stores and URLs
-  * [x] Categories and Products
-  * [x] Images
-  * [ ] Languages - always default: "1" for en-gb.
-  * [x] [Information Pages](ini/information/)
+    * [x] Stores and URLs
+    * [x] Categories and Products
+    * [x] Images
+    * [ ] Languages - always default: "1" for en-gb.
+    * [x] [Information Pages](ini/information/)
 
 ## And NOT test like
 
@@ -63,8 +63,8 @@ Some information in this document are drafts only.
 
 These are just some samples to illustrate how business rules are tested.
 
-Tests have been now separated to [admin](./admin/cases), [catalog](./catalog/cases) and [business](./business/cases/) to match the nature of OpenCart.
-
+Tests have been now separated to [admin](./admin/cases), [catalog](./catalog/cases) and [business](./business/cases/) to
+match the nature of OpenCart.
 
 # Requirements
 
@@ -78,9 +78,7 @@ Dependency                     | Version                       | Description
 [parsedown](https://github.com/erusev/parsedown)               | -      | .md to .html
 [phpmailer](https://github.com/phpmailer/phpmailer)            | -      | to generate emails (compare with in-built smtp)
 
-
 ![Sample Output](sample-output.png)
-
 
 # Test Cases
 
@@ -98,14 +96,13 @@ Dependency                     | Version                       | Description
 |           | [report](catalog/cases/report)     | inventory and database statistics from merchant's perspectives
 | business  | [cases](business/cases)            | Customized business rules
 
-
 # Three steps of Operation
-
 
 ## Step 1: Installation
 
 Clone OpenCart and OCUnit projects. Then install and configure them independently in "/oc/opencart" and "/oc/ocunit".
-Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit directory and update the [composer](https://getcomposer.org) dependencies.
+Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit directory and update
+the [composer](https://getcomposer.org) dependencies.
 
     cd htdocs|public_html|www|web
     mkdir oc
@@ -124,13 +121,12 @@ Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit d
     wget https://getcomposer.org/download/latest-stable/composer.phar
     php composer.phar update
 
-
 ## Step 2: Configurations
 
-**Important** - right after installation, you should consider editing [ini/config.ini](ini/config.ini), [ini/stores.ini](ini/stores.ini), [ini/information](ini/information) and [ini/categories](ini/categories) to tell something about your opencart installation.
-Merchants may depend on editing these ini files to change the behaviour of OpenCart after first setup.
-Though not promised, OCUnit will build the OpenCart database based on these values.
-
+**Important** - right after installation, you should consider editing [ini/config.ini](ini/config.ini)
+, [ini/stores.ini](ini/stores.ini), [ini/information](ini/information) and [ini/categories](ini/categories) to tell
+something about your opencart installation. Merchants may depend on editing these ini files to change the behaviour of
+OpenCart after first setup. Though not promised, OCUnit will build the OpenCart database based on these values.
 
 ## Step 3: Test Execution
 
@@ -147,14 +143,12 @@ Or,
     cd business
     php ../phpunit.phar cases/
 
-
 ### Logs Produced
 
 * [logs/admin-testdox.txt](logs/admin-testdox.txt)
 * [logs/catqlog-testdox.txt](logs/catqlog-testdox.txt)
 * [logs/admin-testdox.txt](logs/admin-testdox.txt)
 * [logs/inventory.log](logs/inventory.log) - concise report about products and prices for the merchant's review.
-
 
 # Inspirations
 
@@ -163,17 +157,16 @@ Or,
 * [Unit testing, Jenkins, code sniffing, github etc](https://forum.opencart.com/viewtopic.php?t=124532)
 * https://github.com/sarkershantonu/OpencartTesting
 
-
 # Contribution
 
 If you have a specific idea on how OCUnit (Test scripts for OpenCart based on PHPUnit) should function, fork the project
 and open pull request for your new test cases. Or, create a [new issue](https://github.com/anytizer/ocunit/issues/new)
 in __@anytizer/ocunit__ project.
 
-
 # Made with IDEs and tools
 
 * [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer+ocunit)
 * [VS Code](https://code.visualstudio.com/download) + [SonarLint](https://www.sonarlint.org/)
 * [Notepad++](https://notepad-plus-plus.org/downloads/)
-* [SQLYog](https://github.com/webyog/sqlyog-community/wiki/Downloads) Community Edition and [Neor Profile SQL](https://www.profilesql.com/)
+* [SQLYog](https://github.com/webyog/sqlyog-community/wiki/Downloads) Community Edition
+  and [Neor Profile SQL](https://www.profilesql.com/)

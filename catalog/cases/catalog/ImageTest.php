@@ -4,7 +4,6 @@ namespace cases\catalog;
 
 use ocunit\library\DatabaseExecutor;
 use PHPUnit\Framework\TestCase;
-use Throwable;
 
 class ImageTest extends TestCase
 {

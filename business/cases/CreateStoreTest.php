@@ -2,7 +2,6 @@
 
 namespace ocunit\business\cases;
 
-use ocunit\library\Logo;
 use ocunit\library\Store;
 use PHPUnit\Framework\TestCase;
 use function ocunit\_env;
@@ -23,8 +22,7 @@ class CreateStoreTest extends TestCase
 
         $stores = _env("stores.ini")["stores"];
 
-        foreach($stores as $name => $url)
-        {
+        foreach ($stores as $name => $url) {
             $s->store_create($name, $url);
         }
 

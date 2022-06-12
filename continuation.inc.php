@@ -3,6 +3,7 @@
 namespace ocunit;
 
 use ocunit\library\oc as oc;
+use Opencart\System\Engine\Autoloader as Autoloader;
 
 /**
  * Show all errors.
@@ -24,13 +25,12 @@ define("__OCUNIT_ROOT__", realpath(dirname(__FILE__, 1))); // do not change it
  * @param string $ini_file
  * @return array|false
  */
-function _env(string $ini_file="something.ini")
+function _env(string $ini_file = "something.ini")
 {
-    $file = __OCUNIT_ROOT__."/ini/{$ini_file}";
+    $file = __OCUNIT_ROOT__ . "/ini/{$ini_file}";
 
     $ini = [];
-    if(is_file($file))
-    {
+    if (is_file($file)) {
         $ini = parse_ini_file($file, true, INI_SCANNER_NORMAL);
     }
 
@@ -106,7 +106,7 @@ require_once $system . "/engine/autoloader.php";
 require_once $system . "/engine/config.php";
 
 // Mount opencart
-use Opencart\System\Engine\Autoloader as Autoloader;
+
 $autoloader = new Autoloader();
 $autoloader->register("Opencart\\Admin", DIR_APPLICATION);
 $autoloader->register("Opencart\\Catalog", DIR_OPENCART . "/catalog");

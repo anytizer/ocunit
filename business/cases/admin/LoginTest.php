@@ -1,4 +1,5 @@
 <?php
+
 namespace ocunit\business\cases\admin;
 
 use PHPUnit\Framework\TestCase;
@@ -22,8 +23,7 @@ class LoginTest extends TestCase
     public function testRemoveSystemUsers()
     {
         // delete system users from the system entirely.
-        foreach($this->system_users as $user)
-        {
+        foreach ($this->system_users as $user) {
             // permanently remove from the database!
         }
 

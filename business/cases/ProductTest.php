@@ -1,4 +1,5 @@
 <?php
+
 namespace ocunit\business\cases;
 
 use ocunit\library\Image;

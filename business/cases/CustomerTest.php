@@ -1,4 +1,5 @@
 <?php
+
 namespace ocunit\business;
 
 use ocunit\library\Customer;
@@ -20,8 +21,7 @@ class CustomerTest extends TestCase
         $customer = new Customer();
 
         $customers = _env("stores.ini")["customers"];
-        foreach($customers as $email => $name)
-        {
+        foreach ($customers as $email => $name) {
             $info = [
                 "email" => $email,
                 "name" => $name,

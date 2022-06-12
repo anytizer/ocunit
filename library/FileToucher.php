@@ -8,7 +8,7 @@ class FileToucher
      * @param string $file
      * @return int File size in bytes
      */
-    public function touch(string $file=""): int
+    public function touch(string $file = ""): int
     {
         touch($file);
 

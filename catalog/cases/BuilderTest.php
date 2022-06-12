@@ -10,17 +10,14 @@ class BuilderTest extends TestCase
 
         $categories = [];
         $everything = array_diff(scandir($path), [".", ".."]);
-        foreach($everything as $category)
-        {
-            $fullpath = $path."/".$category;
-            if(is_dir($fullpath))
-            {
+        foreach ($everything as $category) {
+            $fullpath = $path . "/" . $category;
+            if (is_dir($fullpath)) {
                 $categories[] = $fullpath;
             }
         }
 
-        foreach($categories as $category)
-        {
+        foreach ($categories as $category) {
             $slug = (new Slug())->create_from_path($category);
             echo "\r\nSlug: ", $slug;
             /*

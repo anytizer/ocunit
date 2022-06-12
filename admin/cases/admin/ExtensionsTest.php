@@ -28,7 +28,7 @@ class ExtensionsTest extends TestCase
 
         $missing = 0;
         foreach ($extensions as $table => $filename) {
-            if(!in_array($table, $tables)) {
+            if (!in_array($table, $tables)) {
                 $sql = $fql->read($filename);
                 $pdo->raw($sql, []);
 

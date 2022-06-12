@@ -29,6 +29,15 @@ class MySQLPDO
     }
 
     /**
+     * Use carefully.
+     * @return mixed
+     */
+    public function _id()
+    {
+        return $this->query("SELECT LAST_INSERT_ID() id;")[0]["id"];
+    }
+
+    /**
      * Queries that return the data - like: select, count, show
      */
     public function query($sql = "", $data = []): array
@@ -50,14 +59,5 @@ class MySQLPDO
         $statement->execute($data);
 
         return $statement;
-    }
-
-    /**
-     * Use carefully.
-     * @return mixed
-     */
-    public function _id()
-    {
-        return $this->query("SELECT LAST_INSERT_ID() id;")[0]["id"];
     }
 }

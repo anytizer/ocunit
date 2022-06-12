@@ -3,7 +3,6 @@
 namespace ocunit\admin\cases\admin;
 
 use ocunit\library\DatabaseExecutor as DatabaseExecutor;
-use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
 
 class DownloadsTest extends TestCase
@@ -18,8 +17,7 @@ class DownloadsTest extends TestCase
     {
         $dbx = new DatabaseExecutor();
         $downloadables = $dbx->downloads();
-        if(count($downloadables))
-        {
+        if (count($downloadables)) {
             foreach ($downloadables as $download) {
                 $download["filename"] = basename($download['filename']);
                 $masked_file = DIR_STORAGE . "download/{$download['filename']}";
@@ -30,9 +28,7 @@ class DownloadsTest extends TestCase
                 $extension = pathinfo(basename($download["mask"]))["extension"];
                 $this->assertEquals("zip", $extension, "Offer downloads in .zip file format only: {$download['mask']}");
             }
-        }
-        else
-        {
+        } else {
             $this->fail();
         }
     }
@@ -42,7 +38,7 @@ class DownloadsTest extends TestCase
         $dbx = new DatabaseExecutor();
         $downloadable_products = $dbx->downloadable_products();
 
-        if(count($downloadable_products)) {
+        if (count($downloadable_products)) {
             foreach ($downloadable_products as $product) {
                 // check downloadable record exists
                 $download_found = false;
@@ -54,9 +50,7 @@ class DownloadsTest extends TestCase
 
                 $this->assertTrue($download_found, "Failed linking a downloadable product for Product ID: #{$product['product_id']}.");
             }
-        }
-        else
-        {
+        } else {
             $this->fail();
         }
     }
@@ -66,8 +60,7 @@ class DownloadsTest extends TestCase
         $dbx = new DatabaseExecutor();
         $masks = $dbx->file_masks();
 
-        foreach($masks as $mask)
-        {
+        foreach ($masks as $mask) {
             $this->assertStringEndsWith(".zip", $mask["mask"]);
         }
     }

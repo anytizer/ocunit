@@ -17,7 +17,7 @@ class Customer extends MySQLPDO
 
     }
 
-    public function login($username="", $password=""): bool
+    public function login($username = "", $password = ""): bool
     {
         return false;
     }
@@ -38,7 +38,7 @@ class Customer extends MySQLPDO
         return $checked_out;
     }
 
-    public function create($info=[]): int
+    public function create($info = []): int
     {
         $registry = (new oc())->_registry();
         $customer = new \Opencart\Admin\Model\Customer\Customer($registry);
@@ -72,8 +72,8 @@ class Customer extends MySQLPDO
     {
         $registry = (new oc())->_registry();
 
-        $customers = $this->query("SELECT customer_id FROM `".DB_PREFIX."customer`;", []);
-        foreach($customers as $customer) {
+        $customers = $this->query("SELECT customer_id FROM `" . DB_PREFIX . "customer`;", []);
+        foreach ($customers as $customer) {
             $c = new \Opencart\Admin\Model\Customer\Customer($registry);
             $c->deleteCustomer($customer["customer_id"]);
         }

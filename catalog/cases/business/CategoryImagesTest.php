@@ -5,26 +5,9 @@ namespace cases\business;
 use ocunit\library\DatabaseExecutor;
 use ocunit\library\MySQLPDO;
 use PHPUnit\Framework\TestCase;
-use Slug;
 
 class CategoryImagesTest extends TestCase
 {
-    private function _copy_images($categories)
-    {
-        foreach ($categories as $c => $category) {
-            $image_file = DIR_IMAGE . $category["image"];
-
-            if (!is_file($image_file)) {
-                $dir = dirname($image_file);
-                if (!is_dir($dir)) {
-                    mkdir($dir, 0777, true);
-                }
-
-                copy(DIR_IMAGE . "placeholder.png", $image_file);
-            }
-        }
-    }
-
     /**
      * @todo Empty the image data before running this test.
      */
@@ -72,6 +55,22 @@ class CategoryImagesTest extends TestCase
             $image_file = DIR_IMAGE . $category["image"];
 
             $this->assertTrue(is_file($image_file), "Missing image for category id: #" . $category["category_id"]);
+        }
+    }
+
+    private function _copy_images($categories)
+    {
+        foreach ($categories as $c => $category) {
+            $image_file = DIR_IMAGE . $category["image"];
+
+            if (!is_file($image_file)) {
+                $dir = dirname($image_file);
+                if (!is_dir($dir)) {
+                    mkdir($dir, 0777, true);
+                }
+
+                copy(DIR_IMAGE . "placeholder.png", $image_file);
+            }
         }
     }
 }

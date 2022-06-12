@@ -2,6 +2,7 @@
 
 namespace cases\admin;
 
+use ocunit\library\MySQLPDO;
 use Opencart\System\Library\DB\PDO;
 use PHPUnit\Framework\TestCase;
 
@@ -41,7 +42,11 @@ class SettingsTest extends TestCase
 
     public function testMysqlRemoteAccessToBeBlocked()
     {
-        //
-        $this->fail();
+        $pdo = new MySQLPDO(); // assuming root connection
+        $users = $pdo->query("SELECT `user`, `host` FROM mysql.user;", []);
+        foreach ($users as $user) {
+            $this->assertTrue($user["host"] != "%");
+        }
+        //$this->fail();
     }
 }

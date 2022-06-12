@@ -8,7 +8,6 @@
     - File Uploads On
     - Session Auto Start Off
 
-
 ## Extension Settings
 
     - Database

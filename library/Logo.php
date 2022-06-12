@@ -1,7 +1,6 @@
 <?php
-namespace ocunit\library;
 
-use ocunit\library\MySQLPDO;
+namespace ocunit\library;
 
 class Logo extends MySQLPDO
 {
@@ -20,8 +19,7 @@ class Logo extends MySQLPDO
             "name" => "Default",
         ];
 
-        foreach($stores as $store)
-        {
+        foreach ($stores as $store) {
             $sql = "insert into `" . DB_PREFIX . "setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `serialized`) values (NULL, :store_id, 'config', 'config_logo', :value, 0);";
             $this->raw($sql, [
                 "store_id" => $store["store_id"],

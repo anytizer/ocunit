@@ -14,8 +14,7 @@ class TruncatesTest extends TestCase
 
         $truncates = _env("config.ini")["truncates"];
 
-        foreach($truncates as $table => $info)
-        {
+        foreach ($truncates as $table => $info) {
             $pdo->raw("TRUNCATE TABLE `{$table}`;");
         }
 

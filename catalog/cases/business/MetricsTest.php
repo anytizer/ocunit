@@ -10,19 +10,18 @@ class MetricsTest extends TestCase
         $dbx = new DatabaseExecutor();
         $products = $dbx->metrics();
 
-        foreach($products as $p => $product)
-        {
+        foreach ($products as $p => $product) {
             /**
              *  [17] => Array
-            (
-            [product_id] => 49
-            [weight] => 0.00000000
-            [weight_class_id] => 1
-            [length] => 0.00000000
-            [width] => 0.00000000
-            [height] => 0.00000000
-            [length_class_id] => 1
-            )
+             * (
+             * [product_id] => 49
+             * [weight] => 0.00000000
+             * [weight_class_id] => 1
+             * [length] => 0.00000000
+             * [width] => 0.00000000
+             * [height] => 0.00000000
+             * [length_class_id] => 1
+             * )
              */
 
             $this->assertTrue($product["weight"] > 0.00);

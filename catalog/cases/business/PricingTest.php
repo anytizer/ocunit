@@ -67,10 +67,8 @@ class PricingTest extends TestCase
             $manufacturer_price = $pdo->query("SELECT product_price FROM tw_manufacturer_prices WHERE product_id=:product_id", ["product_id" => $product["product_id"]])[0]["product_price"];
 
             $discounts = $pdo->query("SELECT price FROM oc_product_special WHERE product_id=:product_id;", ["product_id" => $product["product_id"]]);
-            if(count($discounts))
-            {
-                foreach($discounts as $discount)
-                {
+            if (count($discounts)) {
+                foreach ($discounts as $discount) {
                     // not sure how many discounts are possible for a product.
                     $discounted_price = $discount["price"];
                     $this->assertTrue($discounted_price > $manufacturer_price, "Discounted price ($discounted_price) is NOT higher than Manufacturer Price ($manufacturer_price) for Product ID: #{$product["product_id"]}.");

@@ -1,6 +1,7 @@
 Project Management Description...
 
-As the industry has matured, analysis of software project management failures has shown that the following are the most common causes:
+As the industry has matured, analysis of software project management failures has shown that the following are the most
+common causes:
 
 * Insufficient end-user involvement
 * Poor communication among customers, developers, users and project managers

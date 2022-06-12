@@ -1,7 +1,6 @@
 <?php
-namespace ocunit\library;
 
-use ocunit\library\MySQLPDO;
+namespace ocunit\library;
 
 class Store extends MySQLPDO
 {

@@ -21,10 +21,10 @@ class XDebugTest extends TestCase
         /**
          * xDebug must be present and disabled by default on the server environment
          */
-        $autostart = (int)(ini_get("xdebug.remote_autostart")??-1);
+        $autostart = (int)(ini_get("xdebug.remote_autostart") ?? -1);
         $this->assertEquals(0, $autostart, "xDebug should NOT autostart.");
 
-        $profiler_enable = (int)(ini_get("xdebug.profiler_enable")??-1);
+        $profiler_enable = (int)(ini_get("xdebug.profiler_enable") ?? -1);
         $this->assertEquals(0, $profiler_enable, "xDebug profiler enable value to be 0.");
     }
 }

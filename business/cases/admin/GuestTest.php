@@ -1,4 +1,5 @@
 <?php
+
 namespace ocunit\business\cases\admin;
 
 use ocunit\library\Customer;

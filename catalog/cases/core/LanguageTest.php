@@ -3,23 +3,8 @@
 namespace cases\core;
 
 use Exception;
-use ocunit\library\oc;
-use Opencart\Admin\Controller\Catalog\Information;
-use Opencart\System\Engine\Config;
-use Opencart\System\Engine\Event;
-use Opencart\System\Engine\Loader;
-use Opencart\System\Engine\Registry;
-use Opencart\System\Library\Cart\User;
-use Opencart\System\Library\DB;
-use Opencart\System\Library\Document;
 use Opencart\System\Library\Language;
-use Opencart\System\Library\Request;
-use Opencart\System\Library\Response;
-use Opencart\System\Library\Session;
-use Opencart\System\Library\Template;
-use Opencart\System\Library\Url;
 use PHPUnit\Framework\TestCase;
-use stdClass;
 
 class LanguageTest extends TestCase
 {

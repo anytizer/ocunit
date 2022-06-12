@@ -16,3 +16,5 @@ Customize all OC Settings.
 Enter category path.
 
 Apply database indexes.
+
+Allow manufacturers login and manage their products.

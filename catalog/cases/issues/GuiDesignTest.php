@@ -16,7 +16,7 @@ class GuiDesignTest extends TestCase
     {
         // 40 x 40 pixels image
         // Use placeholder image when no product/category image found.
-        //Placeholder should fit in a square box.
+        // Placeholder should fit in a square box.
         // when no product/category image found
     }
 
@@ -24,6 +24,9 @@ class GuiDesignTest extends TestCase
     {
         // admin system > settings > stores
         // Show store logo in the store listing page.
+        // for each store
+        // for each configuration
+        // make sure that the store logo exists as a file
     }
 
     public function testSmallQuantityInputBox()

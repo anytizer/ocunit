@@ -129,4 +129,9 @@ class FromGithubTest extends TestCase
         // But this is a condition where mail() function not available under Windows in old page I navigated (password forgotten).
         //Later, there appears the message in the shopping cart listing page.
     }
+
+    public function testAdminCreatedOrderShouldHaveLogo()
+    {
+        // https://github.com/opencart/opencart/issues/11156
+    }
 }

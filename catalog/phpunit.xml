@@ -18,8 +18,8 @@
     </testsuites>
     <logging>
         <testdoxText outputFile="../logs/catalog-testdox.txt"/>
-        <testdoxHtml outputFile="../logs/catalog-logs/testdox.html"/>
-        <testdoxXml outputFile="../logs/catalog-logs/testdox.xml"/>
+        <testdoxHtml outputFile="../logs/catalog-testdox.html"/>
+        <testdoxXml outputFile="../logs/catalog-testdox.xml"/>
         <text outputFile="../logs/catalog-visual-report.txt"/>
     </logging>
 </phpunit>

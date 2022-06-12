@@ -73,8 +73,11 @@ class StorageAreaTest extends TestCase
             DIR_STORAGE . "vendor",
         ];
         foreach ($folders as $folder) {
-            $can_write = is_writable($folder);
-            $basename = basename($folder);
+            $realpath = realpath($folder);
+            $this->assertTrue(is_dir($realpath));
+
+            $can_write = is_writable($realpath);
+            $basename = basename($realpath);
             $this->assertTrue($can_write, "Cannot write to storage/{$basename}.");
         }
     }

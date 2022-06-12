@@ -1,7 +1,7 @@
 # OCUnit
 
 Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based
-on [PHPUnit](https://phpunit.de).
+on [PHPUnit](https://phpunit.de) that destroys the defaults and builds your own.
 
 ---
 
@@ -18,8 +18,10 @@ It even truncates a lot of tables!
 **Run OCUnit at your own risk.** Clone your OpenCart database for use with OCUnit. Please learn its aspects, before
 using it. Otherwise, you may end up with a corrupted database or lost information.
 
-OCUnit is better when you are about to setup a __new store__. If you setup a store live without havng a local copy of
-catalog memo, do not run these tests. You can however run selected tests that do not delete or truncate the database.
+OCUnit is better when you are about to setup a __new store__. If you have already setup a live store without having a
+local copy of catalog memo, do not run these tests.
+
+You can however run selected tests that do not delete or truncate the database.
 
 **Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
@@ -78,7 +80,9 @@ Dependency                     | Version                       | Description
 [parsedown](https://github.com/erusev/parsedown)               | -      | .md to .html
 [phpmailer](https://github.com/phpmailer/phpmailer)            | -      | to generate emails (compare with in-built smtp)
 
-![Sample Output](sample-output.png)
+# Sample Test Output
+
+![Sample Output](logs/sample-output.png)
 
 # Test Cases
 
@@ -130,6 +134,8 @@ OpenCart after first setup. Though not promised, OCUnit will build the OpenCart 
 
 ## Step 3: Test Execution
 
+You have to scope your tests for admin, catalog or business purpose. So, run them individually.
+
     cd admin
     php ../phpunit.phar cases/admin/
 
@@ -159,8 +165,9 @@ Or,
 
 # Contribution
 
-If you have a specific idea on how OCUnit (Test scripts for OpenCart based on PHPUnit) should function, fork the project
-and open pull request for your new test cases. Or, create a [new issue](https://github.com/anytizer/ocunit/issues/new)
+If you have a specific idea on how OCUnit (Merchant's view of test scripts for OpenCart based on PHPUnit) should
+function, fork the project and open pull request for your new test cases. Or, create
+a [new issue](https://github.com/anytizer/ocunit/issues/new)
 in __@anytizer/ocunit__ project.
 
 # Made with IDEs and tools

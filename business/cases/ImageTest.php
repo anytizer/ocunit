@@ -17,6 +17,7 @@ class ImageTest extends TestCase
 
     public function testBuildImages()
     {
+        // @see CategoryTest::testBuildCategories()
         // from store > categories > products > images[]
     }
 }

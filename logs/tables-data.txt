@@ -2,11 +2,11 @@ oc_attribute                             - 11
 oc_attribute_description                 - 11
 oc_attribute_group                       - 4
 oc_attribute_group_description           - 4
-oc_category                              - 3
+oc_category                              - 4
 oc_category_description                  - 4
 oc_category_path                         - 4
 oc_category_to_layout                    - 2
-oc_category_to_store                     - 8
+oc_category_to_store                     - 20
 oc_country                               - 253
 oc_cron                                  - 3
 oc_currency                              - 9
@@ -15,15 +15,13 @@ oc_custom_field_customer_group           - 27
 oc_custom_field_description              - 27
 oc_custom_field_value                    - 25
 oc_custom_field_value_description        - 25
+oc_customer                              - 2
 oc_customer_login                        - 4
 oc_event                                 - 40
 oc_extension                             - 41
 oc_extension_path                        - 367
 oc_geo_zone                              - 2
-oc_information                           - 8
-oc_information_description               - 8
 oc_information_to_layout                 - 12
-oc_information_to_store                  - 16
 oc_layout                                - 13
 oc_layout_module                         - 6
 oc_layout_route                          - 13
@@ -31,7 +29,7 @@ oc_length_class                          - 3
 oc_length_class_description              - 3
 oc_manufacturer                          - 7
 oc_manufacturer_to_layout                - 5
-oc_manufacturer_to_store                 - 28
+oc_manufacturer_to_store                 - 35
 oc_module                                - 4
 oc_option                                - 11
 oc_option_description                    - 11
@@ -46,7 +44,7 @@ oc_product_option_value                  - 16
 oc_product_related                       - 8
 oc_product_reward                        - 20
 oc_product_to_category                   - 7
-oc_product_to_store                      - 14
+oc_product_to_store                      - 35
 oc_return_action                         - 3
 oc_return_reason                         - 5
 oc_return_status                         - 3
@@ -61,6 +59,7 @@ oc_tax_class                             - 2
 oc_tax_rate                              - 2
 oc_tax_rate_to_customer_group            - 2
 oc_tax_rule                              - 4
+oc_user                                  - 1
 oc_user_group                            - 2
 oc_voucher_theme                         - 3
 oc_voucher_theme_description             - 3

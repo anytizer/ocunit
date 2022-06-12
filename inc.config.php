@@ -50,32 +50,32 @@ $configurations = _env("config.ini");
 
 /**
  * Should I run expensive database operations?
- * Boolean value
  */
 define("__OCUNIT_EXECUTE_EXPENSIVE__", $configurations["ocunit"]["execute_expensive"] == "true");
 
-require_once(__OCUNIT_ROOT__ . "/library/DatabaseExecutor.php");
-require_once(__OCUNIT_ROOT__ . "/library/FQL.php");
-require_once(__OCUNIT_ROOT__ . "/library/FileToucher.php");
-require_once(__OCUNIT_ROOT__ . "/library/MySQLPDO.php");
-require_once(__OCUNIT_ROOT__ . "/library/Order.php");
-require_once(__OCUNIT_ROOT__ . "/library/Slug.php");
-require_once(__OCUNIT_ROOT__ . "/library/api.php");
-require_once(__OCUNIT_ROOT__ . "/library/catalog.php");
-require_once(__OCUNIT_ROOT__ . "/library/CredentialsDTO.php");
-require_once(__OCUNIT_ROOT__ . "/library/oc.php");
-require_once(__OCUNIT_ROOT__ . "/library/Admin.php");
-require_once(__OCUNIT_ROOT__ . "/library/Customer.php");
-require_once(__OCUNIT_ROOT__ . "/library/Store.php");
-require_once(__OCUNIT_ROOT__ . "/library/Session.php");
-require_once(__OCUNIT_ROOT__ . "/library/Logo.php");
-require_once(__OCUNIT_ROOT__ . "/library/Information.php");
-require_once(__OCUNIT_ROOT__ . "/library/Banner.php");
-require_once(__OCUNIT_ROOT__ . "/library/Image.php");
-require_once(__OCUNIT_ROOT__ . "/library/Category.php");
-require_once(__OCUNIT_ROOT__ . "/library/Product.php");
+require_once __OCUNIT_ROOT__ . "/library/DatabaseExecutor.php";
+require_once __OCUNIT_ROOT__ . "/library/FQL.php";
+require_once __OCUNIT_ROOT__ . "/library/FileToucher.php";
+require_once __OCUNIT_ROOT__ . "/library/MySQLPDO.php";
+require_once __OCUNIT_ROOT__ . "/library/Order.php";
+require_once __OCUNIT_ROOT__ . "/library/Slug.php";
+require_once __OCUNIT_ROOT__ . "/library/api.php";
+require_once __OCUNIT_ROOT__ . "/library/catalog.php";
+require_once __OCUNIT_ROOT__ . "/library/CredentialsDTO.php";
+require_once __OCUNIT_ROOT__ . "/library/oc.php";
+require_once __OCUNIT_ROOT__ . "/library/Admin.php";
+require_once __OCUNIT_ROOT__ . "/library/Customer.php";
+require_once __OCUNIT_ROOT__ . "/library/Store.php";
+require_once __OCUNIT_ROOT__ . "/library/Session.php";
+require_once __OCUNIT_ROOT__ . "/library/Logo.php";
+require_once __OCUNIT_ROOT__ . "/library/Information.php";
+require_once __OCUNIT_ROOT__ . "/library/Banner.php";
+require_once __OCUNIT_ROOT__ . "/library/Image.php";
+require_once __OCUNIT_ROOT__ . "/library/Category.php";
+require_once __OCUNIT_ROOT__ . "/library/Product.php";
+require_once __OCUNIT_ROOT__ . "/library/Manufacturer.php";
 
-require_once(__OCUNIT_ROOT__ . "/vendor/autoload.php");
+require_once __OCUNIT_ROOT__ . "/vendor/autoload.php";
 
 $oc = new oc();
 
@@ -92,10 +92,6 @@ $oc->must_define("HTTP_CATALOG");
 if (empty($_SERVER["REMOTE_ADDR"])) $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
 if (empty($_SERVER["HTTP_USER_AGENT"])) $_SERVER["HTTP_USER_AGENT"] = "ocunit";
 if (empty($_SERVER["HTTP_REFERER"])) $_SERVER["HTTP_REFERER"] = "http://localhost/oc/opencart/";
-
-// IDE Silencer: Do nothing as already defined in config.php file(s).
-if (!defined("DIR_SYSTEM")) die("DIR_SYSTEM not defined.");
-if (!defined("DIR_STORAGE")) die("DIR_STORAGE not defined.");
 
 // Helper
 $system = realpath(DIR_SYSTEM);

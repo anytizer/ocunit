@@ -15,6 +15,8 @@ class PhpModulesTest extends TestCase
         $this->assertTrue(function_exists("gd_info"), "Missing PHP extension: GD");
         $this->assertTrue(function_exists("curl_init"), "Missing PHP extension: cURL");
         $this->assertTrue(function_exists("mb_check_encoding"), "Missing PHP extension: MB String");
+        $this->assertTrue(function_exists("mb_check_encoding"), "Missing PHP extension: MB String");
+        $this->assertTrue(function_exists("openssl_encrypt"), "Missing PHP extension: OpenSSL");
 
         /**
          * @see system/helper/general.php

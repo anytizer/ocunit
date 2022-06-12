@@ -33,7 +33,7 @@ class MetricsTest extends TestCase
 
     public function testProductHasAtLeastOneCategory()
     {
-        // get producets
-        // if cagtegory missing, report it.
+        // get products
+        // if category missing, report it.
     }
 }

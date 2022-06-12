@@ -2,19 +2,27 @@
 
 namespace ocunit\business\cases;
 
+use ocunit\library\Manufacturer;
 use ocunit\library\MySQLPDO;
+use ocunit\library\Store;
 use PHPUnit\Framework\TestCase;
 use function ocunit\_env;
 
 class ManufacturerTest extends TestCase
 {
+    public function testTruncateManufacturers()
+    {
+        $manufacturer = new Manufacturer();
+        $total = $manufacturer->truncate();
+
+        $this->assertTrue($total >= 1);
+    }
+
     public function testRebuildManufacturers()
     {
         $manufacturers = _env("stores.ini")["manufacturers"];
 
         $pdo = new MySQLPDO();
-        $pdo->raw("TRUNCATE TABLE `" . DB_PREFIX . "manufacturer`;");
-
         foreach ($manufacturers as $manufacturer => $logo) {
             $pdo->raw("INSERT INTO `" . DB_PREFIX . "manufacturer` (
             manufacturer_id, name, image, sort_order
@@ -28,16 +36,19 @@ class ManufacturerTest extends TestCase
             ]);
         }
 
-        $this->fail();
+        $this->assertNotEmpty($manufacturers);
     }
+
 
     public function testAssignManufacturersToAllStores()
     {
         $pdo = new MySQLPDO();
-        $pdo->raw("TRUNCATE TABLE `" . DB_PREFIX . "manufacturer_to_store`;");
+
+        $s = new Store();
+        $stores = $s->stores();
 
         $manufacturers = $pdo->query("SELECT * FROM `" . DB_PREFIX . "manufacturer`;", []);
-        $stores = $pdo->query("SELECT * FROM `" . DB_PREFIX . "store`;", []);
+        // $stores = $pdo->query("SELECT * FROM `" . DB_PREFIX . "store`;", []);
         // @todo Assign to default store too, with ID: 0.
 
         foreach ($manufacturers as $manufacturer) {
@@ -47,6 +58,7 @@ class ManufacturerTest extends TestCase
             }
         }
 
-        $this->fail();
+        $this->assertNotEmpty($stores);
+        $this->assertNotEmpty($manufacturers);
     }
 }

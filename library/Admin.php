@@ -48,7 +48,7 @@ class Admin extends MySQLPDO
         $login_token = "";
 
         $matches = [];
-        $link_pattern = "/data-oc-action=\".*?route\=(.*?)\&login_token\=(.*?)\"/i";
+        $link_pattern = "/data-oc-action=\".*?route=(.*?)\&login_token=(.*?)\"/i";
         preg_match_all($link_pattern, $html, $matches, PREG_SET_ORDER);
         //if (assert(count($matches) == 1)) {
         # print_r($matches);

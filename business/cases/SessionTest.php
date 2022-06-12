@@ -10,8 +10,8 @@ class SessionTest extends TestCase
     public function testClearSession()
     {
         $session = new Session();
-        $session->truncate();
+        $total = $session->truncate();
 
-        $this->fail();
+        $this->assertTrue($total >= 1);
     }
 }

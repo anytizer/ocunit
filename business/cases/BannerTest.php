@@ -10,8 +10,8 @@ class BannerTest extends TestCase
     public function testTruncateBanners()
     {
         $banner = new Banner();
-        $banner->truncate();
+        $total = $banner->truncate();
 
-        $this->fail();
+        $this->assertTrue($total >= 1);
     }
 }

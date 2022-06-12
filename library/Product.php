@@ -7,7 +7,7 @@ use function ocunit\dt;
 
 class Product extends MySQLPDO
 {
-    public function truncate()
+    public function truncate(): int
     {
         $tables = [
             DB_PREFIX . "product",

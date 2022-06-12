@@ -43,7 +43,7 @@ class FixturesTest extends TestCase
             $info = $dbx->info($table);
 
             $matches = [];
-            preg_match_all("/ AUTO_INCREMENT\=([\d+])/is", $info, $matches, PREG_SET_ORDER);
+            preg_match_all("/ AUTO_INCREMENT=([\d+])/is", $info, $matches, PREG_SET_ORDER);
             #print_r($matches);
             if (isset($matches[0][1])) {
                 $auto_increment = (int)$matches[0][1];

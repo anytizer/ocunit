@@ -1,12 +1,483 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tests>
-  <test className="PhpCoreTest" methodName="testNegativeOne" prettifiedClassName="Php Core" prettifiedMethodName="Negative one" status="-1" time="0.0003711" size="-1" groups="default">
+  <test className="BuilderTest" methodName="testImportImages" prettifiedClassName="Builder" prettifiedMethodName="Import images" status="5" time="0.2364447" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="PhpCoreTest" methodName="testIniGetWrongQuery" prettifiedClassName="Php Core" prettifiedMethodName="Ini get wrong query" status="-1" time="0.0003658" size="-1" groups="default">
+  <test className="cases\api\ApiTest" methodName="testGetApiToken" prettifiedClassName="Api (cases\api\Api)" prettifiedMethodName="Get api token" status="-1" time="5.8382945" size="-1" groups="default" exceptionLine="24" exceptionMessage="Trying to access array offset on value of type null">
     <group name="default"/>
   </test>
-  <test className="PhpCoreTest" methodName="testIniGetGoodQuery" prettifiedClassName="Php Core" prettifiedMethodName="Ini get good query" status="-1" time="0.0005182" size="-1" groups="default">
+  <test className="cases\api\ApiTest" methodName="testAccessRoutes" prettifiedClassName="Api (cases\api\Api)" prettifiedMethodName="Access routes" status="-1" time="4.3567194" size="-1" groups="default" exceptionLine="24" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\CartTest" methodName="testApiCartAdd" prettifiedClassName="Cart (cases\api\Cart)" prettifiedMethodName="Api cart add" status="-1" time="4.0630818" size="-1" groups="default" exceptionLine="26" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\CartTest" methodName="testApiCartEdit" prettifiedClassName="Cart (cases\api\Cart)" prettifiedMethodName="Api cart edit" status="-1" time="4.1716845" size="-1" groups="default" exceptionLine="26" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\CartTest" methodName="testApiCartRemove" prettifiedClassName="Cart (cases\api\Cart)" prettifiedMethodName="Api cart remove" status="-1" time="3.9010574" size="-1" groups="default" exceptionLine="26" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\CartTest" methodName="testApiCartProducts" prettifiedClassName="Cart (cases\api\Cart)" prettifiedMethodName="Api cart products" status="-1" time="4.6233079" size="-1" groups="default" exceptionLine="26" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\CouponTest" methodName="testApiCoupon" prettifiedClassName="Coupon (cases\api\Coupon)" prettifiedMethodName="Api coupon" status="-1" time="4.9054032" size="-1" groups="default" exceptionLine="26" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\CurrencyTest" methodName="testChangeSessionCurrency" prettifiedClassName="Currency (cases\api\Currency)" prettifiedMethodName="Change session currency" status="-1" time="6.2099815" size="-1" groups="default" exceptionLine="26" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\CustomerTest" methodName="testApiCustomer" prettifiedClassName="Customer (cases\api\Customer)" prettifiedMethodName="Api customer" status="-1" time="4.5916755" size="-1" groups="default" exceptionLine="26" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\LoginTest" methodName="testGetApiToken" prettifiedClassName="Login (cases\api\Login)" prettifiedMethodName="Get api token" status="-1" time="6.9913612" size="-1" groups="default" exceptionLine="26" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\LoginTest" methodName="testInappropriateApiUsersDenied" prettifiedClassName="Login (cases\api\Login)" prettifiedMethodName="Inappropriate api users denied" status="-1" time="6.0758722" size="-1" groups="default" exceptionLine="26" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\LoginTest" methodName="testAccessApiLogin" prettifiedClassName="Login (cases\api\Login)" prettifiedMethodName="Access api login" status="-1" time="4.4384738" size="-1" groups="default" exceptionLine="26" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\VoucherTest" methodName="testApiVoucher" prettifiedClassName="Voucher (cases\api\Voucher)" prettifiedMethodName="Api voucher" status="-1" time="4.2849676" size="-1" groups="default" exceptionLine="24" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\api\VoucherTest" methodName="testApiVoucherAdd" prettifiedClassName="Voucher (cases\api\Voucher)" prettifiedMethodName="Api voucher add" status="-1" time="6.1123638" size="-1" groups="default" exceptionLine="24" exceptionMessage="Trying to access array offset on value of type null">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\CategoryImagesTest" methodName="testFixCategoryImagesDatabaseRecords" prettifiedClassName="Category Images (cases\business\CategoryImages)" prettifiedMethodName="Fix category images database records" status="-1" time="4.6616906" size="-1" groups="default" exceptionLine="44" exceptionMessage="Category images have been auto assigned.&#10;Failed asserting that 4 matches expected 0.">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\CategoryImagesTest" methodName="testCreateCategoryImages" prettifiedClassName="Category Images (cases\business\CategoryImages)" prettifiedMethodName="Create category images" status="-1" time="2.0964223" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\CurrencyTest" methodName="testSingleCurrencyOperation" prettifiedClassName="Currency (cases\business\Currency)" prettifiedMethodName="Single currency operation" status="-1" time="2.1459391" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\FixturesTest" methodName="testFixInnodbDatabaseEngine" prettifiedClassName="Fixtures (cases\business\Fixtures)" prettifiedMethodName="Fix innodb database engine" status="-1" time="0.0006764" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\FixturesTest" methodName="testFixAutoIncrementValues" prettifiedClassName="Fixtures (cases\business\Fixtures)" prettifiedMethodName="Fix auto increment values" status="-1" time="0.0011498" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\FixturesTest" methodName="testFixManufacturerPricingByProductPrice" prettifiedClassName="Fixtures (cases\business\Fixtures)" prettifiedMethodName="Fix manufacturer pricing by product price" status="-1" time="2.2929618" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\FixturesTest" methodName="testFixDownloadableProductDoesNotSubtractInventory" prettifiedClassName="Fixtures (cases\business\Fixtures)" prettifiedMethodName="Fix downloadable product does not subtract inventory" status="-1" time="2.1457624" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\FixturesTest" methodName="testFixShippingRequiresInventorySubtraction" prettifiedClassName="Fixtures (cases\business\Fixtures)" prettifiedMethodName="Fix shipping requires inventory subtraction" status="-1" time="2.142917" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\FixturesTest" methodName="testSetupBusinessRules" prettifiedClassName="Fixtures (cases\business\Fixtures)" prettifiedMethodName="Setup business rules" status="-1" time="2.5117858" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\FixturesTest" methodName="testAdminPaginationSizeIncreased" prettifiedClassName="Fixtures (cases\business\Fixtures)" prettifiedMethodName="Admin pagination size increased" status="-1" time="2.2446985" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\MaintenanceTest" methodName="testPreInstallationHook" prettifiedClassName="Maintenance (cases\business\Maintenance)" prettifiedMethodName="Pre installation hook" status="-1" time="0.0006796" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\MaintenanceTest" methodName="testPostInstallationHook" prettifiedClassName="Maintenance (cases\business\Maintenance)" prettifiedMethodName="Post installation hook" status="-1" time="0.0011373" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="MetricsTest" methodName="testDimensions" prettifiedClassName="Metrics" prettifiedMethodName="Dimensions" status="-1" time="2.1153566" size="-1" groups="default" exceptionLine="27" exceptionMessage="Failed asserting that false is true.">
+    <group name="default"/>
+  </test>
+  <test className="MetricsTest" methodName="testProductHasAtLeastOneCategory" prettifiedClassName="Metrics" prettifiedMethodName="Product has at least one category" status="5" time="0.0005838" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\PricingTest" methodName="testManufacturerPriceExists" prettifiedClassName="Pricing (cases\business\Pricing)" prettifiedMethodName="Manufacturer price exists" status="-1" time="4.6521359" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\PricingTest" methodName="testProductPriceIsGreaterThanManufacturerPrice" prettifiedClassName="Pricing (cases\business\Pricing)" prettifiedMethodName="Product price is greater than manufacturer price" status="-1" time="4.858979" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\PricingTest" methodName="testProductPriceIsGreaterThanManufacturerPriceEvenAfterDiscounts" prettifiedClassName="Pricing (cases\business\Pricing)" prettifiedMethodName="Product price is greater than manufacturer price even after discounts" status="5" time="4.5700709" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\PricingTest" methodName="testPriceChangeHistoryMaintained" prettifiedClassName="Pricing (cases\business\Pricing)" prettifiedMethodName="Price change history maintained" status="-1" time="2.5409516" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\PricingTest" methodName="testPhysicalProductMustHaveNonZeroPrice" prettifiedClassName="Pricing (cases\business\Pricing)" prettifiedMethodName="Physical product must have non zero price" status="-1" time="2.2175025" size="-1" groups="default" exceptionLine="105" exceptionMessage="Pricing error on Product ID: #2&#10;Failed asserting that false is true.">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\ProductImagesTest" methodName="testFixProductImagesDatabaseRecords" prettifiedClassName="Product Images (cases\business\ProductImages)" prettifiedMethodName="Fix product images database records" status="-1" time="4.8140683" size="-1" groups="default" exceptionLine="45" exceptionMessage="Product images have been auto assigned.&#10;Failed asserting that 7 matches expected 0.">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\ProductImagesTest" methodName="testCreateProductImages" prettifiedClassName="Product Images (cases\business\ProductImages)" prettifiedMethodName="Create product images" status="-1" time="2.2517949" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\ShippingTest" methodName="testFreeShippingWithinCityOfStore" prettifiedClassName="Shipping (cases\business\Shipping)" prettifiedMethodName="Free shipping within city of store" status="-1" time="0.0006165" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\ShippingTest" methodName="testPostOfficeApiUsage" prettifiedClassName="Shipping (cases\business\Shipping)" prettifiedMethodName="Post office api usage" status="-1" time="0.0007961" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\ShippingTest" methodName="testPickupRequest" prettifiedClassName="Shipping (cases\business\Shipping)" prettifiedMethodName="Pickup request" status="-1" time="0.0007831" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\ShippingTest" methodName="testPickedUpItemEmailsToCustomer" prettifiedClassName="Shipping (cases\business\Shipping)" prettifiedMethodName="Picked up item emails to customer" status="-1" time="0.0006349" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\ShippingTest" methodName="testDenyCrossBoarderShipping" prettifiedClassName="Shipping (cases\business\Shipping)" prettifiedMethodName="Deny cross boarder shipping" status="-1" time="0.001575" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\ShippingTest" methodName="testEstimationsTendToBeGenuine" prettifiedClassName="Shipping (cases\business\Shipping)" prettifiedMethodName="Estimations tend to be genuine" status="-1" time="0.0006582" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\TaxationTest" methodName="testLowOrderFeeApplies" prettifiedClassName="Taxation (cases\business\Taxation)" prettifiedMethodName="Low order fee applies" status="-1" time="0.0005715" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\TaxationTest" methodName="testLowTaxRateInAlberta" prettifiedClassName="Taxation (cases\business\Taxation)" prettifiedMethodName="Low tax rate in alberta" status="-1" time="0.001171" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\TaxationTest" methodName="testEcoTax" prettifiedClassName="Taxation (cases\business\Taxation)" prettifiedMethodName="Eco tax" status="-1" time="0.0005649" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\TaxationTest" methodName="testGstTax" prettifiedClassName="Taxation (cases\business\Taxation)" prettifiedMethodName="Gst tax" status="-1" time="0.0008403" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\TaxationTest" methodName="testHstTax" prettifiedClassName="Taxation (cases\business\Taxation)" prettifiedMethodName="Hst tax" status="-1" time="0.0009198" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\TaxationTest" methodName="testPstTax" prettifiedClassName="Taxation (cases\business\Taxation)" prettifiedMethodName="Pst tax" status="-1" time="0.0006704" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\TaxationTest" methodName="testQstTax" prettifiedClassName="Taxation (cases\business\Taxation)" prettifiedMethodName="Qst tax" status="-1" time="0.0005552" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\TaxationTest" methodName="testValueAddedTax" prettifiedClassName="Taxation (cases\business\Taxation)" prettifiedMethodName="Value added tax" status="-1" time="0.0005611" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\UserPermissionsTest" methodName="testDemoUserDoesNotSeeDeleteOption" prettifiedClassName="User Permissions (cases\business\UserPermissions)" prettifiedMethodName="Demo user does not see delete option" status="-1" time="0.000528" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\UserPermissionsTest" methodName="testDemoUserCannotDeleteRecord" prettifiedClassName="User Permissions (cases\business\UserPermissions)" prettifiedMethodName="Demo user cannot delete record" status="-1" time="0.0005176" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\UserPermissionsTest" methodName="testDemoUserDoesNotHavePermissionToModifyRecord" prettifiedClassName="User Permissions (cases\business\UserPermissions)" prettifiedMethodName="Demo user does not have permission to modify record" status="-1" time="0.0006732" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\business\WebTest" methodName="testShowMessageToChooseStrongPassword" prettifiedClassName="Web (cases\business\Web)" prettifiedMethodName="Show message to choose strong password" status="-1" time="0.0005002" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\CatalogTest" methodName="testIndexPageHasToastDiv" prettifiedClassName="Catalog (cases\catalog\Catalog)" prettifiedMethodName="Index page has toast div" status="-1" time="4.2600737" size="-1" groups="default" exceptionLine="16" exceptionMessage="Failed checking index page contains toast placeholder.&#10;Failed asserting that false is true.">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\CatalogTest" methodName="testAdminDashboardRequiresLogin" prettifiedClassName="Catalog (cases\catalog\Catalog)" prettifiedMethodName="Admin dashboard requires login" status="-1" time="4.560459" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\CatalogTest" methodName="testAccountPagesNeedLogin" prettifiedClassName="Catalog (cases\catalog\Catalog)" prettifiedMethodName="Account pages need login" status="-1" time="99.3983139" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\CatalogTest" methodName="testSearchesInHomePage" prettifiedClassName="Catalog (cases\catalog\Catalog)" prettifiedMethodName="Searches in home page" status="-1" time="3.8835321" size="-1" groups="default" exceptionLine="128" exceptionMessage="[1;31mFAILED:[0m searching [ Information Technology ] in HTML output.&#10;Failed asserting that false is true.">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\CatalogTest" methodName="testSearchCategoriesPage" prettifiedClassName="Catalog (cases\catalog\Catalog)" prettifiedMethodName="Search categories page" status="-1" time="4.0958484" size="-1" groups="default" exceptionLine="148" exceptionMessage="[1;31mFAILED:[0m searching [ &lt;h1&gt;C# Development Hours&lt;/h1&gt; ] in HTML output.&#10;Failed asserting that false is true.">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\CatalogTest" methodName="testSearchesInProductDetailsPage" prettifiedClassName="Catalog (cases\catalog\Catalog)" prettifiedMethodName="Searches in product details page" status="-1" time="4.2081726" size="-1" groups="default" exceptionLine="168" exceptionMessage="[1;31mFAILED:[0m searching [ &lt;h1&gt;C# Development Hours&lt;/h1&gt; ] in HTML output.&#10;Failed asserting that false is true.">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\ImageTest" methodName="testCategoryImagesExist" prettifiedClassName="Image (cases\catalog\Image)" prettifiedMethodName="Category images exist" status="-1" time="2.5816608" size="-1" groups="default" exceptionLine="21" exceptionMessage="[1;31mMISSING:[0m category image (cache) for id: #1&#10;Failed asserting that false is true.">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\ImageTest" methodName="testProductImagesExist" prettifiedClassName="Image (cases\catalog\Image)" prettifiedMethodName="Product images exist" status="-1" time="2.2542613" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\ImageTest" methodName="testCategoryImagesAreValidImages" prettifiedClassName="Image (cases\catalog\Image)" prettifiedMethodName="Category images are valid images" status="-1" time="0.0011121" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\ImageTest" methodName="testProductImagesAreValidImages" prettifiedClassName="Image (cases\catalog\Image)" prettifiedMethodName="Product images are valid images" status="-1" time="0.0009113" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\ImageTest" methodName="testImageFilesDoNotContainScripts" prettifiedClassName="Image (cases\catalog\Image)" prettifiedMethodName="Image files do not contain scripts" status="-1" time="0.000599" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\ImageTest" methodName="testNoOrphanedImages" prettifiedClassName="Image (cases\catalog\Image)" prettifiedMethodName="No orphaned images" status="5" time="0.0005587" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\LoginTest" methodName="testSimpleLoginSuccessful" prettifiedClassName="Login (cases\catalog\Login)" prettifiedMethodName="Simple login successful" status="-1" time="2.9570469" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\LoginTest" methodName="testAdvancedLoginSuccessful" prettifiedClassName="Login (cases\catalog\Login)" prettifiedMethodName="Advanced login successful" status="-1" time="11.0817278" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\LoginTest" methodName="testSimpleLoginFailure" prettifiedClassName="Login (cases\catalog\Login)" prettifiedMethodName="Simple login failure" status="-1" time="0.0005797" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\LoginTest" methodName="testAdvancedLoginFailure" prettifiedClassName="Login (cases\catalog\Login)" prettifiedMethodName="Advanced login failure" status="-1" time="0.0005416" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\SettingsTest" methodName="testDatabaseConstantsDefined" prettifiedClassName="Settings (cases\catalog\Settings)" prettifiedMethodName="Database constants defined" status="-1" time="0.0005381" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\SettingsTest" methodName="testCoreSettingsDefined" prettifiedClassName="Settings (cases\catalog\Settings)" prettifiedMethodName="Core settings defined" status="-1" time="0.0005276" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\catalog\SettingsTest" methodName="testDirectorySettingsDefined" prettifiedClassName="Settings (cases\catalog\Settings)" prettifiedMethodName="Directory settings defined" status="-1" time="0.0009191" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\core\CartTest" methodName="testCartClear" prettifiedClassName="Cart (cases\core\Cart)" prettifiedMethodName="Cart clear" status="-1" time="2.322888" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\core\CartTest" methodName="testCustomerLogin" prettifiedClassName="Cart (cases\core\Cart)" prettifiedMethodName="Customer login" status="-1" time="2.2206432" size="-1" groups="default" exceptionLine="44" exceptionMessage="Customer could NOT login.&#10;Failed asserting that false is true.">
+    <group name="default"/>
+  </test>
+  <test className="cases\core\CartTest" methodName="testCustomerLoginFailure" prettifiedClassName="Cart (cases\core\Cart)" prettifiedMethodName="Customer login failure" status="-1" time="2.2059603" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\core\EncryptionTest" methodName="testEncryptDecrypt" prettifiedClassName="Encryption (cases\core\Encryption)" prettifiedMethodName="Encrypt decrypt" status="-1" time="0.0230081" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\core\ImageTest" methodName="testParsePngImageForWidthAndHeight" prettifiedClassName="Image (cases\core\Image)" prettifiedMethodName="Parse png image for width and height" status="-1" time="0.0457889" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\core\LanguageTest" methodName="testAdminLanguageLoaded" prettifiedClassName="Language (cases\core\Language)" prettifiedMethodName="Admin language loaded" status="-1" time="0.0185635" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\core\LanguageTest" methodName="testStoreLanguageLoaded" prettifiedClassName="Language (cases\core\Language)" prettifiedMethodName="Store language loaded" status="-1" time="0.0022686" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\core\LogTest" methodName="testLogFileProduced" prettifiedClassName="Log (cases\core\Log)" prettifiedMethodName="Log file produced" status="-1" time="0.0006662" size="-1" groups="default" exceptionLine="37" exceptionMessage="Log file not written to: D:/htdocs/oc/opencart/upload/system/storage/logs/test.log&#10;Failed asserting that false is true.">
+    <group name="default"/>
+  </test>
+  <test className="cases\core\ModelIncludedTest" methodName="testOpencartModelIsIncludedOnDemand" prettifiedClassName="Model Included (cases\core\ModelIncluded)" prettifiedMethodName="Opencart model is included on demand" status="-1" time="0.001069" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\core\PasswordTest" methodName="testPasswordHash" prettifiedClassName="Password (cases\core\Password)" prettifiedMethodName="Password hash" status="-1" time="0.0651595" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\core\URLTest" methodName="testConstructHomepageUrl" prettifiedClassName="URL (cases\core\URL)" prettifiedMethodName="Construct homepage url" status="-1" time="0.000807" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\ChangeDatabaseValuesTest" methodName="testResetCustomerPasswords" prettifiedClassName="Change Database Values (cases\database\ChangeDatabaseValues)" prettifiedMethodName="Reset customer passwords" status="-1" time="4.6075639" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\ChangeDatabaseValuesTest" methodName="testResetCustomerEmails" prettifiedClassName="Change Database Values (cases\database\ChangeDatabaseValues)" prettifiedMethodName="Reset customer emails" status="-1" time="2.4373879" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\CountersTest" methodName="testCountTruncatedTables" prettifiedClassName="Counters (cases\database\Counters)" prettifiedMethodName="Count truncated tables" status="-1" time="2.3359546" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\CountersTest" methodName="testTotalRecordCounter" prettifiedClassName="Counters (cases\database\Counters)" prettifiedMethodName="Total record counter" status="-1" time="2.1503776" size="-1" groups="default" exceptionLine="50" exceptionMessage="Data counter mismatch in table: `oc_api`.&#10;Failed asserting that 0 matches expected 1.">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\DatabaseIndexingTest" methodName="testDropIndexes" prettifiedClassName="Database Indexing (cases\database\DatabaseIndexing)" prettifiedMethodName="Drop indexes" status="5" time="0.0005838" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\DatabaseIndexingTest" methodName="testApplyIndexes" prettifiedClassName="Database Indexing (cases\database\DatabaseIndexing)" prettifiedMethodName="Apply indexes" status="-1" time="2.580602" size="-1" groups="default" exceptionLine="21" exceptionMessage="">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\DatabaseIndexingTest" methodName="testAnalyseIndexes" prettifiedClassName="Database Indexing (cases\database\DatabaseIndexing)" prettifiedMethodName="Analyse indexes" status="-1" time="2.7680472" size="-1" groups="default" exceptionLine="57" exceptionMessage="">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\DatabaseTest" methodName="testCanConnectToTheDatabase" prettifiedClassName="Database (cases\database\Database)" prettifiedMethodName="Can connect to the database" status="-1" time="2.0862633" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\DatabaseTest" methodName="testSingleCurrency" prettifiedClassName="Database (cases\database\Database)" prettifiedMethodName="Single currency" status="-1" time="2.4871659" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\DatabaseTest" methodName="testOnlyOneLanguageIsActive" prettifiedClassName="Database (cases\database\Database)" prettifiedMethodName="Only one language is active" status="-1" time="2.8356056" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\DatabaseTest" methodName="testAdminPaginates100Items" prettifiedClassName="Database (cases\database\Database)" prettifiedMethodName="Admin paginates 100 items" status="-1" time="2.1767848" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\SessionTest" methodName="testSessionIsCreated" prettifiedClassName="Session (cases\database\Session)" prettifiedMethodName="Session is created" status="-1" time="12.2556743" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\database\SessionTest" methodName="testAtLeastOneStoreIsActive" prettifiedClassName="Session (cases\database\Session)" prettifiedMethodName="At least one store is active" status="-1" time="20.5832406" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\HtaccessTest" methodName="testHtaccessDisablesDirectoryListingInStore" prettifiedClassName="Htaccess (cases\general\Htaccess)" prettifiedMethodName="Htaccess disables directory listing in store" status="-1" time="0.0008181" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\HtaccessTest" methodName="testHtaccessDisablesDirectoryListingInAdmin" prettifiedClassName="Htaccess (cases\general\Htaccess)" prettifiedMethodName="Htaccess disables directory listing in admin" status="-1" time="0.0006671" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\OperatingSystemTest" methodName="testCli" prettifiedClassName="Operating System (cases\general\OperatingSystem)" prettifiedMethodName="Cli" status="-1" time="0.0007277" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\OperatingSystemTest" methodName="testOperatingSystem" prettifiedClassName="Operating System (cases\general\OperatingSystem)" prettifiedMethodName="Operating system" status="-1" time="0.0010261" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="PhpCoreTest" methodName="testNegativeOne" prettifiedClassName="Php Core" prettifiedMethodName="Negative one" status="-1" time="0.0008969" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="PhpCoreTest" methodName="testIniGetWrongQuery" prettifiedClassName="Php Core" prettifiedMethodName="Ini get wrong query" status="-1" time="0.0007326" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="PhpCoreTest" methodName="testIniGetGoodQuery" prettifiedClassName="Php Core" prettifiedMethodName="Ini get good query" status="-1" time="0.0008942" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\PhpModulesTest" methodName="testPhpModulesAvailable" prettifiedClassName="Php Modules (cases\general\PhpModules)" prettifiedMethodName="Php modules available" status="-1" time="0.0013782" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\PhpModulesTest" methodName="testZendAssertions" prettifiedClassName="Php Modules (cases\general\PhpModules)" prettifiedMethodName="Zend assertions" status="-1" time="0.000653" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\PhpModulesTest" methodName="testAllIncludedPathsExist" prettifiedClassName="Php Modules (cases\general\PhpModules)" prettifiedMethodName="All included paths exist" status="-1" time="0.0008216" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug1" prettifiedClassName="Slug" prettifiedMethodName="Slug 1" status="-1" time="0.0010632" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug2" prettifiedClassName="Slug" prettifiedMethodName="Slug 2" status="-1" time="0.0006913" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug3" prettifiedClassName="Slug" prettifiedMethodName="Slug 3" status="-1" time="0.0008401" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug4" prettifiedClassName="Slug" prettifiedMethodName="Slug 4" status="-1" time="0.000583" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug5" prettifiedClassName="Slug" prettifiedMethodName="Slug 5" status="-1" time="0.0012523" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug6" prettifiedClassName="Slug" prettifiedMethodName="Slug 6" status="-1" time="0.0005687" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug7" prettifiedClassName="Slug" prettifiedMethodName="Slug 7" status="-1" time="0.0005631" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug8" prettifiedClassName="Slug" prettifiedMethodName="Slug 8" status="-1" time="0.0013447" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug9" prettifiedClassName="Slug" prettifiedMethodName="Slug 9" status="-1" time="0.0012901" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug10" prettifiedClassName="Slug" prettifiedMethodName="Slug 10" status="-1" time="0.0005876" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug11" prettifiedClassName="Slug" prettifiedMethodName="Slug 11" status="-1" time="0.0005703" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug12" prettifiedClassName="Slug" prettifiedMethodName="Slug 12" status="-1" time="0.0005732" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SlugTest" methodName="testSlug13" prettifiedClassName="Slug" prettifiedMethodName="Slug 13" status="-1" time="0.0006016" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\StorageAreaTest" methodName="testStorageAreaIsOutOfUpload" prettifiedClassName="Storage Area (cases\general\StorageArea)" prettifiedMethodName="Storage area is out of upload" status="-1" time="0.0005874" size="-1" groups="default" exceptionLine="47" exceptionMessage="/storage area is not outside of htdocs.&#10;Failed asserting that true is false.">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\StorageAreaTest" methodName="testInstallFolderIsRemoved" prettifiedClassName="Storage Area (cases\general\StorageArea)" prettifiedMethodName="Install folder is removed" status="-1" time="0.0006093" size="-1" groups="default" exceptionLine="54" exceptionMessage="Remove install/ folder!&#10;Failed asserting that true is false.">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\StorageAreaTest" methodName="testAdminFolderIsRenamed" prettifiedClassName="Storage Area (cases\general\StorageArea)" prettifiedMethodName="Admin folder is renamed" status="-1" time="0.0005606" size="-1" groups="default" exceptionLine="60" exceptionMessage="It is important to rename admin folder!&#10;Failed asserting that true is false.">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\StorageAreaTest" methodName="testStorageFoldersPermissions" prettifiedClassName="Storage Area (cases\general\StorageArea)" prettifiedMethodName="Storage folders permissions" status="-1" time="0.0017146" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\StorageAreaTest" methodName="testOtherFoldersPermissions" prettifiedClassName="Storage Area (cases\general\StorageArea)" prettifiedMethodName="Other folders permissions" status="-1" time="0.0011102" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\XDebugTest" methodName="testXDebugModuleIsAvailable" prettifiedClassName="XDebug (cases\general\XDebug)" prettifiedMethodName="X debug module is available" status="-1" time="0.0005471" size="-1" groups="default" exceptionLine="11" exceptionMessage="Missing PHP extension: xDebug.&#10;Failed asserting that false is true.">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\XDebugTest" methodName="testXDebugShouldNotAutoStart" prettifiedClassName="XDebug (cases\general\XDebug)" prettifiedMethodName="X debug should not auto start" status="-1" time="0.0005235" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\general\XDebugTest" methodName="testXDebugProfilerBeEnabled" prettifiedClassName="XDebug (cases\general\XDebug)" prettifiedMethodName="X debug profiler be enabled" status="-1" time="0.0005037" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\CVETest" methodName="testHandleCveDetails" prettifiedClassName="CVE (cases\issues\CVE)" prettifiedMethodName="Handle cve details" status="5" time="0.0004779" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testCategoryImagePlaceholder" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Category image placeholder" status="-1" time="0.0008671" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testProductImagePlaceholder" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Product image placeholder" status="-1" time="0.000928" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testConsolidatedConfigFile" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Consolidated config file" status="5" time="0.000691" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testAccountRequiresAdminApprovalBeforeLogin" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Account requires admin approval before login" status="5" time="0.0005423" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testKeepALogOfAdminAccess" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Keep a log of admin access" status="5" time="0.0005518" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testAddCategoryDescriptionInProductDetailPage" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Add category description in product detail page" status="5" time="0.0009933" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testDoNotReturnProductWithNonExistingProductId" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Do not return product with non existing product id" status="5" time="0.0005433" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testShowPreSetupFilePermissions" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Show pre setup file permissions" status="5" time="0.0005565" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testDoPostSetupCleanups" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Do post setup cleanups" status="5" time="0.0008434" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testUserIsRegisteredProperly" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="User is registered properly" status="5" time="0.0006597" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testAdminPasswordForgotten" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Admin password forgotten" status="5" time="0.0005424" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testConfusingConstants" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Confusing constants" status="5" time="0.0006754" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testUndefinedCustomFieldKey" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Undefined custom field key" status="5" time="0.0005384" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testCustomerGroupNotLoaded" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Customer group not loaded" status="5" time="0.0005368" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testClearingSaas" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Clearing saas" status="5" time="0.0005934" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testCannotReadDbSessionData" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Cannot read db session data" status="5" time="0.000554" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testCallRouteCommonSecurity" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Call route common security" status="5" time="0.0008363" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testWrongToastPrintedOldMessage" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Wrong toast printed old message" status="5" time="0.0005414" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\FromGithubTest" methodName="testAdminCreatedOrderShouldHaveLogo" prettifiedClassName="From Github (cases\issues\FromGithub)" prettifiedMethodName="Admin created order should have logo" status="5" time="0.0005363" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\GuiDesignTest" methodName="testDashboardLatestOrders" prettifiedClassName="Gui Design (cases\issues\GuiDesign)" prettifiedMethodName="Dashboard latest orders" status="5" time="0.0005012" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\GuiDesignTest" methodName="testPlaceholderImageFitsSquareArea" prettifiedClassName="Gui Design (cases\issues\GuiDesign)" prettifiedMethodName="Placeholder image fits square area" status="5" time="0.0005218" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\GuiDesignTest" methodName="testShowStoreLogo" prettifiedClassName="Gui Design (cases\issues\GuiDesign)" prettifiedMethodName="Show store logo" status="5" time="0.0005234" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\issues\GuiDesignTest" methodName="testSmallQuantityInputBox" prettifiedClassName="Gui Design (cases\issues\GuiDesign)" prettifiedMethodName="Small quantity input box" status="5" time="0.0004979" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\mail\MailTest" methodName="testEmailSentFromWindowsMachine" prettifiedClassName="Mail (cases\mail\Mail)" prettifiedMethodName="Email sent from windows machine" status="-1" time="0.00055" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\mail\MailTest" methodName="testEmailSentFromLinuxMachine" prettifiedClassName="Mail (cases\mail\Mail)" prettifiedMethodName="Email sent from linux machine" status="-1" time="0.0005229" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\mail\MailTest" methodName="testSendgridImplemented" prettifiedClassName="Mail (cases\mail\Mail)" prettifiedMethodName="Sendgrid implemented" status="-1" time="0.0005327" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\mail\MailTest" methodName="testEmailBodyIsHtmlFormatted" prettifiedClassName="Mail (cases\mail\Mail)" prettifiedMethodName="Email body is html formatted" status="-1" time="0.0005254" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\mail\MailTest" methodName="testEmailIsWhitelisted" prettifiedClassName="Mail (cases\mail\Mail)" prettifiedMethodName="Email is whitelisted" status="-1" time="0.0005209" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\mail\MailTest" methodName="testServerConfigurations" prettifiedClassName="Mail (cases\mail\Mail)" prettifiedMethodName="Server configurations" status="5" time="0.0005048" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\report\InventoryTest" methodName="testGenerateInventoryReport" prettifiedClassName="Inventory (cases\report\Inventory)" prettifiedMethodName="Generate inventory report" status="-1" time="2.481934" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="ocunit\catalog\cases\report\RecordsCountTest" methodName="testRecordsCount" prettifiedClassName="Records Count (ocunit\catalog\cases\report\RecordsCount)" prettifiedMethodName="Records count" status="-1" time="2.3595073" size="-1" groups="default" exceptionLine="35" exceptionMessage="Non-Empty Tables count mismatch!&#10;Failed asserting that actual size 71 matches expected size 78.">
     <group name="default"/>
   </test>
 </tests>

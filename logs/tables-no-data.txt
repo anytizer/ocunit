@@ -11,7 +11,6 @@ oc_coupon                                - 0
 oc_coupon_category                       - 0
 oc_coupon_history                        - 0
 oc_coupon_product                        - 0
-oc_customer                              - 0
 oc_customer_activity                     - 0
 oc_customer_affiliate                    - 0
 oc_customer_affiliate_report             - 0
@@ -35,6 +34,9 @@ oc_filter_description                    - 0
 oc_filter_group                          - 0
 oc_filter_group_description              - 0
 oc_gdpr                                  - 0
+oc_information                           - 0
+oc_information_description               - 0
+oc_information_to_store                  - 0
 oc_language                              - 0
 oc_location                              - 0
 oc_marketing                             - 0
@@ -66,7 +68,6 @@ oc_subscription_transaction              - 0
 oc_theme                                 - 0
 oc_translation                           - 0
 oc_upload                                - 0
-oc_user                                  - 0
 oc_vendor                                - 0
 oc_voucher                               - 0
 oc_voucher_history                       - 0

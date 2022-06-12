@@ -27,7 +27,7 @@ class Category extends MySQLPDO
     /**
      * @throws Exception
      */
-    public function patch()
+    public function patch(): int
     {
         $stores = (new Store())->stores();
 
@@ -41,7 +41,6 @@ class Category extends MySQLPDO
             $description = $parsedown->text(file_get_contents($category_description_md));
             #$name = substr(basename($category), 0, -3);
             $slug = (new \Slug())->create($name);
-
 
             $category_sql = "INSERT INTO `" . DB_PREFIX . "category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES(:category_id, :image, :parent_id, :top, :column, :sort_order, :status, :date_added, :date_modified);";
             $category_data = [
@@ -105,6 +104,8 @@ class Category extends MySQLPDO
 //            #$category_id =$model->addCategory($data);
 //
 //            #echo "\r\n", $name, " -- ", $slug, " -- ", $description;
-        }
+        } // foreach($categories)
+
+        return count($categories);
     }
 }

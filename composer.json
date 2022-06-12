@@ -11,6 +11,6 @@
     "phpunit/phpunit": "^9.5",
     "phpunit/phpunit-selenium": "^9.0",
     "ext-json": "*",
-    "phpstan/phpstan": "^1.2"
+    "phpstan/phpstan": "^1.7.12"
   }
 }

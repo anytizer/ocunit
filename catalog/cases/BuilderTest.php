@@ -6,6 +6,7 @@ class BuilderTest extends TestCase
 {
     function testImportImages()
     {
+        // @todo Import from .ini configuration
         $path = "D:/desktop/stores";
 
         $categories = [];
@@ -19,7 +20,7 @@ class BuilderTest extends TestCase
 
         foreach ($categories as $category) {
             $slug = (new Slug())->create_from_path($category);
-            echo "\r\nSlug: ", $slug;
+            # echo "\r\nSlug: ", $slug;
             /*
             $images = scandir($category);
             $price = price();

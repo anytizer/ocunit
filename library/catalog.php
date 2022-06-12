@@ -162,7 +162,7 @@ class catalog
         return $login_token;
     }
 
-    private function logout()
+    private function logout(): string
     {
         // http://localhost/oc/store/upload/index.php?route=account/logout&language=en-gb
         $_GET = [

@@ -9,13 +9,20 @@ use PHPUnit\Framework\TestCase;
 
 class CategoryTest extends TestCase
 {
+    public function testTruncateProducts()
+    {
+        $category = new Category();
+        $total = $category->truncate();
+
+        $this->assertTrue($total >= 1);
+    }
+
     public function testTruncateCategories()
     {
         $product = new Product();
-        $product->truncate();
+        $total = $product->truncate();
 
-        $category = new Category();
-        $category->truncate();
+        $this->assertTrue($total >= 1);
     }
 
     /**
@@ -25,8 +32,8 @@ class CategoryTest extends TestCase
     {
         // from store > categories > products > images[]
         $category = new Category();
-        $category->patch();
+        $total = $category->patch();
 
-        $this->fail();
+        $this->assertTrue($total >= 1);
     }
 }

@@ -9,8 +9,8 @@ class DatabaseIndexingTest extends TestCase
 {
     public function testDropIndexes()
     {
-        $pdo = new MySQLPDO();
-        $pdo->raw("ALTER TABLE `" . DB_PREFIX . "setting` DROP INDEX `store_id`;");
+        #$pdo = new MySQLPDO();
+        #$pdo->raw("ALTER TABLE `" . DB_PREFIX . "setting` DROP INDEX `store_id`;");
     }
 
     public function testApplyIndexes()

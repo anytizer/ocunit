@@ -11,9 +11,9 @@ class CreateStoreTest extends TestCase
     public function testEmptyStores()
     {
         $s = new Store();
-        $deleted = $s->truncate();
+        $total = $s->truncate();
 
-        $this->assertTrue($deleted);
+        $this->assertTrue($total);
     }
 
     public function testCreateStores()
@@ -33,6 +33,7 @@ class CreateStoreTest extends TestCase
         $s = new Store();
         $stores = $s->stores();
 
+        // when the stores are recreated, count again.
         $this->assertNotEmpty($stores);
     }
 }

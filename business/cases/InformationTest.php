@@ -1,6 +1,6 @@
 <?php
 
-namespace ocunit\admin\cases\admin;
+namespace ocunit\business\cases;
 
 use ocunit\library\Information;
 use PHPUnit\Framework\TestCase;

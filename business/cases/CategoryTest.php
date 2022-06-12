@@ -16,8 +16,6 @@ class CategoryTest extends TestCase
 
         $category = new Category();
         $category->truncate();
-
-        $this->fail();
     }
 
     /**

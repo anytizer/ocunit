@@ -18,15 +18,14 @@ class CreateStoreTest extends TestCase
 
     public function testCreateStores()
     {
-        $s = new Store();
-
         $stores = _env("stores.ini")["stores"];
 
+        $s = new Store();
         foreach ($stores as $name => $url) {
             $s->store_create($name, $url);
         }
 
-        $this->assertCount(4, $stores);
+        $this->assertNotEmpty($stores);
     }
 
     public function testViewStores()

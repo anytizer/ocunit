@@ -4,7 +4,7 @@ namespace ocunit\library;
 
 class Image extends MySQLPDO
 {
-    public function truncate()
+    public function truncate(): int
     {
         $tables = [
             DB_PREFIX . "product_image",

@@ -10,14 +10,17 @@ class ImageTest extends TestCase
     public function testTruncateImages()
     {
         $image = new Image();
-        $image->truncate();
+        $total = $image->truncate();
 
-        $this->fail();
+        $this->assertTrue($total >= 1);
     }
 
+    /**
+     * @see CategoryTest::testBuildCategories()
+     */
     public function testBuildImages()
     {
-        // @see CategoryTest::testBuildCategories()
         // from store > categories > products > images[]
+        $this->markTestSkipped();
     }
 }

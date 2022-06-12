@@ -1,87 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tests>
-  <test className="cases\business\AdminTest" methodName="testDeleteAdminUsers" prettifiedClassName="Admin (cases\business\Admin)" prettifiedMethodName="Delete admin users" status="-1" time="4.1001107" size="-1" groups="default" exceptionLine="14" exceptionMessage="SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it">
+  <test className="ocunit\business\cases\ImageTest" methodName="testTruncateImages" prettifiedClassName="Image (ocunit\business\cases\Image)" prettifiedMethodName="Truncate images" status="-1" time="2.9595236" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="cases\business\AdminTest" methodName="testCreateAdminUser" prettifiedClassName="Admin (cases\business\Admin)" prettifiedMethodName="Create admin user" status="-1" time="4.196781" size="-1" groups="default" exceptionLine="27" exceptionMessage="SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\BannerTest" methodName="testTruncateBanners" prettifiedClassName="Banner (ocunit\business\cases\Banner)" prettifiedMethodName="Truncate banners" status="-1" time="4.0911368" size="-1" groups="default" exceptionLine="12" exceptionMessage="SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\CategoryTest" methodName="testTruncateCategories" prettifiedClassName="Category (ocunit\business\cases\Category)" prettifiedMethodName="Truncate categories" status="-1" time="4.1135365" size="-1" groups="default" exceptionLine="14" exceptionMessage="SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\CategoryTest" methodName="testBuildCategories" prettifiedClassName="Category (ocunit\business\cases\Category)" prettifiedMethodName="Build categories" status="-1" time="4.0971453" size="-1" groups="default" exceptionLine="29" exceptionMessage="SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\CreateStoreTest" methodName="testEmptyStores" prettifiedClassName="Create Store (ocunit\business\cases\CreateStore)" prettifiedMethodName="Empty stores" status="-1" time="4.0809464" size="-1" groups="default" exceptionLine="13" exceptionMessage="SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\CreateStoreTest" methodName="testCreateStores" prettifiedClassName="Create Store (ocunit\business\cases\CreateStore)" prettifiedMethodName="Create stores" status="-1" time="2.2949133" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\CreateStoreTest" methodName="testViewStores" prettifiedClassName="Create Store (ocunit\business\cases\CreateStore)" prettifiedMethodName="View stores" status="-1" time="2.1301813" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\CustomerTest" methodName="testDeleteCustomer" prettifiedClassName="Customer (ocunit\business\Customer)" prettifiedMethodName="Delete customer" status="-1" time="5.9069219" size="-1" groups="default" exceptionLine="16" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\CustomerTest" methodName="testCreateCustomer" prettifiedClassName="Customer (ocunit\business\Customer)" prettifiedMethodName="Create customer" status="-1" time="8.4216639" size="-1" groups="default" exceptionLine="34" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\GuidsTest" methodName="testGenerateGuid" prettifiedClassName="Guids (ocunit\business\cases\Guids)" prettifiedMethodName="Generate guid" status="-1" time="0.0085817" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ImageTest" methodName="testTruncateImages" prettifiedClassName="Image (ocunit\business\cases\Image)" prettifiedMethodName="Truncate images" status="-1" time="2.2113865" size="-1" groups="default" exceptionLine="15" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ImageTest" methodName="testBuildImages" prettifiedClassName="Image (ocunit\business\cases\Image)" prettifiedMethodName="Build images" status="5" time="0.0003645" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ManufacturerTest" methodName="testRebuildManufacturers" prettifiedClassName="Manufacturer (ocunit\business\cases\Manufacturer)" prettifiedMethodName="Rebuild manufacturers" status="-1" time="4.7821349" size="-1" groups="default" exceptionLine="31" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ManufacturerTest" methodName="testAssignManufacturersToAllStores" prettifiedClassName="Manufacturer (ocunit\business\cases\Manufacturer)" prettifiedMethodName="Assign manufacturers to all stores" status="-1" time="7.0750986" size="-1" groups="default" exceptionLine="50" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ProductTest" methodName="testTruncateImages" prettifiedClassName="Product (ocunit\business\cases\Product)" prettifiedMethodName="Truncate images" status="-1" time="2.3946653" size="-1" groups="default" exceptionLine="15" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ProductTest" methodName="testBuildProducts" prettifiedClassName="Product (ocunit\business\cases\Product)" prettifiedMethodName="Build products" status="5" time="0.0003626" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\SessionTest" methodName="testClearSession" prettifiedClassName="Session (ocunit\business\Session)" prettifiedMethodName="Clear session" status="-1" time="3.4690763" size="-1" groups="default" exceptionLine="15" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\StoreLogoTest" methodName="testChangeStoreLogo" prettifiedClassName="Store Logo (ocunit\business\StoreLogo)" prettifiedMethodName="Change store logo" status="-1" time="2.8207131" size="-1" groups="default" exceptionLine="32" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\TruncatesTest" methodName="testTruncateTables" prettifiedClassName="Truncates (ocunit\business\cases\Truncates)" prettifiedMethodName="Truncate tables" status="-1" time="3.2095451" size="-1" groups="default" exceptionLine="24" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\GuestTest" methodName="testGuestCheckout" prettifiedClassName="Guest (ocunit\business\cases\admin\Guest)" prettifiedMethodName="Guest checkout" status="-1" time="4.390409" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginFailuresTest" methodName="testAdminBruteForceLoginDiscouraged" prettifiedClassName="Login Failures (ocunit\business\cases\admin\LoginFailures)" prettifiedMethodName="Admin brute force login discouraged" status="-1" time="0.000397" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginFailuresTest" methodName="testLoginFails" prettifiedClassName="Login Failures (ocunit\business\cases\admin\LoginFailures)" prettifiedMethodName="Login fails" status="-1" time="0.0004161" size="-1" groups="default" exceptionLine="25" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginFailuresTest" methodName="testLoginSucceeds" prettifiedClassName="Login Failures (ocunit\business\cases\admin\LoginFailures)" prettifiedMethodName="Login succeeds" status="-1" time="0.0004355" size="-1" groups="default" exceptionLine="40" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginFailuresTest" methodName="testCustomerLoginFormHasCaptcha" prettifiedClassName="Login Failures (ocunit\business\cases\admin\LoginFailures)" prettifiedMethodName="Customer login form has captcha" status="-1" time="0.0004148" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginFailuresTest" methodName="testCustomerApprovalRequiredForLogin" prettifiedClassName="Login Failures (ocunit\business\cases\admin\LoginFailures)" prettifiedMethodName="Customer approval required for login" status="-1" time="2.0861221" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginTest" methodName="testRemoveSystemUsers" prettifiedClassName="Login (ocunit\business\cases\admin\Login)" prettifiedMethodName="Remove system users" status="-1" time="0.0003999" size="-1" groups="default" exceptionLine="30" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginTest" methodName="testBlackListSystemUserDemanders" prettifiedClassName="Login (ocunit\business\cases\admin\Login)" prettifiedMethodName="Black list system user demanders" status="-1" time="0.000477" size="-1" groups="default">
+  <test className="ocunit\business\cases\ImageTest" methodName="testBuildImages" prettifiedClassName="Image (ocunit\business\cases\Image)" prettifiedMethodName="Build images" status="-1" time="0.0006015" size="-1" groups="default">
     <group name="default"/>
   </test>
 </tests>

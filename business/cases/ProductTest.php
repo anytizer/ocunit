@@ -10,9 +10,9 @@ class ProductTest extends TestCase
     public function testTruncateImages()
     {
         $product = new Image();
-        $product->truncate();
+        $total = $product->truncate();
 
-        $this->fail();
+        $this->assertTrue($total >= 1);
     }
 
     public function testBuildProducts()

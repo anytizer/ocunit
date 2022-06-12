@@ -3,6 +3,7 @@
 namespace ocunit\library;
 
 use anytizer\relay as relay;
+use Exception;
 use Opencart\Admin\Model\User\User;
 use function ocunit\dt;
 
@@ -145,16 +146,16 @@ class Admin extends MySQLPDO
         return $html;
     }
 
-    public function delete_all()
+    public function delete_all(): int
     {
         $this->query("DELETE FROM `" . DB_PREFIX . "user` WHERE user_group_id=1;");
-        #$total = $this->query("SELECT COUNT(*) total FROM `".DB_PREFIX."user` WHERE user_group_id=1;")[0]["total"];
+        $total = $this->query("SELECT COUNT(*) total FROM `" . DB_PREFIX . "user` WHERE user_group_id=1;")[0]["total"];
 
-        return false; // $total;
+        return $total;
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public function create($info = []): int
     {

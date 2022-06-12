@@ -11,9 +11,9 @@ class CustomerTest extends TestCase
     public function testDeleteCustomer()
     {
         $customer = new Customer();
-        $customer->delete_all();
+        $total = $customer->delete_all();
 
-        $this->fail();
+        $this->assertTrue($total >= 1);
     }
 
     public function testCreateCustomer()
@@ -31,6 +31,6 @@ class CustomerTest extends TestCase
             $customer_id = $customer->create($info);
         }
 
-        $this->fail();
+        $this->assertNotEmpty($customers);
     }
 }

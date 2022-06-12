@@ -2,6 +2,7 @@
 
 namespace ocunit\library;
 
+use Exception;
 use Opencart\System\Library\Cart\Cart;
 use function ocunit\dt;
 
@@ -23,6 +24,9 @@ class Customer extends MySQLPDO
     }
 
 
+    /**
+     * @throws Exception
+     */
     public function build_cart(): Cart
     {
         $registry = (new oc())->_registry();
@@ -38,6 +42,9 @@ class Customer extends MySQLPDO
         return $checked_out;
     }
 
+    /**
+     * @throws Exception
+     */
     public function create($info = []): int
     {
         $registry = (new oc())->_registry();
@@ -68,7 +75,10 @@ class Customer extends MySQLPDO
         return $customer_id;
     }
 
-    public function delete_all()
+    /**
+     * @throws Exception
+     */
+    public function delete_all(): int
     {
         $registry = (new oc())->_registry();
 
@@ -77,5 +87,7 @@ class Customer extends MySQLPDO
             $c = new \Opencart\Admin\Model\Customer\Customer($registry);
             $c->deleteCustomer($customer["customer_id"]);
         }
+
+        return count($customers);
     }
 }

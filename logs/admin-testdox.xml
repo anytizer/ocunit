@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <test className="ocunit\admin\cases\admin\DownloadsTest" methodName="testDownloadShouldExist" prettifiedClassName="Downloads (ocunit\admin\cases\admin\Downloads)" prettifiedMethodName="Download should exist" status="-1" time="2.3313888" size="-1" groups="default" exceptionLine="32" exceptionMessage="">
+    <group name="default"/>
+  </test>
+  <test className="ocunit\admin\cases\admin\DownloadsTest" methodName="testProductMustHaveAFileLinked" prettifiedClassName="Downloads (ocunit\admin\cases\admin\Downloads)" prettifiedMethodName="Product must have a file linked" status="-1" time="2.1741264" size="-1" groups="default" exceptionLine="54" exceptionMessage="">
+    <group name="default"/>
+  </test>
+  <test className="ocunit\admin\cases\admin\DownloadsTest" methodName="testDownloadableFileIsAZipArchive" prettifiedClassName="Downloads (ocunit\admin\cases\admin\Downloads)" prettifiedMethodName="Downloadable file is a zip archive" status="-1" time="2.1296487" size="-1" groups="default" exceptionLine="64" exceptionMessage="Failed asserting that 'ch12.pdf' ends with &quot;.zip&quot;.">
+    <group name="default"/>
+  </test>
+  <test className="ocunit\admin\cases\admin\DownloadsTest" methodName="testDownloadFilesAreProtected" prettifiedClassName="Downloads (ocunit\admin\cases\admin\Downloads)" prettifiedMethodName="Download files are protected" status="-1" time="0.0003977" size="-1" groups="default" exceptionLine="78" exceptionMessage="">
+    <group name="default"/>
+  </test>
+  <test className="ocunit\admin\cases\admin\DownloadsTest" methodName="testOthers" prettifiedClassName="Downloads (ocunit\admin\cases\admin\Downloads)" prettifiedMethodName="Others" status="-1" time="0.0004217" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="ocunit\admin\cases\admin\ExtensionsTest" methodName="testThirdPartyExtensionTablesArePresent" prettifiedClassName="Extensions (ocunit\admin\cases\admin\Extensions)" prettifiedMethodName="Third party extension tables are present" status="-1" time="4.3000554" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="ocunit\admin\cases\admin\InformationTest" methodName="testCreateCmsPages" prettifiedClassName="Information (ocunit\admin\cases\admin\Information)" prettifiedMethodName="Create cms pages" status="-1" time="9.3251752" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="ocunit\admin\cases\admin\InstallationTest" methodName="testTouchAdminConfigurationFile" prettifiedClassName="Installation (ocunit\admin\cases\admin\Installation)" prettifiedMethodName="Touch admin configuration file" status="-1" time="0.0005601" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="ocunit\admin\cases\admin\InstallationTest" methodName="testTouchStoreConfigurationFile" prettifiedClassName="Installation (ocunit\admin\cases\admin\Installation)" prettifiedMethodName="Touch store configuration file" status="-1" time="0.000647" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="ocunit\admin\cases\admin\MySQLConnectionTest" methodName="testMysqlPConnectIsDisabled" prettifiedClassName="My SQLConnection (ocunit\admin\cases\admin\MySQLConnection)" prettifiedMethodName="Mysql p connect is disabled" status="-1" time="0.0003782" size="-1" groups="default" exceptionLine="14" exceptionMessage="">
+    <group name="default"/>
+  </test>
+  <test className="ocunit\admin\cases\admin\MySQLConnectionTest" methodName="testMysqlRemoteAccessToBeBlocked" prettifiedClassName="My SQLConnection (ocunit\admin\cases\admin\MySQLConnection)" prettifiedMethodName="Mysql remote access to be blocked" status="-1" time="2.4742298" size="-1" groups="default" exceptionLine="24" exceptionMessage="Failed asserting that false is true.">
+    <group name="default"/>
+  </test>
+  <test className="cases\admin\OrderCancelTest" methodName="testOrderCancelledProperly" prettifiedClassName="Order Cancel (cases\admin\OrderCancel)" prettifiedMethodName="Order cancelled properly" status="-1" time="0.0003791" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\admin\OrderCancelTest" methodName="testDoNotRefundUnpaidOrder" prettifiedClassName="Order Cancel (cases\admin\OrderCancel)" prettifiedMethodName="Do not refund unpaid order" status="-1" time="0.0003857" size="-1" groups="default" exceptionLine="33" exceptionMessage="Failed asserting that true is false.">
+    <group name="default"/>
+  </test>
+  <test className="cases\admin\SettingsTest" methodName="testDatabaseConstantsDefined" prettifiedClassName="Settings (cases\admin\Settings)" prettifiedMethodName="Database constants defined" status="-1" time="0.0003738" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\admin\SettingsTest" methodName="testDbConstantsYieldConnection" prettifiedClassName="Settings (cases\admin\Settings)" prettifiedMethodName="Db constants yield connection" status="-1" time="2.1159645" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="cases\admin\SettingsTest" methodName="testOtherSettingsDefined" prettifiedClassName="Settings (cases\admin\Settings)" prettifiedMethodName="Other settings defined" status="-1" time="0.0003708" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+</tests>

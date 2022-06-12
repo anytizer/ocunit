@@ -14,3 +14,4 @@
 /business/logs
 /check/
 /*.bak
+/database/*.mwb

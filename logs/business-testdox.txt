@@ -1,0 +1,58 @@
+Admin (cases\business\Admin)
+ [ ] Delete admin users
+ [ ] Create admin user
+
+Banner (ocunit\business\cases\Banner)
+ [ ] Truncate banners
+
+Category (ocunit\business\cases\Category)
+ [ ] Truncate categories
+ [ ] Build categories
+
+Create Store (ocunit\business\cases\CreateStore)
+ [ ] Empty stores
+ [x] Create stores
+ [x] View stores
+
+Customer (ocunit\business\Customer)
+ [ ] Delete customer
+ [ ] Create customer
+
+Guids (ocunit\business\cases\Guids)
+ [x] Generate guid
+
+Image (ocunit\business\cases\Image)
+ [ ] Truncate images
+ [ ] Build images
+
+Manufacturer (ocunit\business\cases\Manufacturer)
+ [ ] Rebuild manufacturers
+ [ ] Assign manufacturers to all stores
+
+Product (ocunit\business\cases\Product)
+ [ ] Truncate images
+ [ ] Build products
+
+Session (ocunit\business\Session)
+ [ ] Clear session
+
+Store Logo (ocunit\business\StoreLogo)
+ [ ] Change store logo
+
+Truncates (ocunit\business\cases\Truncates)
+ [ ] Truncate tables
+
+Guest (ocunit\business\cases\admin\Guest)
+ [x] Guest checkout
+
+Login Failures (ocunit\business\cases\admin\LoginFailures)
+ [ ] Admin brute force login discouraged
+ [ ] Login fails
+ [ ] Login succeeds
+ [ ] Customer login form has captcha
+ [x] Customer approval required for login
+
+Login (ocunit\business\cases\admin\Login)
+ [ ] Remove system users
+ [ ] Black list system user demanders
+

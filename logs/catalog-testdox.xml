@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <test className="PhpCoreTest" methodName="testNegativeOne" prettifiedClassName="Php Core" prettifiedMethodName="Negative one" status="-1" time="0.0003711" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="PhpCoreTest" methodName="testIniGetWrongQuery" prettifiedClassName="Php Core" prettifiedMethodName="Ini get wrong query" status="-1" time="0.0003658" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="PhpCoreTest" methodName="testIniGetGoodQuery" prettifiedClassName="Php Core" prettifiedMethodName="Ini get good query" status="-1" time="0.0005182" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+</tests>

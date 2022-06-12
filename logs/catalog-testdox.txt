@@ -1,0 +1,5 @@
+Php Core
+ [x] Negative one
+ [x] Ini get wrong query
+ [x] Ini get good query
+

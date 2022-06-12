@@ -12,6 +12,6 @@ class BannerTest extends TestCase
         $banner = new Banner();
         $banner->truncate();
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 }

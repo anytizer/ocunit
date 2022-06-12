@@ -27,7 +27,7 @@ class OrderCancelTest extends TestCase
         $order = new Order();
 
         $order_id = $order->create_fake_order();
-        $cancelled = $order->cancel($order_id); // must fail for this order
+        $cancelled = $order->cancel($order_id); // must fail to cancel this order
 
         $this->assertFalse($cancelled);
     }

@@ -33,7 +33,7 @@ class DownloadsTest extends TestCase
         }
         else
         {
-            $this->assertFalse(false);
+            $this->fail();
         }
     }
 
@@ -57,7 +57,7 @@ class DownloadsTest extends TestCase
         }
         else
         {
-            $this->assertFalse(false);
+            $this->fail();
         }
     }
 
@@ -82,6 +82,7 @@ class DownloadsTest extends TestCase
         // logged in customer cannot download another file, unless purchased
         // apply file size limits
         // apply download limits, show number of downloads remaining
+        $this->fail();
     }
 
     public function testOthers()

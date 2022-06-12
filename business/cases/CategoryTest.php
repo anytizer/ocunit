@@ -16,7 +16,7 @@ class CategoryTest extends TestCase
         $category = new Category();
         $category->truncate();
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 
     /**
@@ -28,6 +28,6 @@ class CategoryTest extends TestCase
         $category = new Category();
         $category->patch();
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 }

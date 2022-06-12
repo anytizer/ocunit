@@ -22,7 +22,7 @@ class LoginFailuresTest extends TestCase
     public function testLoginFails()
     {
 
-        $this->assertFalse(false);
+        $this->fail();
 
        /*
         $admin = new admin();
@@ -37,7 +37,7 @@ class LoginFailuresTest extends TestCase
 
     public function testLoginSucceeds()
     {
-        $this->assertFalse(false);
+        $this->fail();
 
         /**
         $admin = new admin();

@@ -27,7 +27,7 @@ class LoginTest extends TestCase
             // permanently remove from the database!
         }
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 
     public function testBlackListSystemUserDemanders()

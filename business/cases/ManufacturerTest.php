@@ -29,7 +29,7 @@ class ManufacturerTest extends TestCase
             ]);
         }
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 
     public function testAssignManufacturersToAllStores()
@@ -50,6 +50,6 @@ class ManufacturerTest extends TestCase
             }
         }
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 }

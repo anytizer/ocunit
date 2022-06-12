@@ -29,6 +29,6 @@ class StoreLogoTest extends TestCase
         #copy_files();
         #update_store_logo();
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 }

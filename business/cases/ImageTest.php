@@ -11,7 +11,7 @@ class ImageTest extends TestCase
         $image = new Image();
         $image->truncate();
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 
     public function testBuildImages()

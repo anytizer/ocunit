@@ -34,11 +34,14 @@ class SettingsTest extends TestCase
 
     public function testMysqlPConnectIsDisabled()
     {
-        //
+        // SHOW VARIABLES LIKE '%innodb%';
+        // innodb_buffer_pool_size
+        $this->fail();
     }
 
     public function testMysqlRemoteAccessToBeBlocked()
     {
         //
+        $this->fail();
     }
 }

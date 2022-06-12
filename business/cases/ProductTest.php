@@ -11,7 +11,7 @@ class ProductTest extends TestCase
         $product = new Image();
         $product->truncate();
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 
     public function testBuildProducts()

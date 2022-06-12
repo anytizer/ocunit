@@ -12,6 +12,6 @@ class SessionTest extends TestCase
         $session = new Session();
         $session->truncate();
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 }

@@ -18,7 +18,7 @@ class DatabaseIndexingTest extends TestCase
         $pdo = new MySQLPDO();
         $pdo->raw("ALTER TABLE `".DB_PREFIX."setting` ADD INDEX (`store_id`);");
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 
     public function testAnalyseIndexes()
@@ -54,7 +54,7 @@ class DatabaseIndexingTest extends TestCase
         )
          */
 
-        $this->assertFalse(false);
+        $this->fail();
     }
 
 }

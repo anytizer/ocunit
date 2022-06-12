@@ -22,6 +22,6 @@ class TruncatesTest extends TestCase
         /**
          * @todo Individual components may truncate their own tables.
          */
-        $this->assertFalse(false);
+        $this->fail();
     }
 }

@@ -2,7 +2,6 @@
 
 namespace cases\admin;
 
-use ocunit\library\MySQLPDO;
 use Opencart\System\Library\DB\PDO;
 use PHPUnit\Framework\TestCase;
 

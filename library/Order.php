@@ -21,4 +21,11 @@ class Order
         $cancelled = true;
         return $cancelled;
     }
+	
+	public function is_paid($order_id)
+	{
+		// data should appear on payment notification hook log
+		$paid = false;
+        return $paid;
+	}
 }

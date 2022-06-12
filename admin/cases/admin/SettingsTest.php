@@ -32,21 +32,4 @@ class SettingsTest extends TestCase
         $this->assertTrue(defined("HTTP_CATALOG"));
         $this->assertTrue(defined("OPENCART_SERVER"));
     }
-
-    public function testMysqlPConnectIsDisabled()
-    {
-        // SHOW VARIABLES LIKE '%innodb%';
-        // innodb_buffer_pool_size
-        $this->fail();
-    }
-
-    public function testMysqlRemoteAccessToBeBlocked()
-    {
-        $pdo = new MySQLPDO(); // assuming root connection
-        $users = $pdo->query("SELECT `user`, `host` FROM mysql.user;", []);
-        foreach ($users as $user) {
-            $this->assertTrue($user["host"] != "%");
-        }
-        //$this->fail();
-    }
 }

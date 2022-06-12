@@ -13,3 +13,4 @@
 /business/.phpunit.result.cache
 /business/logs
 /check/
+/*.bak

@@ -1,7 +1,7 @@
 # OCUnit
 
-Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based
-on [PHPUnit](https://phpunit.de) that destroys the defaults and builds your own.
+Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based on [PHPUnit](https://phpunit.de).
+It destroys the default settings and builds your own.
 
 ---
 
@@ -54,7 +54,7 @@ Some information in this document are drafts only.
     * [x] Stores and URLs
     * [x] Categories and Products
     * [x] Images
-    * [ ] Languages - always default: "1" for en-gb.
+    * [ ] Languages - be always default: "1" for en-gb.
     * [x] [Information Pages](ini/information/)
 
 ## And NOT test like
@@ -176,4 +176,4 @@ in __@anytizer/ocunit__ project.
 * [VS Code](https://code.visualstudio.com/download) + [SonarLint](https://www.sonarlint.org/)
 * [Notepad++](https://notepad-plus-plus.org/downloads/)
 * [SQLYog](https://github.com/webyog/sqlyog-community/wiki/Downloads) Community Edition
-  and [Neor Profile SQL](https://www.profilesql.com/)
+* [Neor Profile SQL](https://www.profilesql.com/)

@@ -122,7 +122,7 @@ the [composer](https://getcomposer.org) dependencies.
     wget https://phar.phpunit.de/phpunit-9.5.20.phar
     mv phpunit-9.5.20.phar phpunit.phar
 
-    # Optional
+    # Update Composer based packages
     wget https://getcomposer.org/download/latest-stable/composer.phar
     php composer.phar update
 

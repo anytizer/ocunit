@@ -50,12 +50,6 @@ class Customer extends MySQLPDO
         $registry = (new oc())->_registry();
         $customer = new \Opencart\Admin\Model\Customer\Customer($registry);
 
-        $password_hash = password_hash($info["password"], PASSWORD_DEFAULT);
-//        $rehash = password_needs_rehash($password_hash, PASSWORD_DEFAULT);
-//        if ($rehash) {
-//            $password_hash = password_hash($info["password"], PASSWORD_DEFAULT);
-//        }
-
         $data = [
             "store_id" => "1", // @todo Do not bind customer id to store id
             "customer_group_id" => "1",
@@ -65,7 +59,7 @@ class Customer extends MySQLPDO
             "telephone" => "",
             "custom_field" => "",
             "newsletter" => "1",
-            "password" => $password_hash,
+            "password" => $info["password"],
             "status" => "1",
             "safe" => "1",
             "date_added" => dt(),

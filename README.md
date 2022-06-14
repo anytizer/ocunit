@@ -1,7 +1,8 @@
 # OCUnit
 
-Merchant oriented test scripts for [OpenCart](https://github.com/opencart/opencart/) based on [PHPUnit](https://phpunit.de).
-It destroys the default settings and builds your own.
+Merchant oriented ~~test~~ scripts for [OpenCart](https://github.com/opencart/opencart/) based on [PHPUnit](https://phpunit.de).
+
+It destroys the default OpenCart settings, i.e. [install/opencart.sql](https://github.com/opencart/opencart/blob/master/upload/install/opencart.sql) and builds your own.
 
 ---
 

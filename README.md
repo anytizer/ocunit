@@ -136,10 +136,12 @@ update the [composer](https://getcomposer.org/) dependencies.
 ## Step 2: Configurations
 
 **Important** - right after installation, you should consider editing:
+
  * [ini/config.ini](ini/config.ini),
  * [ini/stores.ini](ini/stores.ini),
  * [ini/information](ini/information),
  * [ini/categories](ini/categories)
+
 to tell something about your store information. Merchants may depend on these/(their own) files to change the behaviour of OpenCart.
 Though not fully promised, OCUnit will re-build the OpenCart database based on these configurations.
 

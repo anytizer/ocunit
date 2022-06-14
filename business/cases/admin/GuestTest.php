@@ -7,6 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class GuestTest extends TestCase
 {
+    /**
+     * @throws \Exception
+     */
     public function testGuestCheckout()
     {
         $guest = new Customer();

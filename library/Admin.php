@@ -166,10 +166,8 @@ class Admin extends MySQLPDO
             "username" => $info["email"],
             "user_group_id" => "1",
             // @todo this password has a problem logging in.
-            // @see check/OpenCartTest()->__construct()
             // @see https://github.com/anytizer/ocunit/issues/4
-            "password" => password_hash($info["password"], PASSWORD_DEFAULT),
-            //"password" => password_hash(html_entity_decode($info["password"], ENT_QUOTES, "UTF-8"), PASSWORD_DEFAULT),
+            "password" => $info["password"],
             "firstname" => "",
             "lastname" => "",
             "email" => $info["email"],

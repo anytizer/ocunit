@@ -28,11 +28,10 @@ You can however run selected tests that do not delete or truncate the database.
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
 
 OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run
-tests. There are few [business rules](ini/config.ini) and configurations you should edit before running the test. Rules
-may differ as per businesses. Hence, most of the tests are empty. But they should self-guide you technically on how to
-write the tests.
+tests. There are few [business rules](ini/config.ini) and configurations you should edit before running the test.
+Rules may differ as per businesses. So, most of the tests are empty. But they should self-guide you technically on how to write the tests.
 
-Some information in this document are drafts only.
+Some information in this document are drafts only (documented before coding).
 
 # Test Examples
 
@@ -41,6 +40,7 @@ Some information in this document are drafts only.
 * A corresponding image should exist for product or category.
     * [x] Product Image: 800 px x 400 px
     * [x] Category Image: 200 px x 200 px
+    * [ ] Images should be in .png format only
 * [x] A "downloadable" file has to be in a .zip format only.
 * [x] Directory listing should be disabled throughout the website - admin or store.
 * [x] Store price cannot be less than the manufacturer price even after discounts.
@@ -63,6 +63,8 @@ Some information in this document are drafts only.
 * Add product feature should accept an image upload.
 * The system should allow to upload a downloadable file.
 * Price edit should be working fine.
+
+More details: [Admin](logs/admin-testdox.txt), [Catalog](logs/catalog-testdox.txt), [Business](logs/business-testdox.txt).
 
 These are just some samples to illustrate how business rules are tested.
 
@@ -131,7 +133,7 @@ the [composer](https://getcomposer.org) dependencies.
 **Important** - right after installation, you should consider editing [ini/config.ini](ini/config.ini)
 , [ini/stores.ini](ini/stores.ini), [ini/information](ini/information) and [ini/categories](ini/categories) to tell
 something about your opencart installation. Merchants may depend on editing these ini files to change the behaviour of
-OpenCart after first setup. Though not promised, OCUnit will build the OpenCart database based on these values.
+OpenCart after first setup. Though not fully promised, OCUnit will re-build the OpenCart database based on these configurations.
 
 ## Step 3: Test Execution
 

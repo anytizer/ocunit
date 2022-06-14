@@ -8,19 +8,20 @@ It destroys the default OpenCart settings, i.e. [install/opencart.sql](https://g
 
 __WARNING__
 
-Never execute these tests against your live database or __in server environment__. It is likely to overwrite the product
-information, pricing, images, currencies, customers, users, session, emails, passwords and more. The database will never
-return to its original state.
+Never execute these ~~test~~ scripts against your live database or __in server environment__.
+It is likely to overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more.
+The database will never return to its original state.
 
-It even truncates a lot of tables!
+It even truncates a lot of tables! So, OCUnit is for you only if your are setting up your store for the first time.
+**Run OCUnit at your own risk.**
 
 ---
 
-**Run OCUnit at your own risk.** Clone your OpenCart database for use with OCUnit. Please learn its aspects, before
-using it. Otherwise, you may end up with a corrupted database or lost information.
+Clone your OpenCart database for use with OCUnit. Please learn its aspects, before using it.
+Otherwise, you may end up with a corrupted database or lost information.
 
-OCUnit is better when you are about to setup a __new store__. If you have already setup a live store without having a
-local copy of catalog memo, do not run these tests.
+OCUnit is better when you are about to setup a __new store__. If you have already setup a live store **without having a
+local copy of catalog memo**, do not run these tests.
 
 You can however run selected tests that do not delete or truncate the database.
 
@@ -28,8 +29,9 @@ You can however run selected tests that do not delete or truncate the database.
 but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
 
 OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run
-tests. There are few [business rules](ini/config.ini) and configurations you should edit before running the test.
-Rules may differ as per businesses. So, most of the tests are empty. But they should self-guide you technically on how to write the tests.
+tests. There are few [business rules](ini/config.ini) and configurations you should edit, to prepare your use.
+Rules may differ as per businesses. So, most of the tests are empty.
+But they should self-guide you technically on how to write the tests.
 
 Some information in this document are drafts only (documented before coding).
 
@@ -81,7 +83,7 @@ Dependency                     | Version                       | Description
 [relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
 [guid.php](https://packagist.org/packages/anytizer/guid.php)   | -      | UUID generator
 [parsedown](https://github.com/erusev/parsedown)               | -      | .md to .html
-[phpmailer](https://github.com/phpmailer/phpmailer)            | -      | to generate emails (compare with in-built smtp)
+[phpmailer](https://github.com/phpmailer/phpmailer)            | -      | to generate emails (compare with in-built smtp client)
 
 # Sample Test Output
 
@@ -105,11 +107,14 @@ Dependency                     | Version                       | Description
 
 # Three steps of Operation
 
+Install OCUnit, Configure it, Execute it, Check your store. And finally, delete it ;-) Since OCUnit rebuilds the OpenCart database, it is always riskier to run second time, particularly when you created your live copy of OpenCart store data.
+
 ## Step 1: Installation
 
-Clone OpenCart and OCUnit projects. Then install and configure them independently in "/oc/opencart" and "/oc/ocunit".
-Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit directory and update
-the [composer](https://getcomposer.org) dependencies.
+Clone OpenCart and OCUnit projects "locally".
+Then install and configure them independently in "/oc/opencart" and "/oc/ocunit".
+Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit directory and,
+update the [composer](https://getcomposer.org/) dependencies.
 
     cd htdocs|public_html|www|web
     mkdir oc
@@ -130,10 +135,13 @@ the [composer](https://getcomposer.org) dependencies.
 
 ## Step 2: Configurations
 
-**Important** - right after installation, you should consider editing [ini/config.ini](ini/config.ini)
-, [ini/stores.ini](ini/stores.ini), [ini/information](ini/information) and [ini/categories](ini/categories) to tell
-something about your opencart installation. Merchants may depend on editing these ini files to change the behaviour of
-OpenCart after first setup. Though not fully promised, OCUnit will re-build the OpenCart database based on these configurations.
+**Important** - right after installation, you should consider editing:
+ * [ini/config.ini](ini/config.ini),
+ * [ini/stores.ini](ini/stores.ini),
+ * [ini/information](ini/information),
+ * [ini/categories](ini/categories)
+to tell something about your store information. Merchants may depend on these/(their own) files to change the behaviour of OpenCart.
+Though not fully promised, OCUnit will re-build the OpenCart database based on these configurations.
 
 ## Step 3: Test Execution
 
@@ -169,9 +177,8 @@ Or,
 # Contribution
 
 If you have a specific idea on how OCUnit (Merchant's view of test scripts for OpenCart based on PHPUnit) should
-function, fork the project and open pull request for your new test cases. Or, create
-a [new issue](https://github.com/anytizer/ocunit/issues/new)
-in __@anytizer/ocunit__ project.
+function, fork the project and open pull request for your new test cases.
+Or, create a [new issue](https://github.com/anytizer/ocunit/issues/new) in __@anytizer/ocunit__ project.
 
 # Made with IDEs and tools
 

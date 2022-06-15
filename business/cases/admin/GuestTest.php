@@ -18,6 +18,7 @@ class GuestTest extends TestCase
         $guest->build_cart();
         $checked_out = $guest->checkout();
 
+        // in the html, hide radio button to choose guest checkout option
         $this->assertFalse($checked_out, "Guest checkout should be disabled.");
     }
 }

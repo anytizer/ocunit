@@ -5,8 +5,9 @@
   - without passwords
   - without SMTP credentials
 
-- MySQL Workbench File connected to MariaDB
+- [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+  - File connected to MariaDB
 
-- DBSchema
+- [DBSchema](https://dbschema.com/)
   - .dbs file
   - opencart.png

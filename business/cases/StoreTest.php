@@ -6,7 +6,7 @@ use ocunit\library\Store;
 use PHPUnit\Framework\TestCase;
 use function ocunit\_env;
 
-class CreateStoreTest extends TestCase
+class StoreTest extends TestCase
 {
     public function testEmptyStores()
     {

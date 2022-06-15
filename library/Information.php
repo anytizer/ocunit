@@ -21,7 +21,7 @@ class Information extends MySQLPDO
         return count($tables);
     }
 
-    public function patch($pattern_files="ini/information/*.md"): int
+    public function patch($pattern_files="/path/ini/information/*.md"): int
     {
         $s = new Store();
         $stores = $s->stores();
@@ -31,7 +31,7 @@ class Information extends MySQLPDO
         $parsedown = new Parsedown();
         foreach ($files as $file) {
             $title = ucwords(str_replace("-", " ", substr(basename($file), 0, -3)));
-            $content = file_get_contents($file); // mark down
+            $content = file_get_contents($file);
             $html_content = htmlentities($parsedown->text($content)); // html &lt;... ...&gt; | tags
 
             $sql_information = "INSERT INTO `" . DB_PREFIX . "information` (information_id, bottom, sort_order, status) VALUES(NULL, 1, 0, 1)";

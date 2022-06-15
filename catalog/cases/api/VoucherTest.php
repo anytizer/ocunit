@@ -22,7 +22,6 @@ class VoucherTest extends TestCase
         $data = json_decode($api_token_html, true);
 
         $api_token = $data["api_token"];
-
         return $api_token;
     }
 

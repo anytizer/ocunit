@@ -28,7 +28,7 @@ class FromGithubTest extends TestCase
         //Warning: Your account requires approval before you can log in.
         //
         //The problem is: user account has status=1 in the database already.
-        //Cannot login as customer.
+        //Cannot log in as customer.
     }
 
     public function testKeepALogOfAdminAccess()
@@ -127,11 +127,14 @@ class FromGithubTest extends TestCase
     public function testWrongToastPrintedOldMessage()
     {
         // But this is a condition where mail() function not available under Windows in old page I navigated (password forgotten).
-        //Later, there appears the message in the shopping cart listing page.
+        // Later, there appears the message in the shopping cart listing page.
     }
 
+    /**
+     * @see https://github.com/opencart/opencart/issues/11156
+     */
     public function testAdminCreatedOrderShouldHaveLogo()
     {
-        // https://github.com/opencart/opencart/issues/11156
+        $this->markTestIncomplete();
     }
 }

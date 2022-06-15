@@ -2,13 +2,14 @@
 
 namespace ocunit\business\cases\admin;
 
+use Exception;
 use ocunit\library\Customer;
 use PHPUnit\Framework\TestCase;
 
 class GuestTest extends TestCase
 {
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public function testGuestCheckout()
     {

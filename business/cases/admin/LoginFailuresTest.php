@@ -75,8 +75,8 @@ class LoginFailuresTest extends TestCase
         // otherwise, should NOT be able to login.
         // rather notify this guest to wait for admin approval.
 
-        $logged_in = $guest->login();
+        $logged_in = $guest->login($username, $password);
 
-        $this->assertFalse($logged_in, "Customer approval required for login.");
+        $this->assertFalse($logged_in, "Customer approval required before login.");
     }
 }

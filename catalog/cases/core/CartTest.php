@@ -24,7 +24,10 @@ class CartTest extends TestCase
         $this->assertEmpty($products, "Cart was not cleared for anonymous visitor.");
     }
 
-    private function _registry()
+    /**
+     * @throws Exception
+     */
+    private function _registry(): \Opencart\System\Engine\Registry
     {
         return (new oc())->_registry();
     }

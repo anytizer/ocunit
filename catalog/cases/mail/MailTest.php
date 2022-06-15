@@ -39,7 +39,9 @@ class MailTest extends TestCase
         $this->markTestIncomplete("Email is whitelisted. Send an email. Confirm received.");
     }
 
-    // https://github.com/opencart/opencart/blob/master/upload/admin/controller/mail/transaction.php
+    /**
+     * @see https://github.com/opencart/opencart/blob/master/upload/admin/controller/mail/transaction.php
+     */
     public function testServerConfigurations()
     {
         /**

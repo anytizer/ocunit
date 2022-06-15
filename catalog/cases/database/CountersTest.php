@@ -13,6 +13,7 @@ class CountersTest extends TestCase
     {
         global $configurations;
 
+        // @todo: Deprecated mechanism, see individual truncate
         $this->tables_counters = [];
         foreach ($configurations["tables_counters"] as $table => $counter) {
             $this->tables_counters[str_replace("oc_", DB_PREFIX, $table)] = (int)$counter;

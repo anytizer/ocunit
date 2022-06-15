@@ -22,6 +22,7 @@ class ManufacturerTest extends TestCase
     {
         $manufacturers = _env("stores.ini")["manufacturers"];
 
+        // @todo Instead of querying here, use Manufacturer class
         $pdo = new MySQLPDO();
         foreach ($manufacturers as $manufacturer => $logo) {
             $pdo->raw("INSERT INTO `" . DB_PREFIX . "manufacturer` (

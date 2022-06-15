@@ -23,9 +23,9 @@ class LoginTest extends TestCase
 
         //$this->assertArrayHasKey("api_token", $data, "`api_token` key missing in HTML/token-json response.");
         //assert(array_key_exists("api_token", $data));
+
         $api_token = $data["api_token"];
         // {"success":"Success: API session successfully started!","api_token":"f5a254e32400369e587457dfd9"}
-
         return $api_token;
     }
 

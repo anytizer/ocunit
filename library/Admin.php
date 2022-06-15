@@ -149,7 +149,7 @@ class Admin extends MySQLPDO
     public function delete_all(): int
     {
         $this->query("DELETE FROM `" . DB_PREFIX . "user` WHERE user_group_id=1;");
-        $total = $this->query("SELECT COUNT(*) total FROM `" . DB_PREFIX . "user` WHERE user_group_id=1;")[0]["total"];
+        $total = $this->query("SELECT COUNT(*) total FROM `" . DB_PREFIX . "user` WHERE user_group_id=1;", [])[0]["total"];
 
         return $total;
     }

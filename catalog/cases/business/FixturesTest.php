@@ -132,10 +132,11 @@ class FixturesTest extends TestCase
         $this->assertTrue(true, "Setup business rules - countries disabled.");
     }
 
-    public function testAdminPaginationSizeIncreased()
+    public function testOpencartBehaviourInSetting()
     {
         $pdo = new MySQLPDO();
 
+        // multiple scripts execution
         $sql = (new FQL())->read("oc_setting.sql");
         $pdo->raw($sql, []);
 

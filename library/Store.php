@@ -23,7 +23,7 @@ class Store extends MySQLPDO
         return true;
     }
 
-    public function store_create($name, $url): bool
+    public function store_create($name = "", $url = "https://"): bool
     {
         $sql = "INSERT INTO `" . DB_PREFIX . "store` (`store_id`, `name`, `url`) VALUES (NULL, :name, :url);";
         $this->query($sql, ["name" => $name, "url" => $url]);

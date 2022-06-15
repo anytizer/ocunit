@@ -4,9 +4,17 @@ namespace ocunit\library;
 
 class Session extends MySQLPDO
 {
-    public function truncate()
+    public function truncate(): bool
     {
-        $this->query("TRUNCATE TABLE `" . DB_PREFIX . "session`;");
-        return true;
+        $tables = [
+            DB_PREFIX . "api_session",
+            DB_PREFIX . "session",
+        ];
+
+        foreach ($tables as $table) {
+            $this->raw("TRUNCATE TABLE `{$table}`;");
+        }
+
+        return count($tables);
     }
 }

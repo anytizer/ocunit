@@ -19,7 +19,7 @@ class SlugTest extends TestCase
 
     public function testSlug2()
     {
-        $slug = $this->slug->create(" Some Category Name ");
+        $slug = $this->slug->create(" Some Category-Name ");
         $this->assertEquals("some-category-name", $slug);
     }
 

@@ -9,27 +9,28 @@ It partially destroys the default OpenCart installation, i.e. [install/opencart.
 __WARNING__
 
 Never execute these ~~test~~ scripts against your live database or __in server environment__.
-It will overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more.
+It will overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords, .htaccess and more.
 Almost any information will be destroyed, and recreated.
 It even truncates a lot of `oc_*` tables!
 
 The database will NEVER return to its original state.
-So, OCUnit is for you only if your are setting up your store for the first time.
+So, OCUnit is for you only if you are setting up your store for the __first__ time.
 
 **Run OCUnit at your own risk.**
-The developers of OCUnit scripts cannot be responsible for your accidental damage to the OpenCart database on your store.
+The developers of OCUnit cannot be responsible for your accidental damage to the OpenCart database on your store.
 
 ---
 
-OCUnit is better when you are about to setup a __new store__.
-If you have already setup a live store **without having a local copy of catalog memo**, do not run these tests.
+OCUnit is better when you are about to set up a __new store__.
+If you have already set up a live store **without having a local copy of catalog memo**, do not run these tests.
 
 You can however run selected tests that do not delete or truncate the database.
 
 **Disclaimer Story**
 
-This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
-but the implementation of OpenCart to run a store. Please do not expect a code coverage test for OpenCart.
+This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart/),
+but the implementation of OpenCart software to run a store.
+Please do not expect a code coverage test for OpenCart.
 
 OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run
 tests. There are few [business rules](ini/config.ini) and configurations you should edit, to prepare your use.
@@ -40,7 +41,7 @@ Some information in this document are drafts only (documented before coding).
 
 # Test Examples
 
-## Do tests like (merchant's perspectives - yes)
+## Do test like (merchant's perspectives - yes)
 
 * A corresponding image should exist for product or category.
     * [x] Product Image: 800 px x 400 px
@@ -63,7 +64,7 @@ Some information in this document are drafts only (documented before coding).
     * [ ] Languages - be always default: "1" for en-gb.
     * [x] [Information Pages](ini/information/)
 
-## And it does NOT test like (code coverage - no)
+## And it DOES NOT test like (code coverage - no)
 
 * Add product feature should accept an image upload.
 * The system should allow to upload a downloadable file.

@@ -12,7 +12,7 @@ class PasswordTest extends TestCase
          * From oc_customer
          */
         $password_plain = "customer";
-        $password_hash = '$2y$10$h8G3KQAuKL7EaMCcOSFy1er80GOYvJJw3qEHNW8fwGfGqtQK3tJQ.';
+        $password_hash = '$2y$10$h8G3KQAuKL7EaMCcOSFy1er80GOYvJJw3qEHNW8fwGfGqtQK3tJQ.'; // single quoted to allow $
 
         $this->assertTrue(password_verify($password_plain, $password_hash), "Failed matching password hash.");
     }

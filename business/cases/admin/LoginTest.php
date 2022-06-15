@@ -18,13 +18,18 @@ class LoginTest extends TestCase
         "super",
         "shop",
         "cart",
+        "root",
+        "web",
+        "www",
+        "cron",
     ];
 
     public function testRemoveSystemUsers()
     {
         // delete system users from the system entirely.
         foreach ($this->system_users as $user) {
-            // permanently remove from the database!
+            // permanently remove from the user database!
+            // permanently remove from the customer database!
         }
 
         $this->fail();
@@ -51,6 +56,6 @@ class LoginTest extends TestCase
         // report the user and ip
         // black list the user and ip
 
-        $this->markTestIncomplete("Block the IPs that are demanding system level user login.");
+        $this->markTestIncomplete("Immediately block the IPs that demand system level user login.");
     }
 }

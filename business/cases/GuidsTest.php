@@ -13,5 +13,4 @@ class GuidsTest extends TestCase
 
         $this->assertEquals(36, strlen($guid));
     }
-
 }

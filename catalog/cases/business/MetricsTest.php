@@ -35,5 +35,8 @@ class MetricsTest extends TestCase
     {
         // get products
         // if category missing, report it.
+
+        // do not orphan products
+        // do not attach products to parent categories (nodes)
     }
 }

@@ -2,12 +2,16 @@
 
 namespace ocunit\business;
 
+use Exception;
 use ocunit\library\Customer;
 use PHPUnit\Framework\TestCase;
 use function ocunit\_env;
 
 class CustomerTest extends TestCase
 {
+    /**
+     * @throws Exception
+     */
     public function testDeleteCustomer()
     {
         $customer = new Customer();
@@ -16,6 +20,9 @@ class CustomerTest extends TestCase
         $this->assertTrue($total >= 1);
     }
 
+    /**
+     * @throws Exception
+     */
     public function testCreateCustomer()
     {
         $customer = new Customer();

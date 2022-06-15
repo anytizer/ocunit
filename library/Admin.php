@@ -165,9 +165,7 @@ class Admin extends MySQLPDO
         $data = [
             "username" => $info["email"],
             "user_group_id" => "1",
-            // @todo this password has a problem logging in.
-            // @see https://github.com/anytizer/ocunit/issues/4
-            "password" => $info["password"],
+            "password" => $info["password"], // plain
             "firstname" => "",
             "lastname" => "",
             "email" => $info["email"],

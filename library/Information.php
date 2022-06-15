@@ -21,7 +21,7 @@ class Information extends MySQLPDO
         return count($tables);
     }
 
-    public function patch($pattern_files): int
+    public function patch($pattern_files="ini/information/*.md"): int
     {
         $s = new Store();
         $stores = $s->stores();
@@ -49,7 +49,6 @@ class Information extends MySQLPDO
                 "meta_keyword" => "",
             ]);
 
-            #print_r($stores);
             foreach ($stores as $store) {
                 $sql = "INSERT INTO `" . DB_PREFIX . "information_to_store` (`information_id`, `store_id`) VALUES (:information_id, :store_id);";
                 $this->raw($sql, ["information_id" => $information_id, "store_id" => $store["store_id"]]);

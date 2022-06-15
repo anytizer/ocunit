@@ -15,7 +15,7 @@ class InformationTest extends TestCase
         $this->assertTrue($total >= 1);
     }
 
-    public function CreateCmsPages()
+    public function testCreateInformationPages()
     {
         $information = new Information();
 

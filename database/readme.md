@@ -3,7 +3,10 @@
 - SQL Dump
   - without server information
   - without passwords
+  - without SMTP credentials
 
 - MySQL Workbench File connected to MariaDB
 
-- DBSchema .dbs file
+- DBSchema
+  - .dbs file
+  - opencart.png

@@ -84,7 +84,6 @@ class PricingTest extends TestCase
         // look for a new record in price history table.
         // database trigger created
 
-        // @todo: Match the oc_ prefix
         $lookups = [
             "trigger_after_update_oc_product",
         ];

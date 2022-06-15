@@ -2,31 +2,33 @@
 
 Merchant oriented ~~test~~ scripts for [OpenCart](https://github.com/opencart/opencart/) based on [PHPUnit](https://phpunit.de).
 
-It destroys the default OpenCart settings, i.e. [install/opencart.sql](https://github.com/opencart/opencart/blob/master/upload/install/opencart.sql) and builds your own.
+It partially destroys the default OpenCart installation, i.e. [install/opencart.sql](https://github.com/opencart/opencart/blob/master/upload/install/opencart.sql) and re-builds with your own information.
 
 ---
 
 __WARNING__
 
 Never execute these ~~test~~ scripts against your live database or __in server environment__.
-It is likely to overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more.
-The database will never return to its original state.
+It will overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords and more.
+Almost any information will be destroyed, and recreated.
+It even truncates a lot of `oc_*` tables!
 
-It even truncates a lot of tables! So, OCUnit is for you only if your are setting up your store for the first time.
+The database will NEVER return to its original state.
+So, OCUnit is for you only if your are setting up your store for the first time.
+
 **Run OCUnit at your own risk.**
 
 ---
 
-Clone your OpenCart database for use with OCUnit. Please learn its aspects, before using it.
-Otherwise, you may end up with a corrupted database or lost information.
-
-OCUnit is better when you are about to setup a __new store__. If you have already setup a live store **without having a
-local copy of catalog memo**, do not run these tests.
+OCUnit is better when you are about to setup a __new store__.
+If you have already setup a live store **without having a local copy of catalog memo**, do not run these tests.
 
 You can however run selected tests that do not delete or truncate the database.
 
-**Disclaimer Story**: This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
-but the implementation of OpenCart to run a store. Hence, please do not expect a code coverage test for OpenCart.
+**Disclaimer Story**
+
+This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart),
+but the implementation of OpenCart to run a store. Please do not expect a code coverage test for OpenCart.
 
 OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run
 tests. There are few [business rules](ini/config.ini) and configurations you should edit, to prepare your use.
@@ -37,7 +39,7 @@ Some information in this document are drafts only (documented before coding).
 
 # Test Examples
 
-## Test like
+## Do tests like (merchant's perspectives)
 
 * A corresponding image should exist for product or category.
     * [x] Product Image: 800 px x 400 px
@@ -52,23 +54,23 @@ Some information in this document are drafts only (documented before coding).
     * [x] Create a price log table.
 * [ ] Products must have video links associated with them in their description.
 * [ ] Products must have multiple images.
-* [x] Concisely generate inventory statistics.
-* [x] Reverse create the database information from your [memos](ini/categories).
+* [x] Concisely generate inventory statistics - [here](logs/inventory.log).
+* [x] Re-create the database information from your [merchant memos](ini/categories).
     * [x] Stores and URLs
     * [x] Categories and Products
     * [x] Images
     * [ ] Languages - be always default: "1" for en-gb.
     * [x] [Information Pages](ini/information/)
 
-## And NOT test like
+## And it does NOT test like (code coverage)
 
 * Add product feature should accept an image upload.
 * The system should allow to upload a downloadable file.
 * Price edit should be working fine.
 
-More details: [Admin](logs/admin-testdox.txt), [Catalog](logs/catalog-testdox.txt), [Business](logs/business-testdox.txt).
+More accurate progress report on individual testdox: [admin](logs/admin-testdox.txt), [catalog](logs/catalog-testdox.txt), [business](logs/business-testdox.txt).
 
-These are just some samples to illustrate how business rules are tested.
+These are just some samples to illustrate how business rules are created.
 
 Tests have been now separated to [admin](./admin/cases), [catalog](./catalog/cases) and [business](./business/cases/) to
 match the nature of OpenCart.

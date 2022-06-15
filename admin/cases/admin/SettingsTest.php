@@ -18,7 +18,7 @@ class SettingsTest extends TestCase
         $this->assertTrue(defined("DB_PREFIX"));
     }
 
-    public function testDbConstantsYieldConnection()
+    public function testDatabaseConstantsYieldConnection()
     {
         $pdo = new PDO(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
         $connected = $pdo->isConnected();

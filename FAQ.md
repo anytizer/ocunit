@@ -28,4 +28,4 @@ A. please see [ini/categories](ini/categories).
 
 **Q. How many levels of categories do you support?**
 
-A. One. Main categories only.
+A. One. Top level categories only.

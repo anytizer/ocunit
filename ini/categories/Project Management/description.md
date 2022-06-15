@@ -1,5 +1,3 @@
-Project Management Description...
-
 As the industry has matured, analysis of software project management failures has shown that the following are the most
 common causes:
 

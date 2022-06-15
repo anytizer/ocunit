@@ -6,7 +6,23 @@ use PHPUnit\Framework\TestCase;
 
 class MailTest extends TestCase
 {
-    // SELECT * FROM oc_setting WHERE `key` LIKE '%_mail_%';
+    // SELECT * FROM `oc_setting` WHERE  `key` like '%mail%';
+    // config_email
+    // config_mail_engine
+    // config_mail_parameter
+    // config_mail_smtp_hostname
+    // config_mail_smtp_username
+    // config_mail_smtp_password
+    // config_mail_smtp_port
+    // config_mail_smtp_timeout
+    // config_mail_alert
+    // config_mail_alert_email
+
+    public function testMailEngineShouldBeSmtp()
+    {
+        // $config->get("config_mail_engine")
+        // match: smtp
+    }
 
     public function testEmailSentFromWindowsMachine()
     {
@@ -24,9 +40,52 @@ class MailTest extends TestCase
         $this->markTestIncomplete("Email not sent from Linux.");
     }
 
+    public function testPhpMailerImplemented()
+    {
+        // https://github.com/PHPMailer/PHPMailer
+    }
+
+    public function testHostingSmtpImplemented()
+    {
+        // on any generic smtp server
+    }
+
+    public function testGoogleMailImplemented()
+    {
+        // send mail using gmail business account
+        // without - Turn ON the "Less Secure App" access or click here.
+        // https://workspace.google.com/intl/en_ca/pricing.html
+    }
+
+    public function testMailgunImplemented()
+    {
+        // https://www.mailgun.com/pricing/
+    }
+
     public function testSendgridImplemented()
     {
+        // https://sendgrid.com/pricing/
         $this->markTestIncomplete("Must send emails using Sendgrid SMTP/API.");
+    }
+
+    public function testMailChimpImplemented()
+    {
+        // https://mailchimp.com/en-ca/pricing/marketing/
+    }
+
+    public function testAweberImplemented()
+    {
+        // https://www.aweber.com/pricing.htm
+    }
+
+    public function testMailjetImplemented()
+    {
+        // https://www.mailjet.com/pricing/
+    }
+
+    public function testSendInBlueImplemented()
+    {
+        // https://www.sendinblue.com/pricing/
     }
 
     public function testEmailBodyIsHtmlFormatted()
@@ -60,5 +119,11 @@ class MailTest extends TestCase
          * $mail->setHtml($this->load->view('mail/transaction', $data));
          * $mail->send();
          */
+    }
+
+    public function testAdminReceivesContactUsEmails()
+    {
+        // index.php?route=information/contact&language=en-gb
+        // if this form is filled up, an email should generate to store admin.
     }
 }

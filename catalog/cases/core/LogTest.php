@@ -5,7 +5,7 @@ namespace cases\core;
 use Opencart\System\Library\Log;
 use PHPUnit\Framework\TestCase;
 
-require_once DIR_OPENCART . "system/library/log.php";
+// require_once DIR_OPENCART . "system/library/log.php";
 
 class LogTest extends TestCase
 {

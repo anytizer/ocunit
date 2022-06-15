@@ -1,1 +1,1 @@
-Your only source of OpenCart Data.
+Your only source of store data (aka. memo)

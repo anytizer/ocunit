@@ -169,7 +169,7 @@ Or,
 ### Logs Produced
 
 * [logs/admin-testdox.txt](logs/admin-testdox.txt)
-* [logs/catqlog-testdox.txt](logs/catqlog-testdox.txt)
+* [logs/catalog-testdox.txt](logs/catalog-testdox.txt)
 * [logs/admin-testdox.txt](logs/admin-testdox.txt)
 * [logs/inventory.log](logs/inventory.log) - concise report about products and prices for the merchant's review.
 

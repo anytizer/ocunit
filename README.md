@@ -17,6 +17,7 @@ The database will NEVER return to its original state.
 So, OCUnit is for you only if your are setting up your store for the first time.
 
 **Run OCUnit at your own risk.**
+The developers of OCUnit scripts cannot be responsible for your accidental damage to the OpenCart database on your store.
 
 ---
 
@@ -39,7 +40,7 @@ Some information in this document are drafts only (documented before coding).
 
 # Test Examples
 
-## Do tests like (merchant's perspectives)
+## Do tests like (merchant's perspectives - yes)
 
 * A corresponding image should exist for product or category.
     * [x] Product Image: 800 px x 400 px
@@ -62,13 +63,13 @@ Some information in this document are drafts only (documented before coding).
     * [ ] Languages - be always default: "1" for en-gb.
     * [x] [Information Pages](ini/information/)
 
-## And it does NOT test like (code coverage)
+## And it does NOT test like (code coverage - no)
 
 * Add product feature should accept an image upload.
 * The system should allow to upload a downloadable file.
 * Price edit should be working fine.
 
-More accurate progress report on individual testdox: [admin](logs/admin-testdox.txt), [catalog](logs/catalog-testdox.txt), [business](logs/business-testdox.txt).
+More accurate progress report on individual testdox: [admin](logs/admin-testdox.txt), [catalog](logs/catalog-testdox.txt), [business](logs/business-testdox.txt) (logs produced).
 
 These are just some samples to illustrate how business rules are created.
 

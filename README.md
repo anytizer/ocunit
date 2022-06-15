@@ -166,11 +166,11 @@ Or,
     cd business
     php ../phpunit.phar cases/
 
-### Logs Produced
+### Log Files Produced
 
 * [logs/admin-testdox.txt](logs/admin-testdox.txt)
 * [logs/catalog-testdox.txt](logs/catalog-testdox.txt)
-* [logs/admin-testdox.txt](logs/admin-testdox.txt)
+* [logs/business-testdox.txt](logs/business-testdox.txt)
 * [logs/inventory.log](logs/inventory.log) - concise report about products and prices for the merchant's review.
 
 # Inspirations
@@ -186,7 +186,7 @@ If you have a specific idea on how OCUnit (Merchant's view of test scripts for O
 function, fork the project and open pull request for your new test cases.
 Or, create a [new issue](https://github.com/anytizer/ocunit/issues/new) in __@anytizer/ocunit__ project.
 
-# Made with IDEs and tools
+# Made with IDEs and Tools
 
 * [PHPStorm](https://www.jetbrains.com/phpstorm/?from=anytizer+ocunit)
 * [VS Code](https://code.visualstudio.com/download) + [SonarLint](https://www.sonarlint.org/)

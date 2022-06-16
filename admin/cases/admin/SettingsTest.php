@@ -1,6 +1,6 @@
 <?php
 
-namespace cases\admin;
+namespace ocunit\admin\cases\admin;
 
 use Opencart\System\Library\DB\PDO;
 use PHPUnit\Framework\TestCase;

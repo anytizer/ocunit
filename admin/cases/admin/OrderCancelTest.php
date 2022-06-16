@@ -1,6 +1,6 @@
 <?php
 
-namespace cases\admin;
+namespace ocunit\admin\cases\admin;
 
 use ocunit\library\Order;
 use PHPUnit\Framework\TestCase;

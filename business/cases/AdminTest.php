@@ -1,6 +1,6 @@
 <?php
 
-namespace cases\business;
+namespace ocunit\business\cases;
 
 use Exception;
 use ocunit\library\Admin;

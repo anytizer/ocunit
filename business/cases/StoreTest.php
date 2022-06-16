@@ -2,6 +2,7 @@
 
 namespace ocunit\business\cases;
 
+use Exception;
 use ocunit\library\Store;
 use PHPUnit\Framework\TestCase;
 use function ocunit\_env;
@@ -13,9 +14,12 @@ class StoreTest extends TestCase
         $s = new Store();
         $total = $s->truncate();
 
-        $this->assertTrue($total);
+        $this->assertTrue($total > 0);
     }
 
+    /**
+     * @throws Exception
+     */
     public function testCreateStores()
     {
         $stores = _env("stores.ini")["stores"];

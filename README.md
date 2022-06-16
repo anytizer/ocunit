@@ -1,8 +1,8 @@
 # OCUnit
 
-Merchant oriented ~~test~~ scripts for [OpenCart](https://github.com/opencart/opencart/) based on [PHPUnit](https://phpunit.de).
+Merchant oriented scripts for [OpenCart](https://github.com/opencart/opencart/) based on [PHPUnit](https://phpunit.de).
 
-It partially destroys the default OpenCart installation, i.e. [install/opencart.sql](https://github.com/opencart/opencart/blob/master/upload/install/opencart.sql) and re-builds with your own information.
+It partially overrides the default OpenCart installation, i.e. [install/opencart.sql](https://github.com/opencart/opencart/blob/master/upload/install/opencart.sql) and re-builds with your own memo.
 
 ---
 
@@ -22,15 +22,14 @@ The developers of OCUnit cannot be responsible for your accidental damage to the
 ---
 
 OCUnit is better when you are about to set up a __new store__.
-If you have already set up a live store **without having a local copy of catalog memo**, do not run these tests.
-
-You can however run selected tests that do not delete or truncate the database.
+If you have already set up a store that is live, and you **do not have a local copy of your catalog memo**, do not run these tests.
 
 **Disclaimer Story**
 
 This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart/),
 but the implementation of OpenCart software to run a store.
 Please do not expect a code coverage test for OpenCart.
+End user: A semi techincal store owner.
 
 OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run
 tests. There are few [business rules](ini/config.ini) and configurations you should edit, to prepare your use.

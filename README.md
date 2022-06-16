@@ -17,7 +17,7 @@ The database will NEVER return to its original state.
 So, OCUnit is for you only if you are setting up your store for the __first__ time.
 
 **Run OCUnit at your own risk.**
-The developers of OCUnit cannot be responsible for your accidental damage to the OpenCart database on your store.
+The developers of OCUnit cannot be responsible for your accidental damage to the database on your store.
 
 ---
 

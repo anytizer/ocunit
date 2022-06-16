@@ -16,6 +16,9 @@ Apply database indexes.
 
 Allow manufacturers to login and manage their products.
 
+Produce GUI Prototyping wireframes in:
+	- [Pencil](https://pencil.evolus.vn/)
+	- [Balsamiq(https://balsamiq.com)
 
 File permissions lookup
 storage/ contains composer

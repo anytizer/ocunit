@@ -13,13 +13,13 @@ OCUnit is a risky product for your live database. Always clone your database for
 
 A. Not officially. But if something is wrong, you can still request a new issue in [GitHub](https://github.com/anytizer/ocunit/issues/new).
 
-**Q. Why is OCUnit written in such a way?**
+**Q. Why is OCUnit written in such a descructive way?**
 
 A. The developer(s) of OCUnit believe that the website owner should be responsible for managing the user behaviour in
 the website. It includes data loss by accidental damage by staffs. For a better recovery of the website, the owner
 should not go through a hassle. So, catalog information is created first, and then the OpenCart database.
 
-OCUnit does not promise a full recovery; but the products are built from your memos.
+OCUnit does not promise a full recovery; but the catalog of products are built from your memos.
 
 **Q. How do I write memos?**
 

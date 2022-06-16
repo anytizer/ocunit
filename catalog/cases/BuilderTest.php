@@ -12,9 +12,9 @@ class BuilderTest extends TestCase
         $categories = [];
         $everything = array_diff(scandir($path), [".", ".."]);
         foreach ($everything as $category) {
-            $fullpath = $path . "/" . $category;
-            if (is_dir($fullpath)) {
-                $categories[] = $fullpath;
+            $full_path = $path . "/" . $category;
+            if (is_dir($full_path)) {
+                $categories[] = $full_path;
             }
         }
 

@@ -5,7 +5,8 @@
     "ext-gd": "*",
     "anytizer/guid.php": "dev-master",
     "erusev/parsedown": "^1.7",
-    "phpmailer/phpmailer": "^6.6"
+    "phpmailer/phpmailer": "^6.6",
+    "symfony/mailer": "^6.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5",

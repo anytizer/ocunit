@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Normalizer' => $vendorDir . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
     'PHPUnit\\Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit\\Extensions\\Selenium2TestCase' => $vendorDir . '/phpunit/phpunit-selenium/PHPUnit/Extensions/Selenium2TestCase.php',
     'PHPUnit\\Extensions\\Selenium2TestCase\\Command' => $vendorDir . '/phpunit/phpunit-selenium/PHPUnit/Extensions/Selenium2TestCase/Command.php',

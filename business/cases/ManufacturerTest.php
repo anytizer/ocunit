@@ -49,8 +49,6 @@ class ManufacturerTest extends TestCase
         $stores = $s->stores();
 
         $manufacturers = $pdo->query("SELECT * FROM `" . DB_PREFIX . "manufacturer`;", []);
-        // $stores = $pdo->query("SELECT * FROM `" . DB_PREFIX . "store`;", []);
-        // @todo Assign to default store too, with ID: 0.
 
         foreach ($manufacturers as $manufacturer) {
             foreach ($stores as $store) {

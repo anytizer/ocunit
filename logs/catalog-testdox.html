@@ -30,6 +30,233 @@
         </style>
     </head>
     <body>
+        <h2 id="BuilderTest">Builder</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Import images</li>
+        </ul>
+        <h2 id="cases\api\ApiTest">Api (cases\api\Api)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Get api token</li>
+            <li style="color: #ef2929;">❌ Access routes</li>
+        </ul>
+        <h2 id="cases\api\CartTest">Cart (cases\api\Cart)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Api cart add</li>
+            <li style="color: #ef2929;">❌ Api cart edit</li>
+            <li style="color: #ef2929;">❌ Api cart remove</li>
+            <li style="color: #ef2929;">❌ Api cart products</li>
+        </ul>
+        <h2 id="cases\api\CouponTest">Coupon (cases\api\Coupon)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Api coupon</li>
+        </ul>
+        <h2 id="cases\api\CurrencyTest">Currency (cases\api\Currency)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Change session currency</li>
+        </ul>
+        <h2 id="cases\api\CustomerTest">Customer (cases\api\Customer)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Api customer</li>
+        </ul>
+        <h2 id="cases\api\LoginTest">Login (cases\api\Login)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Get api token</li>
+            <li style="color: #ef2929;">❌ Inappropriate api users denied</li>
+            <li style="color: #ef2929;">❌ Access api login</li>
+        </ul>
+        <h2 id="cases\api\VoucherTest">Voucher (cases\api\Voucher)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Api voucher</li>
+            <li style="color: #ef2929;">❌ Api voucher add</li>
+        </ul>
+        <h2 id="cases\business\CategoryImagesTest">Category Images (cases\business\CategoryImages)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Fix category images database records</li>
+            <li style="color: #555753;">✓ Create category images</li>
+        </ul>
+        <h2 id="cases\business\CurrencyTest">Currency (cases\business\Currency)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Single currency operation</li>
+        </ul>
+        <h2 id="cases\business\FixturesTest">Fixtures (cases\business\Fixtures)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Fix innodb database engine</li>
+            <li style="color: #555753;">✓ Fix auto increment values</li>
+            <li style="color: #555753;">✓ Fix manufacturer pricing by product price</li>
+            <li style="color: #555753;">✓ Fix downloadable product does not subtract inventory</li>
+            <li style="color: #555753;">✓ Fix shipping requires inventory subtraction</li>
+            <li style="color: #555753;">✓ Setup business rules</li>
+            <li style="color: #555753;">✓ Opencart behaviour in setting</li>
+        </ul>
+        <h2 id="cases\business\MaintenanceTest">Maintenance (cases\business\Maintenance)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Pre installation hook</li>
+            <li style="color: #ef2929;">❌ Post installation hook</li>
+        </ul>
+        <h2 id="MetricsTest">Metrics</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Dimensions</li>
+            <li style="color: #ef2929;">❌ Product has at least one category</li>
+        </ul>
+        <h2 id="cases\business\PricingTest">Pricing (cases\business\Pricing)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Manufacturer price exists</li>
+            <li style="color: #555753;">✓ Product price is greater than manufacturer price</li>
+            <li style="color: #ef2929;">❌ Product price is greater than manufacturer price even after discounts</li>
+            <li style="color: #ef2929;">❌ Price change history maintained</li>
+            <li style="color: #ef2929;">❌ Physical product must have non zero price</li>
+        </ul>
+        <h2 id="cases\business\ProductImagesTest">Product Images (cases\business\ProductImages)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Fix product images database records</li>
+            <li style="color: #555753;">✓ Create product images</li>
+        </ul>
+        <h2 id="cases\business\ShippingTest">Shipping (cases\business\Shipping)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Free shipping within city of store</li>
+            <li style="color: #ef2929;">❌ Post office api usage</li>
+            <li style="color: #ef2929;">❌ Pickup request</li>
+            <li style="color: #ef2929;">❌ Picked up item emails to customer</li>
+            <li style="color: #ef2929;">❌ Deny cross boarder shipping</li>
+            <li style="color: #ef2929;">❌ Estimations tend to be genuine</li>
+        </ul>
+        <h2 id="cases\business\TaxationTest">Taxation (cases\business\Taxation)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Low order fee applies</li>
+            <li style="color: #ef2929;">❌ Low tax rate in alberta</li>
+            <li style="color: #ef2929;">❌ Eco tax</li>
+            <li style="color: #ef2929;">❌ Gst tax</li>
+            <li style="color: #ef2929;">❌ Hst tax</li>
+            <li style="color: #ef2929;">❌ Pst tax</li>
+            <li style="color: #ef2929;">❌ Qst tax</li>
+            <li style="color: #ef2929;">❌ Value added tax</li>
+        </ul>
+        <h2 id="cases\business\UserPermissionsTest">User Permissions (cases\business\UserPermissions)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Demo user does not see delete option</li>
+            <li style="color: #ef2929;">❌ Demo user cannot delete record</li>
+            <li style="color: #ef2929;">❌ Demo user does not have permission to modify record</li>
+        </ul>
+        <h2 id="cases\business\WebTest">Web (cases\business\Web)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Show message to choose strong password</li>
+        </ul>
+        <h2 id="cases\catalog\CatalogTest">Catalog (cases\catalog\Catalog)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Index page has toast div</li>
+            <li style="color: #555753;">✓ Admin dashboard requires login</li>
+            <li style="color: #555753;">✓ Account pages need login</li>
+            <li style="color: #ef2929;">❌ Searches in home page</li>
+            <li style="color: #ef2929;">❌ Search categories page</li>
+            <li style="color: #ef2929;">❌ Searches in product details page</li>
+        </ul>
+        <h2 id="cases\catalog\ImageTest">Image (cases\catalog\Image)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Category images exist</li>
+            <li style="color: #555753;">✓ Product images exist</li>
+            <li style="color: #ef2929;">❌ Category images are valid images</li>
+            <li style="color: #ef2929;">❌ Product images are valid images</li>
+            <li style="color: #ef2929;">❌ Image files do not contain scripts</li>
+            <li style="color: #ef2929;">❌ No orphaned images</li>
+        </ul>
+        <h2 id="cases\catalog\LoginTest">Login (cases\catalog\Login)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Simple login successful</li>
+            <li style="color: #555753;">✓ Advanced login successful</li>
+            <li style="color: #ef2929;">❌ Simple login failure</li>
+            <li style="color: #ef2929;">❌ Advanced login failure</li>
+        </ul>
+        <h2 id="cases\catalog\SettingsTest">Settings (cases\catalog\Settings)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Database constants defined</li>
+            <li style="color: #555753;">✓ Core settings defined</li>
+            <li style="color: #555753;">✓ Directory settings defined</li>
+        </ul>
+        <h2 id="cases\core\CartTest">Cart (cases\core\Cart)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Cart clear</li>
+            <li style="color: #ef2929;">❌ Customer login</li>
+            <li style="color: #555753;">✓ Customer login failure</li>
+        </ul>
+        <h2 id="cases\core\EncryptionTest">Encryption (cases\core\Encryption)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Encrypt decrypt</li>
+        </ul>
+        <h2 id="cases\core\ImageTest">Image (cases\core\Image)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Parse png image for width and height</li>
+        </ul>
+        <h2 id="cases\core\LanguageTest">Language (cases\core\Language)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Admin language loaded</li>
+            <li style="color: #555753;">✓ Store language loaded</li>
+        </ul>
+        <h2 id="cases\core\LogTest">Log (cases\core\Log)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Log file produced</li>
+        </ul>
+        <h2 id="cases\core\ModelIncludedTest">Model Included (cases\core\ModelIncluded)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Opencart model is included on demand</li>
+        </ul>
+        <h2 id="cases\core\PasswordTest">Password (cases\core\Password)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Password hash</li>
+        </ul>
+        <h2 id="cases\core\URLTest">URL (cases\core\URL)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Construct homepage url</li>
+        </ul>
+        <h2 id="cases\database\ChangeDatabaseValuesTest">Change Database Values (cases\database\ChangeDatabaseValues)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Reset customer passwords</li>
+            <li style="color: #555753;">✓ Reset customer emails</li>
+        </ul>
+        <h2 id="cases\database\CountersTest">Counters (cases\database\Counters)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Count truncated tables</li>
+            <li style="color: #ef2929;">❌ Total record counter</li>
+        </ul>
+        <h2 id="cases\database\DatabaseIndexingTest">Database Indexing (cases\database\DatabaseIndexing)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Drop indexes</li>
+            <li style="color: #ef2929;">❌ Apply indexes</li>
+            <li style="color: #ef2929;">❌ Analyse indexes</li>
+        </ul>
+        <h2 id="cases\database\DatabaseTest">Database (cases\database\Database)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Can connect to the database</li>
+            <li style="color: #555753;">✓ Single currency</li>
+            <li style="color: #555753;">✓ Only one language is active</li>
+            <li style="color: #555753;">✓ Admin paginates 100 items</li>
+        </ul>
+        <h2 id="cases\database\SessionTest">Session (cases\database\Session)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Session is created</li>
+            <li style="color: #555753;">✓ At least one store is active</li>
+        </ul>
+        <h2 id="cases\general\HtaccessTest">Htaccess (cases\general\Htaccess)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Htaccess disables directory listing in store</li>
+            <li style="color: #555753;">✓ Htaccess disables directory listing in admin</li>
+        </ul>
+        <h2 id="cases\general\OperatingSystemTest">Operating System (cases\general\OperatingSystem)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Cli</li>
+            <li style="color: #555753;">✓ Operating system</li>
+        </ul>
+        <h2 id="PhpCoreTest">Php Core</h2>
+        <ul>
+            <li style="color: #555753;">✓ Negative one</li>
+            <li style="color: #555753;">✓ Ini get wrong query</li>
+            <li style="color: #555753;">✓ Ini get good query</li>
+        </ul>
+        <h2 id="cases\general\PhpModulesTest">Php Modules (cases\general\PhpModules)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Php modules available</li>
+            <li style="color: #555753;">✓ Zend assertions</li>
+            <li style="color: #555753;">✓ All included paths exist</li>
+        </ul>
         <h2 id="SlugTest">Slug</h2>
         <ul>
             <li style="color: #555753;">✓ Slug 1</li>
@@ -45,6 +272,80 @@
             <li style="color: #555753;">✓ Slug 11</li>
             <li style="color: #555753;">✓ Slug 12</li>
             <li style="color: #555753;">✓ Slug 13</li>
+        </ul>
+        <h2 id="cases\general\StorageAreaTest">Storage Area (cases\general\StorageArea)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Storage area is out of upload</li>
+            <li style="color: #ef2929;">❌ Install folder is removed</li>
+            <li style="color: #ef2929;">❌ Admin folder is renamed</li>
+            <li style="color: #555753;">✓ Storage folders permissions</li>
+            <li style="color: #555753;">✓ Other folders permissions</li>
+        </ul>
+        <h2 id="cases\general\XDebugTest">XDebug (cases\general\XDebug)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ X debug module is available</li>
+            <li style="color: #555753;">✓ X debug should not auto start</li>
+            <li style="color: #555753;">✓ X debug profiler be enabled</li>
+        </ul>
+        <h2 id="cases\issues\CVETest">CVE (cases\issues\CVE)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Handle cve details</li>
+        </ul>
+        <h2 id="cases\issues\FromGithubTest">From Github (cases\issues\FromGithub)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Category image placeholder</li>
+            <li style="color: #ef2929;">❌ Product image placeholder</li>
+            <li style="color: #ef2929;">❌ Consolidated config file</li>
+            <li style="color: #ef2929;">❌ Account requires admin approval before login</li>
+            <li style="color: #ef2929;">❌ Keep a log of admin access</li>
+            <li style="color: #ef2929;">❌ Add category description in product detail page</li>
+            <li style="color: #ef2929;">❌ Do not return product with non existing product id</li>
+            <li style="color: #ef2929;">❌ Show pre setup file permissions</li>
+            <li style="color: #ef2929;">❌ Do post setup cleanups</li>
+            <li style="color: #ef2929;">❌ User is registered properly</li>
+            <li style="color: #ef2929;">❌ Admin password forgotten</li>
+            <li style="color: #ef2929;">❌ Confusing constants</li>
+            <li style="color: #ef2929;">❌ Undefined custom field key</li>
+            <li style="color: #ef2929;">❌ Customer group not loaded</li>
+            <li style="color: #ef2929;">❌ Clearing saas</li>
+            <li style="color: #ef2929;">❌ Cannot read db session data</li>
+            <li style="color: #ef2929;">❌ Call route common security</li>
+            <li style="color: #ef2929;">❌ Wrong toast printed old message</li>
+            <li style="color: #ef2929;">❌ Admin created order should have logo</li>
+        </ul>
+        <h2 id="cases\issues\GuiDesignTest">Gui Design (cases\issues\GuiDesign)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Dashboard latest orders</li>
+            <li style="color: #ef2929;">❌ Placeholder image fits square area</li>
+            <li style="color: #ef2929;">❌ Show store logo</li>
+            <li style="color: #ef2929;">❌ Small quantity input box</li>
+        </ul>
+        <h2 id="cases\mail\MailTest">Mail (cases\mail\Mail)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Mail engine should be smtp</li>
+            <li style="color: #ef2929;">❌ Email sent from windows machine</li>
+            <li style="color: #ef2929;">❌ Email sent from linux machine</li>
+            <li style="color: #ef2929;">❌ Php mailer implemented</li>
+            <li style="color: #ef2929;">❌ Hosting smtp implemented</li>
+            <li style="color: #ef2929;">❌ Google mail implemented</li>
+            <li style="color: #ef2929;">❌ Mailgun implemented</li>
+            <li style="color: #ef2929;">❌ Sendgrid implemented</li>
+            <li style="color: #ef2929;">❌ Mail chimp implemented</li>
+            <li style="color: #ef2929;">❌ Aweber implemented</li>
+            <li style="color: #ef2929;">❌ Mailjet implemented</li>
+            <li style="color: #ef2929;">❌ Send in blue implemented</li>
+            <li style="color: #ef2929;">❌ Email body is html formatted</li>
+            <li style="color: #ef2929;">❌ Email is whitelisted</li>
+            <li style="color: #ef2929;">❌ Server configurations</li>
+            <li style="color: #ef2929;">❌ Admin receives contact us emails</li>
+        </ul>
+        <h2 id="cases\report\InventoryTest">Inventory (cases\report\Inventory)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Generate inventory report</li>
+        </ul>
+        <h2 id="ocunit\catalog\cases\report\RecordsCountTest">Records Count (ocunit\catalog\cases\report\RecordsCount)</h2>
+        <ul>
+            <li style="color: #ef2929;">❌ Records count</li>
         </ul>
     </body>
 </html>

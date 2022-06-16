@@ -34,10 +34,6 @@ oc_filter_description                    - 0
 oc_filter_group                          - 0
 oc_filter_group_description              - 0
 oc_gdpr                                  - 0
-oc_information                           - 0
-oc_information_description               - 0
-oc_information_to_store                  - 0
-oc_language                              - 0
 oc_location                              - 0
 oc_marketing                             - 0
 oc_marketing_report                      - 0

@@ -13,7 +13,7 @@ Installation (ocunit\admin\cases\admin\Installation)
  [x] Touch store configuration file
 
 My SQLConnection (ocunit\admin\cases\admin\MySQLConnection)
- [ ] Mysql p connect is disabled
+ [ ] Mysql persistent connection is disabled
  [ ] Mysql remote access to be blocked
 
 Order Cancel (ocunit\admin\cases\admin\OrderCancel)

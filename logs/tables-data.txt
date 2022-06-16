@@ -21,7 +21,11 @@ oc_event                                 - 40
 oc_extension                             - 41
 oc_extension_path                        - 367
 oc_geo_zone                              - 2
+oc_information                           - 8
+oc_information_description               - 8
 oc_information_to_layout                 - 12
+oc_information_to_store                  - 40
+oc_language                              - 1
 oc_layout                                - 13
 oc_layout_module                         - 6
 oc_layout_route                          - 13
@@ -30,7 +34,7 @@ oc_length_class_description              - 3
 oc_manufacturer                          - 7
 oc_manufacturer_to_layout                - 5
 oc_manufacturer_to_store                 - 35
-oc_module                                - 4
+oc_module                                - 2
 oc_option                                - 11
 oc_option_description                    - 11
 oc_option_value                          - 14

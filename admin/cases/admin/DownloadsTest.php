@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class DownloadsTest extends TestCase
 {
-    private array $downloadables = [];
+    private $downloadables = [];
 
     public function setUp(): void
     {

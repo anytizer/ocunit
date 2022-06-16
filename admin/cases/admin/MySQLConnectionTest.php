@@ -11,6 +11,8 @@ class MySQLConnectionTest extends TestCase
     {
         // SHOW VARIABLES LIKE '%innodb%';
         // innodb_buffer_pool_size
+        // ini_get("mysqli.max_persistent") == -1
+        // mysqli.allow_persistent = Off
         $this->fail();
     }
 

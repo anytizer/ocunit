@@ -4,4 +4,4 @@ declare(strict_types=1);
 namespace ocunit\catalog;
 
 
-require_once "../inc.config.php";
+require_once __DIR__."/../inc.config.php";

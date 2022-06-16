@@ -1,93 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tests>
-  <test className="cases\business\AdminTest" methodName="testDeleteAdminUsers" prettifiedClassName="Admin (cases\business\Admin)" prettifiedMethodName="Delete admin users" status="-1" time="2.4061978" size="-1" groups="default">
+  <test className="ocunit\business\cases\InformationTest" methodName="testCreateCmsPages" prettifiedClassName="Information (ocunit\business\cases\Information)" prettifiedMethodName="Create cms pages" status="-1" time="2.8942779" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="cases\business\AdminTest" methodName="testCreateAdminUser" prettifiedClassName="Admin (cases\business\Admin)" prettifiedMethodName="Create admin user" status="-1" time="4.6911523" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\BannerTest" methodName="testTruncateBanners" prettifiedClassName="Banner (ocunit\business\cases\Banner)" prettifiedMethodName="Truncate banners" status="-1" time="2.6144318" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\CategoryTest" methodName="testTruncateProducts" prettifiedClassName="Category (ocunit\business\cases\Category)" prettifiedMethodName="Truncate products" status="-1" time="3.0602482" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\CategoryTest" methodName="testTruncateCategories" prettifiedClassName="Category (ocunit\business\cases\Category)" prettifiedMethodName="Truncate categories" status="-1" time="4.3089413" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\CategoryTest" methodName="testBuildCategories" prettifiedClassName="Category (ocunit\business\cases\Category)" prettifiedMethodName="Build categories" status="-1" time="26.5159932" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\CreateStoreTest" methodName="testEmptyStores" prettifiedClassName="Create Store (ocunit\business\cases\CreateStore)" prettifiedMethodName="Empty stores" status="-1" time="2.1968751" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\CreateStoreTest" methodName="testCreateStores" prettifiedClassName="Create Store (ocunit\business\cases\CreateStore)" prettifiedMethodName="Create stores" status="-1" time="2.2567661" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\CreateStoreTest" methodName="testViewStores" prettifiedClassName="Create Store (ocunit\business\cases\CreateStore)" prettifiedMethodName="View stores" status="-1" time="2.1216168" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\CustomerTest" methodName="testDeleteCustomer" prettifiedClassName="Customer (ocunit\business\Customer)" prettifiedMethodName="Delete customer" status="-1" time="4.9304288" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\CustomerTest" methodName="testCreateCustomer" prettifiedClassName="Customer (ocunit\business\Customer)" prettifiedMethodName="Create customer" status="-1" time="7.2032854" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\GuidsTest" methodName="testGenerateGuid" prettifiedClassName="Guids (ocunit\business\cases\Guids)" prettifiedMethodName="Generate guid" status="-1" time="0.0009878" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ImageTest" methodName="testTruncateImages" prettifiedClassName="Image (ocunit\business\cases\Image)" prettifiedMethodName="Truncate images" status="-1" time="2.3880962" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ImageTest" methodName="testBuildImages" prettifiedClassName="Image (ocunit\business\cases\Image)" prettifiedMethodName="Build images" status="-1" time="0.0009391" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\InformationTest" methodName="testCreateCmsPages" prettifiedClassName="Information (ocunit\business\cases\Information)" prettifiedMethodName="Create cms pages" status="-1" time="2.377877" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ManufacturerTest" methodName="testTruncateManufacturers" prettifiedClassName="Manufacturer (ocunit\business\cases\Manufacturer)" prettifiedMethodName="Truncate manufacturers" status="-1" time="2.9422227" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ManufacturerTest" methodName="testRebuildManufacturers" prettifiedClassName="Manufacturer (ocunit\business\cases\Manufacturer)" prettifiedMethodName="Rebuild manufacturers" status="-1" time="2.6866367" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ManufacturerTest" methodName="testAssignManufacturersToAllStores" prettifiedClassName="Manufacturer (ocunit\business\cases\Manufacturer)" prettifiedMethodName="Assign manufacturers to all stores" status="-1" time="5.0542167" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ProductTest" methodName="testTruncateImages" prettifiedClassName="Product (ocunit\business\cases\Product)" prettifiedMethodName="Truncate images" status="-1" time="2.43936" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\ProductTest" methodName="testBuildProducts" prettifiedClassName="Product (ocunit\business\cases\Product)" prettifiedMethodName="Build products" status="5" time="0.0005851" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\SessionTest" methodName="testClearSession" prettifiedClassName="Session (ocunit\business\Session)" prettifiedMethodName="Clear session" status="-1" time="2.3129796" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\StoreLogoTest" methodName="testChangeStoreLogo" prettifiedClassName="Store Logo (ocunit\business\StoreLogo)" prettifiedMethodName="Change store logo" status="-1" time="2.7860023" size="-1" groups="default" exceptionLine="32" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\GuestTest" methodName="testGuestCheckout" prettifiedClassName="Guest (ocunit\business\cases\admin\Guest)" prettifiedMethodName="Guest checkout" status="-1" time="4.6592504" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginFailuresTest" methodName="testAdminBruteForceLoginDiscouraged" prettifiedClassName="Login Failures (ocunit\business\cases\admin\LoginFailures)" prettifiedMethodName="Admin brute force login discouraged" status="-1" time="0.0006439" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginFailuresTest" methodName="testLoginFails" prettifiedClassName="Login Failures (ocunit\business\cases\admin\LoginFailures)" prettifiedMethodName="Login fails" status="-1" time="0.0006002" size="-1" groups="default" exceptionLine="25" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginFailuresTest" methodName="testLoginSucceeds" prettifiedClassName="Login Failures (ocunit\business\cases\admin\LoginFailures)" prettifiedMethodName="Login succeeds" status="-1" time="0.0005649" size="-1" groups="default" exceptionLine="40" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginFailuresTest" methodName="testCustomerLoginFormHasCaptcha" prettifiedClassName="Login Failures (ocunit\business\cases\admin\LoginFailures)" prettifiedMethodName="Customer login form has captcha" status="-1" time="0.0005396" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginFailuresTest" methodName="testCustomerApprovalRequiredForLogin" prettifiedClassName="Login Failures (ocunit\business\cases\admin\LoginFailures)" prettifiedMethodName="Customer approval required for login" status="-1" time="2.1327175" size="-1" groups="default">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginTest" methodName="testRemoveSystemUsers" prettifiedClassName="Login (ocunit\business\cases\admin\Login)" prettifiedMethodName="Remove system users" status="-1" time="0.0005928" size="-1" groups="default" exceptionLine="30" exceptionMessage="">
-    <group name="default"/>
-  </test>
-  <test className="ocunit\business\cases\admin\LoginTest" methodName="testBlackListSystemUserDemanders" prettifiedClassName="Login (ocunit\business\cases\admin\Login)" prettifiedMethodName="Black list system user demanders" status="-1" time="0.0005569" size="-1" groups="default">
+  <test className="ocunit\business\cases\InformationTest" methodName="testCreateInformationPages" prettifiedClassName="Information (ocunit\business\cases\Information)" prettifiedMethodName="Create information pages" status="-1" time="6.0977494" size="-1" groups="default">
     <group name="default"/>
   </test>
 </tests>

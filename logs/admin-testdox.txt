@@ -8,9 +8,6 @@ Downloads (ocunit\admin\cases\admin\Downloads)
 Extensions (ocunit\admin\cases\admin\Extensions)
  [x] Third party extension tables are present
 
-Information (ocunit\admin\cases\admin\Information)
- [x] Create cms pages
-
 Installation (ocunit\admin\cases\admin\Installation)
  [x] Touch admin configuration file
  [x] Touch store configuration file
@@ -19,12 +16,12 @@ My SQLConnection (ocunit\admin\cases\admin\MySQLConnection)
  [ ] Mysql p connect is disabled
  [ ] Mysql remote access to be blocked
 
-Order Cancel (cases\admin\OrderCancel)
+Order Cancel (ocunit\admin\cases\admin\OrderCancel)
  [x] Order cancelled properly
  [ ] Do not refund unpaid order
 
-Settings (cases\admin\Settings)
+Settings (ocunit\admin\cases\admin\Settings)
  [x] Database constants defined
- [x] Db constants yield connection
+ [x] Database constants yield connection
  [x] Other settings defined
 

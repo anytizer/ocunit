@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class MySQLConnectionTest extends TestCase
 {
-    public function testMysqlPConnectIsDisabled()
+    public function testMysqlPersistentConnectionIsDisabled()
     {
         // SHOW VARIABLES LIKE '%innodb%';
         // innodb_buffer_pool_size

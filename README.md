@@ -4,6 +4,10 @@ Merchant oriented scripts for [OpenCart](https://github.com/opencart/opencart/) 
 
 It partially overrides the default OpenCart installation, i.e. [install/opencart.sql](https://github.com/opencart/opencart/blob/master/upload/install/opencart.sql) and re-builds with your own [memo](ini/categories/).
 
+* [Frequently asked questions](FAQ.md)
+* [How to operate](#operation)
+* Read me - below.
+
 ---
 
 ## WARNING

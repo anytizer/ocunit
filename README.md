@@ -2,13 +2,13 @@
 
 Merchant oriented scripts for [OpenCart](https://github.com/opencart/opencart/) based on [PHPUnit](https://phpunit.de).
 
-It partially overrides the default OpenCart installation, i.e. [install/opencart.sql](https://github.com/opencart/opencart/blob/master/upload/install/opencart.sql) and re-builds with your own memo.
+It partially overrides the default OpenCart installation, i.e. [install/opencart.sql](https://github.com/opencart/opencart/blob/master/upload/install/opencart.sql) and re-builds with your own [memo](ini/categories/).
 
 ---
 
 __WARNING__
 
-Never execute these ~~test~~ scripts against your live database or __in server environment__.
+Never execute these scripts against your live database or __in server environment__.
 It will overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords, .htaccess and more.
 Almost any information will be destroyed, and recreated.
 It even truncates a lot of `oc_*` tables!
@@ -27,12 +27,13 @@ If you have already set up a store that is live, and you **do not have a local c
 **Disclaimer Story**
 
 This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart/),
-but the implementation of OpenCart software to run a store.
+but the implementation of that software to run a store.
 Please do not expect a code coverage test for OpenCart.
-End user: A semi techincal store owner.
 
-OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run
-tests. There are few [business rules](ini/config.ini) and configurations you should edit, to prepare your use.
+End use of OCUnit is a semi techincal store owner or a development team dedicated to support the store onwer establish digital a store.
+
+OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run tests.
+There are few [business rules](ini/config.ini) and configurations you should edit, to prepare your use.
 Rules may differ as per businesses. So, most of the tests are empty.
 But they should self-guide you technically on how to write the tests.
 
@@ -42,14 +43,14 @@ Some information in this document are drafts only (documented before coding).
 
 ## Do test like (merchant's perspectives - yes)
 
-* A corresponding image should exist for product or category.
+* [x] A corresponding image should exist for product or category.
     * [x] Product Image: 800 px x 400 px
     * [x] Category Image: 200 px x 200 px
     * [ ] Images should be in .png format only
 * [x] A "downloadable" file has to be in a .zip format only.
 * [x] Directory listing should be disabled throughout the website - admin or store.
 * [x] Store price cannot be less than the manufacturer price even after discounts.
-* Updating price makes a history of price change.
+* [x] Updating price makes a history of price change.
     * [x] Keep a log of when prices were changed.
     * [x] Maintain a price change history.
     * [x] Create a price log table.
@@ -86,7 +87,7 @@ Dependency                     | Version                       | Description
 [relay.php](https://packagist.org/packages/anytizer/relay.php) | -      | composer package of a minimal HTTP client
 [guid.php](https://packagist.org/packages/anytizer/guid.php)   | -      | UUID generator
 [parsedown](https://github.com/erusev/parsedown)               | -      | .md to .html
-[phpmailer](https://github.com/phpmailer/phpmailer)            | -      | to generate emails (compare with in-built smtp client)
+[phpmailer](https://github.com/phpmailer/phpmailer) or alike   | -      | to generate emails (compare with in-built smtp client)
 
 # Sample Test Output
 

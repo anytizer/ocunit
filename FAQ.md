@@ -5,7 +5,7 @@
 A. Yes, it will, it does, and it is intended. Do NOT run OCUnit in a live database.
 It will even overwrite more information.
 
-You cannot claim for a loss, nor OCUnit guarantees a recovery.
+You cannot claim for a loss, nor OCUnit guarantees a recovery. It is developed voluntarily.
 
 OCUnit is a risky product for your live database. Always clone your database for use with OCUnit.
 
@@ -27,4 +27,12 @@ A. please see [ini/categories](ini/categories).
 
 **Q. How many levels of categories do you support?**
 
-A. One. Top level categories only.
+A. One. Top level categories. A child folder is a product under selected category.
+
+**Q. How do I configure for the first use?**
+
+A. First, install opernart in your location, eg: http://localhost/oc/opencart/ and then point the path in [ini/config.ini](ini/config.ini).
+The beloow lines:
+
+https://github.com/anytizer/ocunit/blob/63052aff69f81bef08372cc1ae7a68c4d32021ad/ini/config.ini#L9-L10
+

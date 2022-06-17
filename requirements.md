@@ -1,5 +1,7 @@
 # From
   - https://docs.opencart.com/requirements/
+  - http://docs.opencart.com/en-gb/requirements/
+  - https://www.smartaddons.com/documentation/system-requirements-for-opencart/
 
 # PHP Settings
 

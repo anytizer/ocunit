@@ -6,7 +6,7 @@ It partially overrides the default OpenCart installation, i.e. [install/opencart
 
 ---
 
-__WARNING__
+## WARNING
 
 Never execute these scripts against your live database or __in server environment__.
 It will overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords, .htaccess and more.
@@ -24,7 +24,7 @@ The developers of OCUnit cannot be responsible for your accidental damage to the
 OCUnit is better when you are about to set up a __new store__.
 If you have already set up a store that is live, and you **do not have a local copy of your catalog memo**, do not run these tests.
 
-**Disclaimer Story**
+## Disclaimer Story
 
 This project is NOT about developing the [core OpenCart](https://github.com/opencart/opencart/),
 but the implementation of that software to run a store.

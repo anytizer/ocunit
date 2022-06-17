@@ -1,7 +1,7 @@
 ---
 name: Create a new issue
-about: Help a user create a new issue
-title: Title...
+about: Helps a new user create an issue
+title: I have an issue with OCUnit
 labels: help wanted
 assignees: ''
 
@@ -11,3 +11,6 @@ assignees: ''
 
 
 ## How could it have been improved?
+
+
+## Severity - Is it urgent to address this issue?

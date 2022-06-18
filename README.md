@@ -115,7 +115,12 @@ Dependency                     | Version                       | Description
 
 # Three steps of Operation
 
-Install OCUnit, Configure it, Execute it, Check your store. And finally, delete it ;-) Since OCUnit rebuilds the OpenCart database, it is always riskier to run second time, particularly when you created your live copy of OpenCart store data.
+Install OCUnit, Configure it, Execute it, Check your store.
+And finally, delete it ;-)
+
+Since OCUnit rebuilds the OpenCart database, it is always riskier to run second time, particularly when you created your live copy of OpenCart store data.
+
+![wireframe](logs/sample-flow.png)
 
 ## Step 1: Installation
 

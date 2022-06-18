@@ -124,6 +124,8 @@ Then install and configure them independently in "/oc/opencart" and "/oc/ocunit"
 Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit directory and,
 update the [composer](https://getcomposer.org/) dependencies.
 
+Again, do not install OCUnit to connect to the live database!
+
     cd htdocs|public_html|www|web
     mkdir oc
     cd oc

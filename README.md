@@ -120,7 +120,9 @@ And finally, delete it ;-)
 
 Since OCUnit rebuilds the OpenCart database, it is always riskier to run second time, particularly when you created your live copy of OpenCart store data.
 
-![wireframe](logs/sample-flow.png)
+[![wireframe](logs/sample-flow.png)](logs/sample-flow.png)
+
+Picture made with [Balsamiq](https://balsamiq.com/wireframes/desktop/)
 
 ## Step 1: Installation
 

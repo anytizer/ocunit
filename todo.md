@@ -47,3 +47,9 @@ reset database ids to start with 1, after removing their demo data
 
 http://localhost/oc/store/upload/admin/index.php?route=catalog/download&user_token=
 Download Name | File Mask | Link
+
+
+
+Move scripts into ./src/ folder.
+	- do not move ini/
+	- do not move vendor/

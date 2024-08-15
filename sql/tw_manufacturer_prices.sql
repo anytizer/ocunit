@@ -7,6 +7,4 @@ CREATE TABLE `tw_manufacturer_prices`
     `product_price`         DOUBLE(8, 2)        NOT NULL DEFAULT 0.00,
     PRIMARY KEY (`manufacturer_price_id`),
     UNIQUE KEY `product_id_manufacturer_id` (`product_id`, `manufacturer_id`)
-) ENGINE = InnoDB
-  DEFAULT CHARACTER SET utf8mb4
-  COLLATE utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;

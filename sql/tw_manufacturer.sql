@@ -8,5 +8,4 @@ CREATE TABLE `tw_manufacturer`
     `status`          varchar(255) NOT NULL,
     PRIMARY KEY (`manufacturer_id`),
     UNIQUE KEY `email` (`email`)
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;

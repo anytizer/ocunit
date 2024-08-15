@@ -5,5 +5,4 @@ CREATE TABLE `tw_download_history`
     `download_id` varchar(255) NOT NULL DEFAULT '',
     `download_on` varchar(255) NOT NULL DEFAULT '',
     PRIMARY KEY (`history_id`)
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;

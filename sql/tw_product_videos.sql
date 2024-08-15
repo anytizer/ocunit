@@ -5,6 +5,4 @@ CREATE TABLE `tw_product_videos`
     `video_code` varchar(255)        NOT NULL,
     `video_link` varchar(255)        NOT NULL,
     PRIMARY KEY (`video_id`)
-) ENGINE = InnoDB
-  DEFAULT CHARACTER SET utf8mb4
-  COLLATE utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;

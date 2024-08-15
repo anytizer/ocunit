@@ -9,7 +9,7 @@ use PDOStatement;
  * Basic database wrapper without exceptions.
  * Expecting a true connection each time you start this class.
  *
- * Always connects to opencart database.
+ * Always connects to the opencart database.
  */
 class MySQLPDO
 {
@@ -30,7 +30,7 @@ class MySQLPDO
     }
 
     /**
-     * Use carefully.
+     * Use carefully and responsibly.
      * @return mixed
      */
     public function _id()

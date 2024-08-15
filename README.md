@@ -12,7 +12,10 @@ It partially overrides the default OpenCart installation, i.e. [install/opencart
 
 ## WARNING
 
-Never execute these scripts against your live database or __in server environment__.
+Never execute these scripts against your live database or __in production server environment__.
+
+THIS IS AN EXPERIMENTAL SOFTWARE.
+
 It will overwrite the product information, pricing, images, currencies, customers, users, session, emails, passwords, .htaccess and more.
 Almost any information will be destroyed, and recreated.
 It even truncates a lot of `oc_*` tables!
@@ -34,7 +37,7 @@ This project is NOT about developing the [core OpenCart](https://github.com/open
 but the implementation of that software to run a store.
 Please do not expect a code coverage test for OpenCart.
 
-End use of OCUnit is a semi techincal store owner or a development team dedicated to support the store onwer establish digital a store.
+End user of OCUnit is a semi techincal store owner or a development team dedicated to support the store onwer establish digital a store.
 
 OCUnit reads the ACTUAL database configuration values and URLs from within your OpenCart's config.php files to run tests.
 There are few [business rules](ini/config.ini) and configurations you should edit, to prepare your use.
@@ -154,9 +157,9 @@ Again, do not install OCUnit to connect to the live database!
 
 **Important** - right after installation, you should consider editing:
 
- * [ini/config.ini](ini/config.ini),
- * [ini/stores.ini](ini/stores.ini),
- * [ini/information](ini/information),
+ * [ini/config.ini](ini/config.ini)
+ * [ini/stores.ini](ini/stores.ini)
+ * [ini/information](ini/information)
  * [ini/categories](ini/categories)
 
 to tell something about your store information. Merchants may depend on these/(their own) files to change the behaviour of OpenCart.

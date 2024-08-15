@@ -1,5 +1,10 @@
 # ToDo
 
+- Version check
+- PHP Modules check
+- Credentials NOT in public_html / visible to the website / not in .ini files
+- Setup the OpenCart CMS direclty from OCUnit.
+
 Make the test scripts with table truncates run first, when operated in bulk.
 
 When running the scripts is over, make sure that the database is still usable.
@@ -9,6 +14,8 @@ Customize all OC Settings.
     * SELECT * FROM oc_setting WHERE `value` LIKE 'Your Store';
     * Store owner information
     * Contact details
+	* CMS pages
+	* Banking details
 
 Enter category path.
 

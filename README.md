@@ -135,9 +135,11 @@ Also, download the [phpunit](https://phar.phpunit.de/) phar file in the ocunit d
 update the [composer](https://getcomposer.org/) dependencies.
 
 Again, do not install OCUnit to connect to the live database!
+
 * Installation: download [phpunit-11.3.1.phar](https://phar.phpunit.de/phpunit.phar) and put it in here.
 * Rename it to phpunit.phar and run like below.
 
+Sample scripts:
 
     cd /HOME/USER/htdocs|public_html|www|web
     mkdir oc
@@ -153,9 +155,8 @@ Again, do not install OCUnit to connect to the live database!
     mv phpunit-11.3.1.phar phpunit.phar
 
     # Update Composer based packages
-    wget -oq https://getcomposer.org/download/latest-stable/composer.phar
-    php composer.phar update
-
+    # wget -oq https://getcomposer.org/download/latest-stable/composer.phar
+    # php composer.phar update
 
 
 ## Step 2: Configurations

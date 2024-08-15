@@ -138,6 +138,7 @@ Again, do not install OCUnit to connect to the live database!
 * Installation: download [phpunit-11.3.1.phar](https://phar.phpunit.de/phpunit.phar) and put it in here.
 * Rename it to phpunit.phar and run like below.
 
+
     cd /HOME/USER/htdocs|public_html|www|web
     mkdir oc
     cd oc
@@ -155,6 +156,8 @@ Again, do not install OCUnit to connect to the live database!
     wget -oq https://getcomposer.org/download/latest-stable/composer.phar
     php composer.phar update
 
+
+
 ## Step 2: Configurations
 
 **Important** - right after installation, you should consider editing:
@@ -171,18 +174,22 @@ Though not fully promised, OCUnit will re-build the OpenCart database based on t
 
 You have to scope your tests for admin, catalog or business purpose. So, run them individually.
 
+
     cd admin
     php ../phpunit.phar cases/admin/
+
 
 Or,
 
     cd catalog
     php ../phpunit.phar cases/catalog/
 
+
 Or,
 
     cd business
     php ../phpunit.phar cases/
+
 
 ### Log Files Produced
 
